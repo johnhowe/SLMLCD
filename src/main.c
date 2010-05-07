@@ -23,8 +23,7 @@ typedef unsigned long uint32;
 
 #define nop()  __asm__ __volatile__("nop")
 
-#define LED_A      (1U<<0)   /* PA0, pin 48 */
-#define LED_B      (1U<<1)   /* PA1, pin 47 */
+#define LED_A      (1U<<8)   /* STAT LED */
 
 
 // NOTE! Must be compiled in ARM mode as it is directly called from ISR.
@@ -133,11 +132,11 @@ static void Initialize(void)
 	// Set up the IOs.
 	volatile AT91PS_PIO	pPIO = AT91C_BASE_PIOA;
 	// Allow PIO to control LEDs.
-	pPIO->PIO_PER = LED_A | LED_B;
+	pPIO->PIO_PER = LED_A;
 	// Enable outputs for LED pins.
-	pPIO->PIO_OER = LED_A | LED_B;
+	pPIO->PIO_OER = LED_A;
 	// Set outputs HIGH to turn LEDs off.
-	pPIO->PIO_SODR = LED_A | LED_B;
+	pPIO->PIO_SODR = LED_A;
 }
 
 
@@ -165,6 +164,5 @@ int main(void)
 		int i;
 		for(i=0; i<10; i++) nop();
 	}
-
 	return(0);
 }

@@ -113,12 +113,12 @@ ENTRY(_vec_reset)
 /* Specify the memory areas for AT91SAM7S64: */
 MEMORY 
 {
-	flash	: ORIGIN = 0,          LENGTH = 64K		/* FLASH EPROM		*/	
-	ram		: ORIGIN = 0x00200000, LENGTH = 16K  	/* static RAM area	*/
+	flash	: ORIGIN = 0,          LENGTH = 256K		/* FLASH EPROM		*/	
+	ram		: ORIGIN = 0x00200000, LENGTH = 64K  	/* static RAM area	*/
 }
 
 /* Define a global symbol _stack_end (see analysis in annotation above): */
-_stack_end = 0x203FFC;    /* AT91SAM7S64 */
+_stack_end = 0x203FFC;    /* AT91SAM7S256 */
 
 
 /* Now define the output sections. */
