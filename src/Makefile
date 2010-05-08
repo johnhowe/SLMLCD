@@ -5,7 +5,7 @@ OBJECTS = crt.o	main.o
 LDSCRIPT = ld_flash.cmd
 
 # -mthumb-interwork
-CFLAGS  = -I. -c -fno-common -O2 -g
+CFLAGS  = -I. -c -fno-common -O0 -g
 AFLAGS  = -ahls -mapcs-32
 LFLAGS  = -Map main.map -nostartfiles -T $(LDSCRIPT)
 

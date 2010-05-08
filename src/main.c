@@ -148,8 +148,7 @@ int main(void)
 	// *(int*)0x800000=177;             // <-- Causes data abort.
 	// (*((void(*)(void))0x800000))();  // <-- Causes prefetch abort.
 
-	// Toggle LEDs as fast as the processor can.
-	// You need an oscilloscope to see this.
+
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 	unsigned int j;
 	for(;;)
@@ -158,7 +157,7 @@ int main(void)
 		pPIO->PIO_CODR = LED_A;
 		for(j=300000; j; j--)  nop();
 		pPIO->PIO_SODR = LED_A;
-		for(j=900000; j; j--)  nop();
+		for(j=1800000; j; j--)  nop();
 		// Toggle again...
 		pPIO->PIO_CODR = LED_A;
 		for(j=900000; j; j--)  nop();
