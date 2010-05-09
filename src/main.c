@@ -30,6 +30,7 @@ typedef unsigned long uint32;
 static void DefaultInterruptHandler(void)
 {
 	// Do nothing.
+
 }
 
 // NOTE! Must be compiled in ARM mode as it is directly called from ISR.
