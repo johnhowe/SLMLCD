@@ -6,3 +6,4 @@
 /main.o
 /crt.o
 /openocd_doflash
+/openocd_commands.txt

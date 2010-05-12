@@ -27,7 +27,7 @@ clean:
 	-rm -f flash.bin
 
 flash: main.bin
-	$(OPENOCD) -f openocd-flash.cfg
+	$(OPENOCD) -f openocd.cfg
 	-cmp main.bin flash.bin
 
 debug: main.elf
