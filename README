@@ -1,13 +1,5 @@
-The main objective of this project is to design and implement a controller for
-a transparent LCD to be used as part of a spatial light modulator (SLM).  This
-will be used to emulate amplitude and phase aberrations observed in light
-passing through the Earth's atmosphere.
+A controller for a transparent LCD to be used as part of a spatial light modulator (SLM). This SLM will be used to emulate amplitude and phase aberrations observed in light passing through the Earth's atmosphere.
 
-The display to be used is a 240x160 pixel graphical LCD with 32 shades of gray.
-The intention is to refresh this LCD at 50Hz, although this may be limited by
-the maximum throughput of the I2C protocol supported by the LCD. Frames will be
-sent from a PC to the microcontroller, again at the refresh rate of 50Hz.
+The display is a 240x160 pixel graphical LCD with 32 shades of gray. This will be update with frames from a PC at 50Hz. Development is on an AT91SAM7S256 microcontroller.
 
-An AT91SAM7S256 microcontroller has been chosen as it should be able to support
-this bandwidth and be able to handle any necessary image decoding. 
 
