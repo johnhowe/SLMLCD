@@ -23,8 +23,7 @@ OPENOCD = openocd
 all: main.bin
 
 clean:
-	-rm -f $(OBJECTS) crt.lst main.lst main.elf main.bin main.map main.dmp
-	-rm -f flash.bin
+	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map *.dmp
 
 flash: main.bin
 	$(OPENOCD) -f openocd.cfg
@@ -33,8 +32,8 @@ flash: main.bin
 debug: main.elf
 	$(OPENOCD) -f openocd.cfg
 
-dist:
-	tar -c *.h *.c *.s Makefile *.cmd *.cfg openocd_doflash | gzip > minimal_hello_world.tar.gz
+#dist:
+#	tar -c *.h *.c *.s Makefile *.cmd *.cfg openocd_doflash | gzip > minimal_hello_world.tar.gz
 
 main.bin: main.elf 
 	$(OBJCPY) $(CPFLAGS) main.elf main.bin
