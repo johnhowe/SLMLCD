@@ -3,7 +3,7 @@ modulator (SLM). This SLM will be used to emulate amplitude and phase
 aberrations observed in light passing through the Earth's atmosphere.
 
 The display is a 240x160 pixel graphical LCD with 32 shades of gray. This will 
-be update with frames from a PC at 50Hz. Development is on an AT91SAM7S256 
+be updated with frames from a PC at 50Hz. Development is on an AT91SAM7S256 
 microcontroller.
 
 
