@@ -30,7 +30,6 @@ typedef unsigned long uint32;
 static void DefaultInterruptHandler(void)
 {
 	// Do nothing.
-
 }
 
 // NOTE! Must be compiled in ARM mode as it is directly called from ISR.
@@ -151,23 +150,20 @@ int main(void)
 
 
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-	unsigned int j;
+	int j, k;
+	k = 1000000;
 	for(;;)
 	{
-		// Toggle...
 		pPIO->PIO_CODR = LED_A;
-		for(j=300000; j; j--)  nop();
+		for(j=k; j; j--)  nop();
 		pPIO->PIO_SODR = LED_A;
-		for(j=1800000; j; j--)  nop();
-		// Toggle again...
-		pPIO->PIO_CODR = LED_A;
-		for(j=900000; j; j--)  nop();
-		pPIO->PIO_SODR = LED_A;
-		for(j=300000; j; j--)  nop();
+		for(j=k; j; j--)  nop();
 
-		// Wait a bit...
-		int i;
-		for(i=0; i<10; i++) nop();
+		k -= 100000;
+		if (k <= 0)
+		{
+			k = 1000000;
+		}
 	}
 	return(0);
 }

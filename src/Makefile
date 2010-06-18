@@ -26,11 +26,10 @@ clean:
 	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map *.dmp
 
 flash: main.bin
-	$(OPENOCD) -f openocd.cfg
-	-cmp main.bin flash.bin
-
-debug: main.elf
-	$(OPENOCD) -f openocd.cfg
+	-sh flash.sh
+	
+#debug: main.elf
+#	$(OPENOCD) -f openocd.cfg
 
 #dist:
 #	tar -c *.h *.c *.s Makefile *.cmd *.cfg openocd_doflash | gzip > minimal_hello_world.tar.gz
@@ -41,10 +40,10 @@ main.bin: main.elf
 	ls -l main.elf main.bin
 
 main.elf: $(OBJECTS) $(LDSCRIPT)
-	@ echo "..linking"
+	@ echo "...linking"
 	$(LD) $(LFLAGS) -o main.elf $(OBJECTS)
 
-crt.o: crt.s
+crt.o: crt.s	# startup scripts for microcontroller
 	$(AS) $(AFLAGS) crt.s -o crt.o > crt.lst
 
 main.o: main.c
