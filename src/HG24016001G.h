@@ -8,12 +8,12 @@
 #ifndef HG24016001G_H
 #define HG24016001G_H
 
-//		Control instructions
+// Control instructions
 
-// Ext=0 or Ext =1
+// 						Function								Parameter
 #define EXTIN	0x39	// Ext = 0 set
 #define EXTOUT	0x31	// Ext = 1 set
-// Ext = 0              // Function								Parameter
+// Ext = 0
 #define DISON   0xAF    // Display on
 #define DISOFF  0xAE    // Display off
 #define DISNOR  0xA6    // Normal display
