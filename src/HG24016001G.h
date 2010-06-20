@@ -1,12 +1,13 @@
-//
-//	HG24016001G.h
-//	Definitions for HG24016001G-VB LCD
-//
-//	John Howe	2010
-//
+/*
+ * HG24016001G.h
+ *
+ *  Definitions for HG24016001G-VB LCD
+ *      John Howe	2010
+ */
 
-#ifndef HG24016001G_H
-#define HG24016001G_H
+
+#ifndef HG24016001G_H_
+#define HG24016001G_H_
 
 // Control instructions
 
