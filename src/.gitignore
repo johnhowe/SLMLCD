@@ -3,6 +3,7 @@
 *.map
 *.o
 *.dmp
+*.lst
 openocd_doflash
 openocd_commands.txt
 .cproject
