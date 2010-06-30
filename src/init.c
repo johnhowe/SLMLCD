@@ -48,7 +48,7 @@ void PanicBlinker(uint8 code)
 
 
 // Hardware initialisation function.
-void Initialise(void)
+void InitController(void)
 {
 	// Set Flash Wait sate
 	// Single Cycle Access at Up to 30 MHz, above (up to 55MHz):

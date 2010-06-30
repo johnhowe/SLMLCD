@@ -1,11 +1,11 @@
 # Makefile for AT91SAM7 hello world example. 
 # Wolfgang Wieser 07/2007. 
 
-OBJECTS = crt.o	main.o init.o
+OBJECTS = crt.o	main.o init.o lcd.o
 LDSCRIPT = ld_flash.cmd
 
 # -mthumb-interwork
-CFLAGS  = -I. -c -fno-common -O0 -g -std=gnu99
+CFLAGS  = -I. -c -fno-common -O3 -g -std=gnu99
 AFLAGS  = -ahls -mapcs-32
 LFLAGS  = -Map main.map -nostartfiles -T $(LDSCRIPT)
 
@@ -16,11 +16,11 @@ OBJCPY = arm-elf-objcopy
 OBJDMP = arm-elf-objdump
 
 CPFLAGS = --output-target=binary
-ODFLAGS	= -x --syms
+ODFLAGS	= -x -S -t
 
 OPENOCD = openocd
 
-all: main.bin
+all: clean main.bin
 
 clean:
 	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map *.dmp
@@ -46,8 +46,11 @@ main.elf: $(OBJECTS) $(LDSCRIPT)
 crt.o: crt.s	# startup scripts for microcontroller
 	$(AS) $(AFLAGS) crt.s -o crt.o > crt.lst
 
-main.o: main.c init.o config.h
+main.o: main.c init.o lcd.o config.h
 	$(CC) $(CFLAGS) main.c
 	
-init.o: init.c init.h
+init.o: init.c init.h config.h
 	$(CC) $(CFLAGS) init.c
+	
+lcd.o: lcd.c lcd.h config.h
+	$(CC) $(CFLAGS) lcd.c

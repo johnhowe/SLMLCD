@@ -12,5 +12,6 @@ sleep 1
 echo shutdown
 ) | telnet localhost 4444
 
-sleep 1
+sleep 2
+killall openocd
 

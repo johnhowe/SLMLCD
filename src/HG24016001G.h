@@ -12,8 +12,8 @@
 // Control instructions
 
 // 						Function								Parameter
-#define EXTIN	0x39	// Ext = 0 set
-#define EXTOUT	0x31	// Ext = 1 set
+#define EXTIN	0x30	// Extension instruction disable (Ext = 0)
+#define EXTOUT	0x31	// Extension instruction enable (Ext = 1)
 // Ext = 0
 #define DISON   0xAF    // Display on
 #define DISOFF  0xAE    // Display off
