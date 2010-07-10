@@ -21,16 +21,14 @@ typedef unsigned long uint32;
 #define FALSE 0
 
 #define nop()  __asm__ __volatile__("nop")
-#define LED_A	(1U<<8)			// Status LED
 #define PANIC_RATE	300000		// Delay time used in panic function
-
 #define bitRead(value, bit) (((value) >> (bit)) & 0x01)
 #define bitSet(value, bit) ((value) |= (1UL << (bit)))
 #define bitClear(value, bit) ((value) &= ~(1UL << (bit)))
 #define bitWrite(value, bit, bitvalue) (bitvalue ? bitSet(value, bit) : bitClear(value, bit))
 #define bit(b) (1UL << (b))
 
-// Pin definitions
+// I/O pin definitions
 #define PA0		AT91C_PIO_PA30
 #define PWR		AT91C_PIO_PA4
 #define PRD		AT91C_PIO_PA28
@@ -45,4 +43,5 @@ typedef unsigned long uint32;
 #define PXCS	AT91C_PIO_PA14
 #define PRST	AT91C_PIO_PA21
 
+#define LED_A	(1U<<8)			// Status LED
 #endif

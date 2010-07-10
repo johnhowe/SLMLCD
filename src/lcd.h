@@ -6,14 +6,12 @@
  *      John Howe	2010
  */
 
-
 #ifndef LCD_H_
 #define LCD_H_
 
 #include "config.h"
 
-// Command syntax
-// A0 RD WR D7 D6 D5 D4 D3 D2 D1 D0
+// Command locations
 #define CD0		0
 #define CD1		1
 #define CD2		2
@@ -26,14 +24,21 @@
 #define CRD		9
 #define CA0		10
 
+#define COMMAND 0
+#define DATA 1
 
-void initLCD (void);
+/* DELAYCONST x nop() = 1uS */
+#define DELAYCONST 3	// todo: calibrate nop time
+/* Init function taken from datasheet */
+void initLCD(void);
 
-/* Writes instruction to I/O ports connected to LCD.
- * Assumes EXT is set correctly.  */
-void writeInstruction (uint8 instruction);
+/* Writes instruction or data to I/O ports connected to LCD. */
+void write(uint8 type, uint8 instruction);
 
-void writeData (uint8 instruction);
+/* Delay for a period of time in microseconds */
+void busyWait(uint32 delay);
 
+/* Write unstructured data to LCD */
+void testDisplay(void);
 
 #endif /* LCD_H_ */

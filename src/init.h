@@ -14,4 +14,7 @@
 // Will blink code-many times and then make a longer delay.
 void PanicBlinker(uint8 code);
 // Hardware initialisation function.
-void InitController(void);
+void initController(void);
+
+/* setup IO pins */
+void initPIO (void);

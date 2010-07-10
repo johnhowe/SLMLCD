@@ -1,11 +1,11 @@
 # Makefile for AT91SAM7 hello world example. 
 # Wolfgang Wieser 07/2007. 
 
-OBJECTS = crt.o	main.o init.o lcd.o
+OBJECTS = crt.o	main.o init.o lcd.o timers.o
 LDSCRIPT = ld_flash.cmd
 
 # -mthumb-interwork
-CFLAGS  = -I. -c -fno-common -O3 -g -std=gnu99
+CFLAGS  = -I. -c -fno-common -O3 -g -std=gnu99 -Wall
 AFLAGS  = -ahls -mapcs-32
 LFLAGS  = -Map main.map -nostartfiles -T $(LDSCRIPT)
 
@@ -54,3 +54,6 @@ init.o: init.c init.h config.h
 	
 lcd.o: lcd.c lcd.h config.h
 	$(CC) $(CFLAGS) lcd.c
+
+timers.o: timers.c timers.h config.h
+	$(CC) $(CFLAGS) timers.c

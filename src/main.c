@@ -10,21 +10,20 @@
 #include "lcd.h"
 #include "HG24016001G.h"
 
-int main(void)
-{
-	InitController();
+int main(void) {
+	initController();
+	initPIO();
 
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-
-	initLCD ();
-	writeInstruction (DISOFF);
-
-	for(;;)
-	{
-		pPIO->PIO_CODR |= LED_A;
-		for(int j=0; j<60000; j++) { nop(); }
-		pPIO->PIO_SODR |= LED_A;
-		for(int j=0; j<2500000; j++) { nop(); }
+//	initLCD();
+//
+//	testDisplay();
+//
+	for (;;) {
+		pPIO->PIO_CODR |= PD7;//LED_A;
+		busyWait(1000);
+		pPIO->PIO_SODR |= PD7;//LED_A;
+		busyWait(1000);
 	}
-	return(0);
+	return (0);
 }
