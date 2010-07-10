@@ -57,3 +57,4 @@ lcd.o: lcd.c lcd.h config.h
 
 timers.o: timers.c timers.h config.h
 	$(CC) $(CFLAGS) timers.c
+	

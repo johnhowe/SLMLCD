@@ -5,7 +5,6 @@
  *      John Howe	2010
  */
 
-
 #ifndef HG24016001G_H_
 #define HG24016001G_H_
 
@@ -55,5 +54,4 @@
 #define EPCOUT  0xCC    // Cancel EEPROM control
 #define EPMWR   0xFC    // Write into EEPROM
 #define EPMRD   0xFD    // Read from EEPROM
-
 #endif

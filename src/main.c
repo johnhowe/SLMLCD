@@ -15,10 +15,10 @@ int main(void) {
 	initPIO();
 
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-//	initLCD();
-//
-//	testDisplay();
-//
+	//	initLCD();
+	//
+	//	testDisplay();
+	//
 	for (;;) {
 		pPIO->PIO_CODR |= PD7;//LED_A;
 		busyWait(1000);

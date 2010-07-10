@@ -10,8 +10,6 @@
 #include "timers.h"
 #include "HG24016001G.h"
 
-
-
 /* Init function taken from datasheet */
 void initLCD(void) {
 	busyWait(10000); // 10ms
@@ -92,8 +90,6 @@ void write(uint8 type, uint8 instruction) {
 	// Overwrites _all_ pins on port A according to PIOmask
 	pPIO -> PIO_SODR = PIOmask;
 }
-
-
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {
