@@ -8,22 +8,29 @@
 #include "config.h"
 #include "init.h"
 #include "lcd.h"
+#include "timers.h"
 #include "HG24016001G.h"
+
+void setTestLed(int state) {
+	if (state == on)
+		AT91F_PIO_SetOutput(AT91C_BASE_PIOA, LED_A);
+	if (state == off)
+		AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A);
+}
 
 int main(void) {
 	initController();
 	initPIO();
+	initTimers();
+	initLCD();
 
-	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-	//	initLCD();
-	//
-	//	testDisplay();
-	//
 	for (;;) {
-		pPIO->PIO_CODR |= PD7;//LED_A;
+		// Testing function for the timer calibrations
 		busyWait(1000);
-		pPIO->PIO_SODR |= PD7;//LED_A;
+		setTestLed(on);
 		busyWait(1000);
+		setTestLed(off);
+		//testDisplay();
 	}
 	return (0);
 }
