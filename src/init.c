@@ -2,7 +2,7 @@
  * init.c
  *
  *  Initialisation functions for AT91SAM7 microcontroller.
- *  Sourced from Wolfgang Wieser's AT91SAM7 hello world
+ *  Based on Wolfgang Wieser's AT91SAM7 hello world
  *  example program.
  *
  *      John Howe	2010
@@ -23,19 +23,18 @@ void SpuriousInterruptHandler(void) {
 void PanicBlinker(uint8 code) {
 	// Be sure to enable the output so that we can also diagnose
 	// crashes which happen early.
-	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-	pPIO->PIO_PER |= LED_A;
-	pPIO->PIO_OER |= LED_A;
-	pPIO->PIO_SODR = LED_A;
+
+	AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, LED_A);
+	AT91F_PIO_SetOutput(AT91C_BASE_PIOA, LED_A);
 
 	for (;;) {
 		uint8 i;
 		unsigned int j;
 		for (i = 0; i < code; i++) {
-			pPIO->PIO_CODR = LED_A; // LOW = turn LED on.
+			AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A);
 			for (j = PANIC_RATE; j; j--)
 				nop();
-			pPIO->PIO_SODR = LED_A; // HIGH = turn LED off.
+			AT91F_PIO_SetOutput(AT91C_BASE_PIOA, LED_A);
 			for (j = PANIC_RATE; j; j--)
 				nop();
 		}
@@ -51,20 +50,22 @@ void initController(void) {
 	//   at least 1 flash wait state.
 	// FMCN: flash microsecond cycle number: Number of MCLK cycles in one usec.
 	//   For 20 MHz, this is 20. Value must be rounded up.
-	AT91C_BASE_MC->MC_FMR = ((AT91C_MC_FMCN) & (22 << 16)) | AT91C_MC_FWS_0FWS;
-
+	AT91F_MC_EFC_CfgModeReg(AT91C_BASE_MC, ((AT91C_MC_FMCN) & (22 << 16))
+			| AT91C_MC_FWS_0FWS);
 	// Disable watchdog.
-	AT91C_BASE_WDTC->WDTC_WDMR = AT91C_WDTC_WDDIS;
+	AT91F_WDTSetMode(AT91C_BASE_WDTC, AT91C_WDTC_WDDIS);
 
-	AT91PS_PMC pPMC = AT91C_BASE_PMC;
+	//todo: REMOVE THIS
+	AT91PS_PMC pPMC = AT91C_BASE_PMC; // Power Management Controller (PMC) base address
+
 	// After reset, CPU runs on slow clock (32kHz).
 	// Enable main oscillator running on crystal by setting AT91C_CKGR_MOSCEN bit in PMC_MOR.
 	// Furthermore, specify OSCOUNT in number of slow clock cycles divided by 8.
 	// Hence, start up time = 8 * OSCOUNT / 32768 ; result in seconds.
 	// OSCOUNT = 6 -> 1.46 ms.
-	pPMC->PMC_MOR = ((AT91C_CKGR_OSCOUNT & (6U << 8)) | AT91C_CKGR_MOSCEN);
+	pPMC->PMC_MOR = ((AT91C_CKGR_OSCOUNT & (6U << 8)) | AT91C_CKGR_MOSCEN); //todo
 	// Wait the startup time...
-	while (!(pPMC->PMC_SR & AT91C_PMC_MOSCS))
+	while (!(AT91F_PMC_GetStatus(AT91C_BASE_PMC) & AT91C_PMC_MOSCS))
 		continue;
 
 	// Phase-locked loop (PLL) initialisation could be inserted here.
@@ -80,44 +81,42 @@ void initController(void) {
 	//    AT91C_PMC_PRES_CLK, AT91C_PMC_PRES_CLK_2, AT91C_PMC_PRES_CLK_4,...
 	// We need to do this in 2 steps conforming to data sheet p.217.
 	// STEP 1:
-	pPMC->PMC_MCKR = AT91C_PMC_CSS_MAIN_CLK;
+	AT91F_PMC_CfgMCKReg(AT91C_BASE_PMC, AT91C_PMC_CSS_MAIN_CLK);
 	// Wait for MCKRDY.
-	while (!(pPMC->PMC_SR & AT91C_PMC_MCKRDY))
+	while (!(AT91F_PMC_GetStatus(AT91C_BASE_PMC) & AT91C_PMC_MCKRDY))
 		continue;
 	// STEP 2:
-	pPMC->PMC_MCKR = AT91C_PMC_CSS_MAIN_CLK | AT91C_PMC_PRES_CLK;
+	AT91F_PMC_CfgMCKReg(AT91C_BASE_PMC, AT91C_PMC_CSS_MAIN_CLK
+			| AT91C_PMC_PRES_CLK);
 	// Wait for MCKRDY.
-	while (!(pPMC->PMC_SR & AT91C_PMC_MCKRDY))
+	while (!(AT91F_PMC_GetStatus(AT91C_BASE_PMC) & AT91C_PMC_MCKRDY))
 		continue;
 
 	// Enable user reset, i.e. allow the controller to be reset by
 	// pulling the NRST pin LOW. This aids in debugging.
-	AT91C_BASE_RSTC->RSTC_RMR = 0xa5000400U | AT91C_RSTC_URSTEN;
+	AT91F_RSTSetMode(AT91C_BASE_RSTC, 0xa5000400U | AT91C_RSTC_URSTEN);
 
 	// Set up the default interrupt handlers for all interrupts.
-	// 0 = FIQ, 1 = SYS.
-	for (int i = 0; i < 31; i++) {
-		AT91C_BASE_AIC->AIC_SVR[i] = (unsigned) &DefaultInterruptHandler;
-	}
-	// Set spurious interrupt handler. This does nothing and just returns
-	// quickly.
-	AT91C_BASE_AIC->AIC_SPU = (unsigned) &SpuriousInterruptHandler;
-
-	// NOW, we can enable peripheral clocks if needed (PMC_PCER).
-	// ...
-
-
+	AT91F_AIC_Open(AT91C_BASE_AIC, // \arg pointer to the AIC registers
+			(void*) &DefaultInterruptHandler, // \arg Default IRQ vector exception
+			(void*) &DefaultInterruptHandler, // \arg Default FIQ vector exception
+			(void*) &DefaultInterruptHandler, // \arg Default Handler set in ISR
+			(void*) &SpuriousInterruptHandler, // \arg Default Spurious Handler
+			AT91C_AIC_DCR_GMSK); // \arg Debug Control Register);
 }
 
 void initPIO(void) {
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 	// Allow PIO to control pins.
-	pPIO->PIO_PER = LED_A | PA0 | PWR | PRD | PD0 | PD1 | PD2 | PD3 | PD4 | PD5
-			| PD6 | PD7 | PXCS | PRST;
+	pPIO->PIO_PER = LED_A | PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2
+			| PD3 | PD4 | PD5 | PD6 | PD7;
 	// Enable outputs.
-	pPIO->PIO_OER = LED_A | PA0 | PWR | PRD | PD0 | PD1 | PD2 | PD3 | PD4 | PD5
-			| PD6 | PD7 | PXCS | PRST;
+	pPIO->PIO_OER = LED_A | PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2
+			| PD3 | PD4 | PD5 | PD6 | PD7;
 	// Set outputs HIGH to turn LEDs off.
 	pPIO->PIO_SODR = LED_A;
+	// Set all LCD pins LOW
+	pPIO->PIO_CODR = PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2 | PD3
+			| PD4 | PD5 | PD6 | PD7;
 }
 
