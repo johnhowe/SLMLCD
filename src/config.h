@@ -9,6 +9,7 @@
 #define CONFIG_H_
 
 #include "AT91SAM7.h"
+#include "lib_AT91SAM7S256.h"
 
 typedef signed char int8;
 typedef unsigned char uint8;
@@ -27,6 +28,8 @@ typedef unsigned long uint32;
 #define bitClear(value, bit) ((value) &= ~(1UL << (bit)))
 #define bitWrite(value, bit, bitvalue) (bitvalue ? bitSet(value, bit) : bitClear(value, bit))
 #define bit(b) (1UL << (b))
+
+enum { off, on };
 
 // I/O pin definitions
 #define PA0		AT91C_PIO_PA30
