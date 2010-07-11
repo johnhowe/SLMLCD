@@ -8,7 +8,7 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
-#include "AT91SAM7.h"
+#include "AT91SAM7S256.h"
 #include "lib_AT91SAM7S256.h"
 
 typedef signed char int8;
