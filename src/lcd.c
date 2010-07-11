@@ -9,6 +9,7 @@
 #include "lcd.h"
 #include "timers.h"
 #include "HG24016001G.h"
+#include "config.h"
 
 /* Init function taken from datasheet */
 void initLCD(void) {
@@ -54,11 +55,30 @@ void initLCD(void) {
 }
 
 /* Writes instruction or data to I/O ports connected to LCD. */
+
+/*
+  WriteData() {
+  Set Data / Command pin to Data mode	PA0
+  Drop chip select						PXCS
+  Drop WR								PWR
+  Set data to GPIO						PD0-PD7
+  Raise WR								PWR
+  Raise chip select.					PXCS
+}
+ */
 void write(uint8 type, uint8 instruction) {
-	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA; // (PIOA) Base Address
+	if (type) { // type == COMMAND
+//		pPIO->PIO_SODR |= PA0;
+	}
+	else { // type == DATA
+	//	pPIO->PIO_CODR = PA0;
+	}
+}
+/*
+void write(uint8 type, uint8 instruction) {
 	uint32 PIOmask = 0;
 
-	/* Set first 3 bits according to data or command type */
+	// Set first 3 bits according to data or command type
 	if (type == COMMAND) {
 		PIOmask |= PRD;
 	} else if (type == DATA) {
@@ -88,32 +108,12 @@ void write(uint8 type, uint8 instruction) {
 		PIOmask |= PD7;
 
 	// Overwrites _all_ pins on port A according to PIOmask
-	pPIO -> PIO_SODR = PIOmask;
+	pPIO->PIO_SODR = PIOmask;
 }
+*/
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {
-	uint8 j, k;
-	write(COMMAND, EXTIN);
-	write(COMMAND, CASET);
-	write(DATA, 0x00);
-	write(DATA, 0xf4);
-	write(COMMAND, LASET);
-	write(DATA, 0x00);
-	write(DATA, 0x9f);
-	write(COMMAND, RAMWR);
-	for (j = 0; j < 160; j++) {
-		for (k = 0; k < 80; k++) {
-			write(DATA, 0xff);
-		}
-	}
-	//	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-	////	busyWait(1000);
-	//	pPIO->PIO_CODR |= LED_A;
-	////	busyWait(1000);
-	//	write(DATA, 0xff);
-	////	busyWait(1000);
-	//	write(DATA, 0x00);
-	////	busyWait(1000);
-	//	pPIO->PIO_SODR |= LED_A;
+	write(DATA, 0xFF);
+	write(COMMAND, 0x00);
 }

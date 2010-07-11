@@ -11,6 +11,8 @@
 
 #include "config.h"
 
+
+
 // Command locations
 #define CD0		0
 #define CD1		1
@@ -24,8 +26,9 @@
 #define CRD		9
 #define CA0		10
 
-#define COMMAND 0
-#define DATA 1
+enum {
+	DATA = 0, COMMAND = 1
+};
 
 /* DELAYCONST x nop() = 1uS */
 #define DELAYCONST 3	// todo: calibrate nop time
@@ -34,9 +37,6 @@ void initLCD(void);
 
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);
-
-/* Delay for a period of time in microseconds */
-void busyWait(uint32 delay);
 
 /* Write unstructured data to LCD */
 void testDisplay(void);
