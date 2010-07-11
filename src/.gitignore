@@ -8,3 +8,6 @@ openocd_doflash
 openocd_commands.txt
 .cproject
 .project
+.settings/
+Graphics.h
+st7529.*
