@@ -6,10 +6,12 @@
  *      John Howe	2010
  */
 
+#include "config.h"
 #include "lcd.h"
 
 /* Init function taken from datasheet */
 void initLCD(void) {
+
 
 	// Enable PIO in output mode
 	AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
@@ -74,9 +76,9 @@ void initLCD(void) {
  */
 void write(uint8 type, uint8 instruction) {
 	if (type) { // type == COMMAND
-		T91F_PIO_SetOutput(AT91C_BASE_PIOA, PA0);
+		AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PA0);
 	} else { // type == DATA
-		T91F_PIO_ClearOutput(AT91C_BASE_PIOA, PA0);
+		AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PA0);
 	}
 }
 /*
