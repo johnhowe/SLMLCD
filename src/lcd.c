@@ -155,7 +155,3 @@ void testDisplay(void) {
 	write(DATA, 0xFF);
 	write(COMMAND, 0x00);
 }
-
-void fuckAll(void) {
-
-}

@@ -41,6 +41,4 @@ void write(uint8 type, uint8 instruction);
 /* Write unstructured data to LCD */
 void testDisplay(void);
 
-void fuckAll(void);
-
 #endif /* LCD_H_ */

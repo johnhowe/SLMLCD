@@ -18,8 +18,6 @@ void setTestLed(int state) {
 		AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A);
 }
 
-
-
 int main(void) {
 	initController();
 	initPIO();
@@ -32,7 +30,6 @@ int main(void) {
 		setTestLed(on);
 		busyWait(1000);
 		setTestLed(off);
-		//fuckAll();
 	}
 	return (0);
 }
