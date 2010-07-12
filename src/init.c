@@ -107,16 +107,11 @@ void initController(void) {
 
 void initPIO(void) {
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-	// Allow PIO to control pins.
-	pPIO->PIO_PER = LED_A | PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2
-			| PD3 | PD4 | PD5 | PD6 | PD7;
-	// Enable outputs.
-	pPIO->PIO_OER = LED_A | PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2
-			| PD3 | PD4 | PD5 | PD6 | PD7;
-	// Set outputs HIGH to turn LEDs off.
-	pPIO->PIO_SODR = LED_A;
-	// Set all LCD pins LOW
-	pPIO->PIO_CODR = PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2 | PD3
-			| PD4 | PD5 | PD6 | PD7;
-}
+	// Enable PIO in output mode
+	AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, LED_A | PA0 | PWR | PRD | PXCS | PRST
+			| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
 
+	// Set all pins LOW
+	AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A | PA0 | PWR | PRD | PXCS | PRST
+			| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
+}
