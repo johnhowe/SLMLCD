@@ -106,12 +106,10 @@ void initController(void) {
 }
 
 void initPIO(void) {
-	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 	// Enable PIO in output mode
-	AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, LED_A | PA0 | PWR | PRD | PXCS | PRST
-			| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
+	AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, LED_A);
 
 	// Set all pins LOW
-	AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A | PA0 | PWR | PRD | PXCS | PRST
-			| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
+	AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A);
 }
+

@@ -10,8 +10,8 @@
 #define LCD_H_
 
 #include "config.h"
-
-
+#include "timers.h"
+#include "HG24016001G.h"
 
 // Command locations
 #define CD0		0
