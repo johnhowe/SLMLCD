@@ -8,11 +8,11 @@
 #ifndef HG24016001G_H_
 #define HG24016001G_H_
 
-// Control instructions
+/* Control instructions */
 
-// 						Function								Parameter
 #define EXTIN	0x30	// Extension instruction disable (Ext = 0)
 #define EXTOUT	0x31	// Extension instruction enable (Ext = 1)
+
 // Ext = 0
 #define DISON   0xAF    // Display on
 #define DISOFF  0xAE    // Display off
@@ -45,6 +45,7 @@
 #define EPSRRD2 0x7D    // Read register 2
 #define NOP     0x25    // NOP instruction
 #define EPINT	0x07    // Initial code(1)                      1 byte
+
 // Ext = 1
 #define GRAY1   0x20    // Frame 1 gray PWM set
 #define GRAY2   0x21    // Frame 2 gray PWM set
@@ -55,3 +56,25 @@
 #define EPMWR   0xFC    // Write into EEPROM
 #define EPMRD   0xFD    // Read from EEPROM
 #endif
+
+
+/* Colour definitions */
+
+#define BLACK                0 
+//#define GRAY1               (2<<3) 
+//#define GRAY2               (4<<3) 
+#define GRAY3               (6<<3) 
+#define GRAY4               (8<<3) 
+#define GRAY5               (10<<3) 
+#define GRAY6               (12<<3) 
+#define GRAY7               (14<<3) 
+#define GRAY8               (16<<3) 
+#define GRAY9               (18<<3) 
+#define GRAY10              (20<<3) 
+#define GRAY11              (22<<3) 
+#define GRAY12              (24<<3) 
+#define GRAY13              (26<<3) 
+#define GRAY14              (28<<3) 
+#define GRAY15              (30<<3) 
+#define WHITE               (31<<3) 
+

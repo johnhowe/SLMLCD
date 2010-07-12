@@ -12,24 +12,25 @@
 #include "HG24016001G.h"
 
 void setTestLed(int state) {
-	if (state == on)
-		AT91F_PIO_SetOutput(AT91C_BASE_PIOA, LED_A);
-	if (state == off)
-		AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A);
+    if (state == on)
+        AT91F_PIO_SetOutput(AT91C_BASE_PIOA, LED_A);
+    if (state == off)
+        AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, LED_A);
 }
 
 int main(void) {
-	initController();
-	initPIO();
-	initTimers();
-	initLCD();
+    initController();
+    initPIO();
+    initTimers();
+    initLCD();
 
-	for (;;) {
-		// Testing function for the timer calibrations
-		busyWait(1000);
-		setTestLed(on);
-		busyWait(1000);
-		setTestLed(off);
-	}
-	return (0);
+    testDisplay ();
+
+    for (;;) {
+        busyWait(5000);
+        setTestLed(on);
+        busyWait(5000);
+        setTestLed(off);
+    }
+    return (0);
 }

@@ -152,6 +152,19 @@ void write(uint8 type, uint8 instruction) {
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {
-	write(DATA, 0xFF);
-	write(COMMAND, 0x00);
+    write (COMMAND, EXTIN); // ext = 0
+    write (COMMAND, CASET); // column address set
+    write (DATA, 0x00);     // from col 0
+    write (DATA, 0x4F);     // to col 240  (240/3)-1
+    write (COMMAND, LASET); // line address set
+    write (DATA, 0x00);     // from line 0
+    write (DATA, 0x9F);     // to line 159
+    write (COMMAND, RAMWR); // enter memory write mode
+    uint8 i, j;
+    for (j=0; j<160; j++) {
+        for (i=0; i<79; i++) {
+            write (DATA, GRAY10);
+        }
+    }
 }
+
