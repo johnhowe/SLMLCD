@@ -6,12 +6,10 @@
  *      John Howe	2010
  */
 
-#include "config.h"
 #include "lcd.h"
 
 /* Init function taken from datasheet */
 void initLCD(void) {
-
 
 	// Enable PIO in output mode
 	AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
@@ -80,6 +78,39 @@ void write(uint8 type, uint8 instruction) {
 	} else { // type == DATA
 		AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PA0);
 	}
+	// Drop chip select
+	AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PXCS);
+
+	// Drop W/R
+	AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PWR);
+
+	// Moves bits to correct locations for IO port. Probably need to modify
+	// PCB to make this more efficient.
+	uint32 PIOmask = 0;
+	if (bitRead (instruction, CD0))
+		PIOmask |= PD0;
+	if (bitRead (instruction, CD1))
+		PIOmask |= PD1;
+	if (bitRead (instruction, CD2))
+		PIOmask |= PD2;
+	if (bitRead (instruction, CD3))
+		PIOmask |= PD3;
+	if (bitRead (instruction, CD4))
+		PIOmask |= PD4;
+	if (bitRead (instruction, CD5))
+		PIOmask |= PD5;
+	if (bitRead (instruction, CD6))
+		PIOmask |= PD6;
+	if (bitRead (instruction, CD7))
+		PIOmask |= PD7;
+	// Write data
+	AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PIOmask);
+
+	// Raise W/R
+	AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PWR);
+
+	// Raise chip select
+	AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PXCS);
 }
 /*
  void write(uint8 type, uint8 instruction) {
@@ -123,4 +154,8 @@ void write(uint8 type, uint8 instruction) {
 void testDisplay(void) {
 	write(DATA, 0xFF);
 	write(COMMAND, 0x00);
+}
+
+void fuckAll(void) {
+
 }
