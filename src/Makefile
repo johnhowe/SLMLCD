@@ -23,7 +23,7 @@ OPENOCD = openocd
 all: clean main.bin
 
 clean:
-	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map *.dmp
+	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map main.dmp
 
 flash: main.bin
 	-sh flash.sh
