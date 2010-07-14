@@ -168,3 +168,11 @@ void testDisplay(void) {
     }
 }
 
+void nothing (void) {
+	nop();
+    //write (COMMAND, EXTIN); // ext = 0
+	nop();
+    //write (COMMAND, EXTOUT); // ext = 0
+}
+
+
