@@ -31,6 +31,7 @@ int main(void) {
         setTestLed(on);
         busyWait(5000);
         setTestLed(off);
+        nothing();
     }
     return (0);
 }
