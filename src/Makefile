@@ -1,50 +1,36 @@
-# Makefile for AT91SAM7 hello world example. 
-# Wolfgang Wieser 07/2007. 
+OUTFILE_SRAM = slmlcd-sram
+OUTFILE_FLASH = slmlcd-flash
 
-OBJECTS = crt.o	main.o init.o lcd.o timers.o
-LDSCRIPT = ld_flash.cmd
+INCL = ../include
+LDSCRIPT = $(INCL)/at91lib/at91sam7s256/flash.lds
+CSTARTUP = $(INCL)/at91lib/board_cstartup.S
 
-# -mthumb-interwork
-CFLAGS  = -I. -c -fno-common -O3 -g -std=gnu99 -Wall
-AFLAGS  = -ahls -mapcs-32
-LFLAGS  = -Map main.map -nostartfiles -T $(LDSCRIPT)
+OBJS = board_cstartup.o main.o init.o lcd.o timers.o
+
+CFLAGS = -g -mcpu=arm7tdmi -c -O3 -Wall -I$(INCL)
+AFLAGS = -D__ASSEMBLY__ -g -mcpu=arm7tdmi -c -Os -Wall -I$(INCL)
+LFLAGS = -nostartfiles -Wl,--cerf -lc -lgcc -T $(LDSCRIPT)
 
 CC = arm-elf-gcc
 LD = arm-elf-ld -v
 AS = arm-elf-as
+NM = arm-elf-nm
 OBJCPY = arm-elf-objcopy
 OBJDMP = arm-elf-objdump
+SIZE = arm-elf-size
 
-CPFLAGS = --output-target=binary
-ODFLAGS	= -x -S -t
+all: sram flash
 
-OPENOCD = openocd
+sram: $(OBJS)
+	$(LD) $(LDFLAGS) -Ttext 0x201000 -Tdata 0x200000 -n -o $(OUTFILE_SRAM).elf $(OBJS)
+	$(OBJCOPY) --strip-debug --strip-unneeded $(OUTFILE_SRAM).elf -O binary $(OUTFILE_SRAM).bin
 
-all: clean main.bin
-
-clean:
-	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map main.dmp
-
-flash: main.bin
-	-sh flash.sh
+flash: $(OBJS)
+	$(LD) $(LDFLAGS) -Ttext 0x100000 -Tdata 0x200000 -n -o $(OUTFILE_FLASH).elf $(OBJS)
+	$(OBJCOPY) --strip-debug --strip-unneeded $(OUTFILE_FLASH).elf -O binary $(OUTFILE_FLASH).bin
 	
-#debug: main.elf
-#	$(OPENOCD) -f openocd.cfg
-
-#dist:
-#	tar -c *.h *.c *.s Makefile *.cmd *.cfg openocd_doflash | gzip > minimal_hello_world.tar.gz
-
-main.bin: main.elf 
-	$(OBJCPY) $(CPFLAGS) main.elf main.bin
-	$(OBJDMP) $(ODFLAGS) main.elf > main.dmp
-	ls -l main.elf main.bin
-
-main.elf: $(OBJECTS) $(LDSCRIPT)
-	@ echo "...linking"
-	$(LD) $(LFLAGS) -o main.elf $(OBJECTS)
-
-crt.o: crt.s	# startup scripts for microcontroller
-	$(AS) $(AFLAGS) crt.s -o crt.o > crt.lst
+board_cstartup.o: board_cstartup.S
+	$(AS) $(ASFLAGS) board_cstartup.S -o board_cstartup.o
 
 main.o: main.c init.o lcd.o config.h
 	$(CC) $(CFLAGS) main.c
@@ -57,4 +43,6 @@ lcd.o: lcd.c lcd.h config.h
 
 timers.o: timers.c timers.h config.h
 	$(CC) $(CFLAGS) timers.c
+	
+	
 	
