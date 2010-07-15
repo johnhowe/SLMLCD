@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - HIDDMouseDriver_ChangePoints</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">HIDDMouseDriver_ChangePoints</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','hidmi_mouse0',this)" class="pathLink">hid-mouse</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">HIDDMouseDriver_ChangePoints</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','HIDDMouseDriver_ChangePoints6901206','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','HIDDMouseDriver_ChangePoints6901206','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 367</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','HIDDMouseDriver_ChangePoints6901206',this); ">HIDDMouseDriver_ChangePoints</a>(unsigned char bmButtons, signed char deltaX, signed char deltaY)
+{
+    hiddMouseDriver.inputReport.bmButtons = (bmButtons &amp; 0x07)
+                                          | <a href="#" onMouseOver="link('_member','HIDDMouse_TAG3135924416',this); ">HIDDMouse_TAG</a>;
+    hiddMouseDriver.inputReport.bX = deltaX;
+    hiddMouseDriver.inputReport.bY = deltaY;
+    // Send input report through the interrupt IN endpoint
+    return <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(HIDDMouseDriverDescriptors_INTERRUPTIN,
+                      &amp;(hiddMouseDriver.inputReport),
+                      sizeof(HIDDMouseInputReport),
+                      0,
+                      0);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

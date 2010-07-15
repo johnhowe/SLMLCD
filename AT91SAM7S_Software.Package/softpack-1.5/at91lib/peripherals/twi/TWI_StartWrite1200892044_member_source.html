@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - TWI_StartWrite</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">TWI_StartWrite</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','twi0',this)" class="pathLink">twi</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">TWI_StartWrite</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','TWI_StartWrite1200892044','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','TWI_StartWrite1200892044','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 257</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','TWI_StartWrite1200892044',this); ">TWI_StartWrite</a>(AT91S_TWI *pTwi, unsigned char address, unsigned int iaddress, unsigned char isize, unsigned char byte)
+{
+    //TRACE_DEBUG("TWI_StartWrite()\n\r");
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pTwi);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>((address &amp; 0x80) == 0);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>((iaddress &amp; 0xFF000000) == 0);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(isize &lt; 4);
+
+    // Set slave address and number of internal address bytes
+    pTwi-&gt;TWI_MMR = 0;
+    pTwi-&gt;TWI_MMR = (isize &lt;&lt; 8) | (address &lt;&lt; 16);
+
+    // Set internal address bytes
+    pTwi-&gt;TWI_IADR = 0;
+    pTwi-&gt;TWI_IADR = iaddress;
+
+    // Write first byte to send
+    <a href="#" onMouseOver="link('_member','TWI_WriteByte2296152088',this); ">TWI_WriteByte</a>(pTwi, byte);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

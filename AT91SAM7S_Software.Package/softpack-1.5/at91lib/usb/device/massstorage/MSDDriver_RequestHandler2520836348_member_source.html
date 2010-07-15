@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - MSDDriver_RequestHandler</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">MSDDriver_RequestHandler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">MSDDriver_RequestHandler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','MSDDriver_RequestHandler2520836348','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','MSDDriver_RequestHandler2520836348','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 199</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','MSDDriver_RequestHandler2520836348',this); ">MSDDriver_RequestHandler</a>(const <a href="#" onMouseOver="link('_class','../../common/core/USBGenericRequest0',this); ">USBGenericRequest</a> *request)
+{
+    TRACE_INFO_WP("NewReq ");
+
+    // Handle requests
+    switch (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request)) {
+    //---------------------
+    case <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_CLEARFEATURE145046170',this); ">USBGenericRequest_CLEARFEATURE</a>:
+    //---------------------
+        TRACE_INFO_WP("ClrFeat ");
+
+        switch (<a href="#" onMouseOver="link('_member','../../common/core/USBFeatureRequest_GetFeatureSelector2520836348',this); ">USBFeatureRequest_GetFeatureSelector</a>(request)) {
+
+        //---------------------
+        case <a href="#" onMouseOver="link('_member','../../common/core/USBFeatureRequest_ENDPOINTHALT145062668',this); ">USBFeatureRequest_ENDPOINTHALT</a>:
+        //---------------------
+            TRACE_INFO_WP("Hlt ");
+
+            // Do not clear the endpoint halt status if the device is waiting
+            // for a reset recovery sequence
+            if (!msdDriver.waitResetRecovery) {
+
+                // Forward the request to the standard handler
+                <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;usbdDriver, request);
+            }
+            else {
+
+                TRACE_INFO_WP("No ");
+            }
+
+            <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(0, 0, 0, 0, 0);
+            break;
+
+        //------
+        default:
+        //------
+            // Forward the request to the standard handler
+            <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;usbdDriver, request);
+        }
+        break;
+
+    //-------------------
+    case <a href="#" onMouseOver="link('_member','MSD_GET_MAX_LUN2028663731',this); ">MSD_GET_MAX_LUN</a>:
+    //-------------------
+        TRACE_INFO_WP("gMaxLun ");
+
+        // Check request parameters
+        if ((request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wValue1533465040',this); ">wValue</a> == 0)
+            &amp;&amp; (request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wIndex1533465040',this); ">wIndex</a> == 0)
+            &amp;&amp; (request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wLength1533465040',this); ">wLength</a> == 1)) {
+
+            <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(0, &amp;(msdDriver.maxLun), 1, 0, 0);
+
+        }
+        else {
+
+            TRACE_WARNING(
+                "MSDDriver_RequestHandler: GetMaxLUN(%d,%d,%d)\n\r",
+                request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wValue1533465040',this); ">wValue</a>, request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wIndex1533465040',this); ">wIndex</a>, request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wLength1533465040',this); ">wLength</a>);
+            <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+        }
+        break;
+
+    //-----------------------
+    case <a href="#" onMouseOver="link('_member','MSD_BULK_ONLY_RESET2028663731',this); ">MSD_BULK_ONLY_RESET</a>:
+    //-----------------------
+        TRACE_INFO_WP("Rst ");
+
+        // Check parameters
+        if ((request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wValue1533465040',this); ">wValue</a> == 0)
+            &amp;&amp; (request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wIndex1533465040',this); ">wIndex</a> == 0)
+            &amp;&amp; (request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wLength1533465040',this); ">wLength</a> == 0)) {
+
+            // Reset the MSD driver
+            MSDDriver_Reset();
+            <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(0, 0, 0, 0, 0);
+        }
+        else {
+
+            TRACE_WARNING(
+                "MSDDriver_RequestHandler: Reset(%d,%d,%d)\n\r",
+                request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wValue1533465040',this); ">wValue</a>, request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wIndex1533465040',this); ">wIndex</a>, request-&gt;<a href="#" onMouseOver="link('_member','../../common/core/wLength1533465040',this); ">wLength</a>);
+            <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+        }
+        break;
+
+    //------
+    default:
+    //------
+        // Forward request to standard handler
+        <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;usbdDriver, request);
+
+        break;
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

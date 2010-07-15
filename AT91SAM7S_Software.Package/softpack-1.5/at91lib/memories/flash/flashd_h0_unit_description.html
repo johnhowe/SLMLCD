@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - flashd.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">flashd.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','flash0',this)" class="pathLink">flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">flashd.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5530","aID5530","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','flashd_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Overview</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+The goal of FLASHD driver is to provide support for ATMEL Embedded Flash devices. The FLASHD driver provides the unified interface of functions and operations for all supported Embedded Flash Memory Devices. The driver accesses the Flash memory by calling the low-level code which provided in EFC(EEFC) peripheral,o users do not have to concern themselves with the details of the special command sequences.<br>
+<br>
+<div class="userParagraph3">Usage</div>
+<ol>
+<li>Initializes the flash driver with FLASHD_Initialize().</li>
+<li>Provide all neccessary operations such as flash write, erase, lock, unlock, and set/clear GPNVM.<ul>
+<li>They are able to check function arguments, address boundary etc.</li>
+<li>All flash address argument is the unique address, as the result, user no need to take care about the address is in which EFC, in which page and in which lock region for difference Flash <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a>, so that can help develop your uppon appcations with maximum efficiency.</li>
+</ul>
+
+</li>
+<li>Writes data in embedded flash using FLASHD_Write().</li>
+<li>Erase data in embedded flash using FLASHD_Write().</li>
+<li>Lock region in embedded flash using FLASHD_Lock().</li>
+<li>Unlock region in embedded flash using FLASHD_Unlock().</li>
+<li>Set GPNVM in embedded flash using FLASHD_SetGPNVM().</li>
+<li>Clear GPNVM in embedded flash using FLASHD_ClearGPNVM().</li>
+</ol>
+
+<br>
+<div class="userParagraph3">See also</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_dir','../../peripherals/efc/efc0',this)">efc</a>: EFC peripheral interface.</li>
+<li><a href="#" OnMouseOver="link('_dir','../../peripherals/eefc/eefc0',this)">eefc</a>: EEFC peripheral interface.</li>
+</ul>
+
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

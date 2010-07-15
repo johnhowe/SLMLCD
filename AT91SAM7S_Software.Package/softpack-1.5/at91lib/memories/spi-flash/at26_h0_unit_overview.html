@@ -1,0 +1,306 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - at26.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">at26.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spimi_flash0',this)" class="pathLink">spi-flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">at26.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5533","aID5533","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','at26_h0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','at26_h0','_overview',this)" class="tabLinkActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="paragraphTable"></div>
+<table cellspacing="0"cellpadding=0 border=0 class="widthAndBorderTop">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Classes</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_class','_At260',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Public Attributes</strong><BR><TABLE><TR><TD>command</TD></TR><TR><TD>pCmdBuffer</TD></TR><TR><TD>pDesc</TD></TR><TR><TD>pSpid</TD></TR></TABLE>',CAPTION,'<strong>Brief description</strong><BR>Serial flash driver structure.');" onmouseout="return nd();">&nbsp;_At26</a></TD>
+<TD class="paddingNormal2"><span class="" >Serial <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> driver structure.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_class','_At26Desc0',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Public Attributes</strong><BR><TABLE><TR><TD>blockEraseCmd</TD></TR><TR><TD>blockSize</TD></TR><TR><TD>jedecId</TD></TR><TR><TD>name</TD></TR><TR><TD>pageSize</TD></TR><TR><TD>size</TD></TR></TABLE>',CAPTION,'<strong>Brief description</strong><BR>Describes a serial firmware flash device parameters.');" onmouseout="return nd();">&nbsp;_At26Desc</a></TD>
+<TD class="paddingNormal2"><span class="" >Describes a serial firmware <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a> parameters.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Methods</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_Configure2559565110',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;AT26_Configure<BR>(At26 * pAt26, Spid * pSpid, unsigned char cs)',CAPTION,'<strong>Brief description</strong><BR>Initializes an AT26 driver instance with the given SPI<BR>driver and chip     select value.');" onmouseout="return nd();">&nbsp;AT26_Configure</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes an AT26 driver instance with the given SPI driver and chip select value.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_FindDevice973237235',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>At26Desc *&nbsp;&nbsp;AT26_FindDevice&nbsp;&nbsp;(At26 * pAt26, unsigned int jedecId)',CAPTION,'<strong>Brief description</strong><BR>Tries to detect a serial firmware flash device given<BR>its JEDEC identifier.');" onmouseout="return nd();">&nbsp;AT26_FindDevice</a></TD>
+<TD class="paddingNormal2"><span class="" >Tries to detect a serial firmware <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a> given its JEDEC identifier.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_IsBusy86165468',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;AT26_IsBusy&nbsp;&nbsp;(At26 * pAt26)',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if the serial flash driver is currently busy<BR>executing a command;    otherwise returns 0.');" onmouseout="return nd();">&nbsp;AT26_IsBusy</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if the serial <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> driver is currently busy executing a command; otherwise returns 0.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_SendCommand76362579',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;AT26_SendCommand<BR>(At26 * pAt26, unsigned char cmd, unsigned char cmdSize, unsigned char * pData, unsigned int dataSize, unsigned int address, SpidCallback callback, void * pArgument)',CAPTION,'<strong>Brief description</strong><BR>Sends a command to the serial flash through the SPI.');" onmouseout="return nd();">&nbsp;AT26_SendCommand</a></TD>
+<TD class="paddingNormal2"><span class="" >Sends a command to the serial <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> through the SPI.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Defines</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_BLOCK_ERASE_32K574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_BLOCK_ERASE_32K',CAPTION,'<strong>Brief description</strong><BR>Block erase command code (32K block).');" onmouseout="return nd();">&nbsp;AT26_BLOCK_ERASE_32K</a></TD>
+<TD class="paddingNormal2"><span class="" >Block erase command code (32K block).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_BLOCK_ERASE_4K574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_BLOCK_ERASE_4K',CAPTION,'<strong>Brief description</strong><BR>Block erase command code (4K block).');" onmouseout="return nd();">&nbsp;AT26_BLOCK_ERASE_4K</a></TD>
+<TD class="paddingNormal2"><span class="" >Block erase command code (4K block).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_BLOCK_ERASE_64K574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_BLOCK_ERASE_64K',CAPTION,'<strong>Brief description</strong><BR>Block erase command code (64K block).');" onmouseout="return nd();">&nbsp;AT26_BLOCK_ERASE_64K</a></TD>
+<TD class="paddingNormal2"><span class="" >Block erase command code (64K block).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_BYTE_PAGE_PROGRAM574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_BYTE_PAGE_PROGRAM',CAPTION,'<strong>Brief description</strong><BR>Byte/page program command code.');" onmouseout="return nd();">&nbsp;AT26_BYTE_PAGE_PROGRAM</a></TD>
+<TD class="paddingNormal2"><span class="" >Byte/page program command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_CHIP_ERASE_1574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_CHIP_ERASE_1',CAPTION,'<strong>Brief description</strong><BR>Chip erase command code 1.');" onmouseout="return nd();">&nbsp;AT26_CHIP_ERASE_1</a></TD>
+<TD class="paddingNormal2"><span class="" >Chip erase command code 1.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_CHIP_ERASE_2574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_CHIP_ERASE_2',CAPTION,'<strong>Brief description</strong><BR>Chip erase command code 2.');" onmouseout="return nd();">&nbsp;AT26_CHIP_ERASE_2</a></TD>
+<TD class="paddingNormal2"><span class="" >Chip erase command code 2.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_DEEP_PDOWN574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_DEEP_PDOWN',CAPTION,'<strong>Brief description</strong><BR>Deep power-down command code.');" onmouseout="return nd();">&nbsp;AT26_DEEP_PDOWN</a></TD>
+<TD class="paddingNormal2"><span class="" >Deep power-down command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_ERROR_BUSY574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_ERROR_BUSY',CAPTION,'<strong>Brief description</strong><BR>Device is busy executing a command.');" onmouseout="return nd();">&nbsp;AT26_ERROR_BUSY</a></TD>
+<TD class="paddingNormal2"><span class="" >Device is busy executing a command.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_ERROR_PROGRAM574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_ERROR_PROGRAM',CAPTION,'<strong>Brief description</strong><BR>There was a problem while trying to program page data.');" onmouseout="return nd();">&nbsp;AT26_ERROR_PROGRAM</a></TD>
+<TD class="paddingNormal2"><span class="" >There was a problem while trying to program page data.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_ERROR_PROTECTED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_ERROR_PROTECTED',CAPTION,'<strong>Brief description</strong><BR>Device is protected, operation cannot be carried out.');" onmouseout="return nd();">&nbsp;AT26_ERROR_PROTECTED</a></TD>
+<TD class="paddingNormal2"><span class="" >Device is protected, operation cannot be carried out.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_ERROR_SPI574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_ERROR_SPI',CAPTION,'<strong>Brief description</strong><BR>There was an SPI communication error.');" onmouseout="return nd();">&nbsp;AT26_ERROR_SPI</a></TD>
+<TD class="paddingNormal2"><span class="" >There was an SPI communication error.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_PROTECT_SECTOR574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_PROTECT_SECTOR',CAPTION,'<strong>Brief description</strong><BR>Protect sector command code.');" onmouseout="return nd();">&nbsp;AT26_PROTECT_SECTOR</a></TD>
+<TD class="paddingNormal2"><span class="" >Protect sector command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_READ_ARRAY574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_READ_ARRAY',CAPTION,'<strong>Brief description</strong><BR>Read array command code.');" onmouseout="return nd();">&nbsp;AT26_READ_ARRAY</a></TD>
+<TD class="paddingNormal2"><span class="" >Read array command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_READ_ARRAY_LF574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_READ_ARRAY_LF',CAPTION,'<strong>Brief description</strong><BR>Read array (low frequency) command code.');" onmouseout="return nd();">&nbsp;AT26_READ_ARRAY_LF</a></TD>
+<TD class="paddingNormal2"><span class="" >Read array (low frequency) command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_READ_JEDEC_ID574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_READ_JEDEC_ID',CAPTION,'<strong>Brief description</strong><BR>Read manufacturer and device ID command code.');" onmouseout="return nd();">&nbsp;AT26_READ_JEDEC_ID</a></TD>
+<TD class="paddingNormal2"><span class="" >Read manufacturer and <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a> ID command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_READ_SECTOR_PROT574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_READ_SECTOR_PROT',CAPTION,'<strong>Brief description</strong><BR>Read sector protection registers command code.');" onmouseout="return nd();">&nbsp;AT26_READ_SECTOR_PROT</a></TD>
+<TD class="paddingNormal2"><span class="" >Read sector protection registers command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_READ_STATUS574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_READ_STATUS',CAPTION,'<strong>Brief description</strong><BR>Read status register command code.');" onmouseout="return nd();">&nbsp;AT26_READ_STATUS</a></TD>
+<TD class="paddingNormal2"><span class="" >Read status register command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_RES_DEEP_PDOWN574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_RES_DEEP_PDOWN',CAPTION,'<strong>Brief description</strong><BR>Resume from deep power-down command code.');" onmouseout="return nd();">&nbsp;AT26_RES_DEEP_PDOWN</a></TD>
+<TD class="paddingNormal2"><span class="" >Resume from deep power-down command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_SEQUENTIAL_PROGRAM_1574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_SEQUENTIAL_PROGRAM_1',CAPTION,'<strong>Brief description</strong><BR>Sequential program mode command code 1.');" onmouseout="return nd();">&nbsp;AT26_SEQUENTIAL_PROGRAM_1</a></TD>
+<TD class="paddingNormal2"><span class="" >Sequential program mode command code 1.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_SEQUENTIAL_PROGRAM_2574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_SEQUENTIAL_PROGRAM_2',CAPTION,'<strong>Brief description</strong><BR>Sequential program mode command code 2.');" onmouseout="return nd();">&nbsp;AT26_SEQUENTIAL_PROGRAM_2</a></TD>
+<TD class="paddingNormal2"><span class="" >Sequential program mode command code 2.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_EPE574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_EPE',CAPTION,'<strong>Brief description</strong><BR>Erase/program error bit.');" onmouseout="return nd();">&nbsp;AT26_STATUS_EPE</a></TD>
+<TD class="paddingNormal2"><span class="" >Erase/program error bit.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_EPE_ERROR574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_EPE_ERROR',CAPTION,'<strong>Brief description</strong><BR>Erase or program error detected.');" onmouseout="return nd();">&nbsp;AT26_STATUS_EPE_ERROR</a></TD>
+<TD class="paddingNormal2"><span class="" >Erase or program error detected.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_EPE_SUCCESS574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_EPE_SUCCESS',CAPTION,'<strong>Brief description</strong><BR>Erase or program operation was successful.');" onmouseout="return nd();">&nbsp;AT26_STATUS_EPE_SUCCESS</a></TD>
+<TD class="paddingNormal2"><span class="" >Erase or program operation was successful.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_RDYBSY574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_RDYBSY',CAPTION,'<strong>Brief description</strong><BR>Device ready/busy status bit.');" onmouseout="return nd();">&nbsp;AT26_STATUS_RDYBSY</a></TD>
+<TD class="paddingNormal2"><span class="" >Device ready/busy status bit.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_RDYBSY_BUSY574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_RDYBSY_BUSY',CAPTION,'<strong>Brief description</strong><BR>Device is busy with internal operations.');" onmouseout="return nd();">&nbsp;AT26_STATUS_RDYBSY_BUSY</a></TD>
+<TD class="paddingNormal2"><span class="" >Device is busy with internal operations.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_RDYBSY_READY574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_RDYBSY_READY',CAPTION,'<strong>Brief description</strong><BR>Device is ready.');" onmouseout="return nd();">&nbsp;AT26_STATUS_RDYBSY_READY</a></TD>
+<TD class="paddingNormal2"><span class="" >Device is ready.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SPRL574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SPRL',CAPTION,'<strong>Brief description</strong><BR>Sector protection registers locked bit.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SPRL</a></TD>
+<TD class="paddingNormal2"><span class="" >Sector protection registers locked bit.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SPRL_LOCKED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SPRL_LOCKED',CAPTION,'<strong>Brief description</strong><BR>Sector protection registers are locked.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SPRL_LOCKED</a></TD>
+<TD class="paddingNormal2"><span class="" >Sector protection registers are locked.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SPRL_UNLOCKED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SPRL_UNLOCKED',CAPTION,'<strong>Brief description</strong><BR>Sector protection registers are unlocked.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SPRL_UNLOCKED</a></TD>
+<TD class="paddingNormal2"><span class="" >Sector protection registers are unlocked.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SWP574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SWP',CAPTION,'<strong>Brief description</strong><BR>Software protection status bitfield.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SWP</a></TD>
+<TD class="paddingNormal2"><span class="" >Software protection status bitfield.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SWP_PROTALL574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SWP_PROTALL',CAPTION,'<strong>Brief description</strong><BR>All sectors are software protected.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SWP_PROTALL</a></TD>
+<TD class="paddingNormal2"><span class="" >All sectors are software protected.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SWP_PROTNONE574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SWP_PROTNONE',CAPTION,'<strong>Brief description</strong><BR>No sector is software protected.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SWP_PROTNONE</a></TD>
+<TD class="paddingNormal2"><span class="" >No sector is software protected.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_SWP_PROTSOME574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_SWP_PROTSOME',CAPTION,'<strong>Brief description</strong><BR>Some sectors are software protected.');" onmouseout="return nd();">&nbsp;AT26_STATUS_SWP_PROTSOME</a></TD>
+<TD class="paddingNormal2"><span class="" >Some sectors are software protected.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_WEL574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_WEL',CAPTION,'<strong>Brief description</strong><BR>Write enable latch status bit.');" onmouseout="return nd();">&nbsp;AT26_STATUS_WEL</a></TD>
+<TD class="paddingNormal2"><span class="" >Write enable latch status bit.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_WEL_DISABLED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_WEL_DISABLED',CAPTION,'<strong>Brief description</strong><BR>Device is not write enabled.');" onmouseout="return nd();">&nbsp;AT26_STATUS_WEL_DISABLED</a></TD>
+<TD class="paddingNormal2"><span class="" >Device is not write enabled.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_WEL_ENABLED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_WEL_ENABLED',CAPTION,'<strong>Brief description</strong><BR>Device is write enabled.');" onmouseout="return nd();">&nbsp;AT26_STATUS_WEL_ENABLED</a></TD>
+<TD class="paddingNormal2"><span class="" >Device is write enabled.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_WPP574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_WPP',CAPTION,'<strong>Brief description</strong><BR>Write protect pin status bit.');" onmouseout="return nd();">&nbsp;AT26_STATUS_WPP</a></TD>
+<TD class="paddingNormal2"><span class="" >Write protect pin status bit.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_WPP_ASSERTED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_WPP_ASSERTED',CAPTION,'<strong>Brief description</strong><BR>Write protect signal is asserted.');" onmouseout="return nd();">&nbsp;AT26_STATUS_WPP_ASSERTED</a></TD>
+<TD class="paddingNormal2"><span class="" >Write protect signal is asserted.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_STATUS_WPP_NOTASSERTED574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_STATUS_WPP_NOTASSERTED',CAPTION,'<strong>Brief description</strong><BR>Write protect signal is not asserted.');" onmouseout="return nd();">&nbsp;AT26_STATUS_WPP_NOTASSERTED</a></TD>
+<TD class="paddingNormal2"><span class="" >Write protect signal is not asserted.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_UNPROTECT_SECTOR574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_UNPROTECT_SECTOR',CAPTION,'<strong>Brief description</strong><BR>Unprotect sector command code.');" onmouseout="return nd();">&nbsp;AT26_UNPROTECT_SECTOR</a></TD>
+<TD class="paddingNormal2"><span class="" >Unprotect sector command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_WRITE_DISABLE574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_WRITE_DISABLE',CAPTION,'<strong>Brief description</strong><BR>Write disable command code.');" onmouseout="return nd();">&nbsp;AT26_WRITE_DISABLE</a></TD>
+<TD class="paddingNormal2"><span class="" >Write disable command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_WRITE_ENABLE574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_WRITE_ENABLE',CAPTION,'<strong>Brief description</strong><BR>Write enable command code.');" onmouseout="return nd();">&nbsp;AT26_WRITE_ENABLE</a></TD>
+<TD class="paddingNormal2"><span class="" >Write enable command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','AT26_WRITE_STATUS574741268',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;AT26_WRITE_STATUS',CAPTION,'<strong>Brief description</strong><BR>Write status register command code.');" onmouseout="return nd();">&nbsp;AT26_WRITE_STATUS</a></TD>
+<TD class="paddingNormal2"><span class="" >Write status register command code.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Types</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','At260',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>_At26&nbsp;&nbsp;At26 ',CAPTION,'<strong>Brief description</strong><BR>Serial flash driver structure.');" onmouseout="return nd();">&nbsp;At26</a></TD>
+<TD class="paddingNormal2"><span class="" >Serial <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> driver structure.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','At26Desc0',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>_At26Desc&nbsp;&nbsp;At26Desc ',CAPTION,'<strong>Brief description</strong><BR>Describes a serial firmware flash device parameters.');" onmouseout="return nd();">&nbsp;At26Desc</a></TD>
+<TD class="paddingNormal2"><span class="" >Describes a serial firmware <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a> parameters.<br>
+</TD>
+</TR>
+</table>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_overview');
+</script>

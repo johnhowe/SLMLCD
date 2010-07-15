@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - pio.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">pio.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','pio0',this)" class="pathLink">pio</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">pio.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5542","aID5542","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','pio_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','pio_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+This file provides a basic API for PIO configuration and usage of user-controlled <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a>. Please refer to the <a href="#" OnMouseOver="link('_unit','../../boards/at91sam7s-ek/board_h0',this)">board.h</a> file for a list of available pin definitions.<br>
+<br>
+<div class="userParagraph3">Usage</div>
+<ol>
+<li>Define a constant pin description array such as the following one, using the existing definitions provided by the <a href="#" OnMouseOver="link('_unit','../../boards/at91sam7s-ek/board_h0',this)">board.h</a> file if possible:   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+const <a href="#" onMouseOver="link('_class','Pin0',this); ">Pin</a> pPins[] = {<a href="#" onMouseOver="link('_member','../../boards/at91sam7s-ek/PIN_USART0_TXD839682361',this); ">PIN_USART0_TXD</a>, <a href="#" onMouseOver="link('_member','../../boards/at91sam7s-ek/PIN_USART0_RXD839682361',this); ">PIN_USART0_RXD</a>};
+</pre>  </TD>
+  </TR>
+  </TABLE>
+Alternatively, it is possible to add new <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a> by provided the full <a href="#" OnMouseOver="link('_class','Pin0',this)">Pin</a> structure:   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Pin instance to configure PA10 &amp; PA11 as inputs with the internal
+// pull-up enabled.
+const <a href="#" onMouseOver="link('_class','Pin0',this); ">Pin</a> pPins = {
+     (1 &lt;&lt; 10) | (1 &lt;&lt; 11),
+     AT91C_BASE_PIOA,
+     AT91C_ID_PIOA,
+     <a href="#" onMouseOver="link('_member','PIO_INPUT3612691426',this); ">PIO_INPUT</a>,
+     <a href="#" onMouseOver="link('_member','PIO_PULLUP3612691426',this); ">PIO_PULLUP</a>
+};
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+<li>Configure a pin array by calling <a href="#" OnMouseOver="link('_member','PIO_Configure1657521108',this)">PIO_Configure()</a> with a pointer to the array and its size (which is computed using the <a href="#" OnMouseOver="link('_member','PIO_LISTSIZE3636917727',this)">PIO_LISTSIZE</a> macro).</li>
+<li>Change and get the value of a user-controlled pin using the <a href="#" OnMouseOver="link('_member','PIO_Set134351097',this)">PIO_Set</a>, <a href="#" OnMouseOver="link('_member','PIO_Clear134351097',this)">PIO_Clear</a> and <a href="#" OnMouseOver="link('_member','PIO_Get134351097',this)">PIO_Get</a> methods.</li>
+<li>Get the level being currently output by a user-controlled pin configured as an output using <a href="#" OnMouseOver="link('_member','PIO_GetOutputDataStatus134351097',this)">PIO_GetOutputDataStatus()</a>.</li>
+</ol>
+
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

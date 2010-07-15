@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD Standard Request Handler</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD Standard Request Handler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../usb0',this)" class="pathLink">usb</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','device0',this)" class="pathLink">device</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD Standard Request Handler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5418","aID5418","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','USBDStandardRequestHandler0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">device.dir::USBD Standard Request Handler</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Standard Request Handler</div>
+Chapter 9 of the USB specification 2.0 defines a set of standard requests which have to be implemented by all devices. Since most class <a href="#" OnMouseOver="link('_dir','../../drivers/drivers0',this)">drivers</a> treat those requests in the standard way, the USB framework provides a way to easily do that.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">USBDDriver_RequestHandler</div>
+ <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a> handles the standard requests in an appropriate way. It can answer the following commands:<br>
+<br>
+</div>
+<div class="padding"><ul>
+<li>GET_DESCRIPTOR</li>
+<li>SET_ADDRESS</li>
+<li>SET_CONFIGURATION</li>
+<li>GET_CONFIGURATION</li>
+<li>CLEAR_FEATURE</li>
+<li>SET_FEATURE</li>
+<li>GET_STATUS</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">Simply using this standard request handler enables a device to be enumerated correctly.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Get Descriptor</div>
+ The GET_DESCRIPTOR request is used by the host to retrieve information about the device by means of several descriptors.<br>
+<br>
+</div>
+<div class="padding">The standard request handler simply sends the corresponding descriptor to the host. How these descriptors are provided to the function is discussed in Structures.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Set Address</div>
+ Whenever the host wants to change the device <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> from Default to Address, or vice-versa, it sends a SET_ADDRESS request. The wValue field contains the new address of the device; if it is null, then the device returns to the Default <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding">The <a href="#" OnMouseOver="link('_member','core/USBD_SetAddress2593655934',this)">USBD_SetAddress</a> function is called to perform this operation. Note that a zero-length packet must be sent prior to doing that, to acknowledge the SETUP transfer.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Set Configuration &amp; GetConfiguration</div>
+ The SET_CONFIGURATION request makes it possible for the host to select between one or more configurations for the device. GET_CONFIGURATION is used to retrieve the currently selected one.<br>
+<br>
+</div>
+<div class="padding">Those two requests are handled in a very basic way by <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a>: it assumes that the device has only one configuration. Therefore, the SET_CONFIGURATION request is simply acknowledged with a zero-length packet, and GET_CONFIGURATION is answered with either 0 or 1. If the user application needs more than one configuration, it will be the duty of the class driver handler to service those requests.<br>
+<br>
+</div>
+<div class="padding">In addition, when the SET_CONFIGURATION request causes the device to enter the Configured <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>, the standard request handler calls the <a href="#" OnMouseOver="link('_member','core/USBD_ConfigureEndpoint3900619571',this)">USBD_ConfigureEndpoint</a> method for each endpoint used by the device;<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Clear Feature, Set Feature &amp; Get Status</div>
+ Several features of a device can either be activated or deactivated by the USB host:<ul>
+<li>Remote wakeup</li>
+<li><a href="#" OnMouseOver="link('_class','core/Endpoint0',this)">Endpoint</a> Halt <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> Three requests can be used to either set, clear or get the status of these two features: SET_FEATURE, CLEAR_FEATURE and GET_STATUS.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">The <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a> method answers a Halt <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> operation by calling the <a href="#" OnMouseOver="link('_member','core/USBD_Halt2593655934',this)">USBD_Halt</a> method on the endpoint with the request.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Structures</div>
+ Several pieces of information must be known to the <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a> to be able to process some SETUP commands. For example, all the descriptors (configuration, etc.) used by the device are needed since they must be sent to the host when a GET_DESCRIPTOR is received.<br>
+<br>
+</div>
+<div class="padding">The <a href="#" OnMouseOver="link('_class','../common/core/USBGenericRequest0',this)">USBGenericRequest</a> structure is a "standard USB class driver" object used to hold the required information. It must be passed as an argument to the <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a> method. Another structure, <a href="#" OnMouseOver="link('_class','core/USBDDriverDescriptors0',this)">USBDDriverDescriptors</a>, is used to store the descriptors list.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Usage</div>
+ The NewRequest callback is used to notify the user application that a new SETUP request has been received. SETUP request can either be class-specific or standard.<br>
+<br>
+</div>
+<div class="padding">The correct way to handle incoming requests is to first process class-specific requests using a class handler. For example, a Mass Storage implementation will define the NewRequest callback to call <a href="#" OnMouseOver="link('_member','massstorage/MSDDriver_RequestHandler2520836348',this)">MSDDriver_RequestHandler</a>. This function will handle the necessary requests, and forward the rest to <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a>.<br>
+<br>
+</div>
+<div class="padding">If a request cannot be processed, <a href="#" OnMouseOver="link('_member','core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a> will STALL control endpoint 0.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Page was generated from the following file:</div>
+<div class="paddingMembers"><LI>device.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>

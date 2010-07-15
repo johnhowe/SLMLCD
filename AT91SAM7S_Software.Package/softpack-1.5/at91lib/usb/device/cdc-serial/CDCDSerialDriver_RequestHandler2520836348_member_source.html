@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - CDCDSerialDriver_RequestHandler</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">CDCDSerialDriver_RequestHandler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','cdcmi_serial0',this)" class="pathLink">cdc-serial</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">CDCDSerialDriver_RequestHandler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','CDCDSerialDriver_RequestHandler2520836348','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','CDCDSerialDriver_RequestHandler2520836348','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 187</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','CDCDSerialDriver_RequestHandler2520836348',this); ">CDCDSerialDriver_RequestHandler</a>(const <a href="#" onMouseOver="link('_class','../../common/core/USBGenericRequest0',this); ">USBGenericRequest</a> *request)
+{
+    TRACE_INFO_WP("NewReq ");
+
+    // Handle the request
+    switch (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request)) {
+
+        case <a href="#" onMouseOver="link('_member','../../common/cdc/CDCGenericRequest_SETLINECODING1847233702',this); ">CDCGenericRequest_SETLINECODING</a>:
+            
+            CDCDSerialDriver_SetLineCoding();
+            break;
+
+        case <a href="#" onMouseOver="link('_member','../../common/cdc/CDCGenericRequest_GETLINECODING1847233702',this); ">CDCGenericRequest_GETLINECODING</a>:
+
+            CDCDSerialDriver_GetLineCoding();
+            break;
+
+        case <a href="#" onMouseOver="link('_member','../../common/cdc/CDCGenericRequest_SETCONTROLLINESTATE1847233702',this); ">CDCGenericRequest_SETCONTROLLINESTATE</a>:
+
+            CDCDSerialDriver_SetControlLineState(
+                <a href="#" onMouseOver="link('_member','../../common/cdc/CDCSetControlLineStateRequest_ActivateCarrier2520836348',this); ">CDCSetControlLineStateRequest_ActivateCarrier</a>(request),
+                <a href="#" onMouseOver="link('_member','../../common/cdc/CDCSetControlLineStateRequest_IsDtePresent2520836348',this); ">CDCSetControlLineStateRequest_IsDtePresent</a>(request));
+
+            break;
+
+        default:
+
+            <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;(cdcdSerialDriver.usbdDriver), request);
+            break;
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

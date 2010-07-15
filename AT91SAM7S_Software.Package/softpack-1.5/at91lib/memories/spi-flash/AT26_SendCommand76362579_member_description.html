@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - AT26_SendCommand</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">AT26_SendCommand</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spimi_flash0',this)" class="pathLink">spi-flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">AT26_SendCommand</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','AT26_SendCommand76362579','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','AT26_SendCommand76362579','_source',this)" class="tabLinkInActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">AT26_SendCommand</span>
+<div class="paragraph2">Sends a command to the serial <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> through the SPI.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2"><span id="descFunSynExpSpan" style="display:none;visibility:hidden"><a href="javascript:showElement( 'descFunSynColSpan' );javascript:hideElement( 'descFunSynExpSpan' );javascript:showElement( 'descFunSyn' );javascript:setMyCookie( cookieName, 'descFunSyn', 'show' );"><img src="../../../../common/expand.gif" border=0></a></span><span id="descFunSynColSpan"><a href="javascript:showElement( 'descFunSynExpSpan' );javascript:hideElement( 'descFunSynColSpan' );javascript:hideElement( 'descFunSyn' );javascript:setMyCookie( cookieName, 'descFunSyn', 'hide' );"><img src="../../../../common/collapse.gif" border=0></a></span>
+Syntax / parameters</div>
+<div id="descFunSyn" class="paddingMembersTableDiv"><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top"><TD class="paddingHeadMultiColumn2"><span class="codeFont">unsigned char <a href="#" OnMouseOver="link('_member','AT26_SendCommand76362579',this)">AT26_SendCommand</a> (<a href="#" OnMouseOver="link('_member','At260',this)">At26</a> *pAt26, unsigned char cmd, unsigned char cmdSize, unsigned char *pData, unsigned int dataSize, unsigned int address, <a href="#" OnMouseOver="link('_member','SpidCallback0',this)">SpidCallback</a> callback, void *pArgument)<br>
+</span></TD></TR></TABLE>
+<br><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Name</TD>
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Type</TD>
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Default</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>pAt26</TD>
+<TD class="paddingNormal1"><span class="codeFont" ><a href="#" OnMouseOver="link('_member','At260',this)">At26</a> * <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Pointer to an <a href="#" OnMouseOver="link('_member','At260',this)">At26</a> driver instance.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>cmd</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Command byte.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>cmdSize</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Size of command (command byte + address bytes + dummy bytes).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>pData</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char * <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Data buffer.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>dataSize</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned int <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Number of bytes to send/receive.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>address</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned int <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Address to transmit.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>callback</TD>
+<TD class="paddingNormal1"><span class="codeFont" ><a href="#" OnMouseOver="link('_member','SpidCallback0',this)">SpidCallback</a> <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Optional user-provided callback to invoke at end of transfer.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>pArgument</TD>
+<TD class="paddingNormal1"><span class="codeFont" >void * <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Optional argument to the callback function.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadBlank" colspan=4>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD width=20% class="paddingHeadMultiColumn1"><span class="" align=left>Return value</TD>
+<TD width=5% class="paddingNormal1"><span class="codeFont" >unsigned char<br>
+</TD>
+<TD width=5% class="paddingNormal1"><span class="" align=left>&nbsp;</TD>
+<TD width=70% class="paddingNormal2"><span class="" >&nbsp;</TD>
+</TR>
+</table>
+</div>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers">Sends a command to the serial <a href="#" OnMouseOver="link('_dir','../flash/flash0',this)">flash</a> through the SPI.<br>
+The command is made up of two parts: the first is used to transmit the command byte and optionally, address and dummy bytes. The second part is the data to send or receive. This function does not block: it returns as soon as the transfer has been started. An optional callback can be invoked to notify the end of transfer. Return 0 if successful; otherwise, returns <a href="#" OnMouseOver="link('_member','AT26_ERROR_BUSY574741268',this)">AT26_ERROR_BUSY</a> if the AT26 driver is currently executing a command, or <a href="#" OnMouseOver="link('_member','AT26_ERROR_SPI574741268',this)">AT26_ERROR_SPI</a> if the command cannot be sent because of a SPI error.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Member was generated from the following files:</div>
+<div class="paddingMembers"><LI>at26.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_description');
+</script>

@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - led.h</TITLE>
+<script type="text/javascript" src="../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../common/";
+ var relPathToHelpDir = "../../../common/help/";
+ var toSearchPage     = "_search','../../../search";
+ Body1();
+</script>
+<div class="headerPage">led.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','utility0',this)" class="pathLink">utility</A><img src="../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">led.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5616","aID5616","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','led_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','led_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+Small set of functions for simple and portable LED usage.<br>
+<br>
+<div class="userParagraph3">Usage</div>
+<ol>
+<li>Configure one or more LEDs using <a href="#" OnMouseOver="link('_member','LED_Configure171142247',this)">LED_Configure</a> and LED_ConfigureAll.</li>
+<li>Set, clear and toggle LEDs using <a href="#" OnMouseOver="link('_member','LED_Set171142247',this)">LED_Set</a>, <a href="#" OnMouseOver="link('_member','LED_Clear171142247',this)">LED_Clear</a> and <a href="#" OnMouseOver="link('_member','LED_Toggle171142247',this)">LED_Toggle</a>.</li>
+</ol>
+
+<br>
+LEDs are numbered starting from 0; the number of LEDs depend on the board being used. All the functions defined here will compile properly regardless of whether the LED is defined or not; they will simply return 0 when a LED which does not exist is given as an argument. Also, these functions take into account how each LED is connected on to board; thus,  might change the level on the corresponding pin to 0 or 1, but it will always light the LED on; same thing for the other methods.<br>
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD_Init</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD_Init</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD_Init</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Init53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Init53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 1182</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','USBD_Init53616',this); ">USBD_Init</a>(void)
+{
+    TRACE_INFO_WP("USBD_Init\n\r");
+
+    // Reset endpoint structures
+    UDP_ResetEndpoints();
+
+    // Configure the pull-up on D+ and disconnect it
+#if defined(BOARD_USB_PULLUP_EXTERNAL)
+    const <a href="#" onMouseOver="link('_class','../../../peripherals/pio/Pin0',this); ">Pin</a> pinPullUp = <a href="#" onMouseOver="link('_member','../../../boards/at91sam7s-ek/PIN_USB_PULLUP839682361',this); ">PIN_USB_PULLUP</a>;
+    <a href="#" onMouseOver="link('_member','../../../peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(&amp;pinPullUp, 1);
+#elif defined(BOARD_USB_PULLUP_INTERNAL)
+    AT91C_BASE_UDP-&gt;UDP_TXVC &amp;= ~AT91C_UDP_PUON;
+#elif defined(BOARD_USB_PULLUP_MATRIX)
+    AT91C_BASE_MATRIX-&gt;MATRIX_USBPCR &amp;= ~AT91C_MATRIX_USBPCR_PUON;
+#elif !defined(BOARD_USB_PULLUP_ALWAYSON)
+    #error Missing pull-up definition.
+#endif
+
+    // Device is in the Attached state
+    deviceState = <a href="#" onMouseOver="link('_member','USBD_STATE_SUSPENDED1024481039',this); ">USBD_STATE_SUSPENDED</a>;
+    previousDeviceState = <a href="#" onMouseOver="link('_member','USBD_STATE_POWERED1024481039',this); ">USBD_STATE_POWERED</a>;
+    UDP_EnablePeripheralClock();
+    UDP_EnableUsbClock();
+
+    AT91C_BASE_UDP-&gt;UDP_IDR = 0xFE;
+
+    AT91C_BASE_UDP-&gt;UDP_IER = AT91C_UDP_WAKEUP;
+
+    // Configure interrupts
+    <a href="#" onMouseOver="link('_member','USBDCallbacks_Initialized53616',this); ">USBDCallbacks_Initialized</a>();
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

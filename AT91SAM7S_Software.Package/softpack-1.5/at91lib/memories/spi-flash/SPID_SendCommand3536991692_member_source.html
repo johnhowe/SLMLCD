@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - SPID_SendCommand</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">SPID_SendCommand</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spimi_flash0',this)" class="pathLink">spi-flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">SPID_SendCommand</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','SPID_SendCommand3536991692','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','SPID_SendCommand3536991692','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 113</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','SPID_SendCommand3536991692',this); ">SPID_SendCommand</a>(<a href="#" onMouseOver="link('_class','Spid0',this); ">Spid</a> *pSpid, <a href="#" onMouseOver="link('_class','_SpidCmd0',this); ">SpidCmd</a> *pCommand)
+{
+    AT91S_SPI *pSpiHw = pSpid-&gt;<a href="#" onMouseOver="link('_member','pSpiHw52771',this); ">pSpiHw</a>;
+     unsigned int spiMr;
+         
+     // Try to get the dataflash semaphore
+     if (pSpid-&gt;<a href="#" onMouseOver="link('_member','semaphore52771',this); ">semaphore</a> == 0) {
+    
+         return <a href="#" onMouseOver="link('_member','SPID_ERROR_LOCK574716606',this); ">SPID_ERROR_LOCK</a>;
+    }
+     pSpid-&gt;<a href="#" onMouseOver="link('_member','semaphore52771',this); ">semaphore</a>--;
+
+    // Enable the SPI clock
+    <a href="#" onMouseOver="link('_member','WRITE_PMC1036653504',this); ">WRITE_PMC</a>(AT91C_BASE_PMC, PMC_PCER, (1 &lt;&lt; pSpid-&gt;<a href="#" onMouseOver="link('_member','spiId52771',this); ">spiId</a>));
+    
+    // Disable transmitter and receiver
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_PTCR, AT91C_PDC_RXTDIS | AT91C_PDC_TXTDIS);
+
+     // Write to the MR register
+     spiMr = <a href="#" onMouseOver="link('_member','READ_SPI178033780',this); ">READ_SPI</a>(pSpiHw, SPI_MR);
+     spiMr |= AT91C_SPI_PCS;
+     spiMr &amp;= ~((1 &lt;&lt; pCommand-&gt;<a href="#" onMouseOver="link('_member','spiCs210111997',this); ">spiCs</a>) &lt;&lt; 16);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_MR, spiMr);
+        
+    // Initialize the two SPI PDC buffer
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_RPR, (int) pCommand-&gt;<a href="#" onMouseOver="link('_member','pCmd210111997',this); ">pCmd</a>);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_RCR, pCommand-&gt;<a href="#" onMouseOver="link('_member','cmdSize210111997',this); ">cmdSize</a>);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_TPR, (int) pCommand-&gt;<a href="#" onMouseOver="link('_member','pCmd210111997',this); ">pCmd</a>);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_TCR, pCommand-&gt;<a href="#" onMouseOver="link('_member','cmdSize210111997',this); ">cmdSize</a>);
+    
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_RNPR, (int) pCommand-&gt;<a href="#" onMouseOver="link('_member','pData210111997',this); ">pData</a>);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_RNCR, pCommand-&gt;<a href="#" onMouseOver="link('_member','dataSize210111997',this); ">dataSize</a>);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_TNPR, (int) pCommand-&gt;<a href="#" onMouseOver="link('_member','pData210111997',this); ">pData</a>);
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_TNCR, pCommand-&gt;<a href="#" onMouseOver="link('_member','dataSize210111997',this); ">dataSize</a>);
+
+    // Initialize the callback
+    pSpid-&gt;<a href="#" onMouseOver="link('_member','pCurrentCommand52771',this); ">pCurrentCommand</a> = pCommand;
+    
+    // Enable transmitter and receiver
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_PTCR, AT91C_PDC_RXTEN | AT91C_PDC_TXTEN);
+
+    // Enable buffer complete interrupt
+    <a href="#" onMouseOver="link('_member','WRITE_SPI1036659194',this); ">WRITE_SPI</a>(pSpiHw, SPI_IER, AT91C_SPI_RXBUFF);
+    
+    return 0;    
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

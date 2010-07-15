@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - AT26_SendCommand</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">AT26_SendCommand</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spimi_flash0',this)" class="pathLink">spi-flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">AT26_SendCommand</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','AT26_SendCommand76362579','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','AT26_SendCommand76362579','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 161</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','AT26_SendCommand76362579',this); ">AT26_SendCommand</a>(<a href="#" onMouseOver="link('_class','_At260',this); ">At26</a> *pAt26, unsigned char cmd, unsigned char cmdSize, unsigned char *pData, unsigned int dataSize, unsigned int address, SpidCallback callback, void *pArgument)
+{
+    <a href="#" onMouseOver="link('_class','_SpidCmd0',this); ">SpidCmd</a> *pCommand;
+    
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pAt26);
+
+    // Check if the SPI driver is available
+    if (<a href="#" onMouseOver="link('_member','AT26_IsBusy86165468',this); ">AT26_IsBusy</a>(pAt26)) {
+    
+        return <a href="#" onMouseOver="link('_member','AT26_ERROR_BUSY574741268',this); ">AT26_ERROR_BUSY</a>;
+    }
+    
+    // Store command and address in command buffer
+    pAt26-&gt;<a href="#" onMouseOver="link('_member','pCmdBuffer25515',this); ">pCmdBuffer</a>[0] = (cmd &amp; 0x000000FF)
+                           | ((address &amp; 0x0000FF) &lt;&lt; 24)
+                           | ((address &amp; 0x00FF00) &lt;&lt; 8)
+                           | ((address &amp; 0xFF0000) &gt;&gt; 8);
+
+    // Update the SPI transfer descriptor
+    pCommand = &amp;(pAt26-&gt;<a href="#" onMouseOver="link('_member','command25515',this); ">command</a>);
+     pCommand-&gt;<a href="#" onMouseOver="link('_member','cmdSize210111997',this); ">cmdSize</a> = cmdSize;
+     pCommand-&gt;<a href="#" onMouseOver="link('_member','pData210111997',this); ">pData</a> = pData;
+     pCommand-&gt;<a href="#" onMouseOver="link('_member','dataSize210111997',this); ">dataSize</a> = dataSize;
+     pCommand-&gt;<a href="#" onMouseOver="link('_member','callback210111997',this); ">callback</a> = callback;
+     pCommand-&gt;<a href="#" onMouseOver="link('_member','pArgument210111997',this); ">pArgument</a> = pArgument;
+    
+     // Start the SPI transfer
+     if (<a href="#" onMouseOver="link('_member','SPID_SendCommand3536991692',this); ">SPID_SendCommand</a>(pAt26-&gt;<a href="#" onMouseOver="link('_member','pSpid25515',this); ">pSpid</a>, pCommand)) {
+
+         return <a href="#" onMouseOver="link('_member','AT26_ERROR_SPI574741268',this); ">AT26_ERROR_SPI</a>;
+     }
+ 
+     return 0;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

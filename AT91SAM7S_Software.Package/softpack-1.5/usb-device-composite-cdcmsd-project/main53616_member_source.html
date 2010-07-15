@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','usbmi_devicemi_compositemi_cdcmsdmi_project0',this)" class="pathLink">usb-device-composite-cdcmsd-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 811</div>
+<pre class="codeExamples">
+int <a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">main</a>()
+{
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_CONFIGURE1551293405',this); ">TRACE_CONFIGURE</a>(DBGU_STANDARD, 115200, BOARD_MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- USB Composite Device Project %s --\n\r", SOFTPACK_VERSION);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- %s\n\r", BOARD_NAME);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+
+    // If they are present, configure Vbus &amp; Wake-up pins
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_InitializeInterrupts171142247',this); ">PIO_InitializeInterrupts</a>(0);
+
+    // ----- CDC Function Initialize
+    // Configure USART
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(pinsUsart, <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_LISTSIZE3636917727',this); ">PIO_LISTSIZE</a>(pinsUsart));
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_US0;
+    AT91C_BASE_US0-&gt;US_IDR = 0xFFFFFFFF;
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/usart/USART_Configure1484898319',this); ">USART_Configure</a>(AT91C_BASE_US0,
+                    USART_MODE_ASYNCHRONOUS,
+                    115200,
+                    MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/usart/USART_SetTransmitterEnabled815714518',this); ">USART_SetTransmitterEnabled</a>(AT91C_BASE_US0, 1);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/usart/USART_SetReceiverEnabled815714518',this); ">USART_SetReceiverEnabled</a>(AT91C_BASE_US0, 1);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_US0, 0, ISR_Usart0);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_US0);
+
+    // Configure timer 0
+    AT91C_BASE_PMC-&gt;PMC_PCER = (1 &lt;&lt; AT91C_ID_TC0);
+    AT91C_BASE_TC0-&gt;TC_CCR = AT91C_TC_CLKDIS;
+    AT91C_BASE_TC0-&gt;TC_IDR = 0xFFFFFFFF;
+    AT91C_BASE_TC0-&gt;TC_CMR = AT91C_TC_CLKS_TIMER_DIV5_CLOCK
+                             | AT91C_TC_CPCSTOP
+                             | AT91C_TC_CPCDIS
+                             | AT91C_TC_WAVESEL_UP_AUTO
+                             | AT91C_TC_WAVE;
+    AT91C_BASE_TC0-&gt;TC_RC = 0x00FF;
+    AT91C_BASE_TC0-&gt;TC_IER = AT91C_TC_CPCS;
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_TC0, 0, ISR_Timer0);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_TC0);
+
+    <a href="#" onMouseOver="link('_member','MSDDInitialize122',this); ">MSDDInitialize</a>();
+
+    // USB COMPOSITE driver initialization
+    <a href="#" onMouseOver="link('_member','../at91lib/usb/device/composite/COMPOSITEDDriver_Initialize122',this); ">COMPOSITEDDriver_Initialize</a>();
+
+    // connect if needed
+    <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/VBUS_CONFIGURE1412554214',this); ">VBUS_CONFIGURE</a>();
+
+    // Driver loop
+    while (1) {
+
+        // Device is not configured
+        if (<a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_GetState53616',this); ">USBD_GetState</a>() &lt; <a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_STATE_CONFIGURED1024481039',this); ">USBD_STATE_CONFIGURED</a>) {
+
+            // Connect pull-up, wait for configuration
+            <a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_Connect53616',this); ">USBD_Connect</a>();
+            while (<a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_GetState53616',this); ">USBD_GetState</a>() &lt; <a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_STATE_CONFIGURED1024481039',this); ">USBD_STATE_CONFIGURED</a>);
+
+            // Start receiving data on the USART
+            usartCurrentBuffer = 0;
+            <a href="#" onMouseOver="link('_member','../at91lib/peripherals/usart/USART_ReadBuffer142530425',this); ">USART_ReadBuffer</a>(AT91C_BASE_US0, usartBuffers[0], DATABUFFERSIZE);
+            <a href="#" onMouseOver="link('_member','../at91lib/peripherals/usart/USART_ReadBuffer142530425',this); ">USART_ReadBuffer</a>(AT91C_BASE_US0, usartBuffers[1], DATABUFFERSIZE);
+            AT91C_BASE_US0-&gt;US_IER = AT91C_US_ENDRX
+                                     | AT91C_US_FRAME
+                                     | AT91C_US_OVER;
+            AT91C_BASE_TC0-&gt;TC_CCR = AT91C_TC_CLKEN | AT91C_TC_SWTRG;
+
+            // Start receiving data on the USB
+            <a href="#" onMouseOver="link('_member','../at91lib/usb/device/cdc-serial/CDCDSerialDriver_Read1390444857',this); ">CDCDSerialDriver_Read</a>(0, usbSerialBuffer0,
+                                  DATABUFFERSIZE,
+                                  (TransferCallback) UsbDataReceived0,
+                                  0);
+        }
+        else {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/usb/device/composite/MSDDriver_StateMachine53616',this); ">MSDDriver_StateMachine</a>();
+        }
+        if( <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> == <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_SUSPEND1756114010',this); ">STATE_SUSPEND</a> ) {
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("suspend  !\n\r");
+            LowPowerMode();
+            <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> = <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_IDLE1756114010',this); ">STATE_IDLE</a>;
+        }
+        if( <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> == <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_RESUME1756114010',this); ">STATE_RESUME</a> ) {
+            // Return in normal MODE
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("resume !\n\r");
+            NormalPowerMode();
+            <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> = <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_IDLE1756114010',this); ">STATE_IDLE</a>;
+        }
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

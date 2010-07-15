@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - Wait</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">Wait</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','gettingmi_startedmi_project0',this)" class="pathLink">getting-started-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">Wait</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','Wait2590682239','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','Wait2590682239','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 326</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','Wait2590682239',this); ">Wait</a>(unsigned long delay)
+{
+    volatile unsigned int start = <a href="#" onMouseOver="link('_member','timestamp0',this); ">timestamp</a>;
+    unsigned int elapsed;
+    do {
+        elapsed = <a href="#" onMouseOver="link('_member','timestamp0',this); ">timestamp</a>;
+        elapsed -= start;
+    }
+    while (elapsed &lt; delay);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

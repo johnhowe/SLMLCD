@@ -1,0 +1,186 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - SDSPI_SendCommand</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">SDSPI_SendCommand</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','sdmmc0',this)" class="pathLink">sdmmc</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">SDSPI_SendCommand</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','SDSPI_SendCommand3300691821','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','SDSPI_SendCommand3300691821','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 375</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','SDSPI_SendCommand3300691821',this); ">SDSPI_SendCommand</a>(<a href="#" onMouseOver="link('_class','SdSpi0',this); ">SdSpi</a> *pSdSpi, <a href="#" onMouseOver="link('_class','_SdSpiCmd0',this); ">SdSpiCmd</a> *pSdSpiCmd)
+{
+    AT91S_SPI *pSpiHw = pSdSpi-&gt;<a href="#" onMouseOver="link('_member','pSpiHw58818',this); ">pSpiHw</a>;
+    unsigned char CmdToken[6];
+    unsigned char *pData;
+    unsigned int blockSize;
+    unsigned int i;
+    unsigned char error;
+    unsigned char dataHeader;
+    unsigned int dataRetry1 = 100;
+    unsigned int dataRetry2 = 100;
+    unsigned char crc[2];
+    unsigned char crcPrev = 0;
+    unsigned char crcPrev2 = 0;
+
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pSdSpi);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pSpiHw);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pCommand);
+
+    CmdToken[0] = pCommand-&gt;cmd &amp; 0x3F;
+    pData = pCommand-&gt;pData;
+    blockSize = pCommand-&gt;blockSize;
+
+    <a href="#" onMouseOver="link('_member','SDSPI_MakeCmd3422283378',this); ">SDSPI_MakeCmd</a>((unsigned char *)&amp;CmdToken, pCommand-&gt;arg);
+
+    // Command is now being executed
+    pSdSpi-&gt;<a href="#" onMouseOver="link('_member','pCommand58818',this); ">pCommand</a> = pCommand;
+    pCommand-&gt;<a href="#" onMouseOver="link('_member','status228892045',this); ">status</a> = <a href="#" onMouseOver="link('_member','SDSPI_STATUS_PENDING3306684252',this); ">SDSPI_STATUS_PENDING</a>;
+
+    // Send the command
+    if((pCommand-&gt;conTrans == <a href="#" onMouseOver="link('_member','SPI_NEW_TRANSFER3457679196',this); ">SPI_NEW_TRANSFER</a>) || (blockSize == 0)) {
+
+        for(i = 0; i &lt; 6; i++) {
+            error = <a href="#" onMouseOver="link('_member','SDSPI_Write4065556267',this); ">SDSPI_Write</a>(pSdSpi, &amp;CmdToken[i], 1);
+            if (error) {
+                <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Error: %d\n\r", error);
+                return error;
+            }
+        }
+        // Specific for Cmd12()
+        if ((pCommand-&gt;cmd &amp; 0x3F) == 12) {
+            if( 1 == <a href="#" onMouseOver="link('_member','SDSPI_Wait2925043478',this); ">SDSPI_Wait</a>(pSdSpi, 2) ) {
+                <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Pb Send command 12\n\r");
+            }
+        }
+        if (pCommand-&gt;pResp) {
+            error = <a href="#" onMouseOver="link('_member','SDSPI_GetCmdResp3300691821',this); ">SDSPI_GetCmdResp</a>(pSdSpi, pCommand);
+            if (error) {
+                <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Error: %d\n\r", error);
+                return error;
+            }
+        }
+    }
+
+    if( (blockSize &gt; 0) &amp;&amp; (pCommand-&gt;nbBlock == 0) ) {
+        pCommand-&gt;nbBlock = 1;
+    }
+
+    // For data block operations
+    while (pCommand-&gt;nbBlock &gt; 0) {
+
+        // If data block size is invalid, return error
+        if (blockSize == 0) {
+            <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Block Size = 0\n\r");
+            return 1;
+        }
+
+        // DATA transfer from card to host
+        if (pCommand-&gt;isRead) {
+            do {
+                <a href="#" onMouseOver="link('_member','SDSPI_Read4065556267',this); ">SDSPI_Read</a>(pSdSpi, &amp;dataHeader, 1);
+                dataRetry1 --;
+                if (dataHeader == SDSPI_START_BLOCK_1) {
+                    break;
+                }
+                else if((dataHeader &amp; 0xf0) == 0x00) {
+                    pCommand-&gt;status = <a href="#" onMouseOver="link('_member','SDSPI_STATUS_ERROR3306684252',this); ">SDSPI_STATUS_ERROR</a>;
+                    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Data Error 0x%X!\n\r", dataHeader);
+                    return 1;
+                }
+            } while(dataRetry1 &gt; 0);
+
+            if (dataRetry1 == 0) {
+                <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Timeout dataretry1\n\r");
+                return 1;
+            }
+
+            <a href="#" onMouseOver="link('_member','SDSPI_Read4065556267',this); ">SDSPI_Read</a>(pSdSpi, pData, blockSize);
+
+            // Specific for Cmd9()
+            if ((pCommand-&gt;cmd &amp; 0x3f) != 0x9) {
+
+                <a href="#" onMouseOver="link('_member','SDSPI_Read4065556267',this); ">SDSPI_Read</a>(pSdSpi, crc, 2);
+#ifdef SDSPI_CRC_ON
+                // Check data CRC
+                <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Check Data CRC\n\r");
+                crcPrev = 0;
+                crcPrev2 = 0;
+                if (crc[0] != ((crc_itu_t(crcPrev, pData, blockSize) &amp; 0xff00) &gt;&gt; 8 )
+                 || crc[1] !=  (crc_itu_t(crcPrev2, pData, blockSize) &amp; 0xff)) {
+                    TRACE_ERROR("CRC error 0x%X 0x%X 0x%X\n\r", \
+                        crc[0], crc[1], crc_itu_t(pData, blockSize));
+                    return 1;
+                }
+#endif
+            }
+        }
+
+        // DATA transfer from host to card
+        else {
+            <a href="#" onMouseOver="link('_member','SDSPI_NCS88255927',this); ">SDSPI_NCS</a>(pSdSpi);
+            if ((pCommand-&gt;conTrans == <a href="#" onMouseOver="link('_member','SPI_CONTINUE_TRANSFER3457679196',this); ">SPI_CONTINUE_TRANSFER</a>) || ((pCommand-&gt;cmd &amp; 0x3f) == 25)) {
+                dataHeader = SDSPI_START_BLOCK_2;
+            }
+            else {
+                dataHeader = SDSPI_START_BLOCK_1;
+            }
+
+            crcPrev = 0;
+            crc[0] = (crc_itu_t(crcPrev, pData, blockSize) &amp; 0xff00) &gt;&gt; 8;
+            crcPrev2 = 0;
+            crc[1] = (crc_itu_t(crcPrev2, pData, blockSize) &amp; 0xff);
+            <a href="#" onMouseOver="link('_member','SDSPI_Write4065556267',this); ">SDSPI_Write</a>(pSdSpi, &amp;dataHeader, 1);
+            <a href="#" onMouseOver="link('_member','SDSPI_Write4065556267',this); ">SDSPI_Write</a>(pSdSpi, pData, blockSize);
+            <a href="#" onMouseOver="link('_member','SDSPI_Write4065556267',this); ">SDSPI_Write</a>(pSdSpi, crc, 2);
+
+            // If status bits in data response is not "data accepted", return error
+            if ((<a href="#" onMouseOver="link('_member','SDSPI_GetDataResp3300691821',this); ">SDSPI_GetDataResp</a>(pSdSpi, pCommand) &amp; 0xe) != 0x4) {
+                TRACE_ERROR("Write resp error!\n\r");
+                return 1;
+            }
+
+            do {
+                if (SDSPI_WaitDataBusy(pSdSpi) == 0) {
+                    break;
+                }
+                dataRetry2--;
+            } while(dataRetry2 &gt; 0);
+        }
+        pData += blockSize;
+        pCommand-&gt;nbBlock--;
+    }
+
+    if (pCommand-&gt;status == <a href="#" onMouseOver="link('_member','SDSPI_STATUS_PENDING3306684252',this); ">SDSPI_STATUS_PENDING</a>) {
+        pCommand-&gt;status = 0;
+    }
+
+    //TRACE_DEBUG("end SDSPI_SendCommand\n\r");
+    return 0;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

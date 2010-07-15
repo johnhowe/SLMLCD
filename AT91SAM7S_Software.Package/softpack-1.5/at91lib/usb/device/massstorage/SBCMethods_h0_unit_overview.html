@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - SBCMethods.h</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">SBCMethods.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">SBCMethods.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5614","aID5614","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','SBCMethods_h0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','SBCMethods_h0','_overview',this)" class="tabLinkActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="paragraphTable"></div>
+<table cellspacing="0"cellpadding=0 border=0 class="widthAndBorderTop">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Methods</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_GetCommandInformation2664588945',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;SBC_GetCommandInformation<BR>(void * command, unsigned int * length, unsigned char * type, MSDLun * lun)',CAPTION,'<strong>Brief description</strong><BR>Return information about the transfer length and<BR>direction expected             by the device for a particular command.');" onmouseout="return nd();">&nbsp;SBC_GetCommandInformation</a></TD>
+<TD class="paddingNormal2"><span class="" >Return information about the transfer length and direction expected by the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> for a particular command.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_ProcessCommand3770566435',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;SBC_ProcessCommand&nbsp;&nbsp;(MSDLun * lun, MSDCommandState * commandState)',CAPTION,'<strong>Brief description</strong><BR>Processes a SBC command by dispatching it to a subfunction.');" onmouseout="return nd();">&nbsp;SBC_ProcessCommand</a></TD>
+<TD class="paddingNormal2"><span class="" >Processes a SBC command by dispatching it to a subfunction.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_UpdateSenseData1868461293',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;SBC_UpdateSenseData<BR>(SBCRequestSenseData * requestSenseData, unsigned char senseKey, unsigned char additionalSenseCode, unsigned char additionalSenseCodeQualifier)',CAPTION,'<strong>Brief description</strong><BR>Updates the sense data of a LUN with the given key and codes.');" onmouseout="return nd();">&nbsp;SBC_UpdateSenseData</a></TD>
+<TD class="paddingNormal2"><span class="" >Updates the sense data of a LUN with the given key and codes.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Defines</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_STATE_NEXT_BLOCK2450065722',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;SBC_STATE_NEXT_BLOCK',CAPTION,'<strong>Brief description</strong><BR>Start next command block.');" onmouseout="return nd();">&nbsp;SBC_STATE_NEXT_BLOCK</a></TD>
+<TD class="paddingNormal2"><span class="" >Start next command block.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_STATE_READ2450065722',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;SBC_STATE_READ',CAPTION,'<strong>Brief description</strong><BR>Start of reading bulk data.');" onmouseout="return nd();">&nbsp;SBC_STATE_READ</a></TD>
+<TD class="paddingNormal2"><span class="" >Start of reading bulk data.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_STATE_WAIT_READ2450065722',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;SBC_STATE_WAIT_READ',CAPTION,'<strong>Brief description</strong><BR>Waiting for the bulk data reading complete.');" onmouseout="return nd();">&nbsp;SBC_STATE_WAIT_READ</a></TD>
+<TD class="paddingNormal2"><span class="" >Waiting for the bulk data reading complete.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_STATE_WAIT_WRITE2450065722',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;SBC_STATE_WAIT_WRITE',CAPTION,'<strong>Brief description</strong><BR>Waiting for the bulk data sending complete.');" onmouseout="return nd();">&nbsp;SBC_STATE_WAIT_WRITE</a></TD>
+<TD class="paddingNormal2"><span class="" >Waiting for the bulk data sending complete.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','SBC_STATE_WRITE2450065722',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;SBC_STATE_WRITE',CAPTION,'<strong>Brief description</strong><BR>Start writing bulk data to host.');" onmouseout="return nd();">&nbsp;SBC_STATE_WRITE</a></TD>
+<TD class="paddingNormal2"><span class="" >Start writing bulk data to host.<br>
+</TD>
+</TR>
+</table>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_overview');
+</script>

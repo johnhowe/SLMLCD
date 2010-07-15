@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main.c</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main.c</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','basicmi_twimi_eeprommi_project0',this)" class="pathLink">basic-twi-eeprom-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main.c</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5629","aID5629","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','main_c0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','main_c0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+This file contains all the specific code for the basic-twi-eeprom-project.<br>
+<br>
+<div class="userParagraph3">Contents</div>
+ The code can be roughly broken down as follows:<ul>
+<li>TWI interrupt handler</li>
+<li>The <a href="#" OnMouseOver="link('_member','../usb-device-massstorage-project/main53616',this)">main</a> function, which implements the program behavior<ul>
+<li>Configure TWI</li>
+<li>Sets the first and second page of the EEPROM to all zeroes</li>
+<li>Writes pattern in page 0; Reads back data in page 0 and compare with original pattern (polling).</li>
+<li>Writes pattern in page 1; Reads back data in page 1 and compare with original pattern (interrupts).</li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+Please refer to the list of functions in the <b>Overview</b> tab of this unit for more detailed information.<br>
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

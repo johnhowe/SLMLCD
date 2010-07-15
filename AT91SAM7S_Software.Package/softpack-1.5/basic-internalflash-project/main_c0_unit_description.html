@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main.c</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main.c</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','basicmi_internalflashmi_project0',this)" class="pathLink">basic-internalflash-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main.c</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5623","aID5623","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','main_c0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','main_c0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+This file contains all the specific code for the basic-internal-project. It tests the embedded flash present on the evaluation kit by unlock and writing last page of internal flash.<br>
+<br>
+<div class="userParagraph3">Contents</div>
+ The code can be roughly broken down as follows:<ul>
+<li>The <a href="#" OnMouseOver="link('_member','../basic-dataflash-project/main53616',this)">main()</a> function, which implements the program behavior.<ul>
+<li>Initializes an FLash driver.</li>
+<li>Unlock the whole page of the flash.</li>
+<li>It writes a pattern in the last page of the flash, and checks it back.</li>
+<li>It locks the last region of the flash, and verifies that the status is updated accordingly.</li>
+<li>It unlocks the last region and verifies that it the status is updated accordingly</li>
+<li>Lastly, GPNVM 1 is cleared and set, the status being checked for update between the operations (the original <a href="#" OnMouseOver="link('_member','../basic-rtt-project/state0',this)">state</a> of the GPNVM is restored after this step)</li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+<div class="userParagraph3">See also</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/memories/flash/flash0',this)">flash</a>: FLASHD interface driver.</li>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/peripherals/efc/efc0',this)">efc</a>: EFC peripheral interface.</li>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/peripherals/eefc/eefc0',this)">eefc</a>: EEFC peripheral interface.</li>
+</ul>
+
+<br>
+Please refer to the list of functions in the <b>Overview</b> tab of this unit for more detailed information.<br>
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

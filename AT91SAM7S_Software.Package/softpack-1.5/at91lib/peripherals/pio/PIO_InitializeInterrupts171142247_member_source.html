@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - PIO_InitializeInterrupts</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">PIO_InitializeInterrupts</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','pio0',this)" class="pathLink">pio</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">PIO_InitializeInterrupts</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','PIO_InitializeInterrupts171142247','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','PIO_InitializeInterrupts171142247','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 223</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','PIO_InitializeInterrupts171142247',this); ">PIO_InitializeInterrupts</a>(unsigned int priority)
+{
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize()\n\r");
+
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>((priority &amp; ~AT91C_AIC_PRIOR) == 0);
+
+    // Reset sources
+    numSources = 0;
+
+#ifdef AT91C_ID_PIOA
+    // Configure PIO interrupt sources
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOA\n\r");
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOA;
+    AT91C_BASE_PIOA-&gt;PIO_ISR;
+    AT91C_BASE_PIOA-&gt;PIO_IDR = 0xFFFFFFFF;
+    <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOA, priority, InterruptHandler);
+    <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOA);
+#endif
+
+#ifdef AT91C_ID_PIOB
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOB\n\r");
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOB;
+    AT91C_BASE_PIOB-&gt;PIO_ISR;
+    AT91C_BASE_PIOB-&gt;PIO_IDR = 0xFFFFFFFF;
+    <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOB, priority, InterruptHandler);
+    <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOB);
+#endif
+
+#ifdef AT91C_ID_PIOC
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOC\n\r");
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOC;
+    AT91C_BASE_PIOC-&gt;PIO_ISR;
+    AT91C_BASE_PIOC-&gt;PIO_IDR = 0xFFFFFFFF;
+    <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOC, priority, InterruptHandler);
+    <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOC);
+#endif
+
+#ifdef AT91C_ID_PIOD
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOD\n\r");
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOD;
+    AT91C_BASE_PIOC-&gt;PIO_ISR;
+    AT91C_BASE_PIOC-&gt;PIO_IDR = 0xFFFFFFFF;
+    <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOD, priority, InterruptHandler);
+    <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOD);
+#endif
+
+#ifdef AT91C_ID_PIOE
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOE\n\r");
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOE;
+    AT91C_BASE_PIOC-&gt;PIO_ISR;
+    AT91C_BASE_PIOC-&gt;PIO_IDR = 0xFFFFFFFF;
+    <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOE, priority, InterruptHandler);
+    <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOE);
+#endif
+
+#if defined(AT91C_ID_PIOABCD)
+    // Treat PIOABCD interrupts
+    #if !defined(AT91C_ID_PIOA) \
+     &amp;&amp; !defined(AT91C_ID_PIOB) \
+     &amp;&amp; !defined(AT91C_ID_PIOC) \
+     &amp;&amp; !defined(AT91C_ID_PIOD)
+
+        <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOABCD\n\r");
+        AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOABCD;
+        AT91C_BASE_PIOA-&gt;PIO_ISR;
+        AT91C_BASE_PIOA-&gt;PIO_IDR = 0xFFFFFFFF;
+        <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOABCD, priority, InterruptHandler);
+        <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOABCD);
+    #endif
+#endif
+
+#if defined(AT91C_ID_PIOABCDE)
+    // Treat PIOABCDE interrupts
+    #if !defined(AT91C_ID_PIOA) \
+     &amp;&amp; !defined(AT91C_ID_PIOB) \
+     &amp;&amp; !defined(AT91C_ID_PIOC) \
+     &amp;&amp; !defined(AT91C_ID_PIOD) \
+     &amp;&amp; !defined(AT91C_ID_PIOE)
+
+        <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOABCDE\n\r");
+        AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOABCDE;
+        AT91C_BASE_PIOA-&gt;PIO_ISR;
+        AT91C_BASE_PIOA-&gt;PIO_IDR = 0xFFFFFFFF;
+        <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOABCDE, priority, InterruptHandler);
+        <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOABCDE);
+    #endif
+#endif
+
+#if defined(AT91C_ID_PIOCDE)
+    // Treat PIOCDE interrupts
+    #if !defined(AT91C_ID_PIOC) \
+     &amp;&amp; !defined(AT91C_ID_PIOD) \
+     &amp;&amp; !defined(AT91C_ID_PIOE)
+
+        <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("PIO_Initialize: Configuring PIOC\n\r");
+        AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_PIOCDE;
+        AT91C_BASE_PIOC-&gt;PIO_ISR;
+        AT91C_BASE_PIOC-&gt;PIO_IDR = 0xFFFFFFFF;
+        <a href="#" onMouseOver="link('_member','../aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_PIOCDE, priority, InterruptHandler);
+        <a href="#" onMouseOver="link('_member','../aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_PIOCDE);
+    #endif
+#endif
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

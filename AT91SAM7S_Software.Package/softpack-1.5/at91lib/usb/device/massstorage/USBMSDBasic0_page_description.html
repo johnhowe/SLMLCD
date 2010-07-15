@@ -1,0 +1,250 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USB MSD Basic</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USB MSD Basic</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USB MSD Basic</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5431","aID5431","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','USBMSDBasic0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">massstorage.dir::USB MSD Basic</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding">This page gives generic details on the MSD class.<br>
+<div class="userParagraph1">Purpose</div>
+ The MSD class defines how devices such as a hard disk, a USB floppy disk drive or a disk-on-key shall operate on the USB. These devices are referred to as mass storage devices, since they usually offer a high storage capacity. When plugged to a PC, a device complying to the MSD specification is accessed like any other disk on the system.<br>
+<br>
+</div>
+<div class="padding">In practice, the specification only defines a way to wrap existing data transfer protocols, such as SCSI or the Reduced Block Commands (RBC) set. A list of the supported protocols and their uses will be given in the following section.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Data Transfer Protocols</div>
+ The <em>Mass Storagae Class Specification Overview 1.2</em> supports the following set of devices:<br>
+<br>
+</div>
+<div class="padding">Protocols for MSD devices<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">Subclass Code</td><td class="userPaddingHeadMultiColumn1">Command Block Spec.</td><td class="userPaddingHeadMultiColumn2">Used by<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">01h</td><td class="userPaddingNormal1">Reduced Block Commands(RBC)</td><td class="userPaddingNormal2">Flash devices<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">02h</td><td class="userPaddingNormal1">SFF-8020i, MMC-2</td><td class="userPaddingNormal2">CD &amp; DVD devices<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">03h</td><td class="userPaddingNormal1">QIC-157</td><td class="userPaddingNormal2">Tape devices<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">04h</td><td class="userPaddingNormal1">UFI</td><td class="userPaddingNormal2">Floppy disk drives<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">05h</td><td class="userPaddingNormal1">SFF-8070i</td><td class="userPaddingNormal2">Floppy disk drives<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">06h</td><td class="userPaddingNormal1">SCSI transparent command set</td><td class="userPaddingNormal2">Any</td></tr>
+</table>
+<br>
+</div>
+<div class="padding">The SCSI transparent command set comprises all SCSI-related specifications, such as SCSI Primary Commands (SPC), SCSI Block Commands (SBC), and so on. A command will be issued by the host to determine exactly with which standard the device is compliant.<br>
+<br>
+</div>
+<div class="padding">The protocol used by the device is specified in its Interface descriptor, in the <em>bInterfaceSubclass</em> field.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Transfer Protocols</div>
+ There are actually two different transport protocols for the MSD class:<ul>
+<li>Control/Bulk/Interface (CBI) transport</li>
+<li>Bulk-Only Transport (BOT)</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">These two methods are described in two separate stand-alone documents. CBI can be considered obsolete and is being completely replaced by BOT. It was originally targeted at full-speed floppy disk drives. Therefore, the rest of this document will talk about Bulk-Only Transport exclusively.<br>
+<br>
+</div>
+<div class="padding">Transport Protocol Codes<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">bInterfaceProtocol</td><td class="userPaddingHeadMultiColumn2">Protocol Implementation<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">00h</td><td class="userPaddingNormal2">Control/Bulk/Interrupt protocol (with command completion interrupt)<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">01h</td><td class="userPaddingNormal2">Control/Bulk/Interrupt protocol (without command completion interrupt)<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">50h</td><td class="userPaddingNormal2">Bulk-only transport</td></tr>
+</table>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Architecture</div>
+ ...<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Interfaces &amp; Endpoints</div>
+ An MSD device only needs one single interface. The bInterfaceClass field of the interface descriptor should be set to MSD class code (0x08), the corresponding data transfer protocol code in the <em>bInterfaceSubclass</em> field and transport protocol code in the <em>bInterfaceProtocol</em> field can be found in the tables on above.<br>
+<br>
+</div>
+<div class="padding">Exactly three endpoints (when using the Bulk-Only Transport protocol) are necessary for MSD devices.<br>
+<br>
+</div>
+<div class="padding">The first one is the Control endpoint 0, and is used for class-specific requests and for clearing Halt conditions on the other two endpoints. Endpoints are halted in response to errors and host bad behavior during data transfers, and the CLEAR_FEATURE request is consequently used to return them to a functional <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding">The other two endpoints, which are of type Bulk, are used for transferring commands and data over the bus. There must be one Bulk-IN and one Bulk-OUT endpoint.<br>
+<br>
+</div>
+<div class="padding"><div align="center">
+<img src="MSDDriverArch.png" alt="MSDDriverArch.png">
+<strong><br>Mass Storage Device Driver Architecture</strong></div>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Class-Specific Descriptors</div>
+ No class-specific descriptors for an MSD device using the Bulk-only transfport protocol.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Class-Specific Requests</div>
+ Two class specific requests should be handled.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">GetMaxLUN</div>
+ A device can feature one or more Logical Unit (LU). Each of these units will be treated as a separate disk when plugged to a computer. A device can have up to 15 logical units.<br>
+<br>
+</div>
+<div class="padding">The GET_MAX_LUN request is issued by the host to determine the maximum Logical Unit Number (LUN) supported by the device. This is not equivalent to the number of LU on the device; since units are numbered starting from 0, a device with 5 LUs should report a value of 4, which will be the index of the fifth unit.<br>
+<br>
+</div>
+<div class="padding">Optionally, a device with only one LUN may STALL this request instead of returning a value of zero.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Bulk-Only Mass Storage Reset</div>
+ This request is used to reset the <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> of the device and prepare it to receive commands and data. Note that the data toggle bits must not be altered by a RESET command; same for the Halt <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> of endpoints, i.e., halted endpoints must not be reset to a normal <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Command/Data/Status</div>
+ Each MSD transaction is divided into three steps:<ul>
+<li>Command stage</li>
+<li>Data stage (optional)</li>
+<li>Status stage</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">During the command stage, a Command Block Wrapper (CBW) is transmitted by the host to the device. The CBW describes several parameters of the transaction (direction, length, LUN) and carries a variable-length command block. The command block contains data in the format defined by the transfer protocol used by the device.<br>
+<br>
+</div>
+<div class="padding">Command Block Wrapper Data Format<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">Offset</td><td class="userPaddingHeadMultiColumn1">Field Name</td><td class="userPaddingHeadMultiColumn1">Length</td><td class="userPaddingHeadMultiColumn2">Comment<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">dCBWSignature</td><td class="userPaddingNormal1">4 bytes</td><td class="userPaddingNormal2">Signature to identify CBW, must be 43425355h<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">4</td><td class="userPaddingNormal1">dCBWTag</td><td class="userPaddingNormal1">4 bytes</td><td class="userPaddingNormal2">Tag sent by the host, echoed in the CSW<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">8</td><td class="userPaddingNormal1">dCBWTransferLength</td><td class="userPaddingNormal1">4 bytes</td><td class="userPaddingNormal2">Length of transfer during the data stage<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">12</td><td class="userPaddingNormal1">bmCBWFlags</td><td class="userPaddingNormal1">1 byte</td><td class="userPaddingNormal2">Bits 0-6: Reserved/obsolete<br>
+ Bit 7: <a href="#" OnMouseOver="link('_class','../core/Transfer0',this)">Transfer</a> direction (0 = OUT, 1 = IN)<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">13</td><td class="userPaddingNormal1">bCBWLUN</td><td class="userPaddingNormal1">1 byte</td><td class="userPaddingNormal2">Bits 0-3: LUN to which the command is sent<br>
+ Bits 4-7: Reserved<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">14</td><td class="userPaddingNormal1">bCBWCBLength</td><td class="userPaddingNormal1">1 byte</td><td class="userPaddingNormal2">Bits 0-5: Length of command block in bytes<br>
+ Bits 6-7: Reserved<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">15</td><td class="userPaddingNormal1">CBWCB</td><td class="userPaddingNormal1">0-16 bytes</td><td class="userPaddingNormal2">Command block to be executed by the device</td></tr>
+</table>
+<br>
+</div>
+<div class="padding">After the device has received and interpreted the command, an optional data stage may take place if the command requires it. During this step, data is transferred either to or from the device depending on the command, in several IN/OUT transfers.<br>
+<br>
+</div>
+<div class="padding">Once the data stage is complete, the host issues a final IN request on the Bulk-IN endpoint of the device to request the Command Status Wrapper (CSW). The CSW is used to report correct or incorrect execution of the command, as well as indicating the length of remaining data that has not been transferred.<br>
+<br>
+</div>
+<div class="padding">Command Status Wrapper<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">Offset</td><td class="userPaddingHeadMultiColumn1">Field Name</td><td class="userPaddingHeadMultiColumn1">Length</td><td class="userPaddingHeadMultiColumn2">Comment<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">dCSWSignature</td><td class="userPaddingNormal1">4 bytes</td><td class="userPaddingNormal2">Signature to identify CSW, must be 53425355h<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">4</td><td class="userPaddingNormal1">dCSWTag</td><td class="userPaddingNormal1">4 bytes</td><td class="userPaddingNormal2">Copy of previous CBW tag<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">8</td><td class="userPaddingNormal1">dCSWDataResidue</td><td class="userPaddingNormal1">4 bytes</td><td class="userPaddingNormal2">Difference between expected and real transfer length<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">12</td><td class="userPaddingNormal1">bCSWStatus</td><td class="userPaddingNormal1">1 byte</td><td class="userPaddingNormal2">Indicates the success or failure of the command</td></tr>
+</table>
+<br>
+</div>
+<div class="padding">These steps are all performed on the two Bulk endpoints, and do not involve Control endpoint 0 at all.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Reset Recovery</div>
+ When severe errors occur during command or data transfers (as defined in the <em>Mass Storage Bulk-only Transport 1.0</em> document), the device must halt both Bulk endpoints and wait for a <b>Reset Recovery</b> procedure. The Reset Recovery sequence goes as follows:<ul>
+<li>The host issues a Bulk-Only Mass Storage Reset request</li>
+<li>The host issues two <b>CLEAR_FEATURE</b> requests to unhalt each endpoint</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">A device waiting for a Reset Recovery must not carry out CLEAR_FEATURE requests trying to unhalt either Bulk endpoint until after a Reset request has been received. This enables the host to distinguish between severe and minor errors.<br>
+<br>
+</div>
+<div class="padding">The only major error defined by the Bulk-Only Transport standard is when a CBW is not valid. This means one or more of the following:<ul>
+<li>The CBW is not received after a CSW has been sent or a reset.</li>
+<li>The CBW is not exactly 31 bytes in length.</li>
+<li>The dCBWSignature field of the CBW is not equal to 43425355h.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Host Drivers</div>
+ Almost all operating systems now provide a generic driver for the MSD class. However, the set of supported data transfer protocols may vary. For example, Microsoft Windows does not currently support the Reduced Block Command set.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Page was generated from the following file:</div>
+<div class="paddingMembers"><LI>massstorage.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>

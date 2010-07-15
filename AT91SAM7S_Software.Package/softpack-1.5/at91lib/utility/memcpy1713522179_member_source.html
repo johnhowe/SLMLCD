@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - memcpy</TITLE>
+<script type="text/javascript" src="../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../common/";
+ var relPathToHelpDir = "../../../common/help/";
+ var toSearchPage     = "_search','../../../search";
+ Body1();
+</script>
+<div class="headerPage">memcpy</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','utility0',this)" class="pathLink">utility</A><img src="../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">memcpy</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','memcpy1713522179','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','memcpy1713522179','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 63</div>
+<pre class="codeExamples">
+void * <a href="#" onMouseOver="link('_member','memcpy1713522179',this); ">memcpy</a>(void *pDestination, const void *pSource, size_t num)
+{
+    unsigned char *pByteDestination;
+    unsigned char *pByteSource;
+    unsigned int *pAlignedSource = (unsigned int *) pSource;
+    unsigned int *pAlignedDestination = (unsigned int *) pDestination;
+
+    // If num is more than 4 bytes, and both dest. and source are aligned,
+    // then copy dwords
+    if ((((unsigned int) pAlignedDestination &amp; 0x3) == 0)
+        &amp;&amp; (((unsigned int) pAlignedSource &amp; 0x3) == 0)
+        &amp;&amp; (num &gt;= 4)) {
+
+        while (num &gt;= 4) {
+
+            *pAlignedDestination++ = *pAlignedSource++;
+            num -= 4;
+        }
+    }
+
+    // Copy remaining bytes
+    pByteDestination = (unsigned char *) pAlignedDestination;
+    pByteSource = (unsigned char *) pAlignedSource;
+    while (num--) {
+
+        *pByteDestination++ = *pByteSource++;
+    }
+
+    return pDestination;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

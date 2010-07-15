@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','usbmi_devicemi_hidmi_transfermi_project0',this)" class="pathLink">usb-device-hid-transfer-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 627</div>
+<pre class="codeExamples">
+int <a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">main</a>(void)
+{
+    unsigned int cnt=0;
+    unsigned int len;
+    unsigned char iBuffer[64];
+    unsigned char oBuffer[64];
+    unsigned char bmLEDs=0;
+    unsigned char update;
+
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_CONFIGURE1551293405',this); ">TRACE_CONFIGURE</a>(DBGU_STANDARD, 115200, BOARD_MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- USB Device HID Transfer Project 1.4 --\n\r");
+
+    // If they are present, configure Vbus &amp; Wake-up pins
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_InitializeInterrupts171142247',this); ">PIO_InitializeInterrupts</a>(0);
+
+    WAKEUP_CONFIGURE();
+
+    // Configure PINs for LEDs and Buttons
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/LED_Configure171142247',this); ">LED_Configure</a>(0);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/LED_Configure171142247',this); ">LED_Configure</a>(1);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(pinsButtons, <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_LISTSIZE3636917727',this); ">PIO_LISTSIZE</a>(pinsButtons));
+
+  #ifdef PINS_JOYSTICK
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(pinsJoystick, <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_LISTSIZE3636917727',this); ">PIO_LISTSIZE</a>(pinsJoystick));
+  #endif
+
+    // HID driver initialization
+    <a href="#" onMouseOver="link('_member','../at91lib/usb/device/hid-transfer/HIDDTransferDriver_Initialize122',this); ">HIDDTransferDriver_Initialize</a>();
+
+    // connect if needed
+    <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/VBUS_CONFIGURE1412554214',this); ">VBUS_CONFIGURE</a>();
+    while (<a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_GetState53616',this); ">USBD_GetState</a>() &lt; <a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_STATE_CONFIGURED1024481039',this); ">USBD_STATE_CONFIGURED</a>);
+    
+    // Infinite loop
+    while (1) {
+
+        update = 0;
+
+        len = <a href="#" onMouseOver="link('_member','../at91lib/usb/device/hid-transfer/HIDDTransferDriver_Read973266047',this); ">HIDDTransferDriver_Read</a>(iBuffer, 64);
+        if (len) {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("Data In(%d):", len);
+            ShowBuffer(iBuffer, len);
+
+            bmLEDs = iBuffer[0];
+            update = 1;
+        }
+        len = <a href="#" onMouseOver="link('_member','../at91lib/usb/device/hid-transfer/HIDDTransferDriver_ReadReport973266047',this); ">HIDDTransferDriver_ReadReport</a>(iBuffer, 64);
+        if (len) {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("Report In(%d):", len);
+            ShowBuffer(iBuffer, len);
+
+            bmLEDs = iBuffer[0];
+            update = 1;
+        }
+
+        // Update the status of LEDs
+        if (update &amp;&amp; (0x80 &amp; bmLEDs)) {
+
+            // LED1
+            if (bmLEDs &amp; 0x01) {
+
+                <a href="#" onMouseOver="link('_member','../at91lib/utility/LED_Set171142247',this); ">LED_Set</a>(0);
+            }
+            else {
+
+                <a href="#" onMouseOver="link('_member','../at91lib/utility/LED_Clear171142247',this); ">LED_Clear</a>(0);
+            }
+
+            // LED2
+            if (bmLEDs &amp; 0x02) {
+
+                <a href="#" onMouseOver="link('_member','../at91lib/utility/LED_Set171142247',this); ">LED_Set</a>(1);
+            }
+            else {
+
+                <a href="#" onMouseOver="link('_member','../at91lib/utility/LED_Clear171142247',this); ">LED_Clear</a>(1);
+            }
+        }
+
+        // Update the status of the buttons
+        oBuffer[0] = 0x80;
+        if (<a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Get134351097',this); ">PIO_Get</a>(&amp;pinsButtons[PUSHBUTTON_BP1]) == 0) {
+
+            oBuffer[0] |= 0x01;
+        }
+      #ifdef PUSHBUTTON_BP2
+        if (<a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Get134351097',this); ">PIO_Get</a>(&amp;pinsButtons[PUSHBUTTON_BP2]) == 0) {
+
+            oBuffer[0] |= 0x02;
+        }
+      #endif
+      #ifdef PINS_JOYSTICK
+        if (<a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Get134351097',this); ">PIO_Get</a>(&amp;pinsJoystick[JOYSTICK_LEFT]) == 0) {
+
+            oBuffer[0] |= 0x04;
+        }
+        if (<a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Get134351097',this); ">PIO_Get</a>(&amp;pinsJoystick[JOYSTICK_UP]) == 0) {
+
+            oBuffer[0] |= 0x08;
+        }
+        if (<a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Get134351097',this); ">PIO_Get</a>(&amp;pinsJoystick[JOYSTICK_DOWN]) == 0) {
+
+            oBuffer[0] |= 0x10;
+        }
+        if (<a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Get134351097',this); ">PIO_Get</a>(&amp;pinsJoystick[JOYSTICK_RIGHT]) == 0) {
+
+            oBuffer[0] |= 0x20;
+        }
+      #endif
+
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/sprintf413156383',this); ">sprintf</a>((char*)&amp;oBuffer[5], ":%04x:%05d!", cnt, cnt);
+        oBuffer[1] = (unsigned char)(cnt);
+        oBuffer[2] = (unsigned char)(cnt &gt;&gt; 8);
+        oBuffer[3] = (unsigned char)(cnt &gt;&gt; 16);
+        oBuffer[4] = (unsigned char)(cnt &gt;&gt; 24);
+        if (<a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a> == <a href="#" onMouseOver="link('_member','../at91lib/usb/device/hid-transfer/HIDDTransferDriver_Write428694011',this); ">HIDDTransferDriver_Write</a>(oBuffer, 64, 0, 0)) {
+            cnt ++;
+        }
+
+        if( <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> == <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_SUSPEND1756114010',this); ">STATE_SUSPEND</a> ) {
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("suspend  !\n\r");
+            LowPowerMode();
+            <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> = <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_IDLE1756114010',this); ">STATE_IDLE</a>;
+        }
+        if( <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> == <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_RESUME1756114010',this); ">STATE_RESUME</a> ) {
+            // Return in normal MODE
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("resume !\n\r");
+            NormalPowerMode();
+            <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> = <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_IDLE1756114010',this); ">STATE_IDLE</a>;
+        }
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - TWI_ConfigureMaster</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">TWI_ConfigureMaster</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','twi0',this)" class="pathLink">twi</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">TWI_ConfigureMaster</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','TWI_ConfigureMaster1672009607','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','TWI_ConfigureMaster1672009607','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 86</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','TWI_ConfigureMaster1672009607',this); ">TWI_ConfigureMaster</a>(AT91S_TWI *pTwi, unsigned int twck, unsigned int mck)
+{
+    unsigned int ckdiv = 0;
+    unsigned int cldiv;
+    unsigned char ok = 0;
+
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("TWI_ConfigureMaster()\n\r");
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pTwi);
+
+#ifdef AT91C_TWI_SVEN  // TWI slave
+    // SVEN: TWI Slave Mode Enabled
+    pTwi-&gt;TWI_CR = AT91C_TWI_SVEN;
+#endif
+    // Reset the TWI
+    pTwi-&gt;TWI_CR = AT91C_TWI_SWRST;
+    pTwi-&gt;TWI_RHR;
+
+    // TWI Slave Mode Disabled, TWI Master Mode Disabled
+#ifdef AT91C_TWI_SVEN  // TWI slave
+    pTwi-&gt;TWI_CR = AT91C_TWI_SVDIS;
+#endif
+    pTwi-&gt;TWI_CR = AT91C_TWI_MSDIS;
+
+    // Set master mode
+    pTwi-&gt;TWI_CR = AT91C_TWI_MSEN;
+
+    // Configure clock
+    while (!ok) {
+#if defined(__ARMCC_VERSION)
+        cldiv = ((mck / (2 * twck)) - 3) / pow(2, ckdiv);
+#else
+        cldiv = ((mck / (2 * twck)) - 3) / <a href="#" onMouseOver="link('_member','../../utility/power3363666690',this); ">power</a>(2, ckdiv);
+#endif        
+        if (cldiv &lt;= 255) {
+
+            ok = 1;
+        }
+        else {
+
+            ckdiv++;
+        }
+    }
+
+    ASSERT(ckdiv &lt; 8, "-F- Cannot find valid TWI clock parameters\n\r");
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("Using CKDIV = %u and CLDIV/CHDIV = %u\n\r", ckdiv, cldiv);
+    pTwi-&gt;TWI_CWGR = 0;
+    pTwi-&gt;TWI_CWGR = (ckdiv &lt;&lt; 16) | (cldiv &lt;&lt; 8) | cldiv;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

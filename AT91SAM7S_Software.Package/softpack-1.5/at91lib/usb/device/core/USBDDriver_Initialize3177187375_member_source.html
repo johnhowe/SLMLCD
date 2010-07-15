@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBDDriver_Initialize</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBDDriver_Initialize</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBDDriver_Initialize</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBDDriver_Initialize3177187375','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBDDriver_Initialize3177187375','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 465</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','USBDDriver_Initialize3177187375',this); ">USBDDriver_Initialize</a>(<a href="#" onMouseOver="link('_class','USBDDriver0',this); ">USBDDriver</a> *pDriver, const <a href="#" onMouseOver="link('_class','USBDDriverDescriptors0',this); ">USBDDriverDescriptors</a> *pDescriptors, unsigned char *pInterfaces)
+{
+
+    pDriver-&gt;<a href="#" onMouseOver="link('_member','cfgnum247920306',this); ">cfgnum</a> = 0;
+#if (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_SELFPOWERED_RWAKEUP) \
+    || (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_BUSPOWERED_RWAKEUP)
+    pDriver-&gt;<a href="#" onMouseOver="link('_member','isRemoteWakeUpEnabled247920306',this); ">isRemoteWakeUpEnabled</a> = 1;
+#else
+    pDriver-&gt;<a href="#" onMouseOver="link('_member','isRemoteWakeUpEnabled247920306',this); ">isRemoteWakeUpEnabled</a> = 0;
+#endif
+
+    pDriver-&gt;<a href="#" onMouseOver="link('_member','pDescriptors247920306',this); ">pDescriptors</a> = pDescriptors;
+    pDriver-&gt;<a href="#" onMouseOver="link('_member','pInterfaces247920306',this); ">pInterfaces</a> = pInterfaces;
+
+    // Initialize interfaces array if not null
+    if (pInterfaces != 0) {
+    
+        <a href="#" onMouseOver="link('_member','../../../utility/memset3684796183',this); ">memset</a>(pInterfaces, sizeof(pInterfaces), 0);
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

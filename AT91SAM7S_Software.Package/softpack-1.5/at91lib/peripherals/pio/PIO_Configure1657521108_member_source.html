@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - PIO_Configure</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">PIO_Configure</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','pio0',this)" class="pathLink">pio</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">PIO_Configure</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','PIO_Configure1657521108','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','PIO_Configure1657521108','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 218</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','PIO_Configure1657521108',this); ">PIO_Configure</a>(const <a href="#" onMouseOver="link('_class','Pin0',this); ">Pin</a> *list, unsigned int size)
+{
+    // Configure pins
+    while (size &gt; 0) {
+    
+        switch (list-&gt;<a href="#" onMouseOver="link('_member','type1634',this); ">type</a>) {
+    
+            case <a href="#" onMouseOver="link('_member','PIO_PERIPH_A3612691426',this); ">PIO_PERIPH_A</a>:
+                PIO_SetPeripheralA(list-&gt;<a href="#" onMouseOver="link('_member','pio1634',this); ">pio</a>,
+                                   list-&gt;<a href="#" onMouseOver="link('_member','mask1634',this); ">mask</a>,
+                                   (list-&gt;<a href="#" onMouseOver="link('_member','attribute1634',this); ">attribute</a> &amp; PIO_PULLUP) ? 1 : 0);
+                break;
+    
+            case <a href="#" onMouseOver="link('_member','PIO_PERIPH_B3612691426',this); ">PIO_PERIPH_B</a>:
+                PIO_SetPeripheralB(list-&gt;<a href="#" onMouseOver="link('_member','pio1634',this); ">pio</a>,
+                                   list-&gt;<a href="#" onMouseOver="link('_member','mask1634',this); ">mask</a>,
+                                   (list-&gt;<a href="#" onMouseOver="link('_member','attribute1634',this); ">attribute</a> &amp; PIO_PULLUP) ? 1 : 0);
+                break;
+    
+            case <a href="#" onMouseOver="link('_member','PIO_INPUT3612691426',this); ">PIO_INPUT</a>:
+                AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; list-&gt;<a href="#" onMouseOver="link('_member','id1634',this); ">id</a>;
+                PIO_SetInput(list-&gt;<a href="#" onMouseOver="link('_member','pio1634',this); ">pio</a>,
+                             list-&gt;<a href="#" onMouseOver="link('_member','mask1634',this); ">mask</a>,
+                             (list-&gt;<a href="#" onMouseOver="link('_member','attribute1634',this); ">attribute</a> &amp; PIO_PULLUP) ? 1 : 0,
+                             (list-&gt;<a href="#" onMouseOver="link('_member','attribute1634',this); ">attribute</a> &amp; PIO_DEGLITCH)? 1 : 0);
+                break;
+    
+            case <a href="#" onMouseOver="link('_member','PIO_OUTPUT_03612691426',this); ">PIO_OUTPUT_0</a>:
+            case <a href="#" onMouseOver="link('_member','PIO_OUTPUT_13612691426',this); ">PIO_OUTPUT_1</a>:
+                PIO_SetOutput(list-&gt;<a href="#" onMouseOver="link('_member','pio1634',this); ">pio</a>,
+                              list-&gt;<a href="#" onMouseOver="link('_member','mask1634',this); ">mask</a>,
+                              (list-&gt;<a href="#" onMouseOver="link('_member','type1634',this); ">type</a> == PIO_OUTPUT_1),
+                              (list-&gt;<a href="#" onMouseOver="link('_member','attribute1634',this); ">attribute</a> &amp; PIO_OPENDRAIN) ? 1 : 0,
+                              (list-&gt;<a href="#" onMouseOver="link('_member','attribute1634',this); ">attribute</a> &amp; PIO_PULLUP) ? 1 : 0);
+                break;
+    
+            default: return 0;
+        }
+
+        list++;
+        size--;
+    }
+
+    return 1;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

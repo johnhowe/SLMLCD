@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - SD_Stop</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">SD_Stop</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','sdmmc0',this)" class="pathLink">sdmmc</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">SD_Stop</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','SD_Stop1676226939','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','SD_Stop1676226939','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 1384</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','SD_Stop1676226939',this); ">SD_Stop</a>(<a href="#" onMouseOver="link('_class','_SdCard0',this); ">SdCard</a> *pSd, <a href="#" onMouseOver="link('_class','SdDriver0',this); ">SdDriver</a> *pSdDriver)
+{
+    unsigned char error;
+    <a href="#" onMouseOver="link('_class','_SdCmd0',this); ">SdCmd</a> *pCommand = &amp;(pSd-&gt;<a href="#" onMouseOver="link('_member','command446104',this); ">command</a>);
+
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pSd);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pSdDriver);
+
+    if(pCommand-&gt;<a href="#" onMouseOver="link('_member','conTrans35924',this); ">conTrans</a> == <a href="#" onMouseOver="link('_member','SPI_CONTINUE_TRANSFER3457679196',this); ">SPI_CONTINUE_TRANSFER</a>)
+    {
+        <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("SD_StopTransmission()\n\r");
+
+        error = Cmd12(pSd);
+        if(error) {
+            return error;
+        }
+    }
+
+    <a href="#" onMouseOver="link('_member','SDSPI_Close88255927',this); ">SDSPI_Close</a>((<a href="#" onMouseOver="link('_class','SdSpi0',this); ">SdSpi</a> *)pSdDriver);
+    return 0;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

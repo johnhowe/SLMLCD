@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - HIDDKeyboardInputReport_Initialize</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">HIDDKeyboardInputReport_Initialize</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','hidmi_keyboard0',this)" class="pathLink">hid-keyboard</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">HIDDKeyboardInputReport_Initialize</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','HIDDKeyboardInputReport_Initialize2024669291','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','HIDDKeyboardInputReport_Initialize2024669291','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 54</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_Initialize2024669291',this); ">HIDDKeyboardInputReport_Initialize</a>(HIDDKeyboardInputReport *report)
+{
+    unsigned int i;
+
+    report-&gt;bmModifierKeys = 0;
+    for (i = 0; i &lt; <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_MAXKEYPRESSES870272995',this); ">HIDDKeyboardInputReport_MAXKEYPRESSES</a>; i++) {
+    
+        report-&gt;pressedKeys[i] = 0;
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

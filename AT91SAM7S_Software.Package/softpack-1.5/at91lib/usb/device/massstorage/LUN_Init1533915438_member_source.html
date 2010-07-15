@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - LUN_Init</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">LUN_Init</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">LUN_Init</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','LUN_Init1533915438','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','LUN_Init1533915438','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 101</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','LUN_Init1533915438',this); ">LUN_Init</a>(<a href="#" onMouseOver="link('_class','MSDLun0',this); ">MSDLun</a> *lun, Media *media, unsigned char *buffer, unsigned int baseAddress, unsigned int size, unsigned int blockSize)
+{
+    unsigned int logicalBlockAddress = (size / blockSize) - 1;
+    TRACE_INFO("LUN init\n\r");
+
+    // Initialize LUN
+    lun-&gt;<a href="#" onMouseOver="link('_member','media37150',this); ">media</a> = media;
+    lun-&gt;<a href="#" onMouseOver="link('_member','baseAddress37150',this); ">baseAddress</a> = baseAddress;
+    lun-&gt;<a href="#" onMouseOver="link('_member','size37150',this); ">size</a> = size;
+    lun-&gt;<a href="#" onMouseOver="link('_member','blockSize37150',this); ">blockSize</a> = blockSize;
+    lun-&gt;<a href="#" onMouseOver="link('_member','readWriteBuffer37150',this); ">readWriteBuffer</a> = buffer;
+
+    // Initialize request sense data
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bResponseCode1501163524',this); ">bResponseCode</a> = SBC_SENSE_DATA_FIXED_CURRENT;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','isValid1501163524',this); ">isValid</a> = 1;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bObsolete11501163524',this); ">bObsolete1</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bSenseKey1501163524',this); ">bSenseKey</a> = <a href="#" onMouseOver="link('_member','SBC_SENSE_KEY_NO_SENSE2028634509',this); ">SBC_SENSE_KEY_NO_SENSE</a>;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bReserved11501163524',this); ">bReserved1</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','isILI1501163524',this); ">isILI</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','isEOM1501163524',this); ">isEOM</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','isFilemark1501163524',this); ">isFilemark</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','pInformation1501163524',this); ">pInformation</a>[0] = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','pInformation1501163524',this); ">pInformation</a>[1] = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','pInformation1501163524',this); ">pInformation</a>[2] = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','pInformation1501163524',this); ">pInformation</a>[3] = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bAdditionalSenseLength1501163524',this); ">bAdditionalSenseLength</a>
+        = sizeof(<a href="#" onMouseOver="link('_class','SBCRequestSenseData0',this); ">SBCRequestSenseData</a>) - 8;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bAdditionalSenseCode1501163524',this); ">bAdditionalSenseCode</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bAdditionalSenseCodeQualifier1501163524',this); ">bAdditionalSenseCodeQualifier</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bFieldReplaceableUnitCode1501163524',this); ">bFieldReplaceableUnitCode</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','bSenseKeySpecific1501163524',this); ">bSenseKeySpecific</a> = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','pSenseKeySpecific1501163524',this); ">pSenseKeySpecific</a>[0] = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','pSenseKeySpecific1501163524',this); ">pSenseKeySpecific</a>[0] = 0;
+    lun-&gt;<a href="#" onMouseOver="link('_member','requestSenseData37150',this); ">requestSenseData</a>.<a href="#" onMouseOver="link('_member','isSKSV1501163524',this); ">isSKSV</a> = 0;
+
+    // Initialize inquiry data
+    lun-&gt;<a href="#" onMouseOver="link('_member','inquiryData37150',this); ">inquiryData</a> = &amp;inquiryData;
+
+    // Initialize read capacity data
+    <a href="#" onMouseOver="link('_member','STORE_DWORDB2693700554',this); ">STORE_DWORDB</a>(logicalBlockAddress,
+                 lun-&gt;<a href="#" onMouseOver="link('_member','readCapacityData37150',this); ">readCapacityData</a>.<a href="#" onMouseOver="link('_member','pLogicalBlockAddress1995876909',this); ">pLogicalBlockAddress</a>);
+    <a href="#" onMouseOver="link('_member','STORE_DWORDB2693700554',this); ">STORE_DWORDB</a>(blockSize, lun-&gt;<a href="#" onMouseOver="link('_member','readCapacityData37150',this); ">readCapacityData</a>.<a href="#" onMouseOver="link('_member','pLogicalBlockLength1995876909',this); ">pLogicalBlockLength</a>);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

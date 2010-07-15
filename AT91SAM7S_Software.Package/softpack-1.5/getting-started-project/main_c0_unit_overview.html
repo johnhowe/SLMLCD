@@ -1,0 +1,264 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main.c</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main.c</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','gettingmi_startedmi_project0',this)" class="pathLink">getting-started-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main.c</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5631","aID5631","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','main_c0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','main_c0','_overview',this)" class="tabLinkActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="paragraphTable"></div>
+<table cellspacing="0"cellpadding=0 border=0 class="widthAndBorderTop">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Methods</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ConfigureButtons53616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ConfigureButtons&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Configures the pushbuttons to generate interrupts when pressed.');" onmouseout="return nd();">&nbsp;ConfigureButtons</a></TD>
+<TD class="paddingNormal2"><span class="" >Configures the pushbuttons to generate interrupts when pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ConfigureLeds53616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ConfigureLeds&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Configures LEDs \1 and \2 (cleared by default).');" onmouseout="return nd();">&nbsp;ConfigureLeds</a></TD>
+<TD class="paddingNormal2"><span class="" >Configures LEDs #1 and #2 (cleared by default).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ConfigurePit53616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ConfigurePit&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Configure the periodic interval timer to generate an<BR>interrupt every    millisecond.');" onmouseout="return nd();">&nbsp;ConfigurePit</a></TD>
+<TD class="paddingNormal2"><span class="" >Configure the periodic interval timer to generate an interrupt every millisecond.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ConfigureTc53616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ConfigureTc&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Configure Timer Counter 0 to generate an interrupt every 250ms.');" onmouseout="return nd();">&nbsp;ConfigureTc</a></TD>
+<TD class="paddingNormal2"><span class="" >Configure Timer Counter 0 to generate an interrupt every 250ms.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ISR_Bp153616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ISR_Bp1&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Interrupt handler for pushbutton\1. Starts or stops LED\1.');" onmouseout="return nd();">&nbsp;ISR_Bp1</a></TD>
+<TD class="paddingNormal2"><span class="" >Interrupt handler for pushbutton#1. Starts or stops LED#1.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ISR_Bp253616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ISR_Bp2&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Interrupt handler for pushbutton\2. Starts or stops LED\2 and TC0.');" onmouseout="return nd();">&nbsp;ISR_Bp2</a></TD>
+<TD class="paddingNormal2"><span class="" >Interrupt handler for pushbutton#2. Starts or stops LED#2 and TC0.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ISR_Pit53616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ISR_Pit&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Handler for PIT interrupt. Increments the timestamp counter.');" onmouseout="return nd();">&nbsp;ISR_Pit</a></TD>
+<TD class="paddingNormal2"><span class="" >Handler for PIT interrupt. Increments the <a href="#" OnMouseOver="link('_member','timestamp0',this)">timestamp</a> counter.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><span id="overloadISR_Tc053616SingleSpan"><a href="javascript:hideElement( 'overloadISR_Tc053616Single' );javascript:hideElement( 'overloadISR_Tc053616SingleSpan' );javascript:showElement( 'overloadISR_Tc053616All' );javascript:showElement( 'overloadISR_Tc053616AllSpan' );javascript:setMyCookie( cookieName, 'overloadISR_Tc053616', 'show' );"><img src="../../common/expand.gif" border=0></a></span><span id="overloadISR_Tc053616AllSpan" style="display:none;visibility:hidden"><a href="javascript:hideElement( 'overloadISR_Tc053616All' );javascript:hideElement( 'overloadISR_Tc053616AllSpan' );javascript:showElement( 'overloadISR_Tc053616Single' );javascript:showElement( 'overloadISR_Tc053616SingleSpan' );javascript:setMyCookie( cookieName, 'overloadISR_Tc053616', 'hide' );"><img src="../../common/collapse.gif" border=0></a></span>
+<a href="#" onMouseOver="link('_member','ISR_Tc053616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ISR_Tc0&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Interrupt handler for TC0 interrupt. Toggles the state of LED\2.');" onmouseout="return nd();">&nbsp;ISR_Tc0</a></TD>
+<TD class="paddingNormal2">
+<span id="overloadISR_Tc053616Single">Interrupt handler for TC0 interrupt. Toggles the <a href="#" OnMouseOver="link('_member','../basic-rtt-project/state0',this)">state</a> of LED#2.<br>
+</span>
+<span id="overloadISR_Tc053616All" style="display:none;visibility:hidden">
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTopLeftRight">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Variants</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-usart-hw-handshaking-project/ISR_Tc053616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Interrupt handler for TC0.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','ISR_Tc053616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Interrupt handler for TC0 interrupt. Toggles the <a href="#" OnMouseOver="link('_member','../basic-rtt-project/state0',this)">state</a> of LED#2.<br>
+</TD>
+</TR>
+</table>
+</span>
+</td>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><span id="overloadmain53616SingleSpan"><a href="javascript:hideElement( 'overloadmain53616Single' );javascript:hideElement( 'overloadmain53616SingleSpan' );javascript:showElement( 'overloadmain53616All' );javascript:showElement( 'overloadmain53616AllSpan' );javascript:setMyCookie( cookieName, 'overloadmain53616', 'show' );"><img src="../../common/expand.gif" border=0></a></span><span id="overloadmain53616AllSpan" style="display:none;visibility:hidden"><a href="javascript:hideElement( 'overloadmain53616All' );javascript:hideElement( 'overloadmain53616AllSpan' );javascript:showElement( 'overloadmain53616Single' );javascript:showElement( 'overloadmain53616SingleSpan' );javascript:setMyCookie( cookieName, 'overloadmain53616', 'hide' );"><img src="../../common/collapse.gif" border=0></a></span>
+<a href="#" onMouseOver="link('_member','main53616',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>int&nbsp;&nbsp;main&nbsp;&nbsp;(void )',CAPTION,'<strong>Brief description</strong><BR>Application entry point.');" onmouseout="return nd();">&nbsp;main</a></TD>
+<TD class="paddingNormal2">
+<span id="overloadmain53616Single">Application entry point.<br>
+</span>
+<span id="overloadmain53616All" style="display:none;visibility:hidden">
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTopLeftRight">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Variants</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Tests the <a href="#" OnMouseOver="link('_member','../at91lib/memories/spi-flash/At450',this)">At45</a> connected to the board by performing several command on each of its pages.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-dhrystone-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Displays a menu to let the user either change the clock configuration of the <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>, enable/disable options (i.e.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-internalflash-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Tests the EFC peripheral features.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-iso7816-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Outputs a PWM on LED1 &amp; LED2 to makes it fade in and out.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-pwm-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Outputs a PWM on LED1 &amp; LED2 to makes it fade in and out.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-rtt-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the RTT, displays the current time and allows the user to perform several actions: clear the timer, set an alarm, etc.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-sd-spi-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Main function.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-serialflash-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the serial <a href="#" OnMouseOver="link('_dir','../at91lib/memories/flash/flash0',this)">flash</a> and performs several tests on it.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-twi-eeprom-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Main function.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-usart-hw-handshaking-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Application entry point.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Application entry point.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-ccid-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the CCID driver and runs it.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-cdc-serial-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB &lt;-&gt; Serial bridge.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-composite-cdchid-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/composite/composite0',this)">composite</a> <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-composite-cdcmsd-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/composite/composite0',this)">composite</a> <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-composite-hidmsd-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/composite/composite0',this)">composite</a> <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-core-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system, connects the USB and waits indefinitely.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-hid-keyboard-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system and then monitors buttons, sending the corresponding character when one is pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-hid-mouse-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system and then monitors buttons, sending the corresponding character when one is pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-hid-transfer-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system and then monitors buttons, sending the corresponding character when one is pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-massstorage-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the Mass Storage driver and runs it.<br>
+</TD>
+</TR>
+</table>
+</span>
+</td>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','Wait2590682239',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;Wait&nbsp;&nbsp;(unsigned long delay)',CAPTION,'<strong>Brief description</strong><BR>Waits for the given number of milliseconds (using the<BR>timestamp generated    by the PIT).');" onmouseout="return nd();">&nbsp;Wait</a></TD>
+<TD class="paddingNormal2"><span class="" >Waits for the given number of milliseconds (using the <a href="#" OnMouseOver="link('_member','timestamp0',this)">timestamp</a> generated by the PIT).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Defines</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','DEBOUNCE_TIME1672237116',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;DEBOUNCE_TIME',CAPTION,'<strong>Brief description</strong><BR>Delay for pushbutton debouncing (in milliseconds).');" onmouseout="return nd();">&nbsp;DEBOUNCE_TIME</a></TD>
+<TD class="paddingNormal2"><span class="" >Delay for pushbutton debouncing (in milliseconds).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','PIT_PERIOD1672237116',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;PIT_PERIOD',CAPTION,'<strong>Brief description</strong><BR>PIT period value in µseconds.');" onmouseout="return nd();">&nbsp;PIT_PERIOD</a></TD>
+<TD class="paddingNormal2"><span class="" >PIT period value in µseconds.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Attributes</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','pinPB10',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>Pin&nbsp;&nbsp;pinPB1 ',CAPTION,'<strong>Brief description</strong><BR>Pushbutton \1 pin instance.');" onmouseout="return nd();">&nbsp;pinPB1</a></TD>
+<TD class="paddingNormal2"><span class="" >Pushbutton #1 pin instance.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','pinPB20',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>Pin&nbsp;&nbsp;pinPB2 ',CAPTION,'<strong>Brief description</strong><BR>Pushbutton \1 pin instance.');" onmouseout="return nd();">&nbsp;pinPB2</a></TD>
+<TD class="paddingNormal2"><span class="" >Pushbutton #1 pin instance.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','pLedStates0',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;pLedStates [2]',CAPTION,'<strong>Brief description</strong><BR>Indicates the current state (on or off) for each LED.');" onmouseout="return nd();">&nbsp;pLedStates</a></TD>
+<TD class="paddingNormal2"><span class="" >Indicates the current <a href="#" OnMouseOver="link('_member','../basic-rtt-project/state0',this)">state</a> (on or off) for each LED.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','timestamp0',this); "><img src="../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>volatile unsigned int&nbsp;&nbsp;timestamp ',CAPTION,'<strong>Brief description</strong><BR>Global timestamp in milliseconds since start of application.');" onmouseout="return nd();">&nbsp;timestamp</a></TD>
+<TD class="paddingNormal2"><span class="" >Global <a href="#" OnMouseOver="link('_member','timestamp0',this)">timestamp</a> in milliseconds since start of application.<br>
+</TD>
+</TR>
+</table>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_overview');
+</script>

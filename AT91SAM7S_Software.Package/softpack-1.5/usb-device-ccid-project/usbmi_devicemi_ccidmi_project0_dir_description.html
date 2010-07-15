@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - usb-device-ccid-project</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">usb-device-ccid-project</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">usb-device-ccid-project</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5514","aID5514","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_dir','usbmi_devicemi_ccidmi_project0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_dir','usbmi_devicemi_ccidmi_project0','_dirgraph',this)" class="tabLinkInActive">Graph</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">usb-device-ccid-project</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Purpose</div>
+This example demonstrates the CCID (USB Chip/Smart Card Interface Devices) on AT91 microcontrollers.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Requirements</div>
+ This example can be used on AT91SAM9260-EK, AT91SAM9263-EK, AT91SAM9G20-EK, AT91SAM9XE-EK.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Description</div>
+ This application implement a CCID driver.<br>
+ Different tests can be done with the Windows(c) software Smart Access(c).<br>
+ Smart Access: a powerful scripting tool to write sequences of commands.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Usage</div>
+<ol>
+<li>Install Smart Access(c) software.</li>
+<li>Build the program and download it inside the evaluation board. Please refer to the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6224.pdf">SAM-BA User Guide</a>, the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">GNU-Based Software Development</a> application note or to the <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">IAR EWARM User Guide</a>, depending on your chosen solution.</li>
+<li>On the computer, open and configure a terminal application (e.g. HyperTerminal on Microsoft Windows) with these settings:<ul>
+<li>115200 bauds</li>
+<li>8 data bits</li>
+<li>No parity</li>
+<li>1 stop bit</li>
+<li>Hardware flow control (RTS/CTS)</li>
+</ul>
+
+</li>
+<li>Start the application. The following traces shall appear on the terminal:   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+-- USB Device CCID Project xxx -- 
+-- AT91xxxxxx-xx
+-- Compiled: xxx xx xxxx xx:xx:xx --
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+<li>Connect the USB cable to the board. Traces should start to appear on the terminal.<br>
+ If this is the first time the <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> is connected to the PC, the operating system may take some time to install it.</li>
+<li>The <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> is enumerated as a Smart Card Device implementing CCID class.<br>
+</li>
+<li>The host use the CCID <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> driver (usbccid.sys) as the functionnal driver.</li>
+<li>Launch Smart Access and connect it to the Card Reader Atmel.<br>
+ Use Smart Access for launch instruction command.<br>
+ Note that instruction command case one, two and three are implemanted.</li>
+</ol>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Contents</div>
+ The definitions and functions provided are dispatched inside a number of files:<ul>
+<li><a href="#" OnMouseOver="link('_unit','../usb-device-massstorage-project/main_c0',this)">main.c</a> <a href="#" OnMouseOver="link('_member','../usb-device-massstorage-project/main53616',this)">main</a> software</li>
+</ul>
+
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Directory was generated from the following files:</div>
+<div class="paddingMembers"><LI>main.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_dir','_description');
+</script>

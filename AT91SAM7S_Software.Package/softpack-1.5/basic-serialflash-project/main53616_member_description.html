@@ -1,0 +1,175 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','basicmi_serialflashmi_project0',this)" class="pathLink">basic-serialflash-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_source',this)" class="tabLinkInActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">main</span>
+<div class="paragraph2">Initializes the serial <a href="#" OnMouseOver="link('_dir','../at91lib/memories/flash/flash0',this)">flash</a> and performs several tests on it.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2"><span id="descFunSynExpSpan" style="display:none;visibility:hidden"><a href="javascript:showElement( 'descFunSynColSpan' );javascript:hideElement( 'descFunSynExpSpan' );javascript:showElement( 'descFunSyn' );javascript:setMyCookie( cookieName, 'descFunSyn', 'show' );"><img src="../../common/expand.gif" border=0></a></span><span id="descFunSynColSpan"><a href="javascript:showElement( 'descFunSynExpSpan' );javascript:hideElement( 'descFunSynColSpan' );javascript:hideElement( 'descFunSyn' );javascript:setMyCookie( cookieName, 'descFunSyn', 'hide' );"><img src="../../common/collapse.gif" border=0></a></span>
+Syntax / parameters</div>
+<div id="descFunSyn" class="paddingMembersTableDiv"><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top"><TD class="paddingHeadMultiColumn2"><span class="codeFont">int <a href="#" OnMouseOver="link('_member','../usb-device-massstorage-project/main53616',this)">main</a> (void)<br>
+</span></TD></TR></TABLE>
+<br><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top">
+<TD width=20% class="paddingHeadMultiColumn1"><span class="" align=left>Return value</TD>
+<TD width=5% class="paddingNormal1"><span class="codeFont" >int<br>
+</TD>
+<TD width=5% class="paddingNormal1"><span class="" align=left>&nbsp;</TD>
+<TD width=70% class="paddingNormal2"><span class="" >Unused.<br>
+</TD>
+</TR>
+</table>
+</div>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers">Initializes the serial <a href="#" OnMouseOver="link('_dir','../at91lib/memories/flash/flash0',this)">flash</a> and performs several tests on it.<br>
+Configures USART0 in hardware handshaking mode and Timer Counter 0 to generate an interrupt every second. Then, starts the first transfer on the USART and wait in an endless loop.<br>
+</div>
+<div class="paragraph2"><span id="descOverLExpSpan" style="display:none;visibility:hidden"><a href="javascript:showElement( 'descOverLColSpan' );javascript:hideElement( 'descOverLExpSpan' );javascript:showElement( 'descOverL' );javascript:setMyCookie( cookieName, 'descOverL', 'show' );"><img src="../../common/expand.gif" border=0></a></span><span id="descOverLColSpan"><a href="javascript:showElement( 'descOverLExpSpan' );javascript:hideElement( 'descOverLColSpan' );javascript:hideElement( 'descOverL' );javascript:setMyCookie( cookieName, 'descOverL', 'hide' );"><img src="../../common/collapse.gif" border=0></a></span>
+Variants</div>
+<div id="descOverL" class="paddingMembersTableDiv"><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Variants</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Tests the <a href="#" OnMouseOver="link('_member','../at91lib/memories/spi-flash/At450',this)">At45</a> connected to the board by performing several command on each of its pages.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-dhrystone-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Displays a menu to let the user either change the clock configuration of the <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>, enable/disable options (i.e.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-internalflash-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Tests the EFC peripheral features.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-iso7816-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Outputs a PWM on LED1 &amp; LED2 to makes it fade in and out.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-pwm-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Outputs a PWM on LED1 &amp; LED2 to makes it fade in and out.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-rtt-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the RTT, displays the current time and allows the user to perform several actions: clear the timer, set an alarm, etc.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-sd-spi-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Main function.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-twi-eeprom-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Main function.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../basic-usart-hw-handshaking-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Application entry point.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../getting-started-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Application entry point.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-ccid-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the CCID driver and runs it.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-cdc-serial-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB &lt;-&gt; Serial bridge.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-composite-cdchid-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/composite/composite0',this)">composite</a> <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-composite-cdcmsd-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/composite/composite0',this)">composite</a> <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-composite-hidmsd-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and start the USB <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/composite/composite0',this)">composite</a> <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a>.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-core-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system, connects the USB and waits indefinitely.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-hid-keyboard-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system and then monitors buttons, sending the corresponding character when one is pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-hid-mouse-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system and then monitors buttons, sending the corresponding character when one is pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-hid-transfer-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the system and then monitors buttons, sending the corresponding character when one is pressed.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','../usb-device-massstorage-project/main53616',this); ">(void)</a></TD>
+<TD class="paddingNormal2"><span class="" >Initializes the Mass Storage driver and runs it.<br>
+</TD>
+</TR>
+</table>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Member was generated from the following files:</div>
+<div class="paddingMembers"><LI>main.c<br><LI>main.c<br><LI>main.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_description');
+</script>

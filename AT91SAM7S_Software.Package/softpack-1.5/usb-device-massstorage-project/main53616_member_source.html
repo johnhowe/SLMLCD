@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','usbmi_devicemi_massstoragemi_project0',this)" class="pathLink">usb-device-massstorage-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 714</div>
+<pre class="codeExamples">
+int <a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">main</a>(void)
+{
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_CONFIGURE1551293405',this); ">TRACE_CONFIGURE</a>(DBGU_STANDARD, 115200, BOARD_MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- USB Device Mass Storage Project %s --\n\r", SOFTPACK_VERSION);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- %s\n\r", BOARD_NAME);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+
+   // If they are present, configure Vbus &amp; Wake-up pins
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_InitializeInterrupts171142247',this); ">PIO_InitializeInterrupts</a>(0);
+
+    WAKEUP_CONFIGURE();
+
+    MemoryInitialization();
+
+    ASSERT(numMedias &gt; 0, "Error: No media defined.\n\r");
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("%u medias defined\n\r", numMedias);
+
+    // BOT driver initialization
+    <a href="#" onMouseOver="link('_member','../at91lib/usb/device/massstorage/MSDDriver_Initialize3687359460',this); ">MSDDriver_Initialize</a>(luns, numMedias);
+
+    // connect if needed
+    <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/VBUS_CONFIGURE1412554214',this); ">VBUS_CONFIGURE</a>();
+
+    while (<a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_GetState53616',this); ">USBD_GetState</a>() &lt; <a href="#" onMouseOver="link('_member','../at91lib/usb/device/core/USBD_STATE_CONFIGURED1024481039',this); ">USBD_STATE_CONFIGURED</a>);
+
+    // Infinite loop
+    while (1) {
+
+        // Mass storage state machine
+        <a href="#" onMouseOver="link('_member','../at91lib/usb/device/composite/MSDDriver_StateMachine53616',this); ">MSDDriver_StateMachine</a>();
+
+        if( <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> == <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_SUSPEND1756114010',this); ">STATE_SUSPEND</a> ) {
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("suspend  !\n\r");
+            LowPowerMode();
+            <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> = <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_IDLE1756114010',this); ">STATE_IDLE</a>;
+        }
+        if( <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> == <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_RESUME1756114010',this); ">STATE_RESUME</a> ) {
+            // Return in normal MODE
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("resume !\n\r");
+            NormalPowerMode();
+            <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/USBState0',this); ">USBState</a> = <a href="#" onMouseOver="link('_member','../usb-device-ccid-project/STATE_IDLE1756114010',this); ">STATE_IDLE</a>;
+        }
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

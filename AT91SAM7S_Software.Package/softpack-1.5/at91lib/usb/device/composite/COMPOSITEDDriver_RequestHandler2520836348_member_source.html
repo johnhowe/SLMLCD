@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - COMPOSITEDDriver_RequestHandler</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">COMPOSITEDDriver_RequestHandler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','composite0',this)" class="pathLink">composite</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">COMPOSITEDDriver_RequestHandler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','COMPOSITEDDriver_RequestHandler2520836348','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','COMPOSITEDDriver_RequestHandler2520836348','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 179</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','COMPOSITEDDriver_RequestHandler2520836348',this); ">COMPOSITEDDriver_RequestHandler</a>(const <a href="#" onMouseOver="link('_class','../../common/core/USBGenericRequest0',this); ">USBGenericRequest</a> *request)
+{
+    // Check if this is a class request
+    if (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetType2520836348',this); ">USBGenericRequest_GetType</a>(request) == <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_CLASS145046170',this); ">USBGenericRequest_CLASS</a>) {
+
+        unsigned char rc = 0;
+
+        // AUDIO class request
+      #if defined(usb_CDCAUDIO) || defined(usb_HIDAUDIO)
+        if (rc == 0) {
+
+            rc = AUDDFunctionDriver_RequestHandler(request);
+        }
+      #endif
+
+        // CDC class request
+      #if defined(usb_CDCAUDIO) || defined(usb_CDCHID) || defined(usb_CDCMSD) || defined(usb_CDCCDC)
+        if (rc == 0) {
+
+            rc = CDCDFunctionDriver_RequestHandler(request);
+        }
+      #endif
+
+        // MSD class request
+      #if defined(usb_CDCMSD) || defined(usb_HIDMSD)
+        if (rc == 0) {
+
+            rc = MSDDFunctionDriver_RequestHandler(request);
+        }
+      #endif
+
+        // HID class request
+      #if defined(usb_CDCHID) || defined(usb_HIDAUDIO) || defined(usb_HIDMSD)
+        if (rc == 0) {
+
+            rc = HIDDFunctionDriver_RequestHandler(request);
+        }
+      #endif
+
+        if (!rc) {
+
+            TRACE_WARNING(
+              "COMPOSITEDDriver_RequestHandler: Unsupported request (%d)\n\r",
+              <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request));
+            <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+        }
+        
+    }
+    // Check if this is a standard request
+    else if (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetType2520836348',this); ">USBGenericRequest_GetType</a>(request) == <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_STANDARD145046170',this); ">USBGenericRequest_STANDARD</a>) {
+
+        unsigned char rc = 0;
+
+      #if defined(usb_CDCHID) || defined(usb_HIDAUDIO) || defined(usb_HIDMSD)
+        rc = HIDDFunctionDriver_RequestHandler(request);
+      #endif
+
+      #if defined(usb_CDCMSD) || defined(usb_HIDMSD)
+        if (rc == 0) {
+
+            rc = MSDDFunctionDriver_RequestHandler(request);
+        }
+      #endif
+
+        // Forward request to the standard handler
+        if (rc == 0) {
+
+            <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;(usbdDriver), request);
+        }
+    }
+    // Unsupported request type
+    else {
+
+        TRACE_WARNING(
+          "COMPOSITEDDriver_RequestHandler: Unsupported request type (%d)\n\r",
+          <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetType2520836348',this); ">USBGenericRequest_GetType</a>(request));
+        <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

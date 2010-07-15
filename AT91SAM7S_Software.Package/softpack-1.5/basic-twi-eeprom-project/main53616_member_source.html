@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','basicmi_twimi_eeprommi_project0',this)" class="pathLink">basic-twi-eeprom-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 190</div>
+<pre class="codeExamples">
+int <a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">main</a>()
+{
+    unsigned int i;
+    <a href="#" onMouseOver="link('_class','../at91lib/drivers/async/_Async0',this); ">Async</a> async;
+    unsigned int numErrors;
+
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(pins, <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_LISTSIZE3636917727',this); ">PIO_LISTSIZE</a>(pins));
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_CONFIGURE1551293405',this); ">TRACE_CONFIGURE</a>(DBGU_STANDARD, 115200, BOARD_MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- Basic TWI EEPROM Project %s --\n\r", SOFTPACK_VERSION);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- %s\n\r", BOARD_NAME);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+
+    // Configure TWI
+    // In IRQ mode: to avoid problems, the priority of the TWI IRQ must be max.
+    // In polling mode: try to disable all IRQs if possible.
+    // (in this example it does not matter, there is only the TWI IRQ active)
+    AT91C_BASE_PMC-&gt;PMC_PCER = 1 &lt;&lt; AT91C_ID_TWI;
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/twi/TWI_ConfigureMaster1672009607',this); ">TWI_ConfigureMaster</a>(AT91C_BASE_TWI, TWCK, BOARD_MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Initialize2756710793',this); ">TWID_Initialize</a>(&amp;twid, AT91C_BASE_TWI);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_TWI, 0, ISR_Twi);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_TWI);
+
+    // Erase page #0 and #1
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/memset3684796183',this); ">memset</a>(pData, 0, PAGE_SIZE);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Filling page #0 with zeroes ...\n\r");
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Write311571722',this); ">TWID_Write</a>(&amp;twid, AT24C_ADDRESS, 0x0000, 2, pData, PAGE_SIZE, 0);
+
+    // Wait at least 10 ms
+    for (i=0; i &lt; 1000000; i++);
+
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Filling page #1 with zeroes ...\n\r");
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Write311571722',this); ">TWID_Write</a>(&amp;twid, AT24C_ADDRESS, 0x0100, 2, pData, PAGE_SIZE, 0);
+
+    // Wait at least 10 ms
+    for (i=0; i &lt; 1000000; i++);
+
+    // Synchronous operation
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Read/write on page #0 (polling mode)\n\r");
+
+    // Write checkerboard pattern in first page
+    for (i=0; i &lt; <a href="#" onMouseOver="link('_member','PAGE_SIZE128900283',this); ">PAGE_SIZE</a>; i++) {
+
+        // Even
+        if ((i &amp; 1) == 0) {
+        
+            pData[i] = 0xA5;
+        }
+        // Odd
+        else {
+
+            pData[i] = 0x5A;
+        }
+    }
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Write311571722',this); ">TWID_Write</a>(&amp;twid, AT24C_ADDRESS, 0x0000, 2, pData, PAGE_SIZE, 0);
+
+    // Wait at least 10 ms
+    for (i=0; i &lt; 1000000; i++);
+
+    // Read back data
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/memset3684796183',this); ">memset</a>(pData, 0, PAGE_SIZE);
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Read311571722',this); ">TWID_Read</a>(&amp;twid, AT24C_ADDRESS, 0x0000, 2, pData, PAGE_SIZE, 0);
+
+    // Compare
+    numErrors = 0;
+    for (i=0; i &lt; <a href="#" onMouseOver="link('_member','PAGE_SIZE128900283',this); ">PAGE_SIZE</a>; i++) {
+
+        // Even
+        if (((i &amp; 1) == 0) &amp;&amp; (pData[i] != 0xA5)) {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-E- Data mismatch at offset #%u: expected 0xA5, read 0x%02X\n\r", i, pData[i]);
+            numErrors++;
+        }
+        // Odd
+        else if (((i &amp; 1) == 1) &amp;&amp; (pData[i] != 0x5A)) {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-E- Data mismatch at offset #%u: expected 0x5A, read 0x%02X\n\r", i, pData[i]);
+            numErrors++;
+        }
+    }
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- %u comparison error(s) found\n\r", numErrors);
+
+    // Asynchronous operation
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Read/write on page #1 (IRQ mode)\n\r");
+
+    // Write checkerboard pattern in first page
+    for (i=0; i &lt; <a href="#" onMouseOver="link('_member','PAGE_SIZE128900283',this); ">PAGE_SIZE</a>; i++) {
+
+        // Even
+        if ((i &amp; 1) == 0) {
+        
+            pData[i] = 0xA5;
+        }
+        // Odd
+        else {
+
+            pData[i] = 0x5A;
+        }
+    }
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/memset3684796183',this); ">memset</a>(&amp;async, 0, sizeof(async));
+    async.callback = (void *) <a href="#" onMouseOver="link('_member','TestCallback122',this); ">TestCallback</a>;
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Write311571722',this); ">TWID_Write</a>(&amp;twid, AT24C_ADDRESS, 0x0100, 2, pData, PAGE_SIZE, &amp;async);
+    while (!<a href="#" onMouseOver="link('_member','../at91lib/drivers/async/ASYNC_IsFinished88275389',this); ">ASYNC_IsFinished</a>(&amp;async));
+
+    // Wait at least 10 ms
+    for (i=0; i &lt; 1000000; i++);
+
+    // Read back data
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/memset3684796183',this); ">memset</a>(pData, 0, PAGE_SIZE);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/memset3684796183',this); ">memset</a>(&amp;async, 0, sizeof(async));
+    async.callback = (void *) <a href="#" onMouseOver="link('_member','TestCallback122',this); ">TestCallback</a>;
+    <a href="#" onMouseOver="link('_member','../at91lib/drivers/twi/TWID_Read311571722',this); ">TWID_Read</a>(&amp;twid, AT24C_ADDRESS, 0x0100, 2, pData, PAGE_SIZE, &amp;async);
+    while (!<a href="#" onMouseOver="link('_member','../at91lib/drivers/async/ASYNC_IsFinished88275389',this); ">ASYNC_IsFinished</a>(&amp;async));
+
+    // Compare
+    numErrors = 0;
+    for (i=0; i &lt; <a href="#" onMouseOver="link('_member','PAGE_SIZE128900283',this); ">PAGE_SIZE</a>; i++) {
+
+        // Even
+        if (((i &amp; 1) == 0) &amp;&amp; (pData[i] != 0xA5)) {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-E- Data mismatch at offset #%u: expected 0xA5, read 0x%02X\n\r", i, pData[i]);
+            numErrors++;
+        }
+        // Odd
+        else if (((i &amp; 1) == 1) &amp;&amp; (pData[i] != 0x5A)) {
+
+            <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-E- Data mismatch at offset #%u: expected 0x5A, read 0x%02X\n\r", i, pData[i]);
+            numErrors++;
+        }
+    }
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- %u comparison error(s) found\n\r", numErrors);
+
+    return 0;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

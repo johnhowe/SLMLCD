@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD_Stall</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD_Stall</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD_Stall</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Stall2593655934','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Stall2593655934','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 1035</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','USBD_Stall2593655934',this); ">USBD_Stall</a>(unsigned char bEndpoint)
+{
+    <a href="#" onMouseOver="link('_class','Endpoint0',this); ">Endpoint</a> *pEndpoint = &amp;(endpoints[bEndpoint]);
+
+    // Check that endpoint is in Idle state
+    if (pEndpoint-&gt;<a href="#" onMouseOver="link('_member','state243665814',this); ">state</a> != <a href="#" onMouseOver="link('_member','UDP_ENDPOINT_IDLE1426500306',this); ">UDP_ENDPOINT_IDLE</a>) {
+
+        TRACE_WARNING("UDP_Stall: Endpoint%d locked\n\r", bEndpoint);
+        return <a href="#" onMouseOver="link('_member','USBD_STATUS_LOCKED1024481039',this); ">USBD_STATUS_LOCKED</a>;
+    }
+
+    TRACE_DEBUG_WP("Stall%d ", bEndpoint);
+    <a href="#" onMouseOver="link('_member','SET_CSR2403354909',this); ">SET_CSR</a>(bEndpoint, AT91C_UDP_FORCESTALL);
+
+    return <a href="#" onMouseOver="link('_member','USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

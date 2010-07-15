@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - pio_it.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">pio_it.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','pio0',this)" class="pathLink">pio</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">pio_it.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5543","aID5543","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','pio_it_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','pio_it_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+Configuration and handling of interrupts on PIO status changes. The API provided here have several advantages over the traditional PIO interrupt configuration approach:<ul>
+<li>It is highly portable</li>
+<li>It automatically demultiplexes interrupts when multiples <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a> have been configured on a single PIO controller</li>
+<li>It allows a group of <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a> to share the same interrupt</li>
+</ul>
+
+<br>
+However, it also has several minor drawbacks that may prevent from using it in particular applications:<ul>
+<li>It enables the clocks of all PIO controllers</li>
+<li>PIO controllers all share the same interrupt handler, which does the demultiplexing and can be slower than direct configuration</li>
+<li>It reserves space for a fixed number of interrupts, which can be increased by modifying the appropriate constant in <a href="#" OnMouseOver="link('_file','pio_it_c0',this)">pio_it.c</a>.</li>
+</ul>
+
+<br>
+<div class="userParagraph3">Usage</div>
+<ol>
+<li>Initialize the PIO interrupt mechanism using <a href="#" OnMouseOver="link('_member','PIO_InitializeInterrupts171142247',this)">PIO_InitializeInterrupts()</a> with the desired priority (0 ... 7).</li>
+<li>Configure a status change interrupt on one or more pin(s) with <a href="#" OnMouseOver="link('_member','PIO_ConfigureIt1036220330',this)">PIO_ConfigureIt()</a>.</li>
+<li>Enable &amp; disable interrupts on <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a> using <a href="#" OnMouseOver="link('_member','PIO_EnableIt134351097',this)">PIO_EnableIt()</a> and <a href="#" OnMouseOver="link('_member','PIO_DisableIt134351097',this)">PIO_DisableIt()</a>.</li>
+</ol>
+
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

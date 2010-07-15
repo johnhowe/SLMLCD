@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - SBC_ProcessCommand</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">SBC_ProcessCommand</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">SBC_ProcessCommand</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','SBC_ProcessCommand3770566435','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','SBC_ProcessCommand3770566435','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 1000</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','SBC_ProcessCommand3770566435',this); ">SBC_ProcessCommand</a>(<a href="#" onMouseOver="link('_class','MSDLun0',this); ">MSDLun</a> *lun, <a href="#" onMouseOver="link('_class','MSDCommandState0',this); ">MSDCommandState</a> *commandState)
+                                     {
+    //---------------
+    case <a href="#" onMouseOver="link('_member','SBC_READ_102028634509',this); ">SBC_READ_10</a>:
+    //---------------
+        TRACE_INFO_WP("Read(10) ");
+
+        // Perform the Read10 command
+        result = SBC_Read10(lun, commandState);
+        break;
+
+    //----------------
+    case <a href="#" onMouseOver="link('_member','SBC_WRITE_102028634509',this); ">SBC_WRITE_10</a>:
+    //----------------
+        TRACE_INFO_WP("Write(10) ");
+
+        // Perform the Write10 command
+        result = SBC_Write10(lun, commandState);
+        break;
+
+    //---------------------
+    case <a href="#" onMouseOver="link('_member','SBC_READ_CAPACITY_102028634509',this); ">SBC_READ_CAPACITY_10</a>:
+    //---------------------
+        TRACE_INFO_WP("RdCapacity(10) ");
+
+        // Perform the ReadCapacity command
+        result = SBC_ReadCapacity10(lun, commandState);
+        break;
+
+    //---------------------
+    case <a href="#" onMouseOver="link('_member','SBC_VERIFY_102028634509',this); ">SBC_VERIFY_10</a>:
+    //---------------------
+        TRACE_INFO_WP("Verify(10) ");
+
+        // Flush media
+        MED_Flush(lun-&gt;<a href="#" onMouseOver="link('_member','media37150',this); ">media</a>);
+        result = <a href="#" onMouseOver="link('_member','MSDD_STATUS_SUCCESS2842549707',this); ">MSDD_STATUS_SUCCESS</a>;
+        break;
+
+    //---------------
+    case <a href="#" onMouseOver="link('_member','SBC_INQUIRY2028634509',this); ">SBC_INQUIRY</a>:
+    //---------------
+        TRACE_INFO_WP("Inquiry ");
+
+        // Process Inquiry command
+        result = SBC_Inquiry(lun, commandState);
+        break;
+
+    //--------------------
+    case <a href="#" onMouseOver="link('_member','SBC_MODE_SENSE_62028634509',this); ">SBC_MODE_SENSE_6</a>:
+    //--------------------
+        TRACE_INFO_WP("ModeSense(6) ");
+
+        // Process ModeSense6 command
+        result = SBC_ModeSense6(commandState);
+        break;
+
+    //-----------------------
+    case <a href="#" onMouseOver="link('_member','SBC_TEST_UNIT_READY2028634509',this); ">SBC_TEST_UNIT_READY</a>:
+    //-----------------------
+        TRACE_INFO_WP("TstUnitRdy ");
+
+        // Process TestUnitReady command
+        //MED_Flush(lun-&gt;media);
+        result = SBC_TestUnitReady(lun);
+        break;
+
+    //---------------------
+    case <a href="#" onMouseOver="link('_member','SBC_REQUEST_SENSE2028634509',this); ">SBC_REQUEST_SENSE</a>:
+    //---------------------
+        TRACE_INFO_WP("ReqSense ");
+
+        // Perform the RequestSense command
+        result = SBC_RequestSense(lun, commandState);
+        break;
+
+    //------------------------------------
+    case <a href="#" onMouseOver="link('_member','SBC_PREVENT_ALLOW_MEDIUM_REMOVAL2028634509',this); ">SBC_PREVENT_ALLOW_MEDIUM_REMOVAL</a>:
+    //------------------------------------
+        TRACE_INFO_WP("PrevAllowRem ");
+
+        // Nothing to do
+        result = <a href="#" onMouseOver="link('_member','MSDD_STATUS_SUCCESS2842549707',this); ">MSDD_STATUS_SUCCESS</a>;
+        break;
+
+    //------
+    default:
+    //------
+        result = <a href="#" onMouseOver="link('_member','MSDD_STATUS_PARAMETER2842549707',this); ">MSDD_STATUS_PARAMETER</a>;
+    }
+
+    return result;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

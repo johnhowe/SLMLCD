@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - HIDDKeyboardDriver_ChangeKeys</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">HIDDKeyboardDriver_ChangeKeys</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','hidmi_keyboard0',this)" class="pathLink">hid-keyboard</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">HIDDKeyboardDriver_ChangeKeys</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','HIDDKeyboardDriver_ChangeKeys3377535274','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','HIDDKeyboardDriver_ChangeKeys3377535274','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 412</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','HIDDKeyboardDriver_ChangeKeys3377535274',this); ">HIDDKeyboardDriver_ChangeKeys</a>(unsigned char *pressedKeys, unsigned char pressedKeysSize, unsigned char *releasedKeys, unsigned char releasedKeysSize)
+{
+    // Press keys
+    while (pressedKeysSize &gt; 0) {
+
+        // Check if this is a standard or modifier key
+        if (<a href="#" onMouseOver="link('_member','../../common/hid/HIDKeypad_IsModifierKey2593655934',this); ">HIDKeypad_IsModifierKey</a>(*pressedKeys)) {
+
+            // Set the corresponding bit in the input report
+            <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_PressModifierKey2773043127',this); ">HIDDKeyboardInputReport_PressModifierKey</a>(
+                &amp;(hiddKeyboardDriver.inputReport),
+                *pressedKeys);
+        }
+        else {
+
+            <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_PressStandardKey2773043127',this); ">HIDDKeyboardInputReport_PressStandardKey</a>(
+                &amp;(hiddKeyboardDriver.inputReport),
+                *pressedKeys);
+        }
+
+        pressedKeysSize--;
+        pressedKeys++;
+    }
+
+    // Release keys
+    while (releasedKeysSize &gt; 0) {
+
+        // Check if this is a standard or modifier key
+        if (<a href="#" onMouseOver="link('_member','../../common/hid/HIDKeypad_IsModifierKey2593655934',this); ">HIDKeypad_IsModifierKey</a>(*releasedKeys)) {
+
+            // Set the corresponding bit in the input report
+            <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_ReleaseModifierKey2773043127',this); ">HIDDKeyboardInputReport_ReleaseModifierKey</a>(
+                &amp;(hiddKeyboardDriver.inputReport),
+                *releasedKeys);
+        }
+        else {
+
+            <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_ReleaseStandardKey2773043127',this); ">HIDDKeyboardInputReport_ReleaseStandardKey</a>(
+                &amp;(hiddKeyboardDriver.inputReport),
+                *releasedKeys);
+        }
+
+        releasedKeysSize--;
+        releasedKeys++;
+    }
+
+    // Send input report through the interrupt IN endpoint
+    return <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(HIDDKeyboardDriverDescriptors_INTERRUPTIN,
+                      &amp;(hiddKeyboardDriver.inputReport),
+                      sizeof(HIDDKeyboardInputReport),
+                      0,
+                      0);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

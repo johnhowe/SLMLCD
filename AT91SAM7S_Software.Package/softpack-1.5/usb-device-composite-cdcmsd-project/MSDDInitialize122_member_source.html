@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - MSDDInitialize</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">MSDDInitialize</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','usbmi_devicemi_compositemi_cdcmsdmi_project0',this)" class="pathLink">usb-device-composite-cdcmsd-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">MSDDInitialize</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','MSDDInitialize122','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','MSDDInitialize122','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 759</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','MSDDInitialize122',this); ">MSDDInitialize</a>()
+{
+    // Memory initialization
+    // SDRAM
+#if defined(AT91C_EBI_SDRAM)
+
+#if !defined(sdram)
+    BOARD_ConfigureSdram(16);
+#endif
+    
+    MEDSdram_Initialize(&amp;(medias[numMedias]),
+                        (unsigned int) AT91C_EBI_SDRAM + CODE_SIZE,
+                        10*1024*1024); // 10Mb used for R/W testing
+    <a href="#" onMouseOver="link('_member','../at91lib/usb/device/massstorage/LUN_Init1533915438',this); ">LUN_Init</a>(&amp;(luns[numMedias]), &amp;(medias[numMedias]),
+        msdBuffer, 0, 10*1024*1024, BLOCK_SIZE);
+    <a href="#" onMouseOver="link('_member','../at91lib/memories/numMedias0',this); ">numMedias</a>++;
+#endif
+
+    // Flash (only when NOT running in flash)
+#if defined(AT91C_BASE_EFC) &amp;&amp; !defined(flash)
+    TRACE_INFO("LUN Flash\n\r");
+    if (<a href="#" onMouseOver="link('_member','../at91lib/memories/numMedias0',this); ">numMedias</a> == 0) {
+ 
+        FLA_Initialize(&amp;(medias[numMedias]), AT91C_BASE_EFC);
+        <a href="#" onMouseOver="link('_member','../at91lib/usb/device/massstorage/LUN_Init1533915438',this); ">LUN_Init</a>(&amp;(luns[numMedias]), &amp;(medias[numMedias]),
+            msdBuffer, 30*1024, 34*1024, BLOCK_SIZE);
+        <a href="#" onMouseOver="link('_member','../at91lib/memories/numMedias0',this); ">numMedias</a>++;
+
+        // Install handler for flash interrupt
+        <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_ConfigureIT1035508632',this); ">AIC_ConfigureIT</a>(AT91C_ID_SYS, AT91C_AIC_PRIOR_LOWEST, ISR_Media);
+        <a href="#" onMouseOver="link('_member','../at91lib/peripherals/aic/AIC_EnableIT171142247',this); ">AIC_EnableIT</a>(AT91C_ID_SYS);
+    }
+#endif
+
+    ASSERT(numMedias &gt; 0, "Error: No media defined.\n\r");
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("%u medias defined\n\r", numMedias);
+
+    // BOT driver initialization
+    MSDDFunctionDriver_Initialize(luns, numMedias);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

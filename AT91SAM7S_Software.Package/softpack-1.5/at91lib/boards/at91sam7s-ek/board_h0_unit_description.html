@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - board.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">board.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../boards0',this)" class="pathLink">boards</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','at91sam7smi_ek0',this)" class="pathLink">at91sam7s-ek</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">board.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5525","aID5525","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','board_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','board_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+Definition of AT91SAM7S-EK characteristics, AT91SAM7S-dependant PIOs and external <a href="#" OnMouseOver="link('_dir','../../components/components0',this)">components</a> interfacing.<br>
+<br>
+<div class="userParagraph3">Contents</div>
+ This file provide a large number of definitions, which are of three different types.<br>
+<br>
+PIO definitions are prefixed with <b>PIN_</b> or <b>PINS_</b>. They are to be used with the <a href="#" OnMouseOver="link('_dir','../../peripherals/pio/pio0',this)">pio</a> peripheral to configure the <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a> required by the application.<br>
+<br>
+First, additional information about the platform is provided by several constants:<ul>
+<li><a href="#" OnMouseOver="link('_member','BOARD_NAME839682361',this)">BOARD_NAME</a> is a string containing the board name</li>
+<li>The chip family and board (<a href="#" OnMouseOver="link('_member','at91sam7s839682361',this)">at91sam7s</a> and <a href="#" OnMouseOver="link('_member','at91sam7sek839682361',this)">at91sam7sek</a>) are also provided.</li>
+<li><a href="#" OnMouseOver="link('_member','BOARD_MAINOSC839682361',this)">BOARD_MAINOSC</a> and <a href="#" OnMouseOver="link('_member','BOARD_MCK839682361',this)">BOARD_MCK</a> contains the standard frequency for the <a href="#" OnMouseOver="link('_member','../../../usb-device-massstorage-project/main53616',this)">main</a> oscillator and the master clock.</li>
+</ul>
+
+<br>
+Contants prefixed with <b>BOARD_USB_</b> give information about the USB <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a> peripheral that is provided in the chip.<br>
+<br>
+Defines prefixed with <b>PIN_</b> contain only one pin (and thus can be safely used to initialize a single <a href="#" OnMouseOver="link('_class','../../peripherals/pio/Pin0',this)">Pin</a> instance), whereas defines starting with <b>PINS_</b> contains either a single <a href="#" OnMouseOver="link('_class','../../peripherals/pio/Pin0',this)">Pin</a> instance with multiple <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a> inside it, or a list of several <a href="#" OnMouseOver="link('_class','../../peripherals/pio/Pin0',this)">Pin</a> instances; they must be used as <a href="#" OnMouseOver="link('_class','../../peripherals/pio/Pin0',this)">Pin</a>[] array initializer values, otherwise they are not safe.<br>
+<br>
+Finally, some information about the <a href="#" OnMouseOver="link('_dir','../../memories/flash/flash0',this)">flash</a> controller is given by definitions prefixed with <b>BOARD_FLASH_</b>.<br>
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

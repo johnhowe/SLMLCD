@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - SPI_ReadBuffer</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">SPI_ReadBuffer</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spi0',this)" class="pathLink">spi</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">SPI_ReadBuffer</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','SPI_ReadBuffer897678812','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','SPI_ReadBuffer897678812','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 172</div>
+<pre class="codeExamples">
+unsigned char <a href="#" onMouseOver="link('_member','SPI_ReadBuffer897678812',this); ">SPI_ReadBuffer</a>(AT91S_SPI *spi, void *buffer, unsigned int length)
+{
+    // Check if the first bank is free
+    if (spi-&gt;SPI_RCR == 0) {
+
+        spi-&gt;SPI_RPR = (unsigned int) buffer;
+        spi-&gt;SPI_RCR = length;
+        spi-&gt;SPI_PTCR = AT91C_PDC_RXTEN;
+        return 1;
+    }
+    // Check if second bank is free
+    else if (spi-&gt;SPI_RNCR == 0) {
+
+        spi-&gt;SPI_RNPR = (unsigned int) buffer;
+        spi-&gt;SPI_RNCR = length;
+        return 1;
+    }
+
+    // No free bank
+    return 0;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

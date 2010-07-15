@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - basic-dataflash-project</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">basic-dataflash-project</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">basic-dataflash-project</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5503","aID5503","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_dir','basicmi_dataflashmi_project0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_dir','basicmi_dataflashmi_project0','_dirgraph',this)" class="tabLinkInActive">Graph</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">basic-dataflash-project</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Purpose</div>
+The Basic Dataflash project will help new users get familiar with SPI interface on Atmel's AT91 family of microcontrollers. This project gives you an AT45 Dataflash programming code so that can help develop your own SPI devices applications with maximum efficiency.<br>
+<br>
+</div>
+<div class="padding">You can find following information depends on your needs:<ul>
+<li>A Spi low level driver performs SPI <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> Initializes, data transfer and receive. It can be used by upper SPI driver such as AT45 dataflash.</li>
+<li>A Dataflash driver is based on top of the corresponding Spi driver. It allow user to do operations with dataflash in a unified way.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">See also</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/memories/spi-flash/spimi_flash0',this)">"spi-flash"</a>: Dataflash interface driver.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Requirements</div>
+ This package can be used with all Atmel evaluation kits that have SPI interface and on-board or external Serialflash connected. The package runs at SRAM or SDRAM, so SDRAM <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> is needed if you want to run this package in SDRAM.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Description</div>
+ The demonstration program tests the dataflash present on the evaluation kit by erasing and writing each one of its pages.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Usage</div>
+<ol>
+<li>Build the program and download it inside the evaluation board. Please refer to the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6224.pdf">SAM-BA User Guide</a>, the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">GNU-Based Software Development</a> application note or to the <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">IAR EWARM User Guide</a>, depending on your chosen solution.</li>
+<li>On the computer, open and configure a terminal application (e.g. HyperTerminal on Microsoft Windows) with these settings:<ul>
+<li>115200 bauds</li>
+<li>8 bits of data</li>
+<li>No parity</li>
+<li>1 stop bit</li>
+<li>No flow control</li>
+</ul>
+
+</li>
+<li>Start the application.</li>
+<li>Upon startup, the application will output the following lines on the DBGU.   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+-- Basic Dataflash Project xxx --
+-- AT91xxxxxx-xx
+-- Compiled: xxx xx xxxx xx:xx:xx --
+-I- Initializing the SPI and AT45 drivers
+-I- <a href="#" onMouseOver="link('_class','../at91lib/memories/spi-flash/_Dataflash0',this); ">At45</a> enabled
+-I- SPI interrupt enabled
+-I- Waiting for a dataflash to be connected ...
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+<li>As soon as a dataflash is connected, the tests will start. Eventually, the test result (pass or fail) will be output on the DBGU.</li>
+</ol>
+
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Directory was generated from the following files:</div>
+<div class="paddingMembers"><LI>main.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_dir','_description');
+</script>

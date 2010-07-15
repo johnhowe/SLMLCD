@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - vfprintf</TITLE>
+<script type="text/javascript" src="../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../common/";
+ var relPathToHelpDir = "../../../common/help/";
+ var toSearchPage     = "_search','../../../search";
+ Body1();
+</script>
+<div class="headerPage">vfprintf</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','utility0',this)" class="pathLink">utility</A><img src="../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">vfprintf</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','vfprintf1446036272','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','vfprintf1446036272','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 423</div>
+<pre class="codeExamples">
+signed int <a href="#" onMouseOver="link('_member','vfprintf1446036272',this); ">vfprintf</a>(FILE *pStream, const char *pFormat, va_list ap)
+{
+    char pStr[MAX_STRING_SIZE];
+    char pError[] = "stdio.c: increase MAX_STRING_SIZE\n\r";
+
+    // Write formatted string in buffer
+    if (<a href="#" onMouseOver="link('_member','vsprintf1446026077',this); ">vsprintf</a>(pStr, pFormat, ap) &gt;= MAX_STRING_SIZE) {
+
+        <a href="#" onMouseOver="link('_member','../../basic-usart-hw-handshaking-project/fputs1324831452',this); ">fputs</a>(pError, stderr);
+        while (1); // Increase MAX_STRING_SIZE
+    }
+
+    // Display string
+    return <a href="#" onMouseOver="link('_member','../../basic-usart-hw-handshaking-project/fputs1324831452',this); ">fputs</a>(pStr, pStream);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

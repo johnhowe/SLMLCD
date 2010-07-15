@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD_Halt</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD_Halt</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD_Halt</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Halt2593655934','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Halt2593655934','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 955</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','USBD_Halt2593655934',this); ">USBD_Halt</a>(unsigned char bEndpoint)
+{
+    <a href="#" onMouseOver="link('_class','Endpoint0',this); ">Endpoint</a> *pEndpoint = &amp;(endpoints[bEndpoint]);
+    
+    // Check that endpoint is enabled and not already in Halt state
+    if ((pEndpoint-&gt;<a href="#" onMouseOver="link('_member','state243665814',this); ">state</a> != <a href="#" onMouseOver="link('_member','UDP_ENDPOINT_DISABLED1426500306',this); ">UDP_ENDPOINT_DISABLED</a>)
+        &amp;&amp; (pEndpoint-&gt;<a href="#" onMouseOver="link('_member','state243665814',this); ">state</a> != <a href="#" onMouseOver="link('_member','UDP_ENDPOINT_HALTED1426500306',this); ">UDP_ENDPOINT_HALTED</a>)) {
+
+        TRACE_DEBUG_WP("Halt%d ", bEndpoint);
+
+        // Abort the current transfer if necessary
+        UDP_EndOfTransfer(bEndpoint, USBD_STATUS_ABORTED);
+
+        // Put endpoint into Halt state
+        <a href="#" onMouseOver="link('_member','SET_CSR2403354909',this); ">SET_CSR</a>(bEndpoint, AT91C_UDP_FORCESTALL);
+        pEndpoint-&gt;<a href="#" onMouseOver="link('_member','state243665814',this); ">state</a> = <a href="#" onMouseOver="link('_member','UDP_ENDPOINT_HALTED1426500306',this); ">UDP_ENDPOINT_HALTED</a>;
+
+        // Enable the endpoint interrupt
+        AT91C_BASE_UDP-&gt;UDP_IER = 1 &lt;&lt; bEndpoint;
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

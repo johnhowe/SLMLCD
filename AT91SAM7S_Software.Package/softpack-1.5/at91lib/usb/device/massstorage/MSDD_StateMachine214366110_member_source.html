@@ -1,0 +1,209 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - MSDD_StateMachine</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">MSDD_StateMachine</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">MSDD_StateMachine</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','MSDD_StateMachine214366110','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','MSDD_StateMachine214366110','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 402</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','MSDD_StateMachine214366110',this); ">MSDD_StateMachine</a>(<a href="#" onMouseOver="link('_class','MSDDriver0',this); ">MSDDriver</a> *pMsdDriver)
+{
+    <a href="#" onMouseOver="link('_class','MSDCommandState0',this); ">MSDCommandState</a> *commandState = &amp;(pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','commandState212328843',this); ">commandState</a>);
+    <a href="#" onMouseOver="link('_class','MSCbw0',this); ">MSCbw</a>           *cbw = &amp;(commandState-&gt;<a href="#" onMouseOver="link('_member','cbw1494751107',this); ">cbw</a>);
+    <a href="#" onMouseOver="link('_class','MSCsw0',this); ">MSCsw</a>           *csw = &amp;(commandState-&gt;<a href="#" onMouseOver="link('_member','csw1494751107',this); ">csw</a>);
+    <a href="#" onMouseOver="link('_class','MSDTransfer0',this); ">MSDTransfer</a>     *transfer = &amp;(commandState-&gt;transfer);
+    unsigned char   status;
+
+    // Identify current driver state
+    switch (pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a>) {
+    //----------------------
+    case <a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); ">MSDD_STATE_READ_CBW</a>:
+    //----------------------
+        // Start the CBW read operation
+        transfer-&gt;<a href="#" onMouseOver="link('_member','semaphore155617951',this); ">semaphore</a> = 0;
+        status = <a href="#" onMouseOver="link('_member','MSDD_Read1390444857',this); ">MSDD_Read</a>(cbw,
+                           MSD_CBW_SIZE,
+                           (TransferCallback) MSDDriver_Callback,
+                           (void *) transfer);
+
+        // Check operation result code
+        if (status == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>) {
+
+            // If the command was successful, wait for transfer
+            pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_WAIT_CBW2842549707',this); ">MSDD_STATE_WAIT_CBW</a>;
+        }
+        break;
+
+    //----------------------
+    case <a href="#" onMouseOver="link('_member','MSDD_STATE_WAIT_CBW2842549707',this); ">MSDD_STATE_WAIT_CBW</a>:
+    //----------------------
+        // Check transfer semaphore
+        if (transfer-&gt;<a href="#" onMouseOver="link('_member','semaphore155617951',this); ">semaphore</a> &gt; 0) {
+
+            // Take semaphore and terminate transfer
+            transfer-&gt;<a href="#" onMouseOver="link('_member','semaphore155617951',this); ">semaphore</a>--;
+
+            // Check if transfer was successful
+            if (transfer-&gt;<a href="#" onMouseOver="link('_member','status155617951',this); ">status</a> == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>) {
+
+                TRACE_INFO_WP("------------------------------\n\r");
+
+                // Process received command
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_PROCESS_CBW2842549707',this); ">MSDD_STATE_PROCESS_CBW</a>;
+            }
+            else if (transfer-&gt;<a href="#" onMouseOver="link('_member','status155617951',this); ">status</a> == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_RESET1024481039',this); ">USBD_STATUS_RESET</a>) {
+
+                TRACE_INFO("MSDD_StateMachine: Endpoint resetted\n\r");
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); ">MSDD_STATE_READ_CBW</a>;
+            }
+            else {
+
+                TRACE_WARNING(
+                    "MSDD_StateMachine: Failed to read CBW\n\r");
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); ">MSDD_STATE_READ_CBW</a>;
+            }
+        }
+        break;
+
+    //-------------------------
+    case <a href="#" onMouseOver="link('_member','MSDD_STATE_PROCESS_CBW2842549707',this); ">MSDD_STATE_PROCESS_CBW</a>:
+    //-------------------------
+        // Check if this is a new command
+        if (commandState-&gt;<a href="#" onMouseOver="link('_member','state1494751107',this); ">state</a> == 0) {
+
+            // Copy the CBW tag
+            csw-&gt;<a href="#" onMouseOver="link('_member','dCSWTag58028',this); ">dCSWTag</a> = cbw-&gt;<a href="#" onMouseOver="link('_member','dCBWTag49324',this); ">dCBWTag</a>;
+
+            // Check that the CBW is 31 bytes long
+            if ((transfer-&gt;transferred != <a href="#" onMouseOver="link('_member','MSD_CBW_SIZE2028663731',this); ">MSD_CBW_SIZE</a>) ||
+                (transfer-&gt;<a href="#" onMouseOver="link('_member','remaining155617951',this); ">remaining</a> != 0)) {
+
+                TRACE_WARNING(
+                    "MSDD_StateMachine: Invalid CBW (Bad Length)\n\r");
+
+                // Wait for a reset recovery
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','waitResetRecovery212328843',this); ">waitResetRecovery</a> = 1;
+
+                // Halt the Bulk-IN and Bulk-OUT pipes
+                <a href="#" onMouseOver="link('_member','MSDD_Halt171142247',this); ">MSDD_Halt</a>(MSDD_CASE_STALL_OUT | MSDD_CASE_STALL_IN);
+
+                csw-&gt;<a href="#" onMouseOver="link('_member','bCSWStatus58028',this); ">bCSWStatus</a> = <a href="#" onMouseOver="link('_member','MSD_CSW_COMMAND_FAILED2028663731',this); ">MSD_CSW_COMMAND_FAILED</a>;
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); ">MSDD_STATE_READ_CBW</a>;
+
+            }
+            // Check the CBW Signature
+            else if (cbw-&gt;<a href="#" onMouseOver="link('_member','dCBWSignature49324',this); ">dCBWSignature</a> != <a href="#" onMouseOver="link('_member','MSD_CBW_SIGNATURE2028663731',this); ">MSD_CBW_SIGNATURE</a>) {
+
+                TRACE_WARNING(
+                    "MSD_BOTStateMachine: Invalid CBW (Bad signature)\n\r");
+
+                // Wait for a reset recovery
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','waitResetRecovery212328843',this); ">waitResetRecovery</a> = 1;
+
+                // Halt the Bulk-IN and Bulk-OUT pipes
+                <a href="#" onMouseOver="link('_member','MSDD_Halt171142247',this); ">MSDD_Halt</a>(MSDD_CASE_STALL_OUT | MSDD_CASE_STALL_IN);
+
+                csw-&gt;<a href="#" onMouseOver="link('_member','bCSWStatus58028',this); ">bCSWStatus</a> = <a href="#" onMouseOver="link('_member','MSD_CSW_COMMAND_FAILED2028663731',this); ">MSD_CSW_COMMAND_FAILED</a>;
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); ">MSDD_STATE_READ_CBW</a>;
+            }
+            else {
+
+                // Pre-process command
+                MSDD_PreProcessCommand(pMsdDriver);
+            }
+        }
+
+        // Process command
+        if (csw-&gt;<a href="#" onMouseOver="link('_member','bCSWStatus58028',this); ">bCSWStatus</a> == <a href="#" onMouseOver="link('_member','MSDD_STATUS_SUCCESS2842549707',this); ">MSDD_STATUS_SUCCESS</a>) {
+
+            if (MSDD_ProcessCommand(pMsdDriver)) {
+
+                // Post-process command if it is finished
+                MSDD_PostProcessCommand(pMsdDriver);
+                pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_SEND_CSW2842549707',this); ">MSDD_STATE_SEND_CSW</a>;
+            }
+            TRACE_INFO_WP("\n\r");
+        }
+
+        break;
+
+    //----------------------
+    case <a href="#" onMouseOver="link('_member','MSDD_STATE_SEND_CSW2842549707',this); ">MSDD_STATE_SEND_CSW</a>:
+    //----------------------
+        // Set signature
+        csw-&gt;<a href="#" onMouseOver="link('_member','dCSWSignature58028',this); ">dCSWSignature</a> = <a href="#" onMouseOver="link('_member','MSD_CSW_SIGNATURE2028663731',this); ">MSD_CSW_SIGNATURE</a>;
+
+        // Start the CSW write operation
+        status = <a href="#" onMouseOver="link('_member','MSDD_Write1390444857',this); ">MSDD_Write</a>(csw,
+                            MSD_CSW_SIZE,
+                            (TransferCallback) MSDDriver_Callback,
+                            (void *) transfer);
+
+        // Check operation result code
+        if (status == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>) {
+
+            TRACE_INFO_WP("SendCSW ");
+
+            // Wait for end of transfer
+            pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_WAIT_CSW2842549707',this); ">MSDD_STATE_WAIT_CSW</a>;
+        }
+        break;
+
+    //----------------------
+    case <a href="#" onMouseOver="link('_member','MSDD_STATE_WAIT_CSW2842549707',this); ">MSDD_STATE_WAIT_CSW</a>:
+    //----------------------
+        // Check transfer semaphore
+        if (transfer-&gt;<a href="#" onMouseOver="link('_member','semaphore155617951',this); ">semaphore</a> &gt; 0) {
+
+            // Take semaphore and terminate transfer
+            transfer-&gt;<a href="#" onMouseOver="link('_member','semaphore155617951',this); ">semaphore</a>--;
+
+            // Check if transfer was successful
+            if (transfer-&gt;<a href="#" onMouseOver="link('_member','status155617951',this); ">status</a> == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_RESET1024481039',this); ">USBD_STATUS_RESET</a>) {
+
+                TRACE_INFO("MSDD_StateMachine: Endpoint resetted\n\r");
+            }
+            else if (transfer-&gt;<a href="#" onMouseOver="link('_member','status155617951',this); ">status</a> == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_ABORTED1024481039',this); ">USBD_STATUS_ABORTED</a>) {
+
+                TRACE_WARNING(
+                    "MSDD_StateMachine: Failed to send CSW\n\r");
+            }
+            else {
+
+                TRACE_INFO_WP("ok");
+            }
+
+            // Read new CBW
+            pMsdDriver-&gt;<a href="#" onMouseOver="link('_member','state212328843',this); ">state</a> = <a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); ">MSDD_STATE_READ_CBW</a>;
+        }
+        break;
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

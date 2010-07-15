@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - DBGU_Configure</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">DBGU_Configure</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','dbgu0',this)" class="pathLink">dbgu</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">DBGU_Configure</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','DBGU_Configure1358050609','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','DBGU_Configure1358050609','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 55</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','DBGU_Configure1358050609',this); ">DBGU_Configure</a>(unsigned int mode, unsigned int baudrate, unsigned int mck)
+{   
+    // Reset &amp; disable receiver and transmitter, disable interrupts
+    AT91C_BASE_DBGU-&gt;DBGU_CR = AT91C_US_RSTRX | AT91C_US_RSTTX;
+    AT91C_BASE_DBGU-&gt;DBGU_IDR = 0xFFFFFFFF;
+    
+    // Configure baud rate
+    AT91C_BASE_DBGU-&gt;DBGU_BRGR = mck / (baudrate * 16);
+    
+    // Configure mode register
+    AT91C_BASE_DBGU-&gt;DBGU_MR = mode;
+    
+    // Disable DMA channel
+    AT91C_BASE_DBGU-&gt;DBGU_PTCR = AT91C_PDC_RXTDIS | AT91C_PDC_TXTDIS;
+
+    // Enable receiver and transmitter
+    AT91C_BASE_DBGU-&gt;DBGU_CR = AT91C_US_RXEN | AT91C_US_TXEN;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

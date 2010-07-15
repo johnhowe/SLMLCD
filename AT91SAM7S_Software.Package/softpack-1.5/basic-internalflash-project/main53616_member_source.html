@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - main</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">main</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','basicmi_internalflashmi_project0',this)" class="pathLink">basic-internalflash-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">main</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','main53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 168</div>
+<pre class="codeExamples">
+int <a href="#" onMouseOver="link('_member','../basic-dataflash-project/main53616',this); ">main</a>(void)
+{
+    unsigned int i;
+    unsigned char error;
+    unsigned int <a href="#" onMouseOver="link('_member','../basic-usart-hw-handshaking-project/pBuffer0',this); ">pBuffer</a>[AT91C_IFLASH_PAGE_SIZE / 4];
+    unsigned int lastPageAddress;
+    volatile unsigned int *pLastPageData;
+    unsigned char pageLocked;
+
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/TRACE_CONFIGURE1551293405',this); ">TRACE_CONFIGURE</a>(DBGU_STANDARD, 115200, BOARD_MCK);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- Basic Internal Flash Project %s --\n\r", SOFTPACK_VERSION);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- %s\n\r", BOARD_NAME);
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+
+    // Initialize flash driver
+    FLASHD_Initialize(BOARD_MCK);
+
+    // Unlock whole flash
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Unlocking the whole flash\n\r");
+#if defined(at91sam7a3)
+    error = FLASHD_Unlock(AT91C_IFLASH, AT91C_IFLASH + 64 * 1024, 0, 0);
+#else
+    error = FLASHD_Unlock(AT91C_IFLASH, AT91C_IFLASH + AT91C_IFLASH_SIZE, 0, 0);
+#endif
+    ASSERT(!error, "-F- Error while trying to unlock the whole flash (0x%02X)\n\r", error);
+
+    // Performs tests on last page (to avoid overriding existing program).
+    lastPageAddress = AT91C_IFLASH + AT91C_IFLASH_SIZE - AT91C_IFLASH_PAGE_SIZE;
+    pLastPageData = (volatile unsigned int *) lastPageAddress;
+
+    // Write page with walking bit pattern (0x00000001, 0x00000002, ...)
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Writing last page with walking bit pattern\n\r");
+    for (i=0; i &lt; (AT91C_IFLASH_PAGE_SIZE / 4); i++) {
+
+        <a href="#" onMouseOver="link('_member','../basic-usart-hw-handshaking-project/pBuffer0',this); ">pBuffer</a>[i] = 1 &lt;&lt; (i % 32);
+    }
+    error = FLASHD_Write(lastPageAddress, pBuffer, AT91C_IFLASH_PAGE_SIZE);
+    ASSERT(!error, "-F- Error when trying to write page (0x%02X)\n\r", error);
+
+    // Check page contents
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Checking page contents ");
+    for (i=0; i &lt; (AT91C_IFLASH_PAGE_SIZE / 4); i++) {
+
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>(".");
+        ASSERT(pLastPageData[i] == (1 &lt;&lt; (i % 32)),
+               "\n\r-F- Expected 0x%08X at address 0x%08X, found 0x%08X\n\r",
+               (1 &lt;&lt; (i % 32)), (unsigned int) &amp;(pLastPageData[i]), pLastPageData[i]);
+    }
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>(" ok \n\r");
+
+#if defined(at91sam7a3)
+    // Only the first 64Kb can be locked in the SAM7A3
+    lastPageAddress = AT91C_IFLASH + (64*1024) - AT91C_IFLASH_PAGE_SIZE;
+#endif
+
+    // Lock page
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Locking last page\n\r");
+    error = FLASHD_Lock(lastPageAddress, lastPageAddress + AT91C_IFLASH_PAGE_SIZE, 0, 0);
+    ASSERT(!error, "-F- Error when trying to lock page (0x%02X)\n\r", error);
+
+    // Check that associated region is locked
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Checking lock status ... ");
+    pageLocked = FLASHD_IsLocked(lastPageAddress, lastPageAddress + AT91C_IFLASH_PAGE_SIZE);
+    ASSERT(pageLocked, "\n\r-F- Page is not locked\n\r");
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("ok\n\r");
+
+    // Unlock page
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Unlocking last page\n\r");
+    error = FLASHD_Unlock(lastPageAddress, lastPageAddress + AT91C_IFLASH_PAGE_SIZE, 0, 0);
+    ASSERT(!error, "-F- Error when trying to unlock page (0x%02X)\n\r", error);
+
+    // Check that associated region is unlocked
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Checking lock status ... ");
+    pageLocked = FLASHD_IsLocked(lastPageAddress, lastPageAddress + AT91C_IFLASH_PAGE_SIZE);
+    ASSERT(!pageLocked, "\n\r-F- Page is locked\n\r");
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("ok\n\r");
+
+#if (EFC_NUM_GPNVMS &gt; 0)
+    // Test GPNVM bit #1 (should be safe)
+    if (FLASHD_IsGPNVMSet(1)) {
+
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- GPNVM #1 is set\n\r");
+
+        // Clear GPNVM
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Clearing GPNVM #%d\n\r", 1);
+        error = FLASHD_ClearGPNVM(1);
+        ASSERT(!error, "-F- Error while trying to clear GPNVM (0x%02X)\n\r", error);
+        ASSERT(!FLASHD_IsGPNVMSet(1), "-F- GPNVM is set\n\r");
+
+        // Set GPNVM
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Setting GPNVM #%d\n\r", 1);
+        error = FLASHD_SetGPNVM(1);
+        ASSERT(!error, "-F- Error while trying to set GPNVM (0x%02X)\n\r", error);
+        ASSERT(FLASHD_IsGPNVMSet(1), "-F- GPNVM is not set\n\r");
+
+    }
+    else {
+
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- GPNVM #1 is cleared\n\r");
+
+        // Set GPNVM
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Setting GPNVM #%d\n\r", 1);
+        error = FLASHD_SetGPNVM(1);
+        ASSERT(!error, "-F- Error while trying to set GPNVM (0x%02X)\n\r", error);
+        ASSERT(FLASHD_IsGPNVMSet(1), "-F- GPNVM is not set\n\r");
+
+        // Clear GPNVM
+        <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- Clearing GPNVM #%d\n\r", 1);
+        error = FLASHD_ClearGPNVM(1);
+        ASSERT(!error, "-F- Error while trying to clear GPNVM (0x%02X)\n\r", error);
+        ASSERT(!FLASHD_IsGPNVMSet(1), "-F- GPNVM is set\n\r");
+    }
+#endif
+
+    <a href="#" onMouseOver="link('_member','../at91lib/utility/printf186537041',this); ">printf</a>("-I- All tests ok\n\r");
+    return 0;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

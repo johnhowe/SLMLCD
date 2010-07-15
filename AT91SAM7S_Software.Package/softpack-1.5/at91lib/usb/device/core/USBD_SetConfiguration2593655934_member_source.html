@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD_SetConfiguration</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD_SetConfiguration</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD_SetConfiguration</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBD_SetConfiguration2593655934','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBD_SetConfiguration2593655934','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 1097</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','USBD_SetConfiguration2593655934',this); ">USBD_SetConfiguration</a>(unsigned char cfgnum)
+{
+    TRACE_INFO_WP("SetCfg(%d) ", cfgnum);
+
+    // If the configuration number if non-zero, the device enters the
+    // Configured state
+    if (cfgnum != 0) {
+
+        // Enter Configured state
+        deviceState = <a href="#" onMouseOver="link('_member','USBD_STATE_CONFIGURED1024481039',this); ">USBD_STATE_CONFIGURED</a>;
+        AT91C_BASE_UDP-&gt;UDP_GLBSTATE |= AT91C_UDP_CONFG;
+    }
+    // If the configuration number is zero, the device goes back to the Address
+    // state
+    else {
+
+        deviceState = <a href="#" onMouseOver="link('_member','USBD_STATE_ADDRESS1024481039',this); ">USBD_STATE_ADDRESS</a>;
+        AT91C_BASE_UDP-&gt;UDP_GLBSTATE = AT91C_UDP_FADDEN;
+
+        // Abort all transfers
+        UDP_DisableEndpoints();
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

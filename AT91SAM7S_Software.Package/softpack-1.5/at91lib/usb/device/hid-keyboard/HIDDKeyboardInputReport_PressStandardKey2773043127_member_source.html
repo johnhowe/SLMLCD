@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - HIDDKeyboardInputReport_PressStandardKey</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">HIDDKeyboardInputReport_PressStandardKey</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','hidmi_keyboard0',this)" class="pathLink">hid-keyboard</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">HIDDKeyboardInputReport_PressStandardKey</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','HIDDKeyboardInputReport_PressStandardKey2773043127','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','HIDDKeyboardInputReport_PressStandardKey2773043127','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 71</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_PressStandardKey2773043127',this); ">HIDDKeyboardInputReport_PressStandardKey</a>(HIDDKeyboardInputReport *report, unsigned char key)
+{
+    ASSERT(key &lt;= HIDDKeyboardDriverDescriptors_LASTSTANDARDKEY,
+           "Invalid standard key code (%d)\n\r",
+           key);
+
+    // Find first available slot
+    unsigned int i = 0;
+    unsigned char found = 0;
+    while ((i &lt; <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_MAXKEYPRESSES870272995',this); ">HIDDKeyboardInputReport_MAXKEYPRESSES</a>) &amp;&amp; !found) {
+
+        // Free slot: no key referenced (code = 0) or ErrorRollOver
+        if ((report-&gt;pressedKeys[i] == 0)
+            || (report-&gt;pressedKeys[i] == <a href="#" onMouseOver="link('_member','../../common/hid/HIDKeypad_ERRORROLLOVER1915362510',this); ">HIDKeypad_ERRORROLLOVER</a>)) {
+
+            found = 1;
+            report-&gt;pressedKeys[i] = key;
+        }
+        
+        i++;
+    }
+
+    // Report ErrorRollOver in all fields if too many keys are pressed
+    if (!found) {
+
+        for (i=0; i &lt; <a href="#" onMouseOver="link('_member','HIDDKeyboardInputReport_MAXKEYPRESSES870272995',this); ">HIDDKeyboardInputReport_MAXKEYPRESSES</a>; i++) {
+
+            report-&gt;pressedKeys[i] = <a href="#" onMouseOver="link('_member','../../common/hid/HIDKeypad_ERRORROLLOVER1915362510',this); ">HIDKeypad_ERRORROLLOVER</a>;
+        }
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD Callback API</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD Callback API</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../usb0',this)" class="pathLink">usb</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','device0',this)" class="pathLink">device</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD Callback API</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5417","aID5417","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','USBDCallbackAPI0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">device.dir::USBD Callback API</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Callback API</div>
+The callback API is a means of communication between the user application and the USBD API. When particular operations must be performed, the USB driver calls serveral external functions, refferred to as <b>callbacks</b>. They can also be invoked to notify the user application of pending events.<br>
+<br>
+</div>
+<div class="padding">Defining all callbacks is not mandatory. For example, if the device shall not enter low-power mode, then it is appropriate not to provide a Suspend callback. If a callback is mandatory, this is notified in its description.<br>
+<br>
+</div>
+<div class="padding">See <a href="#" OnMouseOver="link('_unit','core/USBDCallbacks_h0',this)">USBDCallbacks.h</a> for callback definitions.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Callback Invocation</div>
+ The following events can trigger a callback:<ul>
+<li>USB initialization: <a href="#" OnMouseOver="link('_member','core/USBDCallbacks_Initialized53616',this)">USBDCallbacks_Initialized</a></li>
+<li>End of bus reset: <a href="#" OnMouseOver="link('_member','core/USBDCallbacks_Reset53616',this)">USBDCallbacks_Reset</a></li>
+<li>Device suspend: <a href="#" OnMouseOver="link('_member','../../../usb-device-massstorage-project/USBDCallbacks_Suspended53616',this)">USBDCallbacks_Suspended</a></li>
+<li>Device resume: <a href="#" OnMouseOver="link('_member','../../../usb-device-massstorage-project/USBDCallbacks_Resumed53616',this)">USBDCallbacks_Resumed</a></li>
+<li>SETUP request received: <a href="#" OnMouseOver="link('_member','../../../usb-device-core-project/USBDCallbacks_RequestReceived2520836348',this)">USBDCallbacks_RequestReceived</a></li>
+<li>Start of a new USB frame</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div align="center">
+<img src="USBDCallbackInvocationFlowchart.png" alt="USBDCallbackInvocationFlowchart.png">
+<strong><br>Callback Invocation Flowchart</strong></div>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Init</div>
+ The <a href="#" OnMouseOver="link('_member','core/USBDCallbacks_Initialized53616',this)">USBDCallbacks_Initialized</a> callback is invoked when the <a href="#" OnMouseOver="link('_member','core/USBD_Init53616',this)">USBD_Init</a> method is called. It has to perform several mandatory steps to make it possible to use the API:<ul>
+<li>If an OS is used, perform any specific operation to install the driver</li>
+<li>Configure USB controller interrupt</li>
+<li>Configure Vbus monitoring PIO and interrupt ( but it's in app layer now ) The USB controller interrupt must be configured to <b>call the <a href="#" OnMouseOver="link('_member','core/USBD_InterruptHandler53616',this)">USBD_InterruptHandler</a></b> API function when triggered. This is necessary to have events happening at the USB controller level handled appropriately by the API.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">If a PIO pin is connected to VBus, it is possible to monitor it by configuring the pin as an input and enabling the PIO interrupt. The interrupt service routine should simply check the Vbus status and then call the <a href="#" OnMouseOver="link('_member','core/USBD_Connect53616',this)">USBD_Connect</a> and <a href="#" OnMouseOver="link('_member','core/USBD_Disconnect53616',this)">USBD_Disconnect</a><code> function to put device into right <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding">Finally, if an OS is being used, then the driver should probably be installed prior to use. Interrupt configuration may also be done differently. Please refer to the documentation of the OS for more information.<br>
+<br>
+</div>
+<div class="padding">This callback is <b>mandatory</b>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Reset</div>
+ When an End of bus reset has been detected, the <a href="#" OnMouseOver="link('_member','core/USBDCallbacks_Reset53616',this)">USBDCallbacks_Reset</a> callback is triggered. The callback should perform <b>initialization</b> or <b>re- initialization</b> of the user-level application. For example, a class driver like MSD should re-initialize its internal <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> when a USB reset is performed.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Suspend</div>
+ When the USB device enters the Suspended <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>, the USB API notifies this <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> change by invoking the <a href="#" OnMouseOver="link('_member','../../../usb-device-massstorage-project/USBDCallbacks_Suspended53616',this)">USBDCallbacks_Suspended</a> callback. This can happen either when the bus is idle or when the device is disconnected from the USB.<br>
+<br>
+</div>
+<div class="padding">If the device should enter low-power mode when suspended, then this callback must perform the required operations to do so, e.g., switching to a slow clock, disabling PLLs, etc.<br>
+<br>
+</div>
+<div class="padding"><ul>
+<li><em>Note: The electrical specification of the USB 2.0 defines a maximum current consumption of 500uA for suspended device. This includes the current passing through pull-ups and upll-downs.</em></li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Resume</div>
+ The <a href="#" OnMouseOver="link('_member','../../../usb-device-massstorage-project/USBDCallbacks_Resumed53616',this)">USBDCallbacks_Resumed</a> callback is invoked when the USB device leaves the Suspended <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> and returns to its previous <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> (either Powered, Default, Address or Configured). This may happen when activity is detected on the USB, or when the device gets connected.<br>
+<br>
+</div>
+<div class="padding">If the device was in low-power mode because of the Suspend callback, then this callback must perform the necessary poerations to return the device into a normal operation mode, e.g., switching to a fast clock.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">NewRequest</div>
+ When a SETUP request is received on a control endpoint, the USBD API layer triggers the <a href="#" OnMouseOver="link('_member','../../../usb-device-core-project/USBDCallbacks_RequestReceived2520836348',this)">USBDCallbacks_RequestReceived</a> callback to notify the user application. The received request can then be accessed through the corresponding <a href="#" OnMouseOver="link('_class','../common/core/USBGenericRequest0',this)">USBGenericRequest</a> structure.<br>
+<br>
+</div>
+<div class="padding">SETUP packets are used for class-specific requests (e.g. <em>GetMaxLUN</em> in MSD) as well as standard USB requests (e.g. <em>SetConfiguration</em>). The former are described in <em>USB Device Class Documents</em>, such as the <em>Mass Storage Bulk Only 1.0</em>, the latter are defined in the USB Specification 2.0.<br>
+<br>
+</div>
+<div class="padding"><ul>
+<li><em>Note: that SETUP requests which are not understood by the device should be acknowledged with a STALL handshake. This notifies the host that the device cannot process the command.</em></li>
+</ul>
+
+<br>
+</div>
+<div class="padding">This callback is <b>mandatory</b>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">StartOfFrame</div>
+ Every 1ms (for a full-speed device) or 125us (for a high-speed device) a new USB frame starts. A callback can be invoked whenever this occurs.<br>
+<br>
+</div>
+<div class="padding">Because the start-of-frame interrupt puts some stress on the processor (since it is called a lot), it is only activated the corresponding callback is defined (<b>now it's NOT defined in current framework</b>).<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Page was generated from the following file:</div>
+<div class="paddingMembers"><LI>device.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>

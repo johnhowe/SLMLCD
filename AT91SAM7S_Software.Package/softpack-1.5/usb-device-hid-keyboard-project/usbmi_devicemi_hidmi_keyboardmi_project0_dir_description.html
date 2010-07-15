@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - usb-device-hid-keyboard-project</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">usb-device-hid-keyboard-project</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">usb-device-hid-keyboard-project</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5520","aID5520","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_dir','usbmi_devicemi_hidmi_keyboardmi_project0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_dir','usbmi_devicemi_hidmi_keyboardmi_project0','_dirgraph',this)" class="tabLinkInActive">Graph</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">usb-device-hid-keyboard-project</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Purpose</div>
+The USB HID Keyboard Project will help you to get familiar with the USB Device Port(UDP) and PIO interface on AT91SAM microcontrollers. Also it can help you to be familiar with the USB Framework that is used for rapid development of USB-compliant class <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> such as USB Humen Interface Device class (HID).<br>
+<br>
+</div>
+<div class="padding">You can find following information depends on your needs:<ul>
+<li>Sample usage of USB HID driver and PIO driver.</li>
+<li>USB HID driver development based on the AT91 USB Framework.</li>
+<li>USB enumerate sequence, the standard and class-specific descriptors and requests handling.</li>
+<li>The initialize sequence and usage of UDP interface.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">See</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/peripherals/pio/pio0',this)">pio</a>: PIO interface driver</li>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/usb/usb0',this)">usb</a>: USB Framework, USB HID driver and UDP interface driver<ul>
+<li><a href="#" OnMouseOver="link('_page','../at91lib/usb/AT91USBdeviceframework0',this)">"AT91 USB device framework"</a><ul>
+<li><a href="#" OnMouseOver="link('_page','../at91lib/usb/device/USBDAPI0',this)">"USBD API"</a></li>
+</ul>
+
+</li>
+<li><a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/hid-keyboard/hidmi_keyboard0',this)">"hid-keyboard"</a><ul>
+<li><a href="#" OnMouseOver="link('_page','../at91lib/usb/device/hid-keyboard/USBHIDKeyboard0',this)">"USB HID Keyboard"</a></li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Requirements</div>
+ This package can be used with all Atmel evaluation kits that has UDP interface and have push buttons on it.<br>
+<br>
+</div>
+<div class="padding">The current supported board list:<ul>
+<li>at91sam7s-ek (exclude at91sam7s32)</li>
+<li>at91sam7x-ek</li>
+<li>at91sam7xc-ek</li>
+<li>at91sam7a3-ek</li>
+<li>at91sam7se-ek</li>
+<li>at91sam9260-ek</li>
+<li>at91sam9263-ek</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Description</div>
+ When an EK running this program connected to a host (PC for example), with USB cable, the EK appears as a HID Keyboard for the host. Then you can use the push buttons on the EK to input letter to the host. E.g, to open a editor and input a letter 'a' or '9'.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Usage</div>
+<ol>
+<li>Build the program and download it inside the evaluation board. Please refer to the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6224.pdf">SAM-BA User Guide</a>, the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">GNU-Based Software Development</a> application note or to the <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">IAR EWARM User Guide</a>, depending on your chosen solution.</li>
+<li>On the computer, open and configure a terminal application (e.g. HyperTerminal on Microsoft Windows) with these settings:<ul>
+<li>115200 bauds</li>
+<li>8 bits of data</li>
+<li>No parity</li>
+<li>1 stop bit</li>
+<li>No flow control</li>
+</ul>
+
+</li>
+<li>Start the application.</li>
+<li>In the terminal window, the following text should appear:   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+-- USB Device HID Keyboard Project xxx --
+-- AT91xxxxxx-xx
+-- Compiled: xxx xx xxxx xx:xx:xx --
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+<li>When connecting USB cable to windows, the LED blinks. Then new "HID Keyboard Device" appears in the hardware device list.</li>
+<li>Once the <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> is connected and configured, pressing any of the board buttons should send characters to the host PC. Pressing num. lock should also make the third LED toggle its <a href="#" OnMouseOver="link('_member','../basic-rtt-project/state0',this)">state</a> (on/off).</li>
+</ol>
+
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Directory was generated from the following files:</div>
+<div class="paddingMembers"><LI>main.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_dir','_description');
+</script>

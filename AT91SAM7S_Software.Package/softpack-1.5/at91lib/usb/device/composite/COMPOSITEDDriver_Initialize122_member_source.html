@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - COMPOSITEDDriver_Initialize</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">COMPOSITEDDriver_Initialize</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','composite0',this)" class="pathLink">composite</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">COMPOSITEDDriver_Initialize</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','COMPOSITEDDriver_Initialize122','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','COMPOSITEDDriver_Initialize122','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 143</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','COMPOSITEDDriver_Initialize122',this); ">COMPOSITEDDriver_Initialize</a>()
+{
+    // CDC
+  #if defined(usb_CDCAUDIO) || defined(usb_CDCHID) || defined(usb_CDCCDC) || defined(usb_CDCMSD)
+    CDCDFunctionDriver_Initialize();
+  #endif
+
+    // AUDIO
+  #if defined(usb_CDCAUDIO) || defined(usb_HIDAUDIO)
+    AUDDFunctionDriver_Initialize();
+  #endif
+
+    // HID
+  #if defined(usb_CDCHID) || defined(usb_HIDAUDIO) || defined(usb_HIDMSD)
+    HIDDFunctionDriver_Initialize(&amp;usbdDriver);
+  #endif
+
+    // MSD
+  #if defined(usb_CDCMSD) || defined(usb_HIDMSD)
+    // Function driver initialize is put to main() for additional LUN list
+  #endif
+
+    // Initialize the standard USB driver
+    <a href="#" onMouseOver="link('_member','../core/USBDDriver_Initialize3177187375',this); ">USBDDriver_Initialize</a>(&amp;usbdDriver,
+                          &amp;compositedDriverDescriptors,
+                          compositedDriverInterfaces);
+
+    // Initialize the USB driver
+    <a href="#" onMouseOver="link('_member','../core/USBD_Init53616',this); ">USBD_Init</a>();
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

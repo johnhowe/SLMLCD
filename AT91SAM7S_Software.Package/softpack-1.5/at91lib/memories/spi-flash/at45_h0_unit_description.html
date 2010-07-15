@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - at45.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">at45.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spimi_flash0',this)" class="pathLink">spi-flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">at45.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5534","aID5534","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','at45_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','at45_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+The Dataflash driver is based on top of the corresponding Spi driver. A Dataflash structure instance has to be initialized using the DF_Init function. Then basic dataflash operations can be launched using macros such as DF_continuous_read. These macros invoke the DF_Command() function which invokes the DPI low driver using the SPI_SendCommand() function. Beware to compute the dataflash internal address, the dataflash sector description must be known (DataflashDesc). Dataflash can be automatically detected using the DF_Scan() function. !!!Usage<br>
+<br>
+<ol>
+<li>Initializes an AT45 instance and configures SPI chip select pin using <a href="#" OnMouseOver="link('_member','AT45_Configure2559562037',this)">AT45_Configure()</a>.</li>
+<li>Detect DF and returns DF description corresponding to the <a href="#" OnMouseOver="link('_dir','../../usb/device/device0',this)">device</a> connected using <a href="#" OnMouseOver="link('_member','AT45_FindDevice1029764933',this)">AT45_FindDevice()</a>.This function shall be called by the application before <a href="#" OnMouseOver="link('_member','AT45_SendCommand76365648',this)">AT45_SendCommand</a>.</li>
+<li>Sends a command to the DF through the SPI using <a href="#" OnMouseOver="link('_member','AT45_SendCommand76365648',this)">AT45_SendCommand()</a>. The command is identified by its command code and the number of bytes to transfer.<ol>
+<li>Example code for sending command to write a page to DF.   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Issue a page write through buffer 1 command
+error = <a href="#" onMouseOver="link('_member','AT45_SendCommand76365648',this); ">AT45_SendCommand</a>(pAt45, AT45_PAGE_WRITE_BUF1, 4, 
+        pBuffer, size, address, 0, 0);
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+<li>Example code for sending command to read a page from DF. If data needs to be received, then a data buffer must be provided.   <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Issue a continuous read array command
+error = <a href="#" onMouseOver="link('_member','AT45_SendCommand76365648',this); ">AT45_SendCommand</a>(pAt45, AT45_CONTINUOUS_READ_LEG, 8,
+        pBuffer, size, address, 0, 0);
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+<li>This function does not block; its optional callback will be invoked when the transfer completes.</li>
+</ol>
+
+</li>
+<li>Check the AT45 driver is ready or not by polling <a href="#" OnMouseOver="link('_member','AT45_IsBusy86166495',this)">AT45_IsBusy()</a>.</li>
+</ol>
+
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

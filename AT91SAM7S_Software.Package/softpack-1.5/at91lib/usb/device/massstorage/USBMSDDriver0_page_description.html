@@ -1,0 +1,923 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USB MSD Driver</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USB MSD Driver</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USB MSD Driver</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5430","aID5430","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','USBMSDDriver0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">massstorage.dir::USB MSD Driver</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding">This page describes how to use the USB framework to produce a USB MSD driver, which appears as a USB Disk on host.<br>
+<div class="userParagraph1">References</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_page','../../AT91USBdeviceframework0',this)">"AT91 USB device framework"</a></li>
+<li><a href="#" OnMouseOver="link('_page','../../USBDeviceEnumeration0',this)">"USB Device Enumeration"</a></li>
+<li><a href="http://www.usb.org/developers/docs/usb_20_040908.zip">Universal Serial Bus Revision 2.0 specification </a> (.zip file format, size 9.80 MB)</li>
+<li><a href="http://www.usb.org/developers/devclass_docs/usb_msc_overview_1.2.pdf">Mass Storage Overview 1.2</a></li>
+<li><a href="http://www.usb.org/developers/devclass_docs/usbmassbulk_10.pdf">Mass Storage Bulk Only 1.0</a></li>
+<li><a href="http://www.t10.org/scsi-3.htm">SCSI Standards</a><ul>
+<li>SCSI Block Commands - 3 (SBC-3)</li>
+<li>SCSI Primary Commands - 4 (SPC-4)</li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Mass Storage Class Basic</div>
+ This section gives generic details on the MSD class.<br>
+<br>
+</div>
+<div class="padding">See <a href="#" OnMouseOver="link('_page','USBMSDBasic0',this)">"USB MSD Basic"</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Mass Storage SCSI Disk</div>
+ This section describes how to implement a USB disk by using the MSD class with the SCSI transparent command set and the AT91 USB Framework. For more information about the framework, please refer to the "AT91 USB <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> framework" application note; details about the USB and the Mass Storage class can be found in the USB specification 2.0 and the MSC Bulk-Only Transport specification 1.0 documents, respectively.<br>
+<br>
+</div>
+<div class="padding">The software example provided with this document uses the ram disk of the chip as its storage medium, but has been designed in a modular way to allow easy modification for any medium, e.g. internal <a href="#" OnMouseOver="link('_dir','../../../memories/flash/flash0',this)">flash</a>, DataFlash, SD card, external Flash chip.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Architecture</div>
+ The MSD driver is based on framework, See <a href="#" OnMouseOver="link('_page','../../USBDeviceFrameworkArchitecture0',this)">"USB Device Framework Architecture"</a>.<br>
+<br>
+</div>
+<div class="padding">The internal architecture of the Application layer is extended for the following factors:<ul>
+<li>The Command/Data/Status flow described in <a href="#" OnMouseOver="link('_page','USBMSDBasic0',this)">"USB MSD Basic"</a> requires the use of a <b><a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine</b> for non-blocking operation.</li>
+<li>The example software has been designed to be easily extended with support for other media.</li>
+<li>The example software has been designed to support multiple LUNs on one or more media.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div align="center">
+<img src="MSDAppArch.png" alt="MSDAppArch.png">
+<strong><br>Application Layer Architecture</strong></div>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Descriptors</div>
+ There are no class-specific descriptors for a <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> using the MSD class with the Bulk-only transport protocol. This section thus only details the values which must be set in the standard descriptors.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Device Descriptor</div>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+static const USBDeviceDescriptor <a href="#" onMouseOver="link('_member','../cdc-serial/deviceDescriptor0',this); ">deviceDescriptor</a> = {
+
+    sizeof(USBDeviceDescriptor), // bLength: Size of descriptor (18 bytes)
+    <a href="#" onMouseOver="link('_member','../../common/core/USBGenericDescriptor_DEVICE3003473628',this); ">USBGenericDescriptor_DEVICE</a>, // bDescriptorType: Device descriptor
+    <a href="#" onMouseOver="link('_member','../../common/core/USBDeviceDescriptor_USB2_001580480171',this); ">USBDeviceDescriptor_USB2_00</a>, // bcdUSB: USB 2.00
+    <a href="#" onMouseOver="link('_member','../../common/massstorage/MSDeviceDescriptor_CLASS294356236',this); ">MSDeviceDescriptor_CLASS</a>,    // bDeviceClass: 0
+    <a href="#" onMouseOver="link('_member','../../common/massstorage/MSDeviceDescriptor_SUBCLASS294356236',this); ">MSDeviceDescriptor_SUBCLASS</a>, // bDeviceSubClass: 0
+    <a href="#" onMouseOver="link('_member','../../common/massstorage/MSDeviceDescriptor_PROTOCOL294356236',this); ">MSDeviceDescriptor_PROTOCOL</a>, // bDeviceProtocol: 0
+    <a href="#" onMouseOver="link('_member','../../../boards/at91sam7s-ek/BOARD_USB_ENDPOINTS_MAXPACKETSIZE4111471564',this); ">BOARD_USB_ENDPOINTS_MAXPACKETSIZE</a>(0), // bMaxPacketSize0: Max Size EP0
+    <a href="#" onMouseOver="link('_member','MSDDriverDescriptors_VENDORID3486511080',this); ">MSDDriverDescriptors_VENDORID</a>, // idVendor: Vendor ID ATMEL (0x03eb)
+    <a href="#" onMouseOver="link('_member','MSDDriverDescriptors_PRODUCTID3486511080',this); ">MSDDriverDescriptors_PRODUCTID</a>,// idProduct: Product ID (0x6202)
+    <a href="#" onMouseOver="link('_member','MSDDriverDescriptors_RELEASE3486511080',this); ">MSDDriverDescriptors_RELEASE</a>,  // bcdDevice: 0x0001, Version 0.01
+    1, // iManufacturer: Manufacturer string (manufacturerDescriptor) index.
+    2, // iProduct: Product string (productDescriptor) index.
+    3, // iSerialNumber: Serial number string (serialNumberDescriptor) index.
+    1  // bNumConfigurations: Device has one possible configuration.
+};
+</pre>  </TD>
+  </TR>
+  </TABLE>
+Note that the Vendor ID is a special value attributed by the USB-IF organization. The product ID can be chosen freely by the vendor.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Configuration Descriptor</div>
+ The descriptors are defined as:<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+const MSDConfigurationDescriptors configurationDescriptorsFS;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding">Configuration descriptor<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Standard configuration descriptor.
+{
+    sizeof(USBConfigurationDescriptor), // bLength: 9 bytes
+    <a href="#" onMouseOver="link('_member','../../common/core/USBGenericDescriptor_CONFIGURATION3003473628',this); ">USBGenericDescriptor_CONFIGURATION</a>, // bDescriptorType: Configuration
+    sizeof(MSDConfigurationDescriptors),// wTotalLength: Length of all
+    1, // bNumInterface: Configuration has one interface.
+    1, // bConfigurationValue: This is configuration #1.
+    0, // iConfiguration: No string descriptor for configuration.
+    <a href="#" onMouseOver="link('_member','../../../boards/at91sam7s-ek/BOARD_USB_BMATTRIBUTES839682361',this); ">BOARD_USB_BMATTRIBUTES</a>, // bmAttributes: Power and remote wakeup
+    <a href="#" onMouseOver="link('_member','../../common/core/USBConfigurationDescriptor_POWER271627117',this); ">USBConfigurationDescriptor_POWER</a>(100) // 100mA max power
+},
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Interface Descriptor</div>
+ The interface descriptor must indicate several features:<ul>
+<li><b>Mass Storage Device</b> class code (08h) in the <em>bInterfaceClass</em> field</li>
+<li><b>Data Transport Protocol</b> code in the <em>bInterfaceSubclass</em> field</li>
+<li><b>Bulk-Only Transport</b> protocol code (50h) in the <em>bInterfaceProtocol</em> field This example uses the SCSI transparent command set (code 06h). This is the most appropriate setting for a Flash device, given that the RBC command set is not supported by Microsoft Windows.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Mass Storage interface descriptor.
+{
+    sizeof(USBInterfaceDescriptor), // bLength: Size of descriptor(9 bytes)
+    <a href="#" onMouseOver="link('_member','../../common/core/USBGenericDescriptor_INTERFACE3003473628',this); ">USBGenericDescriptor_INTERFACE</a>, // bDescriptorType: Interface descriptor
+    0, // bInterfaceNumber: This is interface #0.
+    0, // bAlternateSetting: This is alternate setting #0.
+    2, // bNumEndpoints: Interface uses two endpoints.
+    <a href="#" onMouseOver="link('_member','../../common/massstorage/MSInterfaceDescriptor_CLASS2106551934',this); ">MSInterfaceDescriptor_CLASS</a>, // bInterfaceClass: Mass Storage Device Class
+    <a href="#" onMouseOver="link('_member','../../common/massstorage/MSInterfaceDescriptor_SCSI2106551934',this); ">MSInterfaceDescriptor_SCSI</a>, // bInterfaceSubClass: SCSI transparent command
+    <a href="#" onMouseOver="link('_member','../../common/massstorage/MSInterfaceDescriptor_BULKONLY2106551934',this); ">MSInterfaceDescriptor_BULKONLY</a>,// bInterfaceProtocol: Bulk-Only transport
+    0 // iInterface: No string descriptor for interface.
+
+},
+</pre>  </TD>
+  </TR>
+  </TABLE>
+</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Endpoint Descriptors</div>
+ No special requirements on these apart from being Bulk-IN and Bulk-OUT.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Bulk-OUT endpoint descriptor
+{
+    sizeof(USBEndpointDescriptor), // bLength: 7 bytes
+    <a href="#" onMouseOver="link('_member','../../common/core/USBGenericDescriptor_ENDPOINT3003473628',this); ">USBGenericDescriptor_ENDPOINT</a>, // bDescriptorType: Endpoint descriptor
+    <a href="#" onMouseOver="link('_member','../../common/core/USBEndpointDescriptor_ADDRESS854931845',this); ">USBEndpointDescriptor_ADDRESS</a>(
+        USBEndpointDescriptor_OUT,
+        MSDDriverDescriptors_BULKOUT), // bEndpointAddress: OUT 0x01
+    <a href="#" onMouseOver="link('_member','../../common/core/USBEndpointDescriptor_BULK1021430416',this); ">USBEndpointDescriptor_BULK</a>, // bmAttributes: Bulk endpoint
+    <a href="#" onMouseOver="link('_member','../ccid/MIN1037674569',this); ">MIN</a>(<a href="#" onMouseOver="link('_member','../../../boards/at91sam7s-ek/BOARD_USB_ENDPOINTS_MAXPACKETSIZE4111471564',this); ">BOARD_USB_ENDPOINTS_MAXPACKETSIZE</a>(MSDDriverDescriptors_BULKOUT),
+        USBEndpointDescriptor_MAXBULKSIZE_FS), // wMaxPacketSize: 64 bytes
+    0 // bInterval: Must be 0 for full-speed Bulk endpoints.
+},
+// Bulk-IN endpoint descriptor
+{
+    sizeof(USBEndpointDescriptor), // bLength: 7 bytes
+    <a href="#" onMouseOver="link('_member','../../common/core/USBGenericDescriptor_ENDPOINT3003473628',this); ">USBGenericDescriptor_ENDPOINT</a>, // bDescriptorType: Endpoint descriptor
+    <a href="#" onMouseOver="link('_member','../../common/core/USBEndpointDescriptor_ADDRESS854931845',this); ">USBEndpointDescriptor_ADDRESS</a>(
+        USBEndpointDescriptor_IN,
+        MSDDriverDescriptors_BULKIN), // bEndpointAddress: IN 0x82
+    <a href="#" onMouseOver="link('_member','../../common/core/USBEndpointDescriptor_BULK1021430416',this); ">USBEndpointDescriptor_BULK</a>, // bmAttributes: Bulk endpoint
+    <a href="#" onMouseOver="link('_member','../ccid/MIN1037674569',this); ">MIN</a>(<a href="#" onMouseOver="link('_member','../../../boards/at91sam7s-ek/BOARD_USB_ENDPOINTS_MAXPACKETSIZE4111471564',this); ">BOARD_USB_ENDPOINTS_MAXPACKETSIZE</a>(MSDDriverDescriptors_BULKIN),
+        USBEndpointDescriptor_MAXBULKSIZE_FS), // wMaxPacketSize: 64
+    0 // bInterval: Must be 0 for full-speed Bulk endpoints.
+}
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">String descriptors</div>
+ Several descriptors can be commented with a String descriptor. The latter are completely optional and do not influence the detection of the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> by the operating system. Whether or not to include them is entirely up to the programmer.<br>
+<br>
+</div>
+<div class="padding">There is one exception to this rule when using the MSD class. According to the specification, there must be a Serial Number string. It must contains at least 12 characters, and these characters must only be either letters (a-z, A-Z) or numbers (0-9). This cause no problem for the driver in practice, but this is a strict requirement for certification. Also remember that string descriptors use the Unicode format.<br>
+<br>
+</div>
+<div class="padding">See <a href="#" OnMouseOver="link('_member','../composite/manufacturerDescriptor0',this)">manufacturerDescriptor</a>, <a href="#" OnMouseOver="link('_member','../composite/productDescriptor0',this)">productDescriptor</a>, <a href="#" OnMouseOver="link('_member','../composite/serialNumberDescriptor0',this)">serialNumberDescriptor</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Class-specific Requests</div>
+ There are two Mass Storage-specific requests:<ul>
+<li>GetMaxLUN</li>
+<li>Bulk-Only Mass Storage Reset</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">Standard requests can be forwarded to the <a href="#" OnMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this)">USBDDriver_RequestHandler</a>, with one exception: <b>CLEAR_FEATURE</b>. This is necessary for Reset Recovery sequence.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">ClearFeature</div>
+ As previously stated, the CLEAR_FEATURE request must be handled in a particular way, depending on whether or not the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> is waiting for a Reset Recovery sequence. If it is, then CLEAR_FEATURE requests to unhalt a Bulk endpoint must be discarded.<br>
+<br>
+</div>
+<div class="padding">In the example software, this behavior is indicated by a boolean field in the driver structure, named waitResetRecovery. The handler only has to check this field value to decide whether to forward the request to the standard handler or to discard it.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+// Handle requests
+switch (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request)) {
+//---------------------
+case <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_CLEARFEATURE145046170',this); ">USBGenericRequest_CLEARFEATURE</a>:
+//---------------------
+
+    switch (<a href="#" onMouseOver="link('_member','../../common/core/USBFeatureRequest_GetFeatureSelector2520836348',this); ">USBFeatureRequest_GetFeatureSelector</a>(request)) {
+
+    //---------------------
+    case <a href="#" onMouseOver="link('_member','../../common/core/USBFeatureRequest_ENDPOINTHALT145062668',this); ">USBFeatureRequest_ENDPOINTHALT</a>:
+    //---------------------
+
+        // Do not clear the endpoint halt status if the device is waiting
+        // for a reset recovery sequence
+        if (!msdDriver.waitResetRecovery) {
+
+            // Forward the request to the standard handler
+            <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;usbdDriver, request);
+        }
+
+        <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(0, 0, 0, 0, 0);
+        break;
+
+    //------
+    default:
+    //------
+        // Forward the request to the standard handler
+        <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;usbdDriver, request);
+    }
+    break;
+}
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">GetMaxLUN</div>
+ Usually, the first request issued by the host right after the enumeration phase will be a GET_MAX_LUN request. It enables it to discover how many different logical units the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> has; each of these LUNs can then be queried in turn by the host when needed.<br>
+<br>
+</div>
+<div class="padding">After the request is received by the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a>, it should return one byte of data indicating the maximum Logical Unit Number (LUN). It is equal to the number of LUNs used by the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> minus one. For example, a <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> with three LUNs shall return a GET_MAX_LUN value of two.<br>
+<br>
+</div>
+<div class="padding">Sending this byte is done by calling the <a href="#" OnMouseOver="link('_member','../core/USBD_Write1378485824',this)">USBD_Write</a> method on Control endpoint 0. Note that the data must be held in a permanent buffer (since the transfer is asynchronous); in the software provided with this application note, a dedicated field is used in the driver structure (<a href="#" OnMouseOver="link('_class','MSDDriver0',this)">MSDDriver</a>) to store this value.<br>
+<br>
+</div>
+<div class="padding">In addition due to the <em>Mass Storage Bulk-Only Transport</em> specification the <em>wValue</em> should be 0, <em>wLength</em> should be 1, <em>wIndex</em> should be the interface number also 0. A request which does not comply to these requirements must be STALLed.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//-------------------
+case <a href="#" onMouseOver="link('_member','MSD_GET_MAX_LUN2028663731',this); ">MSD_GET_MAX_LUN</a>:
+//-------------------
+    // Check request parameters
+    if ((request-&gt;wValue == 0)
+        &amp;&amp; (request-&gt;wIndex == 0)
+        &amp;&amp; (request-&gt;wLength == 1)) {
+        <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(0, &amp;(msdDriver.maxLun), 1, 0, 0);
+    }
+    else {
+        <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+    }
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Bulk-Only Mass Storage Reset</div>
+ The host issues <b>RESET</b> requests to return the MSD driver of the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> to its initial <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>, i.e., ready to receive a new command. However, this request does not impact the USB controller <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>; in particular, endpoints must not be reset. This means the data toggle bit must not be altered, and Halted endpoint must not be returned to a normal <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>. After processing the reset, the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> must return a Zero-Length Packet (ZLP) to acknowledge the SETUP transfer.<br>
+<br>
+</div>
+<div class="padding">Like GET_MAX_LUN, this request must be issued with specific parameters - wValue, wIndex and wLength should be zero. A request which does not have valid values in its field must be acknowledged with a STALL handshake from the device.<br>
+<br>
+</div>
+<div class="padding">The handler for this request must return the <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine to its initial <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//-----------------------
+case <a href="#" onMouseOver="link('_member','MSD_BULK_ONLY_RESET2028663731',this); ">MSD_BULK_ONLY_RESET</a>:
+//-----------------------
+    // Check parameters
+    if ((request-&gt;wValue == 0)
+        &amp;&amp; (request-&gt;wIndex == 0)
+        &amp;&amp; (request-&gt;wLength == 0)) {
+
+        // Reset the MSD driver
+        MSDDriver_Reset();
+        <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(0, 0, 0, 0, 0);
+    }
+    else {
+        <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+    }
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">State Machine</div>
+ ...<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Rationale</div>
+ A <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine is necessary for <b>non-blocking</b> operation of the driver. As previously stated, there are three steps when processing a command:<ul>
+<li>Reception of the CBW</li>
+<li>Processing of the command (with data transfers if required)</li>
+<li>Emission of the CSW</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">Without a <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine, the program execution would be stopped at each step to wait for transfers completion or command processing. For example, reception of a CBW does not always happen immediately (the host does not have to issue commands regularly) and can block the system for a long time.<br>
+<br>
+</div>
+<div class="padding">Developing an asynchronous design based on a <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine is made easier when using Atmel <a href="#" OnMouseOver="link('_page','../../AT91USBdeviceframework0',this)">"AT91 USB device framework"</a>, as most methods are asynchronous. For example, a write operation (using the <a href="#" OnMouseOver="link('_member','../core/USBD_Write1378485824',this)">USBD_Write</a> function) returns immediately; a callback function can then be invoked when the transfer actually completes.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">States</div>
+ Apart from the three states corresponding to the command processing flow (CBW, command processing and CSW), two more can be identified. The reception/emission of CBW/CSW will be broken down into two different states: the first <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> is used to issue the read/write operation, while the second one waits for the transfer to finish. This can be done by monitoring a "transfer complete" flag which is set using a callback function.<br>
+<br>
+</div>
+<div class="padding">In addition, some commands can be quite complicated to process: they may require several consecutive data transfers mixed with media access. Each command thus has its own second-tier <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine. During execution of a command, the <a href="#" OnMouseOver="link('_member','../../../../usb-device-massstorage-project/main53616',this)">main</a> <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine remains in the "processing" <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>, and proceeds to the next one (CSW emission) only when the command is complete.<br>
+<br>
+</div>
+<div class="padding">Here is the states list:<ul>
+<li>MSDDriver_STATE_READ_CBW: Start of CBW reception (initial <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> after reset)</li>
+<li>MSDDriver_STATE_WAIT_CBW: Waiting for CBW reception</li>
+<li>MSDDriver_STATE_PROCESS_CBW: Command processing</li>
+<li>MSDDriver_STATE_SEND_CSW: Start of CSW emission</li>
+<li>MSDDriver_STATE_WAIT_CSW: Waiting for CSW emission</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">A single function, named <a href="#" OnMouseOver="link('_member','MSDDriver_StateMachine53616',this)">MSDDriver_StateMachine</a>, is provided by the driver. It must be called regularly during the program execution. The following subsections describe the actions that must be performed during each <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding"><div align="center">
+<img src="MSDDriverStates.png" alt="MSDDriverStates.png">
+<strong><br>MSD Driver State Machine</strong></div>
+<br>
+<br>
+</div>
+<div class="padding"><b>MSDDriver_STATE_READ_CBW</b><br>
+<br>
+</div>
+<div class="padding">As said previously, this <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> is used to start the reception of a new Command Block Wrapper. This is done using the USB_Read method of the USB framework. The result code of the function is checked for any error; the USB_STATUS_SUCCESS code indicates that the transfer has been successfully started.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//----------------------
+case MSDDriver_STATE_READ_CBW:
+//----------------------
+    // Start the CBW read operation
+    transfer-&gt;semaphore = 0;
+    status = <a href="#" onMouseOver="link('_member','../core/USBD_Read224802902',this); ">USBD_Read</a>(MSDDriverDescriptors_BULKOUT,
+                       cbw,
+                       MSD_CBW_SIZE,
+                       (TransferCallback) MSDDriver_Callback,
+                       (void *) transfer);
+
+    // Check operation result code
+    if (status == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>) {
+
+        // If the command was successful, wait for transfer
+        msdDriver.state = MSDDriver_STATE_WAIT_CBW;
+    }
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+A callback function to invoke when the transfer is complete is provided to the <a href="#" OnMouseOver="link('_member','../core/USBD_Read224802902',this)">USBD_Read</a> method, to update a <a href="#" OnMouseOver="link('_class','MSDTransfer0',this)">MSDTransfer</a> structure. This structure indicates the transfer completion, the returned result code and the number of transferred and remaining bytes.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+typedef struct {
+    unsigned int  transferred; 
+    unsigned int  remaining;   
+    unsigned char semaphore;   
+    unsigned char status;      
+} <a href="#" onMouseOver="link('_class','MSDTransfer0',this); ">MSDTransfer</a>;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+The callback function is trivial and thus not listed here.<br>
+<br>
+</div>
+<div class="padding"><b>MSDDriver_STATE_WAIT_CBW</b><br>
+<br>
+</div>
+<div class="padding">The first step here is to monitor the <em>semaphore</em> field of the <a href="#" OnMouseOver="link('_class','MSDTransfer0',this)">MSDTransfer</a> structure (see above); this will enable detection of the transfer end. Please note that this field must be declared as volatile in C, or accesses to it might get optimized by the compiler; this can result in endless loops.<br>
+<br>
+</div>
+<div class="padding">If the transfer is complete, then the result code must be checked to see if there was an error. If the operation is successful, the <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine can proceed to command processing. Otherwise, it returns to the READ_CBW <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//----------------------
+case MSDDriver_STATE_WAIT_CBW:
+//----------------------
+    // Check transfer semaphore
+    if (transfer-&gt;semaphore &gt; 0) {
+
+        // Take semaphore and terminate transfer
+        transfer-&gt;semaphore--;
+
+        // Check if transfer was successful
+        if (transfer-&gt;status == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>) {
+
+            // Process received command
+            msdDriver.state = MSDDriver_STATE_PROCESS_CBW;
+        }
+        else if (transfer-&gt;status == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_RESET1024481039',this); ">USBD_STATUS_RESET</a>) {
+
+            msdDriver.state = MSDDriver_STATE_READ_CBW;
+        }
+        else {
+
+            msdDriver.state = MSDDriver_STATE_READ_CBW;
+        }
+    }
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><b>MSDDriver_STATE_PROCESS_CBW</b><br>
+<br>
+</div>
+<div class="padding">Once the CBW has been received, its validity must be checked. A CBW is not valid if:<ul>
+<li>it has not been received right after a CSW was sent or a reset occured or</li>
+<li>it is not exactly 31 bytes long or</li>
+<li>its signature field is not equal to 43425355h</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">The <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine prevents the first case from happening, so only the two other cases have to be verified.<br>
+<br>
+</div>
+<div class="padding">The number of bytes transferred during a <a href="#" OnMouseOver="link('_member','../core/USBD_Read224802902',this)">USBD_Read</a> operation is passed as an argument to the callback function, if one has been specified. As stated previously, such a function is used to fill a <a href="#" OnMouseOver="link('_class','MSDTransfer0',this)">MSDTransfer</a> structure. Therefore, it is trivial to check that the CBW is indeed 31 bytes by verifying that the number of bytes transferred is 31, and that there are no remaining bytes. The following table illustrates the three cases which may happen:<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">Number of bytes transferred</td><td class="userPaddingHeadMultiColumn1">Number of bytes remaining</td><td class="userPaddingHeadMultiColumn2">Meaning<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">transferred&lt;31</td><td class="userPaddingNormal1">remaining==0</td><td class="userPaddingNormal2">CBW is too short<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">transferred==31</td><td class="userPaddingNormal1">remaining&gt;0</td><td class="userPaddingNormal2">CBW is too long<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">transferred==31</td><td class="userPaddingNormal1">remaining==0</td><td class="userPaddingNormal2">CBW length is correct</td></tr>
+</table>
+<br>
+</div>
+<div class="padding">Checking the signature is simply done by comparing the dCBWSignature field with the expected value (43425355h).<br>
+<br>
+</div>
+<div class="padding">If the CBW is not valid, then the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> must immediately halt both Bulk endpoints, to STALL further traffic from the host. In addition, it should stay in this <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> until a Reset Recovery is performed by the host. This is done by setting the waitResetRecovery flag in the <a href="#" OnMouseOver="link('_class','MSDDriver0',this)">MSDDriver</a> structure. Finally, the CSW status is set to report an error, and the <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine is returned to MSDDriver_STATE_READ_CBW.<br>
+<br>
+</div>
+<div class="padding">Otherwise, if the CBW is correct, then the command can be processed. Remember the CBW tag must be copied regardless of the validity of the CBW.<br>
+<br>
+</div>
+<div class="padding">Note that these steps are only necessary for a new command (remember commands are asynchronous and are carried out in several calls, so a check can be performed to avoid useless processing. A value of zero for the internal command <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> indicates a new command.<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//-------------------------
+case MSDDriver_STATE_PROCESS_CBW:
+//-------------------------
+    // Check if this is a new command
+    if (commandState-&gt;state == 0) {
+
+        // Copy the CBW tag
+        csw-&gt;dCSWTag = cbw-&gt;dCBWTag;
+
+        // Check that the CBW is 31 bytes long
+        if ((transfer-&gt;transferred != <a href="#" onMouseOver="link('_member','MSD_CBW_SIZE2028663731',this); ">MSD_CBW_SIZE</a>) ||
+            (transfer-&gt;remaining != 0)) {
+
+            // Wait for a reset recovery
+            msdDriver.waitResetRecovery = 1;
+
+            // Halt the Bulk-IN and Bulk-OUT pipes
+            <a href="#" onMouseOver="link('_member','../core/USBD_Halt2593655934',this); ">USBD_Halt</a>(MSDDriverDescriptors_BULKOUT);
+            <a href="#" onMouseOver="link('_member','../core/USBD_Halt2593655934',this); ">USBD_Halt</a>(MSDDriverDescriptors_BULKIN);
+
+            csw-&gt;bCSWStatus = <a href="#" onMouseOver="link('_member','MSD_CSW_COMMAND_FAILED2028663731',this); ">MSD_CSW_COMMAND_FAILED</a>;
+            msdDriver.state = MSDDriver_STATE_READ_CBW;
+
+        }
+        // Check the CBW Signature
+        else if (cbw-&gt;dCBWSignature != <a href="#" onMouseOver="link('_member','MSD_CBW_SIGNATURE2028663731',this); ">MSD_CBW_SIGNATURE</a>) {
+
+            // Wait for a reset recovery
+            msdDriver.waitResetRecovery = 1;
+
+            // Halt the Bulk-IN and Bulk-OUT pipes
+            <a href="#" onMouseOver="link('_member','../core/USBD_Halt2593655934',this); ">USBD_Halt</a>(MSDDriverDescriptors_BULKOUT);
+            <a href="#" onMouseOver="link('_member','../core/USBD_Halt2593655934',this); ">USBD_Halt</a>(MSDDriverDescriptors_BULKIN);
+
+            csw-&gt;bCSWStatus = <a href="#" onMouseOver="link('_member','MSD_CSW_COMMAND_FAILED2028663731',this); ">MSD_CSW_COMMAND_FAILED</a>;
+            msdDriver.state = MSDDriver_STATE_READ_CBW;
+        }
+        else {
+
+            // Pre-process command
+            MSDDriver_PreProcessCommand();
+        }
+    }
+
+    // Process command
+    if (csw-&gt;bCSWStatus == MSDDriver_STATUS_SUCCESS) {
+
+        if (MSDDriver_ProcessCommand()) {
+
+            // Post-process command if it is finished
+            MSDDriver_PostProcessCommand();
+            msdDriver.state = MSDDriver_STATE_SEND_CSW;
+        }
+    }
+
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><b>MSDDriver_STATE_SEND_CSW</b><br>
+<br>
+</div>
+<div class="padding">This <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> is similar to MSDDriver_STATE_READ_CBW, except that a write operation is performed instead of a read and the CSW is sent, not the CBW. The same callback function is used to fill the transfer structure, which is checked in the next <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a>:<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//----------------------
+case MSDDriver_STATE_SEND_CSW:
+//----------------------
+    // Set signature
+    csw-&gt;dCSWSignature = <a href="#" onMouseOver="link('_member','MSD_CSW_SIGNATURE2028663731',this); ">MSD_CSW_SIGNATURE</a>;
+
+    // Start the CSW write operation
+    status = <a href="#" onMouseOver="link('_member','../core/USBD_Write1378485824',this); ">USBD_Write</a>(MSDDriverDescriptors_BULKIN,
+                        csw,
+                        MSD_CSW_SIZE,
+                        (TransferCallback) MSDDriver_Callback,
+                        (void *) transfer);
+
+    // Check operation result code
+    if (status == <a href="#" onMouseOver="link('_member','../core/USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>) {
+
+        // Wait for end of transfer
+        msdDriver.state = MSDDriver_STATE_WAIT_CSW;
+    }
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><b>MSDDriver_STATE_WAIT_CSW</b><br>
+<br>
+</div>
+<div class="padding">Again, this <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> is very similar to MSDDriver_STATE_WAIT_CBW. The only difference is that the <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine is set to MSDDriver_STATE_READ_CBW regardless of the operation result code:<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+//----------------------
+case MSDDriver_STATE_WAIT_CSW:
+//----------------------
+    // Check transfer semaphore
+    if (transfer-&gt;semaphore &gt; 0) {
+
+        // Take semaphore and terminate transfer
+        transfer-&gt;semaphore--;
+
+        // Read new CBW
+        msdDriver.state = MSDDriver_STATE_READ_CBW;
+    }
+    break;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Media</div>
+ USB MSD Media access is three-level abstraction.<br>
+<br>
+</div>
+<div class="padding"><div align="center">
+<img src="MSDMediaArch.png" alt="MSDMediaArch.png">
+<strong><br>Media Architecture</strong></div>
+<br>
+<br>
+</div>
+<div class="padding">The bottom level is the specific driver for each media type (See <a href="#" OnMouseOver="link('_dir','../../../memories/memories0',this)">memories</a>).<br>
+<br>
+</div>
+<div class="padding">In the middle, a structure Media is used to hide which specific driver a media instance is using. This enables transparent use of any media driver once it has been initialized (See <a href="#" OnMouseOver="link('_class','../../../memories/_Media0',this)">_Media</a>).<br>
+<br>
+</div>
+<div class="padding">Finally, a LUN abstraction is made over the media structure to allow multiple partitions over one media. This also makes it possible to place the LUN at any address and use any block size. When performing a write or read operation on a LUN, it forwards the operation to the underlying media while translating it to the correct address and length.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Media Drivers</div>
+ A media driver must provide several functions for:<ul>
+<li>Reading data from the media</li>
+<li>Writing data on the media</li>
+<li>Handling interrupts on the media The last function may be empty if the media does not require interrupts for asynchronous operation, or if synchronous operation produces an acceptable delay.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">In addition, it should also define a function for initializing a Media structure with the correct values, as well as perform the necessary step for the media to be useable.<br>
+<br>
+</div>
+<div class="padding">For the <a href="#" OnMouseOver="link('_dir','../../../drivers/drivers0',this)">drivers</a> see:<ul>
+<li><a href="#" OnMouseOver="link('_file','../../../memories/MEDSdram_h0',this)">MEDSdram.h</a>: <em>Internal Flash Driver</em></li>
+<li><a href="#" OnMouseOver="link('_unit','../../../memories/MEDFlash_h0',this)">MEDFlash.h</a>: <em>SDRAM disk driver</em></li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">SCSI Commands</div>
+ The example software described in this application note uses SCSI commands with the MSD class, since this is the most appropriate setting for a Flash <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a>. This section details how SCSI commands are processed.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Documents</div>
+ There are several documents covering SCSI commands. In this application note, the reference document used is SCSI Block Commands - 3 (SBC-3). However, it makes many references to another SCSI document, SCSI Primary Commands - 4 (SPC-4). Both are needed for full details on required commands.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Endianness</div>
+ SCSI commands use the big-endian format for storing word- and double word- sized data. This means the Most Significant Bit (MSB) is stored at the lowest address, and the Least Significant Bit (LSB) at the highest one.<br>
+<br>
+</div>
+<div class="padding">On ARM Thumb microcontrollers, the endianness of the <a href="#" OnMouseOver="link('_dir','../core/core0',this)">core</a> is selectable. However, the little-endian mode is most often used. Therefore, SCSI command data must be converted before being usable. This is done by declaring word- and dword-sized fields as byte arrays, and then using a macro for loading or storing data. Several of them are available in the provided software:<ul>
+<li>Load<ul>
+<li>WORDB: Converts a big-endian word value to little-endian</li>
+<li><a href="#" OnMouseOver="link('_member','DWORDB82298825',this)">DWORDB</a>: Converts a big-endian double-word value to little-endian</li>
+</ul>
+
+</li>
+<li>Store<ul>
+<li><a href="#" OnMouseOver="link('_member','STORE_WORDB1064074905',this)">STORE_WORDB</a>: Stores a little-endian word value in big-endian format</li>
+<li><a href="#" OnMouseOver="link('_member','STORE_DWORDB2693700554',this)">STORE_DWORDB</a>: Stores a little-endian double-word value in big-endian format</li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Sense Data</div>
+ When an error happens during the execution of a command, it is recorded by the <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a>. The host may then issue a Request Sense command to retrieve <b>Sense Data</b>, i.e., information about previous errors.<br>
+<br>
+</div>
+<div class="padding">While the sense data structure has many fields, only three are really important. The first one is the Sense Key. It indicates the result of the last command performed: success, media not ready, hardware error, etc. Two other fields can then be specified to give a more accurate description of the problem. They are named <em>Additional Sense Code</em> and <em>Additional Sense Code Qualifier</em>.<br>
+<br>
+</div>
+<div class="padding">In the example application, each LUN has its own sense data. It is updated during command execution if there is any error.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Commands</div>
+ The SBC-3 specification gives a list of mandatory and optional commands that are relevant for a block <a href="#" OnMouseOver="link('_dir','../device0',this)">device</a> (like a Flash drive). In practice, only a subset of the mandatory commands is effectively used by operating systems; conversely, several commands which are supposed to be optional are required. The software provided with this application note implements the following list of commands:<ul>
+<li>SBC-3<ul>
+<li>Prevent/Allow Medium Removal</li>
+<li>Read (10)</li>
+<li>Read Capacity (10)</li>
+<li>Verify (10)</li>
+<li>Write (10)</li>
+</ul>
+
+</li>
+<li>SPC-4<ul>
+<li>Inquiry</li>
+<li>Mode Sense (6)</li>
+<li>Request Sense</li>
+<li>Test Unit Ready The commands are actually processed in <a href="#" OnMouseOver="link('_member','SBC_ProcessCommand3770566435',this)">SBC_ProcessCommand</a>.</li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><em>Internal State Machine</em><br>
+<br>
+</div>
+<div class="padding">As previously stated, most commands have an internal <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine to prevent blocking the whole system during a data transfer (on the USB or when accessing a media). A result code is used to indicate that the corresponding function must be called again for the command to complete (MSDDriver_STATUS_SUCCESS).<br>
+<br>
+</div>
+<div class="padding">A command <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> structure is used by the driver to record several parameters during command processing:<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+typedef struct {
+
+    <a href="#" onMouseOver="link('_class','MSDTransfer0',this); ">MSDTransfer</a> transfer;       
+    <a href="#" onMouseOver="link('_class','MSCbw0',this); ">MSCbw</a>      cbw;             
+    <a href="#" onMouseOver="link('_class','MSCsw0',this); ">MSCsw</a>      csw;             
+    unsigned char  <a href="#" onMouseOver="link('_member','../../../../basic-rtt-project/state0',this); ">state</a>;       
+    unsigned char  postprocess; 
+    unsigned int   length;      
+
+} <a href="#" onMouseOver="link('_class','MSDCommandState0',this); ">MSDCommandState</a>;
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding">Note that the <em><a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a></em> field must be initialized when the command is first called. A value of 0 means that no command is currently being executed.<br>
+<br>
+</div>
+<div class="padding">For the commands descriptions and implementation, please reffer to the SCSI spec. and source code.<br>
+<br>
+</div>
+<div class="padding">Functions to handle SCSI commands:<ul>
+<li>SBC_Inquiry</li>
+<li>SBC_Read10</li>
+<li>SBC_ReadCapacity10</li>
+<li>SBC_RequestSense</li>
+<li>SBC_TestUnitReady</li>
+<li>SBC_Write10</li>
+<li>SBC_ModeSense6</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">Command Processing</div>
+ <em>Flow</em><br>
+<br>
+</div>
+<div class="padding">Command processing is actually divided into three phases in the example software:<ul>
+<li>Pre-processing: MSDDriver_PreProcessCommand</li>
+<li>Processing: MSDDriver_ProcessCommand</li>
+<li>Post-processing: MSDDriver_PostProcessCommand</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><em>The Thirteen Cases</em><br>
+<br>
+</div>
+<div class="padding">There are basically three actions that should be performed depending on the case:<ul>
+<li>STALL the Bulk-IN endpoint</li>
+<li>STALL the Bulk-OUT endpoint</li>
+<li>Report a Phase Error in the CSW</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">The table below lists all cases along with the actions which must be taken after the command, including the correct length/direction of the transfer. The following notation is used to characterize host and device expectations:<br>
+<br>
+</div>
+<div class="padding">Data Transfer Characterization<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">Notation</td><td class="userPaddingHeadMultiColumn1">Meaning</td><td class="userPaddingHeadMultiColumn1">Notation</td><td class="userPaddingHeadMultiColumn2">Meaning<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Hn</td><td class="userPaddingNormal1">Host expects no data transfer</td><td class="userPaddingNormal1">Dn</td><td class="userPaddingNormal2">Device expects no data transfer<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Hi</td><td class="userPaddingNormal1">Host expects to <b>receive</b> data</td><td class="userPaddingNormal1">Di</td><td class="userPaddingNormal2">Device expects to <b>send</b> data<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Ho</td><td class="userPaddingNormal1">Host expects to <b>send</b> data</td><td class="userPaddingNormal1">Do</td><td class="userPaddingNormal2">Device expects to <b>receive</b> data<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Lh</td><td class="userPaddingNormal1">Length of data expected by the host</td><td class="userPaddingNormal1">Ld</td><td class="userPaddingNormal2">Length of data expected by the device</td></tr>
+</table>
+<br>
+</div>
+<div class="padding"><table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingNormal1">Hx=Dx</td><td class="userPaddingNormal2">Host and device agree on transfer length and direction (x is either n, i or o)<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Hx&gt;Dx</td><td class="userPaddingNormal2">Host and device agree on transfer direction, host expects a larger transfer than device<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Hx&lt;Dx</td><td class="userPaddingNormal2">Host and device agree on transfer direction, device expects a larger transfer than host<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">Hx&lt;&gt;Dx</td><td class="userPaddingNormal2">Host and device disagree on transfer direction</td></tr>
+</table>
+<br>
+</div>
+<div class="padding">The Thirteen Cases<br>
+<table cellspacing=0 cellpadding=0 border=0 class="userTableBorder">
+<tr>
+<td class="userPaddingHeadMultiColumn1">#</td><td class="userPaddingHeadMultiColumn1">Case</td><td class="userPaddingHeadMultiColumn1">Length</td><td class="userPaddingHeadMultiColumn1">Residue</td><td class="userPaddingHeadMultiColumn1">Direction</td><td class="userPaddingHeadMultiColumn1">STALL IN?</td><td class="userPaddingHeadMultiColumn1">STALL OUT?</td><td class="userPaddingHeadMultiColumn2">Phase Error?<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">1</td><td class="userPaddingNormal1">Hn = Dn</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">2</td><td class="userPaddingNormal1">Hn &lt; Di</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Ld - Lh</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">X<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">3</td><td class="userPaddingNormal1">Hn &lt; Do</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Ld - Lh</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">X<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">4</td><td class="userPaddingNormal1">Hi &gt; Dn</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Lh</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">X</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">5</td><td class="userPaddingNormal1">Hi &gt; Di</td><td class="userPaddingNormal1">Ld</td><td class="userPaddingNormal1">Lh - Ld</td><td class="userPaddingNormal1">In</td><td class="userPaddingNormal1">X</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">6</td><td class="userPaddingNormal1">Hi = Di</td><td class="userPaddingNormal1">Ld</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">In</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">7</td><td class="userPaddingNormal1">Hi &lt; Di</td><td class="userPaddingNormal1">Lh</td><td class="userPaddingNormal1">Ld - Lh</td><td class="userPaddingNormal1">In</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">X<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">8</td><td class="userPaddingNormal1">Hi &lt;&gt; Do</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">X</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">X<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">9</td><td class="userPaddingNormal1">Ho &gt; Dn</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Lh</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">X</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">10</td><td class="userPaddingNormal1">Ho &lt;&gt; Di</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Irrelevant</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">X</td><td class="userPaddingNormal2">X<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">11</td><td class="userPaddingNormal1">Ho &gt; Do</td><td class="userPaddingNormal1">Ld</td><td class="userPaddingNormal1">Lh - Ld</td><td class="userPaddingNormal1">Out</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">X</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">12</td><td class="userPaddingNormal1">Ho = Do</td><td class="userPaddingNormal1">Ld</td><td class="userPaddingNormal1">0</td><td class="userPaddingNormal1">Out</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">&nbsp;<br>
+</td></tr>
+<tr>
+<td class="userPaddingNormal1">13</td><td class="userPaddingNormal1">Ho &lt; Do</td><td class="userPaddingNormal1">Lh</td><td class="userPaddingNormal1">Lh - Ld</td><td class="userPaddingNormal1">Out</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal1">&nbsp;</td><td class="userPaddingNormal2">X</td></tr>
+</table>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Main Application</div>
+ After the MSD driver and the media have been initialized using the corresponding functions, the only requirement for the <a href="#" OnMouseOver="link('_member','../../../../usb-device-massstorage-project/main53616',this)">main</a> application is to regularly call the <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine function. This is necessary for processing received commands in a fully asynchronous way.<br>
+<br>
+</div>
+<div class="padding">The application is otherwise free of doing any other task; for example, it could implement a filesystem and a serial port interface to be accessed with a standard terminal. An MP3 player could also continue playing a song while its memory is accessed like an external hard disk.<br>
+<br>
+</div>
+<div class="padding"><div align="center">
+<img src="MSDDriverClasses.png" alt="MSDDriverClasses.png">
+<strong><br>Driver Class Diagram</strong></div>
+<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Page was generated from the following file:</div>
+<div class="paddingMembers"><LI>massstorage.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>

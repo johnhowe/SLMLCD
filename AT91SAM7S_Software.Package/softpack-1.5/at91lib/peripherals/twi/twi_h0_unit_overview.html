@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - twi.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">twi.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','twi0',this)" class="pathLink">twi</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">twi.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5549","aID5549","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','twi_h0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','twi_h0','_overview',this)" class="tabLinkActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="paragraphTable"></div>
+<table cellspacing="0"cellpadding=0 border=0 class="widthAndBorderTop">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Methods</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_ByteReceived142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;TWI_ByteReceived&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if a byte has been received and can be read<BR>on the given TWI    peripheral; otherwise, returns 0.');" onmouseout="return nd();">&nbsp;TWI_ByteReceived</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if a byte has been received and can be read on the given TWI peripheral; otherwise, returns 0.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_ByteSent142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;TWI_ByteSent&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if a byte has been sent, so another one can<BR>be stored for    transmission; otherwise returns 0.');" onmouseout="return nd();">&nbsp;TWI_ByteSent</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if a byte has been sent, so another one can be stored for transmission; otherwise returns 0.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_ConfigureMaster1672009607',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_ConfigureMaster<BR>(AT91S_TWI * pTwi, unsigned int twck, unsigned int mck)',CAPTION,'<strong>Brief description</strong><BR>Configures a TWI peripheral to operate in master mode,<BR>at the given    frequency (in Hz).');" onmouseout="return nd();">&nbsp;TWI_ConfigureMaster</a></TD>
+<TD class="paddingNormal2"><span class="" >Configures a TWI peripheral to operate in master mode, at the given frequency (in Hz).<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_DisableIt1649202364',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_DisableIt&nbsp;&nbsp;(AT91S_TWI * pTwi, unsigned int sources)',CAPTION,'<strong>Brief description</strong><BR>Disables the selected interrupts sources on a TWI peripheral.');" onmouseout="return nd();">&nbsp;TWI_DisableIt</a></TD>
+<TD class="paddingNormal2"><span class="" >Disables the selected interrupts sources on a TWI peripheral.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_EnableIt1649202364',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_EnableIt&nbsp;&nbsp;(AT91S_TWI * pTwi, unsigned int sources)',CAPTION,'<strong>Brief description</strong><BR>Enables the selected interrupts sources on a TWI peripheral.');" onmouseout="return nd();">&nbsp;TWI_EnableIt</a></TD>
+<TD class="paddingNormal2"><span class="" >Enables the selected interrupts sources on a TWI peripheral.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_GetMaskedStatus142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned int&nbsp;&nbsp;TWI_GetMaskedStatus&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Returns the current status register of the given TWI<BR>peripheral, but    masking interrupt sources which are<BR>not currently enabled.');" onmouseout="return nd();">&nbsp;TWI_GetMaskedStatus</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns the current status register of the given TWI peripheral, but masking interrupt sources which are not currently enabled.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_GetStatus142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned int&nbsp;&nbsp;TWI_GetStatus&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Returns the current status register of the given TWI peripheral.');" onmouseout="return nd();">&nbsp;TWI_GetStatus</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns the current status register of the given TWI peripheral.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_ReadByte142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;TWI_ReadByte&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Reads a byte from the TWI bus.');" onmouseout="return nd();">&nbsp;TWI_ReadByte</a></TD>
+<TD class="paddingNormal2"><span class="" >Reads a byte from the TWI bus.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_SendSTOPCondition142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_SendSTOPCondition&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Sends a STOP condition.');" onmouseout="return nd();">&nbsp;TWI_SendSTOPCondition</a></TD>
+<TD class="paddingNormal2"><span class="" >Sends a STOP condition.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_StartRead4197166859',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_StartRead<BR>(AT91S_TWI * pTwi, unsigned char address, unsigned int iaddress, unsigned char isize)',CAPTION,'<strong>Brief description</strong><BR>Starts a read operation on the TWI bus with the<BR>specified slave, and returns    immediately.');" onmouseout="return nd();">&nbsp;TWI_StartRead</a></TD>
+<TD class="paddingNormal2"><span class="" >Starts a read operation on the TWI bus with the specified slave, and returns immediately.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_StartWrite1200892044',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_StartWrite<BR>(AT91S_TWI * pTwi, unsigned char address, unsigned int iaddress, unsigned char isize, unsigned char byte)',CAPTION,'<strong>Brief description</strong><BR>Starts a write operation on the TWI to access the<BR>selected slave, then    returns immediately.');" onmouseout="return nd();">&nbsp;TWI_StartWrite</a></TD>
+<TD class="paddingNormal2"><span class="" >Starts a write operation on the TWI to access the selected slave, then returns immediately.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_Stop142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_Stop&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Sends a STOP condition on the TWI.');" onmouseout="return nd();">&nbsp;TWI_Stop</a></TD>
+<TD class="paddingNormal2"><span class="" >Sends a STOP condition on the TWI.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_TransferComplete142942097',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>unsigned char&nbsp;&nbsp;TWI_TransferComplete&nbsp;&nbsp;(AT91S_TWI * pTwi)',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if the current transmission is complete (the<BR>STOP has been sent);    otherwise returns 0.');" onmouseout="return nd();">&nbsp;TWI_TransferComplete</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if the current transmission is complete (the STOP has been sent); otherwise returns 0.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_WriteByte2296152088',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;TWI_WriteByte&nbsp;&nbsp;(AT91S_TWI * pTwi, unsigned char byte)',CAPTION,'<strong>Brief description</strong><BR>Sends a byte of data to one of the TWI slaves on the bus.');" onmouseout="return nd();">&nbsp;TWI_WriteByte</a></TD>
+<TD class="paddingNormal2"><span class="" >Sends a byte of data to one of the TWI slaves on the bus.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Macros</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_STATUS_RXRDY1070096192',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;TWI_STATUS_RXRDY&nbsp;&nbsp;(status )',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if the RXRDY bit (ready to receive data) is<BR>set in the given    status register value.');" onmouseout="return nd();">&nbsp;TWI_STATUS_RXRDY</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if the RXRDY bit (ready to receive data) is set in the given status register value.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_STATUS_TXCOMP1070096192',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;TWI_STATUS_TXCOMP&nbsp;&nbsp;(status )',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if the TXCOMP bit (transfer complete) is set<BR>in the given    status register value.');" onmouseout="return nd();">&nbsp;TWI_STATUS_TXCOMP</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if the TXCOMP bit (transfer complete) is set in the given status register value.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','TWI_STATUS_TXRDY1070096192',this); "><img src="../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;TWI_STATUS_TXRDY&nbsp;&nbsp;(status )',CAPTION,'<strong>Brief description</strong><BR>Returns 1 if the TXRDY bit (ready to transmit data) is<BR>set in the given    status register value.');" onmouseout="return nd();">&nbsp;TWI_STATUS_TXRDY</a></TD>
+<TD class="paddingNormal2"><span class="" >Returns 1 if the TXRDY bit (ready to transmit data) is set in the given status register value.<br>
+</TD>
+</TR>
+</table>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_overview');
+</script>

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - pio</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">pio</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">pio</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5476","aID5476","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_dir','pio0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_dir','pio0','_dirgraph',this)" class="tabLinkInActive">Graph</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">pio</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Purpose</div>
+This directory contains an API for configuring the Peripheral Input/Output (PIO) controllers.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Contents</div>
+ The code is separated into two <a href="#" OnMouseOver="link('_dir','../../components/components0',this)">components</a>:<ul>
+<li><a href="#" OnMouseOver="link('_file','pio_c0',this)">pio.c</a> contains code for PIO initialisation, as well as set/clear/get methods that can be used with user-controlled <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a>.</li>
+<li><a href="#" OnMouseOver="link('_unit','pio_it_h0',this)">pio_it.h</a> provides a convenient interface for configuring, enabling or disabling interrupts on one pin or a group of <a href="#" OnMouseOver="link('_member','../../../basic-usart-hw-handshaking-project/pins0',this)">pins</a>.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">The reasoning behing this division is that <a href="#" OnMouseOver="link('_file','pio_it_c0',this)">pio_it.c</a> requires the <a href="#" OnMouseOver="link('_dir','../aic/aic0',this)">aic</a> peripheral, which generates useless includes for project which do not use PIO interrupts.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Directory was generated from the following files:</div>
+<div class="paddingMembers"><LI>pio.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_dir','_description');
+</script>

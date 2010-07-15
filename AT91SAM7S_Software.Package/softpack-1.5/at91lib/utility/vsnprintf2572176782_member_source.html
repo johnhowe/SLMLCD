@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - vsnprintf</TITLE>
+<script type="text/javascript" src="../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../common/";
+ var relPathToHelpDir = "../../../common/help/";
+ var toSearchPage     = "_search','../../../search";
+ Body1();
+</script>
+<div class="headerPage">vsnprintf</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','utility0',this)" class="pathLink">utility</A><img src="../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">vsnprintf</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','vsnprintf2572176782','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','vsnprintf2572176782','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 293</div>
+<pre class="codeExamples">
+signed int <a href="#" onMouseOver="link('_member','vsnprintf2572176782',this); ">vsnprintf</a>(char *pStr, size_t length, const char *pFormat, va_list ap)
+{
+    char          fill;
+    unsigned char width;
+    signed int    num = 0;
+    signed int    size = 0;
+
+    // Clear the string
+    if (pStr) {
+
+        *pStr = 0;
+    }
+
+    // Phase string
+    while (*pFormat != 0 &amp;&amp; size &lt; length) {
+
+        // Normal character
+        if (*pFormat != '%') {
+
+            *pStr++ = *pFormat++;
+            size++;
+        }
+        // Escaped '%'
+        else if (*(pFormat+1) == '%') {
+
+            *pStr++ = '%';
+            pFormat += 2;
+            size++;
+        }
+        // Token delimiter
+        else {
+
+            fill = ' ';
+            width = 0;
+            pFormat++;
+
+            // Parse filler
+            if (*pFormat == '0') {
+
+                fill = '0';
+                pFormat++;
+            }
+
+            // Parse width
+            while ((*pFormat &gt;= '0') &amp;&amp; (*pFormat &lt;= '9')) {
+        
+                width = (width*10) + *pFormat-'0';
+                pFormat++;
+            }
+
+            // Check if there is enough space
+            if (size + width &gt; length) {
+
+                width = length - size;
+            }
+        
+            // Parse type
+            switch (*pFormat) {
+            case 'd': 
+            case 'i': num = PutSignedInt(pStr, fill, width, va_arg(ap, signed int)); break;
+            case 'u': num = PutUnsignedInt(pStr, fill, width, va_arg(ap, unsigned int)); break;
+            case 'x': num = PutHexa(pStr, fill, width, 0, va_arg(ap, unsigned int)); break;
+            case 'X': num = PutHexa(pStr, fill, width, 1, va_arg(ap, unsigned int)); break;
+            case 's': num = PutString(pStr, va_arg(ap, char *)); break;
+            case 'c': num = PutChar(pStr, va_arg(ap, unsigned int)); break;
+            default:
+                return EOF;
+            }
+
+            pFormat++;
+            pStr += num;
+            size += num;
+        }
+    }
+
+    // NULL-terminated (final \0 is not counted)
+    if (size &lt; length) {
+
+        *pStr = 0;
+    }
+    else {
+
+        *(--pStr) = 0;
+        size--;
+    }
+
+    return size;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

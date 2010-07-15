@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - ADC_Initialize</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">ADC_Initialize</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','adc0',this)" class="pathLink">adc</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">ADC_Initialize</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','ADC_Initialize628266006','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','ADC_Initialize628266006','_source',this)" class="tabLinkInActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">ADC_Initialize</span>
+<div class="paragraph2">Initialize the ADC controller.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2"><span id="descFunSynExpSpan" style="display:none;visibility:hidden"><a href="javascript:showElement( 'descFunSynColSpan' );javascript:hideElement( 'descFunSynExpSpan' );javascript:showElement( 'descFunSyn' );javascript:setMyCookie( cookieName, 'descFunSyn', 'show' );"><img src="../../../../common/expand.gif" border=0></a></span><span id="descFunSynColSpan"><a href="javascript:showElement( 'descFunSynExpSpan' );javascript:hideElement( 'descFunSynColSpan' );javascript:hideElement( 'descFunSyn' );javascript:setMyCookie( cookieName, 'descFunSyn', 'hide' );"><img src="../../../../common/collapse.gif" border=0></a></span>
+Syntax / parameters</div>
+<div id="descFunSyn" class="paddingMembersTableDiv"><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top"><TD class="paddingHeadMultiColumn2"><span class="codeFont">void <a href="#" OnMouseOver="link('_member','ADC_Initialize628266006',this)">ADC_Initialize</a> (AT91S_ADC *pAdc, unsigned char idAdc, unsigned char trgEn, unsigned char trgSel, unsigned char sleepMode, unsigned char resolution, unsigned int mckClock, unsigned int adcClock, unsigned int startupTime, unsigned int sampleAndHoldTime)<br>
+</span></TD></TR></TABLE>
+<br><table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Name</TD>
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Type</TD>
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Default</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>pAdc</TD>
+<TD class="paddingNormal1"><span class="codeFont" >AT91S_ADC * <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >Pointer to an AT91S_ADC instance.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>idAdc</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>trgEn</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >trigger mode, software or Hardware<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>trgSel</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >hardware trigger selection<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>sleepMode</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >sleep mode selection<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>resolution</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned char <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >resolution selection 8 bits or 10 bits<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>mckClock</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned int <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >value of <a href="#" OnMouseOver="link('_member','../../../usb-device-composite-hidmsd-project/MCK2659867326',this)">MCK</a> in Hz<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>adcClock</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned int <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >value of the ADC clock in Hz<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>startupTime</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned int <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >value of the start up time (in µs) (see datasheet)<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="codeFont" align=left>sampleAndHoldTime</TD>
+<TD class="paddingNormal1"><span class="codeFont" >unsigned int <br>
+</TD>
+<TD class="paddingNormal1"><span class="codeFont" align=left>&nbsp;</TD>
+<TD class="paddingNormal2"><span class="" >(in ns)<br>
+</TD>
+</TR>
+</table>
+</div>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers">Initialize the ADC controller.<br>
+<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Member was generated from the following files:</div>
+<div class="paddingMembers"><LI>adc.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_description');
+</script>

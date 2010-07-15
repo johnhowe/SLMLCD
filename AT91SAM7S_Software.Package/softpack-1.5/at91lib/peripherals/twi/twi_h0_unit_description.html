@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - twi.h</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">twi.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','twi0',this)" class="pathLink">twi</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">twi.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5549","aID5549","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','twi_h0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','twi_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="paragraph2">Description</div>
+<div id="descDesc" class="paddingMembers"><div class="userParagraph3">Purpose</div>
+Interface for configuration the Two Wire Interface (TWI) peripheral.<br>
+<br>
+<div class="userParagraph3">Usage</div>
+<ol>
+<li>Configures a TWI peripheral to operate in master mode, at the given frequency (in Hz) using <a href="#" OnMouseOver="link('_member','TWI_ConfigureMaster1672009607',this)">TWI_ConfigureMaster()</a>.</li>
+<li>or if hardware possible, configures a TWI peripheral to operate in slave mode, at the given frequency (in Hz) using TWI_ConfigureSlave().</li>
+<li>Sends a STOP condition on the TWI using <a href="#" OnMouseOver="link('_member','TWI_Stop142942097',this)">TWI_Stop()</a>.</li>
+<li>Starts a read operation on the TWI bus with the specified slave using <a href="#" OnMouseOver="link('_member','TWI_StartRead4197166859',this)">TWI_StartRead()</a>. Data must then be read using <a href="#" OnMouseOver="link('_member','TWI_ReadByte142942097',this)">TWI_ReadByte()</a> whenever a byte is available (poll using <a href="#" OnMouseOver="link('_member','TWI_ByteReceived142942097',this)">TWI_ByteReceived()</a>).</li>
+<li>Starts a write operation on the TWI to access the selected slave using <a href="#" OnMouseOver="link('_member','TWI_StartWrite1200892044',this)">TWI_StartWrite()</a>. A byte of data must be provided to start the write; other bytes are written next.</li>
+<li>Sends a byte of data to one of the TWI slaves on the bus using <a href="#" OnMouseOver="link('_member','TWI_WriteByte2296152088',this)">TWI_WriteByte()</a>. This function must be called once before <a href="#" OnMouseOver="link('_member','TWI_StartWrite1200892044',this)">TWI_StartWrite()</a> with the first byte of data to send, then it shall be called repeatedly after that to send the remaining bytes.</li>
+<li>Check if a byte has been received and can be read on the given TWI peripheral using <a href="#" OnMouseOver="link('_member','TWI_ByteReceived142942097',this)">TWI_ByteReceived()</a>. Check if a byte has been sent using <a href="#" OnMouseOver="link('_member','TWI_ByteSent142942097',this)">TWI_ByteSent()</a>.</li>
+<li>Check if the current transmission is complete (the STOP has been sent) using <a href="#" OnMouseOver="link('_member','TWI_TransferComplete142942097',this)">TWI_TransferComplete()</a>.</li>
+<li>Enables &amp; disable the selected interrupts sources on a TWI peripheral using <a href="#" OnMouseOver="link('_member','TWI_EnableIt1649202364',this)">TWI_EnableIt()</a> and <a href="#" OnMouseOver="link('_member','TWI_DisableIt1649202364',this)">TWI_DisableIt()</a>.</li>
+<li>Get current status register of the given TWI peripheral using <a href="#" OnMouseOver="link('_member','TWI_GetStatus142942097',this)">TWI_GetStatus()</a>. Get current status register of the given TWI peripheral, but masking interrupt sources which are not currently enabled using <a href="#" OnMouseOver="link('_member','TWI_GetMaskedStatus142942097',this)">TWI_GetMaskedStatus()</a>.</li>
+</ol>
+
+</div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_description');
+</script>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - ConfigureButtons</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">ConfigureButtons</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','gettingmi_startedmi_project0',this)" class="pathLink">getting-started-project</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">ConfigureButtons</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','ConfigureButtons53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','ConfigureButtons53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 247</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','ConfigureButtons53616',this); ">ConfigureButtons</a>(void)
+{
+#if defined(at91sam7lek)
+    const <a href="#" onMouseOver="link('_class','../at91lib/peripherals/pio/Pin0',this); ">Pin</a> pinCol0 = PIN_KEYBOARD_COL0;
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(&amp;pinCol0, 1);
+#endif
+
+#if defined(at91cap9dk)
+    const <a href="#" onMouseOver="link('_class','../at91lib/peripherals/pio/Pin0',this); ">Pin</a> pinRow0 = PIN_KEYBOARD_ROW0;
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(&amp;pinRow0, 1);
+#endif
+
+    // Configure pios
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(&amp;pinPB1, 1);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_Configure1657521108',this); ">PIO_Configure</a>(&amp;pinPB2, 1);
+
+    // Initialize interrupts
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_InitializeInterrupts171142247',this); ">PIO_InitializeInterrupts</a>(AT91C_AIC_PRIOR_LOWEST);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_ConfigureIt1036220330',this); ">PIO_ConfigureIt</a>(&amp;pinPB1, (void (*)(const <a href="#" onMouseOver="link('_class','../at91lib/peripherals/pio/Pin0',this); ">Pin</a> *)) ISR_Bp1);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_ConfigureIt1036220330',this); ">PIO_ConfigureIt</a>(&amp;pinPB2, (void (*)(const <a href="#" onMouseOver="link('_class','../at91lib/peripherals/pio/Pin0',this); ">Pin</a> *)) ISR_Bp2);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_EnableIt134351097',this); ">PIO_EnableIt</a>(&amp;pinPB1);
+    <a href="#" onMouseOver="link('_member','../at91lib/peripherals/pio/PIO_EnableIt134351097',this); ">PIO_EnableIt</a>(&amp;pinPB2);
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USART_Write</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USART_Write</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../peripherals0',this)" class="pathLink">peripherals</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','usart0',this)" class="pathLink">usart</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USART_Write</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USART_Write840002687','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USART_Write840002687','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 120</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','USART_Write840002687',this); ">USART_Write</a>(AT91S_USART *usart, unsigned short data, volatile unsigned int timeOut)
+{
+    if (timeOut == 0) {
+
+        while ((usart-&gt;US_CSR &amp; AT91C_US_TXEMPTY) == 0);
+    }
+    else {
+
+        while ((usart-&gt;US_CSR &amp; AT91C_US_TXEMPTY) == 0) {
+
+            if (timeOut == 0) {
+
+                TRACE_ERROR("USART_Write: Timed out.\n\r");
+                return;
+            }
+            timeOut--;
+        }
+    }
+
+    usart-&gt;US_THR = data;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

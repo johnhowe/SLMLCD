@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - AT26_Configure</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">AT26_Configure</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../memories0',this)" class="pathLink">memories</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','spimi_flash0',this)" class="pathLink">spi-flash</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">AT26_Configure</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','AT26_Configure2559565110','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','AT26_Configure2559565110','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 101</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','AT26_Configure2559565110',this); ">AT26_Configure</a>(<a href="#" onMouseOver="link('_class','_At260',this); ">At26</a> *pAt26, <a href="#" onMouseOver="link('_class','Spid0',this); ">Spid</a> *pSpid, unsigned char cs)
+{
+    <a href="#" onMouseOver="link('_class','_SpidCmd0',this); ">SpidCmd</a> *pCommand;
+
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pAt26);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pSpid);
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(cs &lt; 4);
+
+    // Configure the SPI chip select for the serial flash
+    <a href="#" onMouseOver="link('_member','SPID_ConfigureCS923157423',this); ">SPID_ConfigureCS</a>(pSpid, cs, CSR);
+
+    // Initialize the AT26 fields
+    pAt26-&gt;<a href="#" onMouseOver="link('_member','pSpid25515',this); ">pSpid</a> = pSpid;
+    pAt26-&gt;<a href="#" onMouseOver="link('_member','pDesc25515',this); ">pDesc</a> = 0;
+
+    // Initialize the command structure
+    pCommand = &amp;(pAt26-&gt;<a href="#" onMouseOver="link('_member','command25515',this); ">command</a>);
+    pCommand-&gt;<a href="#" onMouseOver="link('_member','pCmd210111997',this); ">pCmd</a> = (unsigned char *) pAt26-&gt;<a href="#" onMouseOver="link('_member','pCmdBuffer25515',this); ">pCmdBuffer</a>;
+    pCommand-&gt;<a href="#" onMouseOver="link('_member','callback210111997',this); ">callback</a> = 0;
+    pCommand-&gt;<a href="#" onMouseOver="link('_member','pArgument210111997',this); ">pArgument</a> = 0;
+    pCommand-&gt;<a href="#" onMouseOver="link('_member','spiCs210111997',this); ">spiCs</a> = cs;    
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - MSDDStateMachine.h</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">MSDDStateMachine.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','massstorage0',this)" class="pathLink">massstorage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">MSDDStateMachine.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5611","aID5611","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_unit','MSDDStateMachine_h0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_unit','MSDDStateMachine_h0','_overview',this)" class="tabLinkActive">Overview</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="paragraphTable"></div>
+<table cellspacing="0"cellpadding=0 border=0 class="widthAndBorderTop">
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Classes</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>Brief description</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_class','MSDCommandState0',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Public Attributes</strong><BR><TABLE><TR><TD>cbw</TD></TR><TR><TD>csw</TD></TR><TR><TD>length</TD></TR><TR><TD>postprocess</TD></TR><TR><TD>state</TD></TR></TABLE>',CAPTION,'<strong>Brief description</strong><BR>Status of an executing command.');" onmouseout="return nd();">&nbsp;MSDCommandState</a></TD>
+<TD class="paddingNormal2"><span class="" >Status of an executing command.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_class','MSDDriver0',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Public Attributes</strong><BR><TABLE><TR><TD>commandState</TD></TR><TR><TD>luns</TD></TR><TR><TD>maxLun</TD></TR><TR><TD>state</TD></TR><TR><TD>waitResetRecovery</TD></TR></TABLE>',CAPTION,'<strong>Brief description</strong><BR>MSD driver state variables.');" onmouseout="return nd();">&nbsp;MSDDriver</a></TD>
+<TD class="paddingNormal2"><span class="" >MSD driver <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> variables.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_class','MSDTransfer0',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Public Attributes</strong><BR>remaining<br>semaphore<br>status<br>',CAPTION,'<strong>Brief description</strong><BR>Structure for holding the result of a USB transfer.');" onmouseout="return nd();">&nbsp;MSDTransfer</a></TD>
+<TD class="paddingNormal2"><span class="" >Structure for holding the result of a USB transfer.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Methods</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_Halt171142247',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;MSDD_Halt&nbsp;&nbsp;(unsigned int stallCase)',CAPTION,'<strong>Brief description</strong><BR>HALT Specified USB pipe.');" onmouseout="return nd();">&nbsp;MSDD_Halt</a></TD>
+<TD class="paddingNormal2"><span class="" >HALT Specified USB pipe.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_Read1390444857',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>char&nbsp;&nbsp;MSDD_Read<BR>(void * pData, unsigned int dLength, TransferCallback fCallback, void * pArgument)',CAPTION,'<strong>Brief description</strong><BR>Reads from host through MSD defined bulk OUT pipe.');" onmouseout="return nd();">&nbsp;MSDD_Read</a></TD>
+<TD class="paddingNormal2"><span class="" >Reads from host through MSD defined bulk OUT pipe.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_StateMachine214366110',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;MSDD_StateMachine&nbsp;&nbsp;(MSDDriver * pMsdDriver)',CAPTION,'<strong>Brief description</strong><BR>State machine for the MSD device driver.');" onmouseout="return nd();">&nbsp;MSDD_StateMachine</a></TD>
+<TD class="paddingNormal2"><span class="" >State machine for the MSD device driver.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_Write1390444857',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>char&nbsp;&nbsp;MSDD_Write<BR>(void * pData, unsigned int dLength, TransferCallback fCallback, void * pArgument)',CAPTION,'<strong>Brief description</strong><BR>Writes to host through MSD defined bulk IN pipe.');" onmouseout="return nd();">&nbsp;MSDD_Write</a></TD>
+<TD class="paddingNormal2"><span class="" >Writes to host through MSD defined bulk IN pipe.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingHeadMultiColumn1"><span class="" align=left>Defines</TD>
+<TD class="paddingHeadMultiColumn2"><span class="" align=left>&nbsp;</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_CASE_PHASE_ERROR2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_CASE_PHASE_ERROR',CAPTION,'<strong>Brief description</strong><BR>Indicates that the CSW should report a phase error.');" onmouseout="return nd();">&nbsp;MSDD_CASE_PHASE_ERROR</a></TD>
+<TD class="paddingNormal2"><span class="" >Indicates that the CSW should report a phase error.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_CASE_STALL_IN2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_CASE_STALL_IN',CAPTION,'<strong>Brief description</strong><BR>The driver should halt the Bulk IN pipe after the transfer.');" onmouseout="return nd();">&nbsp;MSDD_CASE_STALL_IN</a></TD>
+<TD class="paddingNormal2"><span class="" >The driver should halt the Bulk IN pipe after the transfer.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_CASE_STALL_OUT2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_CASE_STALL_OUT',CAPTION,'<strong>Brief description</strong><BR>The driver should halt the Bulk OUT pipe after the transfer.');" onmouseout="return nd();">&nbsp;MSDD_CASE_STALL_OUT</a></TD>
+<TD class="paddingNormal2"><span class="" >The driver should halt the Bulk OUT pipe after the transfer.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATE_PROCESS_CBW2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATE_PROCESS_CBW',CAPTION,'<strong>Brief description</strong><BR>Driver is processing the received command.');" onmouseout="return nd();">&nbsp;MSDD_STATE_PROCESS_CBW</a></TD>
+<TD class="paddingNormal2"><span class="" >Driver is processing the received command.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATE_READ_CBW2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATE_READ_CBW',CAPTION,'<strong>Brief description</strong><BR>Driver is expecting a command block wrapper.');" onmouseout="return nd();">&nbsp;MSDD_STATE_READ_CBW</a></TD>
+<TD class="paddingNormal2"><span class="" >Driver is expecting a command block wrapper.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATE_SEND_CSW2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATE_SEND_CSW',CAPTION,'<strong>Brief description</strong><BR>Driver is starting the transmission of a command status wrapper.');" onmouseout="return nd();">&nbsp;MSDD_STATE_SEND_CSW</a></TD>
+<TD class="paddingNormal2"><span class="" >Driver is starting the transmission of a command status wrapper.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATE_WAIT_CBW2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATE_WAIT_CBW',CAPTION,'<strong>Brief description</strong><BR>Driver is waiting for the transfer to finish.');" onmouseout="return nd();">&nbsp;MSDD_STATE_WAIT_CBW</a></TD>
+<TD class="paddingNormal2"><span class="" >Driver is waiting for the transfer to finish.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATE_WAIT_CSW2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATE_WAIT_CSW',CAPTION,'<strong>Brief description</strong><BR>Driver is waiting for the CSW transmission to finish.');" onmouseout="return nd();">&nbsp;MSDD_STATE_WAIT_CSW</a></TD>
+<TD class="paddingNormal2"><span class="" >Driver is waiting for the CSW transmission to finish.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATUS_ERROR2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATUS_ERROR',CAPTION,'<strong>Brief description</strong><BR>There was an error when trying to perform a method.');" onmouseout="return nd();">&nbsp;MSDD_STATUS_ERROR</a></TD>
+<TD class="paddingNormal2"><span class="" >There was an error when trying to perform a method.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATUS_INCOMPLETE2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATUS_INCOMPLETE',CAPTION,'<strong>Brief description</strong><BR>No error was encountered but the application should<BR>call the             method again to continue the operation.');" onmouseout="return nd();">&nbsp;MSDD_STATUS_INCOMPLETE</a></TD>
+<TD class="paddingNormal2"><span class="" >No error was encountered but the application should call the method again to continue the operation.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATUS_PARAMETER2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATUS_PARAMETER',CAPTION,'<strong>Brief description</strong><BR>A wrong parameter has been passed to the method.');" onmouseout="return nd();">&nbsp;MSDD_STATUS_PARAMETER</a></TD>
+<TD class="paddingNormal2"><span class="" >A wrong parameter has been passed to the method.<br>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD class="paddingNormal1"><span class="" align=left><a href="#" onMouseOver="link('_member','MSDD_STATUS_SUCCESS2842549707',this); "><img src="../../../../../common/info.gif" border=0 onmouseover="overLibDiagram();return overlib('<strong>Syntax</strong><BR>define&nbsp;&nbsp;MSDD_STATUS_SUCCESS',CAPTION,'<strong>Brief description</strong><BR>Method was successful.');" onmouseout="return nd();">&nbsp;MSDD_STATUS_SUCCESS</a></TD>
+<TD class="paddingNormal2"><span class="" >Method was successful.<br>
+</TD>
+</TR>
+</table>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_unit','_overview');
+</script>

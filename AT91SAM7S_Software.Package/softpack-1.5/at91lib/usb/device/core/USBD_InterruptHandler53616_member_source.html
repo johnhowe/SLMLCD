@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD_InterruptHandler</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD_InterruptHandler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD_InterruptHandler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBD_InterruptHandler53616','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBD_InterruptHandler53616','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 628</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','USBD_InterruptHandler53616',this); ">USBD_InterruptHandler</a>(void)
+{
+    unsigned int status;
+    int eptnum = 0;
+    
+    // Get interrupt status
+    // Some interrupts may get masked depending on the device state
+    status = AT91C_BASE_UDP-&gt;UDP_ISR;
+    status &amp;= AT91C_BASE_UDP-&gt;UDP_IMR;
+
+    if (deviceState &lt; <a href="#" onMouseOver="link('_member','USBD_STATE_POWERED1024481039',this); ">USBD_STATE_POWERED</a>) {
+
+        status &amp;= AT91C_UDP_WAKEUP | AT91C_UDP_RXRSM;
+        AT91C_BASE_UDP-&gt;UDP_ICR = ~status;
+    }
+
+    // Return immediately if there is no interrupt to service
+    if (status == 0) {
+
+        return;
+    }
+
+    // Toggle USB LED if the device is active
+    if (deviceState &gt;= <a href="#" onMouseOver="link('_member','USBD_STATE_POWERED1024481039',this); ">USBD_STATE_POWERED</a>) {
+
+        <a href="#" onMouseOver="link('_member','../../../utility/LED_Set171142247',this); ">LED_Set</a>(USBD_LEDUSB);
+    }
+
+    // Service interrupts
+
+    //if (ISSET(dStatus, AT91C_UDP_SOFINT)) {
+    //
+    //    TRACE_DEBUG("SOF");
+    //
+    //    // Invoke the SOF callback
+    //    USB_StartOfFrameCallback(pUsb);
+    //
+    //    // Acknowledge interrupt
+    //    AT91C_BASE_UDP-&gt;UDP_ICR = AT91C_UDP_SOFINT;
+    //    dStatus &amp;= ~AT91C_UDP_SOFINT;
+    //}
+
+    // Suspend
+    // This interrupt is always treated last (hence the '==')
+    if (status == AT91C_UDP_RXSUSP) {
+
+        TRACE_INFO_WP("Susp ");
+
+        // Don't do anything if the device is already suspended
+        if (deviceState != <a href="#" onMouseOver="link('_member','USBD_STATE_SUSPENDED1024481039',this); ">USBD_STATE_SUSPENDED</a>) {
+
+            // The device enters the Suspended state
+            // Enable wakeup
+            AT91C_BASE_UDP-&gt;UDP_IER = AT91C_UDP_WAKEUP | AT91C_UDP_RXRSM;
+
+            // Acknowledge interrupt
+            AT91C_BASE_UDP-&gt;UDP_ICR = AT91C_UDP_RXSUSP;
+
+            // Switch to the Suspended state
+            previousDeviceState = deviceState;
+            deviceState = <a href="#" onMouseOver="link('_member','USBD_STATE_SUSPENDED1024481039',this); ">USBD_STATE_SUSPENDED</a>;
+            // Invoke the Suspended callback
+            <a href="#" onMouseOver="link('_member','../../../../usb-device-cdc-serial-project/USBDCallbacks_Suspended53616',this); ">USBDCallbacks_Suspended</a>();
+            UDP_DisableTransceiver();
+            UDP_DisablePeripheralClock();
+            UDP_DisableUsbClock();
+        }
+    }
+    // Resume
+    else if ((status &amp; (AT91C_UDP_WAKEUP | AT91C_UDP_RXRSM)) != 0) {
+
+        TRACE_INFO_WP("Res ");
+
+        // Don't do anything if the device was not suspended
+        if (deviceState == <a href="#" onMouseOver="link('_member','USBD_STATE_SUSPENDED1024481039',this); ">USBD_STATE_SUSPENDED</a>) {
+
+            // The device enters its previous state
+            UDP_EnablePeripheralClock();
+            UDP_EnableUsbClock();
+
+            // Enable the transceiver if the device was past the Default
+            // state
+            deviceState = previousDeviceState;
+            if (deviceState &gt;= <a href="#" onMouseOver="link('_member','USBD_STATE_DEFAULT1024481039',this); ">USBD_STATE_DEFAULT</a>) {
+
+                UDP_EnableTransceiver();
+
+                // Invoke the Resume callback
+                <a href="#" onMouseOver="link('_member','../../../../usb-device-cdc-serial-project/USBDCallbacks_Resumed53616',this); ">USBDCallbacks_Resumed</a>();
+            }
+        }
+        
+        // Clear and disable resume interrupts
+        AT91C_BASE_UDP-&gt;UDP_ICR = AT91C_UDP_WAKEUP 
+                                  | AT91C_UDP_RXRSM
+                                  | AT91C_UDP_RXSUSP;
+        AT91C_BASE_UDP-&gt;UDP_IDR = AT91C_UDP_WAKEUP | AT91C_UDP_RXRSM;
+    }
+    // End of bus reset
+    else if ((status &amp; AT91C_UDP_ENDBUSRES) != 0) {
+
+        TRACE_INFO_WP("EoBRes ");
+
+        // The device enters the Default state
+        deviceState = <a href="#" onMouseOver="link('_member','USBD_STATE_DEFAULT1024481039',this); ">USBD_STATE_DEFAULT</a>;
+        UDP_EnableTransceiver();
+        UDP_ResetEndpoints();
+        UDP_DisableEndpoints();
+        <a href="#" onMouseOver="link('_member','USBD_ConfigureEndpoint3900619571',this); ">USBD_ConfigureEndpoint</a>(0);
+
+        // Flush and enable the Suspend interrupt
+        AT91C_BASE_UDP-&gt;UDP_ICR = AT91C_UDP_WAKEUP
+                                  | AT91C_UDP_RXRSM
+                                  | AT91C_UDP_RXSUSP;
+        AT91C_BASE_UDP-&gt;UDP_IER = AT91C_UDP_RXSUSP;
+
+        //if (pUsb-&gt;pCallbacks-&gt;startOfFrame != 0) {
+        //
+        //    AT91C_BASE_UDP-&gt;UDP_IER = AT91C_UDP_SOFINT;
+        //}
+
+        // Invoke the Reset callback
+        <a href="#" onMouseOver="link('_member','USBDCallbacks_Reset53616',this); ">USBDCallbacks_Reset</a>();
+
+        // Acknowledge end of bus reset interrupt
+        AT91C_BASE_UDP-&gt;UDP_ICR = AT91C_UDP_ENDBUSRES;
+    }
+    // Endpoint interrupts
+    else {
+
+        while (status != 0) {
+
+            // Check if endpoint has a pending interrupt
+            if ((status &amp; (1 &lt;&lt; eptnum)) != 0) {
+            
+                UDP_EndpointHandler(eptnum);
+                status &amp;= ~(1 &lt;&lt; eptnum);
+                
+                if (status != 0) {
+                
+                    TRACE_INFO_WP("\n\r  - ");
+                }
+            }
+            eptnum++;
+        }
+    }
+
+    // Toggle LED back to its previous state
+    TRACE_INFO_WP("\n\r");
+    if (deviceState &gt;= <a href="#" onMouseOver="link('_member','USBD_STATE_POWERED1024481039',this); ">USBD_STATE_POWERED</a>) {
+
+        <a href="#" onMouseOver="link('_member','../../../utility/LED_Clear171142247',this); ">LED_Clear</a>(USBD_LEDUSB);
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

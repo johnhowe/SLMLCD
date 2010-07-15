@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - printf</TITLE>
+<script type="text/javascript" src="../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../common/";
+ var relPathToHelpDir = "../../../common/help/";
+ var toSearchPage     = "_search','../../../search";
+ Body1();
+</script>
+<div class="headerPage">printf</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','utility0',this)" class="pathLink">utility</A><img src="../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">printf</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','printf186537041','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','printf186537041','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 474</div>
+<pre class="codeExamples">
+signed int <a href="#" onMouseOver="link('_member','printf186537041',this); ">printf</a>(const char *pFormat,...)
+{
+    va_list ap;
+    signed int result;
+
+    // Forward call to vprintf
+    va_start(ap, pFormat);
+    result = <a href="#" onMouseOver="link('_member','vprintf3614818365',this); ">vprintf</a>(pFormat, ap);
+    va_end(ap);
+
+    return result;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - massstorage</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">massstorage</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">massstorage</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5499","aID5499","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_dir','massstorage0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_dir','massstorage0','_dirgraph',this)" class="tabLinkInActive">Graph</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">massstorage</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Purpose</div>
+This directory provides definitions, structs and functions for a USB Mass Storage device (MSD) - USB Mass Storage demo.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Contents</div>
+ There are four things for the implement of the USB MSD driver:<ul>
+<li>Implement the MSD driver structs and functions for the device, to initialize, to handle MSD-specific requests and dispach standard requests in USBD callbacks, to read/write through assigned USB endpoints,</li>
+<li>Create the MSD device's descriptors that should be passed to the <a href="#" OnMouseOver="link('_class','../core/USBDDriver0',this)">USBDDriver</a> instance on initialization, so that the host can recognize the device as a USB Mass Storage device.</li>
+<li>Implement <a href="#" OnMouseOver="link('_member','../../../../basic-rtt-project/state0',this)">state</a> machine for MSD command/data/status handling.</li>
+<li>Implement storage media interface for MSD disk accessing.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">For more information about what a particular group contains, please refer to <a href="#" OnMouseOver="link('_page','USBMSDDriver0',this)">"USB MSD Driver"</a>.<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Directory was generated from the following files:</div>
+<div class="paddingMembers"><LI>massstorage.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_dir','_description');
+</script>

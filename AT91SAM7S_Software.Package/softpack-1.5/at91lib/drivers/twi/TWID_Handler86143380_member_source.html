@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - TWID_Handler</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">TWID_Handler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../drivers0',this)" class="pathLink">drivers</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','twi0',this)" class="pathLink">twi</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">TWID_Handler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','TWID_Handler86143380','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','TWID_Handler86143380','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 95</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','TWID_Handler86143380',this); ">TWID_Handler</a>(<a href="#" onMouseOver="link('_class','_Twid0',this); ">Twid</a> *pTwid)
+{
+    unsigned char status;
+    <a href="#" onMouseOver="link('_class','_AsyncTwi0',this); ">AsyncTwi</a> *pTransfer = (<a href="#" onMouseOver="link('_class','_AsyncTwi0',this); ">AsyncTwi</a> *) pTwid-&gt;<a href="#" onMouseOver="link('_member','pTransfer54755',this); ">pTransfer</a>;
+    AT91S_TWI *pTwi = pTwid-&gt;<a href="#" onMouseOver="link('_member','pTwi54755',this); ">pTwi</a>;
+
+    <a href="#" onMouseOver="link('_member','../../utility/SANITY_CHECK3412112572',this); ">SANITY_CHECK</a>(pTwid);
+
+    // Retrieve interrupt status
+    status = <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_GetMaskedStatus142942097',this); ">TWI_GetMaskedStatus</a>(pTwi);
+
+    // Byte received
+    if (<a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_STATUS_RXRDY1070096192',this); ">TWI_STATUS_RXRDY</a>(status)) {
+
+        pTransfer-&gt;<a href="#" onMouseOver="link('_member','pData249936266',this); ">pData</a>[pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a>] = <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_ReadByte142942097',this); ">TWI_ReadByte</a>(pTwi);
+        pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a>++;
+
+        // Transfer finished ?
+        if (pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a> == pTransfer-&gt;<a href="#" onMouseOver="link('_member','num249936266',this); ">num</a>) {
+
+            <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_DisableIt1649202364',this); ">TWI_DisableIt</a>(pTwi, AT91C_TWI_RXRDY);
+            <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_EnableIt1649202364',this); ">TWI_EnableIt</a>(pTwi, AT91C_TWI_TXCOMP);
+        }
+        // Last byte ?
+        else if (pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a> == (pTransfer-&gt;<a href="#" onMouseOver="link('_member','num249936266',this); ">num</a> - 1)) {
+
+            <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_Stop142942097',this); ">TWI_Stop</a>(pTwi);
+        }
+    }
+    // Byte sent
+    else if (<a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_STATUS_TXRDY1070096192',this); ">TWI_STATUS_TXRDY</a>(status)) {
+
+        // Transfer finished ?
+        if (pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a> == pTransfer-&gt;<a href="#" onMouseOver="link('_member','num249936266',this); ">num</a>) {
+
+            <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_DisableIt1649202364',this); ">TWI_DisableIt</a>(pTwi, AT91C_TWI_TXRDY);
+            <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_EnableIt1649202364',this); ">TWI_EnableIt</a>(pTwi, AT91C_TWI_TXCOMP);
+        }
+        // Bytes remaining
+        else {
+
+            <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_WriteByte2296152088',this); ">TWI_WriteByte</a>(pTwi, pTransfer-&gt;<a href="#" onMouseOver="link('_member','pData249936266',this); ">pData</a>[pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a>]);
+            pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred249936266',this); ">transferred</a>++;
+        }
+    }
+    // Transfer complete
+    else if (<a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_STATUS_TXCOMP1070096192',this); ">TWI_STATUS_TXCOMP</a>(status)) {
+
+        <a href="#" onMouseOver="link('_member','../../peripherals/twi/TWI_DisableIt1649202364',this); ">TWI_DisableIt</a>(pTwi, AT91C_TWI_TXCOMP);
+        pTransfer-&gt;<a href="#" onMouseOver="link('_member','status249936266',this); ">status</a> = 0;
+        if (pTransfer-&gt;callback) {
+            
+            pTransfer-&gt;callback((<a href="#" onMouseOver="link('_class','../async/_Async0',this); ">Async</a> *) pTransfer);
+        }
+        pTwid-&gt;<a href="#" onMouseOver="link('_member','pTransfer54755',this); ">pTransfer</a> = 0;
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

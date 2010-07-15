@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - basic-sd-spi-project</TITLE>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../common/";
+ var relPathToHelpDir = "../../common/help/";
+ var toSearchPage     = "_search','../../search";
+ Body1();
+</script>
+<div class="headerPage">basic-sd-spi-project</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Default mainpage</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">basic-sd-spi-project</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5509","aID5509","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_dir','basicmi_sdmi_spimi_project0','_description',this)" class="tabLinkActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_dir','basicmi_sdmi_spimi_project0','_dirgraph',this)" class="tabLinkInActive">Graph</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">basic-sd-spi-project</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">Purpose</div>
+The Basic-sd-spi-project will help you to get familiar with <a href="#" OnMouseOver="link('_page','../at91lib/memories/sdmmc/sdmmc_spi0',this)">sdmmc_spi</a> interface on AT91SAM microcontrollers. It can also help you to get familiar with the SD operation flow which can be used for fast implementation of your own sd <a href="#" OnMouseOver="link('_dir','../at91lib/drivers/drivers0',this)">drivers</a> and other applications related.<br>
+<br>
+</div>
+<div class="padding">You can find following information depends on your needs:<ul>
+<li>Usage of auto detection of sdcard insert and sdcard write-protection detection</li>
+<li><a href="#" OnMouseOver="link('_page','../at91lib/memories/sdmmc/sdspi0',this)">sdspi</a> interface initialize sequence and interrupt installation</li>
+<li>Sdcard driver implementation based on spi-interface (<a href="#" OnMouseOver="link('_page','../at91lib/memories/sdmmc/sdmmc_spi0',this)">sdmmc_spi</a>)</li>
+<li>Sdcard physical layer (spi-interface) initialize sequence implementation</li>
+<li>Sample usage of sdcard write and read</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph3">See</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_page','../at91lib/memories/sdmmc/sdmmc_spi0',this)">sdmmc_spi</a> : sdcard physical layer driver with spi-interface</li>
+<li><a href="#" OnMouseOver="link('_page','../at91lib/memories/sdmmc/sdspi0',this)">sdspi</a> : spi-bus driver</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Requirements</div>
+ This package can be used with all Atmel evaluation kits that have SPI and EBI interface, the package runs at SRAM or SDRAM, so SDRAM <a href="#" OnMouseOver="link('_dir','../at91lib/usb/device/device0',this)">device</a> is needed if you want to run this package in SDRAM Please note that the AT91SAM7L-EK, AT91SAM7S-EK and AT91SAM7SE-EK don't have SDCARD inside board.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Description</div>
+ Open HyperTerminal before running this program, use SAM-BA to download this program to SRAM or SDRAM, make the program run, the HyperTerminal will give out the test results.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Usage</div>
+<ol>
+<li>Build the program and download it inside the evaluation board. Please refer to the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6224.pdf">SAM-BA User Guide</a>, the <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">GNU-Based Software Development</a> application note or to the <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">IAR EWARM User Guide</a>, depending on your chosen solution.</li>
+<li>On the computer, open and configure a terminal application (e.g. HyperTerminal on Microsoft Windows) with these settings:<ul>
+<li>115200 bauds</li>
+<li>8 bits of data</li>
+<li>No parity</li>
+<li>1 stop bit</li>
+<li>No flow control</li>
+</ul>
+
+</li>
+<li>Start the application</li>
+<li>In HyperTerminal, it will show something like</li>
+</ol>
+
+<br>
+</div>
+<div class="padding">  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+-I- Testing block [  4216 -   4217] ...
+0x00000000: 02000000 02040004 0A000800 0A040804
+0x00000010: 02100010 02140014 0A100810 0A140814
+0x00000020: 22002000 22042004 2A002800 2A042804
+0x00000030: 22102010 22142014 2A102810 2A142814
+0x00000040: 02400040 02440044 0A400840 0A440844
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Directory was generated from the following files:</div>
+<div class="paddingMembers"><LI>main.c<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_dir','_description');
+</script>

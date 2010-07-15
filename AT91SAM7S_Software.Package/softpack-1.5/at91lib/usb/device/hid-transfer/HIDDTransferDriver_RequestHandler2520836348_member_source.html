@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - HIDDTransferDriver_RequestHandler</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">HIDDTransferDriver_RequestHandler</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','hidmi_transfer0',this)" class="pathLink">hid-transfer</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">HIDDTransferDriver_RequestHandler</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','HIDDTransferDriver_RequestHandler2520836348','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','HIDDTransferDriver_RequestHandler2520836348','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 240</div>
+<pre class="codeExamples">
+void <a href="#" onMouseOver="link('_member','HIDDTransferDriver_RequestHandler2520836348',this); ">HIDDTransferDriver_RequestHandler</a>(const <a href="#" onMouseOver="link('_class','../../common/core/USBGenericRequest0',this); ">USBGenericRequest</a> *request)
+{
+    TRACE_INFO("NewReq ");
+
+    // Check if this is a standard request
+    if (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetType2520836348',this); ">USBGenericRequest_GetType</a>(request) == <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_STANDARD145046170',this); ">USBGenericRequest_STANDARD</a>) {
+
+        // This is a standard request
+        switch (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request)) {
+        
+            case <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GETDESCRIPTOR145046170',this); ">USBGenericRequest_GETDESCRIPTOR</a>:
+                // Check if this is a HID descriptor, otherwise forward it to
+                // the standard driver
+                if (!HIDDTransferDriver_GetDescriptor(
+                        <a href="#" onMouseOver="link('_member','../../common/core/USBGetDescriptorRequest_GetDescriptorType2520836348',this); ">USBGetDescriptorRequest_GetDescriptorType</a>(request),
+                        <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetLength2520836348',this); ">USBGenericRequest_GetLength</a>(request))) {
+
+                    <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;(hiddTransferDriver.usbdDriver),
+                                              request);
+                }
+                break;
+
+            default:
+                <a href="#" onMouseOver="link('_member','../core/USBDDriver_RequestHandler3848957855',this); ">USBDDriver_RequestHandler</a>(&amp;(hiddTransferDriver.usbdDriver),
+                                              request);
+        }
+    }
+    // Check if this is a class request
+    else if (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetType2520836348',this); ">USBGenericRequest_GetType</a>(request) == <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_CLASS145046170',this); ">USBGenericRequest_CLASS</a>) {
+
+        unsigned short length = <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetLength2520836348',this); ">USBGenericRequest_GetLength</a>(request);
+        unsigned char type = <a href="#" onMouseOver="link('_member','../../common/hid/HIDReportRequest_GetReportType2520836348',this); ">HIDReportRequest_GetReportType</a>(request);
+
+        switch (<a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request)) {
+
+            case <a href="#" onMouseOver="link('_member','../../common/hid/HIDGenericRequest_SETREPORT1872821462',this); ">HIDGenericRequest_SETREPORT</a>:
+
+                if (length &lt;= <a href="#" onMouseOver="link('_member','HIDDTransferDriver_REPORTSIZE1886873004',this); ">HIDDTransferDriver_REPORTSIZE</a> &amp;&amp;
+                    type == <a href="#" onMouseOver="link('_member','../../common/hid/HIDReportRequest_OUTPUT1328261255',this); ">HIDReportRequest_OUTPUT</a>) {
+
+                    <a href="#" onMouseOver="link('_member','../core/USBD_Read224802902',this); ">USBD_Read</a>(0,
+                              hiddTransferDriver.iReportBuf,
+                              length,
+                              HIDDTransferDriver_ReportReceived,
+                              0); // No argument to the callback function
+                }
+                else {
+
+                    <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+                }
+                break;
+
+            default:
+                TRACE_WARNING(
+                      "HIDDTransferDriver_RequestHandler: request 0x%02X\n\r",
+                      <a href="#" onMouseOver="link('_member','../../common/core/USBGenericRequest_GetRequest2520836348',this); ">USBGenericRequest_GetRequest</a>(request));
+                <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+        }
+    }
+    else {
+
+        // Vendor request ?
+        <a href="#" onMouseOver="link('_member','../core/USBD_Stall2593655934',this); ">USBD_Stall</a>(0);
+    }
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

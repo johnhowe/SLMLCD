@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD_Read</TITLE>
+<script type="text/javascript" src="../../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../../common/";
+ var relPathToHelpDir = "../../../../../common/help/";
+ var toSearchPage     = "_search','../../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD_Read</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../usb0',this)" class="pathLink">usb</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../device0',this)" class="pathLink">device</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','core0',this)" class="pathLink">core</A><img src="../../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD_Read</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Read224802902','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','USBD_Read224802902','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 922</div>
+<pre class="codeExamples">
+char <a href="#" onMouseOver="link('_member','USBD_Read224802902',this); ">USBD_Read</a>(unsigned char bEndpoint, void *pData, unsigned int dLength, TransferCallback fCallback, void *pArg)
+{
+    <a href="#" onMouseOver="link('_class','Endpoint0',this); ">Endpoint</a> *pEndpoint = &amp;(endpoints[bEndpoint]);
+    <a href="#" onMouseOver="link('_class','Transfer0',this); ">Transfer</a> *pTransfer = &amp;(pEndpoint-&gt;<a href="#" onMouseOver="link('_member','transfer243665814',this); ">transfer</a>);
+
+    // Return if the endpoint is not in IDLE state
+    if (pEndpoint-&gt;<a href="#" onMouseOver="link('_member','state243665814',this); ">state</a> != <a href="#" onMouseOver="link('_member','UDP_ENDPOINT_IDLE1426500306',this); ">UDP_ENDPOINT_IDLE</a>) {
+
+        return <a href="#" onMouseOver="link('_member','USBD_STATUS_LOCKED1024481039',this); ">USBD_STATUS_LOCKED</a>;
+    }
+
+    // Endpoint enters Receiving state
+    pEndpoint-&gt;<a href="#" onMouseOver="link('_member','state243665814',this); ">state</a> = <a href="#" onMouseOver="link('_member','UDP_ENDPOINT_RECEIVING1426500306',this); ">UDP_ENDPOINT_RECEIVING</a>;
+    TRACE_DEBUG_WP("Read%d(%d) ", bEndpoint, dLength);
+
+    // Set the transfer descriptor
+    pTransfer-&gt;<a href="#" onMouseOver="link('_member','pData239502867',this); ">pData</a> = pData;
+    pTransfer-&gt;<a href="#" onMouseOver="link('_member','remaining239502867',this); ">remaining</a> = dLength;
+    pTransfer-&gt;<a href="#" onMouseOver="link('_member','buffered239502867',this); ">buffered</a> = 0;
+    pTransfer-&gt;<a href="#" onMouseOver="link('_member','transferred239502867',this); ">transferred</a> = 0;
+    pTransfer-&gt;<a href="#" onMouseOver="link('_member','fCallback239502867',this); ">fCallback</a> = fCallback;
+    pTransfer-&gt;<a href="#" onMouseOver="link('_member','pArgument239502867',this); ">pArgument</a> = pArgument;
+
+    // Enable interrupt on endpoint
+    AT91C_BASE_UDP-&gt;UDP_IER = 1 &lt;&lt; bEndpoint;
+
+    return <a href="#" onMouseOver="link('_member','USBD_STATUS_SUCCESS1024481039',this); ">USBD_STATUS_SUCCESS</a>;
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

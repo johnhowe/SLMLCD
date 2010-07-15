@@ -1,0 +1,160 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - ISO7816_XfrBlockTPDU_T0</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">ISO7816_XfrBlockTPDU_T0</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../components0',this)" class="pathLink">components</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','iso78160',this)" class="pathLink">iso7816</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">ISO7816_XfrBlockTPDU_T0</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','ISO7816_XfrBlockTPDU_T03968134636','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','ISO7816_XfrBlockTPDU_T03968134636','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 192</div>
+<pre class="codeExamples">
+unsigned short <a href="#" onMouseOver="link('_member','ISO7816_XfrBlockTPDU_T03968134636',this); ">ISO7816_XfrBlockTPDU_T0</a>(const unsigned char *pAPDU, unsigned char *pMessage, unsigned short wLength)
+{
+    unsigned short NeNc;
+    unsigned short indexApdu = 4;
+    unsigned short indexMessage = 0;
+    unsigned char SW1 = 0;
+    unsigned char procByte;
+    unsigned char cmdCase;
+
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("pAPDU[0]=0x%X\n\r",pAPDU[0]);
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("pAPDU[1]=0x%X\n\r",pAPDU[1]);
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("pAPDU[2]=0x%X\n\r",pAPDU[2]);
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("pAPDU[3]=0x%X\n\r",pAPDU[3]);
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("pAPDU[4]=0x%X\n\r",pAPDU[4]);
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("pAPDU[5]=0x%X\n\r",pAPDU[5]);
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("wlength=%d\n\r",wLength);
+
+    ISO7816_SendChar( pAPDU[0] ); // CLA
+    ISO7816_SendChar( pAPDU[1] ); // INS
+    ISO7816_SendChar( pAPDU[2] ); // P1
+    ISO7816_SendChar( pAPDU[3] ); // P2
+    ISO7816_SendChar( pAPDU[4] ); // P3
+
+    // Handle the four structures of command APDU
+    indexApdu = 4;
+
+    if( wLength == 4 ) {
+        cmdCase = <a href="#" onMouseOver="link('_member','CASE12523865803',this); ">CASE1</a>;
+        NeNc = 0;
+    }
+    else if( wLength == 5) {
+        cmdCase = CASE2;
+        NeNc = pAPDU[4]; // C5
+        if (NeNc == 0) {
+            NeNc = 256;
+        }
+    }
+    else if( wLength == 6) {
+        NeNc = pAPDU[4]; // C5
+        cmdCase = CASE3;
+    }
+    else if( wLength == 7) {
+        NeNc = pAPDU[4]; // C5
+        if( NeNc == 0 ) {
+            cmdCase = CASE2;
+            NeNc = (pAPDU[5]&lt;&lt;8)+pAPDU[6];
+        }
+        else {
+            cmdCase = CASE3;
+        }
+    }
+    else {
+        NeNc = pAPDU[4]; // C5
+        if( NeNc == 0 ) {
+            cmdCase = CASE3;
+            NeNc = (pAPDU[5]&lt;&lt;8)+pAPDU[6];
+        }
+        else {
+            cmdCase = CASE3;
+        }
+    }
+
+    <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("CASE=0x%X NeNc=0x%X\n\r", cmdCase, NeNc);
+
+    // Handle Procedure Bytes
+    do {
+        ISO7816_GetChar(&amp;procByte);
+        // Handle NULL
+        if ( procByte == <a href="#" onMouseOver="link('_member','ISO_NULL_VAL2523867595',this); ">ISO_NULL_VAL</a> ) {
+            <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("INS\n\r");
+            continue;
+        }
+        // Handle SW1
+        else if ( ((procByte &amp; 0xF0) ==0x60) || ((procByte &amp; 0xF0) ==0x90) ) {
+            <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("SW1\n\r");
+            SW1 = 1;
+        }
+        // Handle INS
+        else if ( pAPDU[1] == procByte) {
+            <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("HdlINS\n\r");
+            if (cmdCase == CASE2) {
+                // receive data from card
+                do {
+                    ISO7816_GetChar(&amp;pMessage[indexMessage++]);
+                } while( 0 != --NeNc );
+            }
+            else {
+                 // Send data
+                do {
+                    ISO7816_SendChar(pAPDU[indexApdu++]);
+                } while( 0 != --NeNc );
+            }
+        }
+        // Handle INS ^ 0xff
+        else if ( pAPDU[1] == (procByte ^ 0xff)) {
+            <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("HdlINS+\n\r");
+            if (cmdCase == CASE2) {
+                // receive data from card
+                ISO7816_GetChar(&amp;pMessage[indexMessage++]);
+            }
+            else {
+                ISO7816_SendChar(pAPDU[indexApdu++]);
+            }
+            NeNc--;
+        }
+        else {
+            // ??
+            <a href="#" onMouseOver="link('_member','../../utility/TRACE_DEBUG2023266254',this); ">TRACE_DEBUG</a>("procByte=0x%X\n\r", procByte);
+            break;
+        }
+    } while (NeNc != 0);
+
+    // Status Bytes
+    if (SW1 == 0) {
+        ISO7816_GetChar(&amp;pMessage[indexMessage++]); // SW1
+    }
+    else {
+        pMessage[indexMessage++] = procByte;
+    }
+    ISO7816_GetChar(&amp;pMessage[indexMessage++]); // SW2
+
+    return( indexMessage );
+    
+}
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

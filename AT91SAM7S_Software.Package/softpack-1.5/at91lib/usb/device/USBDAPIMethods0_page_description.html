@@ -1,0 +1,244 @@
+<HTML>
+<HEAD>
+<TITLE>../../public_html/softpack-1.5/at91sam7s-ek - USBD API Methods</TITLE>
+<script type="text/javascript" src="../../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+ var relPathToCommmon = "../../../../common/";
+ var relPathToHelpDir = "../../../../common/help/";
+ var toSearchPage     = "_search','../../../../search";
+ Body1();
+</script>
+<div class="headerPage">USBD API Methods</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../../index',this)" class="pathLink">Default mainpage</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../../at91lib0',this)" class="pathLink">at91lib</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../usb0',this)" class="pathLink">usb</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','device0',this)" class="pathLink">device</A><img src="../../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">USBD API Methods</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID5415","aID5415","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','USBDAPIMethods0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<span class="paragraph1">device.dir::USBD API Methods</span>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="padding"><div class="userParagraph1">USB API methods</div>
+The USB API provides serveral methods to perform the following operations:<ul>
+<li>Changing the device <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a><ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Init53616',this)">USBD_Init</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Connect53616',this)">USBD_Connect</a>, <a href="#" OnMouseOver="link('_member','core/USBD_Disconnect53616',this)">USBD_Disconnect</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_SetAddress2593655934',this)">USBD_SetAddress</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_SetConfiguration2593655934',this)">USBD_SetConfiguration</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_GetState53616',this)">USBD_GetState</a></li>
+<li><a href="#" OnMouseOver="link('_page','USBDeviceStateDiagram0',this)">"USB Device State Diagram"</a></li>
+</ul>
+
+</li>
+<li>Handling events coming from the USB controller<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_InterruptHandler53616',this)">USBD_InterruptHandler</a></li>
+</ul>
+
+</li>
+<li>Modifying the behavior of an endpoint<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_ConfigureEndpoint3900619571',this)">USBD_ConfigureEndpoint</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Stall2593655934',this)">USBD_Stall</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Halt2593655934',this)">USBD_Halt</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Unhalt2593655934',this)">USBD_Unhalt</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_IsHalted2593655934',this)">USBD_IsHalted</a></li>
+</ul>
+
+</li>
+<li>Transferring data<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Write1378485824',this)">USBD_Write</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Read224802902',this)">USBD_Read</a></li>
+<li>USBD_IsoWrite</li>
+</ul>
+
+</li>
+<li>Special functions<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_RemoteWakeUp53616',this)">USBD_RemoteWakeUp</a></li>
+</ul>
+
+</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Controlling the Device State</div>
+ Chapter 9 of the USB specification 2.0 describes the various states a device can be in. Most of the methods of this API are used to change between those states.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_Init</div>
+ <a href="#" OnMouseOver="link('_member','core/USBD_Init53616',this)">USBD_Init</a> is the first method to call in a user application. Technically, it must occur just before entering the Attached <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>. It performs the following actions:<ul>
+<li>USB Device driver and endpoint <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> initialization</li>
+<li>D+ pull-up configuration and disabling</li>
+<li>UDP hardware initialization (Peripheral and clock init)</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">A USB device uses a pull-up on the D+ line to signal its connection to the host. Depending on the USB controller present on the chip, either an internal or external pull-up is used. In both cases, its configuration is performed directly by this method. Please refer to the documentation of a particular controller for more information about the D+ pull-up.<br>
+<br>
+</div>
+<div class="padding">The ini callback has to perform several mandatory operations at this point. You can find the default operations in <a href="#" OnMouseOver="link('_member','core/USBDCallbacks_Initialized53616',this)">USBDCallbacks_Initialized</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_Connect, USBD_Disconnect</div>
+ These two methods control the <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> of the D+ upll-up. This makes it possible to connect of disconnect the device by software when needed. <a href="#" OnMouseOver="link('_member','core/USBD_Connect53616',this)">USBD_Connect</a> changes the device <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> from Powered to Default, while <a href="#" OnMouseOver="link('_member','core/USBD_Disconnect53616',this)">USBD_Disconnect</a> changes from either Default, Address or Configured to Powered.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_SetAddress</div>
+ <a href="#" OnMouseOver="link('_member','core/USBD_SetAddress2593655934',this)">USBD_SetAddress</a> extracts the information from the last received SETUP packet to either change the device <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> from Default to Address or from Address to Default. The difference is made depending on the value of the wValue field of the request.<br>
+<br>
+</div>
+<div class="padding">This method must only be called right after the SET_ADDRESS request is received.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_SetConfiguration</div>
+ This function operates in a way similar to <a href="#" OnMouseOver="link('_member','core/USBD_SetAddress2593655934',this)">USBD_SetAddress</a>. When the SETUP packet containing a SET_CONFIGURATION request is received, <a href="#" OnMouseOver="link('_member','core/USBD_SetConfiguration2593655934',this)">USBD_SetConfiguration</a> should be called to extract the new configuration value to adopt. If the wValue field of the request is non-zero, then the device must adopt the new configuration and enter the Configuration <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>; otherwise, it returns (or stays) in the Address <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_GetState</div>
+ As its name implies, <a href="#" OnMouseOver="link('_member','core/USBD_GetState53616',this)">USBD_GetState</a> simply returns the current <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> of the USB driver. See <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a> definitions on "USB %device states".<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_STATE_SUSPENDED1024481039',this)">USBD_STATE_SUSPENDED</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_STATE_ATTACHED1024481039',this)">USBD_STATE_ATTACHED</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_STATE_POWERED1024481039',this)">USBD_STATE_POWERED</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_STATE_DEFAULT1024481039',this)">USBD_STATE_DEFAULT</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_STATE_ADDRESS1024481039',this)">USBD_STATE_ADDRESS</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_STATE_CONFIGURED1024481039',this)">USBD_STATE_CONFIGURED</a></li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">Device State Diagram</div>
+ See <a href="#" OnMouseOver="link('_page','USBDeviceStateDiagram0',this)">"USB Device State Diagram"</a><br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Event Handling (USBD_InterruptHandler)</div>
+ Several events can occur at the USB controller level:<ul>
+<li>End of bus reset</li>
+<li>Reception of a SETUP packet</li>
+<li>Change of bus activity (active -&gt; idle -&gt; active ..)</li>
+<li>Completin of an endpoint operation</li>
+<li>...</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">Whenever such an event occurs, it must be forwarded to the USBD API to be handled in an appropriate way. The <a href="#" OnMouseOver="link('_member','core/USBD_InterruptHandler53616',this)">USBD_InterruptHandler</a> performs this functionality, so the controller interrupt must be configured to call it.<br>
+<br>
+</div>
+<div class="padding">Several <b>callbacks</b> can be triggered depending on the event notified by the controller:<ul>
+<li>Suspend, when the bus is idle</li>
+<li>Resume, when the bus becomes active again</li>
+<li>NewRequest, when a setup packet is received on a control endpoint</li>
+<li>StartOfFrame, every 1 ms (for full-speed controllers) or 125us (for high- speed controllers)</li>
+</ul>
+
+<br>
+</div>
+<div class="padding">More information about these callbacks and their expected behavior can be found in <a href="#" OnMouseOver="link('_page','USBDCallbackAPI0',this)">"USBD Callback API"</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Endpoint Behavior Modification</div>
+ The USBD API offers following functions to control how an endpoint operates.<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_ConfigureEndpoint3900619571',this)">USBD_ConfigureEndpoint</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Stall2593655934',this)">USBD_Stall</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Halt2593655934',this)">USBD_Halt</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_Unhalt2593655934',this)">USBD_Unhalt</a></li>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_IsHalted2593655934',this)">USBD_IsHalted</a></li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_ConfigureEndpoint</div>
+ <a href="#" OnMouseOver="link('_member','core/USBD_ConfigureEndpoint3900619571',this)">USBD_ConfigureEndpoint</a> is used to configure an endpoint at the USB controller level. An appropriate endpoint descriptor must be provided to do that. The descriptor is used to configure the endpoint type (either Control, Bulk, Interrupt or Isochronous), direction (IN or OUT) and address.<br>
+<br>
+</div>
+<div class="padding">Control endpoint 0 is automatically configured by the USBD API when the End of bus reset event is signalled by the USB controller. Therefore, there is no need to do it manually.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_Stall</div>
+ The <a href="#" OnMouseOver="link('_member','core/USBD_Stall2593655934',this)">USBD_Stall</a> method causes and endpoint to acknowledge its next received packet with a STALL handshake. Further packets are then handled normally.<br>
+<br>
+</div>
+<div class="padding">Most of the time, this method should be used with endpoint 0 to signal the host that the device cannot process a command.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_Halt, USBD_Unhalt, USBD_IsHalted</div>
+ <a href="#" OnMouseOver="link('_member','core/USBD_Halt2593655934',this)">USBD_Halt</a> sets the Halt status of an endpoint. When in Halt mode, every received packet is acknowledged with a STALL handshake instead of being handled normally.<br>
+<br>
+</div>
+<div class="padding"><b><em>USB_Halt</b></em> can be called either with the USB_SET_FEATURE, USB_CLEAR_FEATURE or USB_GET_STATUS parameter to modify the endpoint Halt <a href="#" OnMouseOver="link('_member','../../../basic-rtt-project/state0',this)">state</a>.<br>
+<br>
+</div>
+<div class="padding"><a href="#" OnMouseOver="link('_member','core/USBD_Unhalt2593655934',this)">USBD_Unhalt</a> clears the Halt status of an endpoint.<br>
+<br>
+</div>
+<div class="padding"><a href="#" OnMouseOver="link('_member','core/USBD_IsHalted2593655934',this)">USBD_IsHalted</a> gets the Halt status of an endpoint.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Data Transfer</div>
+ Data transfer (IN or OUT) on an endpoint can be performed by calling two methods, <a href="#" OnMouseOver="link('_member','core/USBD_Write1378485824',this)">USBD_Write</a> and <a href="#" OnMouseOver="link('_member','core/USBD_Read224802902',this)">USBD_Read</a>.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_Write</div>
+ The <a href="#" OnMouseOver="link('_member','core/USBD_Write1378485824',this)">USBD_Write</a> function sends a data payload on a specific endpoint. If the data payload equals or exceeds the maximum packet size of the endpoint, then several IN transactions are necessary. This method should only be called on an IN or Control endpoint.<br>
+<br>
+</div>
+<div class="padding">The write is performed <b>asynchronously</b>, i.e., the function returns immediately without waiting for the transfer to finish. When the transfer is complete, an optional user-provided callback function is called. This makes it possible to create an <b>OS-friendly synchronous function</b> by locking and unlocking a semaphore before and after each write.<br>
+<br>
+</div>
+<div class="padding">This function handles double-buffering, if it is supported by the USB controller and if it has been enabled for the endpoint. Do not forget that using double-buffering is mandatory for isochronous transactions.<br>
+<br>
+</div>
+<div class="padding"><ul>
+<li><b>Note</b> The double-buffering this function supported is only in period of each write action. That is, when the function is invoked to start transfer trunk of data, the data is automatically splitted to several IN transactions and ping-pong is started on the 2nd transaction. But when all the data of the trunk is finished the ping-pong is stopped. So it can not process the list of buffer that should use double-buffering all the time. See USBD_IsoWrite for such kind of operations.</li>
+</ul>
+
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_Read</div>
+ The <a href="#" OnMouseOver="link('_member','core/USBD_Read224802902',this)">USBD_Read</a> reads incoming data on an endpoint. The transfer stops either when the provided buffer is full, or a short packet (size inferior to the endpoint maximum packet size) is received. This method must only be called on an OUT or Control endpoint.<br>
+<br>
+</div>
+<div class="padding">The read is performed <b>asynchronously</b>, i.e., the function returns immediately without waiting for the transfer to finish. When the transfer is complete, an optional user-provided callback function is called. This makes it possible to create an <b>OS-friendly synchronous function</b> by locking and unlocking a semaphore before and after each read.<br>
+<br>
+</div>
+<div class="padding">This function handles <b>double-buffering</b>, if it is supported by the USB controller and if it has been enabled for the endpoint. Do not forget that using double-buffering is mandatory for isochronous transactions.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2">USBD_IsoWrite</div>
+ The USBD_IsoWrite function sends a buffer list on a specific endpoint. The each buffer's payload should be equals or less than the maximum packet size of the endpoint. The transfer ends when all buffera are sent out. And the buffer is previously sent can be filled with new data before the transfer ends. To maitain a ring buffer for the outgoing stream. This method should only be called on an ISO IN endpoint.<br>
+<br>
+</div>
+<div class="padding">The write is performed <b>asynchronously</b>, i.e., the function returns immediately without waiting for the transfer to finish. When the transfer is complete, an optional user-provided callback function is called. This makes it possible to create an <b>OS-friendly synchronous function</b> by locking and unlocking a semaphore before and after each write.<br>
+<br>
+</div>
+<div class="padding">This function handles double-buffering, if it is supported by the USB controller and if it has been enabled for the endpoint. Do not forget that using double-buffering is mandatory for isochronous transactions.<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph1">Special Functions</div>
+<ul>
+<li><a href="#" OnMouseOver="link('_member','core/USBD_RemoteWakeUp53616',this)">USBD_RemoteWakeUp</a>: This method starts a remote wakeup procedure. This makes it possible for a suspended device to wake a host with may itself be suspended.</li>
+</ul>
+
+</div>
+<div class="padding">&nbsp;</div>
+<table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderTop" height=1>
+<TR><TD height=1 width=100% class="oneLine"></TD></TR></TABLE>
+<div class="paragraph2">Source</div>
+<div class="paddingMembers">The documentation for this Page was generated from the following file:</div>
+<div class="paddingMembers"><LI>device.dir<br></div>
+<div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>
