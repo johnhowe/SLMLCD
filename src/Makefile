@@ -11,13 +11,13 @@ CFLAGS = -g -mcpu=arm7tdmi -c -O3 -Wall -I$(INCL)
 AFLAGS = -D__ASSEMBLY__ -g -mcpu=arm7tdmi -c -Os -Wall -I$(INCL)
 LFLAGS = -nostartfiles -Wl,--cerf -lc -lgcc -T $(LDSCRIPT)
 
-CC = arm-elf-gcc
-LD = arm-elf-ld -v
-AS = arm-elf-as
-NM = arm-elf-nm
-OBJCPY = arm-elf-objcopy
-OBJDMP = arm-elf-objdump
-SIZE = arm-elf-size
+CC = arm-eabi-gcc
+LD = arm-eabi-ld -v
+AS = arm-eabi-as
+NM = arm-eabi-nm
+OBJCPY = arm-eabi-objcopy
+OBJDMP = arm-eabi-objdump
+SIZE = arm-eabi-size
 
 all: sram flash
 
