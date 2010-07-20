@@ -21,6 +21,9 @@ SIZE = arm-eabi-size
 
 all: sram flash
 
+clean: 
+	-rm -f $(OBJS) *.lst *.bin *.elf *.map main.dmp
+
 sram: $(OBJS)
 	$(LD) $(LDFLAGS) -Ttext 0x201000 -Tdata 0x200000 -n -o $(OUTFILE_SRAM).elf $(OBJS)
 	$(OBJCOPY) --strip-debug --strip-unneeded $(OUTFILE_SRAM).elf -O binary $(OUTFILE_SRAM).bin
