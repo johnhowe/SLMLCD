@@ -1,0 +1,1508 @@
+Archive member included because of file (symbol)
+
+/usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+                              obj/flash_MSDLun.o (__aeabi_uidiv)
+/usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+                              /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+                              obj/flash_stdio.o (memcpy)
+
+Allocating common symbols
+Common symbol       size              file
+
+medias              0x68              obj/flash_main.o
+msdBuffer           0x200             obj/flash_main.o
+luns                0x68              obj/flash_main.o
+
+Discarded input sections
+
+ .data          0x00000000        0x0 obj/flash_board_cstartup.o
+ .bss           0x00000000        0x0 obj/flash_board_cstartup.o
+ .text          0x00000000        0x0 obj/flash_cp15_asm.o
+ .data          0x00000000        0x0 obj/flash_cp15_asm.o
+ .bss           0x00000000        0x0 obj/flash_cp15_asm.o
+ .text          0x00000000        0x0 obj/flash_main.o
+ .data          0x00000000        0x0 obj/flash_main.o
+ .text.ISR_Media
+                0x00000000        0x0 obj/flash_main.o
+ .text          0x00000000        0x0 obj/flash_Media.o
+ .data          0x00000000        0x0 obj/flash_Media.o
+ .text.MED_HandleAll
+                0x00000000        0x0 obj/flash_Media.o
+ .text          0x00000000        0x0 obj/flash_MEDSdram.o
+ .data          0x00000000        0x0 obj/flash_MEDSdram.o
+ .bss           0x00000000        0x0 obj/flash_MEDSdram.o
+ .text          0x00000000        0x0 obj/flash_MEDDdram.o
+ .data          0x00000000        0x0 obj/flash_MEDDdram.o
+ .bss           0x00000000        0x0 obj/flash_MEDDdram.o
+ .text          0x00000000        0x0 obj/flash_MEDFlash.o
+ .data          0x00000000        0x0 obj/flash_MEDFlash.o
+ .bss           0x00000000        0x0 obj/flash_MEDFlash.o
+ .text          0x00000000        0x0 obj/flash_MSDLun.o
+ .bss           0x00000000        0x0 obj/flash_MSDLun.o
+ .text          0x00000000        0x0 obj/flash_MSDDriver.o
+ .data          0x00000000        0x0 obj/flash_MSDDriver.o
+ .text.MSDDriver_RemoteWakeUp
+                0x00000000        0x0 obj/flash_MSDDriver.o
+ .text          0x00000000        0x0 obj/flash_MSDDriverDescriptors.o
+ .bss           0x00000000        0x0 obj/flash_MSDDriverDescriptors.o
+ .text          0x00000000        0x0 obj/flash_MSDDStateMachine.o
+ .data          0x00000000        0x0 obj/flash_MSDDStateMachine.o
+ .bss           0x00000000        0x0 obj/flash_MSDDStateMachine.o
+ .text          0x00000000        0x0 obj/flash_SBCMethods.o
+ .data          0x00000000        0x0 obj/flash_SBCMethods.o
+ .bss           0x00000000        0x0 obj/flash_SBCMethods.o
+ .text          0x00000000        0x0 obj/flash_USBD_OTGHS.o
+ .data          0x00000000        0x0 obj/flash_USBD_OTGHS.o
+ .bss           0x00000000        0x0 obj/flash_USBD_OTGHS.o
+ .text          0x00000000        0x0 obj/flash_USBD_UDP.o
+ .data          0x00000000        0x0 obj/flash_USBD_UDP.o
+ .text.USBD_RemoteWakeUp
+                0x00000000        0x0 obj/flash_USBD_UDP.o
+ .text          0x00000000        0x0 obj/flash_USBD_UDPHS.o
+ .data          0x00000000        0x0 obj/flash_USBD_UDPHS.o
+ .bss           0x00000000        0x0 obj/flash_USBD_UDPHS.o
+ .text          0x00000000        0x0 obj/flash_USBDDriver.o
+ .data          0x00000000        0x0 obj/flash_USBDDriver.o
+ .bss           0x00000000        0x0 obj/flash_USBDDriver.o
+ .text.USBDDriver_IsRemoteWakeUpEnabled
+                0x00000000        0x0 obj/flash_USBDDriver.o
+ .text          0x00000000        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .data          0x00000000        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .bss           0x00000000        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .text          0x00000000        0x0 obj/flash_USBDCallbacks_Reset.o
+ .data          0x00000000        0x0 obj/flash_USBDCallbacks_Reset.o
+ .bss           0x00000000        0x0 obj/flash_USBDCallbacks_Reset.o
+ .text          0x00000000        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .data          0x00000000        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .bss           0x00000000        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .text          0x00000000        0x0 obj/flash_USBSetAddressRequest.o
+ .data          0x00000000        0x0 obj/flash_USBSetAddressRequest.o
+ .bss           0x00000000        0x0 obj/flash_USBSetAddressRequest.o
+ .text          0x00000000        0x0 obj/flash_USBGenericDescriptor.o
+ .data          0x00000000        0x0 obj/flash_USBGenericDescriptor.o
+ .bss           0x00000000        0x0 obj/flash_USBGenericDescriptor.o
+ .text          0x00000000        0x0 obj/flash_USBInterfaceRequest.o
+ .data          0x00000000        0x0 obj/flash_USBInterfaceRequest.o
+ .bss           0x00000000        0x0 obj/flash_USBInterfaceRequest.o
+ .text          0x00000000        0x0 obj/flash_USBGenericRequest.o
+ .data          0x00000000        0x0 obj/flash_USBGenericRequest.o
+ .bss           0x00000000        0x0 obj/flash_USBGenericRequest.o
+ .text.USBGenericRequest_GetType
+                0x00000000        0x0 obj/flash_USBGenericRequest.o
+ .text          0x00000000        0x0 obj/flash_USBGetDescriptorRequest.o
+ .data          0x00000000        0x0 obj/flash_USBGetDescriptorRequest.o
+ .bss           0x00000000        0x0 obj/flash_USBGetDescriptorRequest.o
+ .text          0x00000000        0x0 obj/flash_USBSetConfigurationRequest.o
+ .data          0x00000000        0x0 obj/flash_USBSetConfigurationRequest.o
+ .bss           0x00000000        0x0 obj/flash_USBSetConfigurationRequest.o
+ .text          0x00000000        0x0 obj/flash_USBFeatureRequest.o
+ .data          0x00000000        0x0 obj/flash_USBFeatureRequest.o
+ .bss           0x00000000        0x0 obj/flash_USBFeatureRequest.o
+ .text.USBFeatureRequest_GetTestSelector
+                0x00000000        0x0 obj/flash_USBFeatureRequest.o
+ .text          0x00000000        0x0 obj/flash_USBEndpointDescriptor.o
+ .data          0x00000000        0x0 obj/flash_USBEndpointDescriptor.o
+ .bss           0x00000000        0x0 obj/flash_USBEndpointDescriptor.o
+ .text          0x00000000        0x0 obj/flash_USBConfigurationDescriptor.o
+ .data          0x00000000        0x0 obj/flash_USBConfigurationDescriptor.o
+ .bss           0x00000000        0x0 obj/flash_USBConfigurationDescriptor.o
+ .text.USBConfigurationDescriptor_GetNumInterfaces
+                0x00000000        0x0 obj/flash_USBConfigurationDescriptor.o
+ .text          0x00000000        0x0 obj/flash_led.o
+ .data          0x00000000        0x0 obj/flash_led.o
+ .bss           0x00000000        0x0 obj/flash_led.o
+ .text.LED_Toggle
+                0x00000000        0x0 obj/flash_led.o
+ .text          0x00000000        0x0 obj/flash_math.o
+ .data          0x00000000        0x0 obj/flash_math.o
+ .bss           0x00000000        0x0 obj/flash_math.o
+ .text.absv     0x00000000        0x0 obj/flash_math.o
+ .text.power    0x00000000        0x0 obj/flash_math.o
+ .text          0x00000000        0x0 obj/flash_stdio.o
+ .bss           0x00000000        0x0 obj/flash_stdio.o
+ .text.puts     0x00000000        0x0 obj/flash_stdio.o
+ .text.sprintf  0x00000000        0x0 obj/flash_stdio.o
+ .text.fprintf  0x00000000        0x0 obj/flash_stdio.o
+ .text.snprintf
+                0x00000000        0x0 obj/flash_stdio.o
+ .text          0x00000000        0x0 obj/flash_pmc.o
+ .data          0x00000000        0x0 obj/flash_pmc.o
+ .bss           0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_EnableAllPeripherals
+                0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_DisableAllPeripherals
+                0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_IsAllPeriphEnabled
+                0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_IsPeriphEnabled
+                0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_CPUInIdleMode
+                0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_DisablePeripheral
+                0x00000000        0x0 obj/flash_pmc.o
+ .text.PMC_EnablePeripheral
+                0x00000000        0x0 obj/flash_pmc.o
+ .rodata.str1.1
+                0x00000000        0x0 obj/flash_pmc.o
+ .text          0x00000000        0x0 obj/flash_cp15.o
+ .data          0x00000000        0x0 obj/flash_cp15.o
+ .bss           0x00000000        0x0 obj/flash_cp15.o
+ .text          0x00000000        0x0 obj/flash_aic.o
+ .data          0x00000000        0x0 obj/flash_aic.o
+ .bss           0x00000000        0x0 obj/flash_aic.o
+ .text.AIC_DisableIT
+                0x00000000        0x0 obj/flash_aic.o
+ .text          0x00000000        0x0 obj/flash_dbgu.o
+ .data          0x00000000        0x0 obj/flash_dbgu.o
+ .bss           0x00000000        0x0 obj/flash_dbgu.o
+ .text.DBGU_IsRxReady
+                0x00000000        0x0 obj/flash_dbgu.o
+ .text.DBGU_GetChar
+                0x00000000        0x0 obj/flash_dbgu.o
+ .text.putchar  0x00000000        0x0 obj/flash_dbgu.o
+ .text          0x00000000        0x0 obj/flash_pio.o
+ .data          0x00000000        0x0 obj/flash_pio.o
+ .bss           0x00000000        0x0 obj/flash_pio.o
+ .text.PIO_GetOutputDataStatus
+                0x00000000        0x0 obj/flash_pio.o
+ .text.PIO_GetISR
+                0x00000000        0x0 obj/flash_pio.o
+ .text          0x00000000        0x0 obj/flash_pio_it.o
+ .data          0x00000000        0x0 obj/flash_pio_it.o
+ .text.PIO_DisableIt
+                0x00000000        0x0 obj/flash_pio_it.o
+ .text          0x00000000        0x0 obj/flash_pit.o
+ .data          0x00000000        0x0 obj/flash_pit.o
+ .bss           0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_Init
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_SetPIV
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_Enable
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_EnableIT
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_DisableIT
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_GetMode
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_GetStatus
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_GetPIIR
+                0x00000000        0x0 obj/flash_pit.o
+ .text.PIT_GetPIVR
+                0x00000000        0x0 obj/flash_pit.o
+ .text          0x00000000        0x0 obj/flash_board_memories.o
+ .data          0x00000000        0x0 obj/flash_board_memories.o
+ .bss           0x00000000        0x0 obj/flash_board_memories.o
+ .text.BOARD_RemapFlash
+                0x00000000        0x0 obj/flash_board_memories.o
+ .text          0x00000000        0x0 obj/flash_board_lowlevel.o
+ .data          0x00000000        0x0 obj/flash_board_lowlevel.o
+ .bss           0x00000000        0x0 obj/flash_board_lowlevel.o
+ .text          0x00000000        0x0 obj/flash_flashd_efc.o
+ .data          0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_Erase
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_IsSecurityBitSet
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_SetSecurityBit
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_IsGPNVMSet
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_ClearGPNVM
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_SetGPNVM
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_IsLocked
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.ComputeLockRange
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_Unlock
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_Lock
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text.FLASHD_Initialize
+                0x00000000        0x0 obj/flash_flashd_efc.o
+ .text          0x00000000        0x0 obj/flash_flashd_eefc.o
+ .data          0x00000000        0x0 obj/flash_flashd_eefc.o
+ .bss           0x00000000        0x0 obj/flash_flashd_eefc.o
+ .text          0x00000000        0x0 obj/flash_efc.o
+ .data          0x00000000        0x0 obj/flash_efc.o
+ .text.EFC_GetStatus
+                0x00000000        0x0 obj/flash_efc.o
+ .text.EFC_SetEraseBeforeProgramming
+                0x00000000        0x0 obj/flash_efc.o
+ .text.EFC_DisableIt
+                0x00000000        0x0 obj/flash_efc.o
+ .text.EFC_EnableIt
+                0x00000000        0x0 obj/flash_efc.o
+ .text.EFC_SetMasterClock
+                0x00000000        0x0 obj/flash_efc.o
+ .text          0x00000000        0x0 obj/flash_eefc.o
+ .data          0x00000000        0x0 obj/flash_eefc.o
+ .bss           0x00000000        0x0 obj/flash_eefc.o
+ .data          0x00000000        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sram             0x00200000         0x00004000         w !xr
+flash            0x00100000         0x00010000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD obj/flash_board_cstartup.o
+LOAD obj/flash_cp15_asm.o
+LOAD obj/flash_main.o
+LOAD obj/flash_Media.o
+LOAD obj/flash_MEDSdram.o
+LOAD obj/flash_MEDDdram.o
+LOAD obj/flash_MEDFlash.o
+LOAD obj/flash_MSDLun.o
+LOAD obj/flash_MSDDriver.o
+LOAD obj/flash_MSDDriverDescriptors.o
+LOAD obj/flash_MSDDStateMachine.o
+LOAD obj/flash_SBCMethods.o
+LOAD obj/flash_USBD_OTGHS.o
+LOAD obj/flash_USBD_UDP.o
+LOAD obj/flash_USBD_UDPHS.o
+LOAD obj/flash_USBDDriver.o
+LOAD obj/flash_USBDCallbacks_Initialized.o
+LOAD obj/flash_USBDCallbacks_Reset.o
+LOAD obj/flash_USBDDriverCb_IfSettingChanged.o
+LOAD obj/flash_USBSetAddressRequest.o
+LOAD obj/flash_USBGenericDescriptor.o
+LOAD obj/flash_USBInterfaceRequest.o
+LOAD obj/flash_USBGenericRequest.o
+LOAD obj/flash_USBGetDescriptorRequest.o
+LOAD obj/flash_USBSetConfigurationRequest.o
+LOAD obj/flash_USBFeatureRequest.o
+LOAD obj/flash_USBEndpointDescriptor.o
+LOAD obj/flash_USBConfigurationDescriptor.o
+LOAD obj/flash_led.o
+LOAD obj/flash_math.o
+LOAD obj/flash_stdio.o
+LOAD obj/flash_pmc.o
+LOAD obj/flash_cp15.o
+LOAD obj/flash_aic.o
+LOAD obj/flash_dbgu.o
+LOAD obj/flash_pio.o
+LOAD obj/flash_pio_it.o
+LOAD obj/flash_pit.o
+LOAD obj/flash_board_memories.o
+LOAD obj/flash_board_lowlevel.o
+LOAD obj/flash_flashd_efc.o
+LOAD obj/flash_flashd_eefc.o
+LOAD obj/flash_efc.o
+LOAD obj/flash_eefc.o
+START GROUP
+LOAD /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a
+LOAD /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a
+END GROUP
+
+.fixed          0x00100000     0x5654
+                0x00100000                . = ALIGN (0x4)
+                0x00100000                _sfixed = .
+ *(.text*)
+ .text          0x00100000       0xa0 obj/flash_board_cstartup.o
+                0x00100000                entry
+ .text.ISR_Vbus
+                0x001000a0       0x40 obj/flash_main.o
+ .text.main     0x001000e0      0x350 obj/flash_main.o
+                0x001000e0                main
+ .text.USBDCallbacks_Suspended
+                0x00100430       0x3c obj/flash_main.o
+                0x00100430                USBDCallbacks_Suspended
+ .text.USBDCallbacks_Resumed
+                0x0010046c       0x64 obj/flash_main.o
+                0x0010046c                USBDCallbacks_Resumed
+ .text.FLA_Initialize
+                0x001004d0       0x60 obj/flash_MEDFlash.o
+                0x001004d0                FLA_Initialize
+ .text.FLA_Read
+                0x00100530       0xb0 obj/flash_MEDFlash.o
+ .text.FLA_Write
+                0x001005e0      0x138 obj/flash_MEDFlash.o
+ .text.LUN_Init
+                0x00100718      0x150 obj/flash_MSDLun.o
+                0x00100718                LUN_Init
+ .text.LUN_Read
+                0x00100868       0x90 obj/flash_MSDLun.o
+                0x00100868                LUN_Read
+ .text.LUN_Write
+                0x001008f8       0x90 obj/flash_MSDLun.o
+                0x001008f8                LUN_Write
+ .text.MSDDriver_Reset
+                0x00100988       0x20 obj/flash_MSDDriver.o
+ .text.USBDDriverCallbacks_ConfigurationChanged
+                0x001009a8       0x20 obj/flash_MSDDriver.o
+                0x001009a8                USBDDriverCallbacks_ConfigurationChanged
+ .text.MSDDriver_StateMachine
+                0x001009c8       0x24 obj/flash_MSDDriver.o
+                0x001009c8                MSDDriver_StateMachine
+ .text.MSDD_Write
+                0x001009ec       0x38 obj/flash_MSDDriver.o
+                0x001009ec                MSDD_Write
+ .text.MSDDriver_RequestHandler
+                0x00100a24      0x18c obj/flash_MSDDriver.o
+                0x00100a24                MSDDriver_RequestHandler
+ .text.USBDCallbacks_RequestReceived
+                0x00100bb0       0x1c obj/flash_MSDDriver.o
+                0x00100bb0                USBDCallbacks_RequestReceived
+ .text.MSDDriver_Initialize
+                0x00100bcc       0x74 obj/flash_MSDDriver.o
+                0x00100bcc                MSDDriver_Initialize
+ .text.MSDD_Halt
+                0x00100c40       0x3c obj/flash_MSDDriver.o
+                0x00100c40                MSDD_Halt
+ .text.MSDD_Read
+                0x00100c7c       0x38 obj/flash_MSDDriver.o
+                0x00100c7c                MSDD_Read
+ .text.MSDDriver_Callback
+                0x00100cb4       0x20 obj/flash_MSDDStateMachine.o
+ .text.MSDD_StateMachine
+                0x00100cd4      0x5e4 obj/flash_MSDDStateMachine.o
+                0x00100cd4                MSDD_StateMachine
+ .text.MSDDriver_Callback
+                0x001012b8       0x20 obj/flash_SBCMethods.o
+ .text.SBC_UpdateSenseData
+                0x001012d8       0x20 obj/flash_SBCMethods.o
+                0x001012d8                SBC_UpdateSenseData
+ .text.SBC_GetCommandInformation
+                0x001012f8      0x170 obj/flash_SBCMethods.o
+                0x001012f8                SBC_GetCommandInformation
+ .text.SBC_ProcessCommand
+                0x00101468      0x89c obj/flash_SBCMethods.o
+                0x00101468                SBC_ProcessCommand
+ .text.UDP_EnablePeripheralClock
+                0x00101d04       0x10 obj/flash_USBD_UDP.o
+ .text.UDP_EnableUsbClock
+                0x00101d14       0x10 obj/flash_USBD_UDP.o
+ .text.UDP_EnableTransceiver
+                0x00101d24       0x18 obj/flash_USBD_UDP.o
+ .text.UDP_EndOfTransfer
+                0x00101d3c       0x70 obj/flash_USBD_UDP.o
+ .text.UDP_ClearRxFlag
+                0x00101dac       0xd8 obj/flash_USBD_UDP.o
+ .text.UDP_WritePayload
+                0x00101e84       0x7c obj/flash_USBD_UDP.o
+ .text.UDP_ResetEndpoints
+                0x00101f00       0x48 obj/flash_USBD_UDP.o
+ .text.UDP_DisableEndpoints
+                0x00101f48       0x4c obj/flash_USBD_UDP.o
+ .text.USBD_Write
+                0x00101f94      0x110 obj/flash_USBD_UDP.o
+                0x00101f94                USBD_Write
+ .text.USBD_Read
+                0x001020a4       0x84 obj/flash_USBD_UDP.o
+                0x001020a4                USBD_Read
+ .text.USBD_Halt
+                0x00102128       0xb4 obj/flash_USBD_UDP.o
+                0x00102128                USBD_Halt
+ .text.USBD_Unhalt
+                0x001021dc       0xa4 obj/flash_USBD_UDP.o
+                0x001021dc                USBD_Unhalt
+ .text.USBD_IsHalted
+                0x00102280       0x24 obj/flash_USBD_UDP.o
+                0x00102280                USBD_IsHalted
+ .text.USBD_IsHighSpeed
+                0x001022a4        0x8 obj/flash_USBD_UDP.o
+                0x001022a4                USBD_IsHighSpeed
+ .text.USBD_SetAddress
+                0x001022ac       0x38 obj/flash_USBD_UDP.o
+                0x001022ac                USBD_SetAddress
+ .text.USBD_SetConfiguration
+                0x001022e4       0x60 obj/flash_USBD_UDP.o
+                0x001022e4                USBD_SetConfiguration
+ .text.USBD_GetState
+                0x00102344       0x10 obj/flash_USBD_UDP.o
+                0x00102344                USBD_GetState
+ .text.USBD_Init
+                0x00102354       0x98 obj/flash_USBD_UDP.o
+                0x00102354                USBD_Init
+ .text.USBD_Disconnect
+                0x001023ec       0x3c obj/flash_USBD_UDP.o
+                0x001023ec                USBD_Disconnect
+ .text.USBD_Connect
+                0x00102428       0x24 obj/flash_USBD_UDP.o
+                0x00102428                USBD_Connect
+ .text.USBD_Stall
+                0x0010244c       0xa0 obj/flash_USBD_UDP.o
+                0x0010244c                USBD_Stall
+ .text.USBD_ConfigureEndpoint
+                0x001024ec      0x160 obj/flash_USBD_UDP.o
+                0x001024ec                USBD_ConfigureEndpoint
+ .text.USBD_InterruptHandler
+                0x0010264c      0x808 obj/flash_USBD_UDP.o
+                0x0010264c                USBD_InterruptHandler
+ .text.USBDDriver_Initialize
+                0x00102e54       0x18 obj/flash_USBDDriver.o
+                0x00102e54                USBDDriver_Initialize
+ .text.USBDDriver_RequestHandler
+                0x00102e6c      0x650 obj/flash_USBDDriver.o
+                0x00102e6c                USBDDriver_RequestHandler
+ .text.USBDCallbacks_Initialized
+                0x001034bc       0x40 obj/flash_USBDCallbacks_Initialized.o
+                0x001034bc                USBDCallbacks_Initialized
+ .text.USBDCallbacks_Reset
+                0x001034fc        0x4 obj/flash_USBDCallbacks_Reset.o
+                0x001034fc                USBDCallbacks_Reset
+ .text.USBDDriverCallbacks_InterfaceSettingChanged
+                0x00103500        0x4 obj/flash_USBDDriverCb_IfSettingChanged.o
+                0x00103500                USBDDriverCallbacks_InterfaceSettingChanged
+ .text.USBSetAddressRequest_GetAddress
+                0x00103504       0x20 obj/flash_USBSetAddressRequest.o
+                0x00103504                USBSetAddressRequest_GetAddress
+ .text.USBGenericDescriptor_GetLength
+                0x00103524        0x8 obj/flash_USBGenericDescriptor.o
+                0x00103524                USBGenericDescriptor_GetLength
+ .text.USBGenericDescriptor_GetType
+                0x0010352c        0x8 obj/flash_USBGenericDescriptor.o
+                0x0010352c                USBGenericDescriptor_GetType
+ .text.USBGenericDescriptor_GetNextDescriptor
+                0x00103534        0xc obj/flash_USBGenericDescriptor.o
+                0x00103534                USBGenericDescriptor_GetNextDescriptor
+ .text.USBInterfaceRequest_GetAlternateSetting
+                0x00103540       0x20 obj/flash_USBInterfaceRequest.o
+                0x00103540                USBInterfaceRequest_GetAlternateSetting
+ .text.USBInterfaceRequest_GetInterface
+                0x00103560       0x20 obj/flash_USBInterfaceRequest.o
+                0x00103560                USBInterfaceRequest_GetInterface
+ .text.USBGenericRequest_GetRequest
+                0x00103580        0x8 obj/flash_USBGenericRequest.o
+                0x00103580                USBGenericRequest_GetRequest
+ .text.USBGenericRequest_GetValue
+                0x00103588        0x8 obj/flash_USBGenericRequest.o
+                0x00103588                USBGenericRequest_GetValue
+ .text.USBGenericRequest_GetIndex
+                0x00103590        0x8 obj/flash_USBGenericRequest.o
+                0x00103590                USBGenericRequest_GetIndex
+ .text.USBGenericRequest_GetLength
+                0x00103598        0x8 obj/flash_USBGenericRequest.o
+                0x00103598                USBGenericRequest_GetLength
+ .text.USBGenericRequest_GetRecipient
+                0x001035a0        0xc obj/flash_USBGenericRequest.o
+                0x001035a0                USBGenericRequest_GetRecipient
+ .text.USBGenericRequest_GetDirection
+                0x001035ac        0xc obj/flash_USBGenericRequest.o
+                0x001035ac                USBGenericRequest_GetDirection
+ .text.USBGenericRequest_GetEndpointNumber
+                0x001035b8        0xc obj/flash_USBGenericRequest.o
+                0x001035b8                USBGenericRequest_GetEndpointNumber
+ .text.USBGetDescriptorRequest_GetDescriptorIndex
+                0x001035c4       0x20 obj/flash_USBGetDescriptorRequest.o
+                0x001035c4                USBGetDescriptorRequest_GetDescriptorIndex
+ .text.USBGetDescriptorRequest_GetDescriptorType
+                0x001035e4       0x24 obj/flash_USBGetDescriptorRequest.o
+                0x001035e4                USBGetDescriptorRequest_GetDescriptorType
+ .text.USBSetConfigurationRequest_GetConfiguration
+                0x00103608       0x20 obj/flash_USBSetConfigurationRequest.o
+                0x00103608                USBSetConfigurationRequest_GetConfiguration
+ .text.USBFeatureRequest_GetFeatureSelector
+                0x00103628       0x20 obj/flash_USBFeatureRequest.o
+                0x00103628                USBFeatureRequest_GetFeatureSelector
+ .text.USBEndpointDescriptor_GetNumber
+                0x00103648        0xc obj/flash_USBEndpointDescriptor.o
+                0x00103648                USBEndpointDescriptor_GetNumber
+ .text.USBEndpointDescriptor_GetDirection
+                0x00103654        0xc obj/flash_USBEndpointDescriptor.o
+                0x00103654                USBEndpointDescriptor_GetDirection
+ .text.USBEndpointDescriptor_GetType
+                0x00103660        0xc obj/flash_USBEndpointDescriptor.o
+                0x00103660                USBEndpointDescriptor_GetType
+ .text.USBEndpointDescriptor_GetMaxPacketSize
+                0x0010366c       0x10 obj/flash_USBEndpointDescriptor.o
+                0x0010366c                USBEndpointDescriptor_GetMaxPacketSize
+ .text.USBConfigurationDescriptor_GetTotalLength
+                0x0010367c       0x10 obj/flash_USBConfigurationDescriptor.o
+                0x0010367c                USBConfigurationDescriptor_GetTotalLength
+ .text.USBConfigurationDescriptor_IsSelfPowered
+                0x0010368c       0x10 obj/flash_USBConfigurationDescriptor.o
+                0x0010368c                USBConfigurationDescriptor_IsSelfPowered
+ .text.USBConfigurationDescriptor_Parse
+                0x0010369c       0xdc obj/flash_USBConfigurationDescriptor.o
+                0x0010369c                USBConfigurationDescriptor_Parse
+ .text.LED_Clear
+                0x00103778       0x4c obj/flash_led.o
+                0x00103778                LED_Clear
+ .text.LED_Set  0x001037c4       0x4c obj/flash_led.o
+                0x001037c4                LED_Set
+ .text.LED_Configure
+                0x00103810       0x3c obj/flash_led.o
+                0x00103810                LED_Configure
+ .text.min      0x0010384c        0xc obj/flash_math.o
+                0x0010384c                min
+ .text.PutChar  0x00103858        0xc obj/flash_stdio.o
+                0x00103858                PutChar
+ .text.PutString
+                0x00103864       0x24 obj/flash_stdio.o
+                0x00103864                PutString
+ .text.PutUnsignedInt
+                0x00103888       0xd0 obj/flash_stdio.o
+                0x00103888                PutUnsignedInt
+ .text.PutSignedInt
+                0x00103958      0x12c obj/flash_stdio.o
+                0x00103958                PutSignedInt
+ .text.PutHexa  0x00103a84       0xbc obj/flash_stdio.o
+                0x00103a84                PutHexa
+ .text.vsnprintf
+                0x00103b40      0x1e8 obj/flash_stdio.o
+                0x00103b40                vsnprintf
+ .text.vsprintf
+                0x00103d28       0x28 obj/flash_stdio.o
+                0x00103d28                vsprintf
+ .text.vfprintf
+                0x00103d50       0xa4 obj/flash_stdio.o
+                0x00103d50                vfprintf
+ .text.vprintf  0x00103df4       0x38 obj/flash_stdio.o
+                0x00103df4                vprintf
+ .text.printf   0x00103e2c       0x34 obj/flash_stdio.o
+                0x00103e2c                printf
+ .text.PMC_DisableProcessorClock
+                0x00103e60       0x20 obj/flash_pmc.o
+                0x00103e60                PMC_DisableProcessorClock
+ .text.AIC_ConfigureIT
+                0x00103e80       0x30 obj/flash_aic.o
+                0x00103e80                AIC_ConfigureIT
+ .text.AIC_EnableIT
+                0x00103eb0       0x14 obj/flash_aic.o
+                0x00103eb0                AIC_EnableIT
+ .text.DBGU_Configure
+                0x00103ec4       0x58 obj/flash_dbgu.o
+                0x00103ec4                DBGU_Configure
+ .text.DBGU_PutChar
+                0x00103f1c       0x28 obj/flash_dbgu.o
+                0x00103f1c                DBGU_PutChar
+ .text.fputc    0x00103f44       0x50 obj/flash_dbgu.o
+                0x00103f44                fputc
+ .text.fputs    0x00103f94       0x50 obj/flash_dbgu.o
+                0x00103f94                fputs
+ .text.PIO_Configure
+                0x00103fe4      0x11c obj/flash_pio.o
+                0x00103fe4                PIO_Configure
+ .text.PIO_Set  0x00104100        0xc obj/flash_pio.o
+                0x00104100                PIO_Set
+ .text.PIO_Clear
+                0x0010410c        0xc obj/flash_pio.o
+                0x0010410c                PIO_Clear
+ .text.PIO_Get  0x00104118       0x2c obj/flash_pio.o
+                0x00104118                PIO_Get
+ .text.InterruptHandler
+                0x00104144       0x8c obj/flash_pio_it.o
+ .text.PIO_ConfigureIt
+                0x001041d0       0x50 obj/flash_pio_it.o
+                0x001041d0                PIO_ConfigureIt
+ .text.PIO_EnableIt
+                0x00104220       0x7c obj/flash_pio_it.o
+                0x00104220                PIO_EnableIt
+ .text.PIO_InitializeInterrupts
+                0x0010429c       0x74 obj/flash_pio_it.o
+                0x0010429c                PIO_InitializeInterrupts
+ .text.BOARD_GetRemap
+                0x00104310       0x2c obj/flash_board_memories.o
+ .text.BOARD_RemapRam
+                0x0010433c       0x2c obj/flash_board_memories.o
+                0x0010433c                BOARD_RemapRam
+ .text.defaultSpuriousHandler
+                0x00104368        0x4 obj/flash_board_lowlevel.o
+                0x00104368                defaultSpuriousHandler
+ .text.defaultFiqHandler
+                0x0010436c        0x4 obj/flash_board_lowlevel.o
+                0x0010436c                defaultFiqHandler
+ .text.defaultIrqHandler
+                0x00104370        0x4 obj/flash_board_lowlevel.o
+                0x00104370                defaultIrqHandler
+ .text.LowLevelInit
+                0x00104374      0x13c obj/flash_board_lowlevel.o
+                0x00104374                LowLevelInit
+ .text.FLASHD_Write
+                0x001044b0      0x1f8 obj/flash_flashd_efc.o
+                0x001044b0                FLASHD_Write
+ .text.EFC_ComputeAddress
+                0x001046a8       0xc0 obj/flash_efc.o
+                0x001046a8                EFC_ComputeAddress
+ .text.EFC_TranslateAddress
+                0x00104768       0xa8 obj/flash_efc.o
+                0x00104768                EFC_TranslateAddress
+ .text          0x00104810      0x114 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+                0x00104810                __udivsi3
+                0x00104810                __aeabi_uidiv
+                0x00104904                __aeabi_uidivmod
+ .text          0x00104924        0x4 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+                0x00104924                __aeabi_ldiv0
+                0x00104924                __aeabi_idiv0
+ .text          0x00104928       0xa4 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+                0x00104928                memcpy
+ *(.rodata*)
+ .rodata        0x001049cc       0x18 obj/flash_main.o
+ .rodata.str1.1
+                0x001049e4       0x99 obj/flash_main.o
+ .rodata.str1.1
+                0x00104a7d       0xf3 obj/flash_MEDFlash.o
+                                0x100 (size before relaxing)
+ .rodata.str1.1
+                0x00104b70       0x81 obj/flash_MSDLun.o
+ .rodata.str1.1
+                0x00104bf1       0xa1 obj/flash_MSDDriver.o
+ *fill*         0x00104c92        0x2 00
+ .rodata        0x00104c94       0xa4 obj/flash_MSDDriverDescriptors.o
+                0x00104c94                msdDriverDescriptors
+ .rodata.str1.1
+                0x00104d38      0x2c9 obj/flash_MSDDStateMachine.o
+ .rodata        0x00105001        0x4 obj/flash_SBCMethods.o
+ .rodata.str1.1
+                0x00105005      0x2e0 obj/flash_SBCMethods.o
+ *fill*         0x001052e5        0x3 00
+ .rodata        0x001052e8       0x24 obj/flash_USBD_UDP.o
+ .rodata.str1.1
+                0x0010530c       0x4a obj/flash_USBD_UDP.o
+ .rodata.str1.1
+                0x00105356       0xef obj/flash_USBDDriver.o
+ *fill*         0x00105445        0x3 00
+ .rodata        0x00105448       0x30 obj/flash_led.o
+ .rodata.str1.1
+                0x00105478       0x24 obj/flash_stdio.o
+ .rodata.str1.1
+                0x0010549c       0x46 obj/flash_flashd_efc.o
+                                 0x53 (size before relaxing)
+ .rodata.str1.1
+                0x001054e2      0x16f obj/flash_efc.o
+                                0x19b (size before relaxing)
+                0x00105654                . = ALIGN (0x4)
+ *fill*         0x00105651        0x3 00
+                0x00105654                _efixed = .
+
+.glue_7         0x00105654        0x0
+ .glue_7        0x00105654        0x0 obj/flash_board_cstartup.o
+ .glue_7        0x00105654        0x0 obj/flash_cp15_asm.o
+ .glue_7        0x00105654        0x0 obj/flash_main.o
+ .glue_7        0x00105654        0x0 obj/flash_Media.o
+ .glue_7        0x00105654        0x0 obj/flash_MEDSdram.o
+ .glue_7        0x00105654        0x0 obj/flash_MEDDdram.o
+ .glue_7        0x00105654        0x0 obj/flash_MEDFlash.o
+ .glue_7        0x00105654        0x0 obj/flash_MSDLun.o
+ .glue_7        0x00105654        0x0 obj/flash_MSDDriver.o
+ .glue_7        0x00105654        0x0 obj/flash_MSDDriverDescriptors.o
+ .glue_7        0x00105654        0x0 obj/flash_MSDDStateMachine.o
+ .glue_7        0x00105654        0x0 obj/flash_SBCMethods.o
+ .glue_7        0x00105654        0x0 obj/flash_USBD_OTGHS.o
+ .glue_7        0x00105654        0x0 obj/flash_USBD_UDP.o
+ .glue_7        0x00105654        0x0 obj/flash_USBD_UDPHS.o
+ .glue_7        0x00105654        0x0 obj/flash_USBDDriver.o
+ .glue_7        0x00105654        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .glue_7        0x00105654        0x0 obj/flash_USBDCallbacks_Reset.o
+ .glue_7        0x00105654        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .glue_7        0x00105654        0x0 obj/flash_USBSetAddressRequest.o
+ .glue_7        0x00105654        0x0 obj/flash_USBGenericDescriptor.o
+ .glue_7        0x00105654        0x0 obj/flash_USBInterfaceRequest.o
+ .glue_7        0x00105654        0x0 obj/flash_USBGenericRequest.o
+ .glue_7        0x00105654        0x0 obj/flash_USBGetDescriptorRequest.o
+ .glue_7        0x00105654        0x0 obj/flash_USBSetConfigurationRequest.o
+ .glue_7        0x00105654        0x0 obj/flash_USBFeatureRequest.o
+ .glue_7        0x00105654        0x0 obj/flash_USBEndpointDescriptor.o
+ .glue_7        0x00105654        0x0 obj/flash_USBConfigurationDescriptor.o
+ .glue_7        0x00105654        0x0 obj/flash_led.o
+ .glue_7        0x00105654        0x0 obj/flash_math.o
+ .glue_7        0x00105654        0x0 obj/flash_stdio.o
+ .glue_7        0x00105654        0x0 obj/flash_pmc.o
+ .glue_7        0x00105654        0x0 obj/flash_cp15.o
+ .glue_7        0x00105654        0x0 obj/flash_aic.o
+ .glue_7        0x00105654        0x0 obj/flash_dbgu.o
+ .glue_7        0x00105654        0x0 obj/flash_pio.o
+ .glue_7        0x00105654        0x0 obj/flash_pio_it.o
+ .glue_7        0x00105654        0x0 obj/flash_pit.o
+ .glue_7        0x00105654        0x0 obj/flash_board_memories.o
+ .glue_7        0x00105654        0x0 obj/flash_board_lowlevel.o
+ .glue_7        0x00105654        0x0 obj/flash_flashd_efc.o
+ .glue_7        0x00105654        0x0 obj/flash_flashd_eefc.o
+ .glue_7        0x00105654        0x0 obj/flash_efc.o
+ .glue_7        0x00105654        0x0 obj/flash_eefc.o
+ .glue_7        0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .glue_7        0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .glue_7        0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+.glue_7t        0x00105654        0x0
+ .glue_7t       0x00105654        0x0 obj/flash_board_cstartup.o
+ .glue_7t       0x00105654        0x0 obj/flash_cp15_asm.o
+ .glue_7t       0x00105654        0x0 obj/flash_main.o
+ .glue_7t       0x00105654        0x0 obj/flash_Media.o
+ .glue_7t       0x00105654        0x0 obj/flash_MEDSdram.o
+ .glue_7t       0x00105654        0x0 obj/flash_MEDDdram.o
+ .glue_7t       0x00105654        0x0 obj/flash_MEDFlash.o
+ .glue_7t       0x00105654        0x0 obj/flash_MSDLun.o
+ .glue_7t       0x00105654        0x0 obj/flash_MSDDriver.o
+ .glue_7t       0x00105654        0x0 obj/flash_MSDDriverDescriptors.o
+ .glue_7t       0x00105654        0x0 obj/flash_MSDDStateMachine.o
+ .glue_7t       0x00105654        0x0 obj/flash_SBCMethods.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBD_OTGHS.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBD_UDP.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBD_UDPHS.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBDDriver.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBDCallbacks_Reset.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBSetAddressRequest.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBGenericDescriptor.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBInterfaceRequest.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBGenericRequest.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBGetDescriptorRequest.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBSetConfigurationRequest.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBFeatureRequest.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBEndpointDescriptor.o
+ .glue_7t       0x00105654        0x0 obj/flash_USBConfigurationDescriptor.o
+ .glue_7t       0x00105654        0x0 obj/flash_led.o
+ .glue_7t       0x00105654        0x0 obj/flash_math.o
+ .glue_7t       0x00105654        0x0 obj/flash_stdio.o
+ .glue_7t       0x00105654        0x0 obj/flash_pmc.o
+ .glue_7t       0x00105654        0x0 obj/flash_cp15.o
+ .glue_7t       0x00105654        0x0 obj/flash_aic.o
+ .glue_7t       0x00105654        0x0 obj/flash_dbgu.o
+ .glue_7t       0x00105654        0x0 obj/flash_pio.o
+ .glue_7t       0x00105654        0x0 obj/flash_pio_it.o
+ .glue_7t       0x00105654        0x0 obj/flash_pit.o
+ .glue_7t       0x00105654        0x0 obj/flash_board_memories.o
+ .glue_7t       0x00105654        0x0 obj/flash_board_lowlevel.o
+ .glue_7t       0x00105654        0x0 obj/flash_flashd_efc.o
+ .glue_7t       0x00105654        0x0 obj/flash_flashd_eefc.o
+ .glue_7t       0x00105654        0x0 obj/flash_efc.o
+ .glue_7t       0x00105654        0x0 obj/flash_eefc.o
+ .glue_7t       0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .glue_7t       0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .glue_7t       0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+.vfp11_veneer   0x00105654        0x0
+ .vfp11_veneer  0x00105654        0x0 obj/flash_board_cstartup.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_cp15_asm.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_main.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_Media.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MEDSdram.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MEDDdram.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MEDFlash.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MSDLun.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MSDDriver.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MSDDriverDescriptors.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_MSDDStateMachine.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_SBCMethods.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBD_OTGHS.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBD_UDP.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBD_UDPHS.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBDDriver.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBDCallbacks_Reset.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBSetAddressRequest.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBGenericDescriptor.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBInterfaceRequest.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBGenericRequest.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBGetDescriptorRequest.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBSetConfigurationRequest.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBFeatureRequest.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBEndpointDescriptor.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_USBConfigurationDescriptor.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_led.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_math.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_stdio.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_pmc.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_cp15.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_aic.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_dbgu.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_pio.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_pio_it.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_pit.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_board_memories.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_board_lowlevel.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_flashd_efc.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_flashd_eefc.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_efc.o
+ .vfp11_veneer  0x00105654        0x0 obj/flash_eefc.o
+ .vfp11_veneer  0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .vfp11_veneer  0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .vfp11_veneer  0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+.v4_bx          0x00105654        0x0
+ .v4_bx         0x00105654        0x0 obj/flash_board_cstartup.o
+ .v4_bx         0x00105654        0x0 obj/flash_cp15_asm.o
+ .v4_bx         0x00105654        0x0 obj/flash_main.o
+ .v4_bx         0x00105654        0x0 obj/flash_Media.o
+ .v4_bx         0x00105654        0x0 obj/flash_MEDSdram.o
+ .v4_bx         0x00105654        0x0 obj/flash_MEDDdram.o
+ .v4_bx         0x00105654        0x0 obj/flash_MEDFlash.o
+ .v4_bx         0x00105654        0x0 obj/flash_MSDLun.o
+ .v4_bx         0x00105654        0x0 obj/flash_MSDDriver.o
+ .v4_bx         0x00105654        0x0 obj/flash_MSDDriverDescriptors.o
+ .v4_bx         0x00105654        0x0 obj/flash_MSDDStateMachine.o
+ .v4_bx         0x00105654        0x0 obj/flash_SBCMethods.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBD_OTGHS.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBD_UDP.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBD_UDPHS.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBDDriver.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBDCallbacks_Initialized.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBDCallbacks_Reset.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBSetAddressRequest.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBGenericDescriptor.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBInterfaceRequest.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBGenericRequest.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBGetDescriptorRequest.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBSetConfigurationRequest.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBFeatureRequest.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBEndpointDescriptor.o
+ .v4_bx         0x00105654        0x0 obj/flash_USBConfigurationDescriptor.o
+ .v4_bx         0x00105654        0x0 obj/flash_led.o
+ .v4_bx         0x00105654        0x0 obj/flash_math.o
+ .v4_bx         0x00105654        0x0 obj/flash_stdio.o
+ .v4_bx         0x00105654        0x0 obj/flash_pmc.o
+ .v4_bx         0x00105654        0x0 obj/flash_cp15.o
+ .v4_bx         0x00105654        0x0 obj/flash_aic.o
+ .v4_bx         0x00105654        0x0 obj/flash_dbgu.o
+ .v4_bx         0x00105654        0x0 obj/flash_pio.o
+ .v4_bx         0x00105654        0x0 obj/flash_pio_it.o
+ .v4_bx         0x00105654        0x0 obj/flash_pit.o
+ .v4_bx         0x00105654        0x0 obj/flash_board_memories.o
+ .v4_bx         0x00105654        0x0 obj/flash_board_lowlevel.o
+ .v4_bx         0x00105654        0x0 obj/flash_flashd_efc.o
+ .v4_bx         0x00105654        0x0 obj/flash_flashd_eefc.o
+ .v4_bx         0x00105654        0x0 obj/flash_efc.o
+ .v4_bx         0x00105654        0x0 obj/flash_eefc.o
+ .v4_bx         0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .v4_bx         0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .v4_bx         0x00105654        0x0 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+.relocate       0x00200000      0x7d0 load address 0x00105654
+                0x00200000                . = ALIGN (0x4)
+                0x00200000                _srelocate = .
+ *(.vectors)
+ .vectors       0x00200000       0x70 obj/flash_board_cstartup.o
+ *(.ramfunc)
+ .ramfunc       0x00200070      0x2e4 obj/flash_efc.o
+                0x00200140                EFC_StartCommand
+                0x00200070                EFC_PerformCommand
+ *(.data)
+ .data          0x00200354       0x60 obj/flash_MSDLun.o
+ .data          0x002003b4       0x10 obj/flash_MSDDriverDescriptors.o
+ *fill*         0x002003c4        0x4 00
+ .data          0x002003c8      0x408 obj/flash_stdio.o
+                0x002003d0                r
+                0x002003c8                _impure_ptr
+                0x002007d0                . = ALIGN (0x4)
+                0x002007d0                _erelocate = .
+
+.bss            0x002007d0      0x464 load address 0x00105e24
+                0x002007d0                _szero = .
+ *(.bss)
+ .bss           0x002007d0        0x1 obj/flash_main.o
+                0x002007d0                USBState
+ *fill*         0x002007d1        0x3 00
+ .bss           0x002007d4        0x4 obj/flash_Media.o
+                0x002007d4                numMedias
+ .bss           0x002007d8       0x58 obj/flash_MSDDriver.o
+ .bss           0x00200830       0x74 obj/flash_USBD_UDP.o
+ .bss           0x002008a4       0x3c obj/flash_pio_it.o
+ .bss           0x002008e0       0x80 obj/flash_flashd_efc.o
+ .bss           0x00200960        0x4 obj/flash_efc.o
+                0x00200964                . = ALIGN (0x4)
+                0x00200964                _ezero = .
+ COMMON         0x00200964      0x2d0 obj/flash_main.o
+                0x00200964                medias
+                0x002009cc                msdBuffer
+                0x00200bcc                luns
+                0x00204000                _sstack = 0x204000
+                0x00200c34                end = .
+OUTPUT(bin/usb-device-massstorage-project-at91sam7s-ek-at91sam7s64-flash.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x22
+ .ARM.attributes
+                0x00000000       0x14 obj/flash_board_cstartup.o
+ .ARM.attributes
+                0x00000014       0x10 obj/flash_cp15_asm.o
+ .ARM.attributes
+                0x00000024       0x2e obj/flash_main.o
+ .ARM.attributes
+                0x00000052       0x2e obj/flash_Media.o
+ .ARM.attributes
+                0x00000080       0x2c obj/flash_MEDSdram.o
+ .ARM.attributes
+                0x000000ac       0x2c obj/flash_MEDDdram.o
+ .ARM.attributes
+                0x000000d8       0x2e obj/flash_MEDFlash.o
+ .ARM.attributes
+                0x00000106       0x2e obj/flash_MSDLun.o
+ .ARM.attributes
+                0x00000134       0x2e obj/flash_MSDDriver.o
+ .ARM.attributes
+                0x00000162       0x2c obj/flash_MSDDriverDescriptors.o
+ .ARM.attributes
+                0x0000018e       0x2e obj/flash_MSDDStateMachine.o
+ .ARM.attributes
+                0x000001bc       0x2e obj/flash_SBCMethods.o
+ .ARM.attributes
+                0x000001ea       0x2c obj/flash_USBD_OTGHS.o
+ .ARM.attributes
+                0x00000216       0x2e obj/flash_USBD_UDP.o
+ .ARM.attributes
+                0x00000244       0x2c obj/flash_USBD_UDPHS.o
+ .ARM.attributes
+                0x00000270       0x2e obj/flash_USBDDriver.o
+ .ARM.attributes
+                0x0000029e       0x2e obj/flash_USBDCallbacks_Initialized.o
+ .ARM.attributes
+                0x000002cc       0x2e obj/flash_USBDCallbacks_Reset.o
+ .ARM.attributes
+                0x000002fa       0x2e obj/flash_USBDDriverCb_IfSettingChanged.o
+ .ARM.attributes
+                0x00000328       0x2e obj/flash_USBSetAddressRequest.o
+ .ARM.attributes
+                0x00000356       0x2e obj/flash_USBGenericDescriptor.o
+ .ARM.attributes
+                0x00000384       0x2e obj/flash_USBInterfaceRequest.o
+ .ARM.attributes
+                0x000003b2       0x2e obj/flash_USBGenericRequest.o
+ .ARM.attributes
+                0x000003e0       0x2e obj/flash_USBGetDescriptorRequest.o
+ .ARM.attributes
+                0x0000040e       0x2e obj/flash_USBSetConfigurationRequest.o
+ .ARM.attributes
+                0x0000043c       0x2e obj/flash_USBFeatureRequest.o
+ .ARM.attributes
+                0x0000046a       0x2e obj/flash_USBEndpointDescriptor.o
+ .ARM.attributes
+                0x00000498       0x2e obj/flash_USBConfigurationDescriptor.o
+ .ARM.attributes
+                0x000004c6       0x2e obj/flash_led.o
+ .ARM.attributes
+                0x000004f4       0x2e obj/flash_math.o
+ .ARM.attributes
+                0x00000522       0x2e obj/flash_stdio.o
+ .ARM.attributes
+                0x00000550       0x2e obj/flash_pmc.o
+ .ARM.attributes
+                0x0000057e       0x2c obj/flash_cp15.o
+ .ARM.attributes
+                0x000005aa       0x2e obj/flash_aic.o
+ .ARM.attributes
+                0x000005d8       0x2e obj/flash_dbgu.o
+ .ARM.attributes
+                0x00000606       0x2e obj/flash_pio.o
+ .ARM.attributes
+                0x00000634       0x2e obj/flash_pio_it.o
+ .ARM.attributes
+                0x00000662       0x2e obj/flash_pit.o
+ .ARM.attributes
+                0x00000690       0x2e obj/flash_board_memories.o
+ .ARM.attributes
+                0x000006be       0x2e obj/flash_board_lowlevel.o
+ .ARM.attributes
+                0x000006ec       0x2e obj/flash_flashd_efc.o
+ .ARM.attributes
+                0x0000071a       0x2c obj/flash_flashd_eefc.o
+ .ARM.attributes
+                0x00000746       0x2e obj/flash_efc.o
+ .ARM.attributes
+                0x00000774       0x2c obj/flash_eefc.o
+ .ARM.attributes
+                0x000007a0       0x14 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000007b4       0x14 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000007c8       0x2e /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+.debug_line     0x00000000     0x2d61
+ .debug_line    0x00000000       0xa6 obj/flash_board_cstartup.o
+ .debug_line    0x000000a6      0x18d obj/flash_main.o
+ .debug_line    0x00000233       0x7e obj/flash_Media.o
+ .debug_line    0x000002b1       0x1d obj/flash_MEDSdram.o
+ .debug_line    0x000002ce       0x1d obj/flash_MEDDdram.o
+ .debug_line    0x000002eb      0x107 obj/flash_MEDFlash.o
+ .debug_line    0x000003f2      0x157 obj/flash_MSDLun.o
+ .debug_line    0x00000549      0x291 obj/flash_MSDDriver.o
+ .debug_line    0x000007da      0x13c obj/flash_MSDDriverDescriptors.o
+ .debug_line    0x00000916      0x1ae obj/flash_MSDDStateMachine.o
+ .debug_line    0x00000ac4      0x20f obj/flash_SBCMethods.o
+ .debug_line    0x00000cd3       0x1d obj/flash_USBD_OTGHS.o
+ .debug_line    0x00000cf0      0x47c obj/flash_USBD_UDP.o
+ .debug_line    0x0000116c       0x1d obj/flash_USBD_UDPHS.o
+ .debug_line    0x00001189      0x25e obj/flash_USBDDriver.o
+ .debug_line    0x000013e7       0x6b obj/flash_USBDCallbacks_Initialized.o
+ .debug_line    0x00001452       0x61 obj/flash_USBDCallbacks_Reset.o
+ .debug_line    0x000014b3       0x6b obj/flash_USBDDriverCb_IfSettingChanged.o
+ .debug_line    0x0000151e       0x7a obj/flash_USBSetAddressRequest.o
+ .debug_line    0x00001598       0x9e obj/flash_USBGenericDescriptor.o
+ .debug_line    0x00001636       0x8b obj/flash_USBInterfaceRequest.o
+ .debug_line    0x000016c1       0xee obj/flash_USBGenericRequest.o
+ .debug_line    0x000017af       0x8f obj/flash_USBGetDescriptorRequest.o
+ .debug_line    0x0000183e       0x80 obj/flash_USBSetConfigurationRequest.o
+ .debug_line    0x000018be       0x89 obj/flash_USBFeatureRequest.o
+ .debug_line    0x00001947       0xb3 obj/flash_USBEndpointDescriptor.o
+ .debug_line    0x000019fa      0x136 obj/flash_USBConfigurationDescriptor.o
+ .debug_line    0x00001b30       0xf4 obj/flash_led.o
+ .debug_line    0x00001c24       0x74 obj/flash_math.o
+ .debug_line    0x00001c98      0x357 obj/flash_stdio.o
+ .debug_line    0x00001fef      0x11f obj/flash_pmc.o
+ .debug_line    0x0000210e       0x1d obj/flash_cp15.o
+ .debug_line    0x0000212b       0xbd obj/flash_aic.o
+ .debug_line    0x000021e8      0x299 obj/flash_dbgu.o
+ .debug_line    0x00002481      0x14a obj/flash_pio.o
+ .debug_line    0x000025cb      0x12b obj/flash_pio_it.o
+ .debug_line    0x000026f6      0x130 obj/flash_pit.o
+ .debug_line    0x00002826       0xd2 obj/flash_board_memories.o
+ .debug_line    0x000028f8       0xf5 obj/flash_board_lowlevel.o
+ .debug_line    0x000029ed      0x1e1 obj/flash_flashd_efc.o
+ .debug_line    0x00002bce       0x1d obj/flash_flashd_eefc.o
+ .debug_line    0x00002beb      0x159 obj/flash_efc.o
+ .debug_line    0x00002d44       0x1d obj/flash_eefc.o
+
+.debug_info     0x00000000     0xbfb6
+ .debug_info    0x00000000       0x84 obj/flash_board_cstartup.o
+ .debug_info    0x00000084      0xdc5 obj/flash_main.o
+ .debug_info    0x00000e49      0x25a obj/flash_Media.o
+ .debug_info    0x000010a3       0x76 obj/flash_MEDSdram.o
+ .debug_info    0x00001119       0x76 obj/flash_MEDDdram.o
+ .debug_info    0x0000118f      0x402 obj/flash_MEDFlash.o
+ .debug_info    0x00001591      0x9b1 obj/flash_MSDLun.o
+ .debug_info    0x00001f42      0xe83 obj/flash_MSDDriver.o
+ .debug_info    0x00002dc5      0x541 obj/flash_MSDDriverDescriptors.o
+ .debug_info    0x00003306      0xbe1 obj/flash_MSDDStateMachine.o
+ .debug_info    0x00003ee7     0x13c8 obj/flash_SBCMethods.o
+ .debug_info    0x000052af       0x30 obj/flash_USBD_OTGHS.o
+ .debug_info    0x000052df     0x11c8 obj/flash_USBD_UDP.o
+ .debug_info    0x000064a7       0x76 obj/flash_USBD_UDPHS.o
+ .debug_info    0x0000651d      0x900 obj/flash_USBDDriver.o
+ .debug_info    0x00006e1d       0x4f obj/flash_USBDCallbacks_Initialized.o
+ .debug_info    0x00006e6c       0x3f obj/flash_USBDCallbacks_Reset.o
+ .debug_info    0x00006eab       0x9c obj/flash_USBDDriverCb_IfSettingChanged.o
+ .debug_info    0x00006f47       0xd1 obj/flash_USBSetAddressRequest.o
+ .debug_info    0x00007018      0x102 obj/flash_USBGenericDescriptor.o
+ .debug_info    0x0000711a       0xfa obj/flash_USBInterfaceRequest.o
+ .debug_info    0x00007214      0x208 obj/flash_USBGenericRequest.o
+ .debug_info    0x0000741c       0xfa obj/flash_USBGetDescriptorRequest.o
+ .debug_info    0x00007516       0xd1 obj/flash_USBSetConfigurationRequest.o
+ .debug_info    0x000075e7       0xfa obj/flash_USBFeatureRequest.o
+ .debug_info    0x000076e1      0x14b obj/flash_USBEndpointDescriptor.o
+ .debug_info    0x0000782c      0x31e obj/flash_USBConfigurationDescriptor.o
+ .debug_info    0x00007b4a      0x3ea obj/flash_led.o
+ .debug_info    0x00007f34      0x10e obj/flash_math.o
+ .debug_info    0x00008042      0xe6f obj/flash_stdio.o
+ .debug_info    0x00008eb1      0x2da obj/flash_pmc.o
+ .debug_info    0x0000918b       0x30 obj/flash_cp15.o
+ .debug_info    0x000091bb      0x23f obj/flash_aic.o
+ .debug_info    0x000093fa      0xc11 obj/flash_dbgu.o
+ .debug_info    0x0000a00b      0x72f obj/flash_pio.o
+ .debug_info    0x0000a73a      0x697 obj/flash_pio_it.o
+ .debug_info    0x0000add1      0x16b obj/flash_pit.o
+ .debug_info    0x0000af3c      0x132 obj/flash_board_memories.o
+ .debug_info    0x0000b06e      0x4e8 obj/flash_board_lowlevel.o
+ .debug_info    0x0000b556      0x66a obj/flash_flashd_efc.o
+ .debug_info    0x0000bbc0       0x30 obj/flash_flashd_eefc.o
+ .debug_info    0x0000bbf0      0x396 obj/flash_efc.o
+ .debug_info    0x0000bf86       0x30 obj/flash_eefc.o
+
+.debug_abbrev   0x00000000     0x2af6
+ .debug_abbrev  0x00000000       0x12 obj/flash_board_cstartup.o
+ .debug_abbrev  0x00000012      0x1dd obj/flash_main.o
+ .debug_abbrev  0x000001ef       0xfa obj/flash_Media.o
+ .debug_abbrev  0x000002e9       0x33 obj/flash_MEDSdram.o
+ .debug_abbrev  0x0000031c       0x33 obj/flash_MEDDdram.o
+ .debug_abbrev  0x0000034f      0x164 obj/flash_MEDFlash.o
+ .debug_abbrev  0x000004b3      0x1a2 obj/flash_MSDLun.o
+ .debug_abbrev  0x00000655      0x19d obj/flash_MSDDriver.o
+ .debug_abbrev  0x000007f2       0xa2 obj/flash_MSDDriverDescriptors.o
+ .debug_abbrev  0x00000894      0x250 obj/flash_MSDDStateMachine.o
+ .debug_abbrev  0x00000ae4      0x2a8 obj/flash_SBCMethods.o
+ .debug_abbrev  0x00000d8c       0x28 obj/flash_USBD_OTGHS.o
+ .debug_abbrev  0x00000db4      0x351 obj/flash_USBD_UDP.o
+ .debug_abbrev  0x00001105       0x33 obj/flash_USBD_UDPHS.o
+ .debug_abbrev  0x00001138      0x1e1 obj/flash_USBDDriver.o
+ .debug_abbrev  0x00001319       0x3b obj/flash_USBDCallbacks_Initialized.o
+ .debug_abbrev  0x00001354       0x30 obj/flash_USBDCallbacks_Reset.o
+ .debug_abbrev  0x00001384       0x53 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .debug_abbrev  0x000013d7       0x84 obj/flash_USBSetAddressRequest.o
+ .debug_abbrev  0x0000145b       0xb8 obj/flash_USBGenericDescriptor.o
+ .debug_abbrev  0x00001513       0x9b obj/flash_USBInterfaceRequest.o
+ .debug_abbrev  0x000015ae       0xd5 obj/flash_USBGenericRequest.o
+ .debug_abbrev  0x00001683       0x9b obj/flash_USBGetDescriptorRequest.o
+ .debug_abbrev  0x0000171e       0x84 obj/flash_USBSetConfigurationRequest.o
+ .debug_abbrev  0x000017a2       0x9b obj/flash_USBFeatureRequest.o
+ .debug_abbrev  0x0000183d       0x95 obj/flash_USBEndpointDescriptor.o
+ .debug_abbrev  0x000018d2       0xf8 obj/flash_USBConfigurationDescriptor.o
+ .debug_abbrev  0x000019ca       0xf8 obj/flash_led.o
+ .debug_abbrev  0x00001ac2       0xb6 obj/flash_math.o
+ .debug_abbrev  0x00001b78      0x296 obj/flash_stdio.o
+ .debug_abbrev  0x00001e0e       0xfd obj/flash_pmc.o
+ .debug_abbrev  0x00001f0b       0x28 obj/flash_cp15.o
+ .debug_abbrev  0x00001f33       0xce obj/flash_aic.o
+ .debug_abbrev  0x00002001      0x1ff obj/flash_dbgu.o
+ .debug_abbrev  0x00002200      0x1b8 obj/flash_pio.o
+ .debug_abbrev  0x000023b8      0x20f obj/flash_pio_it.o
+ .debug_abbrev  0x000025c7       0xbb obj/flash_pit.o
+ .debug_abbrev  0x00002682       0xbb obj/flash_board_memories.o
+ .debug_abbrev  0x0000273d       0xb6 obj/flash_board_lowlevel.o
+ .debug_abbrev  0x000027f3      0x173 obj/flash_flashd_efc.o
+ .debug_abbrev  0x00002966       0x28 obj/flash_flashd_eefc.o
+ .debug_abbrev  0x0000298e      0x140 obj/flash_efc.o
+ .debug_abbrev  0x00002ace       0x28 obj/flash_eefc.o
+
+.debug_aranges  0x00000000      0x8b8
+ .debug_aranges
+                0x00000000       0x28 obj/flash_board_cstartup.o
+ .debug_aranges
+                0x00000028       0x40 obj/flash_main.o
+ .debug_aranges
+                0x00000068       0x20 obj/flash_Media.o
+ .debug_aranges
+                0x00000088       0x30 obj/flash_MEDFlash.o
+ .debug_aranges
+                0x000000b8       0x30 obj/flash_MSDLun.o
+ .debug_aranges
+                0x000000e8       0x68 obj/flash_MSDDriver.o
+ .debug_aranges
+                0x00000150       0x28 obj/flash_MSDDStateMachine.o
+ .debug_aranges
+                0x00000178       0x38 obj/flash_SBCMethods.o
+ .debug_aranges
+                0x000001b0       0xd8 obj/flash_USBD_UDP.o
+ .debug_aranges
+                0x00000288       0x30 obj/flash_USBDDriver.o
+ .debug_aranges
+                0x000002b8       0x20 obj/flash_USBDCallbacks_Initialized.o
+ .debug_aranges
+                0x000002d8       0x20 obj/flash_USBDCallbacks_Reset.o
+ .debug_aranges
+                0x000002f8       0x20 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .debug_aranges
+                0x00000318       0x20 obj/flash_USBSetAddressRequest.o
+ .debug_aranges
+                0x00000338       0x30 obj/flash_USBGenericDescriptor.o
+ .debug_aranges
+                0x00000368       0x28 obj/flash_USBInterfaceRequest.o
+ .debug_aranges
+                0x00000390       0x58 obj/flash_USBGenericRequest.o
+ .debug_aranges
+                0x000003e8       0x28 obj/flash_USBGetDescriptorRequest.o
+ .debug_aranges
+                0x00000410       0x20 obj/flash_USBSetConfigurationRequest.o
+ .debug_aranges
+                0x00000430       0x28 obj/flash_USBFeatureRequest.o
+ .debug_aranges
+                0x00000458       0x38 obj/flash_USBEndpointDescriptor.o
+ .debug_aranges
+                0x00000490       0x38 obj/flash_USBConfigurationDescriptor.o
+ .debug_aranges
+                0x000004c8       0x38 obj/flash_led.o
+ .debug_aranges
+                0x00000500       0x30 obj/flash_math.o
+ .debug_aranges
+                0x00000530       0x88 obj/flash_stdio.o
+ .debug_aranges
+                0x000005b8       0x58 obj/flash_pmc.o
+ .debug_aranges
+                0x00000610       0x30 obj/flash_aic.o
+ .debug_aranges
+                0x00000640       0x50 obj/flash_dbgu.o
+ .debug_aranges
+                0x00000690       0x48 obj/flash_pio.o
+ .debug_aranges
+                0x000006d8       0x40 obj/flash_pio_it.o
+ .debug_aranges
+                0x00000718       0x60 obj/flash_pit.o
+ .debug_aranges
+                0x00000778       0x30 obj/flash_board_memories.o
+ .debug_aranges
+                0x000007a8       0x38 obj/flash_board_lowlevel.o
+ .debug_aranges
+                0x000007e0       0x78 obj/flash_flashd_efc.o
+ .debug_aranges
+                0x00000858       0x60 obj/flash_efc.o
+
+.debug_ranges   0x00000000      0x398
+ .debug_ranges  0x00000000       0x20 obj/flash_board_cstartup.o
+ .debug_ranges  0x00000020       0x18 obj/flash_main.o
+ .debug_ranges  0x00000038       0x20 obj/flash_Media.o
+ .debug_ranges  0x00000058       0xc8 obj/flash_MSDDStateMachine.o
+ .debug_ranges  0x00000120       0xa0 obj/flash_SBCMethods.o
+ .debug_ranges  0x000001c0       0xc8 obj/flash_USBD_UDP.o
+ .debug_ranges  0x00000288       0xe0 obj/flash_USBDDriver.o
+ .debug_ranges  0x00000368       0x30 obj/flash_pio_it.o
+
+.debug_frame    0x00000000     0x119c
+ .debug_frame   0x00000000       0x94 obj/flash_main.o
+ .debug_frame   0x00000094       0x2c obj/flash_Media.o
+ .debug_frame   0x000000c0       0x58 obj/flash_MEDFlash.o
+ .debug_frame   0x00000118       0x70 obj/flash_MSDLun.o
+ .debug_frame   0x00000188      0x10c obj/flash_MSDDriver.o
+ .debug_frame   0x00000294       0x44 obj/flash_MSDDStateMachine.o
+ .debug_frame   0x000002d8       0x70 obj/flash_SBCMethods.o
+ .debug_frame   0x00000348      0x244 obj/flash_USBD_UDP.o
+ .debug_frame   0x0000058c       0x58 obj/flash_USBDDriver.o
+ .debug_frame   0x000005e4       0x28 obj/flash_USBDCallbacks_Initialized.o
+ .debug_frame   0x0000060c       0x20 obj/flash_USBDCallbacks_Reset.o
+ .debug_frame   0x0000062c       0x20 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .debug_frame   0x0000064c       0x28 obj/flash_USBSetAddressRequest.o
+ .debug_frame   0x00000674       0x40 obj/flash_USBGenericDescriptor.o
+ .debug_frame   0x000006b4       0x40 obj/flash_USBInterfaceRequest.o
+ .debug_frame   0x000006f4       0x90 obj/flash_USBGenericRequest.o
+ .debug_frame   0x00000784       0x40 obj/flash_USBGetDescriptorRequest.o
+ .debug_frame   0x000007c4       0x28 obj/flash_USBSetConfigurationRequest.o
+ .debug_frame   0x000007ec       0x40 obj/flash_USBFeatureRequest.o
+ .debug_frame   0x0000082c       0x50 obj/flash_USBEndpointDescriptor.o
+ .debug_frame   0x0000087c       0x64 obj/flash_USBConfigurationDescriptor.o
+ .debug_frame   0x000008e0       0x70 obj/flash_led.o
+ .debug_frame   0x00000950       0x40 obj/flash_math.o
+ .debug_frame   0x00000990      0x1ac obj/flash_stdio.o
+ .debug_frame   0x00000b3c       0xa8 obj/flash_pmc.o
+ .debug_frame   0x00000be4       0x48 obj/flash_aic.o
+ .debug_frame   0x00000c2c       0xa8 obj/flash_dbgu.o
+ .debug_frame   0x00000cd4       0x78 obj/flash_pio.o
+ .debug_frame   0x00000d4c       0x88 obj/flash_pio_it.o
+ .debug_frame   0x00000dd4       0xa0 obj/flash_pit.o
+ .debug_frame   0x00000e74       0x50 obj/flash_board_memories.o
+ .debug_frame   0x00000ec4       0x58 obj/flash_board_lowlevel.o
+ .debug_frame   0x00000f1c      0x150 obj/flash_flashd_efc.o
+ .debug_frame   0x0000106c       0xe8 obj/flash_efc.o
+ .debug_frame   0x00001154       0x20 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001174       0x28 /usr/local/codesourcery/arm-none-eabi/arm-2008q1/bin/../lib/gcc/arm-none-eabi/4.2.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+
+.debug_loc      0x00000000     0x3a24
+ .debug_loc     0x00000000       0xae obj/flash_main.o
+ .debug_loc     0x000000ae       0x79 obj/flash_Media.o
+ .debug_loc     0x00000127      0x25d obj/flash_MEDFlash.o
+ .debug_loc     0x00000384      0x2d5 obj/flash_MSDLun.o
+ .debug_loc     0x00000659      0x329 obj/flash_MSDDriver.o
+ .debug_loc     0x00000982      0x23f obj/flash_MSDDStateMachine.o
+ .debug_loc     0x00000bc1      0x475 obj/flash_SBCMethods.o
+ .debug_loc     0x00001036      0x5d2 obj/flash_USBD_UDP.o
+ .debug_loc     0x00001608      0x407 obj/flash_USBDDriver.o
+ .debug_loc     0x00001a0f       0x1f obj/flash_USBDCallbacks_Initialized.o
+ .debug_loc     0x00001a2e       0x32 obj/flash_USBSetAddressRequest.o
+ .debug_loc     0x00001a60       0x39 obj/flash_USBGenericDescriptor.o
+ .debug_loc     0x00001a99       0x64 obj/flash_USBInterfaceRequest.o
+ .debug_loc     0x00001afd       0x98 obj/flash_USBGenericRequest.o
+ .debug_loc     0x00001b95       0x64 obj/flash_USBGetDescriptorRequest.o
+ .debug_loc     0x00001bf9       0x32 obj/flash_USBSetConfigurationRequest.o
+ .debug_loc     0x00001c2b       0x64 obj/flash_USBFeatureRequest.o
+ .debug_loc     0x00001c8f       0x4c obj/flash_USBEndpointDescriptor.o
+ .debug_loc     0x00001cdb      0x11a obj/flash_USBConfigurationDescriptor.o
+ .debug_loc     0x00001df5       0xf4 obj/flash_led.o
+ .debug_loc     0x00001ee9       0x44 obj/flash_math.o
+ .debug_loc     0x00001f2d      0x91b obj/flash_stdio.o
+ .debug_loc     0x00002848       0xac obj/flash_pmc.o
+ .debug_loc     0x000028f4       0x32 obj/flash_aic.o
+ .debug_loc     0x00002926      0x14b obj/flash_dbgu.o
+ .debug_loc     0x00002a71      0x221 obj/flash_pio.o
+ .debug_loc     0x00002c92      0x130 obj/flash_pio_it.o
+ .debug_loc     0x00002dc2       0x26 obj/flash_pit.o
+ .debug_loc     0x00002de8       0x3e obj/flash_board_memories.o
+ .debug_loc     0x00002e26       0x32 obj/flash_board_lowlevel.o
+ .debug_loc     0x00002e58      0x654 obj/flash_flashd_efc.o
+ .debug_loc     0x000034ac      0x578 obj/flash_efc.o
+
+.debug_pubnames
+                0x00000000     0x10c0
+ .debug_pubnames
+                0x00000000       0x8e obj/flash_main.o
+ .debug_pubnames
+                0x0000008e       0x32 obj/flash_Media.o
+ .debug_pubnames
+                0x000000c0       0x25 obj/flash_MEDFlash.o
+ .debug_pubnames
+                0x000000e5       0x3a obj/flash_MSDLun.o
+ .debug_pubnames
+                0x0000011f       0xf8 obj/flash_MSDDriver.o
+ .debug_pubnames
+                0x00000217       0x2b obj/flash_MSDDriverDescriptors.o
+ .debug_pubnames
+                0x00000242       0x28 obj/flash_MSDDStateMachine.o
+ .debug_pubnames
+                0x0000026a       0x5f obj/flash_SBCMethods.o
+ .debug_pubnames
+                0x000002c9      0x141 obj/flash_USBD_UDP.o
+ .debug_pubnames
+                0x0000040a       0x6f obj/flash_USBDDriver.o
+ .debug_pubnames
+                0x00000479       0x30 obj/flash_USBDCallbacks_Initialized.o
+ .debug_pubnames
+                0x000004a9       0x2a obj/flash_USBDCallbacks_Reset.o
+ .debug_pubnames
+                0x000004d3       0x42 obj/flash_USBDDriverCb_IfSettingChanged.o
+ .debug_pubnames
+                0x00000515       0x36 obj/flash_USBSetAddressRequest.o
+ .debug_pubnames
+                0x0000054b       0x81 obj/flash_USBGenericDescriptor.o
+ .debug_pubnames
+                0x000005cc       0x63 obj/flash_USBInterfaceRequest.o
+ .debug_pubnames
+                0x0000062f      0x11d obj/flash_USBGenericRequest.o
+ .debug_pubnames
+                0x0000074c       0x6f obj/flash_USBGetDescriptorRequest.o
+ .debug_pubnames
+                0x000007bb       0x42 obj/flash_USBSetConfigurationRequest.o
+ .debug_pubnames
+                0x000007fd       0x61 obj/flash_USBFeatureRequest.o
+ .debug_pubnames
+                0x0000085e       0xaa obj/flash_USBEndpointDescriptor.o
+ .debug_pubnames
+                0x00000908       0xc2 obj/flash_USBConfigurationDescriptor.o
+ .debug_pubnames
+                0x000009ca       0x4d obj/flash_led.o
+ .debug_pubnames
+                0x00000a17       0x2d obj/flash_math.o
+ .debug_pubnames
+                0x00000a44       0xdf obj/flash_stdio.o
+ .debug_pubnames
+                0x00000b23       0xe7 obj/flash_pmc.o
+ .debug_pubnames
+                0x00000c0a       0x49 obj/flash_aic.o
+ .debug_pubnames
+                0x00000c53       0x7a obj/flash_dbgu.o
+ .debug_pubnames
+                0x00000ccd       0x75 obj/flash_pio.o
+ .debug_pubnames
+                0x00000d42       0x66 obj/flash_pio_it.o
+ .debug_pubnames
+                0x00000da8       0xa2 obj/flash_pit.o
+ .debug_pubnames
+                0x00000e4a       0x3a obj/flash_board_memories.o
+ .debug_pubnames
+                0x00000e84       0x6a obj/flash_board_lowlevel.o
+ .debug_pubnames
+                0x00000eee       0xf6 obj/flash_flashd_efc.o
+ .debug_pubnames
+                0x00000fe4       0xdc obj/flash_efc.o
+
+.debug_str      0x00000000     0x2e48
+ .debug_str     0x00000000      0x72b obj/flash_main.o
+                                0x7cc (size before relaxing)
+ .debug_str     0x0000072b       0x36 obj/flash_Media.o
+                                0x164 (size before relaxing)
+ .debug_str     0x00000761       0x1f obj/flash_MEDSdram.o
+                                 0xe3 (size before relaxing)
+ .debug_str     0x00000780       0x1f obj/flash_MEDDdram.o
+                                 0xe3 (size before relaxing)
+ .debug_str     0x0000079f       0x53 obj/flash_MEDFlash.o
+                                0x226 (size before relaxing)
+ .debug_str     0x000007f2       0x9a obj/flash_MSDLun.o
+                                0x53a (size before relaxing)
+ .debug_str     0x0000088c      0x4c2 obj/flash_MSDDriver.o
+                                0x97f (size before relaxing)
+ .debug_str     0x00000d4e      0x1ce obj/flash_MSDDriverDescriptors.o
+                                0x449 (size before relaxing)
+ .debug_str     0x00000f1c      0x114 obj/flash_MSDDStateMachine.o
+                                0x6d0 (size before relaxing)
+ .debug_str     0x00001030      0x348 obj/flash_SBCMethods.o
+                                0x909 (size before relaxing)
+ .debug_str     0x00001378       0x28 obj/flash_USBD_OTGHS.o
+                                 0x70 (size before relaxing)
+ .debug_str     0x000013a0      0x37e obj/flash_USBD_UDP.o
+                                0x73e (size before relaxing)
+ .debug_str     0x0000171e       0x28 obj/flash_USBD_UDPHS.o
+                                 0xec (size before relaxing)
+ .debug_str     0x00001746      0x129 obj/flash_USBDDriver.o
+                                0x502 (size before relaxing)
+ .debug_str     0x0000186f       0x51 obj/flash_USBDCallbacks_Initialized.o
+                                 0xba (size before relaxing)
+ .debug_str     0x000018c0       0x45 obj/flash_USBDCallbacks_Reset.o
+                                 0xa1 (size before relaxing)
+ .debug_str     0x00001905       0x67 obj/flash_USBDDriverCb_IfSettingChanged.o
+                                0x13d (size before relaxing)
+ .debug_str     0x0000196c       0x52 obj/flash_USBSetAddressRequest.o
+                                 0xf5 (size before relaxing)
+ .debug_str     0x000019be       0xa0 obj/flash_USBGenericDescriptor.o
+                                0x123 (size before relaxing)
+ .debug_str     0x00001a5e       0x7a obj/flash_USBInterfaceRequest.o
+                                0x11d (size before relaxing)
+ .debug_str     0x00001ad8      0x11a obj/flash_USBGenericRequest.o
+                                0x1bd (size before relaxing)
+ .debug_str     0x00001bf2       0x8a obj/flash_USBGetDescriptorRequest.o
+                                0x12d (size before relaxing)
+ .debug_str     0x00001c7c       0x64 obj/flash_USBSetConfigurationRequest.o
+                                0x107 (size before relaxing)
+ .debug_str     0x00001ce0       0x76 obj/flash_USBFeatureRequest.o
+                                0x119 (size before relaxing)
+ .debug_str     0x00001d56       0xc4 obj/flash_USBEndpointDescriptor.o
+                                0x185 (size before relaxing)
+ .debug_str     0x00001e1a       0xea obj/flash_USBConfigurationDescriptor.o
+                                0x2e2 (size before relaxing)
+ .debug_str     0x00001f04       0x55 obj/flash_led.o
+                                0x20c (size before relaxing)
+ .debug_str     0x00001f59       0x25 obj/flash_math.o
+                                 0xf6 (size before relaxing)
+ .debug_str     0x00001f7e      0x45b obj/flash_stdio.o
+                                0x58d (size before relaxing)
+ .debug_str     0x000023d9       0xd6 obj/flash_pmc.o
+                                0x258 (size before relaxing)
+ .debug_str     0x000024af       0x23 obj/flash_cp15.o
+                                 0x6b (size before relaxing)
+ .debug_str     0x000024d2       0xf6 obj/flash_aic.o
+                                0x161 (size before relaxing)
+ .debug_str     0x000025c8      0x152 obj/flash_dbgu.o
+                                0x5e2 (size before relaxing)
+ .debug_str     0x0000271a       0xe5 obj/flash_pio.o
+                                0x332 (size before relaxing)
+ .debug_str     0x000027ff       0xb4 obj/flash_pio_it.o
+                                0x392 (size before relaxing)
+ .debug_str     0x000028b3       0xd6 obj/flash_pit.o
+                                0x11e (size before relaxing)
+ .debug_str     0x00002989       0x6a obj/flash_board_memories.o
+                                 0xff (size before relaxing)
+ .debug_str     0x000029f3       0xd6 obj/flash_board_lowlevel.o
+                                0x2f8 (size before relaxing)
+ .debug_str     0x00002ac9      0x229 obj/flash_flashd_efc.o
+                                0x31d (size before relaxing)
+ .debug_str     0x00002cf2       0x28 obj/flash_flashd_eefc.o
+                                 0x70 (size before relaxing)
+ .debug_str     0x00002d1a      0x10b obj/flash_efc.o
+                                0x233 (size before relaxing)
+ .debug_str     0x00002e25       0x23 obj/flash_eefc.o
+                                 0x6b (size before relaxing)
+
+.comment        0x00000000      0x70e
+ .comment       0x00000000       0x2b obj/flash_main.o
+ .comment       0x0000002b       0x2b obj/flash_Media.o
+ .comment       0x00000056       0x2b obj/flash_MEDSdram.o
+ .comment       0x00000081       0x2b obj/flash_MEDDdram.o
+ .comment       0x000000ac       0x2b obj/flash_MEDFlash.o
+ .comment       0x000000d7       0x2b obj/flash_MSDLun.o
+ .comment       0x00000102       0x2b obj/flash_MSDDriver.o
+ .comment       0x0000012d       0x2b obj/flash_MSDDriverDescriptors.o
+ .comment       0x00000158       0x2b obj/flash_MSDDStateMachine.o
+ .comment       0x00000183       0x2b obj/flash_SBCMethods.o
+ .comment       0x000001ae       0x2b obj/flash_USBD_OTGHS.o
+ .comment       0x000001d9       0x2b obj/flash_USBD_UDP.o
+ .comment       0x00000204       0x2b obj/flash_USBD_UDPHS.o
+ .comment       0x0000022f       0x2b obj/flash_USBDDriver.o
+ .comment       0x0000025a       0x2b obj/flash_USBDCallbacks_Initialized.o
+ .comment       0x00000285       0x2b obj/flash_USBDCallbacks_Reset.o
+ .comment       0x000002b0       0x2b obj/flash_USBDDriverCb_IfSettingChanged.o
+ .comment       0x000002db       0x2b obj/flash_USBSetAddressRequest.o
+ .comment       0x00000306       0x2b obj/flash_USBGenericDescriptor.o
+ .comment       0x00000331       0x2b obj/flash_USBInterfaceRequest.o
+ .comment       0x0000035c       0x2b obj/flash_USBGenericRequest.o
+ .comment       0x00000387       0x2b obj/flash_USBGetDescriptorRequest.o
+ .comment       0x000003b2       0x2b obj/flash_USBSetConfigurationRequest.o
+ .comment       0x000003dd       0x2b obj/flash_USBFeatureRequest.o
+ .comment       0x00000408       0x2b obj/flash_USBEndpointDescriptor.o
+ .comment       0x00000433       0x2b obj/flash_USBConfigurationDescriptor.o
+ .comment       0x0000045e       0x2b obj/flash_led.o
+ .comment       0x00000489       0x2b obj/flash_math.o
+ .comment       0x000004b4       0x2b obj/flash_stdio.o
+ .comment       0x000004df       0x2b obj/flash_pmc.o
+ .comment       0x0000050a       0x2b obj/flash_cp15.o
+ .comment       0x00000535       0x2b obj/flash_aic.o
+ .comment       0x00000560       0x2b obj/flash_dbgu.o
+ .comment       0x0000058b       0x2b obj/flash_pio.o
+ .comment       0x000005b6       0x2b obj/flash_pio_it.o
+ .comment       0x000005e1       0x2b obj/flash_pit.o
+ .comment       0x0000060c       0x2b obj/flash_board_memories.o
+ .comment       0x00000637       0x2b obj/flash_board_lowlevel.o
+ .comment       0x00000662       0x2b obj/flash_flashd_efc.o
+ .comment       0x0000068d       0x2b obj/flash_flashd_eefc.o
+ .comment       0x000006b8       0x2b obj/flash_efc.o
+ .comment       0x000006e3       0x2b obj/flash_eefc.o
