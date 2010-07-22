@@ -1,60 +1,79 @@
-# Makefile for AT91SAM7 hello world example. 
-# Wolfgang Wieser 07/2007. 
+# File:   Makefile
+# Author: M. P. Hayes, ICES
+# Date:   31 December 2007
+# Descr:  Makefile for busart0_loop
 
-OBJECTS = crt.o	main.o init.o lcd.o timers.o
-LDSCRIPT = ld_flash.cmd
 
-# -mthumb-interwork
-CFLAGS  = -I. -c -fno-common -O3 -g -std=gnu99 -Wall
-AFLAGS  = -ahls -mapcs-32
-LFLAGS  = -Map main.map -nostartfiles -T $(LDSCRIPT)
+## Create ROM-Image (final)
+RUN_MODE=ROM_RUN
+## Create RAM-Image (debugging) 
+#RUN_MODE=RAM_RUN
+
+
+SRC = busart0_loop1.c busart.c ring.c usart0.c usart1.c
+
+VPATH = ./mmculib ./mat91lib
+
 
 CC = arm-elf-gcc
-LD = arm-elf-ld -v
-AS = arm-elf-as
-OBJCPY = arm-elf-objcopy
-OBJDMP = arm-elf-objdump
+OBJCOPY = arm-elf-objcopy
+SIZE = arm-elf-size
+DEL = rm
 
-CPFLAGS = --output-target=binary
-ODFLAGS	= -x -S -t
 
-OPENOCD = openocd
+CFLAGS = -mcpu=arm7tdmi -Wall -Wstrict-prototypes -W -gdwarf-2 -std=c99 -D$(RUN_MODE) -I./mat91lib -I./mmculib -I./mdsplib -I/usr/include -I. -O2 -mthumb-interwork
 
-all: clean main.bin
+LDFLAGS = -mthumb-interwork -nostartfiles -lm -lc
 
-clean:
-	-rm -f $(OBJECTS) *.lst *.bin *.elf *.map main.dmp
+ifeq ($(RUN_MODE),RAM_RUN)
+LDFLAGS +=-T../mat91lib/ldscripts/AT91SAM7S256-RAM.ld
+else 
+LDFLAGS +=-T../mat91lib/ldscripts/AT91SAM7S256-ROM.ld
+endif
 
-flash: main.bin
-	-sh flash.sh
-	
-#debug: main.elf
-#	$(OPENOCD) -f openocd.cfg
 
-#dist:
-#	tar -c *.h *.c *.s Makefile *.cmd *.cfg openocd_doflash | gzip > minimal_hello_world.tar.gz
+# Default target.
+all: busart0_loop1.bin
 
-main.bin: main.elf 
-	$(OBJCPY) $(CPFLAGS) main.elf main.bin
-	$(OBJDMP) $(ODFLAGS) main.elf > main.dmp
-	ls -l main.elf main.bin
 
-main.elf: $(OBJECTS) $(LDSCRIPT)
-	@ echo "...linking"
-	$(LD) $(LFLAGS) -o main.elf $(OBJECTS)
+OBJ = $(SRC:.c=.o)
 
-crt.o: crt.s	# startup scripts for microcontroller
-	$(AS) $(AFLAGS) crt.s -o crt.o > crt.lst
 
-main.o: main.c init.o lcd.o config.h
-	$(CC) $(CFLAGS) main.c
-	
-init.o: init.c init.h config.h
-	$(CC) $(CFLAGS) init.c
-	
-lcd.o: lcd.c lcd.h config.h
-	$(CC) $(CFLAGS) lcd.c
+#busart0_loop1.lst: busart0_loop1.c config.h target.h
+#	$(CC) -c  $(CFLAGS) -mthumb $< -o /dev/null  -Wa,-adhlns=$@
 
-timers.o: timers.c timers.h config.h
-	$(CC) $(CFLAGS) timers.c
-	
+
+%.o: %.c Makefile
+	$(CC) -c $(CFLAGS) $< -o $@
+
+# Automatically generate C source code dependencies.
+%.d: %.c
+	set -e; $(CC) -MM $(CFLAGS) $< \
+	| sed 's,\(.*\)\.o[ :]*,\1.o \1.d : ,g' > $@; \
+	[ -s $@ ] || rm -f $@
+
+# Include the dependency files.
+-include $(SRC:.c=.d)
+
+
+# This cannot be compiled in thumb mode.
+crt0.o: crt0.c config.h target.h
+	$(CC) -c $(CFLAGS) -O2 $< -o $@
+
+
+# Link object files to form output file.
+busart0_loop1.out: $(OBJ) crt0.o
+	$(CC) $^ $(LDFLAGS) -o $@ -lm
+	$(SIZE) $@
+
+
+# Convert output file to binary image file.
+%.bin: %.out
+	$(OBJCOPY) --output-target=binary $^ $@
+
+
+# Remove non-source files.
+.PHONY: clean
+clean: 
+	$(DEL) *.o *.out *.hex *.bin *.elf *.d
+
