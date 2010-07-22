@@ -1,0 +1,340 @@
+\hypertarget{ads7870_8c}{
+\section{ads7870.c File Reference}
+\label{ads7870_8c}\index{ads7870.c@{ads7870.c}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi\_\-adc.h\char`\"{}}\par
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b8c39adc9d8cfd43dd89023d09bbd64d2}{ADS7870\_\-CONVERT} =  0x80, 
+\hyperlink{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b4f3e0a7b7a1db7af94900fcb1bb5b9f1}{ADS7870\_\-REG\_\-READ} =  0x40, 
+\hyperlink{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b2bdff20320ea4514a9c349b798ae9b48}{ADS7870\_\-REG\_\-WRITE} =  0x00, 
+\hyperlink{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b4b87d98e41b0210c73e54a172427bb9c}{ADS7870\_\-REG\_\-16BIT} =  0x20
+ \}
+\item 
+enum \hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4}{ads7870\_\-register\_\-t} \{ \par
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4f2c6215511dc84aae9de67fb3ed44e5c}{ADS7870\_\-RESULTLO}, 
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4d1215b94a075bd419ce4fe91dd58d98d}{ADS7870\_\-RESULTHI}, 
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e44582ebc5b5cb633f125c7705fe896428}{ADS7870\_\-PGAVALID}, 
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4595fac75588109df6804cf905333d55e}{ADS7870\_\-ADCTRL}, 
+\par
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e435aee5c65af15823578361a09a92aa7a}{ADS7870\_\-GAINMUX}, 
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4f13d330ed7657997fa8f16e41c6263f3}{ADS7870\_\-DIGIOSTATE}, 
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4a4ec1c46b5b317d943058681985fc55f}{ADS7870\_\-DIGIOCTRL}, 
+\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4073225335805d2e0362d5cf6c5ac2bc8}{ADS7870\_\-REFOSC}
+ \}
+\item 
+enum \hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3}{ads7870\_\-pga\_\-gain\_\-t} \{ \par
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3e8065e14f1819067931b831741fe7fa1}{ADS7870\_\-PGA\_\-GAIN\_\-1} =  0, 
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3a0970b3227ca7e70bdc7276f424a5649}{ADS7870\_\-PGA\_\-GAIN\_\-2} =  1, 
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3a9e0b9b060196f6c88409239dd5e54d3}{ADS7870\_\-PGA\_\-GAIN\_\-4} =  2, 
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb385ed5a94bf1ad756d05adac94d3364db}{ADS7870\_\-PGA\_\-GAIN\_\-5} =  3, 
+\par
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3d972f35ea73570f7113dc5533a377a0a}{ADS7870\_\-PGA\_\-GAIN\_\-8} =  4, 
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb31adbb86a4fc889e162293b98c837f831}{ADS7870\_\-PGA\_\-GAIN\_\-10} =  5, 
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb325707951401cc0c4e6d750946fd97d2c}{ADS7870\_\-PGA\_\-GAIN\_\-16} =  6, 
+\hyperlink{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3fc2f487b92f6ec27a61f5bcb5270d722}{ADS7870\_\-PGA\_\-GAIN\_\-20} =  7
+ \}
+\item 
+enum \{ \par
+\hyperlink{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7bea9d6d10d2c357c2d901b8f3e691aab}{ADS7870\_\-REFOSC\_\-OSCR} =  BIT (5), 
+\hyperlink{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7cf8f08b167fc247789371ca016d59e9a}{ADS7870\_\-REFOSC\_\-OSCE} =  BIT (4), 
+\hyperlink{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b776d52deed23677798bf528362a88bd2e}{ADS7870\_\-REFOSC\_\-REFE} =  BIT (3), 
+\hyperlink{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7a096c88b92c787da8317233d98400bcb}{ADS7870\_\-REFOSC\_\-BUFE} =  BIT (2), 
+\par
+\hyperlink{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7510b0cc07cf845bf0e499e4fc72eaa03}{ADS7870\_\-REFOSC\_\-R2V} =  BIT (1), 
+\hyperlink{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7148036369411bcb67bcf9ee57b04d234}{ADS7870\_\-REFOSC\_\-RBE} =  BIT (0)
+ \}
+\item 
+enum \{ \hyperlink{ads7870_8c_99fb83031ce9923c84392b4e92f956b50655f3e52d953062ef6aa3dadc55e7a5}{ADS7870\_\-GAINMUX\_\-CNVBSY} =  BIT (7)
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{ads7870_8c_e0ca880f082522f59cbc075952ebb330}{ads7870\_\-chip\_\-select} (void)
+\item 
+static void \hyperlink{ads7870_8c_29c147df11be533cccfdadad75c38163}{ads7870\_\-chip\_\-deselect} (void)
+\item 
+static void \hyperlink{ads7870_8c_a88082fefd06ddf57df00aa7e755396b}{ads7870\_\-reg\_\-write} (\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4}{ads7870\_\-register\_\-t} reg, uint8\_\-t val)
+\item 
+static uint8\_\-t \hyperlink{ads7870_8c_ffc59782d006a10d08b2bd101fb5fa2c}{ads7870\_\-reg\_\-read} (\hyperlink{ads7870_8c_fec146560c5a83784ca67b87da7350e4}{ads7870\_\-register\_\-t} reg)
+\item 
+int16\_\-t \hyperlink{ads7870_8c_7e5252df61bc863b59ad59de5da70d1e}{ads7870\_\-read} (void)
+\item 
+static int8\_\-t \hyperlink{ads7870_8c_2efe6bdc7b0fea2b8512ffc2fcdd5b75}{ads7870\_\-read\_\-ready\_\-p} (void)
+\item 
+void \hyperlink{ads7870_8c_b22bd28dc4bae1c3f71fac045db0ad8d}{ads7870\_\-channel\_\-start} (uint8\_\-t channel, \hyperlink{spi__adc_8h_e230b089e0aa9be5c9910a73d8209faf}{spi\_\-adc\_\-mode\_\-t} mode)
+\item 
+int16\_\-t \hyperlink{ads7870_8c_b98b0b04bea5bde893b2dc15c08e6d52}{ads7870\_\-channel\_\-convert} (uint8\_\-t channel, \hyperlink{spi__adc_8h_e230b089e0aa9be5c9910a73d8209faf}{spi\_\-adc\_\-mode\_\-t} mode)
+\item 
+void \hyperlink{ads7870_8c_58f4e52899f87fb4f8bf7fc56e930c12}{ads7870\_\-init} (void)
+\end{CompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ADS7870\_\-CONVERT@{ADS7870\_\-CONVERT}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-CONVERT@{ADS7870\_\-CONVERT}}\item[{\em 
+\hypertarget{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b8c39adc9d8cfd43dd89023d09bbd64d2}{
+ADS7870\_\-CONVERT}
+\label{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b8c39adc9d8cfd43dd89023d09bbd64d2}
+}]\index{ADS7870\_\-REG\_\-READ@{ADS7870\_\-REG\_\-READ}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REG\_\-READ@{ADS7870\_\-REG\_\-READ}}\item[{\em 
+\hypertarget{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b4f3e0a7b7a1db7af94900fcb1bb5b9f1}{
+ADS7870\_\-REG\_\-READ}
+\label{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b4f3e0a7b7a1db7af94900fcb1bb5b9f1}
+}]\index{ADS7870\_\-REG\_\-WRITE@{ADS7870\_\-REG\_\-WRITE}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REG\_\-WRITE@{ADS7870\_\-REG\_\-WRITE}}\item[{\em 
+\hypertarget{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b2bdff20320ea4514a9c349b798ae9b48}{
+ADS7870\_\-REG\_\-WRITE}
+\label{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b2bdff20320ea4514a9c349b798ae9b48}
+}]\index{ADS7870\_\-REG\_\-16BIT@{ADS7870\_\-REG\_\-16BIT}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REG\_\-16BIT@{ADS7870\_\-REG\_\-16BIT}}\item[{\em 
+\hypertarget{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b4b87d98e41b0210c73e54a172427bb9c}{
+ADS7870\_\-REG\_\-16BIT}
+\label{ads7870_8c_06fc87d81c62e9abb8790b6e5713c55b4b87d98e41b0210c73e54a172427bb9c}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ADS7870\_\-REFOSC\_\-OSCR@{ADS7870\_\-REFOSC\_\-OSCR}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC\_\-OSCR@{ADS7870\_\-REFOSC\_\-OSCR}}\item[{\em 
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7bea9d6d10d2c357c2d901b8f3e691aab}{
+ADS7870\_\-REFOSC\_\-OSCR}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7bea9d6d10d2c357c2d901b8f3e691aab}
+}]\index{ADS7870\_\-REFOSC\_\-OSCE@{ADS7870\_\-REFOSC\_\-OSCE}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC\_\-OSCE@{ADS7870\_\-REFOSC\_\-OSCE}}\item[{\em 
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7cf8f08b167fc247789371ca016d59e9a}{
+ADS7870\_\-REFOSC\_\-OSCE}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7cf8f08b167fc247789371ca016d59e9a}
+}]\index{ADS7870\_\-REFOSC\_\-REFE@{ADS7870\_\-REFOSC\_\-REFE}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC\_\-REFE@{ADS7870\_\-REFOSC\_\-REFE}}\item[{\em 
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b776d52deed23677798bf528362a88bd2e}{
+ADS7870\_\-REFOSC\_\-REFE}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b776d52deed23677798bf528362a88bd2e}
+}]\index{ADS7870\_\-REFOSC\_\-BUFE@{ADS7870\_\-REFOSC\_\-BUFE}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC\_\-BUFE@{ADS7870\_\-REFOSC\_\-BUFE}}\item[{\em 
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7a096c88b92c787da8317233d98400bcb}{
+ADS7870\_\-REFOSC\_\-BUFE}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7a096c88b92c787da8317233d98400bcb}
+}]\index{ADS7870\_\-REFOSC\_\-R2V@{ADS7870\_\-REFOSC\_\-R2V}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC\_\-R2V@{ADS7870\_\-REFOSC\_\-R2V}}\item[{\em 
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7510b0cc07cf845bf0e499e4fc72eaa03}{
+ADS7870\_\-REFOSC\_\-R2V}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7510b0cc07cf845bf0e499e4fc72eaa03}
+}]\index{ADS7870\_\-REFOSC\_\-RBE@{ADS7870\_\-REFOSC\_\-RBE}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC\_\-RBE@{ADS7870\_\-REFOSC\_\-RBE}}\item[{\em 
+\hypertarget{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7148036369411bcb67bcf9ee57b04d234}{
+ADS7870\_\-REFOSC\_\-RBE}
+\label{ads7870_8c_df764cbdea00d65edcd07bb9953ad2b7148036369411bcb67bcf9ee57b04d234}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ads7870_8c_99fb83031ce9923c84392b4e92f956b5}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ads7870_8c_99fb83031ce9923c84392b4e92f956b5}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ADS7870\_\-GAINMUX\_\-CNVBSY@{ADS7870\_\-GAINMUX\_\-CNVBSY}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-GAINMUX\_\-CNVBSY@{ADS7870\_\-GAINMUX\_\-CNVBSY}}\item[{\em 
+\hypertarget{ads7870_8c_99fb83031ce9923c84392b4e92f956b50655f3e52d953062ef6aa3dadc55e7a5}{
+ADS7870\_\-GAINMUX\_\-CNVBSY}
+\label{ads7870_8c_99fb83031ce9923c84392b4e92f956b50655f3e52d953062ef6aa3dadc55e7a5}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-pga\_\-gain\_\-t@{ads7870\_\-pga\_\-gain\_\-t}}
+\index{ads7870\_\-pga\_\-gain\_\-t@{ads7870\_\-pga\_\-gain\_\-t}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ads7870\_\-pga\_\-gain\_\-t}}}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ADS7870\_\-PGA\_\-GAIN\_\-1@{ADS7870\_\-PGA\_\-GAIN\_\-1}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-1@{ADS7870\_\-PGA\_\-GAIN\_\-1}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3e8065e14f1819067931b831741fe7fa1}{
+ADS7870\_\-PGA\_\-GAIN\_\-1}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3e8065e14f1819067931b831741fe7fa1}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-2@{ADS7870\_\-PGA\_\-GAIN\_\-2}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-2@{ADS7870\_\-PGA\_\-GAIN\_\-2}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3a0970b3227ca7e70bdc7276f424a5649}{
+ADS7870\_\-PGA\_\-GAIN\_\-2}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3a0970b3227ca7e70bdc7276f424a5649}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-4@{ADS7870\_\-PGA\_\-GAIN\_\-4}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-4@{ADS7870\_\-PGA\_\-GAIN\_\-4}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3a9e0b9b060196f6c88409239dd5e54d3}{
+ADS7870\_\-PGA\_\-GAIN\_\-4}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3a9e0b9b060196f6c88409239dd5e54d3}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-5@{ADS7870\_\-PGA\_\-GAIN\_\-5}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-5@{ADS7870\_\-PGA\_\-GAIN\_\-5}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb385ed5a94bf1ad756d05adac94d3364db}{
+ADS7870\_\-PGA\_\-GAIN\_\-5}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb385ed5a94bf1ad756d05adac94d3364db}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-8@{ADS7870\_\-PGA\_\-GAIN\_\-8}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-8@{ADS7870\_\-PGA\_\-GAIN\_\-8}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3d972f35ea73570f7113dc5533a377a0a}{
+ADS7870\_\-PGA\_\-GAIN\_\-8}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3d972f35ea73570f7113dc5533a377a0a}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-10@{ADS7870\_\-PGA\_\-GAIN\_\-10}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-10@{ADS7870\_\-PGA\_\-GAIN\_\-10}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb31adbb86a4fc889e162293b98c837f831}{
+ADS7870\_\-PGA\_\-GAIN\_\-10}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb31adbb86a4fc889e162293b98c837f831}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-16@{ADS7870\_\-PGA\_\-GAIN\_\-16}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-16@{ADS7870\_\-PGA\_\-GAIN\_\-16}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb325707951401cc0c4e6d750946fd97d2c}{
+ADS7870\_\-PGA\_\-GAIN\_\-16}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb325707951401cc0c4e6d750946fd97d2c}
+}]\index{ADS7870\_\-PGA\_\-GAIN\_\-20@{ADS7870\_\-PGA\_\-GAIN\_\-20}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGA\_\-GAIN\_\-20@{ADS7870\_\-PGA\_\-GAIN\_\-20}}\item[{\em 
+\hypertarget{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3fc2f487b92f6ec27a61f5bcb5270d722}{
+ADS7870\_\-PGA\_\-GAIN\_\-20}
+\label{ads7870_8c_eb01bc5225d98eec54c0b292353d9bb3fc2f487b92f6ec27a61f5bcb5270d722}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-register\_\-t@{ads7870\_\-register\_\-t}}
+\index{ads7870\_\-register\_\-t@{ads7870\_\-register\_\-t}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ads7870\_\-register\_\-t}}}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ADS7870\_\-RESULTLO@{ADS7870\_\-RESULTLO}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-RESULTLO@{ADS7870\_\-RESULTLO}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4f2c6215511dc84aae9de67fb3ed44e5c}{
+ADS7870\_\-RESULTLO}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4f2c6215511dc84aae9de67fb3ed44e5c}
+}]\index{ADS7870\_\-RESULTHI@{ADS7870\_\-RESULTHI}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-RESULTHI@{ADS7870\_\-RESULTHI}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4d1215b94a075bd419ce4fe91dd58d98d}{
+ADS7870\_\-RESULTHI}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4d1215b94a075bd419ce4fe91dd58d98d}
+}]\index{ADS7870\_\-PGAVALID@{ADS7870\_\-PGAVALID}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-PGAVALID@{ADS7870\_\-PGAVALID}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e44582ebc5b5cb633f125c7705fe896428}{
+ADS7870\_\-PGAVALID}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e44582ebc5b5cb633f125c7705fe896428}
+}]\index{ADS7870\_\-ADCTRL@{ADS7870\_\-ADCTRL}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-ADCTRL@{ADS7870\_\-ADCTRL}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4595fac75588109df6804cf905333d55e}{
+ADS7870\_\-ADCTRL}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4595fac75588109df6804cf905333d55e}
+}]\index{ADS7870\_\-GAINMUX@{ADS7870\_\-GAINMUX}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-GAINMUX@{ADS7870\_\-GAINMUX}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e435aee5c65af15823578361a09a92aa7a}{
+ADS7870\_\-GAINMUX}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e435aee5c65af15823578361a09a92aa7a}
+}]\index{ADS7870\_\-DIGIOSTATE@{ADS7870\_\-DIGIOSTATE}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-DIGIOSTATE@{ADS7870\_\-DIGIOSTATE}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4f13d330ed7657997fa8f16e41c6263f3}{
+ADS7870\_\-DIGIOSTATE}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4f13d330ed7657997fa8f16e41c6263f3}
+}]\index{ADS7870\_\-DIGIOCTRL@{ADS7870\_\-DIGIOCTRL}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-DIGIOCTRL@{ADS7870\_\-DIGIOCTRL}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4a4ec1c46b5b317d943058681985fc55f}{
+ADS7870\_\-DIGIOCTRL}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4a4ec1c46b5b317d943058681985fc55f}
+}]\index{ADS7870\_\-REFOSC@{ADS7870\_\-REFOSC}!ads7870.c@{ads7870.c}}\index{ads7870.c@{ads7870.c}!ADS7870\_\-REFOSC@{ADS7870\_\-REFOSC}}\item[{\em 
+\hypertarget{ads7870_8c_fec146560c5a83784ca67b87da7350e4073225335805d2e0362d5cf6c5ac2bc8}{
+ADS7870\_\-REFOSC}
+\label{ads7870_8c_fec146560c5a83784ca67b87da7350e4073225335805d2e0362d5cf6c5ac2bc8}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ads7870_8c_b98b0b04bea5bde893b2dc15c08e6d52}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-channel\_\-convert@{ads7870\_\-channel\_\-convert}}
+\index{ads7870\_\-channel\_\-convert@{ads7870\_\-channel\_\-convert}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads7870\_\-channel\_\-convert (uint8\_\-t {\em channel}, \/  {\bf spi\_\-adc\_\-mode\_\-t} {\em mode})}}
+\label{ads7870_8c_b98b0b04bea5bde893b2dc15c08e6d52}
+
+
+
+
+References ads7870\_\-channel\_\-start(), ads7870\_\-read(), and ads7870\_\-read\_\-ready\_\-p().\hypertarget{ads7870_8c_b22bd28dc4bae1c3f71fac045db0ad8d}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-channel\_\-start@{ads7870\_\-channel\_\-start}}
+\index{ads7870\_\-channel\_\-start@{ads7870\_\-channel\_\-start}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ads7870\_\-channel\_\-start (uint8\_\-t {\em channel}, \/  {\bf spi\_\-adc\_\-mode\_\-t} {\em mode})}}
+\label{ads7870_8c_b22bd28dc4bae1c3f71fac045db0ad8d}
+
+
+
+
+References ads7870\_\-chip\_\-select(), ADS7870\_\-CONVERT, SPI\_\-ADC\_\-MODE\_\-DIFFERENTIAL, SPI\_\-ADC\_\-MODE\_\-DIFFERENTIAL\_\-INVERTED, and SPI\_\-ADC\_\-MODE\_\-SINGLE\_\-ENDED.
+
+Referenced by ads7870\_\-channel\_\-convert().\hypertarget{ads7870_8c_29c147df11be533cccfdadad75c38163}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-chip\_\-deselect@{ads7870\_\-chip\_\-deselect}}
+\index{ads7870\_\-chip\_\-deselect@{ads7870\_\-chip\_\-deselect}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads7870\_\-chip\_\-deselect (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads7870_8c_29c147df11be533cccfdadad75c38163}
+
+
+
+
+Referenced by ads7870\_\-read(), ads7870\_\-reg\_\-read(), and ads7870\_\-reg\_\-write().\hypertarget{ads7870_8c_e0ca880f082522f59cbc075952ebb330}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-chip\_\-select@{ads7870\_\-chip\_\-select}}
+\index{ads7870\_\-chip\_\-select@{ads7870\_\-chip\_\-select}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads7870\_\-chip\_\-select (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads7870_8c_e0ca880f082522f59cbc075952ebb330}
+
+
+
+
+Referenced by ads7870\_\-channel\_\-start(), ads7870\_\-read(), ads7870\_\-reg\_\-read(), and ads7870\_\-reg\_\-write().\hypertarget{ads7870_8c_58f4e52899f87fb4f8bf7fc56e930c12}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-init@{ads7870\_\-init}}
+\index{ads7870\_\-init@{ads7870\_\-init}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ads7870\_\-init (void)}}
+\label{ads7870_8c_58f4e52899f87fb4f8bf7fc56e930c12}
+
+
+
+
+References ADS7870\_\-REFOSC, ADS7870\_\-REFOSC\_\-BUFE, ADS7870\_\-REFOSC\_\-OSCE, ADS7870\_\-REFOSC\_\-REFE, and ads7870\_\-reg\_\-write().\hypertarget{ads7870_8c_7e5252df61bc863b59ad59de5da70d1e}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-read@{ads7870\_\-read}}
+\index{ads7870\_\-read@{ads7870\_\-read}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads7870\_\-read (void)}}
+\label{ads7870_8c_7e5252df61bc863b59ad59de5da70d1e}
+
+
+
+
+References ads7870\_\-chip\_\-deselect(), ads7870\_\-chip\_\-select(), ADS7870\_\-REG\_\-16BIT, ADS7870\_\-REG\_\-READ, and ADS7870\_\-RESULTHI.
+
+Referenced by ads7870\_\-channel\_\-convert().\hypertarget{ads7870_8c_2efe6bdc7b0fea2b8512ffc2fcdd5b75}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-read\_\-ready\_\-p@{ads7870\_\-read\_\-ready\_\-p}}
+\index{ads7870\_\-read\_\-ready\_\-p@{ads7870\_\-read\_\-ready\_\-p}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static int8\_\-t ads7870\_\-read\_\-ready\_\-p (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads7870_8c_2efe6bdc7b0fea2b8512ffc2fcdd5b75}
+
+
+
+
+References ADS7870\_\-GAINMUX, ADS7870\_\-GAINMUX\_\-CNVBSY, and ads7870\_\-reg\_\-read().
+
+Referenced by ads7870\_\-channel\_\-convert().\hypertarget{ads7870_8c_ffc59782d006a10d08b2bd101fb5fa2c}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-reg\_\-read@{ads7870\_\-reg\_\-read}}
+\index{ads7870\_\-reg\_\-read@{ads7870\_\-reg\_\-read}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static uint8\_\-t ads7870\_\-reg\_\-read ({\bf ads7870\_\-register\_\-t} {\em reg})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads7870_8c_ffc59782d006a10d08b2bd101fb5fa2c}
+
+
+
+
+References ads7870\_\-chip\_\-deselect(), ads7870\_\-chip\_\-select(), and ADS7870\_\-REG\_\-READ.
+
+Referenced by ads7870\_\-read\_\-ready\_\-p().\hypertarget{ads7870_8c_a88082fefd06ddf57df00aa7e755396b}{
+\index{ads7870.c@{ads7870.c}!ads7870\_\-reg\_\-write@{ads7870\_\-reg\_\-write}}
+\index{ads7870\_\-reg\_\-write@{ads7870\_\-reg\_\-write}!ads7870.c@{ads7870.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads7870\_\-reg\_\-write ({\bf ads7870\_\-register\_\-t} {\em reg}, \/  uint8\_\-t {\em val})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads7870_8c_a88082fefd06ddf57df00aa7e755396b}
+
+
+
+
+References ads7870\_\-chip\_\-deselect(), ads7870\_\-chip\_\-select(), and ADS7870\_\-REG\_\-WRITE.
+
+Referenced by ads7870\_\-init().

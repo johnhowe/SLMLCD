@@ -1,0 +1,605 @@
+\hypertarget{spi_8c}{
+\section{spi.c File Reference}
+\label{spi_8c}\index{spi.c@{spi.c}}
+}
+Routines for interfacing to the SPI bus. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+{\tt \#include \char`\"{}bits.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{spi_8c_4c7fef61af80f2457346b47adf07d610}{SPI\_\-CHANNEL\_\-DEFAULT}~SPI\_\-CHANNEL0
+\item 
+\#define \hyperlink{spi_8c_649d27756aacaf9e5c612a20468cb186}{HOSTED}~0
+\item 
+\#define \hyperlink{spi_8c_116ceac57f8d813980c8187ec7278489}{SPI\_\-XFER}(txdata, rxdata)
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{spi_8c_bc6126af1d45847bc59afa0aa3216b0407b24b88f68a6d935094a663df199c49}{SPI\_\-NCPHA\_\-MASK} =  0x02, 
+\hyperlink{spi_8c_bc6126af1d45847bc59afa0aa3216b04033ca1a288d38115d5a0b92b6b28a928}{SPI\_\-CPOL\_\-MASK} =  0x01
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static uint32\_\-t \hyperlink{spi_8c_3fe674c03d7e8a619219e01b5911bf71}{spi\_\-channel\_\-csr\_\-get} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel)
+\item 
+static void \hyperlink{spi_8c_c132b0765e21cdb7ef9e2f2673a24605}{spi\_\-channel\_\-csr\_\-set} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel, uint32\_\-t csr)
+\item 
+static void \hyperlink{spi_8c_d972903b42e204ede47d7a0f11c72549}{spi\_\-channel\_\-delay\_\-set} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel, uint16\_\-t delay)
+\item 
+static void \hyperlink{spi_8c_49128b544f894f36da4f0b760934dcb1}{spi\_\-channel\_\-clock\_\-delay\_\-set} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel, uint16\_\-t delay)
+\item 
+static void \hyperlink{spi_8c_0fe1a08c2b9265b7319d3aa89457dd9c}{spi\_\-channel\_\-divisor\_\-set} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel, \hyperlink{spi_8h_c57b56a26da0f94bf544f07ce75e2731}{spi\_\-clock\_\-divisor\_\-t} clock\_\-divisor)
+\item 
+static void \hyperlink{spi_8c_1c4b0072d32ba769cd66f7c2cb2efc70}{spi\_\-channel\_\-bits\_\-set} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel, uint8\_\-t bits)
+\item 
+static void \hyperlink{spi_8c_fa90397af8fad7df7a8babd5f07b2af4}{spi\_\-channel\_\-mode\_\-set} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel, \hyperlink{spi_8h_c4b206a51636d91c5cffcbcee458c3cb}{spi\_\-mode\_\-t} mode)
+\item 
+static bool \hyperlink{spi_8c_980c4767bb49f62139177737cead5484}{spi\_\-channel\_\-cs\_\-enable} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel)
+\item 
+static bool \hyperlink{spi_8c_8f8764899c428470df45fec1dbb1d0cb}{spi\_\-channel\_\-cs\_\-disable} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel)
+\item 
+void \hyperlink{spi_8c_c7c7e47e22cc8ba5a282bbbad5456aab}{spi\_\-delay\_\-set} (uint16\_\-t clock\_\-divisor)
+\item 
+void \hyperlink{spi_8c_b4d3d2108521da82545f26928da8e819}{spi\_\-divisor\_\-set} (\hyperlink{spi_8h_c57b56a26da0f94bf544f07ce75e2731}{spi\_\-clock\_\-divisor\_\-t} clock\_\-divisor)
+\item 
+void \hyperlink{spi_8c_17e8d8fd2735419e2bc65ec153a39efa}{spi\_\-clock\_\-delay\_\-set} (uint16\_\-t delay)
+\item 
+static void \hyperlink{spi_8c_93a62a009a2cf6de3be0c17769d64f05}{spi\_\-csr\_\-set} (uint32\_\-t csr)
+\item 
+static uint32\_\-t \hyperlink{spi_8c_c2d89e414a5d064417ff35b3e31951d4}{spi\_\-csr\_\-get} (void)
+\item 
+void \hyperlink{spi_8c_5285cd6224ebf13ed1df81dc4f0f5b90}{spi\_\-bits\_\-set} (uint8\_\-t bits)
+\item 
+void \hyperlink{spi_8c_69c55186ef6afe1986998d7656f4a711}{spi\_\-reset} (void)
+\item 
+void \hyperlink{spi_8c_72cf41d2f19954fefd27f681d6b39532}{spi\_\-enable} (void)
+\item 
+void \hyperlink{spi_8c_a8d2d6d1632faf9abbe03c3ed90d54d4}{spi\_\-disable} (void)
+\item 
+void \hyperlink{spi_8c_41be36fa418657e43b4c894dc1844efe}{spi\_\-mode\_\-set} (\hyperlink{spi_8h_c4b206a51636d91c5cffcbcee458c3cb}{spi\_\-mode\_\-t} mode)
+\item 
+void \hyperlink{spi_8c_2676e03d3ba0c50dd5ea398ca067a238}{spi\_\-multichannel\_\-select} (void)
+\item 
+void \hyperlink{spi_8c_fb00c90fc4cd95acf3ff586fbf208740}{spi\_\-multichannel\_\-deselect} (void)
+\item 
+void \hyperlink{spi_8c_805ab3e2efbe9bd6992fbdb87dbb61dd}{spi\_\-channel\_\-select} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel)
+\item 
+void \hyperlink{spi_8c_c784326add0b0259439d888fe37a96b0}{spi\_\-channel\_\-deselect} (\hyperlink{spi_8h_7afa6d1cb2d865072da8ece3e3e1fc0e}{spi\_\-channel\_\-t} channel \_\-\_\-UNUSED\_\-\_\-)
+\item 
+bool \hyperlink{spi_8c_8f6bbcf7a252d3e35cb993836b122257}{spi\_\-cs\_\-enable} (void)
+\item 
+bool \hyperlink{spi_8c_40cb631262c9ad769f1953ea7c09a065}{spi\_\-cs\_\-disable} (void)
+\item 
+void \hyperlink{spi_8c_e909944aa85ae98323073c628be541aa}{spi\_\-init} (void)
+\item 
+void \hyperlink{spi_8c_5b69fa29433dea2b612a9d0bdedb3dd0}{spi\_\-shutdown} (void)
+\item 
+bool \hyperlink{spi_8c_8a9ac2da9a32737d3209ff42451ab134}{spi\_\-read\_\-ready\_\-p} (void)
+\item 
+uint8\_\-t \hyperlink{spi_8c_dd760b5484c2e63c5fb18517c99ac4e2}{spi\_\-getc} (void)
+\item 
+bool \hyperlink{spi_8c_d07252a3fc56d2efddf3b7597a2b5f6e}{spi\_\-write\_\-ready\_\-p} (void)
+\item 
+void \hyperlink{spi_8c_f07e7fc5a05ce6aa13275caf3e1a1ee6}{spi\_\-putc} (char ch)
+\item 
+uint8\_\-t \hyperlink{spi_8c_844a8623de7b53c3c0cb559783bed830}{spi\_\-xferc} (char ch)
+\item 
+void \hyperlink{spi_8c_f31efda768fd81e3ef9da9efa18fe859}{spi\_\-puts} (const char $\ast$str)
+\item 
+uint16\_\-t \hyperlink{spi_8c_e093d8ac4ca3e2e63f41fe422f47d2c3}{spi\_\-get16} (void)
+\item 
+void \hyperlink{spi_8c_fce17b768e5cbdb24976c312486c9c26}{spi\_\-put16} (uint16\_\-t data)
+\item 
+uint16\_\-t \hyperlink{spi_8c_72cdbc85f9ba17c3a73f8f6164a8b93e}{spi\_\-xfer16} (uint16\_\-t data)
+\item 
+uint32\_\-t \hyperlink{spi_8c_16dc3308078400d68d1c6284b7eb4cbe}{spi\_\-get32} (void)
+\item 
+void \hyperlink{spi_8c_6e53bcb9e39a97319386a840af12a9a7}{spi\_\-put32} (uint32\_\-t data)
+\item 
+uint32\_\-t \hyperlink{spi_8c_75719e8aa02797b6a9ad559b5fe8d715}{spi\_\-xfer32} (uint32\_\-t data)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static uint8\_\-t \hyperlink{spi_8c_23ea59840061c42b17947883a2f5d382}{spi\_\-channel} = SPI\_\-CHANNEL\_\-DEFAULT
+\item 
+static uint8\_\-t \hyperlink{spi_8c_73672256c06314c9f65cf3655ae52879}{spi\_\-init\_\-count} = 0
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Routines for interfacing to the SPI bus. 
+
+\begin{Desc}
+\item[Author:]Michael Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]30 July 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{spi_8c_649d27756aacaf9e5c612a20468cb186}{
+\index{spi.c@{spi.c}!HOSTED@{HOSTED}}
+\index{HOSTED@{HOSTED}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HOSTED~0}}
+\label{spi_8c_649d27756aacaf9e5c612a20468cb186}
+
+
+\hypertarget{spi_8c_4c7fef61af80f2457346b47adf07d610}{
+\index{spi.c@{spi.c}!SPI\_\-CHANNEL\_\-DEFAULT@{SPI\_\-CHANNEL\_\-DEFAULT}}
+\index{SPI\_\-CHANNEL\_\-DEFAULT@{SPI\_\-CHANNEL\_\-DEFAULT}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SPI\_\-CHANNEL\_\-DEFAULT~SPI\_\-CHANNEL0}}
+\label{spi_8c_4c7fef61af80f2457346b47adf07d610}
+
+
+
+
+Referenced by spi\_\-channel\_\-deselect(), spi\_\-init(), and spi\_\-multichannel\_\-deselect().\hypertarget{spi_8c_116ceac57f8d813980c8187ec7278489}{
+\index{spi.c@{spi.c}!SPI\_\-XFER@{SPI\_\-XFER}}
+\index{SPI\_\-XFER@{SPI\_\-XFER}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SPI\_\-XFER(txdata, \/  rxdata)}}
+\label{spi_8c_116ceac57f8d813980c8187ec7278489}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}do                                                                  \
+    {                                                                   \
+        AT91S_SPI *pSPI = AT91C_BASE_SPI;                               \
+                                                                        \
+        /* Write data to TDR.  */                                       \
+        pSPI->SPI_TDR = (txdata);                                       \
+                                                                        \
+        /* Wait until spi port finishes transmitting/receiving.  */     \
+        while (!SPI_READY_P())                                          \
+            continue;                                                   \
+                                                                        \
+        /* Read new data from RDR (this clears RDRF).  */               \
+        (rxdata) = pSPI->SPI_RDR;                                       \
+                                                                        \
+    } while (0)
+\end{verbatim}
+\end{Code}
+
+
+Referenced by spi\_\-get16(), spi\_\-get32(), spi\_\-getc(), spi\_\-put16(), spi\_\-put32(), spi\_\-putc(), spi\_\-puts(), spi\_\-xfer16(), spi\_\-xfer32(), and spi\_\-xferc().
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{spi_8c_bc6126af1d45847bc59afa0aa3216b04}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{spi_8c_bc6126af1d45847bc59afa0aa3216b04}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SPI\_\-NCPHA\_\-MASK@{SPI\_\-NCPHA\_\-MASK}!spi.c@{spi.c}}\index{spi.c@{spi.c}!SPI\_\-NCPHA\_\-MASK@{SPI\_\-NCPHA\_\-MASK}}\item[{\em 
+\hypertarget{spi_8c_bc6126af1d45847bc59afa0aa3216b0407b24b88f68a6d935094a663df199c49}{
+SPI\_\-NCPHA\_\-MASK}
+\label{spi_8c_bc6126af1d45847bc59afa0aa3216b0407b24b88f68a6d935094a663df199c49}
+}]\index{SPI\_\-CPOL\_\-MASK@{SPI\_\-CPOL\_\-MASK}!spi.c@{spi.c}}\index{spi.c@{spi.c}!SPI\_\-CPOL\_\-MASK@{SPI\_\-CPOL\_\-MASK}}\item[{\em 
+\hypertarget{spi_8c_bc6126af1d45847bc59afa0aa3216b04033ca1a288d38115d5a0b92b6b28a928}{
+SPI\_\-CPOL\_\-MASK}
+\label{spi_8c_bc6126af1d45847bc59afa0aa3216b04033ca1a288d38115d5a0b92b6b28a928}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{spi_8c_5285cd6224ebf13ed1df81dc4f0f5b90}{
+\index{spi.c@{spi.c}!spi\_\-bits\_\-set@{spi\_\-bits\_\-set}}
+\index{spi\_\-bits\_\-set@{spi\_\-bits\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-bits\_\-set (uint8\_\-t {\em bits})}}
+\label{spi_8c_5285cd6224ebf13ed1df81dc4f0f5b90}
+
+
+
+
+References spi\_\-channel, and spi\_\-channel\_\-bits\_\-set().
+
+Referenced by spi\_\-init().\hypertarget{spi_8c_1c4b0072d32ba769cd66f7c2cb2efc70}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-bits\_\-set@{spi\_\-channel\_\-bits\_\-set}}
+\index{spi\_\-channel\_\-bits\_\-set@{spi\_\-channel\_\-bits\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-channel\_\-bits\_\-set ({\bf spi\_\-channel\_\-t} {\em channel}, \/  uint8\_\-t {\em bits})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_1c4b0072d32ba769cd66f7c2cb2efc70}
+
+
+
+
+References BITS\_\-INSERT, spi\_\-channel\_\-csr\_\-get(), and spi\_\-channel\_\-csr\_\-set().
+
+Referenced by spi\_\-bits\_\-set().\hypertarget{spi_8c_49128b544f894f36da4f0b760934dcb1}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-clock\_\-delay\_\-set@{spi\_\-channel\_\-clock\_\-delay\_\-set}}
+\index{spi\_\-channel\_\-clock\_\-delay\_\-set@{spi\_\-channel\_\-clock\_\-delay\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-channel\_\-clock\_\-delay\_\-set ({\bf spi\_\-channel\_\-t} {\em channel}, \/  uint16\_\-t {\em delay})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_49128b544f894f36da4f0b760934dcb1}
+
+
+Set the delay (in clocks) before the clock starts. 
+
+References BITS\_\-INSERT, spi\_\-channel\_\-csr\_\-get(), and spi\_\-channel\_\-csr\_\-set().
+
+Referenced by spi\_\-clock\_\-delay\_\-set().\hypertarget{spi_8c_8f8764899c428470df45fec1dbb1d0cb}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-cs\_\-disable@{spi\_\-channel\_\-cs\_\-disable}}
+\index{spi\_\-channel\_\-cs\_\-disable@{spi\_\-channel\_\-cs\_\-disable}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool spi\_\-channel\_\-cs\_\-disable ({\bf spi\_\-channel\_\-t} {\em channel})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_8f8764899c428470df45fec1dbb1d0cb}
+
+
+
+
+References AT91C\_\-PA10\_\-NPCS2, AT91C\_\-PA11\_\-NPCS0, AT91C\_\-PA22\_\-NPCS3, AT91C\_\-PA30\_\-NPCS2, AT91C\_\-PA31\_\-NPCS1, AT91C\_\-PA3\_\-NPCS3, AT91C\_\-PA5\_\-NPCS3, AT91C\_\-PA9\_\-NPCS1, and AT91C\_\-PIOA\_\-PER.
+
+Referenced by spi\_\-cs\_\-disable().\hypertarget{spi_8c_980c4767bb49f62139177737cead5484}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-cs\_\-enable@{spi\_\-channel\_\-cs\_\-enable}}
+\index{spi\_\-channel\_\-cs\_\-enable@{spi\_\-channel\_\-cs\_\-enable}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool spi\_\-channel\_\-cs\_\-enable ({\bf spi\_\-channel\_\-t} {\em channel})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_980c4767bb49f62139177737cead5484}
+
+
+
+
+References AT91C\_\-PA10\_\-NPCS2, AT91C\_\-PA11\_\-NPCS0, AT91C\_\-PA22\_\-NPCS3, AT91C\_\-PA30\_\-NPCS2, AT91C\_\-PA31\_\-NPCS1, AT91C\_\-PA3\_\-NPCS3, AT91C\_\-PA5\_\-NPCS3, AT91C\_\-PA9\_\-NPCS1, AT91C\_\-PIOA\_\-ASR, AT91C\_\-PIOA\_\-BSR, and AT91C\_\-PIOA\_\-PDR.
+
+Referenced by spi\_\-cs\_\-enable().\hypertarget{spi_8c_3fe674c03d7e8a619219e01b5911bf71}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-csr\_\-get@{spi\_\-channel\_\-csr\_\-get}}
+\index{spi\_\-channel\_\-csr\_\-get@{spi\_\-channel\_\-csr\_\-get}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static uint32\_\-t spi\_\-channel\_\-csr\_\-get ({\bf spi\_\-channel\_\-t} {\em channel})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_3fe674c03d7e8a619219e01b5911bf71}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, and \_\-AT91S\_\-SPI::SPI\_\-CSR.
+
+Referenced by spi\_\-channel\_\-bits\_\-set(), spi\_\-channel\_\-clock\_\-delay\_\-set(), spi\_\-channel\_\-delay\_\-set(), spi\_\-channel\_\-divisor\_\-set(), spi\_\-channel\_\-mode\_\-set(), and spi\_\-csr\_\-get().\hypertarget{spi_8c_c132b0765e21cdb7ef9e2f2673a24605}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-csr\_\-set@{spi\_\-channel\_\-csr\_\-set}}
+\index{spi\_\-channel\_\-csr\_\-set@{spi\_\-channel\_\-csr\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-channel\_\-csr\_\-set ({\bf spi\_\-channel\_\-t} {\em channel}, \/  uint32\_\-t {\em csr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_c132b0765e21cdb7ef9e2f2673a24605}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, and \_\-AT91S\_\-SPI::SPI\_\-CSR.
+
+Referenced by spi\_\-channel\_\-bits\_\-set(), spi\_\-channel\_\-clock\_\-delay\_\-set(), spi\_\-channel\_\-delay\_\-set(), spi\_\-channel\_\-divisor\_\-set(), spi\_\-channel\_\-mode\_\-set(), and spi\_\-csr\_\-set().\hypertarget{spi_8c_d972903b42e204ede47d7a0f11c72549}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-delay\_\-set@{spi\_\-channel\_\-delay\_\-set}}
+\index{spi\_\-channel\_\-delay\_\-set@{spi\_\-channel\_\-delay\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-channel\_\-delay\_\-set ({\bf spi\_\-channel\_\-t} {\em channel}, \/  uint16\_\-t {\em delay})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_d972903b42e204ede47d7a0f11c72549}
+
+
+Set the delay (in clocks $\ast$ 32) before starting a transmission on same SPI channel. The default is 0. 
+
+References BITS\_\-INSERT, spi\_\-channel\_\-csr\_\-get(), and spi\_\-channel\_\-csr\_\-set().
+
+Referenced by spi\_\-delay\_\-set().\hypertarget{spi_8c_c784326add0b0259439d888fe37a96b0}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-deselect@{spi\_\-channel\_\-deselect}}
+\index{spi\_\-channel\_\-deselect@{spi\_\-channel\_\-deselect}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-channel\_\-deselect ({\bf spi\_\-channel\_\-t} channel {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{spi_8c_c784326add0b0259439d888fe37a96b0}
+
+
+
+
+References SPI\_\-CHANNEL\_\-DEFAULT, and spi\_\-channel\_\-select().\hypertarget{spi_8c_0fe1a08c2b9265b7319d3aa89457dd9c}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-divisor\_\-set@{spi\_\-channel\_\-divisor\_\-set}}
+\index{spi\_\-channel\_\-divisor\_\-set@{spi\_\-channel\_\-divisor\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-channel\_\-divisor\_\-set ({\bf spi\_\-channel\_\-t} {\em channel}, \/  {\bf spi\_\-clock\_\-divisor\_\-t} {\em clock\_\-divisor})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_0fe1a08c2b9265b7319d3aa89457dd9c}
+
+
+The minimum divisor value is 1, this gives the maximum rate of MCK. 
+
+References BITS\_\-INSERT, spi\_\-channel\_\-csr\_\-get(), and spi\_\-channel\_\-csr\_\-set().
+
+Referenced by spi\_\-divisor\_\-set().\hypertarget{spi_8c_fa90397af8fad7df7a8babd5f07b2af4}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-mode\_\-set@{spi\_\-channel\_\-mode\_\-set}}
+\index{spi\_\-channel\_\-mode\_\-set@{spi\_\-channel\_\-mode\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-channel\_\-mode\_\-set ({\bf spi\_\-channel\_\-t} {\em channel}, \/  {\bf spi\_\-mode\_\-t} {\em mode})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_fa90397af8fad7df7a8babd5f07b2af4}
+
+
+
+
+References spi\_\-channel\_\-csr\_\-get(), spi\_\-channel\_\-csr\_\-set(), SPI\_\-CPOL\_\-MASK, SPI\_\-MODE\_\-0, SPI\_\-MODE\_\-1, SPI\_\-MODE\_\-2, SPI\_\-MODE\_\-3, and SPI\_\-NCPHA\_\-MASK.
+
+Referenced by spi\_\-mode\_\-set().\hypertarget{spi_8c_805ab3e2efbe9bd6992fbdb87dbb61dd}{
+\index{spi.c@{spi.c}!spi\_\-channel\_\-select@{spi\_\-channel\_\-select}}
+\index{spi\_\-channel\_\-select@{spi\_\-channel\_\-select}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-channel\_\-select ({\bf spi\_\-channel\_\-t} {\em channel})}}
+\label{spi_8c_805ab3e2efbe9bd6992fbdb87dbb61dd}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, AT91C\_\-SPI\_\-PS\_\-VARIABLE, BITS\_\-INSERT, spi\_\-channel, SPI\_\-CHANNEL\_\-MASK, and \_\-AT91S\_\-SPI::SPI\_\-MR.
+
+Referenced by spi\_\-channel\_\-deselect(), spi\_\-init(), and spi\_\-multichannel\_\-deselect().\hypertarget{spi_8c_17e8d8fd2735419e2bc65ec153a39efa}{
+\index{spi.c@{spi.c}!spi\_\-clock\_\-delay\_\-set@{spi\_\-clock\_\-delay\_\-set}}
+\index{spi\_\-clock\_\-delay\_\-set@{spi\_\-clock\_\-delay\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-clock\_\-delay\_\-set (uint16\_\-t {\em delay})}}
+\label{spi_8c_17e8d8fd2735419e2bc65ec153a39efa}
+
+
+Set the delay (in clocks) before the clock starts. 
+
+References spi\_\-channel, and spi\_\-channel\_\-clock\_\-delay\_\-set().\hypertarget{spi_8c_40cb631262c9ad769f1953ea7c09a065}{
+\index{spi.c@{spi.c}!spi\_\-cs\_\-disable@{spi\_\-cs\_\-disable}}
+\index{spi\_\-cs\_\-disable@{spi\_\-cs\_\-disable}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-cs\_\-disable (void)}}
+\label{spi_8c_40cb631262c9ad769f1953ea7c09a065}
+
+
+Disable the chip select; this does not drive it. 
+
+References spi\_\-channel, and spi\_\-channel\_\-cs\_\-disable().\hypertarget{spi_8c_8f6bbcf7a252d3e35cb993836b122257}{
+\index{spi.c@{spi.c}!spi\_\-cs\_\-enable@{spi\_\-cs\_\-enable}}
+\index{spi\_\-cs\_\-enable@{spi\_\-cs\_\-enable}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-cs\_\-enable (void)}}
+\label{spi_8c_8f6bbcf7a252d3e35cb993836b122257}
+
+
+Enable the chip select; this does not drive it. SPI\_\-CSX\_\-BIT needs to be defined to use channel X, X = 0..3 SPI\_\-CHANNEL0\_\-CS\_\-BIT 11 SPI\_\-CHANNEL1\_\-CS\_\-BIT 9 or 31 SPI\_\-CHANNEL2\_\-CS\_\-BIT 10 or 30 SPI\_\-CHANNEL3\_\-CS\_\-BIT 3, 5, or 22 
+
+References spi\_\-channel, and spi\_\-channel\_\-cs\_\-enable().\hypertarget{spi_8c_c2d89e414a5d064417ff35b3e31951d4}{
+\index{spi.c@{spi.c}!spi\_\-csr\_\-get@{spi\_\-csr\_\-get}}
+\index{spi\_\-csr\_\-get@{spi\_\-csr\_\-get}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static uint32\_\-t spi\_\-csr\_\-get (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_c2d89e414a5d064417ff35b3e31951d4}
+
+
+
+
+References spi\_\-channel, and spi\_\-channel\_\-csr\_\-get().\hypertarget{spi_8c_93a62a009a2cf6de3be0c17769d64f05}{
+\index{spi.c@{spi.c}!spi\_\-csr\_\-set@{spi\_\-csr\_\-set}}
+\index{spi\_\-csr\_\-set@{spi\_\-csr\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void spi\_\-csr\_\-set (uint32\_\-t {\em csr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_93a62a009a2cf6de3be0c17769d64f05}
+
+
+
+
+References spi\_\-channel, and spi\_\-channel\_\-csr\_\-set().
+
+Referenced by spi\_\-init().\hypertarget{spi_8c_c7c7e47e22cc8ba5a282bbbad5456aab}{
+\index{spi.c@{spi.c}!spi\_\-delay\_\-set@{spi\_\-delay\_\-set}}
+\index{spi\_\-delay\_\-set@{spi\_\-delay\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-delay\_\-set (uint16\_\-t {\em clock\_\-divisor})}}
+\label{spi_8c_c7c7e47e22cc8ba5a282bbbad5456aab}
+
+
+Set the delay (in clocks $\ast$ 32) before starting a transmission on same SPI channel. The default is 0. 
+
+References spi\_\-channel, and spi\_\-channel\_\-delay\_\-set().\hypertarget{spi_8c_a8d2d6d1632faf9abbe03c3ed90d54d4}{
+\index{spi.c@{spi.c}!spi\_\-disable@{spi\_\-disable}}
+\index{spi\_\-disable@{spi\_\-disable}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-disable (void)}}
+\label{spi_8c_a8d2d6d1632faf9abbe03c3ed90d54d4}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, AT91C\_\-SPI\_\-SPIDIS, and \_\-AT91S\_\-SPI::SPI\_\-CR.
+
+Referenced by spi\_\-shutdown().\hypertarget{spi_8c_b4d3d2108521da82545f26928da8e819}{
+\index{spi.c@{spi.c}!spi\_\-divisor\_\-set@{spi\_\-divisor\_\-set}}
+\index{spi\_\-divisor\_\-set@{spi\_\-divisor\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-divisor\_\-set ({\bf spi\_\-clock\_\-divisor\_\-t} {\em clock\_\-divisor})}}
+\label{spi_8c_b4d3d2108521da82545f26928da8e819}
+
+
+
+
+References spi\_\-channel, and spi\_\-channel\_\-divisor\_\-set().
+
+Referenced by spi\_\-init().\hypertarget{spi_8c_72cf41d2f19954fefd27f681d6b39532}{
+\index{spi.c@{spi.c}!spi\_\-enable@{spi\_\-enable}}
+\index{spi\_\-enable@{spi\_\-enable}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-enable (void)}}
+\label{spi_8c_72cf41d2f19954fefd27f681d6b39532}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, AT91C\_\-SPI\_\-SPIEN, and \_\-AT91S\_\-SPI::SPI\_\-CR.
+
+Referenced by spi\_\-init().\hypertarget{spi_8c_e093d8ac4ca3e2e63f41fe422f47d2c3}{
+\index{spi.c@{spi.c}!spi\_\-get16@{spi\_\-get16}}
+\index{spi\_\-get16@{spi\_\-get16}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t spi\_\-get16 (void)}}
+\label{spi_8c_e093d8ac4ca3e2e63f41fe422f47d2c3}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_16dc3308078400d68d1c6284b7eb4cbe}{
+\index{spi.c@{spi.c}!spi\_\-get32@{spi\_\-get32}}
+\index{spi\_\-get32@{spi\_\-get32}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t spi\_\-get32 (void)}}
+\label{spi_8c_16dc3308078400d68d1c6284b7eb4cbe}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_dd760b5484c2e63c5fb18517c99ac4e2}{
+\index{spi.c@{spi.c}!spi\_\-getc@{spi\_\-getc}}
+\index{spi\_\-getc@{spi\_\-getc}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t spi\_\-getc (void)}}
+\label{spi_8c_dd760b5484c2e63c5fb18517c99ac4e2}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_e909944aa85ae98323073c628be541aa}{
+\index{spi.c@{spi.c}!spi\_\-init@{spi\_\-init}}
+\index{spi\_\-init@{spi\_\-init}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-init (void)}}
+\label{spi_8c_e909944aa85ae98323073c628be541aa}
+
+
+Initialise SPI for master mode. 
+
+References AT91C\_\-BASE\_\-PMC, AT91C\_\-BASE\_\-SPI, AT91C\_\-ID\_\-SPI, AT91C\_\-PA12\_\-MISO, AT91C\_\-PA13\_\-MOSI, AT91C\_\-PA14\_\-SPCK, AT91C\_\-PIOA\_\-ASR, AT91C\_\-PIOA\_\-PDR, AT91C\_\-PIOA\_\-PPUDR, AT91C\_\-SPI\_\-MODFDIS, AT91C\_\-SPI\_\-MSTR, spi\_\-bits\_\-set(), SPI\_\-CHANNEL\_\-DEFAULT, spi\_\-channel\_\-select(), spi\_\-csr\_\-set(), spi\_\-divisor\_\-set(), spi\_\-enable(), spi\_\-init\_\-count, SPI\_\-MODE\_\-0, spi\_\-mode\_\-set(), \_\-AT91S\_\-SPI::SPI\_\-MR, and spi\_\-reset().\hypertarget{spi_8c_41be36fa418657e43b4c894dc1844efe}{
+\index{spi.c@{spi.c}!spi\_\-mode\_\-set@{spi\_\-mode\_\-set}}
+\index{spi\_\-mode\_\-set@{spi\_\-mode\_\-set}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-mode\_\-set ({\bf spi\_\-mode\_\-t} {\em mode})}}
+\label{spi_8c_41be36fa418657e43b4c894dc1844efe}
+
+
+
+
+References spi\_\-channel, and spi\_\-channel\_\-mode\_\-set().
+
+Referenced by spi\_\-init().\hypertarget{spi_8c_fb00c90fc4cd95acf3ff586fbf208740}{
+\index{spi.c@{spi.c}!spi\_\-multichannel\_\-deselect@{spi\_\-multichannel\_\-deselect}}
+\index{spi\_\-multichannel\_\-deselect@{spi\_\-multichannel\_\-deselect}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-multichannel\_\-deselect (void)}}
+\label{spi_8c_fb00c90fc4cd95acf3ff586fbf208740}
+
+
+Enable fixed peripheral select and switch to default channel. 
+
+References SPI\_\-CHANNEL\_\-DEFAULT, and spi\_\-channel\_\-select().\hypertarget{spi_8c_2676e03d3ba0c50dd5ea398ca067a238}{
+\index{spi.c@{spi.c}!spi\_\-multichannel\_\-select@{spi\_\-multichannel\_\-select}}
+\index{spi\_\-multichannel\_\-select@{spi\_\-multichannel\_\-select}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-multichannel\_\-select (void)}}
+\label{spi_8c_2676e03d3ba0c50dd5ea398ca067a238}
+
+
+Enable variable peripheral select. 
+
+References AT91C\_\-BASE\_\-SPI, AT91C\_\-SPI\_\-PS\_\-VARIABLE, and \_\-AT91S\_\-SPI::SPI\_\-MR.\hypertarget{spi_8c_fce17b768e5cbdb24976c312486c9c26}{
+\index{spi.c@{spi.c}!spi\_\-put16@{spi\_\-put16}}
+\index{spi\_\-put16@{spi\_\-put16}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-put16 (uint16\_\-t {\em data})}}
+\label{spi_8c_fce17b768e5cbdb24976c312486c9c26}
+
+
+
+
+References SPI\_\-XFER.
+
+Referenced by mspi\_\-write().\hypertarget{spi_8c_6e53bcb9e39a97319386a840af12a9a7}{
+\index{spi.c@{spi.c}!spi\_\-put32@{spi\_\-put32}}
+\index{spi\_\-put32@{spi\_\-put32}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-put32 (uint32\_\-t {\em data})}}
+\label{spi_8c_6e53bcb9e39a97319386a840af12a9a7}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_f07e7fc5a05ce6aa13275caf3e1a1ee6}{
+\index{spi.c@{spi.c}!spi\_\-putc@{spi\_\-putc}}
+\index{spi\_\-putc@{spi\_\-putc}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-putc (char {\em ch})}}
+\label{spi_8c_f07e7fc5a05ce6aa13275caf3e1a1ee6}
+
+
+
+
+References SPI\_\-XFER.
+
+Referenced by mspi\_\-write().\hypertarget{spi_8c_f31efda768fd81e3ef9da9efa18fe859}{
+\index{spi.c@{spi.c}!spi\_\-puts@{spi\_\-puts}}
+\index{spi\_\-puts@{spi\_\-puts}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-puts (const char $\ast$ {\em str})}}
+\label{spi_8c_f31efda768fd81e3ef9da9efa18fe859}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_8a9ac2da9a32737d3209ff42451ab134}{
+\index{spi.c@{spi.c}!spi\_\-read\_\-ready\_\-p@{spi\_\-read\_\-ready\_\-p}}
+\index{spi\_\-read\_\-ready\_\-p@{spi\_\-read\_\-ready\_\-p}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-read\_\-ready\_\-p (void)}}
+\label{spi_8c_8a9ac2da9a32737d3209ff42451ab134}
+
+
+
+
+References SPI\_\-READY\_\-P.\hypertarget{spi_8c_69c55186ef6afe1986998d7656f4a711}{
+\index{spi.c@{spi.c}!spi\_\-reset@{spi\_\-reset}}
+\index{spi\_\-reset@{spi\_\-reset}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-reset (void)}}
+\label{spi_8c_69c55186ef6afe1986998d7656f4a711}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, AT91C\_\-SPI\_\-SWRST, and \_\-AT91S\_\-SPI::SPI\_\-CR.
+
+Referenced by spi\_\-init().\hypertarget{spi_8c_5b69fa29433dea2b612a9d0bdedb3dd0}{
+\index{spi.c@{spi.c}!spi\_\-shutdown@{spi\_\-shutdown}}
+\index{spi\_\-shutdown@{spi\_\-shutdown}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-shutdown (void)}}
+\label{spi_8c_5b69fa29433dea2b612a9d0bdedb3dd0}
+
+
+
+
+References AT91C\_\-BASE\_\-PMC, AT91C\_\-ID\_\-SPI, AT91C\_\-PA12\_\-MISO, AT91C\_\-PA13\_\-MOSI, AT91C\_\-PA14\_\-SPCK, AT91C\_\-PIOA\_\-CODR, AT91C\_\-PIOA\_\-PER, AT91C\_\-PIOA\_\-PPUDR, spi\_\-disable(), and spi\_\-init\_\-count.\hypertarget{spi_8c_d07252a3fc56d2efddf3b7597a2b5f6e}{
+\index{spi.c@{spi.c}!spi\_\-write\_\-ready\_\-p@{spi\_\-write\_\-ready\_\-p}}
+\index{spi\_\-write\_\-ready\_\-p@{spi\_\-write\_\-ready\_\-p}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-write\_\-ready\_\-p (void)}}
+\label{spi_8c_d07252a3fc56d2efddf3b7597a2b5f6e}
+
+
+
+
+References SPI\_\-READY\_\-P.\hypertarget{spi_8c_72cdbc85f9ba17c3a73f8f6164a8b93e}{
+\index{spi.c@{spi.c}!spi\_\-xfer16@{spi\_\-xfer16}}
+\index{spi\_\-xfer16@{spi\_\-xfer16}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t spi\_\-xfer16 (uint16\_\-t {\em data})}}
+\label{spi_8c_72cdbc85f9ba17c3a73f8f6164a8b93e}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_75719e8aa02797b6a9ad559b5fe8d715}{
+\index{spi.c@{spi.c}!spi\_\-xfer32@{spi\_\-xfer32}}
+\index{spi\_\-xfer32@{spi\_\-xfer32}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t spi\_\-xfer32 (uint32\_\-t {\em data})}}
+\label{spi_8c_75719e8aa02797b6a9ad559b5fe8d715}
+
+
+
+
+References SPI\_\-XFER.\hypertarget{spi_8c_844a8623de7b53c3c0cb559783bed830}{
+\index{spi.c@{spi.c}!spi\_\-xferc@{spi\_\-xferc}}
+\index{spi\_\-xferc@{spi\_\-xferc}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t spi\_\-xferc (char {\em ch})}}
+\label{spi_8c_844a8623de7b53c3c0cb559783bed830}
+
+
+
+
+References SPI\_\-XFER.
+
+\subsection{Variable Documentation}
+\hypertarget{spi_8c_23ea59840061c42b17947883a2f5d382}{
+\index{spi.c@{spi.c}!spi\_\-channel@{spi\_\-channel}}
+\index{spi\_\-channel@{spi\_\-channel}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf spi\_\-channel} = SPI\_\-CHANNEL\_\-DEFAULT\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_23ea59840061c42b17947883a2f5d382}
+
+
+
+
+Referenced by spi\_\-bits\_\-set(), spi\_\-channel\_\-select(), spi\_\-clock\_\-delay\_\-set(), spi\_\-cs\_\-disable(), spi\_\-cs\_\-enable(), spi\_\-csr\_\-get(), spi\_\-csr\_\-set(), spi\_\-delay\_\-set(), spi\_\-divisor\_\-set(), and spi\_\-mode\_\-set().\hypertarget{spi_8c_73672256c06314c9f65cf3655ae52879}{
+\index{spi.c@{spi.c}!spi\_\-init\_\-count@{spi\_\-init\_\-count}}
+\index{spi\_\-init\_\-count@{spi\_\-init\_\-count}!spi.c@{spi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf spi\_\-init\_\-count} = 0\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{spi_8c_73672256c06314c9f65cf3655ae52879}
+
+
+
+
+Referenced by spi\_\-init(), and spi\_\-shutdown().

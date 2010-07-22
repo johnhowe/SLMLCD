@@ -1,0 +1,309 @@
+\hypertarget{struct__AT91S__CAN}{
+\section{\_\-AT91S\_\-CAN Struct Reference}
+\label{struct__AT91S__CAN}\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}}
+}
+{\tt \#include $<$AT91SAM7X256.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_c9b717e114de69702a2271f059b95efe}{CAN\_\-MR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_78d3123ccb970a71b6998653ccaa054e}{CAN\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_58fb5692831597863baf66ea4d18a931}{CAN\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_55c277bd6dac15055222d3066ef374eb}{CAN\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_406e82106f4111f374c2e021df6d1fb3}{CAN\_\-SR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_1af276558e1f9273eb9b1c8aa7a67838}{CAN\_\-BR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_76dcdcbdaa00f9336e18b924f4777f51}{CAN\_\-TIM}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_1811dcbae4b545538124651a67e2c3e5}{CAN\_\-TIMESTP}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_8e8ace8d203b83ffa88c7670950413b3}{CAN\_\-ECR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_4083785ec2ea2ab8977e3c9e21e332ec}{CAN\_\-TCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_7c894d03b982118f3d8eadfd73b3ec58}{CAN\_\-ACR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_665d63558f6c3c65e486c1ec13528be7}{Reserved0} \mbox{[}52\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_45fc2df36dacaff8d655500c2fbd2d1a}{CAN\_\-VR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__CAN_a9e67029933746600cd86a64a3953432}{Reserved1} \mbox{[}64\mbox{]}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_a6f927fafccb82883ea9989b795e7a82}{CAN\_\-MB0}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_8fb050b08696763153d01c0b8c990b1a}{CAN\_\-MB1}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_e21ff7e7ffdcba6bec230e09e87b3dd1}{CAN\_\-MB2}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_8bfef33a7dd2101995b32b5dd11c1a82}{CAN\_\-MB3}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_78ea8e4fd72d2cffd634d1ac26b888ba}{CAN\_\-MB4}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_432069c41629c0df780c62e72427f49c}{CAN\_\-MB5}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_e5cac6516a05cc2ea35f8e719889b77d}{CAN\_\-MB6}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_5c813a65c3192bca5749ac92a0657219}{CAN\_\-MB7}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_5c6feb7e58762cbdfd4b005323d75a35}{CAN\_\-MB8}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_709a819bcd08746199bbcd8846056123}{CAN\_\-MB9}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_99813e971754f165bb6b0c9068772f8b}{CAN\_\-MB10}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_efc33fd005f6e2abdc5a8afff133e11c}{CAN\_\-MB11}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_75e24057c918b0bfc152df09e8fcf0e2}{CAN\_\-MB12}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_70f809e469ea02f8f3d45e5398a6a7df}{CAN\_\-MB13}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_93f1793c75b172b509cf23239ba395a5}{CAN\_\-MB14}
+\item 
+\hyperlink{struct__AT91S__CAN__MB}{AT91S\_\-CAN\_\-MB} \hyperlink{struct__AT91S__CAN_2cdc9290e071f0fde0bc1115c1ebd152}{CAN\_\-MB15}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct__AT91S__CAN_c9b717e114de69702a2271f059b95efe}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MR@{CAN\_\-MR}}
+\index{CAN\_\-MR@{CAN\_\-MR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-MR}}}
+\label{struct__AT91S__CAN_c9b717e114de69702a2271f059b95efe}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-CfgModeReg(), AT91F\_\-CAN\_\-GetModeReg(), AT91F\_\-DisableCAN(), and AT91F\_\-EnableCAN().\hypertarget{struct__AT91S__CAN_78d3123ccb970a71b6998653ccaa054e}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-IER@{CAN\_\-IER}}
+\index{CAN\_\-IER@{CAN\_\-IER}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-IER}}}
+\label{struct__AT91S__CAN_78d3123ccb970a71b6998653ccaa054e}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-EnableIt().\hypertarget{struct__AT91S__CAN_58fb5692831597863baf66ea4d18a931}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-IDR@{CAN\_\-IDR}}
+\index{CAN\_\-IDR@{CAN\_\-IDR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-IDR}}}
+\label{struct__AT91S__CAN_58fb5692831597863baf66ea4d18a931}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-DisableIt().\hypertarget{struct__AT91S__CAN_55c277bd6dac15055222d3066ef374eb}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-IMR@{CAN\_\-IMR}}
+\index{CAN\_\-IMR@{CAN\_\-IMR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-IMR}}}
+\label{struct__AT91S__CAN_55c277bd6dac15055222d3066ef374eb}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-GetInterruptMaskStatus().\hypertarget{struct__AT91S__CAN_406e82106f4111f374c2e021df6d1fb3}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-SR@{CAN\_\-SR}}
+\index{CAN\_\-SR@{CAN\_\-SR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-SR}}}
+\label{struct__AT91S__CAN_406e82106f4111f374c2e021df6d1fb3}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-GetStatus(), and AT91F\_\-EnableCAN().\hypertarget{struct__AT91S__CAN_1af276558e1f9273eb9b1c8aa7a67838}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-BR@{CAN\_\-BR}}
+\index{CAN\_\-BR@{CAN\_\-BR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-BR}}}
+\label{struct__AT91S__CAN_1af276558e1f9273eb9b1c8aa7a67838}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-CfgBaudrateReg(), and AT91F\_\-CAN\_\-GetBaudrate().\hypertarget{struct__AT91S__CAN_76dcdcbdaa00f9336e18b924f4777f51}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-TIM@{CAN\_\-TIM}}
+\index{CAN\_\-TIM@{CAN\_\-TIM}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-TIM}}}
+\label{struct__AT91S__CAN_76dcdcbdaa00f9336e18b924f4777f51}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-GetInternalCounter().\hypertarget{struct__AT91S__CAN_1811dcbae4b545538124651a67e2c3e5}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-TIMESTP@{CAN\_\-TIMESTP}}
+\index{CAN\_\-TIMESTP@{CAN\_\-TIMESTP}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-TIMESTP}}}
+\label{struct__AT91S__CAN_1811dcbae4b545538124651a67e2c3e5}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-GetTimestamp().\hypertarget{struct__AT91S__CAN_8e8ace8d203b83ffa88c7670950413b3}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-ECR@{CAN\_\-ECR}}
+\index{CAN\_\-ECR@{CAN\_\-ECR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-ECR}}}
+\label{struct__AT91S__CAN_8e8ace8d203b83ffa88c7670950413b3}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-GetErrorCounter().\hypertarget{struct__AT91S__CAN_4083785ec2ea2ab8977e3c9e21e332ec}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-TCR@{CAN\_\-TCR}}
+\index{CAN\_\-TCR@{CAN\_\-TCR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-TCR}}}
+\label{struct__AT91S__CAN_4083785ec2ea2ab8977e3c9e21e332ec}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-InitTransferRequest().\hypertarget{struct__AT91S__CAN_7c894d03b982118f3d8eadfd73b3ec58}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-ACR@{CAN\_\-ACR}}
+\index{CAN\_\-ACR@{CAN\_\-ACR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-ACR}}}
+\label{struct__AT91S__CAN_7c894d03b982118f3d8eadfd73b3ec58}
+
+
+
+
+Referenced by AT91F\_\-CAN\_\-InitAbortRequest().\hypertarget{struct__AT91S__CAN_665d63558f6c3c65e486c1ec13528be7}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!Reserved0@{Reserved0}}
+\index{Reserved0@{Reserved0}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::Reserved0}\mbox{[}52\mbox{]}}}
+\label{struct__AT91S__CAN_665d63558f6c3c65e486c1ec13528be7}
+
+
+\hypertarget{struct__AT91S__CAN_45fc2df36dacaff8d655500c2fbd2d1a}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-VR@{CAN\_\-VR}}
+\index{CAN\_\-VR@{CAN\_\-VR}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::CAN\_\-VR}}}
+\label{struct__AT91S__CAN_45fc2df36dacaff8d655500c2fbd2d1a}
+
+
+\hypertarget{struct__AT91S__CAN_a9e67029933746600cd86a64a3953432}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!Reserved1@{Reserved1}}
+\index{Reserved1@{Reserved1}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-CAN::Reserved1}\mbox{[}64\mbox{]}}}
+\label{struct__AT91S__CAN_a9e67029933746600cd86a64a3953432}
+
+
+\hypertarget{struct__AT91S__CAN_a6f927fafccb82883ea9989b795e7a82}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB0@{CAN\_\-MB0}}
+\index{CAN\_\-MB0@{CAN\_\-MB0}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB0}}}
+\label{struct__AT91S__CAN_a6f927fafccb82883ea9989b795e7a82}
+
+
+\hypertarget{struct__AT91S__CAN_8fb050b08696763153d01c0b8c990b1a}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB1@{CAN\_\-MB1}}
+\index{CAN\_\-MB1@{CAN\_\-MB1}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB1}}}
+\label{struct__AT91S__CAN_8fb050b08696763153d01c0b8c990b1a}
+
+
+\hypertarget{struct__AT91S__CAN_e21ff7e7ffdcba6bec230e09e87b3dd1}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB2@{CAN\_\-MB2}}
+\index{CAN\_\-MB2@{CAN\_\-MB2}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB2}}}
+\label{struct__AT91S__CAN_e21ff7e7ffdcba6bec230e09e87b3dd1}
+
+
+\hypertarget{struct__AT91S__CAN_8bfef33a7dd2101995b32b5dd11c1a82}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB3@{CAN\_\-MB3}}
+\index{CAN\_\-MB3@{CAN\_\-MB3}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB3}}}
+\label{struct__AT91S__CAN_8bfef33a7dd2101995b32b5dd11c1a82}
+
+
+\hypertarget{struct__AT91S__CAN_78ea8e4fd72d2cffd634d1ac26b888ba}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB4@{CAN\_\-MB4}}
+\index{CAN\_\-MB4@{CAN\_\-MB4}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB4}}}
+\label{struct__AT91S__CAN_78ea8e4fd72d2cffd634d1ac26b888ba}
+
+
+\hypertarget{struct__AT91S__CAN_432069c41629c0df780c62e72427f49c}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB5@{CAN\_\-MB5}}
+\index{CAN\_\-MB5@{CAN\_\-MB5}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB5}}}
+\label{struct__AT91S__CAN_432069c41629c0df780c62e72427f49c}
+
+
+\hypertarget{struct__AT91S__CAN_e5cac6516a05cc2ea35f8e719889b77d}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB6@{CAN\_\-MB6}}
+\index{CAN\_\-MB6@{CAN\_\-MB6}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB6}}}
+\label{struct__AT91S__CAN_e5cac6516a05cc2ea35f8e719889b77d}
+
+
+\hypertarget{struct__AT91S__CAN_5c813a65c3192bca5749ac92a0657219}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB7@{CAN\_\-MB7}}
+\index{CAN\_\-MB7@{CAN\_\-MB7}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB7}}}
+\label{struct__AT91S__CAN_5c813a65c3192bca5749ac92a0657219}
+
+
+\hypertarget{struct__AT91S__CAN_5c6feb7e58762cbdfd4b005323d75a35}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB8@{CAN\_\-MB8}}
+\index{CAN\_\-MB8@{CAN\_\-MB8}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB8}}}
+\label{struct__AT91S__CAN_5c6feb7e58762cbdfd4b005323d75a35}
+
+
+\hypertarget{struct__AT91S__CAN_709a819bcd08746199bbcd8846056123}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB9@{CAN\_\-MB9}}
+\index{CAN\_\-MB9@{CAN\_\-MB9}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB9}}}
+\label{struct__AT91S__CAN_709a819bcd08746199bbcd8846056123}
+
+
+\hypertarget{struct__AT91S__CAN_99813e971754f165bb6b0c9068772f8b}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB10@{CAN\_\-MB10}}
+\index{CAN\_\-MB10@{CAN\_\-MB10}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB10}}}
+\label{struct__AT91S__CAN_99813e971754f165bb6b0c9068772f8b}
+
+
+\hypertarget{struct__AT91S__CAN_efc33fd005f6e2abdc5a8afff133e11c}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB11@{CAN\_\-MB11}}
+\index{CAN\_\-MB11@{CAN\_\-MB11}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB11}}}
+\label{struct__AT91S__CAN_efc33fd005f6e2abdc5a8afff133e11c}
+
+
+\hypertarget{struct__AT91S__CAN_75e24057c918b0bfc152df09e8fcf0e2}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB12@{CAN\_\-MB12}}
+\index{CAN\_\-MB12@{CAN\_\-MB12}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB12}}}
+\label{struct__AT91S__CAN_75e24057c918b0bfc152df09e8fcf0e2}
+
+
+\hypertarget{struct__AT91S__CAN_70f809e469ea02f8f3d45e5398a6a7df}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB13@{CAN\_\-MB13}}
+\index{CAN\_\-MB13@{CAN\_\-MB13}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB13}}}
+\label{struct__AT91S__CAN_70f809e469ea02f8f3d45e5398a6a7df}
+
+
+\hypertarget{struct__AT91S__CAN_93f1793c75b172b509cf23239ba395a5}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB14@{CAN\_\-MB14}}
+\index{CAN\_\-MB14@{CAN\_\-MB14}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB14}}}
+\label{struct__AT91S__CAN_93f1793c75b172b509cf23239ba395a5}
+
+
+\hypertarget{struct__AT91S__CAN_2cdc9290e071f0fde0bc1115c1ebd152}{
+\index{\_\-AT91S\_\-CAN@{\_\-AT91S\_\-CAN}!CAN\_\-MB15@{CAN\_\-MB15}}
+\index{CAN\_\-MB15@{CAN\_\-MB15}!_AT91S_CAN@{\_\-AT91S\_\-CAN}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-CAN\_\-MB} {\bf \_\-AT91S\_\-CAN::CAN\_\-MB15}}}
+\label{struct__AT91S__CAN_2cdc9290e071f0fde0bc1115c1ebd152}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h}{AT91SAM7X256.h}\end{CompactItemize}

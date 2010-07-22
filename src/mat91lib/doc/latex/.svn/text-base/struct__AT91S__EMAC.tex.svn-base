@@ -1,0 +1,476 @@
+\hypertarget{struct__AT91S__EMAC}{
+\section{\_\-AT91S\_\-EMAC Struct Reference}
+\label{struct__AT91S__EMAC}\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}}
+}
+{\tt \#include $<$AT91SAM7X256.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_aaaab029abe728349d594910b20c05b2}{EMAC\_\-NCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_e93479c562d6f1d0b27426600663a06e}{EMAC\_\-NCFGR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_e119641208e95ec32c33d7815ff6a671}{EMAC\_\-NSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_3a3b4f0d1fb55e8a6a7c0afc3663089b}{Reserved0} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_0246331d44896d065805c880720e19ef}{EMAC\_\-TSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_b6221a2aa14324df4a7b40ec5a1dd91f}{EMAC\_\-RBQP}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_804aaca66507401123632fad8ac52667}{EMAC\_\-TBQP}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_17c19d4ab0b20f891a1c284cf0a89940}{EMAC\_\-RSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_7fdd9d9762032e020be06045a85850c6}{EMAC\_\-ISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_bac5d40962cd48e52309b89a46306099}{EMAC\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_3ce2331a05bc1e1b9ed5897fad5fefab}{EMAC\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_84ee8acf6dce319fd283673445fcfa53}{EMAC\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_201e8ea57982323381383ee894c9aea4}{EMAC\_\-MAN}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_3b5cae345135bd3cf395401f556b8ea7}{EMAC\_\-PTR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_fa8535c52199189c9ecc5f34e8268d8c}{EMAC\_\-PFR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_f34695fe05606e9e8304697c1dd95212}{EMAC\_\-FTO}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_0868a2869f70280e58a8884710bd9c21}{EMAC\_\-SCF}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_8bf3345deb86848307ef1b457efa5223}{EMAC\_\-MCF}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_d999f42847917e58f75971518516c6f8}{EMAC\_\-FRO}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_d41d842c79c1ab9c61ce54ea73befb8f}{EMAC\_\-FCSE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_a70179d00f5970717de998a4e6f10045}{EMAC\_\-ALE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_a626585bdeb2732b1b6920a2f3403fc2}{EMAC\_\-DTF}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_bb38b2cee8c45ae19556607e9cacb466}{EMAC\_\-LCOL}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_54730cb738b082b698ce3d69dbc9e2f5}{EMAC\_\-ECOL}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_8f583c268ee7728afd71d59995af1032}{EMAC\_\-TUND}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_1049da06db2ab979642032f6f055055b}{EMAC\_\-CSE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_e882748462f992390b208fbd2135d05b}{EMAC\_\-RRE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_6bf4ac36658d1b185e857318a6ee12a4}{EMAC\_\-ROV}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_c5726a8c4ddf9a339f0c01d562154894}{EMAC\_\-RSE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_1f4bd4812d46649af3558417c68848e3}{EMAC\_\-ELE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_00faac6cb2f949df48e4b92dec67969c}{EMAC\_\-RJA}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_84c14af09a8fd3a182a17eadd2d5ac2c}{EMAC\_\-USF}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_7a35b15cfa1a7a17dc638dd2aceaa8a3}{EMAC\_\-STE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_6f6d3b684e2ed167a136a0c08ed02484}{EMAC\_\-RLE}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_22a57248626bab86d77fa0d85cfe8efe}{EMAC\_\-TPF}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_0e3d9c3f64d5073b38585325f01d78a3}{EMAC\_\-HRB}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_6e222152c68d14b68c70c0e6d19dc081}{EMAC\_\-HRT}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_27c0f424b25abdb59e51541b49b850fa}{EMAC\_\-SA1L}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_076dd76c5ca9b64fd2a3fef470290584}{EMAC\_\-SA1H}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_910e2e7bc69adce9bffdc7454425a8e1}{EMAC\_\-SA2L}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_e9601174b6ac1228d3f301d06012b8a7}{EMAC\_\-SA2H}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_fbdc7911d56b2f91fe73ff2ca3de70ca}{EMAC\_\-SA3L}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_09ac827c6db9c00a98ffc47cc291341f}{EMAC\_\-SA3H}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_0a3ff7c0540b6af9572b6164325f2ce3}{EMAC\_\-SA4L}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_a07ced46f07dc8c0d7af93fcbbe9aacb}{EMAC\_\-SA4H}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_bf97d6b39e5d6bbf93b465dd6ba96773}{EMAC\_\-TID}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_c76605806ba0d4ca0600b3134a8ddf8f}{EMAC\_\-TPQ}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_4fc9f0e35fd6eb5851ba26fd842d4ddd}{EMAC\_\-USRIO}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_0beaeb7cb794ede456613b75abc0b101}{EMAC\_\-WOL}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_24ff8aae6b5097f1df059e30bdb7bfc0}{Reserved1} \mbox{[}13\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__EMAC_5d68876fe39a6275cf7d802f5d051804}{EMAC\_\-REV}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct__AT91S__EMAC_aaaab029abe728349d594910b20c05b2}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-NCR@{EMAC\_\-NCR}}
+\index{EMAC\_\-NCR@{EMAC\_\-NCR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-NCR}}}
+\label{struct__AT91S__EMAC_aaaab029abe728349d594910b20c05b2}
+
+
+\hypertarget{struct__AT91S__EMAC_e93479c562d6f1d0b27426600663a06e}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-NCFGR@{EMAC\_\-NCFGR}}
+\index{EMAC\_\-NCFGR@{EMAC\_\-NCFGR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-NCFGR}}}
+\label{struct__AT91S__EMAC_e93479c562d6f1d0b27426600663a06e}
+
+
+\hypertarget{struct__AT91S__EMAC_e119641208e95ec32c33d7815ff6a671}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-NSR@{EMAC\_\-NSR}}
+\index{EMAC\_\-NSR@{EMAC\_\-NSR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-NSR}}}
+\label{struct__AT91S__EMAC_e119641208e95ec32c33d7815ff6a671}
+
+
+\hypertarget{struct__AT91S__EMAC_3a3b4f0d1fb55e8a6a7c0afc3663089b}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!Reserved0@{Reserved0}}
+\index{Reserved0@{Reserved0}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::Reserved0}\mbox{[}2\mbox{]}}}
+\label{struct__AT91S__EMAC_3a3b4f0d1fb55e8a6a7c0afc3663089b}
+
+
+\hypertarget{struct__AT91S__EMAC_0246331d44896d065805c880720e19ef}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-TSR@{EMAC\_\-TSR}}
+\index{EMAC\_\-TSR@{EMAC\_\-TSR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-TSR}}}
+\label{struct__AT91S__EMAC_0246331d44896d065805c880720e19ef}
+
+
+\hypertarget{struct__AT91S__EMAC_b6221a2aa14324df4a7b40ec5a1dd91f}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-RBQP@{EMAC\_\-RBQP}}
+\index{EMAC\_\-RBQP@{EMAC\_\-RBQP}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-RBQP}}}
+\label{struct__AT91S__EMAC_b6221a2aa14324df4a7b40ec5a1dd91f}
+
+
+\hypertarget{struct__AT91S__EMAC_804aaca66507401123632fad8ac52667}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-TBQP@{EMAC\_\-TBQP}}
+\index{EMAC\_\-TBQP@{EMAC\_\-TBQP}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-TBQP}}}
+\label{struct__AT91S__EMAC_804aaca66507401123632fad8ac52667}
+
+
+\hypertarget{struct__AT91S__EMAC_17c19d4ab0b20f891a1c284cf0a89940}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-RSR@{EMAC\_\-RSR}}
+\index{EMAC\_\-RSR@{EMAC\_\-RSR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-RSR}}}
+\label{struct__AT91S__EMAC_17c19d4ab0b20f891a1c284cf0a89940}
+
+
+\hypertarget{struct__AT91S__EMAC_7fdd9d9762032e020be06045a85850c6}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-ISR@{EMAC\_\-ISR}}
+\index{EMAC\_\-ISR@{EMAC\_\-ISR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-ISR}}}
+\label{struct__AT91S__EMAC_7fdd9d9762032e020be06045a85850c6}
+
+
+\hypertarget{struct__AT91S__EMAC_bac5d40962cd48e52309b89a46306099}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-IER@{EMAC\_\-IER}}
+\index{EMAC\_\-IER@{EMAC\_\-IER}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-IER}}}
+\label{struct__AT91S__EMAC_bac5d40962cd48e52309b89a46306099}
+
+
+\hypertarget{struct__AT91S__EMAC_3ce2331a05bc1e1b9ed5897fad5fefab}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-IDR@{EMAC\_\-IDR}}
+\index{EMAC\_\-IDR@{EMAC\_\-IDR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-IDR}}}
+\label{struct__AT91S__EMAC_3ce2331a05bc1e1b9ed5897fad5fefab}
+
+
+\hypertarget{struct__AT91S__EMAC_84ee8acf6dce319fd283673445fcfa53}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-IMR@{EMAC\_\-IMR}}
+\index{EMAC\_\-IMR@{EMAC\_\-IMR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-IMR}}}
+\label{struct__AT91S__EMAC_84ee8acf6dce319fd283673445fcfa53}
+
+
+\hypertarget{struct__AT91S__EMAC_201e8ea57982323381383ee894c9aea4}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-MAN@{EMAC\_\-MAN}}
+\index{EMAC\_\-MAN@{EMAC\_\-MAN}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-MAN}}}
+\label{struct__AT91S__EMAC_201e8ea57982323381383ee894c9aea4}
+
+
+\hypertarget{struct__AT91S__EMAC_3b5cae345135bd3cf395401f556b8ea7}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-PTR@{EMAC\_\-PTR}}
+\index{EMAC\_\-PTR@{EMAC\_\-PTR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-PTR}}}
+\label{struct__AT91S__EMAC_3b5cae345135bd3cf395401f556b8ea7}
+
+
+\hypertarget{struct__AT91S__EMAC_fa8535c52199189c9ecc5f34e8268d8c}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-PFR@{EMAC\_\-PFR}}
+\index{EMAC\_\-PFR@{EMAC\_\-PFR}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-PFR}}}
+\label{struct__AT91S__EMAC_fa8535c52199189c9ecc5f34e8268d8c}
+
+
+\hypertarget{struct__AT91S__EMAC_f34695fe05606e9e8304697c1dd95212}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-FTO@{EMAC\_\-FTO}}
+\index{EMAC\_\-FTO@{EMAC\_\-FTO}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-FTO}}}
+\label{struct__AT91S__EMAC_f34695fe05606e9e8304697c1dd95212}
+
+
+\hypertarget{struct__AT91S__EMAC_0868a2869f70280e58a8884710bd9c21}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SCF@{EMAC\_\-SCF}}
+\index{EMAC\_\-SCF@{EMAC\_\-SCF}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SCF}}}
+\label{struct__AT91S__EMAC_0868a2869f70280e58a8884710bd9c21}
+
+
+\hypertarget{struct__AT91S__EMAC_8bf3345deb86848307ef1b457efa5223}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-MCF@{EMAC\_\-MCF}}
+\index{EMAC\_\-MCF@{EMAC\_\-MCF}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-MCF}}}
+\label{struct__AT91S__EMAC_8bf3345deb86848307ef1b457efa5223}
+
+
+\hypertarget{struct__AT91S__EMAC_d999f42847917e58f75971518516c6f8}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-FRO@{EMAC\_\-FRO}}
+\index{EMAC\_\-FRO@{EMAC\_\-FRO}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-FRO}}}
+\label{struct__AT91S__EMAC_d999f42847917e58f75971518516c6f8}
+
+
+\hypertarget{struct__AT91S__EMAC_d41d842c79c1ab9c61ce54ea73befb8f}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-FCSE@{EMAC\_\-FCSE}}
+\index{EMAC\_\-FCSE@{EMAC\_\-FCSE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-FCSE}}}
+\label{struct__AT91S__EMAC_d41d842c79c1ab9c61ce54ea73befb8f}
+
+
+\hypertarget{struct__AT91S__EMAC_a70179d00f5970717de998a4e6f10045}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-ALE@{EMAC\_\-ALE}}
+\index{EMAC\_\-ALE@{EMAC\_\-ALE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-ALE}}}
+\label{struct__AT91S__EMAC_a70179d00f5970717de998a4e6f10045}
+
+
+\hypertarget{struct__AT91S__EMAC_a626585bdeb2732b1b6920a2f3403fc2}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-DTF@{EMAC\_\-DTF}}
+\index{EMAC\_\-DTF@{EMAC\_\-DTF}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-DTF}}}
+\label{struct__AT91S__EMAC_a626585bdeb2732b1b6920a2f3403fc2}
+
+
+\hypertarget{struct__AT91S__EMAC_bb38b2cee8c45ae19556607e9cacb466}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-LCOL@{EMAC\_\-LCOL}}
+\index{EMAC\_\-LCOL@{EMAC\_\-LCOL}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-LCOL}}}
+\label{struct__AT91S__EMAC_bb38b2cee8c45ae19556607e9cacb466}
+
+
+\hypertarget{struct__AT91S__EMAC_54730cb738b082b698ce3d69dbc9e2f5}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-ECOL@{EMAC\_\-ECOL}}
+\index{EMAC\_\-ECOL@{EMAC\_\-ECOL}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-ECOL}}}
+\label{struct__AT91S__EMAC_54730cb738b082b698ce3d69dbc9e2f5}
+
+
+\hypertarget{struct__AT91S__EMAC_8f583c268ee7728afd71d59995af1032}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-TUND@{EMAC\_\-TUND}}
+\index{EMAC\_\-TUND@{EMAC\_\-TUND}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-TUND}}}
+\label{struct__AT91S__EMAC_8f583c268ee7728afd71d59995af1032}
+
+
+\hypertarget{struct__AT91S__EMAC_1049da06db2ab979642032f6f055055b}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-CSE@{EMAC\_\-CSE}}
+\index{EMAC\_\-CSE@{EMAC\_\-CSE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-CSE}}}
+\label{struct__AT91S__EMAC_1049da06db2ab979642032f6f055055b}
+
+
+\hypertarget{struct__AT91S__EMAC_e882748462f992390b208fbd2135d05b}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-RRE@{EMAC\_\-RRE}}
+\index{EMAC\_\-RRE@{EMAC\_\-RRE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-RRE}}}
+\label{struct__AT91S__EMAC_e882748462f992390b208fbd2135d05b}
+
+
+\hypertarget{struct__AT91S__EMAC_6bf4ac36658d1b185e857318a6ee12a4}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-ROV@{EMAC\_\-ROV}}
+\index{EMAC\_\-ROV@{EMAC\_\-ROV}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-ROV}}}
+\label{struct__AT91S__EMAC_6bf4ac36658d1b185e857318a6ee12a4}
+
+
+\hypertarget{struct__AT91S__EMAC_c5726a8c4ddf9a339f0c01d562154894}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-RSE@{EMAC\_\-RSE}}
+\index{EMAC\_\-RSE@{EMAC\_\-RSE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-RSE}}}
+\label{struct__AT91S__EMAC_c5726a8c4ddf9a339f0c01d562154894}
+
+
+\hypertarget{struct__AT91S__EMAC_1f4bd4812d46649af3558417c68848e3}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-ELE@{EMAC\_\-ELE}}
+\index{EMAC\_\-ELE@{EMAC\_\-ELE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-ELE}}}
+\label{struct__AT91S__EMAC_1f4bd4812d46649af3558417c68848e3}
+
+
+\hypertarget{struct__AT91S__EMAC_00faac6cb2f949df48e4b92dec67969c}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-RJA@{EMAC\_\-RJA}}
+\index{EMAC\_\-RJA@{EMAC\_\-RJA}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-RJA}}}
+\label{struct__AT91S__EMAC_00faac6cb2f949df48e4b92dec67969c}
+
+
+\hypertarget{struct__AT91S__EMAC_84c14af09a8fd3a182a17eadd2d5ac2c}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-USF@{EMAC\_\-USF}}
+\index{EMAC\_\-USF@{EMAC\_\-USF}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-USF}}}
+\label{struct__AT91S__EMAC_84c14af09a8fd3a182a17eadd2d5ac2c}
+
+
+\hypertarget{struct__AT91S__EMAC_7a35b15cfa1a7a17dc638dd2aceaa8a3}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-STE@{EMAC\_\-STE}}
+\index{EMAC\_\-STE@{EMAC\_\-STE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-STE}}}
+\label{struct__AT91S__EMAC_7a35b15cfa1a7a17dc638dd2aceaa8a3}
+
+
+\hypertarget{struct__AT91S__EMAC_6f6d3b684e2ed167a136a0c08ed02484}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-RLE@{EMAC\_\-RLE}}
+\index{EMAC\_\-RLE@{EMAC\_\-RLE}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-RLE}}}
+\label{struct__AT91S__EMAC_6f6d3b684e2ed167a136a0c08ed02484}
+
+
+\hypertarget{struct__AT91S__EMAC_22a57248626bab86d77fa0d85cfe8efe}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-TPF@{EMAC\_\-TPF}}
+\index{EMAC\_\-TPF@{EMAC\_\-TPF}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-TPF}}}
+\label{struct__AT91S__EMAC_22a57248626bab86d77fa0d85cfe8efe}
+
+
+\hypertarget{struct__AT91S__EMAC_0e3d9c3f64d5073b38585325f01d78a3}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-HRB@{EMAC\_\-HRB}}
+\index{EMAC\_\-HRB@{EMAC\_\-HRB}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-HRB}}}
+\label{struct__AT91S__EMAC_0e3d9c3f64d5073b38585325f01d78a3}
+
+
+\hypertarget{struct__AT91S__EMAC_6e222152c68d14b68c70c0e6d19dc081}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-HRT@{EMAC\_\-HRT}}
+\index{EMAC\_\-HRT@{EMAC\_\-HRT}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-HRT}}}
+\label{struct__AT91S__EMAC_6e222152c68d14b68c70c0e6d19dc081}
+
+
+\hypertarget{struct__AT91S__EMAC_27c0f424b25abdb59e51541b49b850fa}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA1L@{EMAC\_\-SA1L}}
+\index{EMAC\_\-SA1L@{EMAC\_\-SA1L}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA1L}}}
+\label{struct__AT91S__EMAC_27c0f424b25abdb59e51541b49b850fa}
+
+
+\hypertarget{struct__AT91S__EMAC_076dd76c5ca9b64fd2a3fef470290584}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA1H@{EMAC\_\-SA1H}}
+\index{EMAC\_\-SA1H@{EMAC\_\-SA1H}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA1H}}}
+\label{struct__AT91S__EMAC_076dd76c5ca9b64fd2a3fef470290584}
+
+
+\hypertarget{struct__AT91S__EMAC_910e2e7bc69adce9bffdc7454425a8e1}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA2L@{EMAC\_\-SA2L}}
+\index{EMAC\_\-SA2L@{EMAC\_\-SA2L}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA2L}}}
+\label{struct__AT91S__EMAC_910e2e7bc69adce9bffdc7454425a8e1}
+
+
+\hypertarget{struct__AT91S__EMAC_e9601174b6ac1228d3f301d06012b8a7}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA2H@{EMAC\_\-SA2H}}
+\index{EMAC\_\-SA2H@{EMAC\_\-SA2H}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA2H}}}
+\label{struct__AT91S__EMAC_e9601174b6ac1228d3f301d06012b8a7}
+
+
+\hypertarget{struct__AT91S__EMAC_fbdc7911d56b2f91fe73ff2ca3de70ca}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA3L@{EMAC\_\-SA3L}}
+\index{EMAC\_\-SA3L@{EMAC\_\-SA3L}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA3L}}}
+\label{struct__AT91S__EMAC_fbdc7911d56b2f91fe73ff2ca3de70ca}
+
+
+\hypertarget{struct__AT91S__EMAC_09ac827c6db9c00a98ffc47cc291341f}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA3H@{EMAC\_\-SA3H}}
+\index{EMAC\_\-SA3H@{EMAC\_\-SA3H}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA3H}}}
+\label{struct__AT91S__EMAC_09ac827c6db9c00a98ffc47cc291341f}
+
+
+\hypertarget{struct__AT91S__EMAC_0a3ff7c0540b6af9572b6164325f2ce3}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA4L@{EMAC\_\-SA4L}}
+\index{EMAC\_\-SA4L@{EMAC\_\-SA4L}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA4L}}}
+\label{struct__AT91S__EMAC_0a3ff7c0540b6af9572b6164325f2ce3}
+
+
+\hypertarget{struct__AT91S__EMAC_a07ced46f07dc8c0d7af93fcbbe9aacb}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-SA4H@{EMAC\_\-SA4H}}
+\index{EMAC\_\-SA4H@{EMAC\_\-SA4H}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-SA4H}}}
+\label{struct__AT91S__EMAC_a07ced46f07dc8c0d7af93fcbbe9aacb}
+
+
+\hypertarget{struct__AT91S__EMAC_bf97d6b39e5d6bbf93b465dd6ba96773}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-TID@{EMAC\_\-TID}}
+\index{EMAC\_\-TID@{EMAC\_\-TID}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-TID}}}
+\label{struct__AT91S__EMAC_bf97d6b39e5d6bbf93b465dd6ba96773}
+
+
+\hypertarget{struct__AT91S__EMAC_c76605806ba0d4ca0600b3134a8ddf8f}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-TPQ@{EMAC\_\-TPQ}}
+\index{EMAC\_\-TPQ@{EMAC\_\-TPQ}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-TPQ}}}
+\label{struct__AT91S__EMAC_c76605806ba0d4ca0600b3134a8ddf8f}
+
+
+\hypertarget{struct__AT91S__EMAC_4fc9f0e35fd6eb5851ba26fd842d4ddd}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-USRIO@{EMAC\_\-USRIO}}
+\index{EMAC\_\-USRIO@{EMAC\_\-USRIO}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-USRIO}}}
+\label{struct__AT91S__EMAC_4fc9f0e35fd6eb5851ba26fd842d4ddd}
+
+
+\hypertarget{struct__AT91S__EMAC_0beaeb7cb794ede456613b75abc0b101}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-WOL@{EMAC\_\-WOL}}
+\index{EMAC\_\-WOL@{EMAC\_\-WOL}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-WOL}}}
+\label{struct__AT91S__EMAC_0beaeb7cb794ede456613b75abc0b101}
+
+
+\hypertarget{struct__AT91S__EMAC_24ff8aae6b5097f1df059e30bdb7bfc0}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!Reserved1@{Reserved1}}
+\index{Reserved1@{Reserved1}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::Reserved1}\mbox{[}13\mbox{]}}}
+\label{struct__AT91S__EMAC_24ff8aae6b5097f1df059e30bdb7bfc0}
+
+
+\hypertarget{struct__AT91S__EMAC_5d68876fe39a6275cf7d802f5d051804}{
+\index{\_\-AT91S\_\-EMAC@{\_\-AT91S\_\-EMAC}!EMAC\_\-REV@{EMAC\_\-REV}}
+\index{EMAC\_\-REV@{EMAC\_\-REV}!_AT91S_EMAC@{\_\-AT91S\_\-EMAC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-EMAC::EMAC\_\-REV}}}
+\label{struct__AT91S__EMAC_5d68876fe39a6275cf7d802f5d051804}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h}{AT91SAM7X256.h}\end{CompactItemize}

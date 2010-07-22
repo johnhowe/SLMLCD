@@ -1,0 +1,326 @@
+\hypertarget{adc_8c}{
+\section{adc.c File Reference}
+\label{adc_8c}\index{adc.c@{adc.c}}
+}
+Analogue to digital converter routines for AT91SAM7 processors. 
+
+{\tt \#include \char`\"{}adc.h\char`\"{}}\par
+{\tt \#include \char`\"{}bits.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{adc_8c_1a76153a7d82728c91597165821fef1a}{ADC\_\-8BIT\_\-CLOCK\_\-MAX}~8e6
+\item 
+\#define \hyperlink{adc_8c_d2852e9c5c340f7db33fe10b5c3c11f3}{ADC\_\-10BIT\_\-CLOCK\_\-MAX}~5e6
+\item 
+\#define \hyperlink{adc_8c_c5fc5370817cf26b714ab5aa856c7d7d}{ADC\_\-STARTUP\_\-TIME\_\-MIN}~20e-6
+\item 
+\#define \hyperlink{adc_8c_bb7a8991d85c4d8eba0a4d3544d91cef}{ADC\_\-SAMPLE\_\-TIME\_\-MIN}~600e-9
+\item 
+\#define \hyperlink{adc_8c_10c6f5f4237ce6c1dc37b921ab3731f8}{ADC\_\-8BIT\_\-CLOCK}~ADC\_\-8BIT\_\-CLOCK\_\-MAX
+\item 
+\#define \hyperlink{adc_8c_9b705e13c7fd88d85c1cd3487ae5446b}{ADC\_\-10BIT\_\-CLOCK}~ADC\_\-10BIT\_\-CLOCK\_\-MAX
+\item 
+\#define \hyperlink{adc_8c_004835b091049633d9ed41611783bcf5}{ADC\_\-STARTUP\_\-TIME}~ADC\_\-STARTUP\_\-TIME\_\-MIN
+\item 
+\#define \hyperlink{adc_8c_09373c96a82a53b7911695cb62586dd5}{ADC\_\-SAMPLE\_\-TIME}~ADC\_\-SAMPLE\_\-TIME\_\-MIN
+\item 
+\#define \hyperlink{adc_8c_8fd6cb3d405543cb3ecec15854598132}{ADC\_\-8BIT\_\-PRESCALE}~((uint8\_\-t)(F\_\-CPU / (2 $\ast$ ADC\_\-8BIT\_\-CLOCK) + 0.5 - 1))
+\item 
+\#define \hyperlink{adc_8c_f02310d1c639ec2f42f3fc46d7383a63}{ADC\_\-10BIT\_\-PRESCALE}~((uint8\_\-t)(F\_\-CPU / (2 $\ast$ ADC\_\-10BIT\_\-CLOCK) + 0.5 - 1))
+\item 
+\#define \hyperlink{adc_8c_e0dd24895a964081628284afc3037d05}{ADC\_\-8BIT\_\-CLOCK1}~(F\_\-CPU / ((ADC\_\-8BIT\_\-PRESCALE + 1) $\ast$ 2))
+\item 
+\#define \hyperlink{adc_8c_f1a3baf342925dc552ff75fb356c00ca}{ADC\_\-10BIT\_\-CLOCK1}~(F\_\-CPU / ((ADC\_\-10BIT\_\-PRESCALE + 1) $\ast$ 2))
+\item 
+\#define \hyperlink{adc_8c_e7b9af1d1a1608f34c160812282a87d2}{ADC\_\-8BIT\_\-STARTUP}~((uint8\_\-t)(ADC\_\-STARTUP\_\-TIME $\ast$ ADC\_\-8BIT\_\-CLOCK1 / 8 + 0.5 - 1))
+\item 
+\#define \hyperlink{adc_8c_7d9b15226834ffdfe68d2744278c285c}{ADC\_\-10BIT\_\-STARTUP}~((uint8\_\-t)(ADC\_\-STARTUP\_\-TIME $\ast$ ADC\_\-10BIT\_\-CLOCK1 / 8 +0.5 - 1))
+\item 
+\#define \hyperlink{adc_8c_2b68af9b08097f9a308b9e2591ca1941}{ADC\_\-8BIT\_\-SHTIM}~((uint8\_\-t)(ADC\_\-SAMPLE\_\-TIME $\ast$ ADC\_\-8BIT\_\-CLOCK1 + 0.5 - 1))
+\item 
+\#define \hyperlink{adc_8c_0d24933c9a54f7bbb3d4ee3fb0be9f7f}{ADC\_\-10BIT\_\-SHTIM}~((uint8\_\-t)(ADC\_\-SAMPLE\_\-TIME $\ast$ ADC\_\-10BIT\_\-CLOCK1 + 0.5 - 1))
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{adc_8c_0f1c58e1b29e4a9f6bddb524013490e1}{adc\_\-reset} (void)
+\item 
+void \hyperlink{adc_8c_da7198c2610380f04eb99857185ba7f9}{adc\_\-sleep} (void)
+\item 
+static bool \hyperlink{adc_8c_3c78e4d8f473330b0c07b64140d092dc}{adc\_\-resolution\_\-set} (uint8\_\-t resolution)
+\item 
+static void \hyperlink{adc_8c_a8ab696faf261604569b426bdbd6a199}{adc\_\-start} (void)
+\item 
+void \hyperlink{adc_8c_08ac25abf1450ce759c74bb53df3073f}{adc\_\-reference\_\-select} (\hyperlink{adc_8h_247cc11788d461a47c434d82e18005ec}{adc\_\-ref\_\-mode\_\-t} mode \_\-\_\-UNUSED\_\-\_\-)
+\item 
+void \hyperlink{adc_8c_2e1ea792d4f8ed565e8f99e25430b48f}{adc\_\-init} (uint8\_\-t channels \_\-\_\-UNUSED\_\-\_\-)
+\item 
+bool \hyperlink{adc_8c_098350baf1f04c7cca191435de3a59c3}{adc\_\-conversion\_\-start} (\hyperlink{adc_8h_afc4060027875f8fe46242b0656d7814}{adc\_\-channel\_\-t} channel)
+\item 
+bool \hyperlink{adc_8c_cd1e897c597119a36f256130d290cae3}{adc\_\-ready\_\-p} (void)
+\item 
+int8\_\-t \hyperlink{adc_8c_4a5abd3c29db5d780864dfbb8e4ace60}{adc\_\-read} (\hyperlink{adc_8h_33301a686dfa6470fcd5ddae981e889f}{adc\_\-sample\_\-t} $\ast$pvalue)
+\item 
+int8\_\-t \hyperlink{adc_8c_a86fd80d7980d3d71939fe30cfbd65f5}{adc\_\-read\_\-wait} (\hyperlink{adc_8h_afc4060027875f8fe46242b0656d7814}{adc\_\-channel\_\-t} channel, \hyperlink{adc_8h_33301a686dfa6470fcd5ddae981e889f}{adc\_\-sample\_\-t} $\ast$pvalue)
+\item 
+void \hyperlink{adc_8c_d20b4babc40e03c144a6195cb44820c0}{adc\_\-stop} (void)
+\item 
+void \hyperlink{adc_8c_3b4b977d0665b5346849f3b892ac5106}{adc\_\-disable} (void)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Analogue to digital converter routines for AT91SAM7 processors. 
+
+\begin{Desc}
+\item[Author:]\end{Desc}
+\begin{Desc}
+\item[Date:]12 February 2008 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{adc_8c_9b705e13c7fd88d85c1cd3487ae5446b}{
+\index{adc.c@{adc.c}!ADC\_\-10BIT\_\-CLOCK@{ADC\_\-10BIT\_\-CLOCK}}
+\index{ADC\_\-10BIT\_\-CLOCK@{ADC\_\-10BIT\_\-CLOCK}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-10BIT\_\-CLOCK~ADC\_\-10BIT\_\-CLOCK\_\-MAX}}
+\label{adc_8c_9b705e13c7fd88d85c1cd3487ae5446b}
+
+
+\hypertarget{adc_8c_f1a3baf342925dc552ff75fb356c00ca}{
+\index{adc.c@{adc.c}!ADC\_\-10BIT\_\-CLOCK1@{ADC\_\-10BIT\_\-CLOCK1}}
+\index{ADC\_\-10BIT\_\-CLOCK1@{ADC\_\-10BIT\_\-CLOCK1}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-10BIT\_\-CLOCK1~(F\_\-CPU / ((ADC\_\-10BIT\_\-PRESCALE + 1) $\ast$ 2))}}
+\label{adc_8c_f1a3baf342925dc552ff75fb356c00ca}
+
+
+\hypertarget{adc_8c_d2852e9c5c340f7db33fe10b5c3c11f3}{
+\index{adc.c@{adc.c}!ADC\_\-10BIT\_\-CLOCK\_\-MAX@{ADC\_\-10BIT\_\-CLOCK\_\-MAX}}
+\index{ADC\_\-10BIT\_\-CLOCK\_\-MAX@{ADC\_\-10BIT\_\-CLOCK\_\-MAX}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-10BIT\_\-CLOCK\_\-MAX~5e6}}
+\label{adc_8c_d2852e9c5c340f7db33fe10b5c3c11f3}
+
+
+\hypertarget{adc_8c_f02310d1c639ec2f42f3fc46d7383a63}{
+\index{adc.c@{adc.c}!ADC\_\-10BIT\_\-PRESCALE@{ADC\_\-10BIT\_\-PRESCALE}}
+\index{ADC\_\-10BIT\_\-PRESCALE@{ADC\_\-10BIT\_\-PRESCALE}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-10BIT\_\-PRESCALE~((uint8\_\-t)(F\_\-CPU / (2 $\ast$ ADC\_\-10BIT\_\-CLOCK) + 0.5 - 1))}}
+\label{adc_8c_f02310d1c639ec2f42f3fc46d7383a63}
+
+
+
+
+Referenced by adc\_\-resolution\_\-set().\hypertarget{adc_8c_0d24933c9a54f7bbb3d4ee3fb0be9f7f}{
+\index{adc.c@{adc.c}!ADC\_\-10BIT\_\-SHTIM@{ADC\_\-10BIT\_\-SHTIM}}
+\index{ADC\_\-10BIT\_\-SHTIM@{ADC\_\-10BIT\_\-SHTIM}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-10BIT\_\-SHTIM~((uint8\_\-t)(ADC\_\-SAMPLE\_\-TIME $\ast$ ADC\_\-10BIT\_\-CLOCK1 + 0.5 - 1))}}
+\label{adc_8c_0d24933c9a54f7bbb3d4ee3fb0be9f7f}
+
+
+
+
+Referenced by adc\_\-resolution\_\-set().\hypertarget{adc_8c_7d9b15226834ffdfe68d2744278c285c}{
+\index{adc.c@{adc.c}!ADC\_\-10BIT\_\-STARTUP@{ADC\_\-10BIT\_\-STARTUP}}
+\index{ADC\_\-10BIT\_\-STARTUP@{ADC\_\-10BIT\_\-STARTUP}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-10BIT\_\-STARTUP~((uint8\_\-t)(ADC\_\-STARTUP\_\-TIME $\ast$ ADC\_\-10BIT\_\-CLOCK1 / 8 +0.5 - 1))}}
+\label{adc_8c_7d9b15226834ffdfe68d2744278c285c}
+
+
+
+
+Referenced by adc\_\-resolution\_\-set().\hypertarget{adc_8c_10c6f5f4237ce6c1dc37b921ab3731f8}{
+\index{adc.c@{adc.c}!ADC\_\-8BIT\_\-CLOCK@{ADC\_\-8BIT\_\-CLOCK}}
+\index{ADC\_\-8BIT\_\-CLOCK@{ADC\_\-8BIT\_\-CLOCK}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-8BIT\_\-CLOCK~ADC\_\-8BIT\_\-CLOCK\_\-MAX}}
+\label{adc_8c_10c6f5f4237ce6c1dc37b921ab3731f8}
+
+
+\hypertarget{adc_8c_e0dd24895a964081628284afc3037d05}{
+\index{adc.c@{adc.c}!ADC\_\-8BIT\_\-CLOCK1@{ADC\_\-8BIT\_\-CLOCK1}}
+\index{ADC\_\-8BIT\_\-CLOCK1@{ADC\_\-8BIT\_\-CLOCK1}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-8BIT\_\-CLOCK1~(F\_\-CPU / ((ADC\_\-8BIT\_\-PRESCALE + 1) $\ast$ 2))}}
+\label{adc_8c_e0dd24895a964081628284afc3037d05}
+
+
+\hypertarget{adc_8c_1a76153a7d82728c91597165821fef1a}{
+\index{adc.c@{adc.c}!ADC\_\-8BIT\_\-CLOCK\_\-MAX@{ADC\_\-8BIT\_\-CLOCK\_\-MAX}}
+\index{ADC\_\-8BIT\_\-CLOCK\_\-MAX@{ADC\_\-8BIT\_\-CLOCK\_\-MAX}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-8BIT\_\-CLOCK\_\-MAX~8e6}}
+\label{adc_8c_1a76153a7d82728c91597165821fef1a}
+
+
+\hypertarget{adc_8c_8fd6cb3d405543cb3ecec15854598132}{
+\index{adc.c@{adc.c}!ADC\_\-8BIT\_\-PRESCALE@{ADC\_\-8BIT\_\-PRESCALE}}
+\index{ADC\_\-8BIT\_\-PRESCALE@{ADC\_\-8BIT\_\-PRESCALE}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-8BIT\_\-PRESCALE~((uint8\_\-t)(F\_\-CPU / (2 $\ast$ ADC\_\-8BIT\_\-CLOCK) + 0.5 - 1))}}
+\label{adc_8c_8fd6cb3d405543cb3ecec15854598132}
+
+
+
+
+Referenced by adc\_\-resolution\_\-set().\hypertarget{adc_8c_2b68af9b08097f9a308b9e2591ca1941}{
+\index{adc.c@{adc.c}!ADC\_\-8BIT\_\-SHTIM@{ADC\_\-8BIT\_\-SHTIM}}
+\index{ADC\_\-8BIT\_\-SHTIM@{ADC\_\-8BIT\_\-SHTIM}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-8BIT\_\-SHTIM~((uint8\_\-t)(ADC\_\-SAMPLE\_\-TIME $\ast$ ADC\_\-8BIT\_\-CLOCK1 + 0.5 - 1))}}
+\label{adc_8c_2b68af9b08097f9a308b9e2591ca1941}
+
+
+
+
+Referenced by adc\_\-resolution\_\-set().\hypertarget{adc_8c_e7b9af1d1a1608f34c160812282a87d2}{
+\index{adc.c@{adc.c}!ADC\_\-8BIT\_\-STARTUP@{ADC\_\-8BIT\_\-STARTUP}}
+\index{ADC\_\-8BIT\_\-STARTUP@{ADC\_\-8BIT\_\-STARTUP}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-8BIT\_\-STARTUP~((uint8\_\-t)(ADC\_\-STARTUP\_\-TIME $\ast$ ADC\_\-8BIT\_\-CLOCK1 / 8 + 0.5 - 1))}}
+\label{adc_8c_e7b9af1d1a1608f34c160812282a87d2}
+
+
+
+
+Referenced by adc\_\-resolution\_\-set().\hypertarget{adc_8c_09373c96a82a53b7911695cb62586dd5}{
+\index{adc.c@{adc.c}!ADC\_\-SAMPLE\_\-TIME@{ADC\_\-SAMPLE\_\-TIME}}
+\index{ADC\_\-SAMPLE\_\-TIME@{ADC\_\-SAMPLE\_\-TIME}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-SAMPLE\_\-TIME~ADC\_\-SAMPLE\_\-TIME\_\-MIN}}
+\label{adc_8c_09373c96a82a53b7911695cb62586dd5}
+
+
+\hypertarget{adc_8c_bb7a8991d85c4d8eba0a4d3544d91cef}{
+\index{adc.c@{adc.c}!ADC\_\-SAMPLE\_\-TIME\_\-MIN@{ADC\_\-SAMPLE\_\-TIME\_\-MIN}}
+\index{ADC\_\-SAMPLE\_\-TIME\_\-MIN@{ADC\_\-SAMPLE\_\-TIME\_\-MIN}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-SAMPLE\_\-TIME\_\-MIN~600e-9}}
+\label{adc_8c_bb7a8991d85c4d8eba0a4d3544d91cef}
+
+
+\hypertarget{adc_8c_004835b091049633d9ed41611783bcf5}{
+\index{adc.c@{adc.c}!ADC\_\-STARTUP\_\-TIME@{ADC\_\-STARTUP\_\-TIME}}
+\index{ADC\_\-STARTUP\_\-TIME@{ADC\_\-STARTUP\_\-TIME}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-STARTUP\_\-TIME~ADC\_\-STARTUP\_\-TIME\_\-MIN}}
+\label{adc_8c_004835b091049633d9ed41611783bcf5}
+
+
+\hypertarget{adc_8c_c5fc5370817cf26b714ab5aa856c7d7d}{
+\index{adc.c@{adc.c}!ADC\_\-STARTUP\_\-TIME\_\-MIN@{ADC\_\-STARTUP\_\-TIME\_\-MIN}}
+\index{ADC\_\-STARTUP\_\-TIME\_\-MIN@{ADC\_\-STARTUP\_\-TIME\_\-MIN}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ADC\_\-STARTUP\_\-TIME\_\-MIN~20e-6}}
+\label{adc_8c_c5fc5370817cf26b714ab5aa856c7d7d}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{adc_8c_098350baf1f04c7cca191435de3a59c3}{
+\index{adc.c@{adc.c}!adc\_\-conversion\_\-start@{adc\_\-conversion\_\-start}}
+\index{adc\_\-conversion\_\-start@{adc\_\-conversion\_\-start}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool adc\_\-conversion\_\-start ({\bf adc\_\-channel\_\-t} {\em channel})}}
+\label{adc_8c_098350baf1f04c7cca191435de3a59c3}
+
+
+Starts a conversion in the ADC on the specified channel. 
+
+References ADC\_\-CHANNEL\_\-NUM, adc\_\-ready\_\-p(), adc\_\-start(), and AT91C\_\-BASE\_\-ADC.
+
+Referenced by adc\_\-read\_\-wait().\hypertarget{adc_8c_3b4b977d0665b5346849f3b892ac5106}{
+\index{adc.c@{adc.c}!adc\_\-disable@{adc\_\-disable}}
+\index{adc\_\-disable@{adc\_\-disable}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-disable (void)}}
+\label{adc_8c_3b4b977d0665b5346849f3b892ac5106}
+
+
+Disables the ADC from doing anything. \hypertarget{adc_8c_2e1ea792d4f8ed565e8f99e25430b48f}{
+\index{adc.c@{adc.c}!adc\_\-init@{adc\_\-init}}
+\index{adc\_\-init@{adc\_\-init}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-init (uint8\_\-t channels {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{adc_8c_2e1ea792d4f8ed565e8f99e25430b48f}
+
+
+Initalises the ADC registers for polling operation. 
+
+References adc\_\-read\_\-wait(), adc\_\-reset(), and adc\_\-resolution\_\-set().\hypertarget{adc_8c_4a5abd3c29db5d780864dfbb8e4ace60}{
+\index{adc.c@{adc.c}!adc\_\-read@{adc\_\-read}}
+\index{adc\_\-read@{adc\_\-read}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t adc\_\-read ({\bf adc\_\-sample\_\-t} $\ast$ {\em pvalue})}}
+\label{adc_8c_4a5abd3c29db5d780864dfbb8e4ace60}
+
+
+Returns 1 if valid sample read. 
+
+References adc\_\-ready\_\-p(), and AT91C\_\-BASE\_\-ADC.
+
+Referenced by adc\_\-read\_\-wait().\hypertarget{adc_8c_a86fd80d7980d3d71939fe30cfbd65f5}{
+\index{adc.c@{adc.c}!adc\_\-read\_\-wait@{adc\_\-read\_\-wait}}
+\index{adc\_\-read\_\-wait@{adc\_\-read\_\-wait}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t adc\_\-read\_\-wait ({\bf adc\_\-channel\_\-t} {\em channel}, \/  {\bf adc\_\-sample\_\-t} $\ast$ {\em pvalue})}}
+\label{adc_8c_a86fd80d7980d3d71939fe30cfbd65f5}
+
+
+Start conversion on selected channel, wait until conversion finished. 
+
+References adc\_\-conversion\_\-start(), adc\_\-read(), and adc\_\-ready\_\-p().
+
+Referenced by adc\_\-init().\hypertarget{adc_8c_cd1e897c597119a36f256130d290cae3}{
+\index{adc.c@{adc.c}!adc\_\-ready\_\-p@{adc\_\-ready\_\-p}}
+\index{adc\_\-ready\_\-p@{adc\_\-ready\_\-p}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool adc\_\-ready\_\-p (void)}}
+\label{adc_8c_cd1e897c597119a36f256130d290cae3}
+
+
+Returns true if a conversion has finished. 
+
+References AT91C\_\-ADC\_\-DRDY, and AT91C\_\-BASE\_\-ADC.
+
+Referenced by adc\_\-conversion\_\-start(), adc\_\-read(), and adc\_\-read\_\-wait().\hypertarget{adc_8c_08ac25abf1450ce759c74bb53df3073f}{
+\index{adc.c@{adc.c}!adc\_\-reference\_\-select@{adc\_\-reference\_\-select}}
+\index{adc\_\-reference\_\-select@{adc\_\-reference\_\-select}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-reference\_\-select ({\bf adc\_\-ref\_\-mode\_\-t} mode {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{adc_8c_08ac25abf1450ce759c74bb53df3073f}
+
+
+Select ADC reference mode. \hypertarget{adc_8c_0f1c58e1b29e4a9f6bddb524013490e1}{
+\index{adc.c@{adc.c}!adc\_\-reset@{adc\_\-reset}}
+\index{adc\_\-reset@{adc\_\-reset}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void adc\_\-reset (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{adc_8c_0f1c58e1b29e4a9f6bddb524013490e1}
+
+
+
+
+References AT91C\_\-ADC\_\-SWRST, and AT91C\_\-BASE\_\-ADC.
+
+Referenced by adc\_\-init().\hypertarget{adc_8c_3c78e4d8f473330b0c07b64140d092dc}{
+\index{adc.c@{adc.c}!adc\_\-resolution\_\-set@{adc\_\-resolution\_\-set}}
+\index{adc\_\-resolution\_\-set@{adc\_\-resolution\_\-set}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool adc\_\-resolution\_\-set (uint8\_\-t {\em resolution})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{adc_8c_3c78e4d8f473330b0c07b64140d092dc}
+
+
+
+
+References ADC\_\-10BIT\_\-PRESCALE, ADC\_\-10BIT\_\-SHTIM, ADC\_\-10BIT\_\-STARTUP, ADC\_\-8BIT\_\-PRESCALE, ADC\_\-8BIT\_\-SHTIM, ADC\_\-8BIT\_\-STARTUP, AT91C\_\-ADC\_\-LOWRES, AT91C\_\-BASE\_\-ADC, and BITS\_\-INSERT.
+
+Referenced by adc\_\-init().\hypertarget{adc_8c_da7198c2610380f04eb99857185ba7f9}{
+\index{adc.c@{adc.c}!adc\_\-sleep@{adc\_\-sleep}}
+\index{adc\_\-sleep@{adc\_\-sleep}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-sleep (void)}}
+\label{adc_8c_da7198c2610380f04eb99857185ba7f9}
+
+
+
+
+References AT91C\_\-ADC\_\-SLEEP, and AT91C\_\-BASE\_\-ADC.\hypertarget{adc_8c_a8ab696faf261604569b426bdbd6a199}{
+\index{adc.c@{adc.c}!adc\_\-start@{adc\_\-start}}
+\index{adc\_\-start@{adc\_\-start}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void adc\_\-start (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{adc_8c_a8ab696faf261604569b426bdbd6a199}
+
+
+
+
+References AT91C\_\-ADC\_\-START, and AT91C\_\-BASE\_\-ADC.
+
+Referenced by adc\_\-conversion\_\-start().\hypertarget{adc_8c_d20b4babc40e03c144a6195cb44820c0}{
+\index{adc.c@{adc.c}!adc\_\-stop@{adc\_\-stop}}
+\index{adc\_\-stop@{adc\_\-stop}!adc.c@{adc.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-stop (void)}}
+\label{adc_8c_d20b4babc40e03c144a6195cb44820c0}
+
+
+Halts any currently running conversion. 

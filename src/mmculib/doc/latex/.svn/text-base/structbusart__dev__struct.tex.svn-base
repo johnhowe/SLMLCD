@@ -1,0 +1,70 @@
+\hypertarget{structbusart__dev__struct}{
+\section{busart\_\-dev\_\-struct Struct Reference}
+\label{structbusart__dev__struct}\index{busart\_\-dev\_\-struct@{busart\_\-dev\_\-struct}}
+}
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+void($\ast$ \hyperlink{structbusart__dev__struct_c6586eff7f7dea99102e67b1606b1218}{tx\_\-irq\_\-enable} )(void)
+\item 
+void($\ast$ \hyperlink{structbusart__dev__struct_759bed61b1e74b92396b242a08f287c2}{rx\_\-irq\_\-enable} )(void)
+\item 
+bool($\ast$ \hyperlink{structbusart__dev__struct_feb426e16800d8932417730cd356ddfc}{tx\_\-finished\_\-p} )(void)
+\item 
+\hyperlink{structring__struct}{ring\_\-t} \hyperlink{structbusart__dev__struct_1b3476a82777ec00bdbd11fcc820b29b}{tx\_\-ring}
+\item 
+\hyperlink{structring__struct}{ring\_\-t} \hyperlink{structbusart__dev__struct_f41c01b5669217f6519c46a4e7ee05ac}{rx\_\-ring}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structbusart__dev__struct_c6586eff7f7dea99102e67b1606b1218}{
+\index{busart\_\-dev\_\-struct@{busart\_\-dev\_\-struct}!tx\_\-irq\_\-enable@{tx\_\-irq\_\-enable}}
+\index{tx\_\-irq\_\-enable@{tx\_\-irq\_\-enable}!busart_dev_struct@{busart\_\-dev\_\-struct}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf busart\_\-dev\_\-struct::tx\_\-irq\_\-enable})(void)}}
+\label{structbusart__dev__struct_c6586eff7f7dea99102e67b1606b1218}
+
+
+
+
+Referenced by busart\_\-write().\hypertarget{structbusart__dev__struct_759bed61b1e74b92396b242a08f287c2}{
+\index{busart\_\-dev\_\-struct@{busart\_\-dev\_\-struct}!rx\_\-irq\_\-enable@{rx\_\-irq\_\-enable}}
+\index{rx\_\-irq\_\-enable@{rx\_\-irq\_\-enable}!busart_dev_struct@{busart\_\-dev\_\-struct}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf busart\_\-dev\_\-struct::rx\_\-irq\_\-enable})(void)}}
+\label{structbusart__dev__struct_759bed61b1e74b92396b242a08f287c2}
+
+
+
+
+Referenced by busart\_\-init().\hypertarget{structbusart__dev__struct_feb426e16800d8932417730cd356ddfc}{
+\index{busart\_\-dev\_\-struct@{busart\_\-dev\_\-struct}!tx\_\-finished\_\-p@{tx\_\-finished\_\-p}}
+\index{tx\_\-finished\_\-p@{tx\_\-finished\_\-p}!busart_dev_struct@{busart\_\-dev\_\-struct}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ {\bf busart\_\-dev\_\-struct::tx\_\-finished\_\-p})(void)}}
+\label{structbusart__dev__struct_feb426e16800d8932417730cd356ddfc}
+
+
+
+
+Referenced by busart\_\-write\_\-finished\_\-p().\hypertarget{structbusart__dev__struct_1b3476a82777ec00bdbd11fcc820b29b}{
+\index{busart\_\-dev\_\-struct@{busart\_\-dev\_\-struct}!tx\_\-ring@{tx\_\-ring}}
+\index{tx\_\-ring@{tx\_\-ring}!busart_dev_struct@{busart\_\-dev\_\-struct}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-t} {\bf busart\_\-dev\_\-struct::tx\_\-ring}}}
+\label{structbusart__dev__struct_1b3476a82777ec00bdbd11fcc820b29b}
+
+
+
+
+Referenced by busart\_\-init(), busart\_\-write(), busart\_\-write\_\-finished\_\-p(), and busart\_\-write\_\-num().\hypertarget{structbusart__dev__struct_f41c01b5669217f6519c46a4e7ee05ac}{
+\index{busart\_\-dev\_\-struct@{busart\_\-dev\_\-struct}!rx\_\-ring@{rx\_\-ring}}
+\index{rx\_\-ring@{rx\_\-ring}!busart_dev_struct@{busart\_\-dev\_\-struct}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-t} {\bf busart\_\-dev\_\-struct::rx\_\-ring}}}
+\label{structbusart__dev__struct_f41c01b5669217f6519c46a4e7ee05ac}
+
+
+
+
+Referenced by busart\_\-init(), busart\_\-read(), and busart\_\-read\_\-num().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{busart_8c}{busart.c}\end{CompactItemize}

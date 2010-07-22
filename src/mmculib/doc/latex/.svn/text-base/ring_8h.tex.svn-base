@@ -1,0 +1,248 @@
+\hypertarget{ring_8h}{
+\section{ring.h File Reference}
+\label{ring_8h}\index{ring.h@{ring.h}}
+}
+Ring buffer interface. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structring__struct}{ring\_\-struct}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{ring_8h_8509c6563751694a822da97718cad0d9}{RING\_\-SIZE}(RING)~((RING) $\rightarrow$ end - (RING) $\rightarrow$ top)
+\item 
+\#define \hyperlink{ring_8h_e47d520f589bfeff2972fae8052f9da7}{RING\_\-READ\_\-NUM}(RING, TMP)
+\item 
+\#define \hyperlink{ring_8h_8be435c9f1a7d368d99d0eba6517c59a}{RING\_\-WRITE\_\-NUM}(RING, TMP)~(RING\_\-SIZE (RING) - RING\_\-READ\_\-NUM (RING, TMP) - 1)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef uint16\_\-t \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t}
+\item 
+typedef struct \hyperlink{structring__struct}{ring\_\-struct} \hyperlink{ring_8h_4a37033e286c5dab542c1761eec22756}{ring\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{ring_8h_1eddf904385ca04bd9d66959738632cd}{ring\_\-empty\_\-p} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{ring_8h_92f7048ed8a1bcb6186d5fb15ee396d6}{ring\_\-read} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring, void $\ast$buffer, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{ring_8h_a9e5a136ec26864474b8f4f7089b3d7f}{ring\_\-write} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring, const void $\ast$buffer, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{ring_8h_2e4c383654775d49c564646c1e9493f0}{ring\_\-init} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring, void $\ast$buffer, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{ring_8h_001feea492eecd20db242021ce9519a2}{ring\_\-read\_\-num} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{ring_8h_928a5a88205a17986350a33fd0eeb058}{ring\_\-write\_\-num} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring)
+\item 
+static \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{ring_8h_22039b31f4dd91ea32042d545ae6b68f}{ring\_\-putc} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring, char c)
+\item 
+static char \hyperlink{ring_8h_fda458f5bead079ffef4dea3f1dfce0b}{ring\_\-getc} (\hyperlink{structring__struct}{ring\_\-t} $\ast$ring)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Ring buffer interface. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2000 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{ring_8h_e47d520f589bfeff2972fae8052f9da7}{
+\index{ring.h@{ring.h}!RING\_\-READ\_\-NUM@{RING\_\-READ\_\-NUM}}
+\index{RING\_\-READ\_\-NUM@{RING\_\-READ\_\-NUM}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RING\_\-READ\_\-NUM(RING, \/  TMP)}}
+\label{ring_8h_e47d520f589bfeff2972fae8052f9da7}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}(((TMP) = ((RING)->in - (RING)->out)) < 0 \
+      ? (TMP) + RING_SIZE (RING) : (TMP))
+\end{verbatim}
+\end{Code}
+Number of bytes in ring buffer for reading. Need temporary integer variable so that only read in and out pointers once in expression. This avoids a possible race condition if these pointers are modified by an ISR. It is assumed that pointer reads and writres are atomic. 
+
+Referenced by ring\_\-getc(), ring\_\-read(), and ring\_\-read\_\-num().\hypertarget{ring_8h_8509c6563751694a822da97718cad0d9}{
+\index{ring.h@{ring.h}!RING\_\-SIZE@{RING\_\-SIZE}}
+\index{RING\_\-SIZE@{RING\_\-SIZE}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RING\_\-SIZE(RING)~((RING) $\rightarrow$ end - (RING) $\rightarrow$ top)}}
+\label{ring_8h_8509c6563751694a822da97718cad0d9}
+
+
+The following macros should be considered private. Number of bytes in ring buffer. \hypertarget{ring_8h_8be435c9f1a7d368d99d0eba6517c59a}{
+\index{ring.h@{ring.h}!RING\_\-WRITE\_\-NUM@{RING\_\-WRITE\_\-NUM}}
+\index{RING\_\-WRITE\_\-NUM@{RING\_\-WRITE\_\-NUM}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RING\_\-WRITE\_\-NUM(RING, \/  TMP)~(RING\_\-SIZE (RING) - RING\_\-READ\_\-NUM (RING, TMP) - 1)}}
+\label{ring_8h_8be435c9f1a7d368d99d0eba6517c59a}
+
+
+Number of free bytes in ring buffer for writing. 
+
+Referenced by ring\_\-putc(), ring\_\-write(), and ring\_\-write\_\-num().
+
+\subsection{Typedef Documentation}
+\hypertarget{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{
+\index{ring.h@{ring.h}!ring\_\-size\_\-t@{ring\_\-size\_\-t}}
+\index{ring\_\-size\_\-t@{ring\_\-size\_\-t}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\_\-t {\bf ring\_\-size\_\-t}}}
+\label{ring_8h_f1370ade98f8d7f1c525801f84c449bb}
+
+
+\hypertarget{ring_8h_4a37033e286c5dab542c1761eec22756}{
+\index{ring.h@{ring.h}!ring\_\-t@{ring\_\-t}}
+\index{ring\_\-t@{ring\_\-t}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ring\_\-struct}  {\bf ring\_\-t}}}
+\label{ring_8h_4a37033e286c5dab542c1761eec22756}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ring_8h_1eddf904385ca04bd9d66959738632cd}{
+\index{ring.h@{ring.h}!ring\_\-empty\_\-p@{ring\_\-empty\_\-p}}
+\index{ring\_\-empty\_\-p@{ring\_\-empty\_\-p}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool ring\_\-empty\_\-p ({\bf ring\_\-t} $\ast$ {\em ring})}}
+\label{ring_8h_1eddf904385ca04bd9d66959738632cd}
+
+
+Return non-zero if the ring buffer is empty. 
+
+References RING\_\-EMPTY\_\-P.
+
+Referenced by busart\_\-write\_\-finished\_\-p().\hypertarget{ring_8h_fda458f5bead079ffef4dea3f1dfce0b}{
+\index{ring.h@{ring.h}!ring\_\-getc@{ring\_\-getc}}
+\index{ring\_\-getc@{ring\_\-getc}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static char ring\_\-getc ({\bf ring\_\-t} $\ast$ {\em ring})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ring_8h_fda458f5bead079ffef4dea3f1dfce0b}
+
+
+Read single character from ring buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]character or zero if unsuccessful. \end{Desc}
+
+
+References ring\_\-struct::end, ring\_\-struct::out, RING\_\-READ\_\-NUM, and ring\_\-struct::top.\hypertarget{ring_8h_2e4c383654775d49c564646c1e9493f0}{
+\index{ring.h@{ring.h}!ring\_\-init@{ring\_\-init}}
+\index{ring\_\-init@{ring\_\-init}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} ring\_\-init ({\bf ring\_\-t} $\ast$ {\em ring}, \/  void $\ast$ {\em buffer}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{ring_8h_2e4c383654775d49c564646c1e9493f0}
+
+
+Initialise a ring buffer structure to use a specified buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \item[{\em buffer}]pointer to memory buffer \item[{\em size}]size of memory buffer in bytes \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]size size of memory buffer in bytes or zero if error. \end{Desc}
+
+
+References ring\_\-struct::end, ring\_\-struct::in, ring\_\-struct::out, and ring\_\-struct::top.
+
+Referenced by busart\_\-init().\hypertarget{ring_8h_22039b31f4dd91ea32042d545ae6b68f}{
+\index{ring.h@{ring.h}!ring\_\-putc@{ring\_\-putc}}
+\index{ring\_\-putc@{ring\_\-putc}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static {\bf ring\_\-size\_\-t} ring\_\-putc ({\bf ring\_\-t} $\ast$ {\em ring}, \/  char {\em c})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ring_8h_22039b31f4dd91ea32042d545ae6b68f}
+
+
+Write single character to ring buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \item[{\em c}]character to write \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]non-zero if successful. \end{Desc}
+
+
+References ring\_\-struct::end, ring\_\-struct::in, RING\_\-WRITE\_\-NUM, and ring\_\-struct::top.\hypertarget{ring_8h_92f7048ed8a1bcb6186d5fb15ee396d6}{
+\index{ring.h@{ring.h}!ring\_\-read@{ring\_\-read}}
+\index{ring\_\-read@{ring\_\-read}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} ring\_\-read ({\bf ring\_\-t} $\ast$ {\em ring}, \/  void $\ast$ {\em buffer}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{ring_8h_92f7048ed8a1bcb6186d5fb15ee396d6}
+
+
+Read from a ring buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \item[{\em buffer}]pointer to memory buffer \item[{\em size}]maximum number of bytes to read \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes actually read. \end{Desc}
+
+
+References ring\_\-struct::end, ring\_\-struct::out, RING\_\-READ\_\-NUM, and ring\_\-struct::top.
+
+Referenced by busart\_\-read().\hypertarget{ring_8h_001feea492eecd20db242021ce9519a2}{
+\index{ring.h@{ring.h}!ring\_\-read\_\-num@{ring\_\-read\_\-num}}
+\index{ring\_\-read\_\-num@{ring\_\-read\_\-num}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} ring\_\-read\_\-num ({\bf ring\_\-t} $\ast$ {\em ring})}}
+\label{ring_8h_001feea492eecd20db242021ce9519a2}
+
+
+Number of bytes in ring buffer for reading.
+
+Determine number of bytes in ring buffer ready for reading. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes in ring buffer ready for reading. \end{Desc}
+
+
+References RING\_\-READ\_\-NUM.
+
+Referenced by busart\_\-read\_\-num().\hypertarget{ring_8h_a9e5a136ec26864474b8f4f7089b3d7f}{
+\index{ring.h@{ring.h}!ring\_\-write@{ring\_\-write}}
+\index{ring\_\-write@{ring\_\-write}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} ring\_\-write ({\bf ring\_\-t} $\ast$ {\em ring}, \/  const void $\ast$ {\em buffer}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{ring_8h_a9e5a136ec26864474b8f4f7089b3d7f}
+
+
+Write to a ring buffer. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \item[{\em buffer}]pointer to memory buffer \item[{\em size}]number of bytes to write \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes actually written. \end{Desc}
+
+
+References ring\_\-struct::end, ring\_\-struct::in, RING\_\-WRITE\_\-NUM, and ring\_\-struct::top.
+
+Referenced by busart\_\-write().\hypertarget{ring_8h_928a5a88205a17986350a33fd0eeb058}{
+\index{ring.h@{ring.h}!ring\_\-write\_\-num@{ring\_\-write\_\-num}}
+\index{ring\_\-write\_\-num@{ring\_\-write\_\-num}!ring.h@{ring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} ring\_\-write\_\-num ({\bf ring\_\-t} $\ast$ {\em ring})}}
+\label{ring_8h_928a5a88205a17986350a33fd0eeb058}
+
+
+Number of bytes free in ring buffer for writing.
+
+Determine number of bytes in ring buffer free for writing. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ring}]pointer to ring buffer structure \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes in ring buffer free for writing. \end{Desc}
+
+
+References RING\_\-WRITE\_\-NUM.
+
+Referenced by busart\_\-write\_\-num().

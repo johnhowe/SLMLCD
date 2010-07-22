@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts
+END
+AT91SAM7S128-RAM.ld
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts/AT91SAM7S128-RAM.ld
+END
+AT91SAM7S256-ROM.ld
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts/AT91SAM7S256-ROM.ld
+END
+AT91SAM7S256-RAM.ld
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts/AT91SAM7S256-RAM.ld
+END
+AT91SAM7S-ROM.ld
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts/AT91SAM7S-ROM.ld
+END
+AT91SAM7S-RAM.ld
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts/AT91SAM7S-RAM.ld
+END
+AT91SAM7S128-ROM.ld
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/groups/mmicro/!svn/ver/39/tags/release/mat91lib-1.0.1/ldscripts/AT91SAM7S128-ROM.ld
+END

@@ -1,0 +1,288 @@
+\hypertarget{lcd_8c}{
+\section{lcd.c File Reference}
+\label{lcd_8c}\index{lcd.c@{lcd.c}}
+}
+Routines to interface to a Hitachi HD44780/KS0066 LCD controller in 4-bit mode with no readback. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}lcd.h\char`\"{}}\par
+{\tt \#include \char`\"{}delay.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{lcd_8c_a70a877012c19b960d328b013e1b7193}{LCD\_\-DEBUG}~HOSTED
+\item 
+\#define \hyperlink{lcd_8c_7b486233f486054ffa5ad4eef03ef4d6}{lcd\_\-wait}(dev)~DELAY\_\-US (40 + 20)
+\item 
+\#define \hyperlink{lcd_8c_811bc38e8788177cd6a852cc1dce6c21}{lcd\_\-data\_\-set}(dev, data)
+\item 
+\#define \hyperlink{lcd_8c_b38235301773284de1802f8fa7bb782e}{lcd\_\-mode\_\-control}(dev)~port\_\-pins\_\-set\_\-low (dev $\rightarrow$ cfg $\rightarrow$ rs\_\-port, dev $\rightarrow$ rs\_\-mask)
+\item 
+\#define \hyperlink{lcd_8c_cac6f4dc09c640cf4ebb1774e91345e9}{lcd\_\-mode\_\-data}(dev)~port\_\-pins\_\-set\_\-high (dev $\rightarrow$ cfg $\rightarrow$ rs\_\-port, dev $\rightarrow$ rs\_\-mask)
+\item 
+\#define \hyperlink{lcd_8c_82b04ad898175e5b7f444409691b5579}{lcd\_\-strobe}(dev)
+\item 
+\#define \hyperlink{lcd_8c_c204b86f97932295243ccc1c5b26658c}{lcd\_\-write}(dev, data)
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \par
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fce6b1be5710da05166e058e59990bc9c24}{LCD\_\-CLEAR} =  BIT (0), 
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fcea6d43327f5d686c8c984f478d9bf342a}{LCD\_\-HOME} =  BIT (1), 
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fceb046ac5fffb058a61d10dd6ae27897a3}{LCD\_\-ENTRY\_\-MODE} =  BIT (2), 
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fce5b66f423b91c8f5ea80b2bcb97ad053d}{LCD\_\-DISPLAY} =  BIT (3), 
+\par
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fced88076dac22a5544fa19a5c530878340}{LCD\_\-SHIFT} =  BIT (4), 
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fcefd2e05bc7e483b6b15bf47a1fd2ddd1d}{LCD\_\-FUNCTION} =  BIT (5), 
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fce7ed7c8f24e279fb4ae55c369c3cbcd49}{LCD\_\-CG\_\-RAM\_\-ADDRESS} =  BIT (6), 
+\hyperlink{lcd_8c_af105ae5beaca1dee30ae54530691fcea91a5c081c4893c646763a219fd071b3}{LCD\_\-DD\_\-RAM\_\-ADDRESS} =  BIT (7)
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{lcd_8c_9f505ee6a0e2bcd483c0e713e56e303a}{lcd\_\-putc} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev, char ch)
+\item 
+void \hyperlink{lcd_8c_4e3f699057f715a9273fc29627b41fad}{lcd\_\-puts} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev, const char $\ast$str)
+\item 
+void \hyperlink{lcd_8c_0e2abd1c8509ae9d8fdc20bb978795a2}{lcd\_\-clear} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev)
+\item 
+void \hyperlink{lcd_8c_5545e5d423acae6a3ed4a4e544b971e9}{lcd\_\-goto} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev, uint8\_\-t row, uint8\_\-t col)
+\item 
+\hyperlink{structlcd__obj__t}{lcd\_\-t} \hyperlink{lcd_8c_1bef4951d22118149317aef7cd92f844}{lcd\_\-init} (\hyperlink{structlcd__obj__t}{lcd\_\-obj\_\-t} $\ast$info, const \hyperlink{structlcd__cfg__t}{lcd\_\-cfg\_\-t} $\ast$cfg)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static const uint8\_\-t \hyperlink{lcd_8c_234f1ed03089e336e44ec77952a19684}{lcd\_\-init\_\-data} \mbox{[}$\,$\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Routines to interface to a Hitachi HD44780/KS0066 LCD controller in 4-bit mode with no readback. 
+
+\begin{Desc}
+\item[Author:]M.P. Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]16 Feb 2003 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{lcd_8c_811bc38e8788177cd6a852cc1dce6c21}{
+\index{lcd.c@{lcd.c}!lcd\_\-data\_\-set@{lcd\_\-data\_\-set}}
+\index{lcd\_\-data\_\-set@{lcd\_\-data\_\-set}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-data\_\-set(dev, \/  data)}}
+\label{lcd_8c_811bc38e8788177cd6a852cc1dce6c21}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}port_bus_write (dev->cfg->data_port,                        \
+                    dev->cfg->d_bit, dev->cfg->d_bit + 3, (data))
+\end{verbatim}
+\end{Code}
+
+
+Referenced by lcd\_\-clear(), and lcd\_\-init().\hypertarget{lcd_8c_a70a877012c19b960d328b013e1b7193}{
+\index{lcd.c@{lcd.c}!LCD\_\-DEBUG@{LCD\_\-DEBUG}}
+\index{LCD\_\-DEBUG@{LCD\_\-DEBUG}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-DEBUG~HOSTED}}
+\label{lcd_8c_a70a877012c19b960d328b013e1b7193}
+
+
+\hypertarget{lcd_8c_b38235301773284de1802f8fa7bb782e}{
+\index{lcd.c@{lcd.c}!lcd\_\-mode\_\-control@{lcd\_\-mode\_\-control}}
+\index{lcd\_\-mode\_\-control@{lcd\_\-mode\_\-control}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-mode\_\-control(dev)~port\_\-pins\_\-set\_\-low (dev $\rightarrow$ cfg $\rightarrow$ rs\_\-port, dev $\rightarrow$ rs\_\-mask)}}
+\label{lcd_8c_b38235301773284de1802f8fa7bb782e}
+
+
+
+
+Referenced by lcd\_\-clear(), lcd\_\-goto(), lcd\_\-init(), and lcd\_\-putc().\hypertarget{lcd_8c_cac6f4dc09c640cf4ebb1774e91345e9}{
+\index{lcd.c@{lcd.c}!lcd\_\-mode\_\-data@{lcd\_\-mode\_\-data}}
+\index{lcd\_\-mode\_\-data@{lcd\_\-mode\_\-data}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-mode\_\-data(dev)~port\_\-pins\_\-set\_\-high (dev $\rightarrow$ cfg $\rightarrow$ rs\_\-port, dev $\rightarrow$ rs\_\-mask)}}
+\label{lcd_8c_cac6f4dc09c640cf4ebb1774e91345e9}
+
+
+
+
+Referenced by lcd\_\-putc().\hypertarget{lcd_8c_82b04ad898175e5b7f444409691b5579}{
+\index{lcd.c@{lcd.c}!lcd\_\-strobe@{lcd\_\-strobe}}
+\index{lcd\_\-strobe@{lcd\_\-strobe}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-strobe(dev)}}
+\label{lcd_8c_82b04ad898175e5b7f444409691b5579}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}do                                                              \
+{                                                               \
+    port_pins_set_high (dev->cfg->e_port, dev->e_mask);                 \
+    DELAY_US (2);                                               \
+    port_pins_set_low (dev->cfg->e_port, dev->e_mask);                  \
+}                                                               \
+while (0)
+\end{verbatim}
+\end{Code}
+
+
+Referenced by lcd\_\-init().\hypertarget{lcd_8c_7b486233f486054ffa5ad4eef03ef4d6}{
+\index{lcd.c@{lcd.c}!lcd\_\-wait@{lcd\_\-wait}}
+\index{lcd\_\-wait@{lcd\_\-wait}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-wait(dev)~DELAY\_\-US (40 + 20)}}
+\label{lcd_8c_7b486233f486054ffa5ad4eef03ef4d6}
+
+
+\hypertarget{lcd_8c_c204b86f97932295243ccc1c5b26658c}{
+\index{lcd.c@{lcd.c}!lcd\_\-write@{lcd\_\-write}}
+\index{lcd\_\-write@{lcd\_\-write}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-write(dev, \/  data)}}
+\label{lcd_8c_c204b86f97932295243ccc1c5b26658c}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}do                                                              \
+{                                                               \
+    uint8_t _tmp = (data);                                      \
+                                                                \
+    /* Send MS nibble.  */                                      \
+    lcd_data_set (dev, _tmp >> 4);                              \
+    lcd_strobe (dev);                                           \
+    /* Send LS nibble.  */                                      \
+    lcd_data_set (dev, _tmp);                                   \
+    lcd_strobe (dev);                                           \
+    lcd_wait (dev);                                             \
+}                                                               \
+while (0)
+\end{verbatim}
+\end{Code}
+
+
+Referenced by lcd\_\-clear(), lcd\_\-goto(), lcd\_\-init(), and lcd\_\-putc().
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fce}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fce}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{LCD\_\-CLEAR@{LCD\_\-CLEAR}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-CLEAR@{LCD\_\-CLEAR}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fce6b1be5710da05166e058e59990bc9c24}{
+LCD\_\-CLEAR}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fce6b1be5710da05166e058e59990bc9c24}
+}]\index{LCD\_\-HOME@{LCD\_\-HOME}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-HOME@{LCD\_\-HOME}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fcea6d43327f5d686c8c984f478d9bf342a}{
+LCD\_\-HOME}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fcea6d43327f5d686c8c984f478d9bf342a}
+}]\index{LCD\_\-ENTRY\_\-MODE@{LCD\_\-ENTRY\_\-MODE}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-ENTRY\_\-MODE@{LCD\_\-ENTRY\_\-MODE}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fceb046ac5fffb058a61d10dd6ae27897a3}{
+LCD\_\-ENTRY\_\-MODE}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fceb046ac5fffb058a61d10dd6ae27897a3}
+}]\index{LCD\_\-DISPLAY@{LCD\_\-DISPLAY}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-DISPLAY@{LCD\_\-DISPLAY}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fce5b66f423b91c8f5ea80b2bcb97ad053d}{
+LCD\_\-DISPLAY}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fce5b66f423b91c8f5ea80b2bcb97ad053d}
+}]\index{LCD\_\-SHIFT@{LCD\_\-SHIFT}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-SHIFT@{LCD\_\-SHIFT}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fced88076dac22a5544fa19a5c530878340}{
+LCD\_\-SHIFT}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fced88076dac22a5544fa19a5c530878340}
+}]\index{LCD\_\-FUNCTION@{LCD\_\-FUNCTION}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-FUNCTION@{LCD\_\-FUNCTION}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fcefd2e05bc7e483b6b15bf47a1fd2ddd1d}{
+LCD\_\-FUNCTION}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fcefd2e05bc7e483b6b15bf47a1fd2ddd1d}
+}]\index{LCD\_\-CG\_\-RAM\_\-ADDRESS@{LCD\_\-CG\_\-RAM\_\-ADDRESS}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-CG\_\-RAM\_\-ADDRESS@{LCD\_\-CG\_\-RAM\_\-ADDRESS}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fce7ed7c8f24e279fb4ae55c369c3cbcd49}{
+LCD\_\-CG\_\-RAM\_\-ADDRESS}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fce7ed7c8f24e279fb4ae55c369c3cbcd49}
+}]\index{LCD\_\-DD\_\-RAM\_\-ADDRESS@{LCD\_\-DD\_\-RAM\_\-ADDRESS}!lcd.c@{lcd.c}}\index{lcd.c@{lcd.c}!LCD\_\-DD\_\-RAM\_\-ADDRESS@{LCD\_\-DD\_\-RAM\_\-ADDRESS}}\item[{\em 
+\hypertarget{lcd_8c_af105ae5beaca1dee30ae54530691fcea91a5c081c4893c646763a219fd071b3}{
+LCD\_\-DD\_\-RAM\_\-ADDRESS}
+\label{lcd_8c_af105ae5beaca1dee30ae54530691fcea91a5c081c4893c646763a219fd071b3}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{lcd_8c_0e2abd1c8509ae9d8fdc20bb978795a2}{
+\index{lcd.c@{lcd.c}!lcd\_\-clear@{lcd\_\-clear}}
+\index{lcd\_\-clear@{lcd\_\-clear}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-clear ({\bf lcd\_\-t} {\em dev})}}
+\label{lcd_8c_0e2abd1c8509ae9d8fdc20bb978795a2}
+
+
+
+
+References LCD\_\-CLEAR, lcd\_\-data\_\-set, lcd\_\-mode\_\-control, and lcd\_\-write.\hypertarget{lcd_8c_5545e5d423acae6a3ed4a4e544b971e9}{
+\index{lcd.c@{lcd.c}!lcd\_\-goto@{lcd\_\-goto}}
+\index{lcd\_\-goto@{lcd\_\-goto}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-goto ({\bf lcd\_\-t} {\em dev}, \/  uint8\_\-t {\em row}, \/  uint8\_\-t {\em col})}}
+\label{lcd_8c_5545e5d423acae6a3ed4a4e544b971e9}
+
+
+
+
+References LCD\_\-DD\_\-RAM\_\-ADDRESS, lcd\_\-mode\_\-control, and lcd\_\-write.\hypertarget{lcd_8c_1bef4951d22118149317aef7cd92f844}{
+\index{lcd.c@{lcd.c}!lcd\_\-init@{lcd\_\-init}}
+\index{lcd\_\-init@{lcd\_\-init}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lcd\_\-t} lcd\_\-init ({\bf lcd\_\-obj\_\-t} $\ast$ {\em info}, \/  const {\bf lcd\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{lcd_8c_1bef4951d22118149317aef7cd92f844}
+
+
+
+
+References lcd\_\-obj\_\-t::cfg, lcd\_\-cfg\_\-t::d\_\-bit, lcd\_\-cfg\_\-t::data\_\-port, lcd\_\-cfg\_\-t::e\_\-bit, lcd\_\-obj\_\-t::e\_\-mask, lcd\_\-cfg\_\-t::e\_\-port, lcd\_\-data\_\-set, lcd\_\-init\_\-data, lcd\_\-mode\_\-control, lcd\_\-strobe, lcd\_\-write, lcd\_\-cfg\_\-t::rs\_\-bit, lcd\_\-obj\_\-t::rs\_\-mask, and lcd\_\-cfg\_\-t::rs\_\-port.\hypertarget{lcd_8c_9f505ee6a0e2bcd483c0e713e56e303a}{
+\index{lcd.c@{lcd.c}!lcd\_\-putc@{lcd\_\-putc}}
+\index{lcd\_\-putc@{lcd\_\-putc}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-putc ({\bf lcd\_\-t} {\em dev}, \/  char {\em ch})}}
+\label{lcd_8c_9f505ee6a0e2bcd483c0e713e56e303a}
+
+
+
+
+References LCD\_\-DD\_\-RAM\_\-ADDRESS, lcd\_\-mode\_\-control, lcd\_\-mode\_\-data, and lcd\_\-write.
+
+Referenced by lcd\_\-puts().\hypertarget{lcd_8c_4e3f699057f715a9273fc29627b41fad}{
+\index{lcd.c@{lcd.c}!lcd\_\-puts@{lcd\_\-puts}}
+\index{lcd\_\-puts@{lcd\_\-puts}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-puts ({\bf lcd\_\-t} {\em dev}, \/  const char $\ast$ {\em str})}}
+\label{lcd_8c_4e3f699057f715a9273fc29627b41fad}
+
+
+
+
+References lcd\_\-putc().
+
+\subsection{Variable Documentation}
+\hypertarget{lcd_8c_234f1ed03089e336e44ec77952a19684}{
+\index{lcd.c@{lcd.c}!lcd\_\-init\_\-data@{lcd\_\-init\_\-data}}
+\index{lcd\_\-init\_\-data@{lcd\_\-init\_\-data}!lcd.c@{lcd.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const uint8\_\-t {\bf lcd\_\-init\_\-data}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{lcd_8c_234f1ed03089e336e44ec77952a19684}
+
+
+\textbf{Initial value:}
+
+\begin{Code}\begin{verbatim}
+{
+    
+    LCD_FUNCTION | BIT (3) | BIT (2),
+    
+    LCD_DISPLAY | BIT (2),
+    
+    LCD_ENTRY_MODE | BIT (1),
+    
+    LCD_CLEAR
+}
+\end{verbatim}
+\end{Code}
+
+
+Referenced by lcd\_\-init().

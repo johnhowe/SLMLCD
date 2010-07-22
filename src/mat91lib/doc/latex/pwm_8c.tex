@@ -1,0 +1,114 @@
+\hypertarget{pwm_8c}{
+\section{pwm.c File Reference}
+\label{pwm_8c}\index{pwm.c@{pwm.c}}
+}
+Pulse Width Modulation routines for AT91SAM7 processors. 
+
+{\tt \#include \char`\"{}pwm.h\char`\"{}}\par
+{\tt \#include \char`\"{}bits.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static \hyperlink{struct__AT91S__PWMC__CH}{AT91S\_\-PWMC\_\-CH} $\ast$ \hyperlink{pwm_8c_8af3c420e6c8d09bec45673ae2136f55}{pwm\_\-base} (\hyperlink{pwm_8h_5113beb40c2e296de6af562228064afc}{pwm\_\-channel\_\-t} channel)
+\item 
+uint8\_\-t \hyperlink{pwm_8c_f7baa01c7f24cb14e5140b0b1a95df98}{pwm\_\-init} (void)
+\item 
+uint8\_\-t \hyperlink{pwm_8c_f40e9be9e7b775c1a5a028fa2f046109}{pwm\_\-config} (\hyperlink{pwm_8h_5113beb40c2e296de6af562228064afc}{pwm\_\-channel\_\-t} channel, uint16\_\-t period, uint16\_\-t duty, \hyperlink{pwm_8h_8c2c57f82882f51b8c32722e5945af8a}{pwm\_\-align\_\-t} alignment, \hyperlink{pwm_8h_e1d8d35b97e4c847a7feb83b84f1e49a}{pwm\_\-polarity\_\-t} polarity)
+\item 
+void \hyperlink{pwm_8c_91d2666180582420324c3c7ecdec6657}{pwm\_\-start} (\hyperlink{pwm_8h_a122f5f8b0ac8fdd882c6ce9753d2d68}{pwm\_\-channel\_\-mask\_\-t} channel\_\-mask)
+\item 
+void \hyperlink{pwm_8c_58ccc60e3f357236a5dfeef87f4a08ca}{pwm\_\-stop} (\hyperlink{pwm_8h_a122f5f8b0ac8fdd882c6ce9753d2d68}{pwm\_\-channel\_\-mask\_\-t} channel\_\-mask)
+\item 
+void \hyperlink{pwm_8c_9f67ee1fc98b878f45b4a5cc8ad979d6}{pwm\_\-enable} (\hyperlink{pwm_8h_5113beb40c2e296de6af562228064afc}{pwm\_\-channel\_\-t} channel)
+\item 
+void \hyperlink{pwm_8c_3f95179bb31bb42a465e6fa81787e984}{pwm\_\-disable} (\hyperlink{pwm_8h_5113beb40c2e296de6af562228064afc}{pwm\_\-channel\_\-t} channel)
+\item 
+uint8\_\-t \hyperlink{pwm_8c_7798b63c406bc44db73ed59aa896b9b7}{pwm\_\-update} (\hyperlink{pwm_8h_5113beb40c2e296de6af562228064afc}{pwm\_\-channel\_\-t} channel, uint16\_\-t new\_\-period, uint16\_\-t new\_\-duty)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Pulse Width Modulation routines for AT91SAM7 processors. 
+
+\begin{Desc}
+\item[Author:]\end{Desc}
+\begin{Desc}
+\item[Date:]12 February 2008 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{pwm_8c_8af3c420e6c8d09bec45673ae2136f55}{
+\index{pwm.c@{pwm.c}!pwm\_\-base@{pwm\_\-base}}
+\index{pwm\_\-base@{pwm\_\-base}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static {\bf AT91S\_\-PWMC\_\-CH}$\ast$ pwm\_\-base ({\bf pwm\_\-channel\_\-t} {\em channel})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{pwm_8c_8af3c420e6c8d09bec45673ae2136f55}
+
+
+
+
+References AT91C\_\-BASE\_\-PWMC\_\-CH0, AT91C\_\-BASE\_\-PWMC\_\-CH1, AT91C\_\-BASE\_\-PWMC\_\-CH2, AT91C\_\-BASE\_\-PWMC\_\-CH3, PWM\_\-CHANNEL\_\-0, PWM\_\-CHANNEL\_\-1, PWM\_\-CHANNEL\_\-2, and PWM\_\-CHANNEL\_\-3.
+
+Referenced by pwm\_\-config(), and pwm\_\-update().\hypertarget{pwm_8c_f40e9be9e7b775c1a5a028fa2f046109}{
+\index{pwm.c@{pwm.c}!pwm\_\-config@{pwm\_\-config}}
+\index{pwm\_\-config@{pwm\_\-config}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t pwm\_\-config ({\bf pwm\_\-channel\_\-t} {\em channel}, \/  uint16\_\-t {\em period}, \/  uint16\_\-t {\em duty}, \/  {\bf pwm\_\-align\_\-t} {\em alignment}, \/  {\bf pwm\_\-polarity\_\-t} {\em polarity})}}
+\label{pwm_8c_f40e9be9e7b775c1a5a028fa2f046109}
+
+
+
+
+References BITS\_\-INSERT, pwm\_\-base(), \_\-AT91S\_\-PWMC\_\-CH::PWMC\_\-CDTYR, \_\-AT91S\_\-PWMC\_\-CH::PWMC\_\-CMR, and \_\-AT91S\_\-PWMC\_\-CH::PWMC\_\-CPRDR.\hypertarget{pwm_8c_3f95179bb31bb42a465e6fa81787e984}{
+\index{pwm.c@{pwm.c}!pwm\_\-disable@{pwm\_\-disable}}
+\index{pwm\_\-disable@{pwm\_\-disable}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pwm\_\-disable ({\bf pwm\_\-channel\_\-t} {\em channel})}}
+\label{pwm_8c_3f95179bb31bb42a465e6fa81787e984}
+
+
+
+
+References AT91C\_\-BASE\_\-PIOA, AT91C\_\-PA0\_\-PWM0, AT91C\_\-PA11\_\-PWM0, AT91C\_\-PA12\_\-PWM1, AT91C\_\-PA13\_\-PWM2, AT91C\_\-PA14\_\-PWM3, AT91C\_\-PA1\_\-PWM1, AT91C\_\-PA23\_\-PWM0, AT91C\_\-PA24\_\-PWM1, AT91C\_\-PA25\_\-PWM2, AT91C\_\-PA2\_\-PWM2, and AT91C\_\-PA7\_\-PWM3.\hypertarget{pwm_8c_9f67ee1fc98b878f45b4a5cc8ad979d6}{
+\index{pwm.c@{pwm.c}!pwm\_\-enable@{pwm\_\-enable}}
+\index{pwm\_\-enable@{pwm\_\-enable}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pwm\_\-enable ({\bf pwm\_\-channel\_\-t} {\em channel})}}
+\label{pwm_8c_9f67ee1fc98b878f45b4a5cc8ad979d6}
+
+
+
+
+References AT91C\_\-BASE\_\-PIOA, AT91C\_\-PA0\_\-PWM0, AT91C\_\-PA11\_\-PWM0, AT91C\_\-PA12\_\-PWM1, AT91C\_\-PA13\_\-PWM2, AT91C\_\-PA14\_\-PWM3, AT91C\_\-PA1\_\-PWM1, AT91C\_\-PA23\_\-PWM0, AT91C\_\-PA24\_\-PWM1, AT91C\_\-PA25\_\-PWM2, AT91C\_\-PA2\_\-PWM2, and AT91C\_\-PA7\_\-PWM3.\hypertarget{pwm_8c_f7baa01c7f24cb14e5140b0b1a95df98}{
+\index{pwm.c@{pwm.c}!pwm\_\-init@{pwm\_\-init}}
+\index{pwm\_\-init@{pwm\_\-init}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t pwm\_\-init (void)}}
+\label{pwm_8c_f7baa01c7f24cb14e5140b0b1a95df98}
+
+
+
+
+References AT91C\_\-BASE\_\-PMC, and AT91C\_\-ID\_\-PWMC.\hypertarget{pwm_8c_91d2666180582420324c3c7ecdec6657}{
+\index{pwm.c@{pwm.c}!pwm\_\-start@{pwm\_\-start}}
+\index{pwm\_\-start@{pwm\_\-start}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pwm\_\-start ({\bf pwm\_\-channel\_\-mask\_\-t} {\em channel\_\-mask})}}
+\label{pwm_8c_91d2666180582420324c3c7ecdec6657}
+
+
+
+
+References AT91C\_\-BASE\_\-PWMC.\hypertarget{pwm_8c_58ccc60e3f357236a5dfeef87f4a08ca}{
+\index{pwm.c@{pwm.c}!pwm\_\-stop@{pwm\_\-stop}}
+\index{pwm\_\-stop@{pwm\_\-stop}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pwm\_\-stop ({\bf pwm\_\-channel\_\-mask\_\-t} {\em channel\_\-mask})}}
+\label{pwm_8c_58ccc60e3f357236a5dfeef87f4a08ca}
+
+
+
+
+References AT91C\_\-BASE\_\-PWMC.\hypertarget{pwm_8c_7798b63c406bc44db73ed59aa896b9b7}{
+\index{pwm.c@{pwm.c}!pwm\_\-update@{pwm\_\-update}}
+\index{pwm\_\-update@{pwm\_\-update}!pwm.c@{pwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t pwm\_\-update ({\bf pwm\_\-channel\_\-t} {\em channel}, \/  uint16\_\-t {\em new\_\-period}, \/  uint16\_\-t {\em new\_\-duty})}}
+\label{pwm_8c_7798b63c406bc44db73ed59aa896b9b7}
+
+
+
+
+References AT91C\_\-BASE\_\-PWMC, BITS\_\-EXTRACT, BITS\_\-INSERT, pwm\_\-base(), \_\-AT91S\_\-PWMC\_\-CH::PWMC\_\-CMR, and \_\-AT91S\_\-PWMC\_\-CH::PWMC\_\-CUPDR.

@@ -1,0 +1,47 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.19}colourmap.h File Reference}{100}{section.5.19}}
+\newlabel{colourmap_8h}{{5.19}{100}{colourmap.h File Reference\relax }{section.5.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{100}{subsection.5.19.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.19.2}Define Documentation}{101}{subsection.5.19.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.1}COLOURMAP\_\discretionary {-}{}{}B}{101}{subsubsection.5.19.2.1}}
+\newlabel{colourmap_8h_b3254299c98357d9081a04f1f48e718c}{{5.19.2.1}{101}{COLOURMAP\_\-B\relax }{subsubsection.5.19.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.2}COLOURMAP\_\discretionary {-}{}{}B\_\discretionary {-}{}{}WEIGHT}{101}{subsubsection.5.19.2.2}}
+\newlabel{colourmap_8h_b60e8668d6865624ada157ce689a99d3}{{5.19.2.2}{101}{COLOURMAP\_\-B\_\-WEIGHT\relax }{subsubsection.5.19.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.3}COLOURMAP\_\discretionary {-}{}{}ENTRY}{101}{subsubsection.5.19.2.3}}
+\newlabel{colourmap_8h_7eac2d2ac6ac5e7d9c690375a0ee6b1b}{{5.19.2.3}{101}{COLOURMAP\_\-ENTRY\relax }{subsubsection.5.19.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.4}COLOURMAP\_\discretionary {-}{}{}G}{101}{subsubsection.5.19.2.4}}
+\newlabel{colourmap_8h_ffc777262242ed00e385b680d18bb0c4}{{5.19.2.4}{101}{COLOURMAP\_\-G\relax }{subsubsection.5.19.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.5}COLOURMAP\_\discretionary {-}{}{}G\_\discretionary {-}{}{}WEIGHT}{101}{subsubsection.5.19.2.5}}
+\newlabel{colourmap_8h_cd3773fc2e958deb4f780c71a2699c8e}{{5.19.2.5}{101}{COLOURMAP\_\-G\_\-WEIGHT\relax }{subsubsection.5.19.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.6}COLOURMAP\_\discretionary {-}{}{}R}{101}{subsubsection.5.19.2.6}}
+\newlabel{colourmap_8h_94ff1a0512565710118acf0f3e3542a6}{{5.19.2.6}{101}{COLOURMAP\_\-R\relax }{subsubsection.5.19.2.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.2.7}COLOURMAP\_\discretionary {-}{}{}R\_\discretionary {-}{}{}WEIGHT}{101}{subsubsection.5.19.2.7}}
+\newlabel{colourmap_8h_2351ccae72f14d776df08f24eac00e24}{{5.19.2.7}{101}{COLOURMAP\_\-R\_\-WEIGHT\relax }{subsubsection.5.19.2.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.19.3}Typedef Documentation}{101}{subsection.5.19.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.3.1}colourmap\_\discretionary {-}{}{}elt\_\discretionary {-}{}{}t}{101}{subsubsection.5.19.3.1}}
+\newlabel{colourmap_8h_009c020f50805a13747070d74c17bfd7}{{5.19.3.1}{101}{colourmap\_\-elt\_\-t\relax }{subsubsection.5.19.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.19.3.2}colourmap\_\discretionary {-}{}{}t}{101}{subsubsection.5.19.3.2}}
+\newlabel{colourmap_8h_df5e7dc8c56f0e19912b3f588eceb729}{{5.19.3.2}{101}{colourmap\_\-t\relax }{subsubsection.5.19.3.2}{}}
+\@setckpt{colourmap_8h}{
+\setcounter{page}{102}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{19}
+\setcounter{subsection}{3}
+\setcounter{subsubsection}{2}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

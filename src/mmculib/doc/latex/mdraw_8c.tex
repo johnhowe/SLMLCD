@@ -1,0 +1,63 @@
+\hypertarget{mdraw_8c}{
+\section{mdraw.c File Reference}
+\label{mdraw_8c}\index{mdraw.c@{mdraw.c}}
+}
+{\tt \#include \char`\"{}mdraw.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structmdraw__private__t}{mdraw\_\-t} \hyperlink{mdraw_8c_b2616a6a29ff7c3b0eb9151bf9ca03ce}{mdraw\_\-init} (\hyperlink{structmdraw__private__t}{mdraw\_\-obj\_\-t} $\ast$obj, \hyperlink{mdraw_8h_4fa9e0ad77f715a115bde75e0cee634b}{mdraw\_\-pixel\_\-set\_\-t} pixel\_\-set, \hyperlink{mdraw_8h_538479335587d00aa8b7d2491d25f657}{mdraw\_\-update\_\-t} update, void $\ast$data)
+\item 
+void \hyperlink{mdraw_8c_8134bf4947da20a8811547d5f29b75e5}{mdraw\_\-move} (\hyperlink{structmdraw__private__t}{mdraw\_\-t} this, uint8\_\-t x, uint8\_\-t y)
+\item 
+void \hyperlink{mdraw_8c_445c8bf808318cdc3792a274846ea67d}{mdraw\_\-line} (\hyperlink{structmdraw__private__t}{mdraw\_\-t} this, uint8\_\-t x\_\-end, uint8\_\-t y\_\-end, uint8\_\-t val)
+\item 
+void \hyperlink{mdraw_8c_8fca52fdc87e24f6a0816ad7f90ed696}{mdraw\_\-update} (\hyperlink{structmdraw__private__t}{mdraw\_\-t} this)
+\item 
+void \hyperlink{mdraw_8c_916c0543eeabf969a27b8de7173233f4}{mdraw\_\-plot} (\hyperlink{structmdraw__private__t}{mdraw\_\-t} this, uint8\_\-t $\ast$data, uint8\_\-t size, uint8\_\-t val)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{mdraw_8c_b2616a6a29ff7c3b0eb9151bf9ca03ce}{
+\index{mdraw.c@{mdraw.c}!mdraw\_\-init@{mdraw\_\-init}}
+\index{mdraw\_\-init@{mdraw\_\-init}!mdraw.c@{mdraw.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mdraw\_\-t} mdraw\_\-init ({\bf mdraw\_\-obj\_\-t} $\ast$ {\em obj}, \/  {\bf mdraw\_\-pixel\_\-set\_\-t} {\em pixel\_\-set}, \/  {\bf mdraw\_\-update\_\-t} {\em update}, \/  void $\ast$ {\em data})}}
+\label{mdraw_8c_b2616a6a29ff7c3b0eb9151bf9ca03ce}
+
+
+\hypertarget{mdraw_8c_445c8bf808318cdc3792a274846ea67d}{
+\index{mdraw.c@{mdraw.c}!mdraw\_\-line@{mdraw\_\-line}}
+\index{mdraw\_\-line@{mdraw\_\-line}!mdraw.c@{mdraw.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdraw\_\-line ({\bf mdraw\_\-t} {\em this}, \/  uint8\_\-t {\em x\_\-end}, \/  uint8\_\-t {\em y\_\-end}, \/  uint8\_\-t {\em val})}}
+\label{mdraw_8c_445c8bf808318cdc3792a274846ea67d}
+
+
+
+
+Referenced by mdraw\_\-plot().\hypertarget{mdraw_8c_8134bf4947da20a8811547d5f29b75e5}{
+\index{mdraw.c@{mdraw.c}!mdraw\_\-move@{mdraw\_\-move}}
+\index{mdraw\_\-move@{mdraw\_\-move}!mdraw.c@{mdraw.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdraw\_\-move ({\bf mdraw\_\-t} {\em this}, \/  uint8\_\-t {\em x}, \/  uint8\_\-t {\em y})}}
+\label{mdraw_8c_8134bf4947da20a8811547d5f29b75e5}
+
+
+
+
+Referenced by mdraw\_\-plot().\hypertarget{mdraw_8c_916c0543eeabf969a27b8de7173233f4}{
+\index{mdraw.c@{mdraw.c}!mdraw\_\-plot@{mdraw\_\-plot}}
+\index{mdraw\_\-plot@{mdraw\_\-plot}!mdraw.c@{mdraw.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdraw\_\-plot ({\bf mdraw\_\-t} {\em this}, \/  uint8\_\-t $\ast$ {\em data}, \/  uint8\_\-t {\em size}, \/  uint8\_\-t {\em val})}}
+\label{mdraw_8c_916c0543eeabf969a27b8de7173233f4}
+
+
+
+
+References mdraw\_\-line(), and mdraw\_\-move().\hypertarget{mdraw_8c_8fca52fdc87e24f6a0816ad7f90ed696}{
+\index{mdraw.c@{mdraw.c}!mdraw\_\-update@{mdraw\_\-update}}
+\index{mdraw\_\-update@{mdraw\_\-update}!mdraw.c@{mdraw.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdraw\_\-update ({\bf mdraw\_\-t} {\em this})}}
+\label{mdraw_8c_8fca52fdc87e24f6a0816ad7f90ed696}
+
+

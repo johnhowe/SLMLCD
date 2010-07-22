@@ -1,0 +1,64 @@
+\hypertarget{structbutton__private__t}{
+\section{button\_\-private\_\-t Struct Reference}
+\label{structbutton__private__t}\index{button\_\-private\_\-t@{button\_\-private\_\-t}}
+}
+{\tt \#include $<$button.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{button_8h_7bb8494816c8065ae6ff0eeb548a5896}{button\_\-state\_\-t} \hyperlink{structbutton__private__t_807f90568077865fea241aa38fe6eb02}{state}
+\item 
+const \hyperlink{structbutton__cfg__t}{button\_\-cfg\_\-t} $\ast$ \hyperlink{structbutton__private__t_2e8654b57271283dd1f1b70d1375644a}{cfg}
+\item 
+uint8\_\-t \hyperlink{structbutton__private__t_c8f75d790422e6b6567e3c25d5888b1a}{count}
+\item 
+uint8\_\-t \hyperlink{structbutton__private__t_e55a04c0ab6985c4e0d91664d792d658}{hold\_\-count}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Private button structure. 
+
+\subsection{Field Documentation}
+\hypertarget{structbutton__private__t_807f90568077865fea241aa38fe6eb02}{
+\index{button\_\-private\_\-t@{button\_\-private\_\-t}!state@{state}}
+\index{state@{state}!button_private_t@{button\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf button\_\-state\_\-t} {\bf button\_\-private\_\-t::state}}}
+\label{structbutton__private__t_807f90568077865fea241aa38fe6eb02}
+
+
+
+
+Referenced by button\_\-debounce(), button\_\-init(), and button\_\-state\_\-get().\hypertarget{structbutton__private__t_2e8654b57271283dd1f1b70d1375644a}{
+\index{button\_\-private\_\-t@{button\_\-private\_\-t}!cfg@{cfg}}
+\index{cfg@{cfg}!button_private_t@{button\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf button\_\-cfg\_\-t}$\ast$ {\bf button\_\-private\_\-t::cfg}}}
+\label{structbutton__private__t_2e8654b57271283dd1f1b70d1375644a}
+
+
+
+
+Referenced by button\_\-init(), and button\_\-pressed\_\-p().\hypertarget{structbutton__private__t_c8f75d790422e6b6567e3c25d5888b1a}{
+\index{button\_\-private\_\-t@{button\_\-private\_\-t}!count@{count}}
+\index{count@{count}!button_private_t@{button\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf button\_\-private\_\-t::count}}}
+\label{structbutton__private__t_c8f75d790422e6b6567e3c25d5888b1a}
+
+
+
+
+Referenced by button\_\-debounce(), and button\_\-init().\hypertarget{structbutton__private__t_e55a04c0ab6985c4e0d91664d792d658}{
+\index{button\_\-private\_\-t@{button\_\-private\_\-t}!hold\_\-count@{hold\_\-count}}
+\index{hold\_\-count@{hold\_\-count}!button_private_t@{button\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf button\_\-private\_\-t::hold\_\-count}}}
+\label{structbutton__private__t_e55a04c0ab6985c4e0d91664d792d658}
+
+
+
+
+Referenced by button\_\-debounce(), button\_\-hold\_\-count\_\-get(), and button\_\-init().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{button_8h}{button.h}\end{CompactItemize}

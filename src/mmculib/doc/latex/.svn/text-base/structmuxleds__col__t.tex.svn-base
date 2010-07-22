@@ -1,0 +1,50 @@
+\hypertarget{structmuxleds__col__t}{
+\section{muxleds\_\-col\_\-t Struct Reference}
+\label{structmuxleds__col__t}\index{muxleds\_\-col\_\-t@{muxleds\_\-col\_\-t}}
+}
+{\tt \#include $<$muxleds.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+port\_\-t \hyperlink{structmuxleds__col__t_f25411b63f05e0b385e5927c64a50a20}{port}
+\item 
+uint8\_\-t \hyperlink{structmuxleds__col__t_a395957ac4761201bba058b6d06d241a}{bitmask}
+\item 
+uint8\_\-t \hyperlink{structmuxleds__col__t_3f76a1a3e02d19c4472ccbe912226544}{row\_\-state}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structmuxleds__col__t_f25411b63f05e0b385e5927c64a50a20}{
+\index{muxleds\_\-col\_\-t@{muxleds\_\-col\_\-t}!port@{port}}
+\index{port@{port}!muxleds_col_t@{muxleds\_\-col\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}port\_\-t {\bf muxleds\_\-col\_\-t::port}}}
+\label{structmuxleds__col__t_f25411b63f05e0b385e5927c64a50a20}
+
+
+
+
+Referenced by muxleds\_\-init().\hypertarget{structmuxleds__col__t_a395957ac4761201bba058b6d06d241a}{
+\index{muxleds\_\-col\_\-t@{muxleds\_\-col\_\-t}!bitmask@{bitmask}}
+\index{bitmask@{bitmask}!muxleds_col_t@{muxleds\_\-col\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf muxleds\_\-col\_\-t::bitmask}}}
+\label{structmuxleds__col__t_a395957ac4761201bba058b6d06d241a}
+
+
+
+
+Referenced by muxleds\_\-init().\hypertarget{structmuxleds__col__t_3f76a1a3e02d19c4472ccbe912226544}{
+\index{muxleds\_\-col\_\-t@{muxleds\_\-col\_\-t}!row\_\-state@{row\_\-state}}
+\index{row\_\-state@{row\_\-state}!muxleds_col_t@{muxleds\_\-col\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf muxleds\_\-col\_\-t::row\_\-state}}}
+\label{structmuxleds__col__t_3f76a1a3e02d19c4472ccbe912226544}
+
+
+
+
+Referenced by muxleds\_\-init().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{muxleds_8h}{muxleds.h}\end{CompactItemize}

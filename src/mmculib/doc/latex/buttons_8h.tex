@@ -1,0 +1,129 @@
+\hypertarget{buttons_8h}{
+\section{buttons.h File Reference}
+\label{buttons_8h}\index{buttons.h@{buttons.h}}
+}
+Multiple button polling and debouncing. 
+
+{\tt \#include \char`\"{}button.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structbuttons__private__t}{buttons\_\-private\_\-t}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef \hyperlink{structbuttons__private__t}{buttons\_\-private\_\-t} \hyperlink{buttons_8h_4317ff92b5f0771e66140d912f44c007}{buttons\_\-obj\_\-t}
+\item 
+typedef \hyperlink{structbuttons__private__t}{buttons\_\-obj\_\-t} $\ast$ \hyperlink{buttons_8h_a7f7ee60541197264fac419b3b02a3da}{buttons\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{buttons_8h_bc0df6040499880717346e355b683cda}{buttons\_\-init} (\hyperlink{structbuttons__private__t}{buttons\_\-obj\_\-t} $\ast$buttons, \hyperlink{structbutton__private__t}{button\_\-obj\_\-t} $\ast$buttons\_\-info, const \hyperlink{structbutton__cfg__t}{button\_\-cfg\_\-t} $\ast$config, uint8\_\-t buttons\_\-num, uint8\_\-t poll\_\-count)
+\item 
+void \hyperlink{buttons_8h_22af164bdc87ddac79965d2b8255ba38}{buttons\_\-poll} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons)
+\item 
+bool \hyperlink{buttons_8h_95d519ecf27b1a0a6ec07e909c0cc6ea}{buttons\_\-any\_\-pushed\_\-p} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons)
+\item 
+static bool \hyperlink{buttons_8h_c12e3269469cb24dc0b0c2aeb44757aa}{buttons\_\-pushed\_\-p} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons, uint8\_\-t id)
+\item 
+static bool \hyperlink{buttons_8h_b5f5862373bb2ae1fd191f6bdc0fff83}{buttons\_\-released\_\-p} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons, uint8\_\-t id)
+\item 
+static bool \hyperlink{buttons_8h_f8b86b90dc9b3c51c96513473238eb03}{buttons\_\-held\_\-p} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons, uint8\_\-t id, uint8\_\-t hold\_\-count)
+\item 
+static bool \hyperlink{buttons_8h_9796b551d9eafff9aa5a9e1ce4b0f291}{buttons\_\-hold\_\-released\_\-p} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons, uint8\_\-t id, uint8\_\-t hold\_\-count)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Multiple button polling and debouncing. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]17 Nov 2006 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{buttons_8h_4317ff92b5f0771e66140d912f44c007}{
+\index{buttons.h@{buttons.h}!buttons\_\-obj\_\-t@{buttons\_\-obj\_\-t}}
+\index{buttons\_\-obj\_\-t@{buttons\_\-obj\_\-t}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf buttons\_\-private\_\-t} {\bf buttons\_\-obj\_\-t}}}
+\label{buttons_8h_4317ff92b5f0771e66140d912f44c007}
+
+
+\hypertarget{buttons_8h_a7f7ee60541197264fac419b3b02a3da}{
+\index{buttons.h@{buttons.h}!buttons\_\-t@{buttons\_\-t}}
+\index{buttons\_\-t@{buttons\_\-t}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf buttons\_\-obj\_\-t}$\ast$ {\bf buttons\_\-t}}}
+\label{buttons_8h_a7f7ee60541197264fac419b3b02a3da}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{buttons_8h_95d519ecf27b1a0a6ec07e909c0cc6ea}{
+\index{buttons.h@{buttons.h}!buttons\_\-any\_\-pushed\_\-p@{buttons\_\-any\_\-pushed\_\-p}}
+\index{buttons\_\-any\_\-pushed\_\-p@{buttons\_\-any\_\-pushed\_\-p}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool buttons\_\-any\_\-pushed\_\-p ({\bf buttons\_\-t} {\em buttons})}}
+\label{buttons_8h_95d519ecf27b1a0a6ec07e909c0cc6ea}
+
+
+Return true if any buttons pushed. 
+
+References button\_\-pushed\_\-p(), buttons\_\-private\_\-t::buttons, and buttons\_\-private\_\-t::num.\hypertarget{buttons_8h_f8b86b90dc9b3c51c96513473238eb03}{
+\index{buttons.h@{buttons.h}!buttons\_\-held\_\-p@{buttons\_\-held\_\-p}}
+\index{buttons\_\-held\_\-p@{buttons\_\-held\_\-p}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool buttons\_\-held\_\-p ({\bf buttons\_\-t} {\em buttons}, \/  uint8\_\-t {\em id}, \/  uint8\_\-t {\em hold\_\-count})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{buttons_8h_f8b86b90dc9b3c51c96513473238eb03}
+
+
+Return true if selected button held for hold\_\-count. 
+
+References button\_\-held\_\-p(), and buttons\_\-private\_\-t::buttons.\hypertarget{buttons_8h_9796b551d9eafff9aa5a9e1ce4b0f291}{
+\index{buttons.h@{buttons.h}!buttons\_\-hold\_\-released\_\-p@{buttons\_\-hold\_\-released\_\-p}}
+\index{buttons\_\-hold\_\-released\_\-p@{buttons\_\-hold\_\-released\_\-p}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool buttons\_\-hold\_\-released\_\-p ({\bf buttons\_\-t} {\em buttons}, \/  uint8\_\-t {\em id}, \/  uint8\_\-t {\em hold\_\-count})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{buttons_8h_9796b551d9eafff9aa5a9e1ce4b0f291}
+
+
+Return true if selected button held for hold\_\-count is released. 
+
+References button\_\-hold\_\-released\_\-p(), and buttons\_\-private\_\-t::buttons.\hypertarget{buttons_8h_bc0df6040499880717346e355b683cda}{
+\index{buttons.h@{buttons.h}!buttons\_\-init@{buttons\_\-init}}
+\index{buttons\_\-init@{buttons\_\-init}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void buttons\_\-init ({\bf buttons\_\-obj\_\-t} $\ast$ {\em buttons}, \/  {\bf button\_\-obj\_\-t} $\ast$ {\em buttons\_\-info}, \/  const {\bf button\_\-cfg\_\-t} $\ast$ {\em config}, \/  uint8\_\-t {\em buttons\_\-num}, \/  uint8\_\-t {\em poll\_\-count})}}
+\label{buttons_8h_bc0df6040499880717346e355b683cda}
+
+
+Initialise multiple buttons. 
+
+References button\_\-init(), button\_\-poll\_\-count\_\-set(), buttons\_\-private\_\-t::buttons, and buttons\_\-private\_\-t::num.\hypertarget{buttons_8h_22af164bdc87ddac79965d2b8255ba38}{
+\index{buttons.h@{buttons.h}!buttons\_\-poll@{buttons\_\-poll}}
+\index{buttons\_\-poll@{buttons\_\-poll}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void buttons\_\-poll ({\bf buttons\_\-t} {\em buttons})}}
+\label{buttons_8h_22af164bdc87ddac79965d2b8255ba38}
+
+
+Poll multiple buttons. 
+
+References button\_\-poll(), buttons\_\-private\_\-t::buttons, and buttons\_\-private\_\-t::num.\hypertarget{buttons_8h_c12e3269469cb24dc0b0c2aeb44757aa}{
+\index{buttons.h@{buttons.h}!buttons\_\-pushed\_\-p@{buttons\_\-pushed\_\-p}}
+\index{buttons\_\-pushed\_\-p@{buttons\_\-pushed\_\-p}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool buttons\_\-pushed\_\-p ({\bf buttons\_\-t} {\em buttons}, \/  uint8\_\-t {\em id})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{buttons_8h_c12e3269469cb24dc0b0c2aeb44757aa}
+
+
+Return true if selected button pushed. 
+
+References button\_\-pushed\_\-p(), and buttons\_\-private\_\-t::buttons.\hypertarget{buttons_8h_b5f5862373bb2ae1fd191f6bdc0fff83}{
+\index{buttons.h@{buttons.h}!buttons\_\-released\_\-p@{buttons\_\-released\_\-p}}
+\index{buttons\_\-released\_\-p@{buttons\_\-released\_\-p}!buttons.h@{buttons.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool buttons\_\-released\_\-p ({\bf buttons\_\-t} {\em buttons}, \/  uint8\_\-t {\em id})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{buttons_8h_b5f5862373bb2ae1fd191f6bdc0fff83}
+
+
+Return true if selected button released. 
+
+References button\_\-released\_\-p(), and buttons\_\-private\_\-t::buttons.

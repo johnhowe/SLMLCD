@@ -1,0 +1,87 @@
+\hypertarget{piezo_8h}{
+\section{piezo.h File Reference}
+\label{piezo_8h}\index{piezo.h@{piezo.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}delay.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structpiezo__cfg__t}{piezo\_\-cfg\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{piezo_8h_c14220fce2832193f25170b1f2f19515}{PIEZO\_\-CFG}(PORT, PORTBIT)~\{(PORT), BIT (PORTBIT)\}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef const \hyperlink{structpiezo__cfg__t}{piezo\_\-cfg\_\-t} \hyperlink{piezo_8h_342e751fac063b1fef94529552797f15}{piezo\_\-obj\_\-t}
+\item 
+typedef \hyperlink{structpiezo__cfg__t}{piezo\_\-obj\_\-t} $\ast$ \hyperlink{piezo_8h_b18d3499bf0e9b1822c5f7fe8e8d13bd}{piezo\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structpiezo__cfg__t}{piezo\_\-t} \hyperlink{piezo_8h_1f31944f92059d493b585049f80f1f71}{piezo\_\-init} (const \hyperlink{structpiezo__cfg__t}{piezo\_\-cfg\_\-t} $\ast$cfg)
+\item 
+static void \hyperlink{piezo_8h_111828f5e33ffed5a84ee7b4e86480ba}{piezo\_\-set} (\hyperlink{structpiezo__cfg__t}{piezo\_\-t} piezo, uint8\_\-t val)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]12 March 2003 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{piezo_8h_c14220fce2832193f25170b1f2f19515}{
+\index{piezo.h@{piezo.h}!PIEZO\_\-CFG@{PIEZO\_\-CFG}}
+\index{PIEZO\_\-CFG@{PIEZO\_\-CFG}!piezo.h@{piezo.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PIEZO\_\-CFG(PORT, \/  PORTBIT)~\{(PORT), BIT (PORTBIT)\}}}
+\label{piezo_8h_c14220fce2832193f25170b1f2f19515}
+
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{piezo_8h_342e751fac063b1fef94529552797f15}{
+\index{piezo.h@{piezo.h}!piezo\_\-obj\_\-t@{piezo\_\-obj\_\-t}}
+\index{piezo\_\-obj\_\-t@{piezo\_\-obj\_\-t}!piezo.h@{piezo.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef const {\bf piezo\_\-cfg\_\-t} {\bf piezo\_\-obj\_\-t}}}
+\label{piezo_8h_342e751fac063b1fef94529552797f15}
+
+
+\hypertarget{piezo_8h_b18d3499bf0e9b1822c5f7fe8e8d13bd}{
+\index{piezo.h@{piezo.h}!piezo\_\-t@{piezo\_\-t}}
+\index{piezo\_\-t@{piezo\_\-t}!piezo.h@{piezo.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf piezo\_\-obj\_\-t}$\ast$ {\bf piezo\_\-t}}}
+\label{piezo_8h_b18d3499bf0e9b1822c5f7fe8e8d13bd}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{piezo_8h_1f31944f92059d493b585049f80f1f71}{
+\index{piezo.h@{piezo.h}!piezo\_\-init@{piezo\_\-init}}
+\index{piezo\_\-init@{piezo\_\-init}!piezo.h@{piezo.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf piezo\_\-t} piezo\_\-init (const {\bf piezo\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{piezo_8h_1f31944f92059d493b585049f80f1f71}
+
+
+
+
+References piezo\_\-cfg\_\-t::bitmask, and piezo\_\-cfg\_\-t::port.\hypertarget{piezo_8h_111828f5e33ffed5a84ee7b4e86480ba}{
+\index{piezo.h@{piezo.h}!piezo\_\-set@{piezo\_\-set}}
+\index{piezo\_\-set@{piezo\_\-set}!piezo.h@{piezo.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void piezo\_\-set ({\bf piezo\_\-t} {\em piezo}, \/  uint8\_\-t {\em val})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{piezo_8h_111828f5e33ffed5a84ee7b4e86480ba}
+
+
+
+
+References piezo\_\-cfg\_\-t::bitmask, and piezo\_\-cfg\_\-t::port.

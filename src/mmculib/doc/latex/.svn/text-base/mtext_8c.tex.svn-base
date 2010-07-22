@@ -1,0 +1,123 @@
+\hypertarget{mtext_8c}{
+\section{mtext.c File Reference}
+\label{mtext_8c}\index{mtext.c@{mtext.c}}
+}
+Moving text. 
+
+{\tt \#include \char`\"{}mtext.h\char`\"{}}\par
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+{\tt \#include $<$limits.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{mtext_8c_a5efa11c0b44b988e1ed120d0e532a68}{mtext\_\-pixel\_\-set} (void $\ast$data, \hyperlink{structfont__t}{font\_\-t} $\ast$font, uint8\_\-t col, uint8\_\-t row, bool val)
+\item 
+static void \hyperlink{mtext_8c_b3ab21d15b5ea176e016741d925a7604}{mtext\_\-display} (\hyperlink{structmtext__obj__t}{mtext\_\-t} mtext, char ch)
+\item 
+static const char $\ast$ \hyperlink{mtext_8c_ff41cf87647d3b89545605eb81c53dde}{mtext\_\-scan} (\hyperlink{structmtext__obj__t}{mtext\_\-t} mtext, const char $\ast$str)
+\item 
+\hyperlink{structmtext__obj__t}{mtext\_\-t} \hyperlink{mtext_8c_a681ea85e29d753ace79a138fb24e9f8}{mtext\_\-init} (\hyperlink{structmtext__obj__t}{mtext\_\-obj\_\-t} $\ast$mtext, uint16\_\-t poll\_\-rate, \hyperlink{structfont__t}{font\_\-t} $\ast$font, uint8\_\-t $\ast$image, uint8\_\-t $\ast$screen, uint8\_\-t rows, uint8\_\-t cols)
+\item 
+void \hyperlink{mtext_8c_a561c94fcd64ccca533b28d3367ab518}{mtext\_\-scroller\_\-dir\_\-set} (\hyperlink{structmtext__obj__t}{mtext\_\-t} mtext, \hyperlink{scroller_8h_4111148d8dc5580d887accf6110fce85}{scroller\_\-dir\_\-t} dir)
+\item 
+\hyperlink{scroller_8h_4111148d8dc5580d887accf6110fce85}{scroller\_\-dir\_\-t} \hyperlink{mtext_8c_9b28d74fc3f7e8fe18a9388c97bd62bd}{mtext\_\-scroller\_\-dir\_\-get} (\hyperlink{structmtext__obj__t}{mtext\_\-t} mtext)
+\item 
+int8\_\-t \hyperlink{mtext_8c_e48e1eb97e84f392701516927631297d}{mtext\_\-update} (\hyperlink{structmtext__obj__t}{mtext\_\-t} mtext)
+\item 
+void \hyperlink{mtext_8c_c14048f75d9b9ebbd2ebec0922c0e7ae}{mtext\_\-speed\_\-set} (\hyperlink{structmtext__obj__t}{mtext\_\-t} mtext, uint8\_\-t speed)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Moving text. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]8 April 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{mtext_8c_b3ab21d15b5ea176e016741d925a7604}{
+\index{mtext.c@{mtext.c}!mtext\_\-display@{mtext\_\-display}}
+\index{mtext\_\-display@{mtext\_\-display}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void mtext\_\-display ({\bf mtext\_\-t} {\em mtext}, \/  char {\em ch})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{mtext_8c_b3ab21d15b5ea176e016741d925a7604}
+
+
+
+
+References mtext\_\-obj\_\-t::font, font\_\-display(), mtext\_\-obj\_\-t::image, and mtext\_\-pixel\_\-set().
+
+Referenced by mtext\_\-scan().\hypertarget{mtext_8c_a681ea85e29d753ace79a138fb24e9f8}{
+\index{mtext.c@{mtext.c}!mtext\_\-init@{mtext\_\-init}}
+\index{mtext\_\-init@{mtext\_\-init}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mtext\_\-t} mtext\_\-init ({\bf mtext\_\-obj\_\-t} $\ast$ {\em mtext}, \/  uint16\_\-t {\em poll\_\-rate}, \/  {\bf font\_\-t} $\ast$ {\em font}, \/  uint8\_\-t $\ast$ {\em image}, \/  uint8\_\-t $\ast$ {\em screen}, \/  uint8\_\-t {\em rows}, \/  uint8\_\-t {\em cols})}}
+\label{mtext_8c_a681ea85e29d753ace79a138fb24e9f8}
+
+
+
+
+References mtext\_\-obj\_\-t::cur, mtext\_\-obj\_\-t::font, mtext\_\-obj\_\-t::image, mtext\_\-obj\_\-t::mode, MTEXT\_\-MODE\_\-SCROLL, MTEXT\_\-SPEED\_\-SCALER, mtext\_\-speed\_\-set(), mtext\_\-obj\_\-t::pixels, mtext\_\-obj\_\-t::poll\_\-rate, mtext\_\-obj\_\-t::screen, mtext\_\-obj\_\-t::scroller, scroller\_\-init(), and SCROLLER\_\-OFF.\hypertarget{mtext_8c_a5efa11c0b44b988e1ed120d0e532a68}{
+\index{mtext.c@{mtext.c}!mtext\_\-pixel\_\-set@{mtext\_\-pixel\_\-set}}
+\index{mtext\_\-pixel\_\-set@{mtext\_\-pixel\_\-set}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void mtext\_\-pixel\_\-set (void $\ast$ {\em data}, \/  {\bf font\_\-t} $\ast$ {\em font}, \/  uint8\_\-t {\em col}, \/  uint8\_\-t {\em row}, \/  bool {\em val})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{mtext_8c_a5efa11c0b44b988e1ed120d0e532a68}
+
+
+
+
+References font\_\-t::width.
+
+Referenced by mtext\_\-display().\hypertarget{mtext_8c_ff41cf87647d3b89545605eb81c53dde}{
+\index{mtext.c@{mtext.c}!mtext\_\-scan@{mtext\_\-scan}}
+\index{mtext\_\-scan@{mtext\_\-scan}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ mtext\_\-scan ({\bf mtext\_\-t} {\em mtext}, \/  const char $\ast$ {\em str})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{mtext_8c_ff41cf87647d3b89545605eb81c53dde}
+
+
+
+
+References mtext\_\-display(), mtext\_\-mode\_\-set(), mtext\_\-scroller\_\-dir\_\-set(), mtext\_\-speed\_\-set(), and mtext\_\-obj\_\-t::start.
+
+Referenced by mtext\_\-update().\hypertarget{mtext_8c_9b28d74fc3f7e8fe18a9388c97bd62bd}{
+\index{mtext.c@{mtext.c}!mtext\_\-scroller\_\-dir\_\-get@{mtext\_\-scroller\_\-dir\_\-get}}
+\index{mtext\_\-scroller\_\-dir\_\-get@{mtext\_\-scroller\_\-dir\_\-get}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf scroller\_\-dir\_\-t} mtext\_\-scroller\_\-dir\_\-get ({\bf mtext\_\-t} {\em mtext})}}
+\label{mtext_8c_9b28d74fc3f7e8fe18a9388c97bd62bd}
+
+
+
+
+References mtext\_\-obj\_\-t::scroller, and scroller\_\-dir\_\-get().\hypertarget{mtext_8c_a561c94fcd64ccca533b28d3367ab518}{
+\index{mtext.c@{mtext.c}!mtext\_\-scroller\_\-dir\_\-set@{mtext\_\-scroller\_\-dir\_\-set}}
+\index{mtext\_\-scroller\_\-dir\_\-set@{mtext\_\-scroller\_\-dir\_\-set}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mtext\_\-scroller\_\-dir\_\-set ({\bf mtext\_\-t} {\em mtext}, \/  {\bf scroller\_\-dir\_\-t} {\em dir})}}
+\label{mtext_8c_a561c94fcd64ccca533b28d3367ab518}
+
+
+
+
+References mtext\_\-speed\_\-set(), mtext\_\-obj\_\-t::scroller, scroller\_\-dir\_\-set(), and mtext\_\-obj\_\-t::speed.
+
+Referenced by mtext\_\-scan().\hypertarget{mtext_8c_c14048f75d9b9ebbd2ebec0922c0e7ae}{
+\index{mtext.c@{mtext.c}!mtext\_\-speed\_\-set@{mtext\_\-speed\_\-set}}
+\index{mtext\_\-speed\_\-set@{mtext\_\-speed\_\-set}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mtext\_\-speed\_\-set ({\bf mtext\_\-t} {\em mtext}, \/  uint8\_\-t {\em speed})}}
+\label{mtext_8c_c14048f75d9b9ebbd2ebec0922c0e7ae}
+
+
+
+
+References MTEXT\_\-SPEED\_\-SCALER, mtext\_\-obj\_\-t::poll\_\-rate, mtext\_\-obj\_\-t::scroller, scroller\_\-speed\_\-scale\_\-get(), mtext\_\-obj\_\-t::speed, mtext\_\-obj\_\-t::ticker, and TICKER\_\-INIT.
+
+Referenced by mtext\_\-init(), mtext\_\-scan(), and mtext\_\-scroller\_\-dir\_\-set().\hypertarget{mtext_8c_e48e1eb97e84f392701516927631297d}{
+\index{mtext.c@{mtext.c}!mtext\_\-update@{mtext\_\-update}}
+\index{mtext\_\-update@{mtext\_\-update}!mtext.c@{mtext.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mtext\_\-update ({\bf mtext\_\-t} {\em mtext})}}
+\label{mtext_8c_e48e1eb97e84f392701516927631297d}
+
+
+
+
+References mtext\_\-obj\_\-t::cur, mtext\_\-obj\_\-t::image, mtext\_\-scan(), mtext\_\-obj\_\-t::screen, mtext\_\-obj\_\-t::scroller, scroller\_\-start(), scroller\_\-update(), mtext\_\-obj\_\-t::ticker, and TICKER\_\-UPDATE.

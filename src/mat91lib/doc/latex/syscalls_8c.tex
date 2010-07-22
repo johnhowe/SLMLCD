@@ -1,0 +1,237 @@
+\hypertarget{syscalls_8c}{
+\section{syscalls.c File Reference}
+\label{syscalls_8c}\index{syscalls.c@{syscalls.c}}
+}
+This file contains a collection of stub functions to replace those used by the C library newlib. Primarily, it provides functionality to redirect standard I/O. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include $<$errno.h$>$}\par
+{\tt \#include $<$unistd.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{syscalls_8c_7d00ef53c7caf18c2f87048f15eec7de}{stdio\_\-redirect} (void($\ast$putc1)(int ch), int($\ast$getc1)(void))
+\item 
+int \hyperlink{syscalls_8c_d093ce8afd58546c1ef51dad05b5e8b1}{\_\-read} (int file \_\-\_\-UNUSED\_\-\_\-, char $\ast$ptr \_\-\_\-UNUSED\_\-\_\-, int len \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_34a33ad6c01b1cbb0d3f641b1049d450}{\_\-lseek} (int file \_\-\_\-UNUSED\_\-\_\-, int ptr \_\-\_\-UNUSED\_\-\_\-, int dir \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_358720e1fd1030d27f27f83e18f4dc26}{\_\-write} (int file \_\-\_\-UNUSED\_\-\_\-, char $\ast$buffer, int size)
+\item 
+int \hyperlink{syscalls_8c_ca8d3e551ddd541bcb2d19fe67013705}{\_\-open} (const char $\ast$path \_\-\_\-UNUSED\_\-\_\-, int flags \_\-\_\-UNUSED\_\-\_\-,...)
+\item 
+int \hyperlink{syscalls_8c_fce94eb502c42ab182e2c1ce12c48507}{\_\-close} (int file \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_231f703a85cfa8163d99b6ee7b29267f}{\_\-kill} (int pid \_\-\_\-UNUSED\_\-\_\-, int sig \_\-\_\-UNUSED\_\-\_\-)
+\item 
+void \hyperlink{syscalls_8c_bf5f7cbdb12b4454745d9e2a62048276}{\_\-exit} (int status \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_805946fa5cde813cc62ae6782fd9278f}{\_\-getpid} (int n \_\-\_\-UNUSED\_\-\_\-)
+\item 
+caddr\_\-t \hyperlink{syscalls_8c_ae54d7b9578ba1fc171ce6f30f4c68a3}{\_\-sbrk} (int incr)
+\item 
+int \hyperlink{syscalls_8c_5861f44ff9ddf44492e9682ea408f601}{\_\-fstat} (int file \_\-\_\-UNUSED\_\-\_\-, void $\ast$st \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_31226504a1bb7a10791238fee5991a06}{\_\-stat} (const char $\ast$fname \_\-\_\-UNUSED\_\-\_\-, void $\ast$st \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_1e879fb3bf1c55358cc74d2e0318769f}{\_\-link} (void)
+\item 
+int \hyperlink{syscalls_8c_242a0b928f79747308226532b1c50c18}{\_\-unlink} (const char $\ast$path \_\-\_\-UNUSED\_\-\_\-)
+\item 
+void \hyperlink{syscalls_8c_88c5efda6ff12a0a5e82b11f22cdcadc}{\_\-raise} (void)
+\item 
+int \hyperlink{syscalls_8c_864b8fcca38c12f75469da0672c52195}{\_\-gettimeofday} (void $\ast$tp \_\-\_\-UNUSED\_\-\_\-, void $\ast$tzp \_\-\_\-UNUSED\_\-\_\-)
+\item 
+clock\_\-t \hyperlink{syscalls_8c_7f9176136133f69adc8b4e1dfadd187a}{\_\-times} (void $\ast$tp \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_49bb0c485f30ab14364721c9ce433bab}{isatty} (int fd)
+\item 
+int \hyperlink{syscalls_8c_c24dd3b692f826a5993f3a117d9f313b}{\_\-system} (const char $\ast$s \_\-\_\-UNUSED\_\-\_\-)
+\item 
+int \hyperlink{syscalls_8c_3e7b7245238104d5ca4b939c464f7fb1}{\_\-rename} (const char $\ast$oldpath \_\-\_\-UNUSED\_\-\_\-, const char $\ast$newpath \_\-\_\-UNUSED\_\-\_\-)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static void($\ast$ \hyperlink{syscalls_8c_a46892bd3c188faffb17c5386a444c64}{stdio\_\-putc} )(int ch)=0
+\item 
+static int($\ast$ \hyperlink{syscalls_8c_50e361aa27fe4c46700dd987f93b95db}{stdio\_\-getc} )(void)=0
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains a collection of stub functions to replace those used by the C library newlib. Primarily, it provides functionality to redirect standard I/O. 
+
+\begin{Desc}
+\item[Author:]Michael Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]18 February 2008 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{syscalls_8c_fce94eb502c42ab182e2c1ce12c48507}{
+\index{syscalls.c@{syscalls.c}!\_\-close@{\_\-close}}
+\index{\_\-close@{\_\-close}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-close (int file {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_fce94eb502c42ab182e2c1ce12c48507}
+
+
+\hypertarget{syscalls_8c_bf5f7cbdb12b4454745d9e2a62048276}{
+\index{syscalls.c@{syscalls.c}!\_\-exit@{\_\-exit}}
+\index{\_\-exit@{\_\-exit}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void \_\-exit (int status {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_bf5f7cbdb12b4454745d9e2a62048276}
+
+
+\hypertarget{syscalls_8c_5861f44ff9ddf44492e9682ea408f601}{
+\index{syscalls.c@{syscalls.c}!\_\-fstat@{\_\-fstat}}
+\index{\_\-fstat@{\_\-fstat}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-fstat (int file {\em \_\-\_\-UNUSED\_\-\_\-}, \/  void $\ast$st {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_5861f44ff9ddf44492e9682ea408f601}
+
+
+\hypertarget{syscalls_8c_805946fa5cde813cc62ae6782fd9278f}{
+\index{syscalls.c@{syscalls.c}!\_\-getpid@{\_\-getpid}}
+\index{\_\-getpid@{\_\-getpid}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-getpid (int n {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_805946fa5cde813cc62ae6782fd9278f}
+
+
+\hypertarget{syscalls_8c_864b8fcca38c12f75469da0672c52195}{
+\index{syscalls.c@{syscalls.c}!\_\-gettimeofday@{\_\-gettimeofday}}
+\index{\_\-gettimeofday@{\_\-gettimeofday}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-gettimeofday (void $\ast$tp {\em \_\-\_\-UNUSED\_\-\_\-}, \/  void $\ast$tzp {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_864b8fcca38c12f75469da0672c52195}
+
+
+\hypertarget{syscalls_8c_231f703a85cfa8163d99b6ee7b29267f}{
+\index{syscalls.c@{syscalls.c}!\_\-kill@{\_\-kill}}
+\index{\_\-kill@{\_\-kill}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-kill (int pid {\em \_\-\_\-UNUSED\_\-\_\-}, \/  int sig {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_231f703a85cfa8163d99b6ee7b29267f}
+
+
+\hypertarget{syscalls_8c_1e879fb3bf1c55358cc74d2e0318769f}{
+\index{syscalls.c@{syscalls.c}!\_\-link@{\_\-link}}
+\index{\_\-link@{\_\-link}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-link (void)}}
+\label{syscalls_8c_1e879fb3bf1c55358cc74d2e0318769f}
+
+
+\hypertarget{syscalls_8c_34a33ad6c01b1cbb0d3f641b1049d450}{
+\index{syscalls.c@{syscalls.c}!\_\-lseek@{\_\-lseek}}
+\index{\_\-lseek@{\_\-lseek}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-lseek (int file {\em \_\-\_\-UNUSED\_\-\_\-}, \/  int ptr {\em \_\-\_\-UNUSED\_\-\_\-}, \/  int dir {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_34a33ad6c01b1cbb0d3f641b1049d450}
+
+
+\hypertarget{syscalls_8c_ca8d3e551ddd541bcb2d19fe67013705}{
+\index{syscalls.c@{syscalls.c}!\_\-open@{\_\-open}}
+\index{\_\-open@{\_\-open}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-open (const char $\ast$path {\em \_\-\_\-UNUSED\_\-\_\-}, \/  int flags {\em \_\-\_\-UNUSED\_\-\_\-}, \/   {\em ...})}}
+\label{syscalls_8c_ca8d3e551ddd541bcb2d19fe67013705}
+
+
+\hypertarget{syscalls_8c_88c5efda6ff12a0a5e82b11f22cdcadc}{
+\index{syscalls.c@{syscalls.c}!\_\-raise@{\_\-raise}}
+\index{\_\-raise@{\_\-raise}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void \_\-raise (void)}}
+\label{syscalls_8c_88c5efda6ff12a0a5e82b11f22cdcadc}
+
+
+\hypertarget{syscalls_8c_d093ce8afd58546c1ef51dad05b5e8b1}{
+\index{syscalls.c@{syscalls.c}!\_\-read@{\_\-read}}
+\index{\_\-read@{\_\-read}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-read (int file {\em \_\-\_\-UNUSED\_\-\_\-}, \/  char $\ast$ptr {\em \_\-\_\-UNUSED\_\-\_\-}, \/  int len {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_d093ce8afd58546c1ef51dad05b5e8b1}
+
+
+\hypertarget{syscalls_8c_3e7b7245238104d5ca4b939c464f7fb1}{
+\index{syscalls.c@{syscalls.c}!\_\-rename@{\_\-rename}}
+\index{\_\-rename@{\_\-rename}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-rename (const char $\ast$oldpath {\em \_\-\_\-UNUSED\_\-\_\-}, \/  const char $\ast$newpath {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_3e7b7245238104d5ca4b939c464f7fb1}
+
+
+\hypertarget{syscalls_8c_ae54d7b9578ba1fc171ce6f30f4c68a3}{
+\index{syscalls.c@{syscalls.c}!\_\-sbrk@{\_\-sbrk}}
+\index{\_\-sbrk@{\_\-sbrk}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}caddr\_\-t \_\-sbrk (int {\em incr})}}
+\label{syscalls_8c_ae54d7b9578ba1fc171ce6f30f4c68a3}
+
+
+\hypertarget{syscalls_8c_31226504a1bb7a10791238fee5991a06}{
+\index{syscalls.c@{syscalls.c}!\_\-stat@{\_\-stat}}
+\index{\_\-stat@{\_\-stat}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-stat (const char $\ast$fname {\em \_\-\_\-UNUSED\_\-\_\-}, \/  void $\ast$st {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_31226504a1bb7a10791238fee5991a06}
+
+
+\hypertarget{syscalls_8c_c24dd3b692f826a5993f3a117d9f313b}{
+\index{syscalls.c@{syscalls.c}!\_\-system@{\_\-system}}
+\index{\_\-system@{\_\-system}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-system (const char $\ast$s {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_c24dd3b692f826a5993f3a117d9f313b}
+
+
+\hypertarget{syscalls_8c_7f9176136133f69adc8b4e1dfadd187a}{
+\index{syscalls.c@{syscalls.c}!\_\-times@{\_\-times}}
+\index{\_\-times@{\_\-times}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t \_\-times (void $\ast$tp {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_7f9176136133f69adc8b4e1dfadd187a}
+
+
+\hypertarget{syscalls_8c_242a0b928f79747308226532b1c50c18}{
+\index{syscalls.c@{syscalls.c}!\_\-unlink@{\_\-unlink}}
+\index{\_\-unlink@{\_\-unlink}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-unlink (const char $\ast$path {\em \_\-\_\-UNUSED\_\-\_\-})}}
+\label{syscalls_8c_242a0b928f79747308226532b1c50c18}
+
+
+\hypertarget{syscalls_8c_358720e1fd1030d27f27f83e18f4dc26}{
+\index{syscalls.c@{syscalls.c}!\_\-write@{\_\-write}}
+\index{\_\-write@{\_\-write}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int \_\-write (int file {\em \_\-\_\-UNUSED\_\-\_\-}, \/  char $\ast$ {\em buffer}, \/  int {\em size})}}
+\label{syscalls_8c_358720e1fd1030d27f27f83e18f4dc26}
+
+
+
+
+References stdio\_\-putc.\hypertarget{syscalls_8c_49bb0c485f30ab14364721c9ce433bab}{
+\index{syscalls.c@{syscalls.c}!isatty@{isatty}}
+\index{isatty@{isatty}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int isatty (int {\em fd})}}
+\label{syscalls_8c_49bb0c485f30ab14364721c9ce433bab}
+
+
+\hypertarget{syscalls_8c_7d00ef53c7caf18c2f87048f15eec7de}{
+\index{syscalls.c@{syscalls.c}!stdio\_\-redirect@{stdio\_\-redirect}}
+\index{stdio\_\-redirect@{stdio\_\-redirect}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void stdio\_\-redirect (void($\ast$)(int ch) {\em putc1}, \/  int($\ast$)(void) {\em getc1})}}
+\label{syscalls_8c_7d00ef53c7caf18c2f87048f15eec7de}
+
+
+
+
+References stdio\_\-getc, and stdio\_\-putc.
+
+\subsection{Variable Documentation}
+\hypertarget{syscalls_8c_50e361aa27fe4c46700dd987f93b95db}{
+\index{syscalls.c@{syscalls.c}!stdio\_\-getc@{stdio\_\-getc}}
+\index{stdio\_\-getc@{stdio\_\-getc}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ {\bf stdio\_\-getc})(void)=0\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{syscalls_8c_50e361aa27fe4c46700dd987f93b95db}
+
+
+
+
+Referenced by stdio\_\-redirect().\hypertarget{syscalls_8c_a46892bd3c188faffb17c5386a444c64}{
+\index{syscalls.c@{syscalls.c}!stdio\_\-putc@{stdio\_\-putc}}
+\index{stdio\_\-putc@{stdio\_\-putc}!syscalls.c@{syscalls.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf stdio\_\-putc})(int ch)=0\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{syscalls_8c_a46892bd3c188faffb17c5386a444c64}
+
+
+
+
+Referenced by \_\-write(), and stdio\_\-redirect().

@@ -1,0 +1,43 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.11}button.c File Reference}{86}{section.5.11}}
+\newlabel{button_8c}{{5.11}{86}{button.c File Reference\relax }{section.5.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{86}{subsection.5.11.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11.2}Function Documentation}{86}{subsection.5.11.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.2.1}button\_\discretionary {-}{}{}debounce}{86}{subsubsection.5.11.2.1}}
+\newlabel{button_8c_e360fa8aac4653bbe7376a7f59fe411c}{{5.11.2.1}{86}{button\_\-debounce\relax }{subsubsection.5.11.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.2.2}button\_\discretionary {-}{}{}held\_\discretionary {-}{}{}p}{86}{subsubsection.5.11.2.2}}
+\newlabel{button_8c_e8cba5413fc3d2c985680dabc1694ee2}{{5.11.2.2}{86}{button\_\-held\_\-p\relax }{subsubsection.5.11.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.2.3}button\_\discretionary {-}{}{}hold\_\discretionary {-}{}{}released\_\discretionary {-}{}{}p}{86}{subsubsection.5.11.2.3}}
+\newlabel{button_8c_6d50b6849e46fc67030f5ac8d96ed89a}{{5.11.2.3}{86}{button\_\-hold\_\-released\_\-p\relax }{subsubsection.5.11.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.2.4}button\_\discretionary {-}{}{}init}{86}{subsubsection.5.11.2.4}}
+\newlabel{button_8c_7ac3a6efd34c4131ed59f9da23befa60}{{5.11.2.4}{86}{button\_\-init\relax }{subsubsection.5.11.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.2.5}button\_\discretionary {-}{}{}poll}{87}{subsubsection.5.11.2.5}}
+\newlabel{button_8c_7baba9d1cbe31770b357179fd128b3a1}{{5.11.2.5}{87}{button\_\-poll\relax }{subsubsection.5.11.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.2.6}button\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}count\_\discretionary {-}{}{}set}{87}{subsubsection.5.11.2.6}}
+\newlabel{button_8c_e7cf5edcd0c1e1c45d2518bc8078fdf1}{{5.11.2.6}{87}{button\_\-poll\_\-count\_\-set\relax }{subsubsection.5.11.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11.3}Variable Documentation}{87}{subsection.5.11.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.11.3.1}button\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}count}{87}{subsubsection.5.11.3.1}}
+\newlabel{button_8c_02be292a338be249963cb9538544cd70}{{5.11.3.1}{87}{button\_\-poll\_\-count\relax }{subsubsection.5.11.3.1}{}}
+\@setckpt{button_8c}{
+\setcounter{page}{88}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{11}
+\setcounter{subsection}{3}
+\setcounter{subsubsection}{1}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

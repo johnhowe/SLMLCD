@@ -1,0 +1,138 @@
+\hypertarget{structmtext__obj__t}{
+\section{mtext\_\-obj\_\-t Struct Reference}
+\label{structmtext__obj__t}\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}}
+}
+{\tt \#include $<$mtext.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+const char $\ast$ \hyperlink{structmtext__obj__t_99fcc3140be2c8f11b441c3ce2d2ebad}{cur}
+\item 
+const char $\ast$ \hyperlink{structmtext__obj__t_17ae4a793386ebac51ba76800812327d}{start}
+\item 
+\hyperlink{structfont__t}{font\_\-t} $\ast$ \hyperlink{structmtext__obj__t_9c8d6b873815f4b460c8e08b339c6814}{font}
+\item 
+uint8\_\-t \hyperlink{structmtext__obj__t_3952a63b6d568b8e6c096c6b51fb8fd6}{pixels}
+\item 
+uint8\_\-t $\ast$ \hyperlink{structmtext__obj__t_63674b367a060ae8a03560115b7faf0c}{image}
+\item 
+uint8\_\-t $\ast$ \hyperlink{structmtext__obj__t_5e65a906c4a26f7b8456a12fd67616c6}{screen}
+\item 
+uint16\_\-t \hyperlink{structmtext__obj__t_1b64662fd292aea7a90652e601143f36}{poll\_\-rate}
+\item 
+\hyperlink{mtext_8h_fd147cfb763670119d293594e9e47d76}{mtext\_\-mode\_\-t} \hyperlink{structmtext__obj__t_2091c7edcdf0a78bc0c7798af6fca3b5}{mode}
+\item 
+\hyperlink{structscroller__obj__t}{scroller\_\-obj\_\-t} \hyperlink{structmtext__obj__t_fa795a260168cc076d1b17e2e3b70d84}{scroller}
+\item 
+uint8\_\-t \hyperlink{structmtext__obj__t_ad2f05313e8998327f0119f70cec688c}{speed}
+\item 
+\hyperlink{structticker__t}{ticker\_\-t} \hyperlink{structmtext__obj__t_7a47047f31618b632c1776a47416f339}{ticker}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structmtext__obj__t_99fcc3140be2c8f11b441c3ce2d2ebad}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!cur@{cur}}
+\index{cur@{cur}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf mtext\_\-obj\_\-t::cur}}}
+\label{structmtext__obj__t_99fcc3140be2c8f11b441c3ce2d2ebad}
+
+
+
+
+Referenced by mtext\_\-init(), mtext\_\-set(), and mtext\_\-update().\hypertarget{structmtext__obj__t_17ae4a793386ebac51ba76800812327d}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!start@{start}}
+\index{start@{start}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf mtext\_\-obj\_\-t::start}}}
+\label{structmtext__obj__t_17ae4a793386ebac51ba76800812327d}
+
+
+
+
+Referenced by mtext\_\-get(), mtext\_\-scan(), and mtext\_\-set().\hypertarget{structmtext__obj__t_9c8d6b873815f4b460c8e08b339c6814}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!font@{font}}
+\index{font@{font}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf font\_\-t}$\ast$ {\bf mtext\_\-obj\_\-t::font}}}
+\label{structmtext__obj__t_9c8d6b873815f4b460c8e08b339c6814}
+
+
+
+
+Referenced by mtext\_\-display(), and mtext\_\-init().\hypertarget{structmtext__obj__t_3952a63b6d568b8e6c096c6b51fb8fd6}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!pixels@{pixels}}
+\index{pixels@{pixels}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf mtext\_\-obj\_\-t::pixels}}}
+\label{structmtext__obj__t_3952a63b6d568b8e6c096c6b51fb8fd6}
+
+
+
+
+Referenced by mtext\_\-init().\hypertarget{structmtext__obj__t_63674b367a060ae8a03560115b7faf0c}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!image@{image}}
+\index{image@{image}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t$\ast$ {\bf mtext\_\-obj\_\-t::image}}}
+\label{structmtext__obj__t_63674b367a060ae8a03560115b7faf0c}
+
+
+
+
+Referenced by mtext\_\-display(), mtext\_\-init(), and mtext\_\-update().\hypertarget{structmtext__obj__t_5e65a906c4a26f7b8456a12fd67616c6}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!screen@{screen}}
+\index{screen@{screen}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t$\ast$ {\bf mtext\_\-obj\_\-t::screen}}}
+\label{structmtext__obj__t_5e65a906c4a26f7b8456a12fd67616c6}
+
+
+
+
+Referenced by mtext\_\-init(), and mtext\_\-update().\hypertarget{structmtext__obj__t_1b64662fd292aea7a90652e601143f36}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!poll\_\-rate@{poll\_\-rate}}
+\index{poll\_\-rate@{poll\_\-rate}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf mtext\_\-obj\_\-t::poll\_\-rate}}}
+\label{structmtext__obj__t_1b64662fd292aea7a90652e601143f36}
+
+
+
+
+Referenced by mtext\_\-init(), and mtext\_\-speed\_\-set().\hypertarget{structmtext__obj__t_2091c7edcdf0a78bc0c7798af6fca3b5}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!mode@{mode}}
+\index{mode@{mode}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mtext\_\-mode\_\-t} {\bf mtext\_\-obj\_\-t::mode}}}
+\label{structmtext__obj__t_2091c7edcdf0a78bc0c7798af6fca3b5}
+
+
+
+
+Referenced by mtext\_\-init(), mtext\_\-mode\_\-get(), and mtext\_\-mode\_\-set().\hypertarget{structmtext__obj__t_fa795a260168cc076d1b17e2e3b70d84}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!scroller@{scroller}}
+\index{scroller@{scroller}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf scroller\_\-obj\_\-t} {\bf mtext\_\-obj\_\-t::scroller}}}
+\label{structmtext__obj__t_fa795a260168cc076d1b17e2e3b70d84}
+
+
+
+
+Referenced by mtext\_\-init(), mtext\_\-scroller\_\-dir\_\-get(), mtext\_\-scroller\_\-dir\_\-set(), mtext\_\-speed\_\-set(), and mtext\_\-update().\hypertarget{structmtext__obj__t_ad2f05313e8998327f0119f70cec688c}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!speed@{speed}}
+\index{speed@{speed}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf mtext\_\-obj\_\-t::speed}}}
+\label{structmtext__obj__t_ad2f05313e8998327f0119f70cec688c}
+
+
+
+
+Referenced by mtext\_\-scroller\_\-dir\_\-set(), and mtext\_\-speed\_\-set().\hypertarget{structmtext__obj__t_7a47047f31618b632c1776a47416f339}{
+\index{mtext\_\-obj\_\-t@{mtext\_\-obj\_\-t}!ticker@{ticker}}
+\index{ticker@{ticker}!mtext_obj_t@{mtext\_\-obj\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ticker\_\-t} {\bf mtext\_\-obj\_\-t::ticker}}}
+\label{structmtext__obj__t_7a47047f31618b632c1776a47416f339}
+
+
+
+
+Referenced by mtext\_\-speed\_\-set(), and mtext\_\-update().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{mtext_8h}{mtext.h}\end{CompactItemize}

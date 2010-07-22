@@ -1,0 +1,221 @@
+\hypertarget{busart_8h}{
+\section{busart.h File Reference}
+\label{busart_8h}\index{busart.h@{busart.h}}
+}
+Buffered USART interface. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}ring.h\char`\"{}}\par
+{\tt \#include \char`\"{}usart0.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{busart_8h_9f956425cb0b7f30b0185c0162b214a5}{BUSART\_\-BAUD\_\-DIVISOR}(BAUD\_\-RATE)~USART0\_\-BAUD\_\-DIVISOR(BAUD\_\-RATE)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct \hyperlink{structbusart__dev__struct}{busart\_\-dev\_\-struct} \hyperlink{busart_8h_35b5799be3365f2e78ba0861f8617be6}{busart\_\-dev\_\-t}
+\item 
+typedef \hyperlink{structbusart__dev__struct}{busart\_\-dev\_\-t} $\ast$ \hyperlink{busart_8h_61bfee1b71d077aa48a2de84b3700472}{busart\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structbusart__dev__struct}{busart\_\-t} \hyperlink{busart_8h_122760802479615098beafa7bee7e3e2}{busart\_\-init} (uint8\_\-t channel, uint16\_\-t baud\_\-divisor, char $\ast$tx\_\-buffer, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} tx\_\-size, char $\ast$rx\_\-buffer, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} rx\_\-size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{busart_8h_fdff07098c1ec43ea4716cad2bb5046f}{busart\_\-read} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart, void $\ast$data, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{busart_8h_89162b633f49fe0017264ba44e5b0737}{busart\_\-read\_\-block} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart, void $\ast$data, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{busart_8h_eaf365b3af854e83c0ebf5e9daef0c01}{busart\_\-write} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart, const void $\ast$data, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{busart_8h_2111a900dc10c5167ec5de7c6716987d}{busart\_\-write\_\-block} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart, const void $\ast$data, \hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} size)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{busart_8h_80a917cd354a76feb385851c3e2e84fb}{busart\_\-read\_\-num} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart)
+\item 
+\hyperlink{ring_8h_f1370ade98f8d7f1c525801f84c449bb}{ring\_\-size\_\-t} \hyperlink{busart_8h_d347428f52be5eb1d10a6407c479f919}{busart\_\-write\_\-num} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart)
+\item 
+bool \hyperlink{busart_8h_d42d8780d05a207cd2743d53db132edd}{busart\_\-read\_\-ready\_\-p} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart)
+\item 
+bool \hyperlink{busart_8h_55bfea12451b4ef555473c37a991a64c}{busart\_\-write\_\-ready\_\-p} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart)
+\item 
+bool \hyperlink{busart_8h_1189be98be7fd61968e74dddac59b940}{busart\_\-write\_\-finished\_\-p} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart)
+\item 
+int8\_\-t \hyperlink{busart_8h_6fd830d2541d56f33ee8eb076b7a2f16}{busart\_\-getc} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart)
+\item 
+int8\_\-t \hyperlink{busart_8h_d92c531d9709b56c60a9e6238542a500}{busart\_\-putc} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart, char ch)
+\item 
+int8\_\-t \hyperlink{busart_8h_7f0644d66e1d159f085bc2a24ebd765c}{busart\_\-puts} (\hyperlink{structbusart__dev__struct}{busart\_\-t} busart, const char $\ast$str)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Buffered USART interface. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{busart_8h_9f956425cb0b7f30b0185c0162b214a5}{
+\index{busart.h@{busart.h}!BUSART\_\-BAUD\_\-DIVISOR@{BUSART\_\-BAUD\_\-DIVISOR}}
+\index{BUSART\_\-BAUD\_\-DIVISOR@{BUSART\_\-BAUD\_\-DIVISOR}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BUSART\_\-BAUD\_\-DIVISOR(BAUD\_\-RATE)~USART0\_\-BAUD\_\-DIVISOR(BAUD\_\-RATE)}}
+\label{busart_8h_9f956425cb0b7f30b0185c0162b214a5}
+
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{busart_8h_35b5799be3365f2e78ba0861f8617be6}{
+\index{busart.h@{busart.h}!busart\_\-dev\_\-t@{busart\_\-dev\_\-t}}
+\index{busart\_\-dev\_\-t@{busart\_\-dev\_\-t}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf busart\_\-dev\_\-struct} {\bf busart\_\-dev\_\-t}}}
+\label{busart_8h_35b5799be3365f2e78ba0861f8617be6}
+
+
+\hypertarget{busart_8h_61bfee1b71d077aa48a2de84b3700472}{
+\index{busart.h@{busart.h}!busart\_\-t@{busart\_\-t}}
+\index{busart\_\-t@{busart\_\-t}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf busart\_\-dev\_\-t}$\ast$ {\bf busart\_\-t}}}
+\label{busart_8h_61bfee1b71d077aa48a2de84b3700472}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{busart_8h_6fd830d2541d56f33ee8eb076b7a2f16}{
+\index{busart.h@{busart.h}!busart\_\-getc@{busart\_\-getc}}
+\index{busart\_\-getc@{busart\_\-getc}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t busart\_\-getc ({\bf busart\_\-t} {\em busart})}}
+\label{busart_8h_6fd830d2541d56f33ee8eb076b7a2f16}
+
+
+Read character. This blocks until the character can be read. 
+
+References busart\_\-read\_\-block().\hypertarget{busart_8h_122760802479615098beafa7bee7e3e2}{
+\index{busart.h@{busart.h}!busart\_\-init@{busart\_\-init}}
+\index{busart\_\-init@{busart\_\-init}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf busart\_\-t} busart\_\-init (uint8\_\-t {\em channel}, \/  uint16\_\-t {\em baud\_\-divisor}, \/  char $\ast$ {\em tx\_\-buffer}, \/  {\bf ring\_\-size\_\-t} {\em tx\_\-size}, \/  char $\ast$ {\em rx\_\-buffer}, \/  {\bf ring\_\-size\_\-t} {\em rx\_\-size})}}
+\label{busart_8h_122760802479615098beafa7bee7e3e2}
+
+
+
+
+References ring\_\-init(), busart\_\-dev\_\-struct::rx\_\-irq\_\-enable, busart\_\-dev\_\-struct::rx\_\-ring, and busart\_\-dev\_\-struct::tx\_\-ring.\hypertarget{busart_8h_d92c531d9709b56c60a9e6238542a500}{
+\index{busart.h@{busart.h}!busart\_\-putc@{busart\_\-putc}}
+\index{busart\_\-putc@{busart\_\-putc}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t busart\_\-putc ({\bf busart\_\-t} {\em busart}, \/  char {\em ch})}}
+\label{busart_8h_d92c531d9709b56c60a9e6238542a500}
+
+
+Write character. This blocks until the character can be written. 
+
+References busart\_\-putc(), and busart\_\-write\_\-block().
+
+Referenced by busart\_\-putc(), and busart\_\-puts().\hypertarget{busart_8h_7f0644d66e1d159f085bc2a24ebd765c}{
+\index{busart.h@{busart.h}!busart\_\-puts@{busart\_\-puts}}
+\index{busart\_\-puts@{busart\_\-puts}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t busart\_\-puts ({\bf busart\_\-t} {\em busart}, \/  const char $\ast$ {\em str})}}
+\label{busart_8h_7f0644d66e1d159f085bc2a24ebd765c}
+
+
+Write string. This blocks until the string is buffered. 
+
+References busart\_\-putc().\hypertarget{busart_8h_fdff07098c1ec43ea4716cad2bb5046f}{
+\index{busart.h@{busart.h}!busart\_\-read@{busart\_\-read}}
+\index{busart\_\-read@{busart\_\-read}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} busart\_\-read ({\bf busart\_\-t} {\em busart}, \/  void $\ast$ {\em data}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{busart_8h_fdff07098c1ec43ea4716cad2bb5046f}
+
+
+Read as many bytes as there are available in the ring buffer up to the specifed size. 
+
+References ring\_\-read(), and busart\_\-dev\_\-struct::rx\_\-ring.
+
+Referenced by busart\_\-read\_\-block().\hypertarget{busart_8h_89162b633f49fe0017264ba44e5b0737}{
+\index{busart.h@{busart.h}!busart\_\-read\_\-block@{busart\_\-read\_\-block}}
+\index{busart\_\-read\_\-block@{busart\_\-read\_\-block}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} busart\_\-read\_\-block ({\bf busart\_\-t} {\em busart}, \/  void $\ast$ {\em data}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{busart_8h_89162b633f49fe0017264ba44e5b0737}
+
+
+Read size bytes. This will block until the desired number of bytes have been read. 
+
+References busart\_\-read().
+
+Referenced by busart\_\-getc().\hypertarget{busart_8h_80a917cd354a76feb385851c3e2e84fb}{
+\index{busart.h@{busart.h}!busart\_\-read\_\-num@{busart\_\-read\_\-num}}
+\index{busart\_\-read\_\-num@{busart\_\-read\_\-num}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} busart\_\-read\_\-num ({\bf busart\_\-t} {\em busart})}}
+\label{busart_8h_80a917cd354a76feb385851c3e2e84fb}
+
+
+Return the number of bytes immediately available for reading. 
+
+References ring\_\-read\_\-num(), and busart\_\-dev\_\-struct::rx\_\-ring.
+
+Referenced by busart\_\-read\_\-ready\_\-p().\hypertarget{busart_8h_d42d8780d05a207cd2743d53db132edd}{
+\index{busart.h@{busart.h}!busart\_\-read\_\-ready\_\-p@{busart\_\-read\_\-ready\_\-p}}
+\index{busart\_\-read\_\-ready\_\-p@{busart\_\-read\_\-ready\_\-p}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool busart\_\-read\_\-ready\_\-p ({\bf busart\_\-t} {\em busart})}}
+\label{busart_8h_d42d8780d05a207cd2743d53db132edd}
+
+
+Return non-zero if there is a character ready to be read. 
+
+References busart\_\-read\_\-num().\hypertarget{busart_8h_eaf365b3af854e83c0ebf5e9daef0c01}{
+\index{busart.h@{busart.h}!busart\_\-write@{busart\_\-write}}
+\index{busart\_\-write@{busart\_\-write}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} busart\_\-write ({\bf busart\_\-t} {\em busart}, \/  const void $\ast$ {\em data}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{busart_8h_eaf365b3af854e83c0ebf5e9daef0c01}
+
+
+Write size bytes. Currently this only writes as many bytes (up to the desired size) that can currently fit in the ring buffer. 
+
+References ring\_\-write(), busart\_\-dev\_\-struct::tx\_\-irq\_\-enable, and busart\_\-dev\_\-struct::tx\_\-ring.
+
+Referenced by busart\_\-write\_\-block().\hypertarget{busart_8h_2111a900dc10c5167ec5de7c6716987d}{
+\index{busart.h@{busart.h}!busart\_\-write\_\-block@{busart\_\-write\_\-block}}
+\index{busart\_\-write\_\-block@{busart\_\-write\_\-block}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} busart\_\-write\_\-block ({\bf busart\_\-t} {\em busart}, \/  const void $\ast$ {\em data}, \/  {\bf ring\_\-size\_\-t} {\em size})}}
+\label{busart_8h_2111a900dc10c5167ec5de7c6716987d}
+
+
+Write size bytes. This will block until the desired number of bytes have been written. 
+
+References busart\_\-write().
+
+Referenced by busart\_\-putc().\hypertarget{busart_8h_1189be98be7fd61968e74dddac59b940}{
+\index{busart.h@{busart.h}!busart\_\-write\_\-finished\_\-p@{busart\_\-write\_\-finished\_\-p}}
+\index{busart\_\-write\_\-finished\_\-p@{busart\_\-write\_\-finished\_\-p}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool busart\_\-write\_\-finished\_\-p ({\bf busart\_\-t} {\em busart})}}
+\label{busart_8h_1189be98be7fd61968e74dddac59b940}
+
+
+Return non-zero if transmitter finished. 
+
+References ring\_\-empty\_\-p(), busart\_\-dev\_\-struct::tx\_\-finished\_\-p, and busart\_\-dev\_\-struct::tx\_\-ring.\hypertarget{busart_8h_d347428f52be5eb1d10a6407c479f919}{
+\index{busart.h@{busart.h}!busart\_\-write\_\-num@{busart\_\-write\_\-num}}
+\index{busart\_\-write\_\-num@{busart\_\-write\_\-num}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ring\_\-size\_\-t} busart\_\-write\_\-num ({\bf busart\_\-t} {\em busart})}}
+\label{busart_8h_d347428f52be5eb1d10a6407c479f919}
+
+
+Return the number of bytes immediately available for writing. 
+
+References ring\_\-write\_\-num(), and busart\_\-dev\_\-struct::tx\_\-ring.
+
+Referenced by busart\_\-write\_\-ready\_\-p().\hypertarget{busart_8h_55bfea12451b4ef555473c37a991a64c}{
+\index{busart.h@{busart.h}!busart\_\-write\_\-ready\_\-p@{busart\_\-write\_\-ready\_\-p}}
+\index{busart\_\-write\_\-ready\_\-p@{busart\_\-write\_\-ready\_\-p}!busart.h@{busart.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool busart\_\-write\_\-ready\_\-p ({\bf busart\_\-t} {\em busart})}}
+\label{busart_8h_55bfea12451b4ef555473c37a991a64c}
+
+
+Return non-zero if a character can be written without blocking. 
+
+References busart\_\-write\_\-num().

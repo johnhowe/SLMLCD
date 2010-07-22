@@ -1,0 +1,107 @@
+\hypertarget{usart0__defs_8h}{
+\section{usart0\_\-defs.h File Reference}
+\label{usart0__defs_8h}\index{usart0\_\-defs.h@{usart0\_\-defs.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{usart0__defs_8h_89f9f1fffdb98e227579055043f5e5ae}{USART0\_\-READ\_\-READY\_\-P}()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-CSR \& AT91C\_\-US\_\-RXRDY) != 0)
+\item 
+\#define \hyperlink{usart0__defs_8h_7b23c3c8ae95090b097ef80ab3e6cc80}{USART0\_\-WRITE\_\-READY\_\-P}()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-CSR \& AT91C\_\-US\_\-TXRDY) != 0)
+\item 
+\#define \hyperlink{usart0__defs_8h_44ffcffb9d6f36904ad87836894d64ed}{USART0\_\-WRITE\_\-FINISHED\_\-P}()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-CSR \& AT91C\_\-US\_\-TXEMPTY) != 0)
+\item 
+\#define \hyperlink{usart0__defs_8h_b55dd15da6ba1a2d8799c055b9bc416b}{USART0\_\-READ}()~AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-RHR
+\item 
+\#define \hyperlink{usart0__defs_8h_389cb4b646bffc54b2c65c37f472a796}{USART0\_\-WRITE}(VAL)~AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-THR = (VAL)
+\item 
+\#define \hyperlink{usart0__defs_8h_9e6fbebea924aeb486e1e4af7dd4876d}{USART0\_\-PUTC}(ch)
+\item 
+\#define \hyperlink{usart0__defs_8h_60fd64917d8b76a9e5fc8477479e6f02}{USART0\_\-BAUD\_\-DIVISOR\_\-SET}(DIVISOR)~AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-BRGR = (DIVISOR)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{usart0__defs_8h_60fd64917d8b76a9e5fc8477479e6f02}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-BAUD\_\-DIVISOR\_\-SET@{USART0\_\-BAUD\_\-DIVISOR\_\-SET}}
+\index{USART0\_\-BAUD\_\-DIVISOR\_\-SET@{USART0\_\-BAUD\_\-DIVISOR\_\-SET}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-BAUD\_\-DIVISOR\_\-SET(DIVISOR)~AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-BRGR = (DIVISOR)}}
+\label{usart0__defs_8h_60fd64917d8b76a9e5fc8477479e6f02}
+
+
+
+
+Referenced by usart0\_\-baud\_\-divisor\_\-set().\hypertarget{usart0__defs_8h_9e6fbebea924aeb486e1e4af7dd4876d}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-PUTC@{USART0\_\-PUTC}}
+\index{USART0\_\-PUTC@{USART0\_\-PUTC}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-PUTC(ch)}}
+\label{usart0__defs_8h_9e6fbebea924aeb486e1e4af7dd4876d}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}do                                      \
+{                                       \
+    while (!USART0_WRITE_READY_P ())    \
+        continue;                       \
+                                        \
+    USART0_WRITE (ch);                  \
+} while (0)
+\end{verbatim}
+\end{Code}
+
+
+Referenced by usart0\_\-putc().\hypertarget{usart0__defs_8h_b55dd15da6ba1a2d8799c055b9bc416b}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-READ@{USART0\_\-READ}}
+\index{USART0\_\-READ@{USART0\_\-READ}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-READ()~AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-RHR}}
+\label{usart0__defs_8h_b55dd15da6ba1a2d8799c055b9bc416b}
+
+
+
+
+Referenced by busart0\_\-isr(), and usart0\_\-getc().\hypertarget{usart0__defs_8h_89f9f1fffdb98e227579055043f5e5ae}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-READ\_\-READY\_\-P@{USART0\_\-READ\_\-READY\_\-P}}
+\index{USART0\_\-READ\_\-READY\_\-P@{USART0\_\-READ\_\-READY\_\-P}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-READ\_\-READY\_\-P()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-CSR \& AT91C\_\-US\_\-RXRDY) != 0)}}
+\label{usart0__defs_8h_89f9f1fffdb98e227579055043f5e5ae}
+
+
+
+
+Referenced by busart0\_\-isr(), usart0\_\-getc(), and usart0\_\-read\_\-ready\_\-p().\hypertarget{usart0__defs_8h_389cb4b646bffc54b2c65c37f472a796}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-WRITE@{USART0\_\-WRITE}}
+\index{USART0\_\-WRITE@{USART0\_\-WRITE}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-WRITE(VAL)~AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-THR = (VAL)}}
+\label{usart0__defs_8h_389cb4b646bffc54b2c65c37f472a796}
+
+
+
+
+Referenced by busart0\_\-isr().\hypertarget{usart0__defs_8h_44ffcffb9d6f36904ad87836894d64ed}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-WRITE\_\-FINISHED\_\-P@{USART0\_\-WRITE\_\-FINISHED\_\-P}}
+\index{USART0\_\-WRITE\_\-FINISHED\_\-P@{USART0\_\-WRITE\_\-FINISHED\_\-P}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-WRITE\_\-FINISHED\_\-P()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-CSR \& AT91C\_\-US\_\-TXEMPTY) != 0)}}
+\label{usart0__defs_8h_44ffcffb9d6f36904ad87836894d64ed}
+
+
+
+
+Referenced by busart0\_\-tx\_\-finished\_\-p(), and usart0\_\-write\_\-finished\_\-p().\hypertarget{usart0__defs_8h_7b23c3c8ae95090b097ef80ab3e6cc80}{
+\index{usart0\_\-defs.h@{usart0\_\-defs.h}!USART0\_\-WRITE\_\-READY\_\-P@{USART0\_\-WRITE\_\-READY\_\-P}}
+\index{USART0\_\-WRITE\_\-READY\_\-P@{USART0\_\-WRITE\_\-READY\_\-P}!usart0_defs.h@{usart0\_\-defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-WRITE\_\-READY\_\-P()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-CSR \& AT91C\_\-US\_\-TXRDY) != 0)}}
+\label{usart0__defs_8h_7b23c3c8ae95090b097ef80ab3e6cc80}
+
+
+
+
+Referenced by busart0\_\-isr(), and usart0\_\-write\_\-ready\_\-p().

@@ -1,0 +1,112 @@
+\hypertarget{time_8c}{
+\section{time.c File Reference}
+\label{time_8c}\index{time.c@{time.c}}
+}
+Time routines. 
+
+{\tt \#include \char`\"{}time.h\char`\"{}}\par
+{\tt \#include \char`\"{}delay.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{time_8c_cf5c8bb89727a653a3320edfa8fc4e69}{time\_\-init} (void)
+\item 
+void \hyperlink{time_8c_039ae44baa822751b2370d304cdc5aa7}{time\_\-delay\_\-us} (uint16\_\-t us)
+\item 
+\hyperlink{structtime}{time\_\-t} \hyperlink{time_8c_ed3cefad3bf9a228175a4bdc89ff539b}{time\_\-rf\_\-timestamp\_\-get} (void)
+\item 
+\hyperlink{structtime}{time\_\-t} \hyperlink{time_8c_abbcce60090d15e8733fcbf859b1a2c1}{time\_\-current\_\-time\_\-get} (void)
+\item 
+uint32\_\-t \hyperlink{time_8c_f3e0761267f0325d7636b8adfad9272a}{time\_\-time2int} (\hyperlink{structtime}{time\_\-t} \hyperlink{structtime}{time})
+\item 
+void \hyperlink{time_8c_30285cd0dac3002ecbeb23f76e1a5f30}{time\_\-irq\_\-enable} (void)
+\item 
+void \hyperlink{time_8c_8cdb77260395fe7941f3e8d35f71d64b}{time\_\-irq\_\-disable} (void)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static volatile uint16\_\-t \hyperlink{time_8c_83d757f19d281388ac536ed46e50c36e}{ms\_\-ticks} = 0
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Time routines. 
+
+\begin{Desc}
+\item[Author:]Ian Downes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]12 January 2005 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{time_8c_abbcce60090d15e8733fcbf859b1a2c1}{
+\index{time.c@{time.c}!time\_\-current\_\-time\_\-get@{time\_\-current\_\-time\_\-get}}
+\index{time\_\-current\_\-time\_\-get@{time\_\-current\_\-time\_\-get}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf time\_\-t} time\_\-current\_\-time\_\-get (void)}}
+\label{time_8c_abbcce60090d15e8733fcbf859b1a2c1}
+
+
+
+
+References ms\_\-ticks, time::ms\_\-ticks, and time::us\_\-ticks.\hypertarget{time_8c_039ae44baa822751b2370d304cdc5aa7}{
+\index{time.c@{time.c}!time\_\-delay\_\-us@{time\_\-delay\_\-us}}
+\index{time\_\-delay\_\-us@{time\_\-delay\_\-us}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-delay\_\-us (uint16\_\-t {\em us})}}
+\label{time_8c_039ae44baa822751b2370d304cdc5aa7}
+
+
+\hypertarget{time_8c_cf5c8bb89727a653a3320edfa8fc4e69}{
+\index{time.c@{time.c}!time\_\-init@{time\_\-init}}
+\index{time\_\-init@{time\_\-init}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-init (void)}}
+\label{time_8c_cf5c8bb89727a653a3320edfa8fc4e69}
+
+
+
+
+References TOPCNT.\hypertarget{time_8c_8cdb77260395fe7941f3e8d35f71d64b}{
+\index{time.c@{time.c}!time\_\-irq\_\-disable@{time\_\-irq\_\-disable}}
+\index{time\_\-irq\_\-disable@{time\_\-irq\_\-disable}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-irq\_\-disable (void)}}
+\label{time_8c_8cdb77260395fe7941f3e8d35f71d64b}
+
+
+\hypertarget{time_8c_30285cd0dac3002ecbeb23f76e1a5f30}{
+\index{time.c@{time.c}!time\_\-irq\_\-enable@{time\_\-irq\_\-enable}}
+\index{time\_\-irq\_\-enable@{time\_\-irq\_\-enable}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-irq\_\-enable (void)}}
+\label{time_8c_30285cd0dac3002ecbeb23f76e1a5f30}
+
+
+\hypertarget{time_8c_ed3cefad3bf9a228175a4bdc89ff539b}{
+\index{time.c@{time.c}!time\_\-rf\_\-timestamp\_\-get@{time\_\-rf\_\-timestamp\_\-get}}
+\index{time\_\-rf\_\-timestamp\_\-get@{time\_\-rf\_\-timestamp\_\-get}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf time\_\-t} time\_\-rf\_\-timestamp\_\-get (void)}}
+\label{time_8c_ed3cefad3bf9a228175a4bdc89ff539b}
+
+
+
+
+References ms\_\-ticks, time::ms\_\-ticks, and time::us\_\-ticks.\hypertarget{time_8c_f3e0761267f0325d7636b8adfad9272a}{
+\index{time.c@{time.c}!time\_\-time2int@{time\_\-time2int}}
+\index{time\_\-time2int@{time\_\-time2int}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t time\_\-time2int ({\bf time\_\-t} {\em time})}}
+\label{time_8c_f3e0761267f0325d7636b8adfad9272a}
+
+
+
+
+References time::ms\_\-ticks, TOPCNT, and time::us\_\-ticks.
+
+\subsection{Variable Documentation}
+\hypertarget{time_8c_83d757f19d281388ac536ed46e50c36e}{
+\index{time.c@{time.c}!ms\_\-ticks@{ms\_\-ticks}}
+\index{ms\_\-ticks@{ms\_\-ticks}!time.c@{time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}volatile uint16\_\-t {\bf ms\_\-ticks} = 0\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{time_8c_83d757f19d281388ac536ed46e50c36e}
+
+
+
+
+Referenced by time\_\-current\_\-time\_\-get(), and time\_\-rf\_\-timestamp\_\-get().

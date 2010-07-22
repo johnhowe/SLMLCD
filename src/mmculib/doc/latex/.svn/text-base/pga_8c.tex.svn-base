@@ -1,0 +1,200 @@
+\hypertarget{pga_8c}{
+\section{pga.c File Reference}
+\label{pga_8c}\index{pga.c@{pga.c}}
+}
+Interface routines for Microchip PGAs (MCP6S2x). 
+
+{\tt \#include \char`\"{}pga.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{pga_8c_e085e726d05a2c332b0133256dae8e92}{PGA\_\-TRANSPARENT}
+\item 
+\#define \hyperlink{pga_8c_c39e47a402ac407f771dd08dda6689b2}{PGA\_\-INSN\_\-REGISTER\_\-WRITE}(REG)~((PGA\_\-INSN\_\-WRITE $<$$<$ 5) $|$ (REG))
+\item 
+\#define \hyperlink{pga_8c_13060ccbd75ed883cec58a76a3acc60b}{PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE}~PGA\_\-INSN\_\-REGISTER\_\-WRITE (PGA\_\-GAIN\_\-REGISTER)
+\item 
+\#define \hyperlink{pga_8c_d6a9f3177b6a45467171b3ab598deaf2}{PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE}~PGA\_\-INSN\_\-REGISTER\_\-WRITE (PGA\_\-CHANNEL\_\-REGISTER)
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{pga_8c_84627a72058502328269676b81780f8971dfa2a4006174d1ba24e7beb55db2df}{PGA\_\-GAIN\_\-REGISTER} =  0, 
+\hyperlink{pga_8c_84627a72058502328269676b81780f89c4288f1fb93137ffae2c7eca0e165fbb}{PGA\_\-CHANNEL\_\-REGISTER} =  1
+ \}
+\item 
+enum \{ \hyperlink{pga_8c_f3520ff6d43011872bab77edd27d4de3e72cd0de1347fbfa7cedb84d310614c7}{PGA\_\-INSN\_\-NOP} =  0, 
+\hyperlink{pga_8c_f3520ff6d43011872bab77edd27d4de304cd4f28b3d109e5cda146ed7a49b260}{PGA\_\-INSN\_\-SHUTDOWN} =  1, 
+\hyperlink{pga_8c_f3520ff6d43011872bab77edd27d4de3cb56f8531c4147d1f1d2fbc217d075fb}{PGA\_\-INSN\_\-WRITE} =  2
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{pga_8c_5446678acfff8fcf782f40ee8132f9c5}{pga\_\-send\_\-command} (\hyperlink{structpga__private__t}{pga\_\-t} pga, uint8\_\-t command\_\-byte\_\-1, uint8\_\-t command\_\-byte\_\-2)
+\item 
+void \hyperlink{pga_8c_e68ce945e5618989f91f0297c3e0bd28}{pga\_\-gain\_\-set} (\hyperlink{structpga__private__t}{pga\_\-t} pga, \hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b}{pga\_\-gain\_\-t} gain)
+\item 
+void \hyperlink{pga_8c_2dd78d4e1bc9e48cc463380dff7c0eb9}{pga\_\-channel\_\-set} (\hyperlink{structpga__private__t}{pga\_\-t} pga, \hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9}{pga\_\-channel\_\-t} channel)
+\item 
+void \hyperlink{pga_8c_ab91758b144017097832f60fc4e17ad8}{pga\_\-shutdown} (\hyperlink{structpga__private__t}{pga\_\-t} pga)
+\item 
+void \hyperlink{pga_8c_325ffc2116fa2992da9a7dbdfffece7a}{pga\_\-wakeup} (\hyperlink{structpga__private__t}{pga\_\-t} pga)
+\item 
+\hyperlink{structpga__private__t}{pga\_\-t} \hyperlink{pga_8c_8b21fccdf07883c76c66926b7fb0725c}{pga\_\-init} (\hyperlink{structpga__private__t}{pga\_\-obj\_\-t} $\ast$pga, const \hyperlink{pga_8h_cd2d27fd53dd29d3d5ee77c4cb97bb22}{pga\_\-cfg\_\-t} $\ast$cfg)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Interface routines for Microchip PGAs (MCP6S2x). 
+
+\begin{Desc}
+\item[Author:]Michael Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]8 February 2005 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{pga_8c_d6a9f3177b6a45467171b3ab598deaf2}{
+\index{pga.c@{pga.c}!PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE@{PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE}}
+\index{PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE@{PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE~PGA\_\-INSN\_\-REGISTER\_\-WRITE (PGA\_\-CHANNEL\_\-REGISTER)}}
+\label{pga_8c_d6a9f3177b6a45467171b3ab598deaf2}
+
+
+
+
+Referenced by pga\_\-channel\_\-set().\hypertarget{pga_8c_13060ccbd75ed883cec58a76a3acc60b}{
+\index{pga.c@{pga.c}!PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE@{PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE}}
+\index{PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE@{PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE~PGA\_\-INSN\_\-REGISTER\_\-WRITE (PGA\_\-GAIN\_\-REGISTER)}}
+\label{pga_8c_13060ccbd75ed883cec58a76a3acc60b}
+
+
+
+
+Referenced by pga\_\-gain\_\-set().\hypertarget{pga_8c_c39e47a402ac407f771dd08dda6689b2}{
+\index{pga.c@{pga.c}!PGA\_\-INSN\_\-REGISTER\_\-WRITE@{PGA\_\-INSN\_\-REGISTER\_\-WRITE}}
+\index{PGA\_\-INSN\_\-REGISTER\_\-WRITE@{PGA\_\-INSN\_\-REGISTER\_\-WRITE}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-INSN\_\-REGISTER\_\-WRITE(REG)~((PGA\_\-INSN\_\-WRITE $<$$<$ 5) $|$ (REG))}}
+\label{pga_8c_c39e47a402ac407f771dd08dda6689b2}
+
+
+\hypertarget{pga_8c_e085e726d05a2c332b0133256dae8e92}{
+\index{pga.c@{pga.c}!PGA\_\-TRANSPARENT@{PGA\_\-TRANSPARENT}}
+\index{PGA\_\-TRANSPARENT@{PGA\_\-TRANSPARENT}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-TRANSPARENT}}
+\label{pga_8c_e085e726d05a2c332b0133256dae8e92}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{pga_8c_84627a72058502328269676b81780f89}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{pga_8c_84627a72058502328269676b81780f89}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PGA\_\-GAIN\_\-REGISTER@{PGA\_\-GAIN\_\-REGISTER}!pga.c@{pga.c}}\index{pga.c@{pga.c}!PGA\_\-GAIN\_\-REGISTER@{PGA\_\-GAIN\_\-REGISTER}}\item[{\em 
+\hypertarget{pga_8c_84627a72058502328269676b81780f8971dfa2a4006174d1ba24e7beb55db2df}{
+PGA\_\-GAIN\_\-REGISTER}
+\label{pga_8c_84627a72058502328269676b81780f8971dfa2a4006174d1ba24e7beb55db2df}
+}]\index{PGA\_\-CHANNEL\_\-REGISTER@{PGA\_\-CHANNEL\_\-REGISTER}!pga.c@{pga.c}}\index{pga.c@{pga.c}!PGA\_\-CHANNEL\_\-REGISTER@{PGA\_\-CHANNEL\_\-REGISTER}}\item[{\em 
+\hypertarget{pga_8c_84627a72058502328269676b81780f89c4288f1fb93137ffae2c7eca0e165fbb}{
+PGA\_\-CHANNEL\_\-REGISTER}
+\label{pga_8c_84627a72058502328269676b81780f89c4288f1fb93137ffae2c7eca0e165fbb}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pga_8c_f3520ff6d43011872bab77edd27d4de3}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{pga_8c_f3520ff6d43011872bab77edd27d4de3}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PGA\_\-INSN\_\-NOP@{PGA\_\-INSN\_\-NOP}!pga.c@{pga.c}}\index{pga.c@{pga.c}!PGA\_\-INSN\_\-NOP@{PGA\_\-INSN\_\-NOP}}\item[{\em 
+\hypertarget{pga_8c_f3520ff6d43011872bab77edd27d4de3e72cd0de1347fbfa7cedb84d310614c7}{
+PGA\_\-INSN\_\-NOP}
+\label{pga_8c_f3520ff6d43011872bab77edd27d4de3e72cd0de1347fbfa7cedb84d310614c7}
+}]\index{PGA\_\-INSN\_\-SHUTDOWN@{PGA\_\-INSN\_\-SHUTDOWN}!pga.c@{pga.c}}\index{pga.c@{pga.c}!PGA\_\-INSN\_\-SHUTDOWN@{PGA\_\-INSN\_\-SHUTDOWN}}\item[{\em 
+\hypertarget{pga_8c_f3520ff6d43011872bab77edd27d4de304cd4f28b3d109e5cda146ed7a49b260}{
+PGA\_\-INSN\_\-SHUTDOWN}
+\label{pga_8c_f3520ff6d43011872bab77edd27d4de304cd4f28b3d109e5cda146ed7a49b260}
+}]\index{PGA\_\-INSN\_\-WRITE@{PGA\_\-INSN\_\-WRITE}!pga.c@{pga.c}}\index{pga.c@{pga.c}!PGA\_\-INSN\_\-WRITE@{PGA\_\-INSN\_\-WRITE}}\item[{\em 
+\hypertarget{pga_8c_f3520ff6d43011872bab77edd27d4de3cb56f8531c4147d1f1d2fbc217d075fb}{
+PGA\_\-INSN\_\-WRITE}
+\label{pga_8c_f3520ff6d43011872bab77edd27d4de3cb56f8531c4147d1f1d2fbc217d075fb}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pga_8c_2dd78d4e1bc9e48cc463380dff7c0eb9}{
+\index{pga.c@{pga.c}!pga\_\-channel\_\-set@{pga\_\-channel\_\-set}}
+\index{pga\_\-channel\_\-set@{pga\_\-channel\_\-set}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-channel\_\-set ({\bf pga\_\-t} {\em pga}, \/  {\bf pga\_\-channel\_\-t} {\em channel})}}
+\label{pga_8c_2dd78d4e1bc9e48cc463380dff7c0eb9}
+
+
+
+
+References PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE, and pga\_\-send\_\-command().
+
+Referenced by pga\_\-wakeup().\hypertarget{pga_8c_e68ce945e5618989f91f0297c3e0bd28}{
+\index{pga.c@{pga.c}!pga\_\-gain\_\-set@{pga\_\-gain\_\-set}}
+\index{pga\_\-gain\_\-set@{pga\_\-gain\_\-set}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-gain\_\-set ({\bf pga\_\-t} {\em pga}, \/  {\bf pga\_\-gain\_\-t} {\em gain})}}
+\label{pga_8c_e68ce945e5618989f91f0297c3e0bd28}
+
+
+
+
+References PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE, and pga\_\-send\_\-command().
+
+Referenced by pga\_\-wakeup().\hypertarget{pga_8c_8b21fccdf07883c76c66926b7fb0725c}{
+\index{pga.c@{pga.c}!pga\_\-init@{pga\_\-init}}
+\index{pga\_\-init@{pga\_\-init}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf pga\_\-t} pga\_\-init ({\bf pga\_\-obj\_\-t} $\ast$ {\em pga}, \/  const {\bf pga\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{pga_8c_8b21fccdf07883c76c66926b7fb0725c}
+
+
+
+
+References PGA\_\-SPI\_\-DIVISOR, pga\_\-wakeup(), and pga\_\-private\_\-t::spi.\hypertarget{pga_8c_5446678acfff8fcf782f40ee8132f9c5}{
+\index{pga.c@{pga.c}!pga\_\-send\_\-command@{pga\_\-send\_\-command}}
+\index{pga\_\-send\_\-command@{pga\_\-send\_\-command}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void pga\_\-send\_\-command ({\bf pga\_\-t} {\em pga}, \/  uint8\_\-t {\em command\_\-byte\_\-1}, \/  uint8\_\-t {\em command\_\-byte\_\-2})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{pga_8c_5446678acfff8fcf782f40ee8132f9c5}
+
+
+
+
+References pga\_\-private\_\-t::spi.
+
+Referenced by pga\_\-channel\_\-set(), pga\_\-gain\_\-set(), and pga\_\-shutdown().\hypertarget{pga_8c_ab91758b144017097832f60fc4e17ad8}{
+\index{pga.c@{pga.c}!pga\_\-shutdown@{pga\_\-shutdown}}
+\index{pga\_\-shutdown@{pga\_\-shutdown}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-shutdown ({\bf pga\_\-t} {\em pga})}}
+\label{pga_8c_ab91758b144017097832f60fc4e17ad8}
+
+
+
+
+References PGA\_\-INSN\_\-SHUTDOWN, and pga\_\-send\_\-command().\hypertarget{pga_8c_325ffc2116fa2992da9a7dbdfffece7a}{
+\index{pga.c@{pga.c}!pga\_\-wakeup@{pga\_\-wakeup}}
+\index{pga\_\-wakeup@{pga\_\-wakeup}!pga.c@{pga.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-wakeup ({\bf pga\_\-t} {\em pga})}}
+\label{pga_8c_325ffc2116fa2992da9a7dbdfffece7a}
+
+
+
+
+References PGA\_\-CHANNEL\_\-0, pga\_\-channel\_\-set(), PGA\_\-GAIN\_\-1, and pga\_\-gain\_\-set().
+
+Referenced by pga\_\-init().

@@ -1,0 +1,467 @@
+\hypertarget{nrf2401_8h}{
+\section{nrf2401.h File Reference}
+\label{nrf2401_8h}\index{nrf2401.h@{nrf2401.h}}
+}
+Interface routines for the Nordic nrf2401 tranceiver chip. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structnrf__address__t}{nrf\_\-address\_\-t}
+\item 
+struct \hyperlink{structnrf__link__t}{nrf\_\-link\_\-t}
+\item 
+struct \hyperlink{structnrf__node__t}{nrf\_\-node\_\-t}
+\item 
+struct \hyperlink{structnrf__config__bits__t}{nrf\_\-config\_\-bits\_\-t}
+\item 
+union \hyperlink{unionnrf__config__t}{nrf\_\-config\_\-t}
+\item 
+struct \hyperlink{structnrf__cfg__t}{nrf\_\-cfg\_\-t}
+\item 
+struct \hyperlink{structnrf__obj__t}{nrf\_\-obj\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{nrf2401_8h_074d4fb7b23e0047807df9d57f2d8095}{NRF\_\-CFG}(CHANNEL, DIVISOR, CS\_\-PORT, CS\_\-BIT, CE\_\-PORT, CE\_\-BIT, DR\_\-PORT, DR\_\-BIT)~\{\{(CHANNEL), (DIVISOR), \{0, 0\}\}, \{CS\_\-PORT, BIT (CS\_\-BIT)\}, \{CE\_\-PORT, BIT (CE\_\-BIT)\}, \{DR\_\-PORT, BIT (DR\_\-BIT)\}\}
+\item 
+\#define \hyperlink{nrf2401_8h_4ebe92e97e1063efdcbcda6af2fa3aa6}{NRF\_\-PAYLOAD\_\-SIZE}~25
+\item 
+\#define \hyperlink{nrf2401_8h_7a9c75bc2201f7d3778ead6b2738d9d4}{NRF\_\-DEFAULT\_\-ADDRESS}~\{0xFD, 0xCA, 0x7E, 0xA9, 0x52\}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef uint8\_\-t \hyperlink{nrf2401_8h_8e10b4274a0de94729bbd0a8140fb7fe}{nrf\_\-device\_\-id\_\-t} \mbox{[}NRF\_\-DEVICE\_\-ID\_\-SIZE\mbox{]}
+\item 
+typedef uint8\_\-t \hyperlink{nrf2401_8h_bed4d74e69a85bd81906e5fc877068a9}{nrf\_\-channel\_\-t}
+\item 
+typedef \hyperlink{structnrf__obj__t}{nrf\_\-obj\_\-t} $\ast$ \hyperlink{nrf2401_8h_342adca7ac1d1f7d5c758a1929bcce86}{nrf\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{nrf2401_8h_b48899087cc647f0f791ed0c459adc53fd35ccf31a436ea2582dcb297b20c271}{NRF\_\-DEVICE\_\-ID\_\-SIZE} =  8
+ \}
+\item 
+enum \hyperlink{nrf2401_8h_097e289dfb18e933f587aeb5921431b0}{nrf\_\-id\_\-t} \{ \hyperlink{nrf2401_8h_097e289dfb18e933f587aeb5921431b07c475f6ae4486f43f04b788cd3bdf3a5}{NRF\_\-BROADCAST\_\-SLAVE\_\-ID} =  0xFE, 
+\hyperlink{nrf2401_8h_097e289dfb18e933f587aeb5921431b034c612e6bdc9d2ba3a578bf8f0aaab10}{NRF\_\-MASTER\_\-ID} =  0xFF
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_458e651af6690959efa2afb96be7d609ccfe80dc5a511c6fb03f97160465145c}{NRF\_\-TX\_\-MODE} =  0, 
+\hyperlink{nrf2401_8h_458e651af6690959efa2afb96be7d6096ba0978740f5af9e322dc373f461eba2}{NRF\_\-RX\_\-MODE} =  1
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf733085628ae38849f24c8642fd44b381434942e0}{NRF\_\-DIRECT} =  0, 
+\hyperlink{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf733085626a48eeeb85d144a85d5020ede000c976}{NRF\_\-SHOCKBURST} =  1
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_77867ab4129f63159b37bca3b652a7981032c0aa859e9928e389a83f43315a94}{NRF\_\-CRC\_\-8} =  0, 
+\hyperlink{nrf2401_8h_77867ab4129f63159b37bca3b652a798fd0d402ba74ee6e09930a4e165cac3f3}{NRF\_\-CRC\_\-16} =  1
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_16685eea158879e41b101ca3634de462bb21547236a721cf34ba6f2de9bc67b7}{NRF\_\-CRC\_\-DISABLED} =  0, 
+\hyperlink{nrf2401_8h_16685eea158879e41b101ca3634de46256ed9fee9c8d71fa37d368949337a0c2}{NRF\_\-CRC\_\-ENABLED} =  1
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d016eb4e94534334130a1c19162ed7f72}{NRF\_\-POWER\_\-20}, 
+\hyperlink{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d1dce1e3116fc504938d6c975a051bec8}{NRF\_\-POWER\_\-10}, 
+\hyperlink{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89da97606f5d0cc713e391bc0f5b0b19686}{NRF\_\-POWER\_\-5}, 
+\hyperlink{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89ddcb09b34476101ed06ae3a211b75a86d}{NRF\_\-POWER\_\-0}
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_fa231099d07583c3ed0981e0bb665f558eea14d4e7b7ec7b792b5eeb9965cade}{NRF\_\-SINGLE\_\-CHANNEL} =  0, 
+\hyperlink{nrf2401_8h_fa231099d07583c3ed0981e0bb665f559d1d704592040e4b0033773769a641ee}{NRF\_\-DUAL\_\-CHANNEL} =  1
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5fce263eb336f0f5806795d98def2998b6}{NRF\_\-DATA\_\-250K} =  0, 
+\hyperlink{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5f9b11145fa196f183258074481033f2a2}{NRF\_\-DATA\_\-1M} =  1
+ \}
+\item 
+enum \{ \par
+\hyperlink{nrf2401_8h_c205be2172292384dd687b5471a87edde0ffcecf30849f02f25e8807b7b1bd5a}{NRF\_\-XTAL\_\-FREQ\_\-4M}, 
+\hyperlink{nrf2401_8h_c205be2172292384dd687b5471a87edd825de6e559a1d49c47a1c43647a988dc}{NRF\_\-XTAL\_\-FREQ\_\-8M}, 
+\hyperlink{nrf2401_8h_c205be2172292384dd687b5471a87edd54ae3a5edba1d664e7f0b2924f44542e}{NRF\_\-XTAL\_\-FREQ\_\-12M}, 
+\hyperlink{nrf2401_8h_c205be2172292384dd687b5471a87eddf0ffedb3610ed0207b69e7ee172fe24c}{NRF\_\-XTAL\_\-FREQ\_\-16M}, 
+\par
+\hyperlink{nrf2401_8h_c205be2172292384dd687b5471a87edd5f49386883638a921099ee823e1873a1}{NRF\_\-XTAL\_\-FREQ\_\-20M}
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_157d5577a5b2f5986037d0d09c7dc77dbd6d9dc42459da42d6766aaf7b1ea194}{NRF\_\-TIMEOUT\_\-ACK\_\-MS} =  10
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8h_1fb9092bcdeada2d206bdc74afbbe1225647335406a3c408ae3d184369dd7b66}{NRF\_\-ACK\_\-DELAY\_\-US} =  600
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structnrf__obj__t}{nrf\_\-t} \hyperlink{nrf2401_8h_22e5c40347994667a233802f4cddb365}{nrf\_\-init} (\hyperlink{structnrf__obj__t}{nrf\_\-obj\_\-t} $\ast$dev, const \hyperlink{structnrf__cfg__t}{nrf\_\-cfg\_\-t} $\ast$cfg)
+\item 
+bool \hyperlink{nrf2401_8h_503158aef839b07fda9fd1a76f134126}{nrf\_\-setup} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t payload\_\-size)
+\item 
+uint8\_\-t \hyperlink{nrf2401_8h_4673ad828e6293328bd436902110b6a3}{nrf\_\-transmit} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, \hyperlink{structnrf__node__t}{nrf\_\-node\_\-t} $\ast$node, void $\ast$buffer, uint8\_\-t len)
+\item 
+uint8\_\-t \hyperlink{nrf2401_8h_b33a22c7e34f46aa9dca322114c99fe5}{nrf\_\-receive} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, \hyperlink{structnrf__node__t}{nrf\_\-node\_\-t} $\ast$node, void $\ast$buffer, uint8\_\-t len, uint8\_\-t ms\_\-to\_\-wait)
+\item 
+bool \hyperlink{nrf2401_8h_6a185b90791bc672c8820baa2f17ba84}{nrf\_\-data\_\-ready\_\-p} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Interface routines for the Nordic nrf2401 tranceiver chip. 
+
+\begin{Desc}
+\item[Author:]Michael Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]7 December 2004 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{nrf2401_8h_074d4fb7b23e0047807df9d57f2d8095}{
+\index{nrf2401.h@{nrf2401.h}!NRF\_\-CFG@{NRF\_\-CFG}}
+\index{NRF\_\-CFG@{NRF\_\-CFG}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-CFG(CHANNEL, \/  DIVISOR, \/  CS\_\-PORT, \/  CS\_\-BIT, \/  CE\_\-PORT, \/  CE\_\-BIT, \/  DR\_\-PORT, \/  DR\_\-BIT)~\{\{(CHANNEL), (DIVISOR), \{0, 0\}\}, \{CS\_\-PORT, BIT (CS\_\-BIT)\}, \{CE\_\-PORT, BIT (CE\_\-BIT)\}, \{DR\_\-PORT, BIT (DR\_\-BIT)\}\}}}
+\label{nrf2401_8h_074d4fb7b23e0047807df9d57f2d8095}
+
+
+\hypertarget{nrf2401_8h_7a9c75bc2201f7d3778ead6b2738d9d4}{
+\index{nrf2401.h@{nrf2401.h}!NRF\_\-DEFAULT\_\-ADDRESS@{NRF\_\-DEFAULT\_\-ADDRESS}}
+\index{NRF\_\-DEFAULT\_\-ADDRESS@{NRF\_\-DEFAULT\_\-ADDRESS}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-DEFAULT\_\-ADDRESS~\{0xFD, 0xCA, 0x7E, 0xA9, 0x52\}}}
+\label{nrf2401_8h_7a9c75bc2201f7d3778ead6b2738d9d4}
+
+
+
+
+Referenced by nrf\_\-node\_\-create().\hypertarget{nrf2401_8h_4ebe92e97e1063efdcbcda6af2fa3aa6}{
+\index{nrf2401.h@{nrf2401.h}!NRF\_\-PAYLOAD\_\-SIZE@{NRF\_\-PAYLOAD\_\-SIZE}}
+\index{NRF\_\-PAYLOAD\_\-SIZE@{NRF\_\-PAYLOAD\_\-SIZE}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-PAYLOAD\_\-SIZE~25}}
+\label{nrf2401_8h_4ebe92e97e1063efdcbcda6af2fa3aa6}
+
+
+
+
+Referenced by nrf\_\-acknowledge(), nrf\_\-acknowledge\_\-wait(), nrf\_\-devices\_\-enumerate(), nrf\_\-read\_\-data(), and nrf\_\-write().
+
+\subsection{Typedef Documentation}
+\hypertarget{nrf2401_8h_bed4d74e69a85bd81906e5fc877068a9}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-channel\_\-t@{nrf\_\-channel\_\-t}}
+\index{nrf\_\-channel\_\-t@{nrf\_\-channel\_\-t}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf nrf\_\-channel\_\-t}}}
+\label{nrf2401_8h_bed4d74e69a85bd81906e5fc877068a9}
+
+
+\hypertarget{nrf2401_8h_8e10b4274a0de94729bbd0a8140fb7fe}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-device\_\-id\_\-t@{nrf\_\-device\_\-id\_\-t}}
+\index{nrf\_\-device\_\-id\_\-t@{nrf\_\-device\_\-id\_\-t}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf nrf\_\-device\_\-id\_\-t}\mbox{[}NRF\_\-DEVICE\_\-ID\_\-SIZE\mbox{]}}}
+\label{nrf2401_8h_8e10b4274a0de94729bbd0a8140fb7fe}
+
+
+\hypertarget{nrf2401_8h_342adca7ac1d1f7d5c758a1929bcce86}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-t@{nrf\_\-t}}
+\index{nrf\_\-t@{nrf\_\-t}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf nrf\_\-obj\_\-t}$\ast$ {\bf nrf\_\-t}}}
+\label{nrf2401_8h_342adca7ac1d1f7d5c758a1929bcce86}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{nrf2401_8h_b48899087cc647f0f791ed0c459adc53}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_b48899087cc647f0f791ed0c459adc53}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-DEVICE\_\-ID\_\-SIZE@{NRF\_\-DEVICE\_\-ID\_\-SIZE}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-DEVICE\_\-ID\_\-SIZE@{NRF\_\-DEVICE\_\-ID\_\-SIZE}}\item[{\em 
+\hypertarget{nrf2401_8h_b48899087cc647f0f791ed0c459adc53fd35ccf31a436ea2582dcb297b20c271}{
+NRF\_\-DEVICE\_\-ID\_\-SIZE}
+\label{nrf2401_8h_b48899087cc647f0f791ed0c459adc53fd35ccf31a436ea2582dcb297b20c271}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_458e651af6690959efa2afb96be7d609}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_458e651af6690959efa2afb96be7d609}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-TX\_\-MODE@{NRF\_\-TX\_\-MODE}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-TX\_\-MODE@{NRF\_\-TX\_\-MODE}}\item[{\em 
+\hypertarget{nrf2401_8h_458e651af6690959efa2afb96be7d609ccfe80dc5a511c6fb03f97160465145c}{
+NRF\_\-TX\_\-MODE}
+\label{nrf2401_8h_458e651af6690959efa2afb96be7d609ccfe80dc5a511c6fb03f97160465145c}
+}]\index{NRF\_\-RX\_\-MODE@{NRF\_\-RX\_\-MODE}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-RX\_\-MODE@{NRF\_\-RX\_\-MODE}}\item[{\em 
+\hypertarget{nrf2401_8h_458e651af6690959efa2afb96be7d6096ba0978740f5af9e322dc373f461eba2}{
+NRF\_\-RX\_\-MODE}
+\label{nrf2401_8h_458e651af6690959efa2afb96be7d6096ba0978740f5af9e322dc373f461eba2}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf73308562}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf73308562}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-DIRECT@{NRF\_\-DIRECT}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-DIRECT@{NRF\_\-DIRECT}}\item[{\em 
+\hypertarget{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf733085628ae38849f24c8642fd44b381434942e0}{
+NRF\_\-DIRECT}
+\label{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf733085628ae38849f24c8642fd44b381434942e0}
+}]\index{NRF\_\-SHOCKBURST@{NRF\_\-SHOCKBURST}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-SHOCKBURST@{NRF\_\-SHOCKBURST}}\item[{\em 
+\hypertarget{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf733085626a48eeeb85d144a85d5020ede000c976}{
+NRF\_\-SHOCKBURST}
+\label{nrf2401_8h_1f9aebf1de3ebbf4283a4dcf733085626a48eeeb85d144a85d5020ede000c976}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_77867ab4129f63159b37bca3b652a798}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_77867ab4129f63159b37bca3b652a798}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-CRC\_\-8@{NRF\_\-CRC\_\-8}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-CRC\_\-8@{NRF\_\-CRC\_\-8}}\item[{\em 
+\hypertarget{nrf2401_8h_77867ab4129f63159b37bca3b652a7981032c0aa859e9928e389a83f43315a94}{
+NRF\_\-CRC\_\-8}
+\label{nrf2401_8h_77867ab4129f63159b37bca3b652a7981032c0aa859e9928e389a83f43315a94}
+}]\index{NRF\_\-CRC\_\-16@{NRF\_\-CRC\_\-16}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-CRC\_\-16@{NRF\_\-CRC\_\-16}}\item[{\em 
+\hypertarget{nrf2401_8h_77867ab4129f63159b37bca3b652a798fd0d402ba74ee6e09930a4e165cac3f3}{
+NRF\_\-CRC\_\-16}
+\label{nrf2401_8h_77867ab4129f63159b37bca3b652a798fd0d402ba74ee6e09930a4e165cac3f3}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_16685eea158879e41b101ca3634de462}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_16685eea158879e41b101ca3634de462}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-CRC\_\-DISABLED@{NRF\_\-CRC\_\-DISABLED}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-CRC\_\-DISABLED@{NRF\_\-CRC\_\-DISABLED}}\item[{\em 
+\hypertarget{nrf2401_8h_16685eea158879e41b101ca3634de462bb21547236a721cf34ba6f2de9bc67b7}{
+NRF\_\-CRC\_\-DISABLED}
+\label{nrf2401_8h_16685eea158879e41b101ca3634de462bb21547236a721cf34ba6f2de9bc67b7}
+}]\index{NRF\_\-CRC\_\-ENABLED@{NRF\_\-CRC\_\-ENABLED}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-CRC\_\-ENABLED@{NRF\_\-CRC\_\-ENABLED}}\item[{\em 
+\hypertarget{nrf2401_8h_16685eea158879e41b101ca3634de46256ed9fee9c8d71fa37d368949337a0c2}{
+NRF\_\-CRC\_\-ENABLED}
+\label{nrf2401_8h_16685eea158879e41b101ca3634de46256ed9fee9c8d71fa37d368949337a0c2}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-POWER\_\-20@{NRF\_\-POWER\_\-20}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-POWER\_\-20@{NRF\_\-POWER\_\-20}}\item[{\em 
+\hypertarget{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d016eb4e94534334130a1c19162ed7f72}{
+NRF\_\-POWER\_\-20}
+\label{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d016eb4e94534334130a1c19162ed7f72}
+}]\index{NRF\_\-POWER\_\-10@{NRF\_\-POWER\_\-10}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-POWER\_\-10@{NRF\_\-POWER\_\-10}}\item[{\em 
+\hypertarget{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d1dce1e3116fc504938d6c975a051bec8}{
+NRF\_\-POWER\_\-10}
+\label{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89d1dce1e3116fc504938d6c975a051bec8}
+}]\index{NRF\_\-POWER\_\-5@{NRF\_\-POWER\_\-5}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-POWER\_\-5@{NRF\_\-POWER\_\-5}}\item[{\em 
+\hypertarget{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89da97606f5d0cc713e391bc0f5b0b19686}{
+NRF\_\-POWER\_\-5}
+\label{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89da97606f5d0cc713e391bc0f5b0b19686}
+}]\index{NRF\_\-POWER\_\-0@{NRF\_\-POWER\_\-0}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-POWER\_\-0@{NRF\_\-POWER\_\-0}}\item[{\em 
+\hypertarget{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89ddcb09b34476101ed06ae3a211b75a86d}{
+NRF\_\-POWER\_\-0}
+\label{nrf2401_8h_2970898e8a43ce21e1cc510d49f1b89ddcb09b34476101ed06ae3a211b75a86d}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_fa231099d07583c3ed0981e0bb665f55}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_fa231099d07583c3ed0981e0bb665f55}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-SINGLE\_\-CHANNEL@{NRF\_\-SINGLE\_\-CHANNEL}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-SINGLE\_\-CHANNEL@{NRF\_\-SINGLE\_\-CHANNEL}}\item[{\em 
+\hypertarget{nrf2401_8h_fa231099d07583c3ed0981e0bb665f558eea14d4e7b7ec7b792b5eeb9965cade}{
+NRF\_\-SINGLE\_\-CHANNEL}
+\label{nrf2401_8h_fa231099d07583c3ed0981e0bb665f558eea14d4e7b7ec7b792b5eeb9965cade}
+}]\index{NRF\_\-DUAL\_\-CHANNEL@{NRF\_\-DUAL\_\-CHANNEL}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-DUAL\_\-CHANNEL@{NRF\_\-DUAL\_\-CHANNEL}}\item[{\em 
+\hypertarget{nrf2401_8h_fa231099d07583c3ed0981e0bb665f559d1d704592040e4b0033773769a641ee}{
+NRF\_\-DUAL\_\-CHANNEL}
+\label{nrf2401_8h_fa231099d07583c3ed0981e0bb665f559d1d704592040e4b0033773769a641ee}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5f}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5f}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-DATA\_\-250K@{NRF\_\-DATA\_\-250K}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-DATA\_\-250K@{NRF\_\-DATA\_\-250K}}\item[{\em 
+\hypertarget{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5fce263eb336f0f5806795d98def2998b6}{
+NRF\_\-DATA\_\-250K}
+\label{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5fce263eb336f0f5806795d98def2998b6}
+}]\index{NRF\_\-DATA\_\-1M@{NRF\_\-DATA\_\-1M}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-DATA\_\-1M@{NRF\_\-DATA\_\-1M}}\item[{\em 
+\hypertarget{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5f9b11145fa196f183258074481033f2a2}{
+NRF\_\-DATA\_\-1M}
+\label{nrf2401_8h_394b3903fbf00ba2b6243f60689a5a5f9b11145fa196f183258074481033f2a2}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_c205be2172292384dd687b5471a87edd}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_c205be2172292384dd687b5471a87edd}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-XTAL\_\-FREQ\_\-4M@{NRF\_\-XTAL\_\-FREQ\_\-4M}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-XTAL\_\-FREQ\_\-4M@{NRF\_\-XTAL\_\-FREQ\_\-4M}}\item[{\em 
+\hypertarget{nrf2401_8h_c205be2172292384dd687b5471a87edde0ffcecf30849f02f25e8807b7b1bd5a}{
+NRF\_\-XTAL\_\-FREQ\_\-4M}
+\label{nrf2401_8h_c205be2172292384dd687b5471a87edde0ffcecf30849f02f25e8807b7b1bd5a}
+}]\index{NRF\_\-XTAL\_\-FREQ\_\-8M@{NRF\_\-XTAL\_\-FREQ\_\-8M}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-XTAL\_\-FREQ\_\-8M@{NRF\_\-XTAL\_\-FREQ\_\-8M}}\item[{\em 
+\hypertarget{nrf2401_8h_c205be2172292384dd687b5471a87edd825de6e559a1d49c47a1c43647a988dc}{
+NRF\_\-XTAL\_\-FREQ\_\-8M}
+\label{nrf2401_8h_c205be2172292384dd687b5471a87edd825de6e559a1d49c47a1c43647a988dc}
+}]\index{NRF\_\-XTAL\_\-FREQ\_\-12M@{NRF\_\-XTAL\_\-FREQ\_\-12M}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-XTAL\_\-FREQ\_\-12M@{NRF\_\-XTAL\_\-FREQ\_\-12M}}\item[{\em 
+\hypertarget{nrf2401_8h_c205be2172292384dd687b5471a87edd54ae3a5edba1d664e7f0b2924f44542e}{
+NRF\_\-XTAL\_\-FREQ\_\-12M}
+\label{nrf2401_8h_c205be2172292384dd687b5471a87edd54ae3a5edba1d664e7f0b2924f44542e}
+}]\index{NRF\_\-XTAL\_\-FREQ\_\-16M@{NRF\_\-XTAL\_\-FREQ\_\-16M}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-XTAL\_\-FREQ\_\-16M@{NRF\_\-XTAL\_\-FREQ\_\-16M}}\item[{\em 
+\hypertarget{nrf2401_8h_c205be2172292384dd687b5471a87eddf0ffedb3610ed0207b69e7ee172fe24c}{
+NRF\_\-XTAL\_\-FREQ\_\-16M}
+\label{nrf2401_8h_c205be2172292384dd687b5471a87eddf0ffedb3610ed0207b69e7ee172fe24c}
+}]\index{NRF\_\-XTAL\_\-FREQ\_\-20M@{NRF\_\-XTAL\_\-FREQ\_\-20M}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-XTAL\_\-FREQ\_\-20M@{NRF\_\-XTAL\_\-FREQ\_\-20M}}\item[{\em 
+\hypertarget{nrf2401_8h_c205be2172292384dd687b5471a87edd5f49386883638a921099ee823e1873a1}{
+NRF\_\-XTAL\_\-FREQ\_\-20M}
+\label{nrf2401_8h_c205be2172292384dd687b5471a87edd5f49386883638a921099ee823e1873a1}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_157d5577a5b2f5986037d0d09c7dc77d}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_157d5577a5b2f5986037d0d09c7dc77d}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-TIMEOUT\_\-ACK\_\-MS@{NRF\_\-TIMEOUT\_\-ACK\_\-MS}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-TIMEOUT\_\-ACK\_\-MS@{NRF\_\-TIMEOUT\_\-ACK\_\-MS}}\item[{\em 
+\hypertarget{nrf2401_8h_157d5577a5b2f5986037d0d09c7dc77dbd6d9dc42459da42d6766aaf7b1ea194}{
+NRF\_\-TIMEOUT\_\-ACK\_\-MS}
+\label{nrf2401_8h_157d5577a5b2f5986037d0d09c7dc77dbd6d9dc42459da42d6766aaf7b1ea194}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_1fb9092bcdeada2d206bdc74afbbe122}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8h_1fb9092bcdeada2d206bdc74afbbe122}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-ACK\_\-DELAY\_\-US@{NRF\_\-ACK\_\-DELAY\_\-US}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-ACK\_\-DELAY\_\-US@{NRF\_\-ACK\_\-DELAY\_\-US}}\item[{\em 
+\hypertarget{nrf2401_8h_1fb9092bcdeada2d206bdc74afbbe1225647335406a3c408ae3d184369dd7b66}{
+NRF\_\-ACK\_\-DELAY\_\-US}
+\label{nrf2401_8h_1fb9092bcdeada2d206bdc74afbbe1225647335406a3c408ae3d184369dd7b66}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8h_097e289dfb18e933f587aeb5921431b0}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-id\_\-t@{nrf\_\-id\_\-t}}
+\index{nrf\_\-id\_\-t@{nrf\_\-id\_\-t}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf nrf\_\-id\_\-t}}}
+\label{nrf2401_8h_097e289dfb18e933f587aeb5921431b0}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-BROADCAST\_\-SLAVE\_\-ID@{NRF\_\-BROADCAST\_\-SLAVE\_\-ID}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-BROADCAST\_\-SLAVE\_\-ID@{NRF\_\-BROADCAST\_\-SLAVE\_\-ID}}\item[{\em 
+\hypertarget{nrf2401_8h_097e289dfb18e933f587aeb5921431b07c475f6ae4486f43f04b788cd3bdf3a5}{
+NRF\_\-BROADCAST\_\-SLAVE\_\-ID}
+\label{nrf2401_8h_097e289dfb18e933f587aeb5921431b07c475f6ae4486f43f04b788cd3bdf3a5}
+}]\index{NRF\_\-MASTER\_\-ID@{NRF\_\-MASTER\_\-ID}!nrf2401.h@{nrf2401.h}}\index{nrf2401.h@{nrf2401.h}!NRF\_\-MASTER\_\-ID@{NRF\_\-MASTER\_\-ID}}\item[{\em 
+\hypertarget{nrf2401_8h_097e289dfb18e933f587aeb5921431b034c612e6bdc9d2ba3a578bf8f0aaab10}{
+NRF\_\-MASTER\_\-ID}
+\label{nrf2401_8h_097e289dfb18e933f587aeb5921431b034c612e6bdc9d2ba3a578bf8f0aaab10}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{nrf2401_8h_6a185b90791bc672c8820baa2f17ba84}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-data\_\-ready\_\-p@{nrf\_\-data\_\-ready\_\-p}}
+\index{nrf\_\-data\_\-ready\_\-p@{nrf\_\-data\_\-ready\_\-p}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool nrf\_\-data\_\-ready\_\-p ({\bf nrf\_\-t} {\em nrf})}}
+\label{nrf2401_8h_6a185b90791bc672c8820baa2f17ba84}
+
+
+
+
+References NRF\_\-DATA\_\-READY\_\-P.\hypertarget{nrf2401_8h_22e5c40347994667a233802f4cddb365}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-init@{nrf\_\-init}}
+\index{nrf\_\-init@{nrf\_\-init}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf nrf\_\-t} nrf\_\-init ({\bf nrf\_\-obj\_\-t} $\ast$ {\em dev}, \/  const {\bf nrf\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{nrf2401_8h_22e5c40347994667a233802f4cddb365}
+
+
+
+
+References nrf\_\-cfg\_\-t::ce, nrf\_\-obj\_\-t::cfg, nrf\_\-cfg\_\-t::cs, nrf\_\-cfg\_\-t::dr, nrf\_\-cfg\_\-t::spi, and nrf\_\-obj\_\-t::spi.\hypertarget{nrf2401_8h_b33a22c7e34f46aa9dca322114c99fe5}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-receive@{nrf\_\-receive}}
+\index{nrf\_\-receive@{nrf\_\-receive}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t nrf\_\-receive ({\bf nrf\_\-t} {\em nrf}, \/  {\bf nrf\_\-node\_\-t} $\ast$ {\em node}, \/  void $\ast$ {\em buffer}, \/  uint8\_\-t {\em len}, \/  uint8\_\-t {\em ms\_\-to\_\-wait})}}
+\label{nrf2401_8h_b33a22c7e34f46aa9dca322114c99fe5}
+
+
+
+
+References nrf\_\-link\_\-t::address, nrf\_\-link\_\-t::channel, nrf\_\-address1\_\-set(), nrf\_\-channel\_\-set(), NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE, nrf\_\-configure(), NRF\_\-DATA\_\-READY\_\-P, nrf\_\-dir\_\-set(), nrf\_\-enable(), nrf\_\-payload\_\-length1\_\-get(), NRF\_\-RX\_\-MODE, nrf\_\-standby(), nrf\_\-node\_\-t::rx, and nrf\_\-obj\_\-t::spi.
+
+Referenced by nrf\_\-acknowledge\_\-wait(), nrf\_\-announce(), and nrf\_\-read().\hypertarget{nrf2401_8h_503158aef839b07fda9fd1a76f134126}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-setup@{nrf\_\-setup}}
+\index{nrf\_\-setup@{nrf\_\-setup}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool nrf\_\-setup ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em payload\_\-size})}}
+\label{nrf2401_8h_503158aef839b07fda9fd1a76f134126}
+
+
+
+
+References CHAR\_\-BIT, nrf\_\-address\_\-length\_\-set(), nrf\_\-channel\_\-set(), nrf\_\-comms\_\-mode\_\-set(), NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE, nrf\_\-configure(), NRF\_\-CRC\_\-16, NRF\_\-CRC\_\-ENABLED, nrf\_\-crc\_\-length\_\-set(), nrf\_\-crc\_\-status\_\-set(), NRF\_\-DATA\_\-1M, nrf\_\-data\_\-rate\_\-set(), nrf\_\-dir\_\-set(), nrf\_\-payload\_\-length1\_\-set(), NRF\_\-POWER\_\-0, nrf\_\-power\_\-set(), NRF\_\-RX\_\-MODE, NRF\_\-SHOCKBURST, NRF\_\-SINGLE\_\-CHANNEL, nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set(), NRF\_\-XTAL\_\-FREQ\_\-16M, and nrf\_\-xtal\_\-freq\_\-set().\hypertarget{nrf2401_8h_4673ad828e6293328bd436902110b6a3}{
+\index{nrf2401.h@{nrf2401.h}!nrf\_\-transmit@{nrf\_\-transmit}}
+\index{nrf\_\-transmit@{nrf\_\-transmit}!nrf2401.h@{nrf2401.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t nrf\_\-transmit ({\bf nrf\_\-t} {\em nrf}, \/  {\bf nrf\_\-node\_\-t} $\ast$ {\em node}, \/  void $\ast$ {\em buffer}, \/  uint8\_\-t {\em len})}}
+\label{nrf2401_8h_4673ad828e6293328bd436902110b6a3}
+
+
+
+
+References nrf\_\-config\_\-bits\_\-t::addr\_\-w, nrf\_\-link\_\-t::address, nrf\_\-config\_\-t::bits, nrf\_\-address\_\-t::bytes, nrf\_\-link\_\-t::channel, CHAR\_\-BIT, nrf\_\-obj\_\-t::config, nrf\_\-config\_\-bits\_\-t::crc\_\-en, nrf\_\-config\_\-bits\_\-t::crc\_\-l, nrf\_\-config\_\-bits\_\-t::data1\_\-w, NRF\_\-CE\_\-HIGH\_\-SET, NRF\_\-CE\_\-LOW\_\-SET, nrf\_\-channel\_\-set(), nrf\_\-configure(), NRF\_\-CRC\_\-8, NRF\_\-CRC\_\-ENABLED, NRF\_\-DATA\_\-1M, nrf\_\-dir\_\-set(), NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US, NRF\_\-T\_\-SB\_\-ACTIVE, NRF\_\-TX\_\-MODE, nrf\_\-config\_\-bits\_\-t::rfdr\_\-sb, nrf\_\-obj\_\-t::spi, and nrf\_\-node\_\-t::tx.
+
+Referenced by nrf\_\-acknowledge(), nrf\_\-announce(), and nrf\_\-write().

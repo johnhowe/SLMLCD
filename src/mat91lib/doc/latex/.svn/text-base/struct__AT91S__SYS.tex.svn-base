@@ -1,0 +1,1423 @@
+\hypertarget{struct__AT91S__SYS}{
+\section{\_\-AT91S\_\-SYS Struct Reference}
+\label{struct__AT91S__SYS}\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}}
+}
+{\tt \#include $<$AT91SAM7S256.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_6b2dc25fefb6a43c8839d3a0ba85a408}{AIC\_\-SMR} \mbox{[}32\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1b583e863c3624110adb15846ef78427}{AIC\_\-SVR} \mbox{[}32\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_24e5233d7ec9c2daed8dc29aeac22ce1}{AIC\_\-IVR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2d92f48e5b842c2c77f134b979fd2bc7}{AIC\_\-FVR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_ed4a9f739e52edf7c7815f458799b6e4}{AIC\_\-ISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_f420a7282f407323cc7d796699c0720b}{AIC\_\-IPR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_e0ed0c0a3132843b4059265489ee2063}{AIC\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_571a3b496f349c04d930abbb45adf942}{AIC\_\-CISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1f98f1e8266ffb2aa5ac1cba0f4ce0d4}{Reserved0} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2f6e0a16409471a92afa7209566ceae5}{AIC\_\-IECR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_c395b87cf997ad27e3a546e431234e60}{AIC\_\-IDCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_093022bc266aa23862995958e372d6c5}{AIC\_\-ICCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_b4d075081830d2478953890d25b4b143}{AIC\_\-ISCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_d338dd123b65a1f2ae500c4f09efa37d}{AIC\_\-EOICR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_af7f74756a1e4c294820ce6c5a47e7d6}{AIC\_\-SPU}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_36ef1a3079442f8ae3970589a54a5632}{AIC\_\-DCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_687073f97558b11b9705f520bb87da20}{Reserved1} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_0bf8012e1d5c7f1dae1aacbf7b3e9c8b}{AIC\_\-FFER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_d0ac871b0b4314d3bd18c2f5f6f1fbfa}{AIC\_\-FFDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_ea5574a7b09efe685246b130cd798444}{AIC\_\-FFSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_0ab32b91d345d283128bce674c0582a4}{Reserved2} \mbox{[}45\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_ab2b8081e88852a5307197cf87c829f9}{DBGU\_\-CR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_01077f44487c7d610f8ff9896875bb14}{DBGU\_\-MR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2d2d7acefce9491f531b0dab2923b336}{DBGU\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_86423640825d970c7eabc2cb6820d659}{DBGU\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_057557aeac77a431b57d15eb21054709}{DBGU\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_56aee1459577cfd1d6e75580ada359b3}{DBGU\_\-CSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_556b96c91a5a7ebbfa8e11a02be83e48}{DBGU\_\-RHR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_15b107f8d769a3c10fbae2013cc97fc5}{DBGU\_\-THR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_e16bebd5ab83589f0c04216d5bad07f2}{DBGU\_\-BRGR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4f92c37690efa2dc448901e3d194292f}{Reserved3} \mbox{[}7\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_a32fb31e17c392f2c1597d38cb911bc7}{DBGU\_\-CIDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_91e2afed535a66d81a83af2803d030a0}{DBGU\_\-EXID}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_6d22e38c7b85e0de6fe4f10bbd9b21ef}{DBGU\_\-FNTR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_140445d0277ce5fd0efdbc6d5e7b1492}{Reserved4} \mbox{[}45\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1ac52db57a321dbd5cb2d62e2a44ba73}{DBGU\_\-RPR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_d99c2be9f9767eb2d06a90e28c78fc03}{DBGU\_\-RCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_332eead065a95b97bac9103a6b333d84}{DBGU\_\-TPR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_9ffd65c8c98948d865b7a289234c65ed}{DBGU\_\-TCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_29bd4f4a73787c58be4bc49cd430f6ab}{DBGU\_\-RNPR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_86fccdee374a79dc2430d883c04fc2bb}{DBGU\_\-RNCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_da239f1d3bbb228ed42662707d9d5ba2}{DBGU\_\-TNPR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_9dad1fe5538d2a9edf595fdfd62b3cbc}{DBGU\_\-TNCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_6098065afc0a5dfdd09a8dd6246ecd94}{DBGU\_\-PTCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2713716d82e126b18ab58955ad580129}{DBGU\_\-PTSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_88efbf7ec5009c0cff70658344a74ca9}{Reserved5} \mbox{[}54\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1f9e83abdf757767ecd653df04de7eed}{PIOA\_\-PER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_74d123c1db1c8a29bfbcbbc2837d2c7a}{PIOA\_\-PDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4df284a3785ae9423da1d3bd1f23f800}{PIOA\_\-PSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_301b9aec5a9c3f09f2c1246ec09b2191}{Reserved6} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_00e1feec91e82c62d69767a5edb519d0}{PIOA\_\-OER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_b4a8d79cacf41c8e0db599ab6e6f35e1}{PIOA\_\-ODR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_b07d5cea6b924d7e04e7db2ca27e1eda}{PIOA\_\-OSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_c046cdc4abd70b271e1e1d075340e505}{Reserved7} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3785e8bb4091831a8bc0d0a1197a5913}{PIOA\_\-IFER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_02009c907e1c2949212524d57eff62f3}{PIOA\_\-IFDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_d3cdf57a19a55a68e2763ed472704733}{PIOA\_\-IFSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_a6cfec9dfc09272835191dc77953dfdc}{Reserved8} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_0cd4fb0b8075a0a73e5775b603f7847c}{PIOA\_\-SODR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1e2aa75c32f3dccf680af85eed50e1a1}{PIOA\_\-CODR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_33e3a1625cd80cc9d0af375189fbf53c}{PIOA\_\-ODSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_7ad9a840b1bb43bdb14f82a64f417671}{PIOA\_\-PDSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_fb881748029e07c97c00643856807d57}{PIOA\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_70e5b268f31c94e9a3a004c4e07f54bd}{PIOA\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_8bb9c5e371d8577d6c4492effeb47f0b}{PIOA\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_93a696bb106cb155cf2a9ff4aa6d8aba}{PIOA\_\-ISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_c8d4c72832e5b6ced0fb5f943cfbda30}{PIOA\_\-MDER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_fc0ccb89a85a34ea1c7662e0f9945ef1}{PIOA\_\-MDDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_9300f3fcd797dcc30371db34f8d4335d}{PIOA\_\-MDSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_6662b5d7076af1103f25e0e49e82b6d3}{Reserved9} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_43b1e4fb64ff7cd9e7d6bc61d880fb0e}{PIOA\_\-PPUDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_8d48501f9345c39f41e9a99cdcc62d52}{PIOA\_\-PPUER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_24b726ec8df3aa24ccaea5462a7a1bcd}{PIOA\_\-PPUSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_f3083cfdc3adc828d8666fcdafe60700}{Reserved10} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_a5d1c90bdc726149ae7bf5e1c3a685aa}{PIOA\_\-ASR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_26830945a69e445b4e9ef75765b780c2}{PIOA\_\-BSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_f8848d88d55ec7f6aa79e9ec8eed81c9}{PIOA\_\-ABSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_a084019e029ff55498f890dfff92e1eb}{Reserved11} \mbox{[}9\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_b4174a002195a128467562f37c4f31b1}{PIOA\_\-OWER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4fe0d5bb6879d39d1f2709d7be4cf0d9}{PIOA\_\-OWDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_b8318d22148f87941323a3bd30e62194}{PIOA\_\-OWSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1fa39527980cd49238ac7f44189cb714}{Reserved12} \mbox{[}469\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_7acb2e81e07163d588e9acefbfb4c97d}{PMC\_\-SCER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_a3e50485ade22f20d8bcad8dbad6f223}{PMC\_\-SCDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_0a74a56c5c5b247ea8bdc103cf69de93}{PMC\_\-SCSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_82027a1102a590c83a1a65579a56d34a}{Reserved13} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_c6b1ed3a4b9fd5f5b794ba9b7c5686ba}{PMC\_\-PCER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_8830de30a95202cb9b5bc04896a7db2d}{PMC\_\-PCDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3387f8e5edd3ec827ed68f194b7c7b0e}{PMC\_\-PCSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_9cc920a79f4e926dd6dbaa50c96bb946}{Reserved14} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_41c7a9cb4b2b9c5c97ef4a6d2dfc8931}{PMC\_\-MOR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3dd24840dea36caca6ec5658a16c260e}{PMC\_\-MCFR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2ad968179201cc6a96856f7ad879bcb1}{Reserved15} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_5b5b479df0bf494d04bfbcc0035ce88a}{PMC\_\-PLLR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2c724987deb4340ddfbe9c87dc4348f3}{PMC\_\-MCKR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_731a732ba47ab70a76ab7a1355ca9294}{Reserved16} \mbox{[}3\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_d9306ad690a7c7b5944d14d06711a313}{PMC\_\-PCKR} \mbox{[}3\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_0a12a888686448c003d6d51c7f84b8fd}{Reserved17} \mbox{[}5\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_7ff6ae4a4c9dd78ba80141ff77b594e6}{PMC\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4f3fd7ed6d469aeb787ce7acdd8647e6}{PMC\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3f9cd9240d2ef420bde177634403dcc1}{PMC\_\-SR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_91060bb2f8ac6b1cd821c19677e36fa4}{PMC\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_dddde4e489008eb3c14a71a465f3120a}{Reserved18} \mbox{[}36\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_50a268df275ae275a36ae16b1104c389}{RSTC\_\-RCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_96d0df57d83741d4ee276d36446693c5}{RSTC\_\-RSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_bbf3d3299e4f13a12f58e28ea488e1f2}{RSTC\_\-RMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_d7adb4d45117fb6cdab5cfdcc1250798}{Reserved19} \mbox{[}5\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2205b60f5430c699fad71220f15b19c3}{RTTC\_\-RTMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_f82f564091ed435d5a6206eae66ff0dd}{RTTC\_\-RTAR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_71376dcbd67913fcdaa3e11b67ce98c4}{RTTC\_\-RTVR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_02c5936057d42f84634f10f188fd4335}{RTTC\_\-RTSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_c6ddaac4e95dc32c1ab654bb3b8b2b2f}{PITC\_\-PIMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_b250b865cba86405c8c33dd28a684159}{PITC\_\-PISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_13cecafc8a74c8fa3585626d0265876c}{PITC\_\-PIVR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_beea85e737c404d91017451058830aa3}{PITC\_\-PIIR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_05e8938bde3ecd781749a5b9539598fb}{WDTC\_\-WDCR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_81ab17c1d918b34a6d8d4698d55141a6}{WDTC\_\-WDMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_faa66f92cf1aa8b7c47de4f0f9db14e9}{WDTC\_\-WDSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_ecc7f2225d7dd42360d2fe0c582ae772}{Reserved20} \mbox{[}5\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4efdcbc14c8c6c4da09911bdc8401748}{VREG\_\-MR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_1b7b97cae0d26dc1d40ac40c1fcf7d8a}{PIOB\_\-PER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2875919b691abc3ac2a71c8a33b29bbd}{PIOB\_\-PDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_75447f42db030fb9ab30bbdb4f902e17}{PIOB\_\-PSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_9d414fed93ed31995318285e4150c6ac}{PIOB\_\-OER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_e51e24b4c26c5805a29b0314bd2cedf4}{PIOB\_\-ODR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_34140b3d87ae6c3b7be4b8d6b3774273}{PIOB\_\-OSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_30542b10aea6dbb266e67ff25259a09f}{PIOB\_\-IFER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_9023d0e3f93ac839768340bf2956dab3}{PIOB\_\-IFDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_6c5d5f508cbb35f6fe99ec34e7fca6a8}{PIOB\_\-IFSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2cb3f0f5cb2cdb8fb77f26cec06d044b}{PIOB\_\-SODR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_dbca7adc9cdaa9110f9f262f6cec02b7}{PIOB\_\-CODR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_fad83f027712d678e3256d75c3a61a95}{PIOB\_\-ODSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_346857ca9c9eab8d9ff49503dd2ad99f}{PIOB\_\-PDSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_12bc99626b381e1e6446dd358b44bb30}{PIOB\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_34e8479d9c349a28b1c85fd2263a971e}{PIOB\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3df4b5315a722fac84c99b1507166414}{PIOB\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_42bdd3bc3edb9d4a55eaeff2d6e9f7e5}{PIOB\_\-ISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_7a77522739b17d85647841ccf52ba1a5}{PIOB\_\-MDER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_6d58b129e630d986c86eb884f8c2d2c8}{PIOB\_\-MDDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_142964c19d1935a2a339aac4d94a3373}{PIOB\_\-MDSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2ee678ea706c05591510150b6faf4d8c}{PIOB\_\-PPUDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_93fe83a72494fd023c464e8c32d837d5}{PIOB\_\-PPUER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4d8fc518dc61ff1111218ddab9c7a841}{PIOB\_\-PPUSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_ae3f2f06b6e3cbd2e2286013c835366a}{PIOB\_\-ASR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_0102ddfa3880dedcd952195bda899d28}{PIOB\_\-BSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_4fce9ab2280100817b3cc5d8fafc58a2}{PIOB\_\-ABSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3b8a3f8dc5b9813837f1fed19b73b4f0}{PIOB\_\-OWER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_3abb6bca64e2f7729cd211dbfc89e204}{PIOB\_\-OWDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_5c1d14a28b8e3e4d3b73e875145b04f8}{PIOB\_\-OWSR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_44969550dcc45c8cb3eaaffa9ddcb8b5}{Reserved21} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_194435a042819f0051dc33d22e4dca3f}{Reserved22} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_dcf1cd090ce68673ba1006e17cf7e6ec}{Reserved23} \mbox{[}3\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_955bb17ae6ef36d16281350366850bb9}{Reserved24} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_2d9bad54ea6f3705976b53695782f022}{Reserved25} \mbox{[}36\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_7cdde7f669127f84755c9afe15867dfd}{Reserved26} \mbox{[}5\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__SYS_ef0b46867c98e9c7fcc879157a879d0c}{Reserved27} \mbox{[}5\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct__AT91S__SYS_6b2dc25fefb6a43c8839d3a0ba85a408}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-SMR@{AIC\_\-SMR}}
+\index{AIC\_\-SMR@{AIC\_\-SMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-SMR}}}
+\label{struct__AT91S__SYS_6b2dc25fefb6a43c8839d3a0ba85a408}
+
+
+\hypertarget{struct__AT91S__SYS_1b583e863c3624110adb15846ef78427}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-SVR@{AIC\_\-SVR}}
+\index{AIC\_\-SVR@{AIC\_\-SVR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-SVR}}}
+\label{struct__AT91S__SYS_1b583e863c3624110adb15846ef78427}
+
+
+\hypertarget{struct__AT91S__SYS_24e5233d7ec9c2daed8dc29aeac22ce1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-IVR@{AIC\_\-IVR}}
+\index{AIC\_\-IVR@{AIC\_\-IVR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-IVR}}}
+\label{struct__AT91S__SYS_24e5233d7ec9c2daed8dc29aeac22ce1}
+
+
+\hypertarget{struct__AT91S__SYS_2d92f48e5b842c2c77f134b979fd2bc7}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-FVR@{AIC\_\-FVR}}
+\index{AIC\_\-FVR@{AIC\_\-FVR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-FVR}}}
+\label{struct__AT91S__SYS_2d92f48e5b842c2c77f134b979fd2bc7}
+
+
+\hypertarget{struct__AT91S__SYS_ed4a9f739e52edf7c7815f458799b6e4}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-ISR@{AIC\_\-ISR}}
+\index{AIC\_\-ISR@{AIC\_\-ISR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-ISR}}}
+\label{struct__AT91S__SYS_ed4a9f739e52edf7c7815f458799b6e4}
+
+
+\hypertarget{struct__AT91S__SYS_f420a7282f407323cc7d796699c0720b}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-IPR@{AIC\_\-IPR}}
+\index{AIC\_\-IPR@{AIC\_\-IPR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-IPR}}}
+\label{struct__AT91S__SYS_f420a7282f407323cc7d796699c0720b}
+
+
+\hypertarget{struct__AT91S__SYS_e0ed0c0a3132843b4059265489ee2063}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-IMR@{AIC\_\-IMR}}
+\index{AIC\_\-IMR@{AIC\_\-IMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-IMR}}}
+\label{struct__AT91S__SYS_e0ed0c0a3132843b4059265489ee2063}
+
+
+\hypertarget{struct__AT91S__SYS_571a3b496f349c04d930abbb45adf942}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-CISR@{AIC\_\-CISR}}
+\index{AIC\_\-CISR@{AIC\_\-CISR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-CISR}}}
+\label{struct__AT91S__SYS_571a3b496f349c04d930abbb45adf942}
+
+
+\hypertarget{struct__AT91S__SYS_1f98f1e8266ffb2aa5ac1cba0f4ce0d4}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved0@{Reserved0}}
+\index{Reserved0@{Reserved0}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved0}}}
+\label{struct__AT91S__SYS_1f98f1e8266ffb2aa5ac1cba0f4ce0d4}
+
+
+\hypertarget{struct__AT91S__SYS_2f6e0a16409471a92afa7209566ceae5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-IECR@{AIC\_\-IECR}}
+\index{AIC\_\-IECR@{AIC\_\-IECR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-IECR}}}
+\label{struct__AT91S__SYS_2f6e0a16409471a92afa7209566ceae5}
+
+
+\hypertarget{struct__AT91S__SYS_c395b87cf997ad27e3a546e431234e60}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-IDCR@{AIC\_\-IDCR}}
+\index{AIC\_\-IDCR@{AIC\_\-IDCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-IDCR}}}
+\label{struct__AT91S__SYS_c395b87cf997ad27e3a546e431234e60}
+
+
+\hypertarget{struct__AT91S__SYS_093022bc266aa23862995958e372d6c5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-ICCR@{AIC\_\-ICCR}}
+\index{AIC\_\-ICCR@{AIC\_\-ICCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-ICCR}}}
+\label{struct__AT91S__SYS_093022bc266aa23862995958e372d6c5}
+
+
+\hypertarget{struct__AT91S__SYS_b4d075081830d2478953890d25b4b143}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-ISCR@{AIC\_\-ISCR}}
+\index{AIC\_\-ISCR@{AIC\_\-ISCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-ISCR}}}
+\label{struct__AT91S__SYS_b4d075081830d2478953890d25b4b143}
+
+
+\hypertarget{struct__AT91S__SYS_d338dd123b65a1f2ae500c4f09efa37d}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-EOICR@{AIC\_\-EOICR}}
+\index{AIC\_\-EOICR@{AIC\_\-EOICR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-EOICR}}}
+\label{struct__AT91S__SYS_d338dd123b65a1f2ae500c4f09efa37d}
+
+
+\hypertarget{struct__AT91S__SYS_af7f74756a1e4c294820ce6c5a47e7d6}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-SPU@{AIC\_\-SPU}}
+\index{AIC\_\-SPU@{AIC\_\-SPU}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-SPU}}}
+\label{struct__AT91S__SYS_af7f74756a1e4c294820ce6c5a47e7d6}
+
+
+\hypertarget{struct__AT91S__SYS_36ef1a3079442f8ae3970589a54a5632}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-DCR@{AIC\_\-DCR}}
+\index{AIC\_\-DCR@{AIC\_\-DCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-DCR}}}
+\label{struct__AT91S__SYS_36ef1a3079442f8ae3970589a54a5632}
+
+
+\hypertarget{struct__AT91S__SYS_687073f97558b11b9705f520bb87da20}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved1@{Reserved1}}
+\index{Reserved1@{Reserved1}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved1}}}
+\label{struct__AT91S__SYS_687073f97558b11b9705f520bb87da20}
+
+
+\hypertarget{struct__AT91S__SYS_0bf8012e1d5c7f1dae1aacbf7b3e9c8b}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-FFER@{AIC\_\-FFER}}
+\index{AIC\_\-FFER@{AIC\_\-FFER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-FFER}}}
+\label{struct__AT91S__SYS_0bf8012e1d5c7f1dae1aacbf7b3e9c8b}
+
+
+\hypertarget{struct__AT91S__SYS_d0ac871b0b4314d3bd18c2f5f6f1fbfa}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-FFDR@{AIC\_\-FFDR}}
+\index{AIC\_\-FFDR@{AIC\_\-FFDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-FFDR}}}
+\label{struct__AT91S__SYS_d0ac871b0b4314d3bd18c2f5f6f1fbfa}
+
+
+\hypertarget{struct__AT91S__SYS_ea5574a7b09efe685246b130cd798444}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!AIC\_\-FFSR@{AIC\_\-FFSR}}
+\index{AIC\_\-FFSR@{AIC\_\-FFSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::AIC\_\-FFSR}}}
+\label{struct__AT91S__SYS_ea5574a7b09efe685246b130cd798444}
+
+
+\hypertarget{struct__AT91S__SYS_0ab32b91d345d283128bce674c0582a4}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved2@{Reserved2}}
+\index{Reserved2@{Reserved2}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved2}}}
+\label{struct__AT91S__SYS_0ab32b91d345d283128bce674c0582a4}
+
+
+\hypertarget{struct__AT91S__SYS_ab2b8081e88852a5307197cf87c829f9}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-CR@{DBGU\_\-CR}}
+\index{DBGU\_\-CR@{DBGU\_\-CR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-CR}}}
+\label{struct__AT91S__SYS_ab2b8081e88852a5307197cf87c829f9}
+
+
+\hypertarget{struct__AT91S__SYS_01077f44487c7d610f8ff9896875bb14}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-MR@{DBGU\_\-MR}}
+\index{DBGU\_\-MR@{DBGU\_\-MR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-MR}}}
+\label{struct__AT91S__SYS_01077f44487c7d610f8ff9896875bb14}
+
+
+\hypertarget{struct__AT91S__SYS_2d2d7acefce9491f531b0dab2923b336}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-IER@{DBGU\_\-IER}}
+\index{DBGU\_\-IER@{DBGU\_\-IER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-IER}}}
+\label{struct__AT91S__SYS_2d2d7acefce9491f531b0dab2923b336}
+
+
+\hypertarget{struct__AT91S__SYS_86423640825d970c7eabc2cb6820d659}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-IDR@{DBGU\_\-IDR}}
+\index{DBGU\_\-IDR@{DBGU\_\-IDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-IDR}}}
+\label{struct__AT91S__SYS_86423640825d970c7eabc2cb6820d659}
+
+
+\hypertarget{struct__AT91S__SYS_057557aeac77a431b57d15eb21054709}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-IMR@{DBGU\_\-IMR}}
+\index{DBGU\_\-IMR@{DBGU\_\-IMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-IMR}}}
+\label{struct__AT91S__SYS_057557aeac77a431b57d15eb21054709}
+
+
+\hypertarget{struct__AT91S__SYS_56aee1459577cfd1d6e75580ada359b3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-CSR@{DBGU\_\-CSR}}
+\index{DBGU\_\-CSR@{DBGU\_\-CSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-CSR}}}
+\label{struct__AT91S__SYS_56aee1459577cfd1d6e75580ada359b3}
+
+
+\hypertarget{struct__AT91S__SYS_556b96c91a5a7ebbfa8e11a02be83e48}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-RHR@{DBGU\_\-RHR}}
+\index{DBGU\_\-RHR@{DBGU\_\-RHR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-RHR}}}
+\label{struct__AT91S__SYS_556b96c91a5a7ebbfa8e11a02be83e48}
+
+
+\hypertarget{struct__AT91S__SYS_15b107f8d769a3c10fbae2013cc97fc5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-THR@{DBGU\_\-THR}}
+\index{DBGU\_\-THR@{DBGU\_\-THR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-THR}}}
+\label{struct__AT91S__SYS_15b107f8d769a3c10fbae2013cc97fc5}
+
+
+\hypertarget{struct__AT91S__SYS_e16bebd5ab83589f0c04216d5bad07f2}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-BRGR@{DBGU\_\-BRGR}}
+\index{DBGU\_\-BRGR@{DBGU\_\-BRGR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-BRGR}}}
+\label{struct__AT91S__SYS_e16bebd5ab83589f0c04216d5bad07f2}
+
+
+\hypertarget{struct__AT91S__SYS_4f92c37690efa2dc448901e3d194292f}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved3@{Reserved3}}
+\index{Reserved3@{Reserved3}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved3}}}
+\label{struct__AT91S__SYS_4f92c37690efa2dc448901e3d194292f}
+
+
+\hypertarget{struct__AT91S__SYS_a32fb31e17c392f2c1597d38cb911bc7}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-CIDR@{DBGU\_\-CIDR}}
+\index{DBGU\_\-CIDR@{DBGU\_\-CIDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-CIDR}}}
+\label{struct__AT91S__SYS_a32fb31e17c392f2c1597d38cb911bc7}
+
+
+\hypertarget{struct__AT91S__SYS_91e2afed535a66d81a83af2803d030a0}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-EXID@{DBGU\_\-EXID}}
+\index{DBGU\_\-EXID@{DBGU\_\-EXID}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-EXID}}}
+\label{struct__AT91S__SYS_91e2afed535a66d81a83af2803d030a0}
+
+
+\hypertarget{struct__AT91S__SYS_6d22e38c7b85e0de6fe4f10bbd9b21ef}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-FNTR@{DBGU\_\-FNTR}}
+\index{DBGU\_\-FNTR@{DBGU\_\-FNTR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-FNTR}}}
+\label{struct__AT91S__SYS_6d22e38c7b85e0de6fe4f10bbd9b21ef}
+
+
+\hypertarget{struct__AT91S__SYS_140445d0277ce5fd0efdbc6d5e7b1492}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved4@{Reserved4}}
+\index{Reserved4@{Reserved4}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved4}}}
+\label{struct__AT91S__SYS_140445d0277ce5fd0efdbc6d5e7b1492}
+
+
+\hypertarget{struct__AT91S__SYS_1ac52db57a321dbd5cb2d62e2a44ba73}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-RPR@{DBGU\_\-RPR}}
+\index{DBGU\_\-RPR@{DBGU\_\-RPR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-RPR}}}
+\label{struct__AT91S__SYS_1ac52db57a321dbd5cb2d62e2a44ba73}
+
+
+\hypertarget{struct__AT91S__SYS_d99c2be9f9767eb2d06a90e28c78fc03}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-RCR@{DBGU\_\-RCR}}
+\index{DBGU\_\-RCR@{DBGU\_\-RCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-RCR}}}
+\label{struct__AT91S__SYS_d99c2be9f9767eb2d06a90e28c78fc03}
+
+
+\hypertarget{struct__AT91S__SYS_332eead065a95b97bac9103a6b333d84}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-TPR@{DBGU\_\-TPR}}
+\index{DBGU\_\-TPR@{DBGU\_\-TPR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-TPR}}}
+\label{struct__AT91S__SYS_332eead065a95b97bac9103a6b333d84}
+
+
+\hypertarget{struct__AT91S__SYS_9ffd65c8c98948d865b7a289234c65ed}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-TCR@{DBGU\_\-TCR}}
+\index{DBGU\_\-TCR@{DBGU\_\-TCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-TCR}}}
+\label{struct__AT91S__SYS_9ffd65c8c98948d865b7a289234c65ed}
+
+
+\hypertarget{struct__AT91S__SYS_29bd4f4a73787c58be4bc49cd430f6ab}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-RNPR@{DBGU\_\-RNPR}}
+\index{DBGU\_\-RNPR@{DBGU\_\-RNPR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-RNPR}}}
+\label{struct__AT91S__SYS_29bd4f4a73787c58be4bc49cd430f6ab}
+
+
+\hypertarget{struct__AT91S__SYS_86fccdee374a79dc2430d883c04fc2bb}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-RNCR@{DBGU\_\-RNCR}}
+\index{DBGU\_\-RNCR@{DBGU\_\-RNCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-RNCR}}}
+\label{struct__AT91S__SYS_86fccdee374a79dc2430d883c04fc2bb}
+
+
+\hypertarget{struct__AT91S__SYS_da239f1d3bbb228ed42662707d9d5ba2}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-TNPR@{DBGU\_\-TNPR}}
+\index{DBGU\_\-TNPR@{DBGU\_\-TNPR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-TNPR}}}
+\label{struct__AT91S__SYS_da239f1d3bbb228ed42662707d9d5ba2}
+
+
+\hypertarget{struct__AT91S__SYS_9dad1fe5538d2a9edf595fdfd62b3cbc}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-TNCR@{DBGU\_\-TNCR}}
+\index{DBGU\_\-TNCR@{DBGU\_\-TNCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-TNCR}}}
+\label{struct__AT91S__SYS_9dad1fe5538d2a9edf595fdfd62b3cbc}
+
+
+\hypertarget{struct__AT91S__SYS_6098065afc0a5dfdd09a8dd6246ecd94}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-PTCR@{DBGU\_\-PTCR}}
+\index{DBGU\_\-PTCR@{DBGU\_\-PTCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-PTCR}}}
+\label{struct__AT91S__SYS_6098065afc0a5dfdd09a8dd6246ecd94}
+
+
+\hypertarget{struct__AT91S__SYS_2713716d82e126b18ab58955ad580129}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!DBGU\_\-PTSR@{DBGU\_\-PTSR}}
+\index{DBGU\_\-PTSR@{DBGU\_\-PTSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::DBGU\_\-PTSR}}}
+\label{struct__AT91S__SYS_2713716d82e126b18ab58955ad580129}
+
+
+\hypertarget{struct__AT91S__SYS_88efbf7ec5009c0cff70658344a74ca9}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved5@{Reserved5}}
+\index{Reserved5@{Reserved5}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved5}}}
+\label{struct__AT91S__SYS_88efbf7ec5009c0cff70658344a74ca9}
+
+
+\hypertarget{struct__AT91S__SYS_1f9e83abdf757767ecd653df04de7eed}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PER@{PIOA\_\-PER}}
+\index{PIOA\_\-PER@{PIOA\_\-PER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PER}}}
+\label{struct__AT91S__SYS_1f9e83abdf757767ecd653df04de7eed}
+
+
+\hypertarget{struct__AT91S__SYS_74d123c1db1c8a29bfbcbbc2837d2c7a}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PDR@{PIOA\_\-PDR}}
+\index{PIOA\_\-PDR@{PIOA\_\-PDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PDR}}}
+\label{struct__AT91S__SYS_74d123c1db1c8a29bfbcbbc2837d2c7a}
+
+
+\hypertarget{struct__AT91S__SYS_4df284a3785ae9423da1d3bd1f23f800}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PSR@{PIOA\_\-PSR}}
+\index{PIOA\_\-PSR@{PIOA\_\-PSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PSR}}}
+\label{struct__AT91S__SYS_4df284a3785ae9423da1d3bd1f23f800}
+
+
+\hypertarget{struct__AT91S__SYS_301b9aec5a9c3f09f2c1246ec09b2191}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved6@{Reserved6}}
+\index{Reserved6@{Reserved6}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved6}}}
+\label{struct__AT91S__SYS_301b9aec5a9c3f09f2c1246ec09b2191}
+
+
+\hypertarget{struct__AT91S__SYS_00e1feec91e82c62d69767a5edb519d0}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-OER@{PIOA\_\-OER}}
+\index{PIOA\_\-OER@{PIOA\_\-OER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-OER}}}
+\label{struct__AT91S__SYS_00e1feec91e82c62d69767a5edb519d0}
+
+
+\hypertarget{struct__AT91S__SYS_b4a8d79cacf41c8e0db599ab6e6f35e1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-ODR@{PIOA\_\-ODR}}
+\index{PIOA\_\-ODR@{PIOA\_\-ODR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-ODR}}}
+\label{struct__AT91S__SYS_b4a8d79cacf41c8e0db599ab6e6f35e1}
+
+
+\hypertarget{struct__AT91S__SYS_b07d5cea6b924d7e04e7db2ca27e1eda}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-OSR@{PIOA\_\-OSR}}
+\index{PIOA\_\-OSR@{PIOA\_\-OSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-OSR}}}
+\label{struct__AT91S__SYS_b07d5cea6b924d7e04e7db2ca27e1eda}
+
+
+\hypertarget{struct__AT91S__SYS_c046cdc4abd70b271e1e1d075340e505}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved7@{Reserved7}}
+\index{Reserved7@{Reserved7}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved7}}}
+\label{struct__AT91S__SYS_c046cdc4abd70b271e1e1d075340e505}
+
+
+\hypertarget{struct__AT91S__SYS_3785e8bb4091831a8bc0d0a1197a5913}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-IFER@{PIOA\_\-IFER}}
+\index{PIOA\_\-IFER@{PIOA\_\-IFER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-IFER}}}
+\label{struct__AT91S__SYS_3785e8bb4091831a8bc0d0a1197a5913}
+
+
+\hypertarget{struct__AT91S__SYS_02009c907e1c2949212524d57eff62f3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-IFDR@{PIOA\_\-IFDR}}
+\index{PIOA\_\-IFDR@{PIOA\_\-IFDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-IFDR}}}
+\label{struct__AT91S__SYS_02009c907e1c2949212524d57eff62f3}
+
+
+\hypertarget{struct__AT91S__SYS_d3cdf57a19a55a68e2763ed472704733}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-IFSR@{PIOA\_\-IFSR}}
+\index{PIOA\_\-IFSR@{PIOA\_\-IFSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-IFSR}}}
+\label{struct__AT91S__SYS_d3cdf57a19a55a68e2763ed472704733}
+
+
+\hypertarget{struct__AT91S__SYS_a6cfec9dfc09272835191dc77953dfdc}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved8@{Reserved8}}
+\index{Reserved8@{Reserved8}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved8}}}
+\label{struct__AT91S__SYS_a6cfec9dfc09272835191dc77953dfdc}
+
+
+\hypertarget{struct__AT91S__SYS_0cd4fb0b8075a0a73e5775b603f7847c}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-SODR@{PIOA\_\-SODR}}
+\index{PIOA\_\-SODR@{PIOA\_\-SODR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-SODR}}}
+\label{struct__AT91S__SYS_0cd4fb0b8075a0a73e5775b603f7847c}
+
+
+\hypertarget{struct__AT91S__SYS_1e2aa75c32f3dccf680af85eed50e1a1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-CODR@{PIOA\_\-CODR}}
+\index{PIOA\_\-CODR@{PIOA\_\-CODR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-CODR}}}
+\label{struct__AT91S__SYS_1e2aa75c32f3dccf680af85eed50e1a1}
+
+
+\hypertarget{struct__AT91S__SYS_33e3a1625cd80cc9d0af375189fbf53c}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-ODSR@{PIOA\_\-ODSR}}
+\index{PIOA\_\-ODSR@{PIOA\_\-ODSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-ODSR}}}
+\label{struct__AT91S__SYS_33e3a1625cd80cc9d0af375189fbf53c}
+
+
+\hypertarget{struct__AT91S__SYS_7ad9a840b1bb43bdb14f82a64f417671}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PDSR@{PIOA\_\-PDSR}}
+\index{PIOA\_\-PDSR@{PIOA\_\-PDSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PDSR}}}
+\label{struct__AT91S__SYS_7ad9a840b1bb43bdb14f82a64f417671}
+
+
+\hypertarget{struct__AT91S__SYS_fb881748029e07c97c00643856807d57}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-IER@{PIOA\_\-IER}}
+\index{PIOA\_\-IER@{PIOA\_\-IER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-IER}}}
+\label{struct__AT91S__SYS_fb881748029e07c97c00643856807d57}
+
+
+\hypertarget{struct__AT91S__SYS_70e5b268f31c94e9a3a004c4e07f54bd}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-IDR@{PIOA\_\-IDR}}
+\index{PIOA\_\-IDR@{PIOA\_\-IDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-IDR}}}
+\label{struct__AT91S__SYS_70e5b268f31c94e9a3a004c4e07f54bd}
+
+
+\hypertarget{struct__AT91S__SYS_8bb9c5e371d8577d6c4492effeb47f0b}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-IMR@{PIOA\_\-IMR}}
+\index{PIOA\_\-IMR@{PIOA\_\-IMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-IMR}}}
+\label{struct__AT91S__SYS_8bb9c5e371d8577d6c4492effeb47f0b}
+
+
+\hypertarget{struct__AT91S__SYS_93a696bb106cb155cf2a9ff4aa6d8aba}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-ISR@{PIOA\_\-ISR}}
+\index{PIOA\_\-ISR@{PIOA\_\-ISR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-ISR}}}
+\label{struct__AT91S__SYS_93a696bb106cb155cf2a9ff4aa6d8aba}
+
+
+\hypertarget{struct__AT91S__SYS_c8d4c72832e5b6ced0fb5f943cfbda30}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-MDER@{PIOA\_\-MDER}}
+\index{PIOA\_\-MDER@{PIOA\_\-MDER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-MDER}}}
+\label{struct__AT91S__SYS_c8d4c72832e5b6ced0fb5f943cfbda30}
+
+
+\hypertarget{struct__AT91S__SYS_fc0ccb89a85a34ea1c7662e0f9945ef1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-MDDR@{PIOA\_\-MDDR}}
+\index{PIOA\_\-MDDR@{PIOA\_\-MDDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-MDDR}}}
+\label{struct__AT91S__SYS_fc0ccb89a85a34ea1c7662e0f9945ef1}
+
+
+\hypertarget{struct__AT91S__SYS_9300f3fcd797dcc30371db34f8d4335d}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-MDSR@{PIOA\_\-MDSR}}
+\index{PIOA\_\-MDSR@{PIOA\_\-MDSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-MDSR}}}
+\label{struct__AT91S__SYS_9300f3fcd797dcc30371db34f8d4335d}
+
+
+\hypertarget{struct__AT91S__SYS_6662b5d7076af1103f25e0e49e82b6d3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved9@{Reserved9}}
+\index{Reserved9@{Reserved9}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved9}}}
+\label{struct__AT91S__SYS_6662b5d7076af1103f25e0e49e82b6d3}
+
+
+\hypertarget{struct__AT91S__SYS_43b1e4fb64ff7cd9e7d6bc61d880fb0e}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PPUDR@{PIOA\_\-PPUDR}}
+\index{PIOA\_\-PPUDR@{PIOA\_\-PPUDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PPUDR}}}
+\label{struct__AT91S__SYS_43b1e4fb64ff7cd9e7d6bc61d880fb0e}
+
+
+\hypertarget{struct__AT91S__SYS_8d48501f9345c39f41e9a99cdcc62d52}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PPUER@{PIOA\_\-PPUER}}
+\index{PIOA\_\-PPUER@{PIOA\_\-PPUER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PPUER}}}
+\label{struct__AT91S__SYS_8d48501f9345c39f41e9a99cdcc62d52}
+
+
+\hypertarget{struct__AT91S__SYS_24b726ec8df3aa24ccaea5462a7a1bcd}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-PPUSR@{PIOA\_\-PPUSR}}
+\index{PIOA\_\-PPUSR@{PIOA\_\-PPUSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-PPUSR}}}
+\label{struct__AT91S__SYS_24b726ec8df3aa24ccaea5462a7a1bcd}
+
+
+\hypertarget{struct__AT91S__SYS_f3083cfdc3adc828d8666fcdafe60700}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved10@{Reserved10}}
+\index{Reserved10@{Reserved10}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved10}}}
+\label{struct__AT91S__SYS_f3083cfdc3adc828d8666fcdafe60700}
+
+
+\hypertarget{struct__AT91S__SYS_a5d1c90bdc726149ae7bf5e1c3a685aa}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-ASR@{PIOA\_\-ASR}}
+\index{PIOA\_\-ASR@{PIOA\_\-ASR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-ASR}}}
+\label{struct__AT91S__SYS_a5d1c90bdc726149ae7bf5e1c3a685aa}
+
+
+\hypertarget{struct__AT91S__SYS_26830945a69e445b4e9ef75765b780c2}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-BSR@{PIOA\_\-BSR}}
+\index{PIOA\_\-BSR@{PIOA\_\-BSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-BSR}}}
+\label{struct__AT91S__SYS_26830945a69e445b4e9ef75765b780c2}
+
+
+\hypertarget{struct__AT91S__SYS_f8848d88d55ec7f6aa79e9ec8eed81c9}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-ABSR@{PIOA\_\-ABSR}}
+\index{PIOA\_\-ABSR@{PIOA\_\-ABSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-ABSR}}}
+\label{struct__AT91S__SYS_f8848d88d55ec7f6aa79e9ec8eed81c9}
+
+
+\hypertarget{struct__AT91S__SYS_a084019e029ff55498f890dfff92e1eb}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved11@{Reserved11}}
+\index{Reserved11@{Reserved11}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved11}}}
+\label{struct__AT91S__SYS_a084019e029ff55498f890dfff92e1eb}
+
+
+\hypertarget{struct__AT91S__SYS_b4174a002195a128467562f37c4f31b1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-OWER@{PIOA\_\-OWER}}
+\index{PIOA\_\-OWER@{PIOA\_\-OWER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-OWER}}}
+\label{struct__AT91S__SYS_b4174a002195a128467562f37c4f31b1}
+
+
+\hypertarget{struct__AT91S__SYS_4fe0d5bb6879d39d1f2709d7be4cf0d9}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-OWDR@{PIOA\_\-OWDR}}
+\index{PIOA\_\-OWDR@{PIOA\_\-OWDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-OWDR}}}
+\label{struct__AT91S__SYS_4fe0d5bb6879d39d1f2709d7be4cf0d9}
+
+
+\hypertarget{struct__AT91S__SYS_b8318d22148f87941323a3bd30e62194}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOA\_\-OWSR@{PIOA\_\-OWSR}}
+\index{PIOA\_\-OWSR@{PIOA\_\-OWSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOA\_\-OWSR}}}
+\label{struct__AT91S__SYS_b8318d22148f87941323a3bd30e62194}
+
+
+\hypertarget{struct__AT91S__SYS_1fa39527980cd49238ac7f44189cb714}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved12@{Reserved12}}
+\index{Reserved12@{Reserved12}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved12}}}
+\label{struct__AT91S__SYS_1fa39527980cd49238ac7f44189cb714}
+
+
+\hypertarget{struct__AT91S__SYS_7acb2e81e07163d588e9acefbfb4c97d}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-SCER@{PMC\_\-SCER}}
+\index{PMC\_\-SCER@{PMC\_\-SCER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-SCER}}}
+\label{struct__AT91S__SYS_7acb2e81e07163d588e9acefbfb4c97d}
+
+
+\hypertarget{struct__AT91S__SYS_a3e50485ade22f20d8bcad8dbad6f223}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-SCDR@{PMC\_\-SCDR}}
+\index{PMC\_\-SCDR@{PMC\_\-SCDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-SCDR}}}
+\label{struct__AT91S__SYS_a3e50485ade22f20d8bcad8dbad6f223}
+
+
+\hypertarget{struct__AT91S__SYS_0a74a56c5c5b247ea8bdc103cf69de93}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-SCSR@{PMC\_\-SCSR}}
+\index{PMC\_\-SCSR@{PMC\_\-SCSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-SCSR}}}
+\label{struct__AT91S__SYS_0a74a56c5c5b247ea8bdc103cf69de93}
+
+
+\hypertarget{struct__AT91S__SYS_82027a1102a590c83a1a65579a56d34a}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved13@{Reserved13}}
+\index{Reserved13@{Reserved13}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved13}}}
+\label{struct__AT91S__SYS_82027a1102a590c83a1a65579a56d34a}
+
+
+\hypertarget{struct__AT91S__SYS_c6b1ed3a4b9fd5f5b794ba9b7c5686ba}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-PCER@{PMC\_\-PCER}}
+\index{PMC\_\-PCER@{PMC\_\-PCER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-PCER}}}
+\label{struct__AT91S__SYS_c6b1ed3a4b9fd5f5b794ba9b7c5686ba}
+
+
+\hypertarget{struct__AT91S__SYS_8830de30a95202cb9b5bc04896a7db2d}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-PCDR@{PMC\_\-PCDR}}
+\index{PMC\_\-PCDR@{PMC\_\-PCDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-PCDR}}}
+\label{struct__AT91S__SYS_8830de30a95202cb9b5bc04896a7db2d}
+
+
+\hypertarget{struct__AT91S__SYS_3387f8e5edd3ec827ed68f194b7c7b0e}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-PCSR@{PMC\_\-PCSR}}
+\index{PMC\_\-PCSR@{PMC\_\-PCSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-PCSR}}}
+\label{struct__AT91S__SYS_3387f8e5edd3ec827ed68f194b7c7b0e}
+
+
+\hypertarget{struct__AT91S__SYS_9cc920a79f4e926dd6dbaa50c96bb946}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved14@{Reserved14}}
+\index{Reserved14@{Reserved14}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved14}}}
+\label{struct__AT91S__SYS_9cc920a79f4e926dd6dbaa50c96bb946}
+
+
+\hypertarget{struct__AT91S__SYS_41c7a9cb4b2b9c5c97ef4a6d2dfc8931}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-MOR@{PMC\_\-MOR}}
+\index{PMC\_\-MOR@{PMC\_\-MOR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-MOR}}}
+\label{struct__AT91S__SYS_41c7a9cb4b2b9c5c97ef4a6d2dfc8931}
+
+
+\hypertarget{struct__AT91S__SYS_3dd24840dea36caca6ec5658a16c260e}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-MCFR@{PMC\_\-MCFR}}
+\index{PMC\_\-MCFR@{PMC\_\-MCFR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-MCFR}}}
+\label{struct__AT91S__SYS_3dd24840dea36caca6ec5658a16c260e}
+
+
+\hypertarget{struct__AT91S__SYS_2ad968179201cc6a96856f7ad879bcb1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved15@{Reserved15}}
+\index{Reserved15@{Reserved15}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved15}}}
+\label{struct__AT91S__SYS_2ad968179201cc6a96856f7ad879bcb1}
+
+
+\hypertarget{struct__AT91S__SYS_5b5b479df0bf494d04bfbcc0035ce88a}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-PLLR@{PMC\_\-PLLR}}
+\index{PMC\_\-PLLR@{PMC\_\-PLLR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-PLLR}}}
+\label{struct__AT91S__SYS_5b5b479df0bf494d04bfbcc0035ce88a}
+
+
+\hypertarget{struct__AT91S__SYS_2c724987deb4340ddfbe9c87dc4348f3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-MCKR@{PMC\_\-MCKR}}
+\index{PMC\_\-MCKR@{PMC\_\-MCKR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-MCKR}}}
+\label{struct__AT91S__SYS_2c724987deb4340ddfbe9c87dc4348f3}
+
+
+\hypertarget{struct__AT91S__SYS_731a732ba47ab70a76ab7a1355ca9294}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved16@{Reserved16}}
+\index{Reserved16@{Reserved16}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved16}}}
+\label{struct__AT91S__SYS_731a732ba47ab70a76ab7a1355ca9294}
+
+
+\hypertarget{struct__AT91S__SYS_d9306ad690a7c7b5944d14d06711a313}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-PCKR@{PMC\_\-PCKR}}
+\index{PMC\_\-PCKR@{PMC\_\-PCKR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-PCKR}}}
+\label{struct__AT91S__SYS_d9306ad690a7c7b5944d14d06711a313}
+
+
+\hypertarget{struct__AT91S__SYS_0a12a888686448c003d6d51c7f84b8fd}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved17@{Reserved17}}
+\index{Reserved17@{Reserved17}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved17}}}
+\label{struct__AT91S__SYS_0a12a888686448c003d6d51c7f84b8fd}
+
+
+\hypertarget{struct__AT91S__SYS_7ff6ae4a4c9dd78ba80141ff77b594e6}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-IER@{PMC\_\-IER}}
+\index{PMC\_\-IER@{PMC\_\-IER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-IER}}}
+\label{struct__AT91S__SYS_7ff6ae4a4c9dd78ba80141ff77b594e6}
+
+
+\hypertarget{struct__AT91S__SYS_4f3fd7ed6d469aeb787ce7acdd8647e6}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-IDR@{PMC\_\-IDR}}
+\index{PMC\_\-IDR@{PMC\_\-IDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-IDR}}}
+\label{struct__AT91S__SYS_4f3fd7ed6d469aeb787ce7acdd8647e6}
+
+
+\hypertarget{struct__AT91S__SYS_3f9cd9240d2ef420bde177634403dcc1}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-SR@{PMC\_\-SR}}
+\index{PMC\_\-SR@{PMC\_\-SR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-SR}}}
+\label{struct__AT91S__SYS_3f9cd9240d2ef420bde177634403dcc1}
+
+
+\hypertarget{struct__AT91S__SYS_91060bb2f8ac6b1cd821c19677e36fa4}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PMC\_\-IMR@{PMC\_\-IMR}}
+\index{PMC\_\-IMR@{PMC\_\-IMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PMC\_\-IMR}}}
+\label{struct__AT91S__SYS_91060bb2f8ac6b1cd821c19677e36fa4}
+
+
+\hypertarget{struct__AT91S__SYS_dddde4e489008eb3c14a71a465f3120a}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved18@{Reserved18}}
+\index{Reserved18@{Reserved18}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved18}}}
+\label{struct__AT91S__SYS_dddde4e489008eb3c14a71a465f3120a}
+
+
+\hypertarget{struct__AT91S__SYS_50a268df275ae275a36ae16b1104c389}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RSTC\_\-RCR@{RSTC\_\-RCR}}
+\index{RSTC\_\-RCR@{RSTC\_\-RCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RSTC\_\-RCR}}}
+\label{struct__AT91S__SYS_50a268df275ae275a36ae16b1104c389}
+
+
+\hypertarget{struct__AT91S__SYS_96d0df57d83741d4ee276d36446693c5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RSTC\_\-RSR@{RSTC\_\-RSR}}
+\index{RSTC\_\-RSR@{RSTC\_\-RSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RSTC\_\-RSR}}}
+\label{struct__AT91S__SYS_96d0df57d83741d4ee276d36446693c5}
+
+
+\hypertarget{struct__AT91S__SYS_bbf3d3299e4f13a12f58e28ea488e1f2}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RSTC\_\-RMR@{RSTC\_\-RMR}}
+\index{RSTC\_\-RMR@{RSTC\_\-RMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RSTC\_\-RMR}}}
+\label{struct__AT91S__SYS_bbf3d3299e4f13a12f58e28ea488e1f2}
+
+
+\hypertarget{struct__AT91S__SYS_d7adb4d45117fb6cdab5cfdcc1250798}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved19@{Reserved19}}
+\index{Reserved19@{Reserved19}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved19}}}
+\label{struct__AT91S__SYS_d7adb4d45117fb6cdab5cfdcc1250798}
+
+
+\hypertarget{struct__AT91S__SYS_2205b60f5430c699fad71220f15b19c3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RTTC\_\-RTMR@{RTTC\_\-RTMR}}
+\index{RTTC\_\-RTMR@{RTTC\_\-RTMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RTTC\_\-RTMR}}}
+\label{struct__AT91S__SYS_2205b60f5430c699fad71220f15b19c3}
+
+
+\hypertarget{struct__AT91S__SYS_f82f564091ed435d5a6206eae66ff0dd}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RTTC\_\-RTAR@{RTTC\_\-RTAR}}
+\index{RTTC\_\-RTAR@{RTTC\_\-RTAR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RTTC\_\-RTAR}}}
+\label{struct__AT91S__SYS_f82f564091ed435d5a6206eae66ff0dd}
+
+
+\hypertarget{struct__AT91S__SYS_71376dcbd67913fcdaa3e11b67ce98c4}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RTTC\_\-RTVR@{RTTC\_\-RTVR}}
+\index{RTTC\_\-RTVR@{RTTC\_\-RTVR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RTTC\_\-RTVR}}}
+\label{struct__AT91S__SYS_71376dcbd67913fcdaa3e11b67ce98c4}
+
+
+\hypertarget{struct__AT91S__SYS_02c5936057d42f84634f10f188fd4335}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!RTTC\_\-RTSR@{RTTC\_\-RTSR}}
+\index{RTTC\_\-RTSR@{RTTC\_\-RTSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::RTTC\_\-RTSR}}}
+\label{struct__AT91S__SYS_02c5936057d42f84634f10f188fd4335}
+
+
+\hypertarget{struct__AT91S__SYS_c6ddaac4e95dc32c1ab654bb3b8b2b2f}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PITC\_\-PIMR@{PITC\_\-PIMR}}
+\index{PITC\_\-PIMR@{PITC\_\-PIMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PITC\_\-PIMR}}}
+\label{struct__AT91S__SYS_c6ddaac4e95dc32c1ab654bb3b8b2b2f}
+
+
+\hypertarget{struct__AT91S__SYS_b250b865cba86405c8c33dd28a684159}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PITC\_\-PISR@{PITC\_\-PISR}}
+\index{PITC\_\-PISR@{PITC\_\-PISR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PITC\_\-PISR}}}
+\label{struct__AT91S__SYS_b250b865cba86405c8c33dd28a684159}
+
+
+\hypertarget{struct__AT91S__SYS_13cecafc8a74c8fa3585626d0265876c}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PITC\_\-PIVR@{PITC\_\-PIVR}}
+\index{PITC\_\-PIVR@{PITC\_\-PIVR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PITC\_\-PIVR}}}
+\label{struct__AT91S__SYS_13cecafc8a74c8fa3585626d0265876c}
+
+
+\hypertarget{struct__AT91S__SYS_beea85e737c404d91017451058830aa3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PITC\_\-PIIR@{PITC\_\-PIIR}}
+\index{PITC\_\-PIIR@{PITC\_\-PIIR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PITC\_\-PIIR}}}
+\label{struct__AT91S__SYS_beea85e737c404d91017451058830aa3}
+
+
+\hypertarget{struct__AT91S__SYS_05e8938bde3ecd781749a5b9539598fb}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!WDTC\_\-WDCR@{WDTC\_\-WDCR}}
+\index{WDTC\_\-WDCR@{WDTC\_\-WDCR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::WDTC\_\-WDCR}}}
+\label{struct__AT91S__SYS_05e8938bde3ecd781749a5b9539598fb}
+
+
+\hypertarget{struct__AT91S__SYS_81ab17c1d918b34a6d8d4698d55141a6}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!WDTC\_\-WDMR@{WDTC\_\-WDMR}}
+\index{WDTC\_\-WDMR@{WDTC\_\-WDMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::WDTC\_\-WDMR}}}
+\label{struct__AT91S__SYS_81ab17c1d918b34a6d8d4698d55141a6}
+
+
+\hypertarget{struct__AT91S__SYS_faa66f92cf1aa8b7c47de4f0f9db14e9}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!WDTC\_\-WDSR@{WDTC\_\-WDSR}}
+\index{WDTC\_\-WDSR@{WDTC\_\-WDSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::WDTC\_\-WDSR}}}
+\label{struct__AT91S__SYS_faa66f92cf1aa8b7c47de4f0f9db14e9}
+
+
+\hypertarget{struct__AT91S__SYS_ecc7f2225d7dd42360d2fe0c582ae772}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved20@{Reserved20}}
+\index{Reserved20@{Reserved20}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved20}}}
+\label{struct__AT91S__SYS_ecc7f2225d7dd42360d2fe0c582ae772}
+
+
+\hypertarget{struct__AT91S__SYS_4efdcbc14c8c6c4da09911bdc8401748}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!VREG\_\-MR@{VREG\_\-MR}}
+\index{VREG\_\-MR@{VREG\_\-MR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::VREG\_\-MR}}}
+\label{struct__AT91S__SYS_4efdcbc14c8c6c4da09911bdc8401748}
+
+
+\hypertarget{struct__AT91S__SYS_1b7b97cae0d26dc1d40ac40c1fcf7d8a}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PER@{PIOB\_\-PER}}
+\index{PIOB\_\-PER@{PIOB\_\-PER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PER}}}
+\label{struct__AT91S__SYS_1b7b97cae0d26dc1d40ac40c1fcf7d8a}
+
+
+\hypertarget{struct__AT91S__SYS_2875919b691abc3ac2a71c8a33b29bbd}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PDR@{PIOB\_\-PDR}}
+\index{PIOB\_\-PDR@{PIOB\_\-PDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PDR}}}
+\label{struct__AT91S__SYS_2875919b691abc3ac2a71c8a33b29bbd}
+
+
+\hypertarget{struct__AT91S__SYS_75447f42db030fb9ab30bbdb4f902e17}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PSR@{PIOB\_\-PSR}}
+\index{PIOB\_\-PSR@{PIOB\_\-PSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PSR}}}
+\label{struct__AT91S__SYS_75447f42db030fb9ab30bbdb4f902e17}
+
+
+\hypertarget{struct__AT91S__SYS_9d414fed93ed31995318285e4150c6ac}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-OER@{PIOB\_\-OER}}
+\index{PIOB\_\-OER@{PIOB\_\-OER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-OER}}}
+\label{struct__AT91S__SYS_9d414fed93ed31995318285e4150c6ac}
+
+
+\hypertarget{struct__AT91S__SYS_e51e24b4c26c5805a29b0314bd2cedf4}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-ODR@{PIOB\_\-ODR}}
+\index{PIOB\_\-ODR@{PIOB\_\-ODR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-ODR}}}
+\label{struct__AT91S__SYS_e51e24b4c26c5805a29b0314bd2cedf4}
+
+
+\hypertarget{struct__AT91S__SYS_34140b3d87ae6c3b7be4b8d6b3774273}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-OSR@{PIOB\_\-OSR}}
+\index{PIOB\_\-OSR@{PIOB\_\-OSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-OSR}}}
+\label{struct__AT91S__SYS_34140b3d87ae6c3b7be4b8d6b3774273}
+
+
+\hypertarget{struct__AT91S__SYS_30542b10aea6dbb266e67ff25259a09f}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-IFER@{PIOB\_\-IFER}}
+\index{PIOB\_\-IFER@{PIOB\_\-IFER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-IFER}}}
+\label{struct__AT91S__SYS_30542b10aea6dbb266e67ff25259a09f}
+
+
+\hypertarget{struct__AT91S__SYS_9023d0e3f93ac839768340bf2956dab3}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-IFDR@{PIOB\_\-IFDR}}
+\index{PIOB\_\-IFDR@{PIOB\_\-IFDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-IFDR}}}
+\label{struct__AT91S__SYS_9023d0e3f93ac839768340bf2956dab3}
+
+
+\hypertarget{struct__AT91S__SYS_6c5d5f508cbb35f6fe99ec34e7fca6a8}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-IFSR@{PIOB\_\-IFSR}}
+\index{PIOB\_\-IFSR@{PIOB\_\-IFSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-IFSR}}}
+\label{struct__AT91S__SYS_6c5d5f508cbb35f6fe99ec34e7fca6a8}
+
+
+\hypertarget{struct__AT91S__SYS_2cb3f0f5cb2cdb8fb77f26cec06d044b}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-SODR@{PIOB\_\-SODR}}
+\index{PIOB\_\-SODR@{PIOB\_\-SODR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-SODR}}}
+\label{struct__AT91S__SYS_2cb3f0f5cb2cdb8fb77f26cec06d044b}
+
+
+\hypertarget{struct__AT91S__SYS_dbca7adc9cdaa9110f9f262f6cec02b7}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-CODR@{PIOB\_\-CODR}}
+\index{PIOB\_\-CODR@{PIOB\_\-CODR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-CODR}}}
+\label{struct__AT91S__SYS_dbca7adc9cdaa9110f9f262f6cec02b7}
+
+
+\hypertarget{struct__AT91S__SYS_fad83f027712d678e3256d75c3a61a95}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-ODSR@{PIOB\_\-ODSR}}
+\index{PIOB\_\-ODSR@{PIOB\_\-ODSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-ODSR}}}
+\label{struct__AT91S__SYS_fad83f027712d678e3256d75c3a61a95}
+
+
+\hypertarget{struct__AT91S__SYS_346857ca9c9eab8d9ff49503dd2ad99f}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PDSR@{PIOB\_\-PDSR}}
+\index{PIOB\_\-PDSR@{PIOB\_\-PDSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PDSR}}}
+\label{struct__AT91S__SYS_346857ca9c9eab8d9ff49503dd2ad99f}
+
+
+\hypertarget{struct__AT91S__SYS_12bc99626b381e1e6446dd358b44bb30}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-IER@{PIOB\_\-IER}}
+\index{PIOB\_\-IER@{PIOB\_\-IER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-IER}}}
+\label{struct__AT91S__SYS_12bc99626b381e1e6446dd358b44bb30}
+
+
+\hypertarget{struct__AT91S__SYS_34e8479d9c349a28b1c85fd2263a971e}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-IDR@{PIOB\_\-IDR}}
+\index{PIOB\_\-IDR@{PIOB\_\-IDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-IDR}}}
+\label{struct__AT91S__SYS_34e8479d9c349a28b1c85fd2263a971e}
+
+
+\hypertarget{struct__AT91S__SYS_3df4b5315a722fac84c99b1507166414}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-IMR@{PIOB\_\-IMR}}
+\index{PIOB\_\-IMR@{PIOB\_\-IMR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-IMR}}}
+\label{struct__AT91S__SYS_3df4b5315a722fac84c99b1507166414}
+
+
+\hypertarget{struct__AT91S__SYS_42bdd3bc3edb9d4a55eaeff2d6e9f7e5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-ISR@{PIOB\_\-ISR}}
+\index{PIOB\_\-ISR@{PIOB\_\-ISR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-ISR}}}
+\label{struct__AT91S__SYS_42bdd3bc3edb9d4a55eaeff2d6e9f7e5}
+
+
+\hypertarget{struct__AT91S__SYS_7a77522739b17d85647841ccf52ba1a5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-MDER@{PIOB\_\-MDER}}
+\index{PIOB\_\-MDER@{PIOB\_\-MDER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-MDER}}}
+\label{struct__AT91S__SYS_7a77522739b17d85647841ccf52ba1a5}
+
+
+\hypertarget{struct__AT91S__SYS_6d58b129e630d986c86eb884f8c2d2c8}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-MDDR@{PIOB\_\-MDDR}}
+\index{PIOB\_\-MDDR@{PIOB\_\-MDDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-MDDR}}}
+\label{struct__AT91S__SYS_6d58b129e630d986c86eb884f8c2d2c8}
+
+
+\hypertarget{struct__AT91S__SYS_142964c19d1935a2a339aac4d94a3373}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-MDSR@{PIOB\_\-MDSR}}
+\index{PIOB\_\-MDSR@{PIOB\_\-MDSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-MDSR}}}
+\label{struct__AT91S__SYS_142964c19d1935a2a339aac4d94a3373}
+
+
+\hypertarget{struct__AT91S__SYS_2ee678ea706c05591510150b6faf4d8c}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PPUDR@{PIOB\_\-PPUDR}}
+\index{PIOB\_\-PPUDR@{PIOB\_\-PPUDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PPUDR}}}
+\label{struct__AT91S__SYS_2ee678ea706c05591510150b6faf4d8c}
+
+
+\hypertarget{struct__AT91S__SYS_93fe83a72494fd023c464e8c32d837d5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PPUER@{PIOB\_\-PPUER}}
+\index{PIOB\_\-PPUER@{PIOB\_\-PPUER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PPUER}}}
+\label{struct__AT91S__SYS_93fe83a72494fd023c464e8c32d837d5}
+
+
+\hypertarget{struct__AT91S__SYS_4d8fc518dc61ff1111218ddab9c7a841}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-PPUSR@{PIOB\_\-PPUSR}}
+\index{PIOB\_\-PPUSR@{PIOB\_\-PPUSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-PPUSR}}}
+\label{struct__AT91S__SYS_4d8fc518dc61ff1111218ddab9c7a841}
+
+
+\hypertarget{struct__AT91S__SYS_ae3f2f06b6e3cbd2e2286013c835366a}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-ASR@{PIOB\_\-ASR}}
+\index{PIOB\_\-ASR@{PIOB\_\-ASR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-ASR}}}
+\label{struct__AT91S__SYS_ae3f2f06b6e3cbd2e2286013c835366a}
+
+
+\hypertarget{struct__AT91S__SYS_0102ddfa3880dedcd952195bda899d28}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-BSR@{PIOB\_\-BSR}}
+\index{PIOB\_\-BSR@{PIOB\_\-BSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-BSR}}}
+\label{struct__AT91S__SYS_0102ddfa3880dedcd952195bda899d28}
+
+
+\hypertarget{struct__AT91S__SYS_4fce9ab2280100817b3cc5d8fafc58a2}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-ABSR@{PIOB\_\-ABSR}}
+\index{PIOB\_\-ABSR@{PIOB\_\-ABSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-ABSR}}}
+\label{struct__AT91S__SYS_4fce9ab2280100817b3cc5d8fafc58a2}
+
+
+\hypertarget{struct__AT91S__SYS_3b8a3f8dc5b9813837f1fed19b73b4f0}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-OWER@{PIOB\_\-OWER}}
+\index{PIOB\_\-OWER@{PIOB\_\-OWER}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-OWER}}}
+\label{struct__AT91S__SYS_3b8a3f8dc5b9813837f1fed19b73b4f0}
+
+
+\hypertarget{struct__AT91S__SYS_3abb6bca64e2f7729cd211dbfc89e204}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-OWDR@{PIOB\_\-OWDR}}
+\index{PIOB\_\-OWDR@{PIOB\_\-OWDR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-OWDR}}}
+\label{struct__AT91S__SYS_3abb6bca64e2f7729cd211dbfc89e204}
+
+
+\hypertarget{struct__AT91S__SYS_5c1d14a28b8e3e4d3b73e875145b04f8}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!PIOB\_\-OWSR@{PIOB\_\-OWSR}}
+\index{PIOB\_\-OWSR@{PIOB\_\-OWSR}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::PIOB\_\-OWSR}}}
+\label{struct__AT91S__SYS_5c1d14a28b8e3e4d3b73e875145b04f8}
+
+
+\hypertarget{struct__AT91S__SYS_44969550dcc45c8cb3eaaffa9ddcb8b5}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved21@{Reserved21}}
+\index{Reserved21@{Reserved21}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved21}\mbox{[}1\mbox{]}}}
+\label{struct__AT91S__SYS_44969550dcc45c8cb3eaaffa9ddcb8b5}
+
+
+\hypertarget{struct__AT91S__SYS_194435a042819f0051dc33d22e4dca3f}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved22@{Reserved22}}
+\index{Reserved22@{Reserved22}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved22}\mbox{[}1\mbox{]}}}
+\label{struct__AT91S__SYS_194435a042819f0051dc33d22e4dca3f}
+
+
+\hypertarget{struct__AT91S__SYS_dcf1cd090ce68673ba1006e17cf7e6ec}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved23@{Reserved23}}
+\index{Reserved23@{Reserved23}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved23}\mbox{[}3\mbox{]}}}
+\label{struct__AT91S__SYS_dcf1cd090ce68673ba1006e17cf7e6ec}
+
+
+\hypertarget{struct__AT91S__SYS_955bb17ae6ef36d16281350366850bb9}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved24@{Reserved24}}
+\index{Reserved24@{Reserved24}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved24}\mbox{[}4\mbox{]}}}
+\label{struct__AT91S__SYS_955bb17ae6ef36d16281350366850bb9}
+
+
+\hypertarget{struct__AT91S__SYS_2d9bad54ea6f3705976b53695782f022}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved25@{Reserved25}}
+\index{Reserved25@{Reserved25}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved25}\mbox{[}36\mbox{]}}}
+\label{struct__AT91S__SYS_2d9bad54ea6f3705976b53695782f022}
+
+
+\hypertarget{struct__AT91S__SYS_7cdde7f669127f84755c9afe15867dfd}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved26@{Reserved26}}
+\index{Reserved26@{Reserved26}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved26}\mbox{[}5\mbox{]}}}
+\label{struct__AT91S__SYS_7cdde7f669127f84755c9afe15867dfd}
+
+
+\hypertarget{struct__AT91S__SYS_ef0b46867c98e9c7fcc879157a879d0c}{
+\index{\_\-AT91S\_\-SYS@{\_\-AT91S\_\-SYS}!Reserved27@{Reserved27}}
+\index{Reserved27@{Reserved27}!_AT91S_SYS@{\_\-AT91S\_\-SYS}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-SYS::Reserved27}\mbox{[}5\mbox{]}}}
+\label{struct__AT91S__SYS_ef0b46867c98e9c7fcc879157a879d0c}
+
+
+
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7S256_8h}{AT91SAM7S256.h}\item 
+\hyperlink{AT91SAM7S64_8h}{AT91SAM7S64.h}\item 
+\hyperlink{AT91SAM7X256_8h}{AT91SAM7X256.h}\end{CompactItemize}

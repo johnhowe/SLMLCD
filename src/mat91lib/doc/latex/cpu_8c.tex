@@ -1,0 +1,141 @@
+\hypertarget{cpu_8c}{
+\section{cpu.c File Reference}
+\label{cpu_8c}\index{cpu.c@{cpu.c}}
+}
+CPU routines for AT91SAM7 processors. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}cpu.h\char`\"{}}\par
+{\tt \#include \char`\"{}irq.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{cpu_8c_f95f764171696f885af7d5ad5e51297f}{F\_\-SLCK}~32768
+\item 
+\#define \hyperlink{cpu_8c_b8f8c777ea1f0fe8603ae9ef4dd8de3a}{OS\_\-DELAY}~1.5e-3
+\item 
+\#define \hyperlink{cpu_8c_2ead21d1f4ad609bceee00b5b14940a8}{OS\_\-COUNT}~((uint16\_\-t) (OS\_\-DELAY $\ast$ F\_\-SLCK + 7)) / 8
+\item 
+\#define \hyperlink{cpu_8c_8fd497f678fcb823b5031808425f8184}{PLL\_\-DELAY}~0.9e-3
+\item 
+\#define \hyperlink{cpu_8c_e317ae04a6e923f7c3934adc0b985a20}{PLL\_\-COUNT}~(uint16\_\-t) (PLL\_\-DELAY $\ast$ F\_\-SLCK)
+\item 
+\#define \hyperlink{cpu_8c_38031a207b50deb8c05fa505e831aee3}{USB\_\-LOG2\_\-DIV}~0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{cpu_8c_c9c3a47ef079a99be4a6094613324801}{cpu\_\-flash\_\-init} (void)
+\item 
+static void \hyperlink{cpu_8c_bc08e828b40765f1f33626b742c526d3}{cpu\_\-clock\_\-init} (void)
+\item 
+static void \hyperlink{cpu_8c_e8ad9b01599424fb9b480026a557c8b5}{cpu\_\-dummy\_\-isr} (void)
+\item 
+void \hyperlink{cpu_8c_560ad8614ae03841a10b489f4370bc51}{cpu\_\-init} (void)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+CPU routines for AT91SAM7 processors. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]04 June 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{cpu_8c_f95f764171696f885af7d5ad5e51297f}{
+\index{cpu.c@{cpu.c}!F\_\-SLCK@{F\_\-SLCK}}
+\index{F\_\-SLCK@{F\_\-SLCK}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define F\_\-SLCK~32768}}
+\label{cpu_8c_f95f764171696f885af7d5ad5e51297f}
+
+
+\hypertarget{cpu_8c_2ead21d1f4ad609bceee00b5b14940a8}{
+\index{cpu.c@{cpu.c}!OS\_\-COUNT@{OS\_\-COUNT}}
+\index{OS\_\-COUNT@{OS\_\-COUNT}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define OS\_\-COUNT~((uint16\_\-t) (OS\_\-DELAY $\ast$ F\_\-SLCK + 7)) / 8}}
+\label{cpu_8c_2ead21d1f4ad609bceee00b5b14940a8}
+
+
+
+
+Referenced by cpu\_\-clock\_\-init().\hypertarget{cpu_8c_b8f8c777ea1f0fe8603ae9ef4dd8de3a}{
+\index{cpu.c@{cpu.c}!OS\_\-DELAY@{OS\_\-DELAY}}
+\index{OS\_\-DELAY@{OS\_\-DELAY}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define OS\_\-DELAY~1.5e-3}}
+\label{cpu_8c_b8f8c777ea1f0fe8603ae9ef4dd8de3a}
+
+
+\hypertarget{cpu_8c_e317ae04a6e923f7c3934adc0b985a20}{
+\index{cpu.c@{cpu.c}!PLL\_\-COUNT@{PLL\_\-COUNT}}
+\index{PLL\_\-COUNT@{PLL\_\-COUNT}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PLL\_\-COUNT~(uint16\_\-t) (PLL\_\-DELAY $\ast$ F\_\-SLCK)}}
+\label{cpu_8c_e317ae04a6e923f7c3934adc0b985a20}
+
+
+
+
+Referenced by cpu\_\-clock\_\-init().\hypertarget{cpu_8c_8fd497f678fcb823b5031808425f8184}{
+\index{cpu.c@{cpu.c}!PLL\_\-DELAY@{PLL\_\-DELAY}}
+\index{PLL\_\-DELAY@{PLL\_\-DELAY}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PLL\_\-DELAY~0.9e-3}}
+\label{cpu_8c_8fd497f678fcb823b5031808425f8184}
+
+
+\hypertarget{cpu_8c_38031a207b50deb8c05fa505e831aee3}{
+\index{cpu.c@{cpu.c}!USB\_\-LOG2\_\-DIV@{USB\_\-LOG2\_\-DIV}}
+\index{USB\_\-LOG2\_\-DIV@{USB\_\-LOG2\_\-DIV}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USB\_\-LOG2\_\-DIV~0}}
+\label{cpu_8c_38031a207b50deb8c05fa505e831aee3}
+
+
+
+
+Referenced by cpu\_\-clock\_\-init().
+
+\subsection{Function Documentation}
+\hypertarget{cpu_8c_bc08e828b40765f1f33626b742c526d3}{
+\index{cpu.c@{cpu.c}!cpu\_\-clock\_\-init@{cpu\_\-clock\_\-init}}
+\index{cpu\_\-clock\_\-init@{cpu\_\-clock\_\-init}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void cpu\_\-clock\_\-init (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{cpu_8c_bc08e828b40765f1f33626b742c526d3}
+
+
+Set up the main clock (MAINCK), PLL clock, and master clock (MCK). 
+
+References AT91C\_\-BASE\_\-PMC, AT91C\_\-CKGR\_\-MOSCEN, AT91C\_\-PMC\_\-CSS\_\-PLL\_\-CLK, AT91C\_\-PMC\_\-LOCK, AT91C\_\-PMC\_\-MCKRDY, AT91C\_\-PMC\_\-MOSCS, AT91C\_\-PMC\_\-PRES\_\-CLK\_\-2, BITS, OS\_\-COUNT, PLL\_\-COUNT, and USB\_\-LOG2\_\-DIV.
+
+Referenced by cpu\_\-init().\hypertarget{cpu_8c_e8ad9b01599424fb9b480026a557c8b5}{
+\index{cpu.c@{cpu.c}!cpu\_\-dummy\_\-isr@{cpu\_\-dummy\_\-isr}}
+\index{cpu\_\-dummy\_\-isr@{cpu\_\-dummy\_\-isr}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void cpu\_\-dummy\_\-isr (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{cpu_8c_e8ad9b01599424fb9b480026a557c8b5}
+
+
+Dummy ISR for unexpected interrupts. 
+
+Referenced by cpu\_\-init().\hypertarget{cpu_8c_c9c3a47ef079a99be4a6094613324801}{
+\index{cpu.c@{cpu.c}!cpu\_\-flash\_\-init@{cpu\_\-flash\_\-init}}
+\index{cpu\_\-flash\_\-init@{cpu\_\-flash\_\-init}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void cpu\_\-flash\_\-init (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{cpu_8c_c9c3a47ef079a99be4a6094613324801}
+
+
+Initialise flash memory controller. 
+
+References AT91C\_\-BASE\_\-MC, AT91C\_\-MC\_\-FWS\_\-1FWS, and BITS\_\-INSERT.
+
+Referenced by cpu\_\-init().\hypertarget{cpu_8c_560ad8614ae03841a10b489f4370bc51}{
+\index{cpu.c@{cpu.c}!cpu\_\-init@{cpu\_\-init}}
+\index{cpu\_\-init@{cpu\_\-init}!cpu.c@{cpu.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cpu\_\-init (void)}}
+\label{cpu_8c_560ad8614ae03841a10b489f4370bc51}
+
+
+Initialise flash, disable watchdog, set up clocks. 
+
+References AT91C\_\-BASE\_\-AIC, cpu\_\-clock\_\-init(), cpu\_\-dummy\_\-isr(), cpu\_\-flash\_\-init(), cpu\_\-sram\_\-remap(), cpu\_\-watchdog\_\-disable(), IRQ\_\-ID\_\-MAX, IRQ\_\-ID\_\-MIN, and irq\_\-vector\_\-set().
+
+Referenced by \_\-reset\_\-handler().

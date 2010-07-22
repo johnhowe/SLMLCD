@@ -1,0 +1,198 @@
+\hypertarget{time_8h}{
+\section{time.h File Reference}
+\label{time_8h}\index{time.h@{time.h}}
+}
+Time routines. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}irq.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structtime}{time}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{time_8h_ba0ff11567fab1989677f12b4d348584}{TOPCNT}~(64000 - 1)
+\item 
+\#define \hyperlink{time_8h_28688b64c7452eb7221b9a582733768c}{DELAY\_\-MIN}~10
+\item 
+\#define \hyperlink{time_8h_284b5caa4788a9db4760eebb30bf6a74}{DELAY\_\-MAX}~3999
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct \hyperlink{structtime}{time} \hyperlink{time_8h_9bd61f5f8d2a45a24f6d5fc580d7c302}{time\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{time_8h_efa76ebb3e0ce7c809b4683679f07dd0}{delay\_\-ret\_\-t} \{ \par
+\hyperlink{time_8h_efa76ebb3e0ce7c809b4683679f07dd0dc2f98bcabbf013c861b7872212ca046}{ERRD}, 
+\hyperlink{time_8h_efa76ebb3e0ce7c809b4683679f07dd05c43f49dcfbee9aa777b77fc0ab74e25}{USTICKS}, 
+\hyperlink{time_8h_efa76ebb3e0ce7c809b4683679f07dd0ad9dee005a3d0f9137b2ac1e0869f89b}{TIMEOUT}, 
+\hyperlink{time_8h_efa76ebb3e0ce7c809b4683679f07dd000a16d6d63b6ac0a968ab851f67ba4d3}{COMMS\_\-INT}, 
+\par
+\hyperlink{time_8h_efa76ebb3e0ce7c809b4683679f07dd06e75e795962897df0f064a314bf23a63}{OTHER\_\-INT}
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{time_8h_cf5c8bb89727a653a3320edfa8fc4e69}{time\_\-init} (void)
+\item 
+\hyperlink{structtime}{time\_\-t} \hyperlink{time_8h_ed3cefad3bf9a228175a4bdc89ff539b}{time\_\-rf\_\-timestamp\_\-get} (void)
+\item 
+\hyperlink{structtime}{time\_\-t} \hyperlink{time_8h_abbcce60090d15e8733fcbf859b1a2c1}{time\_\-current\_\-time\_\-get} (void)
+\item 
+void \hyperlink{time_8h_039ae44baa822751b2370d304cdc5aa7}{time\_\-delay\_\-us} (uint16\_\-t us)
+\item 
+uint32\_\-t \hyperlink{time_8h_f3e0761267f0325d7636b8adfad9272a}{time\_\-time2int} (\hyperlink{structtime}{time\_\-t} \hyperlink{structtime}{time})
+\item 
+void \hyperlink{time_8h_30285cd0dac3002ecbeb23f76e1a5f30}{time\_\-irq\_\-enable} (void)
+\item 
+void \hyperlink{time_8h_8cdb77260395fe7941f3e8d35f71d64b}{time\_\-irq\_\-disable} (void)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Time routines. 
+
+\begin{Desc}
+\item[Author:]Ian Downes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]12 January 2005 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{time_8h_284b5caa4788a9db4760eebb30bf6a74}{
+\index{time.h@{time.h}!DELAY\_\-MAX@{DELAY\_\-MAX}}
+\index{DELAY\_\-MAX@{DELAY\_\-MAX}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DELAY\_\-MAX~3999}}
+\label{time_8h_284b5caa4788a9db4760eebb30bf6a74}
+
+
+\hypertarget{time_8h_28688b64c7452eb7221b9a582733768c}{
+\index{time.h@{time.h}!DELAY\_\-MIN@{DELAY\_\-MIN}}
+\index{DELAY\_\-MIN@{DELAY\_\-MIN}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DELAY\_\-MIN~10}}
+\label{time_8h_28688b64c7452eb7221b9a582733768c}
+
+
+\hypertarget{time_8h_ba0ff11567fab1989677f12b4d348584}{
+\index{time.h@{time.h}!TOPCNT@{TOPCNT}}
+\index{TOPCNT@{TOPCNT}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TOPCNT~(64000 - 1)}}
+\label{time_8h_ba0ff11567fab1989677f12b4d348584}
+
+
+
+
+Referenced by time\_\-init(), and time\_\-time2int().
+
+\subsection{Typedef Documentation}
+\hypertarget{time_8h_9bd61f5f8d2a45a24f6d5fc580d7c302}{
+\index{time.h@{time.h}!time\_\-t@{time\_\-t}}
+\index{time\_\-t@{time\_\-t}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf time}  {\bf time\_\-t}}}
+\label{time_8h_9bd61f5f8d2a45a24f6d5fc580d7c302}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{time_8h_efa76ebb3e0ce7c809b4683679f07dd0}{
+\index{time.h@{time.h}!delay\_\-ret\_\-t@{delay\_\-ret\_\-t}}
+\index{delay\_\-ret\_\-t@{delay\_\-ret\_\-t}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf delay\_\-ret\_\-t}}}
+\label{time_8h_efa76ebb3e0ce7c809b4683679f07dd0}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ERRD@{ERRD}!time.h@{time.h}}\index{time.h@{time.h}!ERRD@{ERRD}}\item[{\em 
+\hypertarget{time_8h_efa76ebb3e0ce7c809b4683679f07dd0dc2f98bcabbf013c861b7872212ca046}{
+ERRD}
+\label{time_8h_efa76ebb3e0ce7c809b4683679f07dd0dc2f98bcabbf013c861b7872212ca046}
+}]\index{USTICKS@{USTICKS}!time.h@{time.h}}\index{time.h@{time.h}!USTICKS@{USTICKS}}\item[{\em 
+\hypertarget{time_8h_efa76ebb3e0ce7c809b4683679f07dd05c43f49dcfbee9aa777b77fc0ab74e25}{
+USTICKS}
+\label{time_8h_efa76ebb3e0ce7c809b4683679f07dd05c43f49dcfbee9aa777b77fc0ab74e25}
+}]\index{TIMEOUT@{TIMEOUT}!time.h@{time.h}}\index{time.h@{time.h}!TIMEOUT@{TIMEOUT}}\item[{\em 
+\hypertarget{time_8h_efa76ebb3e0ce7c809b4683679f07dd0ad9dee005a3d0f9137b2ac1e0869f89b}{
+TIMEOUT}
+\label{time_8h_efa76ebb3e0ce7c809b4683679f07dd0ad9dee005a3d0f9137b2ac1e0869f89b}
+}]\index{COMMS\_\-INT@{COMMS\_\-INT}!time.h@{time.h}}\index{time.h@{time.h}!COMMS\_\-INT@{COMMS\_\-INT}}\item[{\em 
+\hypertarget{time_8h_efa76ebb3e0ce7c809b4683679f07dd000a16d6d63b6ac0a968ab851f67ba4d3}{
+COMMS\_\-INT}
+\label{time_8h_efa76ebb3e0ce7c809b4683679f07dd000a16d6d63b6ac0a968ab851f67ba4d3}
+}]\index{OTHER\_\-INT@{OTHER\_\-INT}!time.h@{time.h}}\index{time.h@{time.h}!OTHER\_\-INT@{OTHER\_\-INT}}\item[{\em 
+\hypertarget{time_8h_efa76ebb3e0ce7c809b4683679f07dd06e75e795962897df0f064a314bf23a63}{
+OTHER\_\-INT}
+\label{time_8h_efa76ebb3e0ce7c809b4683679f07dd06e75e795962897df0f064a314bf23a63}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{time_8h_abbcce60090d15e8733fcbf859b1a2c1}{
+\index{time.h@{time.h}!time\_\-current\_\-time\_\-get@{time\_\-current\_\-time\_\-get}}
+\index{time\_\-current\_\-time\_\-get@{time\_\-current\_\-time\_\-get}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf time\_\-t} time\_\-current\_\-time\_\-get (void)}}
+\label{time_8h_abbcce60090d15e8733fcbf859b1a2c1}
+
+
+
+
+References ms\_\-ticks, time::ms\_\-ticks, and time::us\_\-ticks.\hypertarget{time_8h_039ae44baa822751b2370d304cdc5aa7}{
+\index{time.h@{time.h}!time\_\-delay\_\-us@{time\_\-delay\_\-us}}
+\index{time\_\-delay\_\-us@{time\_\-delay\_\-us}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-delay\_\-us (uint16\_\-t {\em us})}}
+\label{time_8h_039ae44baa822751b2370d304cdc5aa7}
+
+
+\hypertarget{time_8h_cf5c8bb89727a653a3320edfa8fc4e69}{
+\index{time.h@{time.h}!time\_\-init@{time\_\-init}}
+\index{time\_\-init@{time\_\-init}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-init (void)}}
+\label{time_8h_cf5c8bb89727a653a3320edfa8fc4e69}
+
+
+
+
+References TOPCNT.\hypertarget{time_8h_8cdb77260395fe7941f3e8d35f71d64b}{
+\index{time.h@{time.h}!time\_\-irq\_\-disable@{time\_\-irq\_\-disable}}
+\index{time\_\-irq\_\-disable@{time\_\-irq\_\-disable}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-irq\_\-disable (void)}}
+\label{time_8h_8cdb77260395fe7941f3e8d35f71d64b}
+
+
+\hypertarget{time_8h_30285cd0dac3002ecbeb23f76e1a5f30}{
+\index{time.h@{time.h}!time\_\-irq\_\-enable@{time\_\-irq\_\-enable}}
+\index{time\_\-irq\_\-enable@{time\_\-irq\_\-enable}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void time\_\-irq\_\-enable (void)}}
+\label{time_8h_30285cd0dac3002ecbeb23f76e1a5f30}
+
+
+\hypertarget{time_8h_ed3cefad3bf9a228175a4bdc89ff539b}{
+\index{time.h@{time.h}!time\_\-rf\_\-timestamp\_\-get@{time\_\-rf\_\-timestamp\_\-get}}
+\index{time\_\-rf\_\-timestamp\_\-get@{time\_\-rf\_\-timestamp\_\-get}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf time\_\-t} time\_\-rf\_\-timestamp\_\-get (void)}}
+\label{time_8h_ed3cefad3bf9a228175a4bdc89ff539b}
+
+
+
+
+References ms\_\-ticks, time::ms\_\-ticks, and time::us\_\-ticks.\hypertarget{time_8h_f3e0761267f0325d7636b8adfad9272a}{
+\index{time.h@{time.h}!time\_\-time2int@{time\_\-time2int}}
+\index{time\_\-time2int@{time\_\-time2int}!time.h@{time.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t time\_\-time2int ({\bf time\_\-t} {\em time})}}
+\label{time_8h_f3e0761267f0325d7636b8adfad9272a}
+
+
+
+
+References time::ms\_\-ticks, TOPCNT, and time::us\_\-ticks.

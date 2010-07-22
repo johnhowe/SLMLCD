@@ -1,0 +1,160 @@
+\hypertarget{busart0__isr_8h}{
+\section{busart0\_\-isr.h File Reference}
+\label{busart0__isr_8h}\index{busart0\_\-isr.h@{busart0\_\-isr.h}}
+}
+{\tt \#include \char`\"{}irq.h\char`\"{}}\par
+{\tt \#include \char`\"{}usart0.h\char`\"{}}\par
+{\tt \#include \char`\"{}usart0\_\-defs.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{busart0__isr_8h_f1c38b2f7082292ba8334959b7eb8f50}{USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P}()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IMR \& AT91C\_\-US\_\-TXEMPTY) != 0)
+\item 
+\#define \hyperlink{busart0__isr_8h_c97aeebb6a687e4d68f7d5f338992fcb}{USART0\_\-TX\_\-IRQ\_\-DISABLE}()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IDR $|$= AT91C\_\-US\_\-TXEMPTY)
+\item 
+\#define \hyperlink{busart0__isr_8h_db1b030110c6478c5c2b0f768525379c}{USART0\_\-TX\_\-IRQ\_\-ENABLE}()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IER $|$= AT91C\_\-US\_\-TXEMPTY)
+\item 
+\#define \hyperlink{busart0__isr_8h_46efb2ebc20a6ab92cb59a57caecb2c4}{USART0\_\-RX\_\-IRQ\_\-DISABLE}()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IDR $|$= AT91C\_\-US\_\-RXRDY)
+\item 
+\#define \hyperlink{busart0__isr_8h_fb4ae9b7963ab84b51fb5c297527a129}{USART0\_\-RX\_\-IRQ\_\-ENABLE}()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IER $|$= AT91C\_\-US\_\-RXRDY)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{busart0__isr_8h_899d9d1c66124947b8c353aecc53463a}{busart0\_\-tx\_\-irq\_\-enable} (void)
+\item 
+static void \hyperlink{busart0__isr_8h_1bb4781f73cca78ecd0a4110b5a2783e}{busart0\_\-rx\_\-irq\_\-enable} (void)
+\item 
+static bool \hyperlink{busart0__isr_8h_46a34c3080cfbd460bb5a953a4d03dc5}{busart0\_\-tx\_\-finished\_\-p} (void)
+\item 
+static void \hyperlink{busart0__isr_8h_1e733c868e7360cecb0ebe4f3080d0f6}{busart0\_\-isr} (void)
+\item 
+static busart\_\-dev\_\-t $\ast$ \hyperlink{busart0__isr_8h_30a909ebde5672b1fb1ddfddf74d6be1}{busart0\_\-init} (uint16\_\-t baud\_\-divisor)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static busart\_\-dev\_\-t \hyperlink{busart0__isr_8h_95d9db265c973ba327b83b6e8e64fda6}{busart0\_\-dev}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]18 June 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{busart0__isr_8h_46efb2ebc20a6ab92cb59a57caecb2c4}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!USART0\_\-RX\_\-IRQ\_\-DISABLE@{USART0\_\-RX\_\-IRQ\_\-DISABLE}}
+\index{USART0\_\-RX\_\-IRQ\_\-DISABLE@{USART0\_\-RX\_\-IRQ\_\-DISABLE}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-RX\_\-IRQ\_\-DISABLE()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IDR $|$= AT91C\_\-US\_\-RXRDY)}}
+\label{busart0__isr_8h_46efb2ebc20a6ab92cb59a57caecb2c4}
+
+
+\hypertarget{busart0__isr_8h_fb4ae9b7963ab84b51fb5c297527a129}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!USART0\_\-RX\_\-IRQ\_\-ENABLE@{USART0\_\-RX\_\-IRQ\_\-ENABLE}}
+\index{USART0\_\-RX\_\-IRQ\_\-ENABLE@{USART0\_\-RX\_\-IRQ\_\-ENABLE}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-RX\_\-IRQ\_\-ENABLE()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IER $|$= AT91C\_\-US\_\-RXRDY)}}
+\label{busart0__isr_8h_fb4ae9b7963ab84b51fb5c297527a129}
+
+
+
+
+Referenced by busart0\_\-rx\_\-irq\_\-enable().\hypertarget{busart0__isr_8h_c97aeebb6a687e4d68f7d5f338992fcb}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!USART0\_\-TX\_\-IRQ\_\-DISABLE@{USART0\_\-TX\_\-IRQ\_\-DISABLE}}
+\index{USART0\_\-TX\_\-IRQ\_\-DISABLE@{USART0\_\-TX\_\-IRQ\_\-DISABLE}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-TX\_\-IRQ\_\-DISABLE()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IDR $|$= AT91C\_\-US\_\-TXEMPTY)}}
+\label{busart0__isr_8h_c97aeebb6a687e4d68f7d5f338992fcb}
+
+
+
+
+Referenced by busart0\_\-isr().\hypertarget{busart0__isr_8h_db1b030110c6478c5c2b0f768525379c}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!USART0\_\-TX\_\-IRQ\_\-ENABLE@{USART0\_\-TX\_\-IRQ\_\-ENABLE}}
+\index{USART0\_\-TX\_\-IRQ\_\-ENABLE@{USART0\_\-TX\_\-IRQ\_\-ENABLE}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-TX\_\-IRQ\_\-ENABLE()~(AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IER $|$= AT91C\_\-US\_\-TXEMPTY)}}
+\label{busart0__isr_8h_db1b030110c6478c5c2b0f768525379c}
+
+
+
+
+Referenced by busart0\_\-tx\_\-irq\_\-enable().\hypertarget{busart0__isr_8h_f1c38b2f7082292ba8334959b7eb8f50}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P@{USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P}}
+\index{USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P@{USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P()~((AT91C\_\-BASE\_\-US0 $\rightarrow$ US\_\-IMR \& AT91C\_\-US\_\-TXEMPTY) != 0)}}
+\label{busart0__isr_8h_f1c38b2f7082292ba8334959b7eb8f50}
+
+
+
+
+Referenced by busart0\_\-tx\_\-irq\_\-enable().
+
+\subsection{Function Documentation}
+\hypertarget{busart0__isr_8h_30a909ebde5672b1fb1ddfddf74d6be1}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!busart0\_\-init@{busart0\_\-init}}
+\index{busart0\_\-init@{busart0\_\-init}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static busart\_\-dev\_\-t$\ast$ busart0\_\-init (uint16\_\-t {\em baud\_\-divisor})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{busart0__isr_8h_30a909ebde5672b1fb1ddfddf74d6be1}
+
+
+
+
+References AT91C\_\-AIC\_\-SRCTYPE\_\-INT\_\-LEVEL\_\-SENSITIVE, AT91C\_\-ID\_\-US0, busart0\_\-dev, busart0\_\-isr(), busart0\_\-rx\_\-irq\_\-enable(), busart0\_\-tx\_\-finished\_\-p(), busart0\_\-tx\_\-irq\_\-enable(), irq\_\-config(), irq\_\-enable(), and usart0\_\-init().\hypertarget{busart0__isr_8h_1e733c868e7360cecb0ebe4f3080d0f6}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!busart0\_\-isr@{busart0\_\-isr}}
+\index{busart0\_\-isr@{busart0\_\-isr}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void busart0\_\-isr (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{busart0__isr_8h_1e733c868e7360cecb0ebe4f3080d0f6}
+
+
+
+
+References busart0\_\-dev, USART0\_\-READ, USART0\_\-READ\_\-READY\_\-P, USART0\_\-TX\_\-IRQ\_\-DISABLE, USART0\_\-WRITE, and USART0\_\-WRITE\_\-READY\_\-P.
+
+Referenced by busart0\_\-init().\hypertarget{busart0__isr_8h_1bb4781f73cca78ecd0a4110b5a2783e}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!busart0\_\-rx\_\-irq\_\-enable@{busart0\_\-rx\_\-irq\_\-enable}}
+\index{busart0\_\-rx\_\-irq\_\-enable@{busart0\_\-rx\_\-irq\_\-enable}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void busart0\_\-rx\_\-irq\_\-enable (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{busart0__isr_8h_1bb4781f73cca78ecd0a4110b5a2783e}
+
+
+
+
+References USART0\_\-RX\_\-IRQ\_\-ENABLE.
+
+Referenced by busart0\_\-init().\hypertarget{busart0__isr_8h_46a34c3080cfbd460bb5a953a4d03dc5}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!busart0\_\-tx\_\-finished\_\-p@{busart0\_\-tx\_\-finished\_\-p}}
+\index{busart0\_\-tx\_\-finished\_\-p@{busart0\_\-tx\_\-finished\_\-p}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static bool busart0\_\-tx\_\-finished\_\-p (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{busart0__isr_8h_46a34c3080cfbd460bb5a953a4d03dc5}
+
+
+
+
+References USART0\_\-WRITE\_\-FINISHED\_\-P.
+
+Referenced by busart0\_\-init().\hypertarget{busart0__isr_8h_899d9d1c66124947b8c353aecc53463a}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!busart0\_\-tx\_\-irq\_\-enable@{busart0\_\-tx\_\-irq\_\-enable}}
+\index{busart0\_\-tx\_\-irq\_\-enable@{busart0\_\-tx\_\-irq\_\-enable}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void busart0\_\-tx\_\-irq\_\-enable (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{busart0__isr_8h_899d9d1c66124947b8c353aecc53463a}
+
+
+
+
+References USART0\_\-TX\_\-IRQ\_\-ENABLE, and USART0\_\-TX\_\-IRQ\_\-ENABLED\_\-P.
+
+Referenced by busart0\_\-init().
+
+\subsection{Variable Documentation}
+\hypertarget{busart0__isr_8h_95d9db265c973ba327b83b6e8e64fda6}{
+\index{busart0\_\-isr.h@{busart0\_\-isr.h}!busart0\_\-dev@{busart0\_\-dev}}
+\index{busart0\_\-dev@{busart0\_\-dev}!busart0_isr.h@{busart0\_\-isr.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}busart\_\-dev\_\-t {\bf busart0\_\-dev}\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{busart0__isr_8h_95d9db265c973ba327b83b6e8e64fda6}
+
+
+
+
+Referenced by busart0\_\-init(), and busart0\_\-isr().

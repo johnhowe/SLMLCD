@@ -1,0 +1,80 @@
+\hypertarget{ads7870_8h}{
+\section{ads7870.h File Reference}
+\label{ads7870_8h}\index{ads7870.h@{ads7870.h}}
+}
+ADS7870 SPI ADC. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{ads7870_8h_58f4e52899f87fb4f8bf7fc56e930c12}{ads7870\_\-init} (void)
+\item 
+int16\_\-t \hyperlink{ads7870_8h_7e5252df61bc863b59ad59de5da70d1e}{ads7870\_\-read} (void)
+\item 
+int16\_\-t \hyperlink{ads7870_8h_9bf5b005ed518b10efeb6705d07294fa}{ads7870\_\-convert} (void)
+\item 
+void \hyperlink{ads7870_8h_b22bd28dc4bae1c3f71fac045db0ad8d}{ads7870\_\-channel\_\-start} (uint8\_\-t channel, \hyperlink{spi__adc_8h_e230b089e0aa9be5c9910a73d8209faf}{spi\_\-adc\_\-mode\_\-t} mode)
+\item 
+int16\_\-t \hyperlink{ads7870_8h_b98b0b04bea5bde893b2dc15c08e6d52}{ads7870\_\-channel\_\-convert} (uint8\_\-t channel, \hyperlink{spi__adc_8h_e230b089e0aa9be5c9910a73d8209faf}{spi\_\-adc\_\-mode\_\-t} mode)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+ADS7870 SPI ADC. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]09 August 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{ads7870_8h_b98b0b04bea5bde893b2dc15c08e6d52}{
+\index{ads7870.h@{ads7870.h}!ads7870\_\-channel\_\-convert@{ads7870\_\-channel\_\-convert}}
+\index{ads7870\_\-channel\_\-convert@{ads7870\_\-channel\_\-convert}!ads7870.h@{ads7870.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads7870\_\-channel\_\-convert (uint8\_\-t {\em channel}, \/  {\bf spi\_\-adc\_\-mode\_\-t} {\em mode})}}
+\label{ads7870_8h_b98b0b04bea5bde893b2dc15c08e6d52}
+
+
+
+
+References ads7870\_\-channel\_\-start(), ads7870\_\-read(), and ads7870\_\-read\_\-ready\_\-p().\hypertarget{ads7870_8h_b22bd28dc4bae1c3f71fac045db0ad8d}{
+\index{ads7870.h@{ads7870.h}!ads7870\_\-channel\_\-start@{ads7870\_\-channel\_\-start}}
+\index{ads7870\_\-channel\_\-start@{ads7870\_\-channel\_\-start}!ads7870.h@{ads7870.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ads7870\_\-channel\_\-start (uint8\_\-t {\em channel}, \/  {\bf spi\_\-adc\_\-mode\_\-t} {\em mode})}}
+\label{ads7870_8h_b22bd28dc4bae1c3f71fac045db0ad8d}
+
+
+
+
+References ads7870\_\-chip\_\-select(), ADS7870\_\-CONVERT, SPI\_\-ADC\_\-MODE\_\-DIFFERENTIAL, SPI\_\-ADC\_\-MODE\_\-DIFFERENTIAL\_\-INVERTED, and SPI\_\-ADC\_\-MODE\_\-SINGLE\_\-ENDED.
+
+Referenced by ads7870\_\-channel\_\-convert().\hypertarget{ads7870_8h_9bf5b005ed518b10efeb6705d07294fa}{
+\index{ads7870.h@{ads7870.h}!ads7870\_\-convert@{ads7870\_\-convert}}
+\index{ads7870\_\-convert@{ads7870\_\-convert}!ads7870.h@{ads7870.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads7870\_\-convert (void)}}
+\label{ads7870_8h_9bf5b005ed518b10efeb6705d07294fa}
+
+
+\hypertarget{ads7870_8h_58f4e52899f87fb4f8bf7fc56e930c12}{
+\index{ads7870.h@{ads7870.h}!ads7870\_\-init@{ads7870\_\-init}}
+\index{ads7870\_\-init@{ads7870\_\-init}!ads7870.h@{ads7870.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ads7870\_\-init (void)}}
+\label{ads7870_8h_58f4e52899f87fb4f8bf7fc56e930c12}
+
+
+
+
+References ADS7870\_\-REFOSC, ADS7870\_\-REFOSC\_\-BUFE, ADS7870\_\-REFOSC\_\-OSCE, ADS7870\_\-REFOSC\_\-REFE, and ads7870\_\-reg\_\-write().\hypertarget{ads7870_8h_7e5252df61bc863b59ad59de5da70d1e}{
+\index{ads7870.h@{ads7870.h}!ads7870\_\-read@{ads7870\_\-read}}
+\index{ads7870\_\-read@{ads7870\_\-read}!ads7870.h@{ads7870.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads7870\_\-read (void)}}
+\label{ads7870_8h_7e5252df61bc863b59ad59de5da70d1e}
+
+
+
+
+References ads7870\_\-chip\_\-deselect(), ads7870\_\-chip\_\-select(), ADS7870\_\-REG\_\-16BIT, ADS7870\_\-REG\_\-READ, and ADS7870\_\-RESULTHI.
+
+Referenced by ads7870\_\-channel\_\-convert().

@@ -1,0 +1,35 @@
+\hypertarget{structticker16__t}{
+\section{ticker16\_\-t Struct Reference}
+\label{structticker16__t}\index{ticker16\_\-t@{ticker16\_\-t}}
+}
+{\tt \#include $<$ticker.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+uint16\_\-t \hyperlink{structticker16__t_9d253d3409a11874177f1591a225fe83}{period}
+\item 
+uint16\_\-t \hyperlink{structticker16__t_9ab5d799b9de680dbd1a284f394ae12f}{clock}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structticker16__t_9d253d3409a11874177f1591a225fe83}{
+\index{ticker16\_\-t@{ticker16\_\-t}!period@{period}}
+\index{period@{period}!ticker16_t@{ticker16\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf ticker16\_\-t::period}}}
+\label{structticker16__t_9d253d3409a11874177f1591a225fe83}
+
+
+\hypertarget{structticker16__t_9ab5d799b9de680dbd1a284f394ae12f}{
+\index{ticker16\_\-t@{ticker16\_\-t}!clock@{clock}}
+\index{clock@{clock}!ticker16_t@{ticker16\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf ticker16\_\-t::clock}}}
+\label{structticker16__t_9ab5d799b9de680dbd1a284f394ae12f}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{ticker_8h}{ticker.h}\end{CompactItemize}

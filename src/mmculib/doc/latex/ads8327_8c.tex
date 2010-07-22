@@ -1,0 +1,85 @@
+\hypertarget{ads8327_8c}{
+\section{ads8327.c File Reference}
+\label{ads8327_8c}\index{ads8327.c@{ads8327.c}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi\_\-adc.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{ads8327_8c_f02242cb1a4f71edb3f54eb5b45bd2c5}{ads8327\_\-chip\_\-select} (void)
+\item 
+static void \hyperlink{ads8327_8c_a91dd7b87153ad4d8c514fe5d69df5ac}{ads8327\_\-chip\_\-deselect} (void)
+\item 
+static uint16\_\-t \hyperlink{ads8327_8c_23d5c469303e8d225205f32d2d2ba682}{ads8327\_\-command} (uint16\_\-t val)
+\item 
+void \hyperlink{ads8327_8c_fa76f81ea7d47c47a87a4576f62c3f52}{ads8327\_\-init} (void)
+\item 
+int16\_\-t \hyperlink{ads8327_8c_c561d7e2fe5e49f6542453278c0829f2}{ads8327\_\-read} (void)
+\item 
+int16\_\-t \hyperlink{ads8327_8c_dd56d100eb74a9766a28dd5e6b1fcc7f}{ads8327\_\-convert} (void)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ads8327_8c_a91dd7b87153ad4d8c514fe5d69df5ac}{
+\index{ads8327.c@{ads8327.c}!ads8327\_\-chip\_\-deselect@{ads8327\_\-chip\_\-deselect}}
+\index{ads8327\_\-chip\_\-deselect@{ads8327\_\-chip\_\-deselect}!ads8327.c@{ads8327.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads8327\_\-chip\_\-deselect (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads8327_8c_a91dd7b87153ad4d8c514fe5d69df5ac}
+
+
+
+
+Referenced by ads8327\_\-command(), and ads8327\_\-read().\hypertarget{ads8327_8c_f02242cb1a4f71edb3f54eb5b45bd2c5}{
+\index{ads8327.c@{ads8327.c}!ads8327\_\-chip\_\-select@{ads8327\_\-chip\_\-select}}
+\index{ads8327\_\-chip\_\-select@{ads8327\_\-chip\_\-select}!ads8327.c@{ads8327.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads8327\_\-chip\_\-select (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads8327_8c_f02242cb1a4f71edb3f54eb5b45bd2c5}
+
+
+
+
+Referenced by ads8327\_\-command(), and ads8327\_\-read().\hypertarget{ads8327_8c_23d5c469303e8d225205f32d2d2ba682}{
+\index{ads8327.c@{ads8327.c}!ads8327\_\-command@{ads8327\_\-command}}
+\index{ads8327\_\-command@{ads8327\_\-command}!ads8327.c@{ads8327.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static uint16\_\-t ads8327\_\-command (uint16\_\-t {\em val})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads8327_8c_23d5c469303e8d225205f32d2d2ba682}
+
+
+
+
+References ads8327\_\-chip\_\-deselect(), and ads8327\_\-chip\_\-select().
+
+Referenced by ads8327\_\-init().\hypertarget{ads8327_8c_dd56d100eb74a9766a28dd5e6b1fcc7f}{
+\index{ads8327.c@{ads8327.c}!ads8327\_\-convert@{ads8327\_\-convert}}
+\index{ads8327\_\-convert@{ads8327\_\-convert}!ads8327.c@{ads8327.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads8327\_\-convert (void)}}
+\label{ads8327_8c_dd56d100eb74a9766a28dd5e6b1fcc7f}
+
+
+
+
+References ads8327\_\-read().\hypertarget{ads8327_8c_fa76f81ea7d47c47a87a4576f62c3f52}{
+\index{ads8327.c@{ads8327.c}!ads8327\_\-init@{ads8327\_\-init}}
+\index{ads8327\_\-init@{ads8327\_\-init}!ads8327.c@{ads8327.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ads8327\_\-init (void)}}
+\label{ads8327_8c_fa76f81ea7d47c47a87a4576f62c3f52}
+
+
+
+
+References ads8327\_\-command().\hypertarget{ads8327_8c_c561d7e2fe5e49f6542453278c0829f2}{
+\index{ads8327.c@{ads8327.c}!ads8327\_\-read@{ads8327\_\-read}}
+\index{ads8327\_\-read@{ads8327\_\-read}!ads8327.c@{ads8327.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads8327\_\-read (void)}}
+\label{ads8327_8c_c561d7e2fe5e49f6542453278c0829f2}
+
+
+
+
+References ads8327\_\-chip\_\-deselect(), and ads8327\_\-chip\_\-select().
+
+Referenced by ads8327\_\-convert().

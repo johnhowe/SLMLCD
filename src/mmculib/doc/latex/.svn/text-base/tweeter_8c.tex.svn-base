@@ -1,0 +1,119 @@
+\hypertarget{tweeter_8c}{
+\section{tweeter.c File Reference}
+\label{tweeter_8c}\index{tweeter.c@{tweeter.c}}
+}
+Generate PWM for a piezo tweeter. 
+
+{\tt \#include \char`\"{}tweeter.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{tweeter_8c_f4abaece4169317650a38443e513be8f}{TWEETER\_\-TRANSPARENT}~1
+\item 
+\#define \hyperlink{tweeter_8c_6e16f319d4f9c7aa51804320da7c2ab9}{TWEETER\_\-HOLDOFF\_\-TIME}~50e-3
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{tweeter_8c_eb8e1c282570d629a6b603a94a4650d649bb794a58d238f59d6fc1d10b078055}{TWEETER\_\-SCALE\_\-SIZE} =  12
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{tweeter_8c_15bb4b9a955a5335b0b98432ce6ec943}{tweeter\_\-note\_\-set} (\hyperlink{structtweeter__private__t}{tweeter\_\-t} tweeter, \hyperlink{tweeter_8h_ae8e82c982533b02f89b3bb251ea6faa}{tweeter\_\-period\_\-t} period, \hyperlink{tweeter_8h_ae8e82c982533b02f89b3bb251ea6faa}{tweeter\_\-period\_\-t} duty)
+\item 
+void \hyperlink{tweeter_8c_c316121415f5a39d392f45789630c6fb}{tweeter\_\-note\_\-play} (\hyperlink{structtweeter__private__t}{tweeter\_\-t} tweeter, \hyperlink{tweeter_8h_78ec09d7c9aac8f3690f7c9cecc1c34f}{tweeter\_\-note\_\-t} note, uint8\_\-t velocity)
+\item 
+int8\_\-t \hyperlink{tweeter_8c_cebbc8b939268f6290578f6642a8d21f}{tweeter\_\-update} (\hyperlink{structtweeter__private__t}{tweeter\_\-t} tweeter)
+\item 
+\hyperlink{structtweeter__private__t}{tweeter\_\-t} \hyperlink{tweeter_8c_e51b55dc24802bb075149608623102de}{tweeter\_\-init} (\hyperlink{structtweeter__private__t}{tweeter\_\-obj\_\-t} $\ast$tweeter, uint16\_\-t poll\_\-rate, \hyperlink{tweeter_8h_da6af92a2e18e4a3164626709a43a5f6}{tweeter\_\-scale\_\-t} $\ast$scale\_\-table)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Generate PWM for a piezo tweeter. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]20 April 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{tweeter_8c_6e16f319d4f9c7aa51804320da7c2ab9}{
+\index{tweeter.c@{tweeter.c}!TWEETER\_\-HOLDOFF\_\-TIME@{TWEETER\_\-HOLDOFF\_\-TIME}}
+\index{TWEETER\_\-HOLDOFF\_\-TIME@{TWEETER\_\-HOLDOFF\_\-TIME}!tweeter.c@{tweeter.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TWEETER\_\-HOLDOFF\_\-TIME~50e-3}}
+\label{tweeter_8c_6e16f319d4f9c7aa51804320da7c2ab9}
+
+
+
+
+Referenced by tweeter\_\-note\_\-set().\hypertarget{tweeter_8c_f4abaece4169317650a38443e513be8f}{
+\index{tweeter.c@{tweeter.c}!TWEETER\_\-TRANSPARENT@{TWEETER\_\-TRANSPARENT}}
+\index{TWEETER\_\-TRANSPARENT@{TWEETER\_\-TRANSPARENT}!tweeter.c@{tweeter.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TWEETER\_\-TRANSPARENT~1}}
+\label{tweeter_8c_f4abaece4169317650a38443e513be8f}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{tweeter_8c_eb8e1c282570d629a6b603a94a4650d6}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{tweeter_8c_eb8e1c282570d629a6b603a94a4650d6}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TWEETER\_\-SCALE\_\-SIZE@{TWEETER\_\-SCALE\_\-SIZE}!tweeter.c@{tweeter.c}}\index{tweeter.c@{tweeter.c}!TWEETER\_\-SCALE\_\-SIZE@{TWEETER\_\-SCALE\_\-SIZE}}\item[{\em 
+\hypertarget{tweeter_8c_eb8e1c282570d629a6b603a94a4650d649bb794a58d238f59d6fc1d10b078055}{
+TWEETER\_\-SCALE\_\-SIZE}
+\label{tweeter_8c_eb8e1c282570d629a6b603a94a4650d649bb794a58d238f59d6fc1d10b078055}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{tweeter_8c_e51b55dc24802bb075149608623102de}{
+\index{tweeter.c@{tweeter.c}!tweeter\_\-init@{tweeter\_\-init}}
+\index{tweeter\_\-init@{tweeter\_\-init}!tweeter.c@{tweeter.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf tweeter\_\-t} tweeter\_\-init ({\bf tweeter\_\-obj\_\-t} $\ast$ {\em tweeter}, \/  uint16\_\-t {\em poll\_\-rate}, \/  {\bf tweeter\_\-scale\_\-t} $\ast$ {\em scale\_\-table})}}
+\label{tweeter_8c_e51b55dc24802bb075149608623102de}
+
+
+
+
+References tweeter\_\-private\_\-t::note\_\-duty, tweeter\_\-private\_\-t::note\_\-period, tweeter\_\-private\_\-t::poll\_\-rate, and tweeter\_\-private\_\-t::scale\_\-table.\hypertarget{tweeter_8c_c316121415f5a39d392f45789630c6fb}{
+\index{tweeter.c@{tweeter.c}!tweeter\_\-note\_\-play@{tweeter\_\-note\_\-play}}
+\index{tweeter\_\-note\_\-play@{tweeter\_\-note\_\-play}!tweeter.c@{tweeter.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tweeter\_\-note\_\-play ({\bf tweeter\_\-t} {\em tweeter}, \/  {\bf tweeter\_\-note\_\-t} {\em note}, \/  uint8\_\-t {\em velocity})}}
+\label{tweeter_8c_c316121415f5a39d392f45789630c6fb}
+
+
+
+
+References tweeter\_\-private\_\-t::scale\_\-table, TWEETER\_\-NOTE\_\-MIN, tweeter\_\-note\_\-set(), and TWEETER\_\-SCALE\_\-SIZE.\hypertarget{tweeter_8c_15bb4b9a955a5335b0b98432ce6ec943}{
+\index{tweeter.c@{tweeter.c}!tweeter\_\-note\_\-set@{tweeter\_\-note\_\-set}}
+\index{tweeter\_\-note\_\-set@{tweeter\_\-note\_\-set}!tweeter.c@{tweeter.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tweeter\_\-note\_\-set ({\bf tweeter\_\-t} {\em tweeter}, \/  {\bf tweeter\_\-period\_\-t} {\em period}, \/  {\bf tweeter\_\-period\_\-t} {\em duty})}}
+\label{tweeter_8c_15bb4b9a955a5335b0b98432ce6ec943}
+
+
+
+
+References tweeter\_\-private\_\-t::note\_\-duty, tweeter\_\-private\_\-t::note\_\-holdoff, tweeter\_\-private\_\-t::note\_\-period, tweeter\_\-private\_\-t::poll\_\-rate, and TWEETER\_\-HOLDOFF\_\-TIME.
+
+Referenced by tweeter\_\-note\_\-play().\hypertarget{tweeter_8c_cebbc8b939268f6290578f6642a8d21f}{
+\index{tweeter.c@{tweeter.c}!tweeter\_\-update@{tweeter\_\-update}}
+\index{tweeter\_\-update@{tweeter\_\-update}!tweeter.c@{tweeter.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t tweeter\_\-update ({\bf tweeter\_\-t} {\em tweeter})}}
+\label{tweeter_8c_cebbc8b939268f6290578f6642a8d21f}
+
+
+
+
+References tweeter\_\-private\_\-t::note\_\-clock, tweeter\_\-private\_\-t::note\_\-duty, tweeter\_\-private\_\-t::note\_\-holdoff, and tweeter\_\-private\_\-t::note\_\-period.

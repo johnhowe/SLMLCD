@@ -1,0 +1,221 @@
+\hypertarget{ds18b20_8h}{
+\section{ds18b20.h File Reference}
+\label{ds18b20_8h}\index{ds18b20.h@{ds18b20.h}}
+}
+Driver for ds18b20 one wire temperature sensor. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}u1wire.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{ds18b20_8h_e548beb1c126cdf458ac94f8e4767257}{DS18B20\_\-TEMP\_\-INT}(TEMP)~(((TEMP) + DS18B20\_\-COUNTS\_\-PER\_\-DEGREE / 2) $>$$>$ DS18B20\_\-BITS\_\-PER\_\-DEGREE)
+\item 
+\#define \hyperlink{ds18b20_8h_3d2477a434d6da70801821574c31b04d}{DS18B20\_\-TEMP\_\-DOUBLE}(TEMP)~((TEMP) / (double)DS18B20\_\-COUNTS\_\-PER\_\-DEGREE + 0.5)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef int16\_\-t \hyperlink{ds18b20_8h_a6e2b46ff1ef9e6257bd39e34c98a174}{ds18b20\_\-temp\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{ds18b20_8h_0411cd49bb5b71852cecd93bcbf0ca2d8f1d524a680821381f0d6e03d6fd7c02}{DS18B20\_\-BITS\_\-PER\_\-DEGREE} =  8
+ \}
+\item 
+enum \{ \hyperlink{ds18b20_8h_bed82baf7f470b522273a3e37c24c600a4011b9bbbd1e0f63a8b68e3f089fa01}{DS18B20\_\-COUNTS\_\-PER\_\-DEGREE} =  (1 $<$$<$ 8)
+ \}
+\item 
+enum \{ \hyperlink{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a57514220613b36b60a04441693561c36ee}{DS18B20\_\-TEMP\_\-BITS} =  12, 
+\hyperlink{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a5759e892084f6dbd69eb63e404ec0c86f7}{DS1820\_\-TEMP\_\-BITS} =  9
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int8\_\-t \hyperlink{ds18b20_8h_2f1b65191e688161d10a666062d8ceda}{ds18b20\_\-temp\_\-conversion\_\-start} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev)
+\item 
+bool \hyperlink{ds18b20_8h_2a2d2297e85df3e70d60972e75203b4a}{ds18b20\_\-temp\_\-ready\_\-p} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev)
+\item 
+int8\_\-t \hyperlink{ds18b20_8h_80d89390202e460337d06cf7023441bb}{ds18b20\_\-temp\_\-read} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev, \hyperlink{ds18b20_8h_a6e2b46ff1ef9e6257bd39e34c98a174}{ds18b20\_\-temp\_\-t} $\ast$ptemp)
+\item 
+bool \hyperlink{ds18b20_8h_42e8d03d218dc27159c7dbd2517ad6a8}{ds18b20\_\-device\_\-p} (\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$dev)
+\item 
+\hyperlink{structu1wire__obj__t}{u1wire\_\-t} \hyperlink{ds18b20_8h_112f54ea0657940d9aa54cf7a1adaa44}{ds18b20\_\-init} (\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$dev)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Driver for ds18b20 one wire temperature sensor. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]08 June 2002 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{ds18b20_8h_3d2477a434d6da70801821574c31b04d}{
+\index{ds18b20.h@{ds18b20.h}!DS18B20\_\-TEMP\_\-DOUBLE@{DS18B20\_\-TEMP\_\-DOUBLE}}
+\index{DS18B20\_\-TEMP\_\-DOUBLE@{DS18B20\_\-TEMP\_\-DOUBLE}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DS18B20\_\-TEMP\_\-DOUBLE(TEMP)~((TEMP) / (double)DS18B20\_\-COUNTS\_\-PER\_\-DEGREE + 0.5)}}
+\label{ds18b20_8h_3d2477a434d6da70801821574c31b04d}
+
+
+\hypertarget{ds18b20_8h_e548beb1c126cdf458ac94f8e4767257}{
+\index{ds18b20.h@{ds18b20.h}!DS18B20\_\-TEMP\_\-INT@{DS18B20\_\-TEMP\_\-INT}}
+\index{DS18B20\_\-TEMP\_\-INT@{DS18B20\_\-TEMP\_\-INT}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DS18B20\_\-TEMP\_\-INT(TEMP)~(((TEMP) + DS18B20\_\-COUNTS\_\-PER\_\-DEGREE / 2) $>$$>$ DS18B20\_\-BITS\_\-PER\_\-DEGREE)}}
+\label{ds18b20_8h_e548beb1c126cdf458ac94f8e4767257}
+
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{ds18b20_8h_a6e2b46ff1ef9e6257bd39e34c98a174}{
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_\-temp\_\-t@{ds18b20\_\-temp\_\-t}}
+\index{ds18b20\_\-temp\_\-t@{ds18b20\_\-temp\_\-t}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int16\_\-t {\bf ds18b20\_\-temp\_\-t}}}
+\label{ds18b20_8h_a6e2b46ff1ef9e6257bd39e34c98a174}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{ds18b20_8h_0411cd49bb5b71852cecd93bcbf0ca2d}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ds18b20_8h_0411cd49bb5b71852cecd93bcbf0ca2d}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DS18B20\_\-BITS\_\-PER\_\-DEGREE@{DS18B20\_\-BITS\_\-PER\_\-DEGREE}!ds18b20.h@{ds18b20.h}}\index{ds18b20.h@{ds18b20.h}!DS18B20\_\-BITS\_\-PER\_\-DEGREE@{DS18B20\_\-BITS\_\-PER\_\-DEGREE}}\item[{\em 
+\hypertarget{ds18b20_8h_0411cd49bb5b71852cecd93bcbf0ca2d8f1d524a680821381f0d6e03d6fd7c02}{
+DS18B20\_\-BITS\_\-PER\_\-DEGREE}
+\label{ds18b20_8h_0411cd49bb5b71852cecd93bcbf0ca2d8f1d524a680821381f0d6e03d6fd7c02}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ds18b20_8h_bed82baf7f470b522273a3e37c24c600}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ds18b20_8h_bed82baf7f470b522273a3e37c24c600}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DS18B20\_\-COUNTS\_\-PER\_\-DEGREE@{DS18B20\_\-COUNTS\_\-PER\_\-DEGREE}!ds18b20.h@{ds18b20.h}}\index{ds18b20.h@{ds18b20.h}!DS18B20\_\-COUNTS\_\-PER\_\-DEGREE@{DS18B20\_\-COUNTS\_\-PER\_\-DEGREE}}\item[{\em 
+\hypertarget{ds18b20_8h_bed82baf7f470b522273a3e37c24c600a4011b9bbbd1e0f63a8b68e3f089fa01}{
+DS18B20\_\-COUNTS\_\-PER\_\-DEGREE}
+\label{ds18b20_8h_bed82baf7f470b522273a3e37c24c600a4011b9bbbd1e0f63a8b68e3f089fa01}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a57}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a57}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DS18B20\_\-TEMP\_\-BITS@{DS18B20\_\-TEMP\_\-BITS}!ds18b20.h@{ds18b20.h}}\index{ds18b20.h@{ds18b20.h}!DS18B20\_\-TEMP\_\-BITS@{DS18B20\_\-TEMP\_\-BITS}}\item[{\em 
+\hypertarget{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a57514220613b36b60a04441693561c36ee}{
+DS18B20\_\-TEMP\_\-BITS}
+\label{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a57514220613b36b60a04441693561c36ee}
+}]\index{DS1820\_\-TEMP\_\-BITS@{DS1820\_\-TEMP\_\-BITS}!ds18b20.h@{ds18b20.h}}\index{ds18b20.h@{ds18b20.h}!DS1820\_\-TEMP\_\-BITS@{DS1820\_\-TEMP\_\-BITS}}\item[{\em 
+\hypertarget{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a5759e892084f6dbd69eb63e404ec0c86f7}{
+DS1820\_\-TEMP\_\-BITS}
+\label{ds18b20_8h_b04a0655cd1e3bcac5e8f48c18df1a5759e892084f6dbd69eb63e404ec0c86f7}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ds18b20_8h_42e8d03d218dc27159c7dbd2517ad6a8}{
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_\-device\_\-p@{ds18b20\_\-device\_\-p}}
+\index{ds18b20\_\-device\_\-p@{ds18b20\_\-device\_\-p}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool ds18b20\_\-device\_\-p ({\bf u1wire\_\-obj\_\-t} $\ast$ {\em dev})}}
+\label{ds18b20_8h_42e8d03d218dc27159c7dbd2517ad6a8}
+
+
+Return true if the one wire device is a ds18b20 temperature sensor. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to one wire device \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if device is a dsb18b20 otherwise 0 \end{Desc}
+
+
+References DS1820\_\-FAMILY\_\-CODE, DS18B20\_\-FAMILY\_\-CODE, u1wire\_\-rom\_\-code\_\-t::family, u1wire\_\-rom\_\-code\_\-t::fields, and u1wire\_\-obj\_\-t::rom\_\-code.
+
+Referenced by ds18b20\_\-init().\hypertarget{ds18b20_8h_112f54ea0657940d9aa54cf7a1adaa44}{
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_\-init@{ds18b20\_\-init}}
+\index{ds18b20\_\-init@{ds18b20\_\-init}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf u1wire\_\-t} ds18b20\_\-init ({\bf u1wire\_\-obj\_\-t} $\ast$ {\em dev})}}
+\label{ds18b20_8h_112f54ea0657940d9aa54cf7a1adaa44}
+
+
+Initialise ds18b20 temperature sensor. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to one wire device \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]pointer to one wire device if device is a ds18b20 temperature sensor otherwise NULL \end{Desc}
+
+
+References ds18b20\_\-device\_\-p().\hypertarget{ds18b20_8h_2f1b65191e688161d10a666062d8ceda}{
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_\-temp\_\-conversion\_\-start@{ds18b20\_\-temp\_\-conversion\_\-start}}
+\index{ds18b20\_\-temp\_\-conversion\_\-start@{ds18b20\_\-temp\_\-conversion\_\-start}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t ds18b20\_\-temp\_\-conversion\_\-start ({\bf u1wire\_\-t} {\em dev})}}
+\label{ds18b20_8h_2f1b65191e688161d10a666062d8ceda}
+
+
+Start a temperature conversion. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to one wire device object \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if OK, 0 if no device responding, negative if error \end{Desc}
+\begin{Desc}
+\item[Note:]The conversion takes 0.75 s for 12 bit resolution. \end{Desc}
+
+
+References DS18B20\_\-CONVERT\_\-T, and u1wire\_\-command().\hypertarget{ds18b20_8h_80d89390202e460337d06cf7023441bb}{
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_\-temp\_\-read@{ds18b20\_\-temp\_\-read}}
+\index{ds18b20\_\-temp\_\-read@{ds18b20\_\-temp\_\-read}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t ds18b20\_\-temp\_\-read ({\bf u1wire\_\-t} {\em dev}, \/  {\bf ds18b20\_\-temp\_\-t} $\ast$ {\em ptemp})}}
+\label{ds18b20_8h_80d89390202e460337d06cf7023441bb}
+
+
+Read last converted temperature. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to one wire device \item[{\em ptemp}]pointer for temperature result \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if OK, 0 if no device responding, negative if error \end{Desc}
+\begin{Desc}
+\item[Note:]The temperature conversion must be complete. \end{Desc}
+
+
+References DS1820\_\-FAMILY\_\-CODE, DS1820\_\-TEMP\_\-BITS, ds18b20\_\-data, DS18B20\_\-READ\_\-SCRATCHPAD, DS18B20\_\-SCRATCHPAD\_\-BYTES, DS18B20\_\-TEMP\_\-BITS, dscrc8(), u1wire\_\-rom\_\-code\_\-t::family, u1wire\_\-rom\_\-code\_\-t::fields, u1wire\_\-obj\_\-t::rom\_\-code, u1wire\_\-command(), U1WIRE\_\-ERR\_\-CRC, and u1wire\_\-read().\hypertarget{ds18b20_8h_2a2d2297e85df3e70d60972e75203b4a}{
+\index{ds18b20.h@{ds18b20.h}!ds18b20\_\-temp\_\-ready\_\-p@{ds18b20\_\-temp\_\-ready\_\-p}}
+\index{ds18b20\_\-temp\_\-ready\_\-p@{ds18b20\_\-temp\_\-ready\_\-p}!ds18b20.h@{ds18b20.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool ds18b20\_\-temp\_\-ready\_\-p ({\bf u1wire\_\-t} {\em dev})}}
+\label{ds18b20_8h_2a2d2297e85df3e70d60972e75203b4a}
+
+
+Return true when a temperature conversion finished. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to one wire device \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if conversion finished otherwise 0 \end{Desc}

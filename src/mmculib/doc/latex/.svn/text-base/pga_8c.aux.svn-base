@@ -1,0 +1,71 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.66}pga.c File Reference}{173}{section.5.66}}
+\newlabel{pga_8c}{{5.66}{173}{pga.c File Reference\relax }{section.5.66}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.66.1}Detailed Description}{173}{subsection.5.66.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.66.2}Define Documentation}{174}{subsection.5.66.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.1}PGA\_\discretionary {-}{}{}DESELECT}{174}{subsubsection.5.66.2.1}}
+\newlabel{pga_8c_1c58918d75b1bd4e393b3db6208969b2}{{5.66.2.1}{174}{PGA\_\-DESELECT\relax }{subsubsection.5.66.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.2}PGA\_\discretionary {-}{}{}GETC}{174}{subsubsection.5.66.2.2}}
+\newlabel{pga_8c_b45a78ba07c51721e7fcbefa54b323e0}{{5.66.2.2}{174}{PGA\_\-GETC\relax }{subsubsection.5.66.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.3}PGA\_\discretionary {-}{}{}INSN\_\discretionary {-}{}{}CHANNEL\_\discretionary {-}{}{}REGISTER\_\discretionary {-}{}{}WRITE}{174}{subsubsection.5.66.2.3}}
+\newlabel{pga_8c_d6a9f3177b6a45467171b3ab598deaf2}{{5.66.2.3}{174}{PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE\relax }{subsubsection.5.66.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.4}PGA\_\discretionary {-}{}{}INSN\_\discretionary {-}{}{}GAIN\_\discretionary {-}{}{}REGISTER\_\discretionary {-}{}{}WRITE}{174}{subsubsection.5.66.2.4}}
+\newlabel{pga_8c_13060ccbd75ed883cec58a76a3acc60b}{{5.66.2.4}{174}{PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE\relax }{subsubsection.5.66.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.5}PGA\_\discretionary {-}{}{}INSN\_\discretionary {-}{}{}REGISTER\_\discretionary {-}{}{}WRITE}{174}{subsubsection.5.66.2.5}}
+\newlabel{pga_8c_c39e47a402ac407f771dd08dda6689b2}{{5.66.2.5}{174}{PGA\_\-INSN\_\-REGISTER\_\-WRITE\relax }{subsubsection.5.66.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.6}PGA\_\discretionary {-}{}{}PUTC}{174}{subsubsection.5.66.2.6}}
+\newlabel{pga_8c_834c6f00f27bee880f928b0fafa58307}{{5.66.2.6}{174}{PGA\_\-PUTC\relax }{subsubsection.5.66.2.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.7}PGA\_\discretionary {-}{}{}SELECT}{174}{subsubsection.5.66.2.7}}
+\newlabel{pga_8c_fb808e734c8938be80a11ecb49b9c94b}{{5.66.2.7}{174}{PGA\_\-SELECT\relax }{subsubsection.5.66.2.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.2.8}PGA\_\discretionary {-}{}{}TRANSPARENT}{174}{subsubsection.5.66.2.8}}
+\newlabel{pga_8c_e085e726d05a2c332b0133256dae8e92}{{5.66.2.8}{174}{PGA\_\-TRANSPARENT\relax }{subsubsection.5.66.2.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.66.3}Enumeration Type Documentation}{174}{subsection.5.66.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.3.1}"@0}{174}{subsubsection.5.66.3.1}}
+\newlabel{pga_8c_06fc87d81c62e9abb8790b6e5713c55b}{{5.66.3.1}{174}{"@0\relax }{subsubsection.5.66.3.1}{}}
+\newlabel{pga_8c_06fc87d81c62e9abb8790b6e5713c55b71dfa2a4006174d1ba24e7beb55db2df}{{5.66.3.1}{174}{"@0\relax }{subsubsection.5.66.3.1}{}}
+\newlabel{pga_8c_06fc87d81c62e9abb8790b6e5713c55bc4288f1fb93137ffae2c7eca0e165fbb}{{5.66.3.1}{174}{"@0\relax }{subsubsection.5.66.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.3.2}"@1}{174}{subsubsection.5.66.3.2}}
+\newlabel{pga_8c_df764cbdea00d65edcd07bb9953ad2b7}{{5.66.3.2}{174}{"@1\relax }{subsubsection.5.66.3.2}{}}
+\newlabel{pga_8c_df764cbdea00d65edcd07bb9953ad2b7e72cd0de1347fbfa7cedb84d310614c7}{{5.66.3.2}{174}{"@1\relax }{subsubsection.5.66.3.2}{}}
+\newlabel{pga_8c_df764cbdea00d65edcd07bb9953ad2b704cd4f28b3d109e5cda146ed7a49b260}{{5.66.3.2}{174}{"@1\relax }{subsubsection.5.66.3.2}{}}
+\newlabel{pga_8c_df764cbdea00d65edcd07bb9953ad2b7cb56f8531c4147d1f1d2fbc217d075fb}{{5.66.3.2}{174}{"@1\relax }{subsubsection.5.66.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.66.4}Function Documentation}{175}{subsection.5.66.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.1}pga\_\discretionary {-}{}{}channel\_\discretionary {-}{}{}set}{175}{subsubsection.5.66.4.1}}
+\newlabel{pga_8c_2dd78d4e1bc9e48cc463380dff7c0eb9}{{5.66.4.1}{175}{pga\_\-channel\_\-set\relax }{subsubsection.5.66.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.2}pga\_\discretionary {-}{}{}chip\_\discretionary {-}{}{}deselect}{175}{subsubsection.5.66.4.2}}
+\newlabel{pga_8c_272a11391210cc6001b0f38a4d1c20b0}{{5.66.4.2}{175}{pga\_\-chip\_\-deselect\relax }{subsubsection.5.66.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.3}pga\_\discretionary {-}{}{}chip\_\discretionary {-}{}{}select}{175}{subsubsection.5.66.4.3}}
+\newlabel{pga_8c_e4ecbe7c6f6f6af7c786f83ab9dbffaa}{{5.66.4.3}{175}{pga\_\-chip\_\-select\relax }{subsubsection.5.66.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.4}pga\_\discretionary {-}{}{}gain\_\discretionary {-}{}{}set}{175}{subsubsection.5.66.4.4}}
+\newlabel{pga_8c_e68ce945e5618989f91f0297c3e0bd28}{{5.66.4.4}{175}{pga\_\-gain\_\-set\relax }{subsubsection.5.66.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.5}pga\_\discretionary {-}{}{}init}{175}{subsubsection.5.66.4.5}}
+\newlabel{pga_8c_8b21fccdf07883c76c66926b7fb0725c}{{5.66.4.5}{175}{pga\_\-init\relax }{subsubsection.5.66.4.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.6}pga\_\discretionary {-}{}{}send\_\discretionary {-}{}{}command}{175}{subsubsection.5.66.4.6}}
+\newlabel{pga_8c_5446678acfff8fcf782f40ee8132f9c5}{{5.66.4.6}{175}{pga\_\-send\_\-command\relax }{subsubsection.5.66.4.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.7}pga\_\discretionary {-}{}{}shutdown}{175}{subsubsection.5.66.4.7}}
+\newlabel{pga_8c_ab91758b144017097832f60fc4e17ad8}{{5.66.4.7}{175}{pga\_\-shutdown\relax }{subsubsection.5.66.4.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.66.4.8}pga\_\discretionary {-}{}{}startup}{175}{subsubsection.5.66.4.8}}
+\newlabel{pga_8c_ffd6fe6fcacde051bdd3f582ddb5eb13}{{5.66.4.8}{175}{pga\_\-startup\relax }{subsubsection.5.66.4.8}{}}
+\@setckpt{pga_8c}{
+\setcounter{page}{176}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{66}
+\setcounter{subsection}{4}
+\setcounter{subsubsection}{8}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test
+END
+muxleds-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/muxleds-test.c
+END
+chaser-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/chaser-test.c
+END
+qdecoder-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/qdecoder-test.c
+END
+uint8toa-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/uint8toa-test.c
+END
+port.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/port.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/config.h
+END
+target.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/target.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/Makefile
+END
+ring-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/ring-test.c
+END
+squeaker-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/groups/mmicro/!svn/ver/98/tags/release/mmculib-1.0.3/test/squeaker-test.c
+END

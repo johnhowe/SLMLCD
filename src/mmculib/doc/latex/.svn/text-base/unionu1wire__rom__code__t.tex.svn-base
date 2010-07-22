@@ -1,0 +1,76 @@
+\hypertarget{unionu1wire__rom__code__t}{
+\section{u1wire\_\-rom\_\-code\_\-t Union Reference}
+\label{unionu1wire__rom__code__t}\index{u1wire\_\-rom\_\-code\_\-t@{u1wire\_\-rom\_\-code\_\-t}}
+}
+{\tt \#include $<$u1wire.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t \hyperlink{unionu1wire__rom__code__t_446e2ce40285c238caf63d644f98ca71}{family}\\
+\>uint8\_t \hyperlink{unionu1wire__rom__code__t_544f4bc0b1685806ede8e9b2980a506a}{serial} \mbox{[}6\mbox{]}\\
+\>uint8\_t \hyperlink{unionu1wire__rom__code__t_ad7102e43f654881a34f19d7419602fe}{crc}\\
+\} \hyperlink{unionu1wire__rom__code__t_673fac3bf1cdf5e29a91ebe014d30086}{fields}\\
+
+\end{tabbing}\item 
+uint8\_\-t \hyperlink{unionu1wire__rom__code__t_d03441486b9d4f596c943110d03a6202}{bytes} \mbox{[}8\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+One wire bus ROM code structure. 
+
+\subsection{Field Documentation}
+\hypertarget{unionu1wire__rom__code__t_446e2ce40285c238caf63d644f98ca71}{
+\index{u1wire\_\-rom\_\-code\_\-t@{u1wire\_\-rom\_\-code\_\-t}!family@{family}}
+\index{family@{family}!u1wire_rom_code_t@{u1wire\_\-rom\_\-code\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf u1wire\_\-rom\_\-code\_\-t::family}}}
+\label{unionu1wire__rom__code__t_446e2ce40285c238caf63d644f98ca71}
+
+
+
+
+Referenced by ds18b20\_\-device\_\-p(), ds18b20\_\-temp\_\-read(), ds2450\_\-device\_\-p(), and u1wire\_\-debug().\hypertarget{unionu1wire__rom__code__t_544f4bc0b1685806ede8e9b2980a506a}{
+\index{u1wire\_\-rom\_\-code\_\-t@{u1wire\_\-rom\_\-code\_\-t}!serial@{serial}}
+\index{serial@{serial}!u1wire_rom_code_t@{u1wire\_\-rom\_\-code\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf u1wire\_\-rom\_\-code\_\-t::serial}\mbox{[}6\mbox{]}}}
+\label{unionu1wire__rom__code__t_544f4bc0b1685806ede8e9b2980a506a}
+
+
+
+
+Referenced by u1wire\_\-debug().\hypertarget{unionu1wire__rom__code__t_ad7102e43f654881a34f19d7419602fe}{
+\index{u1wire\_\-rom\_\-code\_\-t@{u1wire\_\-rom\_\-code\_\-t}!crc@{crc}}
+\index{crc@{crc}!u1wire_rom_code_t@{u1wire\_\-rom\_\-code\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf u1wire\_\-rom\_\-code\_\-t::crc}}}
+\label{unionu1wire__rom__code__t_ad7102e43f654881a34f19d7419602fe}
+
+
+
+
+Referenced by u1wire\_\-debug().\hypertarget{unionu1wire__rom__code__t_673fac3bf1cdf5e29a91ebe014d30086}{
+\index{u1wire\_\-rom\_\-code\_\-t@{u1wire\_\-rom\_\-code\_\-t}!fields@{fields}}
+\index{fields@{fields}!u1wire_rom_code_t@{u1wire\_\-rom\_\-code\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   {\bf u1wire\_\-rom\_\-code\_\-t::fields}}}
+\label{unionu1wire__rom__code__t_673fac3bf1cdf5e29a91ebe014d30086}
+
+
+
+
+Referenced by ds18b20\_\-device\_\-p(), ds18b20\_\-temp\_\-read(), ds2450\_\-device\_\-p(), and u1wire\_\-debug().\hypertarget{unionu1wire__rom__code__t_d03441486b9d4f596c943110d03a6202}{
+\index{u1wire\_\-rom\_\-code\_\-t@{u1wire\_\-rom\_\-code\_\-t}!bytes@{bytes}}
+\index{bytes@{bytes}!u1wire_rom_code_t@{u1wire\_\-rom\_\-code\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf u1wire\_\-rom\_\-code\_\-t::bytes}\mbox{[}8\mbox{]}}}
+\label{unionu1wire__rom__code__t_d03441486b9d4f596c943110d03a6202}
+
+
+
+
+Referenced by u1wire\_\-search().
+
+The documentation for this union was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{u1wire_8h}{u1wire.h}\end{CompactItemize}

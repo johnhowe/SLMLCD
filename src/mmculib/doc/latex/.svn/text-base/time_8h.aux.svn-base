@@ -1,0 +1,60 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.97}time.h File Reference}{224}{section.5.97}}
+\newlabel{time_8h}{{5.97}{224}{time.h File Reference\relax }{section.5.97}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.97.1}Detailed Description}{224}{subsection.5.97.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.97.2}Define Documentation}{225}{subsection.5.97.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.2.1}DELAY\_\discretionary {-}{}{}MAX}{225}{subsubsection.5.97.2.1}}
+\newlabel{time_8h_284b5caa4788a9db4760eebb30bf6a74}{{5.97.2.1}{225}{DELAY\_\-MAX\relax }{subsubsection.5.97.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.2.2}DELAY\_\discretionary {-}{}{}MIN}{225}{subsubsection.5.97.2.2}}
+\newlabel{time_8h_28688b64c7452eb7221b9a582733768c}{{5.97.2.2}{225}{DELAY\_\-MIN\relax }{subsubsection.5.97.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.2.3}TOPCNT}{225}{subsubsection.5.97.2.3}}
+\newlabel{time_8h_ba0ff11567fab1989677f12b4d348584}{{5.97.2.3}{225}{TOPCNT\relax }{subsubsection.5.97.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.97.3}Typedef Documentation}{225}{subsection.5.97.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.3.1}time\_\discretionary {-}{}{}t}{225}{subsubsection.5.97.3.1}}
+\newlabel{time_8h_9bd61f5f8d2a45a24f6d5fc580d7c302}{{5.97.3.1}{225}{time\_\-t\relax }{subsubsection.5.97.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.97.4}Enumeration Type Documentation}{225}{subsection.5.97.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.4.1}delay\_\discretionary {-}{}{}ret\_\discretionary {-}{}{}t}{225}{subsubsection.5.97.4.1}}
+\newlabel{time_8h_efa76ebb3e0ce7c809b4683679f07dd0}{{5.97.4.1}{225}{delay\_\-ret\_\-t\relax }{subsubsection.5.97.4.1}{}}
+\newlabel{time_8h_efa76ebb3e0ce7c809b4683679f07dd0dc2f98bcabbf013c861b7872212ca046}{{5.97.4.1}{225}{delay\_\-ret\_\-t\relax }{subsubsection.5.97.4.1}{}}
+\newlabel{time_8h_efa76ebb3e0ce7c809b4683679f07dd05c43f49dcfbee9aa777b77fc0ab74e25}{{5.97.4.1}{225}{delay\_\-ret\_\-t\relax }{subsubsection.5.97.4.1}{}}
+\newlabel{time_8h_efa76ebb3e0ce7c809b4683679f07dd0ad9dee005a3d0f9137b2ac1e0869f89b}{{5.97.4.1}{225}{delay\_\-ret\_\-t\relax }{subsubsection.5.97.4.1}{}}
+\newlabel{time_8h_efa76ebb3e0ce7c809b4683679f07dd000a16d6d63b6ac0a968ab851f67ba4d3}{{5.97.4.1}{225}{delay\_\-ret\_\-t\relax }{subsubsection.5.97.4.1}{}}
+\newlabel{time_8h_efa76ebb3e0ce7c809b4683679f07dd06e75e795962897df0f064a314bf23a63}{{5.97.4.1}{225}{delay\_\-ret\_\-t\relax }{subsubsection.5.97.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.97.5}Function Documentation}{225}{subsection.5.97.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.1}time\_\discretionary {-}{}{}current\_\discretionary {-}{}{}time\_\discretionary {-}{}{}get}{225}{subsubsection.5.97.5.1}}
+\newlabel{time_8h_abbcce60090d15e8733fcbf859b1a2c1}{{5.97.5.1}{225}{time\_\-current\_\-time\_\-get\relax }{subsubsection.5.97.5.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.2}time\_\discretionary {-}{}{}delay\_\discretionary {-}{}{}us}{225}{subsubsection.5.97.5.2}}
+\newlabel{time_8h_039ae44baa822751b2370d304cdc5aa7}{{5.97.5.2}{225}{time\_\-delay\_\-us\relax }{subsubsection.5.97.5.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.3}time\_\discretionary {-}{}{}init}{225}{subsubsection.5.97.5.3}}
+\newlabel{time_8h_cf5c8bb89727a653a3320edfa8fc4e69}{{5.97.5.3}{225}{time\_\-init\relax }{subsubsection.5.97.5.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.4}time\_\discretionary {-}{}{}irq\_\discretionary {-}{}{}disable}{225}{subsubsection.5.97.5.4}}
+\newlabel{time_8h_8cdb77260395fe7941f3e8d35f71d64b}{{5.97.5.4}{225}{time\_\-irq\_\-disable\relax }{subsubsection.5.97.5.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.5}time\_\discretionary {-}{}{}irq\_\discretionary {-}{}{}enable}{225}{subsubsection.5.97.5.5}}
+\newlabel{time_8h_30285cd0dac3002ecbeb23f76e1a5f30}{{5.97.5.5}{225}{time\_\-irq\_\-enable\relax }{subsubsection.5.97.5.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.6}time\_\discretionary {-}{}{}rf\_\discretionary {-}{}{}timestamp\_\discretionary {-}{}{}get}{225}{subsubsection.5.97.5.6}}
+\newlabel{time_8h_ed3cefad3bf9a228175a4bdc89ff539b}{{5.97.5.6}{225}{time\_\-rf\_\-timestamp\_\-get\relax }{subsubsection.5.97.5.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.97.5.7}time\_\discretionary {-}{}{}time2int}{225}{subsubsection.5.97.5.7}}
+\newlabel{time_8h_f3e0761267f0325d7636b8adfad9272a}{{5.97.5.7}{225}{time\_\-time2int\relax }{subsubsection.5.97.5.7}{}}
+\@setckpt{time_8h}{
+\setcounter{page}{226}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{97}
+\setcounter{subsection}{5}
+\setcounter{subsubsection}{7}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

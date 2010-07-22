@@ -1,0 +1,63 @@
+\hypertarget{struct__AT91S__PITC}{
+\section{\_\-AT91S\_\-PITC Struct Reference}
+\label{struct__AT91S__PITC}\index{\_\-AT91S\_\-PITC@{\_\-AT91S\_\-PITC}}
+}
+{\tt \#include $<$AT91SAM7S256.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PITC_c8ca0d9ea40b6b1ae1da6b768f57f20e}{PITC\_\-PIMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PITC_9818f43a89fa0c9107c9d1f7f7a1dda5}{PITC\_\-PISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PITC_d411b434088b85244317aed969575a84}{PITC\_\-PIVR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PITC_c663de20d192b5d2c7032bf2e1b663cb}{PITC\_\-PIIR}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct__AT91S__PITC_c8ca0d9ea40b6b1ae1da6b768f57f20e}{
+\index{\_\-AT91S\_\-PITC@{\_\-AT91S\_\-PITC}!PITC\_\-PIMR@{PITC\_\-PIMR}}
+\index{PITC\_\-PIMR@{PITC\_\-PIMR}!_AT91S_PITC@{\_\-AT91S\_\-PITC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PITC::PITC\_\-PIMR}}}
+\label{struct__AT91S__PITC_c8ca0d9ea40b6b1ae1da6b768f57f20e}
+
+
+
+
+Referenced by AT91F\_\-PITDisableInt(), AT91F\_\-PITEnableInt(), AT91F\_\-PITGetMode(), AT91F\_\-PITInit(), AT91F\_\-PITSetPIV(), pit\_\-period\_\-set(), pit\_\-start(), and pit\_\-stop().\hypertarget{struct__AT91S__PITC_9818f43a89fa0c9107c9d1f7f7a1dda5}{
+\index{\_\-AT91S\_\-PITC@{\_\-AT91S\_\-PITC}!PITC\_\-PISR@{PITC\_\-PISR}}
+\index{PITC\_\-PISR@{PITC\_\-PISR}!_AT91S_PITC@{\_\-AT91S\_\-PITC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PITC::PITC\_\-PISR}}}
+\label{struct__AT91S__PITC_9818f43a89fa0c9107c9d1f7f7a1dda5}
+
+
+
+
+Referenced by AT91F\_\-PITGetStatus().\hypertarget{struct__AT91S__PITC_d411b434088b85244317aed969575a84}{
+\index{\_\-AT91S\_\-PITC@{\_\-AT91S\_\-PITC}!PITC\_\-PIVR@{PITC\_\-PIVR}}
+\index{PITC\_\-PIVR@{PITC\_\-PIVR}!_AT91S_PITC@{\_\-AT91S\_\-PITC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PITC::PITC\_\-PIVR}}}
+\label{struct__AT91S__PITC_d411b434088b85244317aed969575a84}
+
+
+
+
+Referenced by AT91F\_\-PITGetPIVR().\hypertarget{struct__AT91S__PITC_c663de20d192b5d2c7032bf2e1b663cb}{
+\index{\_\-AT91S\_\-PITC@{\_\-AT91S\_\-PITC}!PITC\_\-PIIR@{PITC\_\-PIIR}}
+\index{PITC\_\-PIIR@{PITC\_\-PIIR}!_AT91S_PITC@{\_\-AT91S\_\-PITC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PITC::PITC\_\-PIIR}}}
+\label{struct__AT91S__PITC_c663de20d192b5d2c7032bf2e1b663cb}
+
+
+
+
+Referenced by AT91F\_\-PITGetPIIR().
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7S256_8h}{AT91SAM7S256.h}\item 
+\hyperlink{AT91SAM7S64_8h}{AT91SAM7S64.h}\item 
+\hyperlink{AT91SAM7X256_8h}{AT91SAM7X256.h}\end{CompactItemize}

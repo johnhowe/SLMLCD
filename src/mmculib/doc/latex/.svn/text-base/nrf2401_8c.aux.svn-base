@@ -1,0 +1,104 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.63}nrf2401.c File Reference}{162}{section.5.63}}
+\newlabel{nrf2401_8c}{{5.63}{162}{nrf2401.c File Reference\relax }{section.5.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.63.1}Detailed Description}{163}{subsection.5.63.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.63.2}Define Documentation}{163}{subsection.5.63.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.1}CHAR\_\discretionary {-}{}{}BIT}{163}{subsubsection.5.63.2.1}}
+\newlabel{nrf2401_8c_308d9dd2c0028ddb184b455bbd7865de}{{5.63.2.1}{163}{CHAR\_\-BIT\relax }{subsubsection.5.63.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.2}NRF\_\discretionary {-}{}{}CE\_\discretionary {-}{}{}HIGH\_\discretionary {-}{}{}SET}{163}{subsubsection.5.63.2.2}}
+\newlabel{nrf2401_8c_60c18d8fca50b50e4d4b53612e07f718}{{5.63.2.2}{163}{NRF\_\-CE\_\-HIGH\_\-SET\relax }{subsubsection.5.63.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.3}NRF\_\discretionary {-}{}{}CE\_\discretionary {-}{}{}LOW\_\discretionary {-}{}{}SET}{163}{subsubsection.5.63.2.3}}
+\newlabel{nrf2401_8c_7180a0d460e841ee04e663c05395f9fe}{{5.63.2.3}{163}{NRF\_\-CE\_\-LOW\_\-SET\relax }{subsubsection.5.63.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.4}NRF\_\discretionary {-}{}{}CONFIGURATION\_\discretionary {-}{}{}REGISTER\_\discretionary {-}{}{}SIZE}{163}{subsubsection.5.63.2.4}}
+\newlabel{nrf2401_8c_1f2ae8f70a7e11942be086152a7065a6}{{5.63.2.4}{163}{NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE\relax }{subsubsection.5.63.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.5}NRF\_\discretionary {-}{}{}CS\_\discretionary {-}{}{}HIGH\_\discretionary {-}{}{}SET}{163}{subsubsection.5.63.2.5}}
+\newlabel{nrf2401_8c_cb0939f0e439edcd2c0d1993ce13650f}{{5.63.2.5}{163}{NRF\_\-CS\_\-HIGH\_\-SET\relax }{subsubsection.5.63.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.6}NRF\_\discretionary {-}{}{}CS\_\discretionary {-}{}{}LOW\_\discretionary {-}{}{}SET}{163}{subsubsection.5.63.2.6}}
+\newlabel{nrf2401_8c_39d7de77c5b38862b7b3418bd39328e3}{{5.63.2.6}{163}{NRF\_\-CS\_\-LOW\_\-SET\relax }{subsubsection.5.63.2.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.7}NRF\_\discretionary {-}{}{}DATA\_\discretionary {-}{}{}READY\_\discretionary {-}{}{}P}{163}{subsubsection.5.63.2.7}}
+\newlabel{nrf2401_8c_1149d9e441f5f9316ebb449cb270469b}{{5.63.2.7}{163}{NRF\_\-DATA\_\-READY\_\-P\relax }{subsubsection.5.63.2.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.2.8}NRF\_\discretionary {-}{}{}FULL\_\discretionary {-}{}{}CONFIGURE}{163}{subsubsection.5.63.2.8}}
+\newlabel{nrf2401_8c_9ae6af3269628345f37bc31b97202661}{{5.63.2.8}{163}{NRF\_\-FULL\_\-CONFIGURE\relax }{subsubsection.5.63.2.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.63.3}Enumeration Type Documentation}{163}{subsection.5.63.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.3.1}"@0}{163}{subsubsection.5.63.3.1}}
+\newlabel{nrf2401_8c_06fc87d81c62e9abb8790b6e5713c55b}{{5.63.3.1}{163}{"@0\relax }{subsubsection.5.63.3.1}{}}
+\newlabel{nrf2401_8c_06fc87d81c62e9abb8790b6e5713c55b26441f0eaf6365c3f59e1b74378906f9}{{5.63.3.1}{163}{"@0\relax }{subsubsection.5.63.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.3.2}"@1}{163}{subsubsection.5.63.3.2}}
+\newlabel{nrf2401_8c_df764cbdea00d65edcd07bb9953ad2b7}{{5.63.3.2}{163}{"@1\relax }{subsubsection.5.63.3.2}{}}
+\newlabel{nrf2401_8c_df764cbdea00d65edcd07bb9953ad2b79b3ab13173076abe842e971d5602f55e}{{5.63.3.2}{163}{"@1\relax }{subsubsection.5.63.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.3.3}"@2}{164}{subsubsection.5.63.3.3}}
+\newlabel{nrf2401_8c_99fb83031ce9923c84392b4e92f956b5}{{5.63.3.3}{164}{"@2\relax }{subsubsection.5.63.3.3}{}}
+\newlabel{nrf2401_8c_99fb83031ce9923c84392b4e92f956b58e9567a421d0706f51859f6216d95a7b}{{5.63.3.3}{164}{"@2\relax }{subsubsection.5.63.3.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.3.4}"@3}{164}{subsubsection.5.63.3.4}}
+\newlabel{nrf2401_8c_bc6126af1d45847bc59afa0aa3216b04}{{5.63.3.4}{164}{"@3\relax }{subsubsection.5.63.3.4}{}}
+\newlabel{nrf2401_8c_bc6126af1d45847bc59afa0aa3216b04cfd796ccc988442bc32bedca4795cb18}{{5.63.3.4}{164}{"@3\relax }{subsubsection.5.63.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.63.4}Function Documentation}{165}{subsection.5.63.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.1}nrf\_\discretionary {-}{}{}address1\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.1}}
+\newlabel{nrf2401_8c_798e12767a95c4202235acb405a76ee8}{{5.63.4.1}{165}{nrf\_\-address1\_\-set\relax }{subsubsection.5.63.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.2}nrf\_\discretionary {-}{}{}address2\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.2}}
+\newlabel{nrf2401_8c_495d957c5ff4f6cb406166f68d7dc7b4}{{5.63.4.2}{165}{nrf\_\-address2\_\-set\relax }{subsubsection.5.63.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.3}nrf\_\discretionary {-}{}{}address\_\discretionary {-}{}{}length\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.3}}
+\newlabel{nrf2401_8c_0d18b2c92682c438ef6ae9226cc7aba2}{{5.63.4.3}{165}{nrf\_\-address\_\-length\_\-set\relax }{subsubsection.5.63.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.4}nrf\_\discretionary {-}{}{}channel\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.4}}
+\newlabel{nrf2401_8c_2296820f67e8a42a5eccea83a5e6bcfd}{{5.63.4.4}{165}{nrf\_\-channel\_\-set\relax }{subsubsection.5.63.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.5}nrf\_\discretionary {-}{}{}comms\_\discretionary {-}{}{}mode\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.5}}
+\newlabel{nrf2401_8c_ad413e9d4b6873e6bdf3c7dd2040ecc7}{{5.63.4.5}{165}{nrf\_\-comms\_\-mode\_\-set\relax }{subsubsection.5.63.4.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.6}nrf\_\discretionary {-}{}{}configure}{165}{subsubsection.5.63.4.6}}
+\newlabel{nrf2401_8c_169a603848e2308678d1270122a9afc7}{{5.63.4.6}{165}{nrf\_\-configure\relax }{subsubsection.5.63.4.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.7}nrf\_\discretionary {-}{}{}crc\_\discretionary {-}{}{}length\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.7}}
+\newlabel{nrf2401_8c_88194e167ce3767dd8960f73aabed94d}{{5.63.4.7}{165}{nrf\_\-crc\_\-length\_\-set\relax }{subsubsection.5.63.4.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.8}nrf\_\discretionary {-}{}{}crc\_\discretionary {-}{}{}status\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.8}}
+\newlabel{nrf2401_8c_9431b859c493feb3d091c5c5b12b9eb5}{{5.63.4.8}{165}{nrf\_\-crc\_\-status\_\-set\relax }{subsubsection.5.63.4.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.9}nrf\_\discretionary {-}{}{}data\_\discretionary {-}{}{}rate\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.9}}
+\newlabel{nrf2401_8c_b1449b12f458ad746a54eab342008d24}{{5.63.4.9}{165}{nrf\_\-data\_\-rate\_\-set\relax }{subsubsection.5.63.4.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.10}nrf\_\discretionary {-}{}{}data\_\discretionary {-}{}{}ready\_\discretionary {-}{}{}p}{165}{subsubsection.5.63.4.10}}
+\newlabel{nrf2401_8c_a87b1c6b2952f0d3785a5578d8a4c47b}{{5.63.4.10}{165}{nrf\_\-data\_\-ready\_\-p\relax }{subsubsection.5.63.4.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.11}nrf\_\discretionary {-}{}{}init}{165}{subsubsection.5.63.4.11}}
+\newlabel{nrf2401_8c_22e5c40347994667a233802f4cddb365}{{5.63.4.11}{165}{nrf\_\-init\relax }{subsubsection.5.63.4.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.12}nrf\_\discretionary {-}{}{}payload\_\discretionary {-}{}{}length1\_\discretionary {-}{}{}get}{165}{subsubsection.5.63.4.12}}
+\newlabel{nrf2401_8c_90483b7d63b9fd98e350a5fd4a0e5a79}{{5.63.4.12}{165}{nrf\_\-payload\_\-length1\_\-get\relax }{subsubsection.5.63.4.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.13}nrf\_\discretionary {-}{}{}payload\_\discretionary {-}{}{}length1\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.13}}
+\newlabel{nrf2401_8c_8c772ad3bdf36062edfea39a5ceb3594}{{5.63.4.13}{165}{nrf\_\-payload\_\-length1\_\-set\relax }{subsubsection.5.63.4.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.14}nrf\_\discretionary {-}{}{}payload\_\discretionary {-}{}{}length2\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.14}}
+\newlabel{nrf2401_8c_1982a42e52e1edc827a26688289c8bf8}{{5.63.4.14}{165}{nrf\_\-payload\_\-length2\_\-set\relax }{subsubsection.5.63.4.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.15}nrf\_\discretionary {-}{}{}receive}{165}{subsubsection.5.63.4.15}}
+\newlabel{nrf2401_8c_b098fd242730a640a83718ca645f4dc5}{{5.63.4.15}{165}{nrf\_\-receive\relax }{subsubsection.5.63.4.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.16}nrf\_\discretionary {-}{}{}rf\_\discretionary {-}{}{}dir\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.16}}
+\newlabel{nrf2401_8c_44d35015c84c4e8e6f3b046058caec20}{{5.63.4.16}{165}{nrf\_\-rf\_\-dir\_\-set\relax }{subsubsection.5.63.4.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.17}nrf\_\discretionary {-}{}{}rf\_\discretionary {-}{}{}enable}{165}{subsubsection.5.63.4.17}}
+\newlabel{nrf2401_8c_16398f0ab48eda01e073e224f8d775ac}{{5.63.4.17}{165}{nrf\_\-rf\_\-enable\relax }{subsubsection.5.63.4.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.18}nrf\_\discretionary {-}{}{}rf\_\discretionary {-}{}{}power\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.18}}
+\newlabel{nrf2401_8c_40feebbf10507c30a1e38aececdd3819}{{5.63.4.18}{165}{nrf\_\-rf\_\-power\_\-set\relax }{subsubsection.5.63.4.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.19}nrf\_\discretionary {-}{}{}rf\_\discretionary {-}{}{}standby}{165}{subsubsection.5.63.4.19}}
+\newlabel{nrf2401_8c_7cb1f7ca07d2198431cff7e4e58d7ec6}{{5.63.4.19}{165}{nrf\_\-rf\_\-standby\relax }{subsubsection.5.63.4.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.20}nrf\_\discretionary {-}{}{}setup}{165}{subsubsection.5.63.4.20}}
+\newlabel{nrf2401_8c_7a05cf6f8327cb403b1fcb0e452c9e88}{{5.63.4.20}{165}{nrf\_\-setup\relax }{subsubsection.5.63.4.20}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.21}nrf\_\discretionary {-}{}{}single\_\discretionary {-}{}{}or\_\discretionary {-}{}{}dual\_\discretionary {-}{}{}channel\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.21}}
+\newlabel{nrf2401_8c_d5f47caf44c586b614336bfc49f2fe7e}{{5.63.4.21}{165}{nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set\relax }{subsubsection.5.63.4.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.22}nrf\_\discretionary {-}{}{}transmit}{165}{subsubsection.5.63.4.22}}
+\newlabel{nrf2401_8c_0e314b78055c95c7763fdc627b9bd077}{{5.63.4.22}{165}{nrf\_\-transmit\relax }{subsubsection.5.63.4.22}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.63.4.23}nrf\_\discretionary {-}{}{}xtal\_\discretionary {-}{}{}freq\_\discretionary {-}{}{}set}{165}{subsubsection.5.63.4.23}}
+\newlabel{nrf2401_8c_46f4a00ca90d7ba649bd7670858eba76}{{5.63.4.23}{165}{nrf\_\-xtal\_\-freq\_\-set\relax }{subsubsection.5.63.4.23}{}}
+\@setckpt{nrf2401_8c}{
+\setcounter{page}{166}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{63}
+\setcounter{subsection}{4}
+\setcounter{subsubsection}{23}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

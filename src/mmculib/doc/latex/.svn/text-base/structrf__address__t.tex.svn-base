@@ -1,0 +1,26 @@
+\hypertarget{structrf__address__t}{
+\section{rf\_\-address\_\-t Struct Reference}
+\label{structrf__address__t}\index{rf\_\-address\_\-t@{rf\_\-address\_\-t}}
+}
+{\tt \#include $<$nrf2401.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+uint8\_\-t \hyperlink{structrf__address__t_23d0b0dc9aaacf018873043cd9f54d56}{bytes} \mbox{[}5\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structrf__address__t_23d0b0dc9aaacf018873043cd9f54d56}{
+\index{rf\_\-address\_\-t@{rf\_\-address\_\-t}!bytes@{bytes}}
+\index{bytes@{bytes}!rf_address_t@{rf\_\-address\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf rf\_\-address\_\-t::bytes}\mbox{[}5\mbox{]}}}
+\label{structrf__address__t_23d0b0dc9aaacf018873043cd9f54d56}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{nrf2401_8h}{nrf2401.h}\end{CompactItemize}

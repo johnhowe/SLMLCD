@@ -1,0 +1,223 @@
+\hypertarget{rf_8c}{
+\section{rf.c File Reference}
+\label{rf_8c}\index{rf.c@{rf.c}}
+}
+Higher-level routines for interfacing to a wireless link. 
+
+{\tt \#include $<$limits.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}rf.h\char`\"{}}\par
+{\tt \#include \char`\"{}time.h\char`\"{}}\par
+{\tt \#include \char`\"{}delay.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{rf_8c_82090a01768055068434c5c5e8c55c94}{RF\_\-DEBUG}~0
+\item 
+\#define \hyperlink{rf_8c_414e62382b4f31e419c3dce2bd833ca7}{HIGH\_\-BYTE}(x)~((x) $>$$>$ 8)
+\item 
+\#define \hyperlink{rf_8c_af16148e7a910d20df2da6bcf300ea25}{LOW\_\-BYTE}(x)~((x) \& 0xFF)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{rf_8c_c32606dd32e27e21cb106f7fda9be463}{rf\_\-address\_\-make} (\hyperlink{structrf__address__t}{rf\_\-address\_\-t} $\ast$address, \hyperlink{rf_8h_bcc4957db647b17909780c3acf87ac1a}{rf\_\-id\_\-t} id)
+\item 
+void \hyperlink{rf_8c_4c1a5b82c97e8eee0b4c1e8e505b6036}{rf\_\-node\_\-make} (\hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$node, \hyperlink{rf_8h_bcc4957db647b17909780c3acf87ac1a}{rf\_\-id\_\-t} id, uint8\_\-t channel)
+\item 
+void \hyperlink{rf_8c_9d8ce8e59706394df779bb9727ac943c}{rf\_\-write\_\-setup} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node)
+\item 
+void \hyperlink{rf_8c_7bf57481a71b41e35cb5d85a060735f3}{rf\_\-standby} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf)
+\item 
+\hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} \hyperlink{rf_8c_0d04e361854817df5dc44db94b5afb49}{rf\_\-transmit} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node, uint8\_\-t $\ast$data, \hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} size)
+\item 
+void \hyperlink{rf_8c_a0bcbef06b416ccbfba13e2103661070}{rf\_\-read\_\-enable} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf)
+\item 
+void \hyperlink{rf_8c_a54d9003807173a3021bc01a8317f371}{rf\_\-read\_\-setup} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$node)
+\item 
+\hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} \hyperlink{rf_8c_f38e13adee119f4c0c822ba193eb8ca5}{rf\_\-receive} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, uint8\_\-t $\ast$data, uint8\_\-t ms\_\-to\_\-wait)
+\item 
+\hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} \hyperlink{rf_8c_25ede5157ea1f7dc267bb403009dbe76}{rf\_\-write} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node, uint8\_\-t $\ast$data, \hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} size)
+\item 
+\hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} \hyperlink{rf_8c_fcc6741cc7766fa94f38043035f38a27}{rf\_\-read} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, uint8\_\-t $\ast$data, \hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} size, uint8\_\-t ms\_\-to\_\-wait)
+\item 
+\hyperlink{structnrf__obj__t}{rf\_\-t} \hyperlink{rf_8c_2f9ad7656fbdc96a98910123c4e7236f}{rf\_\-setup} (\hyperlink{structnrf__obj__t}{rf\_\-obj\_\-t} $\ast$dev, \hyperlink{structnrf__cfg__t}{rf\_\-cfg\_\-t} $\ast$cfg)
+\item 
+uint8\_\-t \hyperlink{rf_8c_f5b773ee8d9a746243d436fc7f3b02e8}{rf\_\-acknowledge\_\-wait} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$node, uint8\_\-t command, \hyperlink{structtime}{time\_\-t} $\ast$timestamp)
+\item 
+void \hyperlink{rf_8c_0d737e2634676b64649925402d46e0b8}{rf\_\-acknowledge} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node, uint8\_\-t command)
+\item 
+\hyperlink{structnrf__obj__t}{rf\_\-t} \hyperlink{rf_8c_d6ea754d2b49eade21e7bb2cef468f7c}{rf\_\-init} (\hyperlink{structnrf__obj__t}{rf\_\-obj\_\-t} $\ast$dev, \hyperlink{structnrf__cfg__t}{rf\_\-cfg\_\-t} $\ast$cfg)
+\item 
+uint16\_\-t \hyperlink{rf_8c_3f6b7dcb4b52c32fbc6bedb0fda54eb3}{rf\_\-write\_\-data} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node, uint8\_\-t $\ast$data, uint16\_\-t size)
+\item 
+bool \hyperlink{rf_8c_9f72a37abdca63675a61302d3da763a3}{rf\_\-read\_\-ready\_\-p} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf)
+\item 
+\hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} \hyperlink{rf_8c_e9f82a221ad3082cfceb08baa776eca0}{rf\_\-command} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node, \hyperlink{rf_8h_07879026b5aa44b9c98a6d57d9bad80e}{rf\_\-cmd\_\-t} command, void $\ast$data, \hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} data\_\-size)
+\item 
+void \hyperlink{rf_8c_faafc001416241ab37f6c27344b37d45}{rf\_\-command\_\-no\_\-ack} (\hyperlink{structnrf__obj__t}{rf\_\-t} rf, \hyperlink{structrf__node__t}{rf\_\-node\_\-t} $\ast$dst\_\-node, \hyperlink{rf_8h_07879026b5aa44b9c98a6d57d9bad80e}{rf\_\-cmd\_\-t} command, void $\ast$data, \hyperlink{rf_8h_4bef479c82be2f905bcea004c3a86b75}{rf\_\-size\_\-t} data\_\-size)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Higher-level routines for interfacing to a wireless link. 
+
+\begin{Desc}
+\item[Author:]Tony Culliford \end{Desc}
+\begin{Desc}
+\item[Date:]8 December 2004 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{rf_8c_414e62382b4f31e419c3dce2bd833ca7}{
+\index{rf.c@{rf.c}!HIGH\_\-BYTE@{HIGH\_\-BYTE}}
+\index{HIGH\_\-BYTE@{HIGH\_\-BYTE}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HIGH\_\-BYTE(x)~((x) $>$$>$ 8)}}
+\label{rf_8c_414e62382b4f31e419c3dce2bd833ca7}
+
+
+\hypertarget{rf_8c_af16148e7a910d20df2da6bcf300ea25}{
+\index{rf.c@{rf.c}!LOW\_\-BYTE@{LOW\_\-BYTE}}
+\index{LOW\_\-BYTE@{LOW\_\-BYTE}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LOW\_\-BYTE(x)~((x) \& 0xFF)}}
+\label{rf_8c_af16148e7a910d20df2da6bcf300ea25}
+
+
+\hypertarget{rf_8c_82090a01768055068434c5c5e8c55c94}{
+\index{rf.c@{rf.c}!RF\_\-DEBUG@{RF\_\-DEBUG}}
+\index{RF\_\-DEBUG@{RF\_\-DEBUG}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RF\_\-DEBUG~0}}
+\label{rf_8c_82090a01768055068434c5c5e8c55c94}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{rf_8c_0d737e2634676b64649925402d46e0b8}{
+\index{rf.c@{rf.c}!rf\_\-acknowledge@{rf\_\-acknowledge}}
+\index{rf\_\-acknowledge@{rf\_\-acknowledge}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-acknowledge ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node}, uint8\_\-t {\em command})}}
+\label{rf_8c_0d737e2634676b64649925402d46e0b8}
+
+
+\hypertarget{rf_8c_f5b773ee8d9a746243d436fc7f3b02e8}{
+\index{rf.c@{rf.c}!rf\_\-acknowledge\_\-wait@{rf\_\-acknowledge\_\-wait}}
+\index{rf\_\-acknowledge\_\-wait@{rf\_\-acknowledge\_\-wait}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t rf\_\-acknowledge\_\-wait ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em node}, uint8\_\-t {\em command}, {\bf time\_\-t} $\ast$ {\em timestamp})}}
+\label{rf_8c_f5b773ee8d9a746243d436fc7f3b02e8}
+
+
+\hypertarget{rf_8c_c32606dd32e27e21cb106f7fda9be463}{
+\index{rf.c@{rf.c}!rf\_\-address\_\-make@{rf\_\-address\_\-make}}
+\index{rf\_\-address\_\-make@{rf\_\-address\_\-make}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void rf\_\-address\_\-make ({\bf rf\_\-address\_\-t} $\ast$ {\em address}, {\bf rf\_\-id\_\-t} {\em id})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{rf_8c_c32606dd32e27e21cb106f7fda9be463}
+
+
+\hypertarget{rf_8c_e9f82a221ad3082cfceb08baa776eca0}{
+\index{rf.c@{rf.c}!rf\_\-command@{rf\_\-command}}
+\index{rf\_\-command@{rf\_\-command}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-size\_\-t} rf\_\-command ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node}, {\bf rf\_\-cmd\_\-t} {\em command}, void $\ast$ {\em data}, {\bf rf\_\-size\_\-t} {\em data\_\-size})}}
+\label{rf_8c_e9f82a221ad3082cfceb08baa776eca0}
+
+
+\hypertarget{rf_8c_faafc001416241ab37f6c27344b37d45}{
+\index{rf.c@{rf.c}!rf\_\-command\_\-no\_\-ack@{rf\_\-command\_\-no\_\-ack}}
+\index{rf\_\-command\_\-no\_\-ack@{rf\_\-command\_\-no\_\-ack}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-command\_\-no\_\-ack ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node}, {\bf rf\_\-cmd\_\-t} {\em command}, void $\ast$ {\em data}, {\bf rf\_\-size\_\-t} {\em data\_\-size})}}
+\label{rf_8c_faafc001416241ab37f6c27344b37d45}
+
+
+\hypertarget{rf_8c_d6ea754d2b49eade21e7bb2cef468f7c}{
+\index{rf.c@{rf.c}!rf\_\-init@{rf\_\-init}}
+\index{rf\_\-init@{rf\_\-init}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-t} rf\_\-init ({\bf rf\_\-obj\_\-t} $\ast$ {\em dev}, {\bf rf\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{rf_8c_d6ea754d2b49eade21e7bb2cef468f7c}
+
+
+\hypertarget{rf_8c_4c1a5b82c97e8eee0b4c1e8e505b6036}{
+\index{rf.c@{rf.c}!rf\_\-node\_\-make@{rf\_\-node\_\-make}}
+\index{rf\_\-node\_\-make@{rf\_\-node\_\-make}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-node\_\-make ({\bf rf\_\-node\_\-t} $\ast$ {\em node}, {\bf rf\_\-id\_\-t} {\em id}, uint8\_\-t {\em channel})}}
+\label{rf_8c_4c1a5b82c97e8eee0b4c1e8e505b6036}
+
+
+\hypertarget{rf_8c_fcc6741cc7766fa94f38043035f38a27}{
+\index{rf.c@{rf.c}!rf\_\-read@{rf\_\-read}}
+\index{rf\_\-read@{rf\_\-read}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-size\_\-t} rf\_\-read ({\bf rf\_\-t} {\em rf}, uint8\_\-t $\ast$ {\em data}, {\bf rf\_\-size\_\-t} {\em size}, uint8\_\-t {\em ms\_\-to\_\-wait})}}
+\label{rf_8c_fcc6741cc7766fa94f38043035f38a27}
+
+
+\hypertarget{rf_8c_a0bcbef06b416ccbfba13e2103661070}{
+\index{rf.c@{rf.c}!rf\_\-read\_\-enable@{rf\_\-read\_\-enable}}
+\index{rf\_\-read\_\-enable@{rf\_\-read\_\-enable}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-read\_\-enable ({\bf rf\_\-t} {\em rf})}}
+\label{rf_8c_a0bcbef06b416ccbfba13e2103661070}
+
+
+\hypertarget{rf_8c_9f72a37abdca63675a61302d3da763a3}{
+\index{rf.c@{rf.c}!rf\_\-read\_\-ready\_\-p@{rf\_\-read\_\-ready\_\-p}}
+\index{rf\_\-read\_\-ready\_\-p@{rf\_\-read\_\-ready\_\-p}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool rf\_\-read\_\-ready\_\-p ({\bf rf\_\-t} {\em rf})}}
+\label{rf_8c_9f72a37abdca63675a61302d3da763a3}
+
+
+\hypertarget{rf_8c_a54d9003807173a3021bc01a8317f371}{
+\index{rf.c@{rf.c}!rf\_\-read\_\-setup@{rf\_\-read\_\-setup}}
+\index{rf\_\-read\_\-setup@{rf\_\-read\_\-setup}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-read\_\-setup ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em node})}}
+\label{rf_8c_a54d9003807173a3021bc01a8317f371}
+
+
+\hypertarget{rf_8c_f38e13adee119f4c0c822ba193eb8ca5}{
+\index{rf.c@{rf.c}!rf\_\-receive@{rf\_\-receive}}
+\index{rf\_\-receive@{rf\_\-receive}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-size\_\-t} rf\_\-receive ({\bf rf\_\-t} {\em rf}, uint8\_\-t $\ast$ {\em data}, uint8\_\-t {\em ms\_\-to\_\-wait})}}
+\label{rf_8c_f38e13adee119f4c0c822ba193eb8ca5}
+
+
+\hypertarget{rf_8c_2f9ad7656fbdc96a98910123c4e7236f}{
+\index{rf.c@{rf.c}!rf\_\-setup@{rf\_\-setup}}
+\index{rf\_\-setup@{rf\_\-setup}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-t} rf\_\-setup ({\bf rf\_\-obj\_\-t} $\ast$ {\em dev}, {\bf rf\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{rf_8c_2f9ad7656fbdc96a98910123c4e7236f}
+
+
+\hypertarget{rf_8c_7bf57481a71b41e35cb5d85a060735f3}{
+\index{rf.c@{rf.c}!rf\_\-standby@{rf\_\-standby}}
+\index{rf\_\-standby@{rf\_\-standby}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-standby ({\bf rf\_\-t} {\em rf})}}
+\label{rf_8c_7bf57481a71b41e35cb5d85a060735f3}
+
+
+\hypertarget{rf_8c_0d04e361854817df5dc44db94b5afb49}{
+\index{rf.c@{rf.c}!rf\_\-transmit@{rf\_\-transmit}}
+\index{rf\_\-transmit@{rf\_\-transmit}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-size\_\-t} rf\_\-transmit ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node}, uint8\_\-t $\ast$ {\em data}, {\bf rf\_\-size\_\-t} {\em size})}}
+\label{rf_8c_0d04e361854817df5dc44db94b5afb49}
+
+
+\hypertarget{rf_8c_25ede5157ea1f7dc267bb403009dbe76}{
+\index{rf.c@{rf.c}!rf\_\-write@{rf\_\-write}}
+\index{rf\_\-write@{rf\_\-write}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf rf\_\-size\_\-t} rf\_\-write ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node}, uint8\_\-t $\ast$ {\em data}, {\bf rf\_\-size\_\-t} {\em size})}}
+\label{rf_8c_25ede5157ea1f7dc267bb403009dbe76}
+
+
+\hypertarget{rf_8c_3f6b7dcb4b52c32fbc6bedb0fda54eb3}{
+\index{rf.c@{rf.c}!rf\_\-write\_\-data@{rf\_\-write\_\-data}}
+\index{rf\_\-write\_\-data@{rf\_\-write\_\-data}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t rf\_\-write\_\-data ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node}, uint8\_\-t $\ast$ {\em data}, uint16\_\-t {\em size})}}
+\label{rf_8c_3f6b7dcb4b52c32fbc6bedb0fda54eb3}
+
+
+\hypertarget{rf_8c_9d8ce8e59706394df779bb9727ac943c}{
+\index{rf.c@{rf.c}!rf\_\-write\_\-setup@{rf\_\-write\_\-setup}}
+\index{rf\_\-write\_\-setup@{rf\_\-write\_\-setup}!rf.c@{rf.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rf\_\-write\_\-setup ({\bf rf\_\-t} {\em rf}, {\bf rf\_\-node\_\-t} $\ast$ {\em dst\_\-node})}}
+\label{rf_8c_9d8ce8e59706394df779bb9727ac943c}
+
+

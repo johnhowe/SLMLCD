@@ -1,0 +1,171 @@
+\hypertarget{structnrf__config__bits__t}{
+\section{nrf\_\-config\_\-bits\_\-t Struct Reference}
+\label{structnrf__config__bits__t}\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}}
+}
+{\tt \#include $<$nrf2401.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_854c05fe9c8d602df4fbcb8f53669aca}{rxen}:1
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_06ccf2e47df1431ffcad0c87946f59a7}{rx\_\-ch\_\-num}:7
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_931af1233b52d2de3210af9a693d774a}{rf\_\-pwr}:2
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_6ab1a0df70813a03e2a8da882de23437}{xo\_\-f}:3
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_69ed8edc0fd106984843c43b6c12ffa9}{rfdr\_\-sb}:1
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_fad6dd3d6d8234e9ff1227d715ff2f6c}{cm}:1
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_3852d77b88b86fd1acd154baecb9a6c2}{rx2\_\-en}:1
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_e871d44380a8993366cb72bbada57f86}{crc\_\-en}:1
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_c92bc2e054e12c9d6280b98bc329e2cf}{crc\_\-l}:1
+\item 
+unsigned int \hyperlink{structnrf__config__bits__t_502ae4e72d50d451dfeb3ea676bad844}{addr\_\-w}:6
+\item 
+\hyperlink{structnrf__address__t}{nrf\_\-address\_\-t} \hyperlink{structnrf__config__bits__t_6d67ab223708c6ddd9e98123a185c5de}{addr\_\-1}
+\item 
+\hyperlink{structnrf__address__t}{nrf\_\-address\_\-t} \hyperlink{structnrf__config__bits__t_97d736891f34778ce763c7c59c8fd772}{addr\_\-2}
+\item 
+uint8\_\-t \hyperlink{structnrf__config__bits__t_a0d3c8404b172ff4fe0c93576cbb24b6}{data1\_\-w}
+\item 
+uint8\_\-t \hyperlink{structnrf__config__bits__t_0c1bd7d7e3cac550eb25a2d5f3b76bcd}{data2\_\-w}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structnrf__config__bits__t_854c05fe9c8d602df4fbcb8f53669aca}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!rxen@{rxen}}
+\index{rxen@{rxen}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::rxen}}}
+\label{structnrf__config__bits__t_854c05fe9c8d602df4fbcb8f53669aca}
+
+
+
+
+Referenced by nrf\_\-dir\_\-set().\hypertarget{structnrf__config__bits__t_06ccf2e47df1431ffcad0c87946f59a7}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!rx\_\-ch\_\-num@{rx\_\-ch\_\-num}}
+\index{rx\_\-ch\_\-num@{rx\_\-ch\_\-num}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::rx\_\-ch\_\-num}}}
+\label{structnrf__config__bits__t_06ccf2e47df1431ffcad0c87946f59a7}
+
+
+
+
+Referenced by nrf\_\-channel\_\-set().\hypertarget{structnrf__config__bits__t_931af1233b52d2de3210af9a693d774a}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!rf\_\-pwr@{rf\_\-pwr}}
+\index{rf\_\-pwr@{rf\_\-pwr}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::rf\_\-pwr}}}
+\label{structnrf__config__bits__t_931af1233b52d2de3210af9a693d774a}
+
+
+
+
+Referenced by nrf\_\-power\_\-set().\hypertarget{structnrf__config__bits__t_6ab1a0df70813a03e2a8da882de23437}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!xo\_\-f@{xo\_\-f}}
+\index{xo\_\-f@{xo\_\-f}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::xo\_\-f}}}
+\label{structnrf__config__bits__t_6ab1a0df70813a03e2a8da882de23437}
+
+
+
+
+Referenced by nrf\_\-xtal\_\-freq\_\-set().\hypertarget{structnrf__config__bits__t_69ed8edc0fd106984843c43b6c12ffa9}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!rfdr\_\-sb@{rfdr\_\-sb}}
+\index{rfdr\_\-sb@{rfdr\_\-sb}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::rfdr\_\-sb}}}
+\label{structnrf__config__bits__t_69ed8edc0fd106984843c43b6c12ffa9}
+
+
+
+
+Referenced by nrf\_\-data\_\-rate\_\-set(), and nrf\_\-transmit().\hypertarget{structnrf__config__bits__t_fad6dd3d6d8234e9ff1227d715ff2f6c}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!cm@{cm}}
+\index{cm@{cm}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::cm}}}
+\label{structnrf__config__bits__t_fad6dd3d6d8234e9ff1227d715ff2f6c}
+
+
+
+
+Referenced by nrf\_\-comms\_\-mode\_\-set().\hypertarget{structnrf__config__bits__t_3852d77b88b86fd1acd154baecb9a6c2}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!rx2\_\-en@{rx2\_\-en}}
+\index{rx2\_\-en@{rx2\_\-en}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::rx2\_\-en}}}
+\label{structnrf__config__bits__t_3852d77b88b86fd1acd154baecb9a6c2}
+
+
+
+
+Referenced by nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set().\hypertarget{structnrf__config__bits__t_e871d44380a8993366cb72bbada57f86}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!crc\_\-en@{crc\_\-en}}
+\index{crc\_\-en@{crc\_\-en}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::crc\_\-en}}}
+\label{structnrf__config__bits__t_e871d44380a8993366cb72bbada57f86}
+
+
+
+
+Referenced by nrf\_\-crc\_\-status\_\-set(), and nrf\_\-transmit().\hypertarget{structnrf__config__bits__t_c92bc2e054e12c9d6280b98bc329e2cf}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!crc\_\-l@{crc\_\-l}}
+\index{crc\_\-l@{crc\_\-l}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::crc\_\-l}}}
+\label{structnrf__config__bits__t_c92bc2e054e12c9d6280b98bc329e2cf}
+
+
+
+
+Referenced by nrf\_\-crc\_\-length\_\-set(), and nrf\_\-transmit().\hypertarget{structnrf__config__bits__t_502ae4e72d50d451dfeb3ea676bad844}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!addr\_\-w@{addr\_\-w}}
+\index{addr\_\-w@{addr\_\-w}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf nrf\_\-config\_\-bits\_\-t::addr\_\-w}}}
+\label{structnrf__config__bits__t_502ae4e72d50d451dfeb3ea676bad844}
+
+
+
+
+Referenced by nrf\_\-address\_\-length\_\-set(), and nrf\_\-transmit().\hypertarget{structnrf__config__bits__t_6d67ab223708c6ddd9e98123a185c5de}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!addr\_\-1@{addr\_\-1}}
+\index{addr\_\-1@{addr\_\-1}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf nrf\_\-address\_\-t} {\bf nrf\_\-config\_\-bits\_\-t::addr\_\-1}}}
+\label{structnrf__config__bits__t_6d67ab223708c6ddd9e98123a185c5de}
+
+
+
+
+Referenced by nrf\_\-address1\_\-set().\hypertarget{structnrf__config__bits__t_97d736891f34778ce763c7c59c8fd772}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!addr\_\-2@{addr\_\-2}}
+\index{addr\_\-2@{addr\_\-2}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf nrf\_\-address\_\-t} {\bf nrf\_\-config\_\-bits\_\-t::addr\_\-2}}}
+\label{structnrf__config__bits__t_97d736891f34778ce763c7c59c8fd772}
+
+
+
+
+Referenced by nrf\_\-address2\_\-set().\hypertarget{structnrf__config__bits__t_a0d3c8404b172ff4fe0c93576cbb24b6}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!data1\_\-w@{data1\_\-w}}
+\index{data1\_\-w@{data1\_\-w}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf nrf\_\-config\_\-bits\_\-t::data1\_\-w}}}
+\label{structnrf__config__bits__t_a0d3c8404b172ff4fe0c93576cbb24b6}
+
+
+
+
+Referenced by nrf\_\-payload\_\-length1\_\-get(), nrf\_\-payload\_\-length1\_\-set(), and nrf\_\-transmit().\hypertarget{structnrf__config__bits__t_0c1bd7d7e3cac550eb25a2d5f3b76bcd}{
+\index{nrf\_\-config\_\-bits\_\-t@{nrf\_\-config\_\-bits\_\-t}!data2\_\-w@{data2\_\-w}}
+\index{data2\_\-w@{data2\_\-w}!nrf_config_bits_t@{nrf\_\-config\_\-bits\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf nrf\_\-config\_\-bits\_\-t::data2\_\-w}}}
+\label{structnrf__config__bits__t_0c1bd7d7e3cac550eb25a2d5f3b76bcd}
+
+
+
+
+Referenced by nrf\_\-payload\_\-length2\_\-set().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{nrf2401_8h}{nrf2401.h}\end{CompactItemize}

@@ -1,0 +1,61 @@
+\hypertarget{structmbuttons__private__t}{
+\section{mbuttons\_\-private\_\-t Struct Reference}
+\label{structmbuttons__private__t}\index{mbuttons\_\-private\_\-t@{mbuttons\_\-private\_\-t}}
+}
+{\tt \#include $<$mbuttons.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{structbutton__private__t}{button\_\-t} \hyperlink{structmbuttons__private__t_0c037a26c756dab64466552f67952fc8}{buttons}
+\item 
+const \hyperlink{structbutton__cfg__t}{button\_\-cfg\_\-t} const $\ast$ \hyperlink{structmbuttons__private__t_ad8c85eaa45047fdd2601fec6c1005d3}{row\_\-config}
+\item 
+uint8\_\-t \hyperlink{structmbuttons__private__t_621c71d6f049859514d3357f301da75d}{rows\_\-num}
+\item 
+uint8\_\-t \hyperlink{structmbuttons__private__t_87042e6c165265ce9909f383b04829c3}{cols\_\-num}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structmbuttons__private__t_0c037a26c756dab64466552f67952fc8}{
+\index{mbuttons\_\-private\_\-t@{mbuttons\_\-private\_\-t}!buttons@{buttons}}
+\index{buttons@{buttons}!mbuttons_private_t@{mbuttons\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf button\_\-t} {\bf mbuttons\_\-private\_\-t::buttons}}}
+\label{structmbuttons__private__t_0c037a26c756dab64466552f67952fc8}
+
+
+
+
+Referenced by mbuttons\_\-any\_\-state\_\-p(), mbuttons\_\-held\_\-p(), mbuttons\_\-hold\_\-released\_\-p(), mbuttons\_\-init(), mbuttons\_\-poll(), mbuttons\_\-pushed\_\-p(), mbuttons\_\-released\_\-p(), and mbuttons\_\-wakeup\_\-p().\hypertarget{structmbuttons__private__t_ad8c85eaa45047fdd2601fec6c1005d3}{
+\index{mbuttons\_\-private\_\-t@{mbuttons\_\-private\_\-t}!row\_\-config@{row\_\-config}}
+\index{row\_\-config@{row\_\-config}!mbuttons_private_t@{mbuttons\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf button\_\-cfg\_\-t} const$\ast$ {\bf mbuttons\_\-private\_\-t::row\_\-config}}}
+\label{structmbuttons__private__t_ad8c85eaa45047fdd2601fec6c1005d3}
+
+
+
+
+Referenced by mbuttons\_\-init(), mbuttons\_\-poll(), and mbuttons\_\-wakeup\_\-init().\hypertarget{structmbuttons__private__t_621c71d6f049859514d3357f301da75d}{
+\index{mbuttons\_\-private\_\-t@{mbuttons\_\-private\_\-t}!rows\_\-num@{rows\_\-num}}
+\index{rows\_\-num@{rows\_\-num}!mbuttons_private_t@{mbuttons\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf mbuttons\_\-private\_\-t::rows\_\-num}}}
+\label{structmbuttons__private__t_621c71d6f049859514d3357f301da75d}
+
+
+
+
+Referenced by mbuttons\_\-any\_\-state\_\-p(), mbuttons\_\-init(), mbuttons\_\-poll(), and mbuttons\_\-wakeup\_\-init().\hypertarget{structmbuttons__private__t_87042e6c165265ce9909f383b04829c3}{
+\index{mbuttons\_\-private\_\-t@{mbuttons\_\-private\_\-t}!cols\_\-num@{cols\_\-num}}
+\index{cols\_\-num@{cols\_\-num}!mbuttons_private_t@{mbuttons\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf mbuttons\_\-private\_\-t::cols\_\-num}}}
+\label{structmbuttons__private__t_87042e6c165265ce9909f383b04829c3}
+
+
+
+
+Referenced by mbuttons\_\-any\_\-state\_\-p(), mbuttons\_\-init(), mbuttons\_\-poll(), and mbuttons\_\-wakeup\_\-p().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{mbuttons_8h}{mbuttons.h}\end{CompactItemize}

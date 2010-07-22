@@ -1,0 +1,35 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}ads8325.c File Reference}{75}{section.5.3}}
+\newlabel{ads8325_8c}{{5.3}{75}{ads8325.c File Reference\relax }{section.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Function Documentation}{75}{subsection.5.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.1}ads8325\_\discretionary {-}{}{}chip\_\discretionary {-}{}{}deselect}{75}{subsubsection.5.3.1.1}}
+\newlabel{ads8325_8c_18ecc0c11b94ee7b212bbf0ffa9f0cb9}{{5.3.1.1}{75}{ads8325\_\-chip\_\-deselect\relax }{subsubsection.5.3.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.2}ads8325\_\discretionary {-}{}{}chip\_\discretionary {-}{}{}select}{75}{subsubsection.5.3.1.2}}
+\newlabel{ads8325_8c_a0a8a70e1fbcbfcb447f5490c7859b6b}{{5.3.1.2}{75}{ads8325\_\-chip\_\-select\relax }{subsubsection.5.3.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.3}ads8325\_\discretionary {-}{}{}init}{75}{subsubsection.5.3.1.3}}
+\newlabel{ads8325_8c_75cee2da0a396baac0722140c67b8aa7}{{5.3.1.3}{75}{ads8325\_\-init\relax }{subsubsection.5.3.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.4}ads8325\_\discretionary {-}{}{}read}{75}{subsubsection.5.3.1.4}}
+\newlabel{ads8325_8c_f2d3ef8342ac57fa898fe4b6f69b84d9}{{5.3.1.4}{75}{ads8325\_\-read\relax }{subsubsection.5.3.1.4}{}}
+\@setckpt{ads8325_8c}{
+\setcounter{page}{76}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{3}
+\setcounter{subsection}{1}
+\setcounter{subsubsection}{4}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

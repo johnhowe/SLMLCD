@@ -1,0 +1,56 @@
+\hypertarget{nmea_8h}{
+\section{nmea.h File Reference}
+\label{nmea_8h}\index{nmea.h@{nmea.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{nmea_8h_fc5d3558e526b75f786f987b0dd6a1a2}{NMEA\_\-BUFFER\_\-SIZE}~80
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+uint8\_\-t \hyperlink{nmea_8h_d946597412bbb0417b3d6c53e21741c0}{nmea\_\-checksum} (const char $\ast$string)
+\item 
+void \hyperlink{nmea_8h_50f3c296b3470a6498f5ea634c5db866}{nmea\_\-puts} (const char $\ast$string)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{nmea_8h_fc5d3558e526b75f786f987b0dd6a1a2}{
+\index{nmea.h@{nmea.h}!NMEA\_\-BUFFER\_\-SIZE@{NMEA\_\-BUFFER\_\-SIZE}}
+\index{NMEA\_\-BUFFER\_\-SIZE@{NMEA\_\-BUFFER\_\-SIZE}!nmea.h@{nmea.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NMEA\_\-BUFFER\_\-SIZE~80}}
+\label{nmea_8h_fc5d3558e526b75f786f987b0dd6a1a2}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{nmea_8h_d946597412bbb0417b3d6c53e21741c0}{
+\index{nmea.h@{nmea.h}!nmea\_\-checksum@{nmea\_\-checksum}}
+\index{nmea\_\-checksum@{nmea\_\-checksum}!nmea.h@{nmea.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t nmea\_\-checksum (const char $\ast$ {\em string})}}
+\label{nmea_8h_d946597412bbb0417b3d6c53e21741c0}
+
+
+
+
+Referenced by nmea\_\-puts().\hypertarget{nmea_8h_50f3c296b3470a6498f5ea634c5db866}{
+\index{nmea.h@{nmea.h}!nmea\_\-puts@{nmea\_\-puts}}
+\index{nmea\_\-puts@{nmea\_\-puts}!nmea.h@{nmea.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nmea\_\-puts (const char $\ast$ {\em string})}}
+\label{nmea_8h_50f3c296b3470a6498f5ea634c5db866}
+
+
+
+
+References nmea\_\-checksum().

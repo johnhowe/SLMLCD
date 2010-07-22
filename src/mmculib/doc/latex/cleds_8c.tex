@@ -1,0 +1,46 @@
+\hypertarget{cleds_8c}{
+\section{cleds.c File Reference}
+\label{cleds_8c}\index{cleds.c@{cleds.c}}
+}
+{\tt \#include \char`\"{}cleds.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{cleds_8c_98765178124a02e1d52766a763cae4b6}{cleds\_\-init} (\hyperlink{structcleds__private__t}{cleds\_\-obj\_\-t} $\ast$cleds, const \hyperlink{led_8h_938ecc42017938534e3132bb674b0b23}{led\_\-cfg\_\-t} $\ast$row\_\-config, uint8\_\-t rows\_\-num, const \hyperlink{led_8h_938ecc42017938534e3132bb674b0b23}{led\_\-cfg\_\-t} $\ast$col\_\-config, uint8\_\-t cols\_\-num)
+\item 
+uint8\_\-t \hyperlink{cleds_8c_faaf6e5a0d1adf378f5f696f4c7a3114}{cleds\_\-common\_\-set} (\hyperlink{structcleds__private__t}{cleds\_\-t} cleds, uint8\_\-t row)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]29 June 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{cleds_8c_faaf6e5a0d1adf378f5f696f4c7a3114}{
+\index{cleds.c@{cleds.c}!cleds\_\-common\_\-set@{cleds\_\-common\_\-set}}
+\index{cleds\_\-common\_\-set@{cleds\_\-common\_\-set}!cleds.c@{cleds.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t cleds\_\-common\_\-set ({\bf cleds\_\-t} {\em cleds}, \/  uint8\_\-t {\em row})}}
+\label{cleds_8c_faaf6e5a0d1adf378f5f696f4c7a3114}
+
+
+
+
+References cleds\_\-private\_\-t::row, and cleds\_\-private\_\-t::row\_\-config.
+
+Referenced by cleds\_\-common\_\-cycle(), mcleds\_\-disable(), mcleds\_\-enable(), mcleds\_\-init(), and mcleds\_\-update().\hypertarget{cleds_8c_98765178124a02e1d52766a763cae4b6}{
+\index{cleds.c@{cleds.c}!cleds\_\-init@{cleds\_\-init}}
+\index{cleds\_\-init@{cleds\_\-init}!cleds.c@{cleds.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cleds\_\-init ({\bf cleds\_\-obj\_\-t} $\ast$ {\em cleds}, \/  const {\bf led\_\-cfg\_\-t} $\ast$ {\em row\_\-config}, \/  uint8\_\-t {\em rows\_\-num}, \/  const {\bf led\_\-cfg\_\-t} $\ast$ {\em col\_\-config}, \/  uint8\_\-t {\em cols\_\-num})}}
+\label{cleds_8c_98765178124a02e1d52766a763cae4b6}
+
+
+
+
+References cleds\_\-private\_\-t::cols\_\-num, led\_\-init(), cleds\_\-private\_\-t::leds, cleds\_\-private\_\-t::row, cleds\_\-private\_\-t::row\_\-config, and cleds\_\-private\_\-t::rows\_\-num.
+
+Referenced by mcleds\_\-init().

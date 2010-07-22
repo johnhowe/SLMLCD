@@ -1,0 +1,46 @@
+\hypertarget{u1wire__debug_8c}{
+\section{u1wire\_\-debug.c File Reference}
+\label{u1wire__debug_8c}\index{u1wire\_\-debug.c@{u1wire\_\-debug.c}}
+}
+{\tt \#include \char`\"{}u1wire.h\char`\"{}}\par
+{\tt \#include $<$stdio.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{u1wire__debug_8c_735bc6b384c59bab6e3c4ef47cb18a36}{U1WIRE\_\-DEBUG}~1
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{u1wire__debug_8c_092d12ba9e184b9397f07035023d756f}{u1wire\_\-debug} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{u1wire__debug_8c_735bc6b384c59bab6e3c4ef47cb18a36}{
+\index{u1wire\_\-debug.c@{u1wire\_\-debug.c}!U1WIRE\_\-DEBUG@{U1WIRE\_\-DEBUG}}
+\index{U1WIRE\_\-DEBUG@{U1WIRE\_\-DEBUG}!u1wire_debug.c@{u1wire\_\-debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define U1WIRE\_\-DEBUG~1}}
+\label{u1wire__debug_8c_735bc6b384c59bab6e3c4ef47cb18a36}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{u1wire__debug_8c_092d12ba9e184b9397f07035023d756f}{
+\index{u1wire\_\-debug.c@{u1wire\_\-debug.c}!u1wire\_\-debug@{u1wire\_\-debug}}
+\index{u1wire\_\-debug@{u1wire\_\-debug}!u1wire_debug.c@{u1wire\_\-debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void u1wire\_\-debug ({\bf u1wire\_\-t} {\em dev})}}
+\label{u1wire__debug_8c_092d12ba9e184b9397f07035023d756f}
+
+
+
+
+References u1wire\_\-rom\_\-code\_\-t::crc, u1wire\_\-rom\_\-code\_\-t::family, u1wire\_\-rom\_\-code\_\-t::fields, u1wire\_\-obj\_\-t::rom\_\-code, and u1wire\_\-rom\_\-code\_\-t::serial.

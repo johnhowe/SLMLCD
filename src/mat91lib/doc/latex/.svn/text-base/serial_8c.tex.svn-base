@@ -1,0 +1,104 @@
+\hypertarget{serial_8c}{
+\section{serial.c File Reference}
+\label{serial_8c}\index{serial.c@{serial.c}}
+}
+{\tt \#include \char`\"{}Board.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{serial_8c_fa556a68b7c0fcc58cd87c5f36859f30}{BR}~115200
+\item 
+\#define \hyperlink{serial_8c_9e67fa64f448ac1e3a2bd48d61ec8d49}{BRD}~(MCK/16/BR)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{serial_8c_bbbf5055286d09a73b87f57f71dfd0b9}{uart0\_\-init} (void)
+\item 
+int \hyperlink{serial_8c_078b63c05eb7d75d4e89f131a2e4e2aa}{uart0\_\-putc} (int ch)
+\item 
+int \hyperlink{serial_8c_19170c0b9ae471f353341fccf15d84db}{uart0\_\-putchar} (int ch)
+\item 
+int \hyperlink{serial_8c_849c8ea27c0a92cfb7798741209f6b53}{uart0\_\-puts} (char $\ast$s)
+\item 
+int \hyperlink{serial_8c_693d0c1a3c7a7132adf201291b2ee31c}{uart0\_\-kbhit} (void)
+\item 
+int \hyperlink{serial_8c_0adfc4bf31c0c6b8f23164ab3f0bbd41}{uart0\_\-getc} (void)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{struct__AT91S__USART}{AT91S\_\-USART} $\ast$ \hyperlink{serial_8c_8c041c5d192ea8971384ee8ae43e6953}{pUSART} = AT91C\_\-BASE\_\-US0
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{serial_8c_fa556a68b7c0fcc58cd87c5f36859f30}{
+\index{serial.c@{serial.c}!BR@{BR}}
+\index{BR@{BR}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BR~115200}}
+\label{serial_8c_fa556a68b7c0fcc58cd87c5f36859f30}
+
+
+\hypertarget{serial_8c_9e67fa64f448ac1e3a2bd48d61ec8d49}{
+\index{serial.c@{serial.c}!BRD@{BRD}}
+\index{BRD@{BRD}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BRD~(MCK/16/BR)}}
+\label{serial_8c_9e67fa64f448ac1e3a2bd48d61ec8d49}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{serial_8c_0adfc4bf31c0c6b8f23164ab3f0bbd41}{
+\index{serial.c@{serial.c}!uart0\_\-getc@{uart0\_\-getc}}
+\index{uart0\_\-getc@{uart0\_\-getc}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int uart0\_\-getc (void)}}
+\label{serial_8c_0adfc4bf31c0c6b8f23164ab3f0bbd41}
+
+
+\hypertarget{serial_8c_bbbf5055286d09a73b87f57f71dfd0b9}{
+\index{serial.c@{serial.c}!uart0\_\-init@{uart0\_\-init}}
+\index{uart0\_\-init@{uart0\_\-init}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void uart0\_\-init (void)}}
+\label{serial_8c_bbbf5055286d09a73b87f57f71dfd0b9}
+
+
+\hypertarget{serial_8c_693d0c1a3c7a7132adf201291b2ee31c}{
+\index{serial.c@{serial.c}!uart0\_\-kbhit@{uart0\_\-kbhit}}
+\index{uart0\_\-kbhit@{uart0\_\-kbhit}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int uart0\_\-kbhit (void)}}
+\label{serial_8c_693d0c1a3c7a7132adf201291b2ee31c}
+
+
+\hypertarget{serial_8c_078b63c05eb7d75d4e89f131a2e4e2aa}{
+\index{serial.c@{serial.c}!uart0\_\-putc@{uart0\_\-putc}}
+\index{uart0\_\-putc@{uart0\_\-putc}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int uart0\_\-putc (int {\em ch})}}
+\label{serial_8c_078b63c05eb7d75d4e89f131a2e4e2aa}
+
+
+\hypertarget{serial_8c_19170c0b9ae471f353341fccf15d84db}{
+\index{serial.c@{serial.c}!uart0\_\-putchar@{uart0\_\-putchar}}
+\index{uart0\_\-putchar@{uart0\_\-putchar}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int uart0\_\-putchar (int {\em ch})}}
+\label{serial_8c_19170c0b9ae471f353341fccf15d84db}
+
+
+\hypertarget{serial_8c_849c8ea27c0a92cfb7798741209f6b53}{
+\index{serial.c@{serial.c}!uart0\_\-puts@{uart0\_\-puts}}
+\index{uart0\_\-puts@{uart0\_\-puts}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int uart0\_\-puts (char $\ast$ {\em s})}}
+\label{serial_8c_849c8ea27c0a92cfb7798741209f6b53}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{serial_8c_8c041c5d192ea8971384ee8ae43e6953}{
+\index{serial.c@{serial.c}!pUSART@{pUSART}}
+\index{pUSART@{pUSART}!serial.c@{serial.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-USART}$\ast$ {\bf pUSART} = AT91C\_\-BASE\_\-US0}}
+\label{serial_8c_8c041c5d192ea8971384ee8ae43e6953}
+
+

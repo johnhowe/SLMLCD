@@ -1,0 +1,43 @@
+\hypertarget{font_8c}{
+\section{font.c File Reference}
+\label{font_8c}\index{font.c@{font.c}}
+}
+Font support. 
+
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{font_8c_65753ea824b832b4a8b40d6411d797cd}{font\_\-display} (char ch, \hyperlink{structfont__t}{font\_\-t} $\ast$font, \hyperlink{font_8h_75e30ee617c87f17ff13e4d2d03ada62}{font\_\-callback\_\-t} display, void $\ast$data)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Font support. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]1 March 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{font_8c_65753ea824b832b4a8b40d6411d797cd}{
+\index{font.c@{font.c}!font\_\-display@{font\_\-display}}
+\index{font\_\-display@{font\_\-display}!font.c@{font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool font\_\-display (char {\em ch}, \/  {\bf font\_\-t} $\ast$ {\em font}, \/  {\bf font\_\-callback\_\-t} {\em display}, \/  void $\ast$ {\em data})}}
+\label{font_8c_65753ea824b832b4a8b40d6411d797cd}
+
+
+Call callback function for every pixel in font. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ch}]character to display \item[{\em font}]point to font structure \item[{\em display}]pointer to callback function \item[{\em data}]pointer to pass to callback function \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if ch in font otherwise 0 \end{Desc}
+
+
+References font\_\-t::data, font\_\-t::height, font\_\-t::offset, font\_\-t::size, and font\_\-t::width.
+
+Referenced by chaser\_\-update(), glcd\_\-text(), mtext\_\-display(), and stext\_\-display().

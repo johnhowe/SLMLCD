@@ -1,0 +1,81 @@
+\hypertarget{sflash_8h}{
+\section{sflash.h File Reference}
+\label{sflash_8h}\index{sflash.h@{sflash.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structsflash__obj__t}{sflash\_\-obj\_\-t}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef uint16\_\-t \hyperlink{sflash_8h_be66c5fe3d5d2392301219ae8ebbbcba}{sflash\_\-pattern\_\-t}
+\item 
+typedef \hyperlink{structsflash__obj__t}{sflash\_\-obj\_\-t} $\ast$ \hyperlink{sflash_8h_4408c1898ad75eb1543512bec1108030}{sflash\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{sflash_8h_d0a14489ed4c24d9a4774ab47f29fc5a}{sflash\_\-pattern\_\-set} (\hyperlink{structsflash__obj__t}{sflash\_\-t} sflash, \hyperlink{sflash_8h_be66c5fe3d5d2392301219ae8ebbbcba}{sflash\_\-pattern\_\-t} pattern, \hyperlink{sflash_8h_be66c5fe3d5d2392301219ae8ebbbcba}{sflash\_\-pattern\_\-t} initial)
+\item 
+static \hyperlink{sflash_8h_be66c5fe3d5d2392301219ae8ebbbcba}{sflash\_\-pattern\_\-t} \hyperlink{sflash_8h_fe80ccdc413c34786fc5c5cb7dbd2cf9}{sflash\_\-pattern\_\-get} (\hyperlink{structsflash__obj__t}{sflash\_\-t} sflash)
+\item 
+bool \hyperlink{sflash_8h_c7420a60e011b4c328dad723ae70ee0f}{sflash\_\-update} (\hyperlink{structsflash__obj__t}{sflash\_\-t})
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]2 July 2007 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{sflash_8h_be66c5fe3d5d2392301219ae8ebbbcba}{
+\index{sflash.h@{sflash.h}!sflash\_\-pattern\_\-t@{sflash\_\-pattern\_\-t}}
+\index{sflash\_\-pattern\_\-t@{sflash\_\-pattern\_\-t}!sflash.h@{sflash.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\_\-t {\bf sflash\_\-pattern\_\-t}}}
+\label{sflash_8h_be66c5fe3d5d2392301219ae8ebbbcba}
+
+
+\hypertarget{sflash_8h_4408c1898ad75eb1543512bec1108030}{
+\index{sflash.h@{sflash.h}!sflash\_\-t@{sflash\_\-t}}
+\index{sflash\_\-t@{sflash\_\-t}!sflash.h@{sflash.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf sflash\_\-obj\_\-t}$\ast$ {\bf sflash\_\-t}}}
+\label{sflash_8h_4408c1898ad75eb1543512bec1108030}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{sflash_8h_fe80ccdc413c34786fc5c5cb7dbd2cf9}{
+\index{sflash.h@{sflash.h}!sflash\_\-pattern\_\-get@{sflash\_\-pattern\_\-get}}
+\index{sflash\_\-pattern\_\-get@{sflash\_\-pattern\_\-get}!sflash.h@{sflash.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static {\bf sflash\_\-pattern\_\-t} sflash\_\-pattern\_\-get ({\bf sflash\_\-t} {\em sflash})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{sflash_8h_fe80ccdc413c34786fc5c5cb7dbd2cf9}
+
+
+
+
+References sflash\_\-obj\_\-t::pattern.\hypertarget{sflash_8h_d0a14489ed4c24d9a4774ab47f29fc5a}{
+\index{sflash.h@{sflash.h}!sflash\_\-pattern\_\-set@{sflash\_\-pattern\_\-set}}
+\index{sflash\_\-pattern\_\-set@{sflash\_\-pattern\_\-set}!sflash.h@{sflash.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void sflash\_\-pattern\_\-set ({\bf sflash\_\-t} {\em sflash}, \/  {\bf sflash\_\-pattern\_\-t} {\em pattern}, \/  {\bf sflash\_\-pattern\_\-t} {\em initial})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{sflash_8h_d0a14489ed4c24d9a4774ab47f29fc5a}
+
+
+
+
+References sflash\_\-obj\_\-t::current, and sflash\_\-obj\_\-t::pattern.\hypertarget{sflash_8h_c7420a60e011b4c328dad723ae70ee0f}{
+\index{sflash.h@{sflash.h}!sflash\_\-update@{sflash\_\-update}}
+\index{sflash\_\-update@{sflash\_\-update}!sflash.h@{sflash.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool sflash\_\-update ({\bf sflash\_\-t})}}
+\label{sflash_8h_c7420a60e011b4c328dad723ae70ee0f}
+
+
+
+
+References sflash\_\-obj\_\-t::current, and sflash\_\-obj\_\-t::pattern.

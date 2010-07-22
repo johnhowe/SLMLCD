@@ -1,0 +1,211 @@
+\hypertarget{ds2450_8c}{
+\section{ds2450.c File Reference}
+\label{ds2450_8c}\index{ds2450.c@{ds2450.c}}
+}
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}ds2450.h\char`\"{}}\par
+{\tt \#include \char`\"{}dscrc16.h\char`\"{}}\par
+{\tt \#include \char`\"{}u1wire.h\char`\"{}}\par
+{\tt \#include \char`\"{}delay.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{ds2450_8c_2afff552f301e7169ffbe783569c560d}{DS2450\_\-DEBUG}~1
+\item 
+\#define \hyperlink{ds2450_8c_189bda2225df68ee19da96f32d1b3e52}{DS2450\_\-CRC\_\-CHECK}~1
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{ds2450_8c_385c44f6fb256e5716a2302a5b940388347765172790ca7710f25fc125d32c8c}{DS2450\_\-FAMILY\_\-CODE} =  0x20
+ \}
+\item 
+enum \{ \hyperlink{ds2450_8c_bc5c98fcc1211af2b80116dd6e0a035d19211af34f5891227ef03418f81a96fb}{DS2450\_\-MEMORY\_\-BYTES} =  24
+ \}
+\item 
+enum \{ \hyperlink{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8ba805ae42ba8ac692f889e736bef4d46}{DS2450\_\-CONVERT} =  0x3c, 
+\hyperlink{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8be1d40f2d778ce33741455b83d67df6c}{DS2450\_\-READ\_\-MEMORY} =  0xaa, 
+\hyperlink{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8d3acca9ced6c2e686666e80bc8c7002f}{DS2450\_\-WRITE\_\-MEMORY} =  0x55
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int8\_\-t \hyperlink{ds2450_8c_9a9ceb5bcfd66af72cb875dae1dab19e}{ds2450\_\-adc\_\-conversion\_\-start} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev, uint8\_\-t channel\_\-mask)
+\item 
+bool \hyperlink{ds2450_8c_a950dceb2d35a1206e2ded6cead55809}{ds2450\_\-adc\_\-ready\_\-p} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev)
+\item 
+static int8\_\-t \hyperlink{ds2450_8c_5ba7b14350beb0613e9400c6f923ffd7}{ds2450\_\-memory\_\-read} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev, uint16\_\-t addr, uint8\_\-t $\ast$data, uint8\_\-t size)
+\item 
+static int8\_\-t \hyperlink{ds2450_8c_c0cecc35c865da5e0758c0efe95f7909}{ds2450\_\-memory\_\-write} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev, uint16\_\-t addr, uint8\_\-t $\ast$data, uint8\_\-t size)
+\item 
+int8\_\-t \hyperlink{ds2450_8c_ca72c1ebbfc96db0edfbc7f9dfa2f5ae}{ds2450\_\-adc\_\-read} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev, uint8\_\-t channel\_\-mask, uint16\_\-t $\ast$adc)
+\item 
+bool \hyperlink{ds2450_8c_c688caacdc2824b31a13a0ebc3b0873e}{ds2450\_\-device\_\-p} (\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$dev)
+\item 
+void \hyperlink{ds2450_8c_49dcd7d8cf961b19d00ba8c4fb157dc6}{ds2450\_\-debug} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev)
+\item 
+\hyperlink{structu1wire__obj__t}{u1wire\_\-t} \hyperlink{ds2450_8c_ea9e135c5c23946fc374ac64ca63408c}{ds2450\_\-init} (\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$dev)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]08 June 2002 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{ds2450_8c_189bda2225df68ee19da96f32d1b3e52}{
+\index{ds2450.c@{ds2450.c}!DS2450\_\-CRC\_\-CHECK@{DS2450\_\-CRC\_\-CHECK}}
+\index{DS2450\_\-CRC\_\-CHECK@{DS2450\_\-CRC\_\-CHECK}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DS2450\_\-CRC\_\-CHECK~1}}
+\label{ds2450_8c_189bda2225df68ee19da96f32d1b3e52}
+
+
+\hypertarget{ds2450_8c_2afff552f301e7169ffbe783569c560d}{
+\index{ds2450.c@{ds2450.c}!DS2450\_\-DEBUG@{DS2450\_\-DEBUG}}
+\index{DS2450\_\-DEBUG@{DS2450\_\-DEBUG}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DS2450\_\-DEBUG~1}}
+\label{ds2450_8c_2afff552f301e7169ffbe783569c560d}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{ds2450_8c_385c44f6fb256e5716a2302a5b940388}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ds2450_8c_385c44f6fb256e5716a2302a5b940388}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DS2450\_\-FAMILY\_\-CODE@{DS2450\_\-FAMILY\_\-CODE}!ds2450.c@{ds2450.c}}\index{ds2450.c@{ds2450.c}!DS2450\_\-FAMILY\_\-CODE@{DS2450\_\-FAMILY\_\-CODE}}\item[{\em 
+\hypertarget{ds2450_8c_385c44f6fb256e5716a2302a5b940388347765172790ca7710f25fc125d32c8c}{
+DS2450\_\-FAMILY\_\-CODE}
+\label{ds2450_8c_385c44f6fb256e5716a2302a5b940388347765172790ca7710f25fc125d32c8c}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ds2450_8c_bc5c98fcc1211af2b80116dd6e0a035d}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ds2450_8c_bc5c98fcc1211af2b80116dd6e0a035d}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DS2450\_\-MEMORY\_\-BYTES@{DS2450\_\-MEMORY\_\-BYTES}!ds2450.c@{ds2450.c}}\index{ds2450.c@{ds2450.c}!DS2450\_\-MEMORY\_\-BYTES@{DS2450\_\-MEMORY\_\-BYTES}}\item[{\em 
+\hypertarget{ds2450_8c_bc5c98fcc1211af2b80116dd6e0a035d19211af34f5891227ef03418f81a96fb}{
+DS2450\_\-MEMORY\_\-BYTES}
+\label{ds2450_8c_bc5c98fcc1211af2b80116dd6e0a035d19211af34f5891227ef03418f81a96fb}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{DS2450\_\-CONVERT@{DS2450\_\-CONVERT}!ds2450.c@{ds2450.c}}\index{ds2450.c@{ds2450.c}!DS2450\_\-CONVERT@{DS2450\_\-CONVERT}}\item[{\em 
+\hypertarget{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8ba805ae42ba8ac692f889e736bef4d46}{
+DS2450\_\-CONVERT}
+\label{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8ba805ae42ba8ac692f889e736bef4d46}
+}]\index{DS2450\_\-READ\_\-MEMORY@{DS2450\_\-READ\_\-MEMORY}!ds2450.c@{ds2450.c}}\index{ds2450.c@{ds2450.c}!DS2450\_\-READ\_\-MEMORY@{DS2450\_\-READ\_\-MEMORY}}\item[{\em 
+\hypertarget{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8be1d40f2d778ce33741455b83d67df6c}{
+DS2450\_\-READ\_\-MEMORY}
+\label{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8be1d40f2d778ce33741455b83d67df6c}
+}]\index{DS2450\_\-WRITE\_\-MEMORY@{DS2450\_\-WRITE\_\-MEMORY}!ds2450.c@{ds2450.c}}\index{ds2450.c@{ds2450.c}!DS2450\_\-WRITE\_\-MEMORY@{DS2450\_\-WRITE\_\-MEMORY}}\item[{\em 
+\hypertarget{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8d3acca9ced6c2e686666e80bc8c7002f}{
+DS2450\_\-WRITE\_\-MEMORY}
+\label{ds2450_8c_c36f475ca5b446f4fde4c9b90bec77c8d3acca9ced6c2e686666e80bc8c7002f}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ds2450_8c_9a9ceb5bcfd66af72cb875dae1dab19e}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-adc\_\-conversion\_\-start@{ds2450\_\-adc\_\-conversion\_\-start}}
+\index{ds2450\_\-adc\_\-conversion\_\-start@{ds2450\_\-adc\_\-conversion\_\-start}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t ds2450\_\-adc\_\-conversion\_\-start ({\bf u1wire\_\-t} {\em dev}, \/  uint8\_\-t {\em channel\_\-mask})}}
+\label{ds2450_8c_9a9ceb5bcfd66af72cb875dae1dab19e}
+
+
+
+
+References DS2450\_\-CONVERT, dscrc16\_\-byte(), u1wire\_\-command(), u1wire\_\-read(), and u1wire\_\-write().\hypertarget{ds2450_8c_ca72c1ebbfc96db0edfbc7f9dfa2f5ae}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-adc\_\-read@{ds2450\_\-adc\_\-read}}
+\index{ds2450\_\-adc\_\-read@{ds2450\_\-adc\_\-read}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t ds2450\_\-adc\_\-read ({\bf u1wire\_\-t} {\em dev}, \/  uint8\_\-t {\em channel\_\-mask}, \/  uint16\_\-t $\ast$ {\em adc})}}
+\label{ds2450_8c_ca72c1ebbfc96db0edfbc7f9dfa2f5ae}
+
+
+
+
+References ds2450\_\-memory\_\-read().\hypertarget{ds2450_8c_a950dceb2d35a1206e2ded6cead55809}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-adc\_\-ready\_\-p@{ds2450\_\-adc\_\-ready\_\-p}}
+\index{ds2450\_\-adc\_\-ready\_\-p@{ds2450\_\-adc\_\-ready\_\-p}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool ds2450\_\-adc\_\-ready\_\-p ({\bf u1wire\_\-t} {\em dev})}}
+\label{ds2450_8c_a950dceb2d35a1206e2ded6cead55809}
+
+
+
+
+References u1wire\_\-ready\_\-p().\hypertarget{ds2450_8c_49dcd7d8cf961b19d00ba8c4fb157dc6}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-debug@{ds2450\_\-debug}}
+\index{ds2450\_\-debug@{ds2450\_\-debug}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ds2450\_\-debug ({\bf u1wire\_\-t} {\em dev})}}
+\label{ds2450_8c_49dcd7d8cf961b19d00ba8c4fb157dc6}
+
+
+
+
+References ds2450\_\-memory\_\-read().\hypertarget{ds2450_8c_c688caacdc2824b31a13a0ebc3b0873e}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-device\_\-p@{ds2450\_\-device\_\-p}}
+\index{ds2450\_\-device\_\-p@{ds2450\_\-device\_\-p}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool ds2450\_\-device\_\-p ({\bf u1wire\_\-obj\_\-t} $\ast$ {\em dev})}}
+\label{ds2450_8c_c688caacdc2824b31a13a0ebc3b0873e}
+
+
+
+
+References DS2450\_\-FAMILY\_\-CODE, u1wire\_\-rom\_\-code\_\-t::family, u1wire\_\-rom\_\-code\_\-t::fields, and u1wire\_\-obj\_\-t::rom\_\-code.
+
+Referenced by ds2450\_\-init().\hypertarget{ds2450_8c_ea9e135c5c23946fc374ac64ca63408c}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-init@{ds2450\_\-init}}
+\index{ds2450\_\-init@{ds2450\_\-init}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf u1wire\_\-t} ds2450\_\-init ({\bf u1wire\_\-obj\_\-t} $\ast$ {\em dev})}}
+\label{ds2450_8c_ea9e135c5c23946fc374ac64ca63408c}
+
+
+
+
+References ds2450\_\-device\_\-p(), and ds2450\_\-memory\_\-write().\hypertarget{ds2450_8c_5ba7b14350beb0613e9400c6f923ffd7}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-memory\_\-read@{ds2450\_\-memory\_\-read}}
+\index{ds2450\_\-memory\_\-read@{ds2450\_\-memory\_\-read}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static int8\_\-t ds2450\_\-memory\_\-read ({\bf u1wire\_\-t} {\em dev}, \/  uint16\_\-t {\em addr}, \/  uint8\_\-t $\ast$ {\em data}, \/  uint8\_\-t {\em size})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ds2450_8c_5ba7b14350beb0613e9400c6f923ffd7}
+
+
+
+
+References DS2450\_\-READ\_\-MEMORY, dscrc16(), dscrc16\_\-byte(), u1wire\_\-command(), u1wire\_\-read(), and u1wire\_\-write().
+
+Referenced by ds2450\_\-adc\_\-read(), and ds2450\_\-debug().\hypertarget{ds2450_8c_c0cecc35c865da5e0758c0efe95f7909}{
+\index{ds2450.c@{ds2450.c}!ds2450\_\-memory\_\-write@{ds2450\_\-memory\_\-write}}
+\index{ds2450\_\-memory\_\-write@{ds2450\_\-memory\_\-write}!ds2450.c@{ds2450.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static int8\_\-t ds2450\_\-memory\_\-write ({\bf u1wire\_\-t} {\em dev}, \/  uint16\_\-t {\em addr}, \/  uint8\_\-t $\ast$ {\em data}, \/  uint8\_\-t {\em size})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ds2450_8c_c0cecc35c865da5e0758c0efe95f7909}
+
+
+
+
+References DS2450\_\-WRITE\_\-MEMORY, u1wire\_\-byte\_\-write(), u1wire\_\-command(), u1wire\_\-read(), and u1wire\_\-write().
+
+Referenced by ds2450\_\-init().

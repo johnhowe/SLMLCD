@@ -1,0 +1,22 @@
+\hypertarget{mspi_8c}{
+\section{mspi.c File Reference}
+\label{mspi_8c}\index{mspi.c@{mspi.c}}
+}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{mspi_8c_082b796652d48b81659b3e284760a907}{mspi\_\-write} (mspi\_\-t this, void $\ast$buffer, uint16\_\-t size)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{mspi_8c_082b796652d48b81659b3e284760a907}{
+\index{mspi.c@{mspi.c}!mspi\_\-write@{mspi\_\-write}}
+\index{mspi\_\-write@{mspi\_\-write}!mspi.c@{mspi.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mspi\_\-write (mspi\_\-t {\em this}, \/  void $\ast$ {\em buffer}, \/  uint16\_\-t {\em size})}}
+\label{mspi_8c_082b796652d48b81659b3e284760a907}
+
+
+
+
+References spi\_\-put16(), and spi\_\-putc().

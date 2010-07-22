@@ -1,0 +1,149 @@
+\hypertarget{structmmelody__private__t}{
+\section{mmelody\_\-private\_\-t Struct Reference}
+\label{structmmelody__private__t}\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}}
+}
+{\tt \#include $<$mmelody.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{structticker__t}{ticker\_\-t} \hyperlink{structmmelody__private__t_a87534879a34764ca8706fab5aab993e}{ticker}
+\item 
+const char $\ast$ \hyperlink{structmmelody__private__t_c99d0ddec5abf76765529846c1c7e4d8}{cur}
+\item 
+const char $\ast$ \hyperlink{structmmelody__private__t_c3a07b44702142a79267f35a60e7cd77}{start}
+\item 
+const char $\ast$ \hyperlink{structmmelody__private__t_334763e1e4d9d12a80188e41492a25a4}{loop\_\-start}
+\item 
+int8\_\-t \hyperlink{structmmelody__private__t_400cd0e27228c0ef7ccffb2fec46d7a5}{loop\_\-count}
+\item 
+uint8\_\-t \hyperlink{structmmelody__private__t_381c6b139bb4fb5630eb9639f8b57b4a}{note\_\-fraction}
+\item 
+\hyperlink{mmelody_8h_f40a0ae32aa38b871c87fd3e909e5042}{mmelody\_\-speed\_\-t} \hyperlink{structmmelody__private__t_97d560b5c8a9ce70d4064d02c29db281}{speed}
+\item 
+\hyperlink{mmelody_8h_59dfa5e88b3098a69af0aed19e7d1147}{mmelody\_\-volume\_\-t} \hyperlink{structmmelody__private__t_392d14ffcc6e5510349d8a7ef7da593e}{volume}
+\item 
+uint8\_\-t \hyperlink{structmmelody__private__t_7dea2b1d92501ff4fa579eb07e56f9a5}{octave}
+\item 
+void($\ast$ \hyperlink{structmmelody__private__t_5b9291604e0066d7fea5ead273e58fd8}{play\_\-callback} )(void $\ast$data, uint8\_\-t note, uint8\_\-t \hyperlink{structmmelody__private__t_392d14ffcc6e5510349d8a7ef7da593e}{volume})
+\item 
+void $\ast$ \hyperlink{structmmelody__private__t_17170c6a0f5b7b444de5b4faa8a6d194}{play\_\-callback\_\-data}
+\item 
+uint16\_\-t \hyperlink{structmmelody__private__t_838a62c5c15a98ab15702ccd0168fc54}{poll\_\-rate}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structmmelody__private__t_a87534879a34764ca8706fab5aab993e}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!ticker@{ticker}}
+\index{ticker@{ticker}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ticker\_\-t} {\bf mmelody\_\-private\_\-t::ticker}}}
+\label{structmmelody__private__t_a87534879a34764ca8706fab5aab993e}
+
+
+
+
+Referenced by mmelody\_\-ticker\_\-set(), and mmelody\_\-update().\hypertarget{structmmelody__private__t_c99d0ddec5abf76765529846c1c7e4d8}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!cur@{cur}}
+\index{cur@{cur}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf mmelody\_\-private\_\-t::cur}}}
+\label{structmmelody__private__t_c99d0ddec5abf76765529846c1c7e4d8}
+
+
+
+
+Referenced by mmelody\_\-play(), and mmelody\_\-update().\hypertarget{structmmelody__private__t_c3a07b44702142a79267f35a60e7cd77}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!start@{start}}
+\index{start@{start}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf mmelody\_\-private\_\-t::start}}}
+\label{structmmelody__private__t_c3a07b44702142a79267f35a60e7cd77}
+
+
+
+
+Referenced by mmelody\_\-play(), and mmelody\_\-scan().\hypertarget{structmmelody__private__t_334763e1e4d9d12a80188e41492a25a4}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!loop\_\-start@{loop\_\-start}}
+\index{loop\_\-start@{loop\_\-start}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf mmelody\_\-private\_\-t::loop\_\-start}}}
+\label{structmmelody__private__t_334763e1e4d9d12a80188e41492a25a4}
+
+
+
+
+Referenced by mmelody\_\-play(), and mmelody\_\-scan().\hypertarget{structmmelody__private__t_400cd0e27228c0ef7ccffb2fec46d7a5}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!loop\_\-count@{loop\_\-count}}
+\index{loop\_\-count@{loop\_\-count}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t {\bf mmelody\_\-private\_\-t::loop\_\-count}}}
+\label{structmmelody__private__t_400cd0e27228c0ef7ccffb2fec46d7a5}
+
+
+
+
+Referenced by mmelody\_\-play(), and mmelody\_\-scan().\hypertarget{structmmelody__private__t_381c6b139bb4fb5630eb9639f8b57b4a}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!note\_\-fraction@{note\_\-fraction}}
+\index{note\_\-fraction@{note\_\-fraction}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf mmelody\_\-private\_\-t::note\_\-fraction}}}
+\label{structmmelody__private__t_381c6b139bb4fb5630eb9639f8b57b4a}
+
+
+
+
+Referenced by mmelody\_\-init(), mmelody\_\-note\_\-fraction\_\-set(), and mmelody\_\-ticker\_\-set().\hypertarget{structmmelody__private__t_97d560b5c8a9ce70d4064d02c29db281}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!speed@{speed}}
+\index{speed@{speed}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mmelody\_\-speed\_\-t} {\bf mmelody\_\-private\_\-t::speed}}}
+\label{structmmelody__private__t_97d560b5c8a9ce70d4064d02c29db281}
+
+
+
+
+Referenced by mmelody\_\-speed\_\-set(), and mmelody\_\-ticker\_\-set().\hypertarget{structmmelody__private__t_392d14ffcc6e5510349d8a7ef7da593e}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!volume@{volume}}
+\index{volume@{volume}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mmelody\_\-volume\_\-t} {\bf mmelody\_\-private\_\-t::volume}}}
+\label{structmmelody__private__t_392d14ffcc6e5510349d8a7ef7da593e}
+
+
+
+
+Referenced by mmelody\_\-init(), mmelody\_\-note\_\-play(), and mmelody\_\-volume\_\-set().\hypertarget{structmmelody__private__t_7dea2b1d92501ff4fa579eb07e56f9a5}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!octave@{octave}}
+\index{octave@{octave}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf mmelody\_\-private\_\-t::octave}}}
+\label{structmmelody__private__t_7dea2b1d92501ff4fa579eb07e56f9a5}
+
+
+
+
+Referenced by mmelody\_\-play(), and mmelody\_\-scan().\hypertarget{structmmelody__private__t_5b9291604e0066d7fea5ead273e58fd8}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!play\_\-callback@{play\_\-callback}}
+\index{play\_\-callback@{play\_\-callback}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  {\bf mmelody\_\-private\_\-t::play\_\-callback})(void $\ast$data, uint8\_\-t note, uint8\_\-t {\bf volume})}}
+\label{structmmelody__private__t_5b9291604e0066d7fea5ead273e58fd8}
+
+
+
+
+Referenced by mmelody\_\-init(), and mmelody\_\-note\_\-play().\hypertarget{structmmelody__private__t_17170c6a0f5b7b444de5b4faa8a6d194}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!play\_\-callback\_\-data@{play\_\-callback\_\-data}}
+\index{play\_\-callback\_\-data@{play\_\-callback\_\-data}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf mmelody\_\-private\_\-t::play\_\-callback\_\-data}}}
+\label{structmmelody__private__t_17170c6a0f5b7b444de5b4faa8a6d194}
+
+
+
+
+Referenced by mmelody\_\-init(), and mmelody\_\-note\_\-play().\hypertarget{structmmelody__private__t_838a62c5c15a98ab15702ccd0168fc54}{
+\index{mmelody\_\-private\_\-t@{mmelody\_\-private\_\-t}!poll\_\-rate@{poll\_\-rate}}
+\index{poll\_\-rate@{poll\_\-rate}!mmelody_private_t@{mmelody\_\-private\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf mmelody\_\-private\_\-t::poll\_\-rate}}}
+\label{structmmelody__private__t_838a62c5c15a98ab15702ccd0168fc54}
+
+
+
+
+Referenced by mmelody\_\-init(), and mmelody\_\-ticker\_\-set().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{mmelody_8h}{mmelody.h}\end{CompactItemize}

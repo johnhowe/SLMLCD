@@ -1,0 +1,161 @@
+\hypertarget{textview_8h}{
+\section{textview.h File Reference}
+\label{textview_8h}\index{textview.h@{textview.h}}
+}
+Simple text viewing routines for GLCD. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structtextview__private__t}{textview\_\-private\_\-t}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{textview_8h_e17d8d64d94113a46884d16a7c7766fe}{textview\_\-pixel\_\-set\_\-t} )(void $\ast$data, uint8\_\-t col, uint8\_\-t row, uint8\_\-t val)
+\item 
+typedef void($\ast$ \hyperlink{textview_8h_ba50bf661c589b3ac971577f67d02b16}{textview\_\-update\_\-t} )(void $\ast$data)
+\item 
+typedef \hyperlink{structtextview__private__t}{textview\_\-private\_\-t} \hyperlink{textview_8h_69d2dbef8b8d64b79cefb91a84f36789}{textview\_\-obj\_\-t}
+\item 
+typedef \hyperlink{structtextview__private__t}{textview\_\-obj\_\-t} $\ast$ \hyperlink{textview_8h_b9a9b7246f1b2ee3b55b48af00b57fe6}{textview\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structtextview__private__t}{textview\_\-t} \hyperlink{textview_8h_b0966986143c6f21e573362c7ebdeba5}{textview\_\-init} (\hyperlink{structtextview__private__t}{textview\_\-obj\_\-t} $\ast$obj, char $\ast$screen, uint8\_\-t cols, uint8\_\-t rows, \hyperlink{structfont__t}{font\_\-t} $\ast$font, \hyperlink{textview_8h_e17d8d64d94113a46884d16a7c7766fe}{textview\_\-pixel\_\-set\_\-t} pixel\_\-set, \hyperlink{textview_8h_ba50bf661c589b3ac971577f67d02b16}{textview\_\-update\_\-t} update, void $\ast$data)
+\item 
+void \hyperlink{textview_8h_49b2ca283c6d5a86c99ca9900c709cce}{textview\_\-goto} (\hyperlink{structtextview__private__t}{textview\_\-t} this, uint8\_\-t col, uint8\_\-t row)
+\item 
+void \hyperlink{textview_8h_b2ba04875f66d9918639b44a2e81e010}{textview\_\-clear} (\hyperlink{structtextview__private__t}{textview\_\-t} this)
+\item 
+void \hyperlink{textview_8h_e0ea1ca778345947f74f992d2f01d20e}{textview\_\-redraw} (\hyperlink{structtextview__private__t}{textview\_\-t} this)
+\item 
+void \hyperlink{textview_8h_e8ff57ae750cc0fddec74b479711307d}{textview\_\-font\_\-set} (\hyperlink{structtextview__private__t}{textview\_\-t} this, \hyperlink{structfont__t}{font\_\-t} $\ast$font)
+\item 
+void \hyperlink{textview_8h_d8e90e296a0dc2d900277fbf17eda368}{textview\_\-putc} (\hyperlink{structtextview__private__t}{textview\_\-t} this, char ch)
+\item 
+void \hyperlink{textview_8h_3364c75f2695eba709c9a6ed395686f5}{textview\_\-puts} (\hyperlink{structtextview__private__t}{textview\_\-t} this, const char $\ast$string)
+\item 
+void \hyperlink{textview_8h_d724885411f925af1aa9a3a1b5a37eea}{textview\_\-wrap\_\-set} (\hyperlink{structtextview__private__t}{textview\_\-t} this, uint8\_\-t enable)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Simple text viewing routines for GLCD. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]16 Febraury 2008 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{textview_8h_69d2dbef8b8d64b79cefb91a84f36789}{
+\index{textview.h@{textview.h}!textview\_\-obj\_\-t@{textview\_\-obj\_\-t}}
+\index{textview\_\-obj\_\-t@{textview\_\-obj\_\-t}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf textview\_\-private\_\-t} {\bf textview\_\-obj\_\-t}}}
+\label{textview_8h_69d2dbef8b8d64b79cefb91a84f36789}
+
+
+\hypertarget{textview_8h_e17d8d64d94113a46884d16a7c7766fe}{
+\index{textview.h@{textview.h}!textview\_\-pixel\_\-set\_\-t@{textview\_\-pixel\_\-set\_\-t}}
+\index{textview\_\-pixel\_\-set\_\-t@{textview\_\-pixel\_\-set\_\-t}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$  {\bf textview\_\-pixel\_\-set\_\-t})(void $\ast$data, uint8\_\-t col, uint8\_\-t row, uint8\_\-t val)}}
+\label{textview_8h_e17d8d64d94113a46884d16a7c7766fe}
+
+
+\hypertarget{textview_8h_b9a9b7246f1b2ee3b55b48af00b57fe6}{
+\index{textview.h@{textview.h}!textview\_\-t@{textview\_\-t}}
+\index{textview\_\-t@{textview\_\-t}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf textview\_\-obj\_\-t}$\ast$ {\bf textview\_\-t}}}
+\label{textview_8h_b9a9b7246f1b2ee3b55b48af00b57fe6}
+
+
+\hypertarget{textview_8h_ba50bf661c589b3ac971577f67d02b16}{
+\index{textview.h@{textview.h}!textview\_\-update\_\-t@{textview\_\-update\_\-t}}
+\index{textview\_\-update\_\-t@{textview\_\-update\_\-t}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$  {\bf textview\_\-update\_\-t})(void $\ast$data)}}
+\label{textview_8h_ba50bf661c589b3ac971577f67d02b16}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{textview_8h_b2ba04875f66d9918639b44a2e81e010}{
+\index{textview.h@{textview.h}!textview\_\-clear@{textview\_\-clear}}
+\index{textview\_\-clear@{textview\_\-clear}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-clear ({\bf textview\_\-t} {\em this})}}
+\label{textview_8h_b2ba04875f66d9918639b44a2e81e010}
+
+
+
+
+References textview\_\-redraw().
+
+Referenced by textview\_\-init().\hypertarget{textview_8h_e8ff57ae750cc0fddec74b479711307d}{
+\index{textview.h@{textview.h}!textview\_\-font\_\-set@{textview\_\-font\_\-set}}
+\index{textview\_\-font\_\-set@{textview\_\-font\_\-set}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-font\_\-set ({\bf textview\_\-t} {\em this}, \/  {\bf font\_\-t} $\ast$ {\em font})}}
+\label{textview_8h_e8ff57ae750cc0fddec74b479711307d}
+
+
+
+
+References textview\_\-redraw().\hypertarget{textview_8h_49b2ca283c6d5a86c99ca9900c709cce}{
+\index{textview.h@{textview.h}!textview\_\-goto@{textview\_\-goto}}
+\index{textview\_\-goto@{textview\_\-goto}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-goto ({\bf textview\_\-t} {\em this}, \/  uint8\_\-t {\em col}, \/  uint8\_\-t {\em row})}}
+\label{textview_8h_49b2ca283c6d5a86c99ca9900c709cce}
+
+
+\hypertarget{textview_8h_b0966986143c6f21e573362c7ebdeba5}{
+\index{textview.h@{textview.h}!textview\_\-init@{textview\_\-init}}
+\index{textview\_\-init@{textview\_\-init}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf textview\_\-t} textview\_\-init ({\bf textview\_\-obj\_\-t} $\ast$ {\em obj}, \/  char $\ast$ {\em screen}, \/  uint8\_\-t {\em cols}, \/  uint8\_\-t {\em rows}, \/  {\bf font\_\-t} $\ast$ {\em font}, \/  {\bf textview\_\-pixel\_\-set\_\-t} {\em pixel\_\-set}, \/  {\bf textview\_\-update\_\-t} {\em update}, \/  void $\ast$ {\em data})}}
+\label{textview_8h_b0966986143c6f21e573362c7ebdeba5}
+
+
+
+
+References textview\_\-clear().\hypertarget{textview_8h_d8e90e296a0dc2d900277fbf17eda368}{
+\index{textview.h@{textview.h}!textview\_\-putc@{textview\_\-putc}}
+\index{textview\_\-putc@{textview\_\-putc}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-putc ({\bf textview\_\-t} {\em this}, \/  char {\em ch})}}
+\label{textview_8h_d8e90e296a0dc2d900277fbf17eda368}
+
+
+
+
+References glcd\_\-update(), and textview\_\-putc\_\-1().\hypertarget{textview_8h_3364c75f2695eba709c9a6ed395686f5}{
+\index{textview.h@{textview.h}!textview\_\-puts@{textview\_\-puts}}
+\index{textview\_\-puts@{textview\_\-puts}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-puts ({\bf textview\_\-t} {\em this}, \/  const char $\ast$ {\em string})}}
+\label{textview_8h_3364c75f2695eba709c9a6ed395686f5}
+
+
+
+
+References textview\_\-putc\_\-1().\hypertarget{textview_8h_e0ea1ca778345947f74f992d2f01d20e}{
+\index{textview.h@{textview.h}!textview\_\-redraw@{textview\_\-redraw}}
+\index{textview\_\-redraw@{textview\_\-redraw}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-redraw ({\bf textview\_\-t} {\em this})}}
+\label{textview_8h_e0ea1ca778345947f74f992d2f01d20e}
+
+
+
+
+References glcd\_\-text().
+
+Referenced by textview\_\-clear(), textview\_\-font\_\-set(), and textview\_\-scroll().\hypertarget{textview_8h_d724885411f925af1aa9a3a1b5a37eea}{
+\index{textview.h@{textview.h}!textview\_\-wrap\_\-set@{textview\_\-wrap\_\-set}}
+\index{textview\_\-wrap\_\-set@{textview\_\-wrap\_\-set}!textview.h@{textview.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void textview\_\-wrap\_\-set ({\bf textview\_\-t} {\em this}, \/  uint8\_\-t {\em enable})}}
+\label{textview_8h_d724885411f925af1aa9a3a1b5a37eea}
+
+
+
+
+References TEXTVIEW\_\-FLAG\_\-WRAP.

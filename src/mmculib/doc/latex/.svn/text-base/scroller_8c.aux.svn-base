@@ -1,0 +1,36 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.80}scroller.c File Reference}{201}{section.5.80}}
+\newlabel{scroller_8c}{{5.80}{201}{scroller.c File Reference\relax }{section.5.80}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.80.1}Detailed Description}{201}{subsection.5.80.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.80.2}Function Documentation}{201}{subsection.5.80.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.80.2.1}scroller\_\discretionary {-}{}{}init}{201}{subsubsection.5.80.2.1}}
+\newlabel{scroller_8c_26653218d3498357a64a861ffd21ed7f}{{5.80.2.1}{201}{scroller\_\-init\relax }{subsubsection.5.80.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.80.2.2}scroller\_\discretionary {-}{}{}speed\_\discretionary {-}{}{}scale\_\discretionary {-}{}{}get}{201}{subsubsection.5.80.2.2}}
+\newlabel{scroller_8c_cd1a7b7f264b9060def61eab7e373a10}{{5.80.2.2}{201}{scroller\_\-speed\_\-scale\_\-get\relax }{subsubsection.5.80.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.80.2.3}scroller\_\discretionary {-}{}{}start}{201}{subsubsection.5.80.2.3}}
+\newlabel{scroller_8c_71c62b891d9dff2cae0b9ecbd9de87f6}{{5.80.2.3}{201}{scroller\_\-start\relax }{subsubsection.5.80.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.80.2.4}scroller\_\discretionary {-}{}{}update}{201}{subsubsection.5.80.2.4}}
+\newlabel{scroller_8c_b66c20103ee6ee0b9f1fb46faec31a6c}{{5.80.2.4}{201}{scroller\_\-update\relax }{subsubsection.5.80.2.4}{}}
+\@setckpt{scroller_8c}{
+\setcounter{page}{202}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{80}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{4}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

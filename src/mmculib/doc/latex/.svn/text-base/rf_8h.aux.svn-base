@@ -1,0 +1,115 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.73}rf.h File Reference}{185}{section.5.73}}
+\newlabel{rf_8h}{{5.73}{185}{rf.h File Reference\relax }{section.5.73}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.73.1}Detailed Description}{186}{subsection.5.73.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.73.2}Define Documentation}{186}{subsection.5.73.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.2.1}RF\_\discretionary {-}{}{}PAYLOAD\_\discretionary {-}{}{}SIZE}{186}{subsubsection.5.73.2.1}}
+\newlabel{rf_8h_724ca97dc08517798ecf9090cd95e2ce}{{5.73.2.1}{186}{RF\_\-PAYLOAD\_\-SIZE\relax }{subsubsection.5.73.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.2.2}RF\_\discretionary {-}{}{}PROBE\_\discretionary {-}{}{}NOT\_\discretionary {-}{}{}FOUND}{186}{subsubsection.5.73.2.2}}
+\newlabel{rf_8h_3b2c0a6b21338480699992a1add6777f}{{5.73.2.2}{186}{RF\_\-PROBE\_\-NOT\_\-FOUND\relax }{subsubsection.5.73.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.2.3}RF\_\discretionary {-}{}{}RETRIES\_\discretionary {-}{}{}MAX}{186}{subsubsection.5.73.2.3}}
+\newlabel{rf_8h_2467067cb85807737aeea7eb13fba3d8}{{5.73.2.3}{186}{RF\_\-RETRIES\_\-MAX\relax }{subsubsection.5.73.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.73.3}Typedef Documentation}{186}{subsection.5.73.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.3.1}rf\_\discretionary {-}{}{}channel\_\discretionary {-}{}{}t}{186}{subsubsection.5.73.3.1}}
+\newlabel{rf_8h_7b1be9b133dc305fc907fe5ed153ea2a}{{5.73.3.1}{186}{rf\_\-channel\_\-t\relax }{subsubsection.5.73.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.3.2}rf\_\discretionary {-}{}{}size\_\discretionary {-}{}{}t}{186}{subsubsection.5.73.3.2}}
+\newlabel{rf_8h_4bef479c82be2f905bcea004c3a86b75}{{5.73.3.2}{186}{rf\_\-size\_\-t\relax }{subsubsection.5.73.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.73.4}Enumeration Type Documentation}{186}{subsection.5.73.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.1}"@0}{186}{subsubsection.5.73.4.1}}
+\newlabel{rf_8h_06fc87d81c62e9abb8790b6e5713c55b}{{5.73.4.1}{186}{"@0\relax }{subsubsection.5.73.4.1}{}}
+\newlabel{rf_8h_06fc87d81c62e9abb8790b6e5713c55b68a87492285324bb4bcc49745fea6303}{{5.73.4.1}{186}{"@0\relax }{subsubsection.5.73.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.2}"@1}{186}{subsubsection.5.73.4.2}}
+\newlabel{rf_8h_df764cbdea00d65edcd07bb9953ad2b7}{{5.73.4.2}{186}{"@1\relax }{subsubsection.5.73.4.2}{}}
+\newlabel{rf_8h_df764cbdea00d65edcd07bb9953ad2b75bd3cca586cf54c6c721877a705f1d9e}{{5.73.4.2}{186}{"@1\relax }{subsubsection.5.73.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.3}"@2}{187}{subsubsection.5.73.4.3}}
+\newlabel{rf_8h_99fb83031ce9923c84392b4e92f956b5}{{5.73.4.3}{187}{"@2\relax }{subsubsection.5.73.4.3}{}}
+\newlabel{rf_8h_99fb83031ce9923c84392b4e92f956b5c6e4667cba49e9fd49c9582fab1daed8}{{5.73.4.3}{187}{"@2\relax }{subsubsection.5.73.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.4}"@3}{187}{subsubsection.5.73.4.4}}
+\newlabel{rf_8h_bc6126af1d45847bc59afa0aa3216b04}{{5.73.4.4}{187}{"@3\relax }{subsubsection.5.73.4.4}{}}
+\newlabel{rf_8h_bc6126af1d45847bc59afa0aa3216b047dac7d22fcd2d64b58aaa1497b212c6b}{{5.73.4.4}{187}{"@3\relax }{subsubsection.5.73.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.5}"@4}{187}{subsubsection.5.73.4.5}}
+\newlabel{rf_8h_dc29c2ff13d900c2f185ee95427fb06c}{{5.73.4.5}{187}{"@4\relax }{subsubsection.5.73.4.5}{}}
+\newlabel{rf_8h_dc29c2ff13d900c2f185ee95427fb06c4111b44499bc36975877f8107170d4b3}{{5.73.4.5}{187}{"@4\relax }{subsubsection.5.73.4.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.6}"@5}{187}{subsubsection.5.73.4.6}}
+\newlabel{rf_8h_61dadd085c1777f559549e05962b2c9e}{{5.73.4.6}{187}{"@5\relax }{subsubsection.5.73.4.6}{}}
+\newlabel{rf_8h_61dadd085c1777f559549e05962b2c9ef44b9cdf5696850d3db53a1276344834}{{5.73.4.6}{187}{"@5\relax }{subsubsection.5.73.4.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.7}rf\_\discretionary {-}{}{}cmd\_\discretionary {-}{}{}t}{187}{subsubsection.5.73.4.7}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e3c663b66383a081b518ee167aa6ecd9b}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e784b2b61bb23b0d46eab1faff091a5b5}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80ea9d1de77cadeaf2f3e408df3774d9b34}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80ea8700e7eabcf6fdef35aeef53e528342}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e205d1f0067e446c1be05bc5ee2a6fe93}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80ee003a29a0d4509d21c9246d34fceede3}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80ec55d95e278d4a66a1f7bd5302bab9e84}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80ec705953eb074ab078032026d17b1e7d7}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e199a6240b16e415441bcb7c896b7467c}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e7ff7c8f1a93cfb6d2c87c7915a5eead1}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80ecd80a9428fa8a2c310859e0c98505712}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\newlabel{rf_8h_07879026b5aa44b9c98a6d57d9bad80e1aaced10794baece85b7b578d3ee96f9}{{5.73.4.7}{187}{rf\_\-cmd\_\-t\relax }{subsubsection.5.73.4.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.4.8}rf\_\discretionary {-}{}{}id\_\discretionary {-}{}{}t}{187}{subsubsection.5.73.4.8}}
+\newlabel{rf_8h_bcc4957db647b17909780c3acf87ac1a}{{5.73.4.8}{187}{rf\_\-id\_\-t\relax }{subsubsection.5.73.4.8}{}}
+\newlabel{rf_8h_bcc4957db647b17909780c3acf87ac1a27080a94b2b73b051ba0a0069342067f}{{5.73.4.8}{187}{rf\_\-id\_\-t\relax }{subsubsection.5.73.4.8}{}}
+\newlabel{rf_8h_bcc4957db647b17909780c3acf87ac1a7e93b08a459eb669e899a7051280deb2}{{5.73.4.8}{187}{rf\_\-id\_\-t\relax }{subsubsection.5.73.4.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.73.5}Function Documentation}{188}{subsection.5.73.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.1}rf\_\discretionary {-}{}{}acknowledge}{188}{subsubsection.5.73.5.1}}
+\newlabel{rf_8h_58892f995dafcb3f8c2b53a34aec0772}{{5.73.5.1}{188}{rf\_\-acknowledge\relax }{subsubsection.5.73.5.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.2}rf\_\discretionary {-}{}{}acknowledge\_\discretionary {-}{}{}wait}{188}{subsubsection.5.73.5.2}}
+\newlabel{rf_8h_956037285aaa55879999661f568ff600}{{5.73.5.2}{188}{rf\_\-acknowledge\_\-wait\relax }{subsubsection.5.73.5.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.3}rf\_\discretionary {-}{}{}address\_\discretionary {-}{}{}calc}{188}{subsubsection.5.73.5.3}}
+\newlabel{rf_8h_e3faa32d6631e0b8b285b4811c8a886b}{{5.73.5.3}{188}{rf\_\-address\_\-calc\relax }{subsubsection.5.73.5.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.4}rf\_\discretionary {-}{}{}command}{188}{subsubsection.5.73.5.4}}
+\newlabel{rf_8h_e9f82a221ad3082cfceb08baa776eca0}{{5.73.5.4}{188}{rf\_\-command\relax }{subsubsection.5.73.5.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.5}rf\_\discretionary {-}{}{}command\_\discretionary {-}{}{}no\_\discretionary {-}{}{}ack}{188}{subsubsection.5.73.5.5}}
+\newlabel{rf_8h_faafc001416241ab37f6c27344b37d45}{{5.73.5.5}{188}{rf\_\-command\_\-no\_\-ack\relax }{subsubsection.5.73.5.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.6}rf\_\discretionary {-}{}{}enumeration\_\discretionary {-}{}{}response}{188}{subsubsection.5.73.5.6}}
+\newlabel{rf_8h_45536a63a37b0f1e7d17305217a4fa46}{{5.73.5.6}{188}{rf\_\-enumeration\_\-response\relax }{subsubsection.5.73.5.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.7}rf\_\discretionary {-}{}{}init}{188}{subsubsection.5.73.5.7}}
+\newlabel{rf_8h_d69dcc100843fa6fede52614bd0236ae}{{5.73.5.7}{188}{rf\_\-init\relax }{subsubsection.5.73.5.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.8}rf\_\discretionary {-}{}{}node\_\discretionary {-}{}{}make}{188}{subsubsection.5.73.5.8}}
+\newlabel{rf_8h_cc7b97034be7d6a256943c26438a46d7}{{5.73.5.8}{188}{rf\_\-node\_\-make\relax }{subsubsection.5.73.5.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.9}rf\_\discretionary {-}{}{}probes\_\discretionary {-}{}{}enumerate}{188}{subsubsection.5.73.5.9}}
+\newlabel{rf_8h_4909c249fcff823a9d6b4c33e7dd43b5}{{5.73.5.9}{188}{rf\_\-probes\_\-enumerate\relax }{subsubsection.5.73.5.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.10}rf\_\discretionary {-}{}{}read}{188}{subsubsection.5.73.5.10}}
+\newlabel{rf_8h_fcc6741cc7766fa94f38043035f38a27}{{5.73.5.10}{188}{rf\_\-read\relax }{subsubsection.5.73.5.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.11}rf\_\discretionary {-}{}{}read\_\discretionary {-}{}{}data}{188}{subsubsection.5.73.5.11}}
+\newlabel{rf_8h_9626d3b4da5129feaee34fdd09b5b862}{{5.73.5.11}{188}{rf\_\-read\_\-data\relax }{subsubsection.5.73.5.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.12}rf\_\discretionary {-}{}{}read\_\discretionary {-}{}{}enable}{188}{subsubsection.5.73.5.12}}
+\newlabel{rf_8h_a0bcbef06b416ccbfba13e2103661070}{{5.73.5.12}{188}{rf\_\-read\_\-enable\relax }{subsubsection.5.73.5.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.13}rf\_\discretionary {-}{}{}read\_\discretionary {-}{}{}ready\_\discretionary {-}{}{}p}{188}{subsubsection.5.73.5.13}}
+\newlabel{rf_8h_9f72a37abdca63675a61302d3da763a3}{{5.73.5.13}{188}{rf\_\-read\_\-ready\_\-p\relax }{subsubsection.5.73.5.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.14}rf\_\discretionary {-}{}{}read\_\discretionary {-}{}{}setup}{188}{subsubsection.5.73.5.14}}
+\newlabel{rf_8h_a54d9003807173a3021bc01a8317f371}{{5.73.5.14}{188}{rf\_\-read\_\-setup\relax }{subsubsection.5.73.5.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.15}rf\_\discretionary {-}{}{}standby}{188}{subsubsection.5.73.5.15}}
+\newlabel{rf_8h_7bf57481a71b41e35cb5d85a060735f3}{{5.73.5.15}{188}{rf\_\-standby\relax }{subsubsection.5.73.5.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.16}rf\_\discretionary {-}{}{}transmit}{188}{subsubsection.5.73.5.16}}
+\newlabel{rf_8h_0d04e361854817df5dc44db94b5afb49}{{5.73.5.16}{188}{rf\_\-transmit\relax }{subsubsection.5.73.5.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.17}rf\_\discretionary {-}{}{}write}{188}{subsubsection.5.73.5.17}}
+\newlabel{rf_8h_acdc3f2acde07cd8aaf2c74bafa4b489}{{5.73.5.17}{188}{rf\_\-write\relax }{subsubsection.5.73.5.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.18}rf\_\discretionary {-}{}{}write\_\discretionary {-}{}{}data}{188}{subsubsection.5.73.5.18}}
+\newlabel{rf_8h_1655521f0b93433976d0b96159c8145e}{{5.73.5.18}{188}{rf\_\-write\_\-data\relax }{subsubsection.5.73.5.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.73.5.19}rf\_\discretionary {-}{}{}write\_\discretionary {-}{}{}setup}{188}{subsubsection.5.73.5.19}}
+\newlabel{rf_8h_01adc101a1283b1c28cdae14cad8f12e}{{5.73.5.19}{188}{rf\_\-write\_\-setup\relax }{subsubsection.5.73.5.19}{}}
+\@setckpt{rf_8h}{
+\setcounter{page}{189}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{73}
+\setcounter{subsection}{5}
+\setcounter{subsubsection}{19}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

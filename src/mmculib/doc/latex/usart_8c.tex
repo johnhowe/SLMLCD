@@ -1,0 +1,130 @@
+\hypertarget{usart_8c}{
+\section{usart.c File Reference}
+\label{usart_8c}\index{usart.c@{usart.c}}
+}
+Unbuffered USART implementation. 
+
+{\tt \#include \char`\"{}usart.h\char`\"{}}\par
+{\tt \#include \char`\"{}peripherals.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structusart__dev__struct}{usart\_\-dev\_\-struct}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{usart_8c_eee125e11171cd65d273187804f39412}{USART0\_\-ENABLE}~(USART\_\-NUM $>$= 1)
+\item 
+\#define \hyperlink{usart_8c_fe49bfe89465e5878e33616ab178353c}{USART1\_\-ENABLE}~(USART\_\-NUM $>$= 2)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structusart__dev__struct}{usart\_\-t} \hyperlink{usart_8c_b798fc7a61e2ef4f5a90612a2957654d}{usart\_\-init} (uint8\_\-t channel, uint16\_\-t baud\_\-divisor)
+\item 
+bool \hyperlink{usart_8c_d5d4133d566fd16f9c049f7ec15b7dbc}{usart\_\-read\_\-ready\_\-p} (\hyperlink{structusart__dev__struct}{usart\_\-t} usart)
+\item 
+bool \hyperlink{usart_8c_874bf3e9334e593978bcabf7ed27d064}{usart\_\-write\_\-ready\_\-p} (\hyperlink{structusart__dev__struct}{usart\_\-t} usart)
+\item 
+bool \hyperlink{usart_8c_90e780881b5ad5bbdecd12f9f271f4b6}{usart\_\-write\_\-finished\_\-p} (\hyperlink{structusart__dev__struct}{usart\_\-t} usart)
+\item 
+int8\_\-t \hyperlink{usart_8c_0d0a04cf0183f728afbf1d02aadf20f5}{usart\_\-getc} (\hyperlink{structusart__dev__struct}{usart\_\-t} usart)
+\item 
+int8\_\-t \hyperlink{usart_8c_830ff1e490412e30e2472cd06d301e9c}{usart\_\-putc} (\hyperlink{structusart__dev__struct}{usart\_\-t} usart, char ch)
+\item 
+int8\_\-t \hyperlink{usart_8c_492fd549940dcf57829f36d4673c4edd}{usart\_\-puts} (\hyperlink{structusart__dev__struct}{usart\_\-t} usart, const char $\ast$str)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Unbuffered USART implementation. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]21 June 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{usart_8c_eee125e11171cd65d273187804f39412}{
+\index{usart.c@{usart.c}!USART0\_\-ENABLE@{USART0\_\-ENABLE}}
+\index{USART0\_\-ENABLE@{USART0\_\-ENABLE}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART0\_\-ENABLE~(USART\_\-NUM $>$= 1)}}
+\label{usart_8c_eee125e11171cd65d273187804f39412}
+
+
+\hypertarget{usart_8c_fe49bfe89465e5878e33616ab178353c}{
+\index{usart.c@{usart.c}!USART1\_\-ENABLE@{USART1\_\-ENABLE}}
+\index{USART1\_\-ENABLE@{USART1\_\-ENABLE}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define USART1\_\-ENABLE~(USART\_\-NUM $>$= 2)}}
+\label{usart_8c_fe49bfe89465e5878e33616ab178353c}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{usart_8c_0d0a04cf0183f728afbf1d02aadf20f5}{
+\index{usart.c@{usart.c}!usart\_\-getc@{usart\_\-getc}}
+\index{usart\_\-getc@{usart\_\-getc}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t usart\_\-getc ({\bf usart\_\-t} {\em usart})}}
+\label{usart_8c_0d0a04cf0183f728afbf1d02aadf20f5}
+
+
+
+
+References usart\_\-dev\_\-struct::getc.\hypertarget{usart_8c_b798fc7a61e2ef4f5a90612a2957654d}{
+\index{usart.c@{usart.c}!usart\_\-init@{usart\_\-init}}
+\index{usart\_\-init@{usart\_\-init}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf usart\_\-t} usart\_\-init (uint8\_\-t {\em channel}, \/  uint16\_\-t {\em baud\_\-divisor})}}
+\label{usart_8c_b798fc7a61e2ef4f5a90612a2957654d}
+
+
+\hypertarget{usart_8c_830ff1e490412e30e2472cd06d301e9c}{
+\index{usart.c@{usart.c}!usart\_\-putc@{usart\_\-putc}}
+\index{usart\_\-putc@{usart\_\-putc}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t usart\_\-putc ({\bf usart\_\-t} {\em usart}, \/  char {\em ch})}}
+\label{usart_8c_830ff1e490412e30e2472cd06d301e9c}
+
+
+
+
+References usart\_\-dev\_\-struct::putc.
+
+Referenced by usart\_\-puts().\hypertarget{usart_8c_492fd549940dcf57829f36d4673c4edd}{
+\index{usart.c@{usart.c}!usart\_\-puts@{usart\_\-puts}}
+\index{usart\_\-puts@{usart\_\-puts}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t usart\_\-puts ({\bf usart\_\-t} {\em usart}, \/  const char $\ast$ {\em str})}}
+\label{usart_8c_492fd549940dcf57829f36d4673c4edd}
+
+
+
+
+References usart\_\-putc().\hypertarget{usart_8c_d5d4133d566fd16f9c049f7ec15b7dbc}{
+\index{usart.c@{usart.c}!usart\_\-read\_\-ready\_\-p@{usart\_\-read\_\-ready\_\-p}}
+\index{usart\_\-read\_\-ready\_\-p@{usart\_\-read\_\-ready\_\-p}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool usart\_\-read\_\-ready\_\-p ({\bf usart\_\-t} {\em usart})}}
+\label{usart_8c_d5d4133d566fd16f9c049f7ec15b7dbc}
+
+
+
+
+References usart\_\-dev\_\-struct::read\_\-ready\_\-p.\hypertarget{usart_8c_90e780881b5ad5bbdecd12f9f271f4b6}{
+\index{usart.c@{usart.c}!usart\_\-write\_\-finished\_\-p@{usart\_\-write\_\-finished\_\-p}}
+\index{usart\_\-write\_\-finished\_\-p@{usart\_\-write\_\-finished\_\-p}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool usart\_\-write\_\-finished\_\-p ({\bf usart\_\-t} {\em usart})}}
+\label{usart_8c_90e780881b5ad5bbdecd12f9f271f4b6}
+
+
+
+
+References usart\_\-dev\_\-struct::write\_\-finished\_\-p.\hypertarget{usart_8c_874bf3e9334e593978bcabf7ed27d064}{
+\index{usart.c@{usart.c}!usart\_\-write\_\-ready\_\-p@{usart\_\-write\_\-ready\_\-p}}
+\index{usart\_\-write\_\-ready\_\-p@{usart\_\-write\_\-ready\_\-p}!usart.c@{usart.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool usart\_\-write\_\-ready\_\-p ({\bf usart\_\-t} {\em usart})}}
+\label{usart_8c_874bf3e9334e593978bcabf7ed27d064}
+
+
+
+
+References usart\_\-dev\_\-struct::write\_\-ready\_\-p.

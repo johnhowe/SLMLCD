@@ -1,0 +1,371 @@
+\hypertarget{timer_8h}{
+\section{timer.h File Reference}
+\label{timer_8h}\index{timer.h@{timer.h}}
+}
+Timer counter routines for AT91SAM7 processors. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{timer_8h_99eaa2cc37f90cb8650acc09c000fd14}{TIMER\_\-CHANNEL\_\-0}~0
+\item 
+\#define \hyperlink{timer_8h_88b3de863ccab79708a46ee7732703af}{TIMER\_\-CHANNEL\_\-1}~1
+\item 
+\#define \hyperlink{timer_8h_6c10aa44f759d7ea6f59e46e609bff95}{TIMER\_\-CHANNEL\_\-2}~2
+\item 
+\#define \hyperlink{timer_8h_51fa478ad2268640e0d7505aa7df4c3d}{EX\_\-TRG\_\-NONE}~0
+\item 
+\#define \hyperlink{timer_8h_c3b52e411d6e2d2c0c0b114511fa639f}{EX\_\-TRG\_\-RISING}~1
+\item 
+\#define \hyperlink{timer_8h_4c97e89abf51d24c72c7e9587a0de201}{EX\_\-TRG\_\-FALLING}~2
+\item 
+\#define \hyperlink{timer_8h_0421d2d97d4405f3b47907289870d0b8}{EX\_\-TRG\_\-EACH}~3
+\item 
+\#define \hyperlink{timer_8h_3bd03633075b646350ac7e1265725c0c}{EX\_\-TRG\_\-TIOB}~0
+\item 
+\#define \hyperlink{timer_8h_122d0fc8f3460f8a07082abd850ddc60}{EX\_\-TRG\_\-TIOA}~1
+\item 
+\#define \hyperlink{timer_8h_df3e06f6124ae542d72e04052d7074c0}{RC\_\-COMP\_\-NONE}~0
+\item 
+\#define \hyperlink{timer_8h_9c8e8968d8bf891332030f0f48addac4}{RC\_\-COMP\_\-TRG}~1
+\item 
+\#define \hyperlink{timer_8h_81d8b1028db3eeb647c4b1301debe114}{LDRA\_\-TIOA\_\-NONE}~0
+\item 
+\#define \hyperlink{timer_8h_74501daf86b8fee889b3f2722acae8ad}{LDRA\_\-TIOA\_\-RISING}~1
+\item 
+\#define \hyperlink{timer_8h_b1c0a6b30624e070e4bdfb016f96e526}{LDRA\_\-TIOA\_\-FALLING}~2
+\item 
+\#define \hyperlink{timer_8h_e81c1e550348e83b7877a39cd066b6dd}{LDRA\_\-TIOA\_\-EACH}~3
+\item 
+\#define \hyperlink{timer_8h_f14a9fcda72feab8234f2793f894592f}{LDRB\_\-TIOA\_\-NONE}~0
+\item 
+\#define \hyperlink{timer_8h_b90282b49e4bdb9d8c52f86d7586f564}{LDRB\_\-TIOA\_\-RISING}~1
+\item 
+\#define \hyperlink{timer_8h_577afc35933e1aba4b3bc4f3977ee0ee}{LDRB\_\-TIOA\_\-FALLING}~2
+\item 
+\#define \hyperlink{timer_8h_cc21c8cf6ed09ced17debb99e3228cd6}{LDRB\_\-TIOA\_\-EACH}~3
+\item 
+\#define \hyperlink{timer_8h_8008dc8158a212c90beb0401d89aa8c9}{LDRB\_\-CLK\_\-NONE}~0
+\item 
+\#define \hyperlink{timer_8h_f0396739c594b1fbfd0df6d7834e1b64}{LDRB\_\-CLK\_\-STOP}~1
+\item 
+\#define \hyperlink{timer_8h_f3b7d33d8ff0996d4f184b9578e65892}{LDRB\_\-CLK\_\-DIS}~2
+\item 
+\#define \hyperlink{timer_8h_294c7e15a9927bea2521931917de0570}{LDRB\_\-CLK\_\-STOP\_\-DIS}~3
+\item 
+\#define \hyperlink{timer_8h_c86bf9d3480e1eafd7307cf73ef09cd6}{TIMER\_\-TC\_\-CV}~0
+\item 
+\#define \hyperlink{timer_8h_8adc5c355962ff829aed35308c23e55c}{TIMER\_\-TC\_\-RA}~1
+\item 
+\#define \hyperlink{timer_8h_4da210a6d291605605959f7fe5d5e31f}{TIMER\_\-TC\_\-RB}~2
+\item 
+\#define \hyperlink{timer_8h_934f907a23c7444000b3b6ad01356d26}{TIMER\_\-TC\_\-RC}~3
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+uint8\_\-t \hyperlink{timer_8h_87f7ff78ff13ad1c2bf113fe37fbc857}{timer\_\-init} (uint8\_\-t channel)
+\item 
+uint8\_\-t \hyperlink{timer_8h_6b4299636b1bf913ab67d0214b8be914}{timer\_\-prescaler\_\-set} (uint8\_\-t channel, unsigned int period)
+\item 
+uint8\_\-t \hyperlink{timer_8h_608d4f4601fa9b2a1cc955fcdd4e50cc}{timer\_\-capture\_\-mode\_\-set} (uint8\_\-t channel)
+\item 
+uint8\_\-t \hyperlink{timer_8h_388549f6c1fff0e67b10ff3db693a844}{timer\_\-capture\_\-trigger\_\-config} (uint8\_\-t channel, uint8\_\-t ex\_\-trg\_\-edge, uint8\_\-t ex\_\-trg, uint8\_\-t rc\_\-comp\_\-trg)
+\item 
+uint8\_\-t \hyperlink{timer_8h_cdd9a028edc6cc37db22f29dd3d2a9a7}{timer\_\-capture\_\-register\_\-load\_\-config} (uint8\_\-t channel, uint8\_\-t ldra, uint8\_\-t ldrb, uint8\_\-t ldrb\_\-clk)
+\item 
+uint8\_\-t \hyperlink{timer_8h_4acbe544fb85bed8e8fcf94b08cbdda1}{timer\_\-clock\_\-enable} (uint8\_\-t channel)
+\item 
+uint16\_\-t \hyperlink{timer_8h_d7a3f62d7b5bff60edbeeccd6317ef65}{timer\_\-read} (uint8\_\-t channel, uint8\_\-t timer\_\-reg)
+\item 
+uint8\_\-t \hyperlink{timer_8h_0ca7dabb07f24c7a9e6a226ebe31321d}{timer\_\-reset} (uint8\_\-t channel)
+\item 
+uint8\_\-t \hyperlink{timer_8h_e76162ad64bfc21983f753cbf79e0625}{timer\_\-disable} (uint8\_\-t channel)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Timer counter routines for AT91SAM7 processors. 
+
+\begin{Desc}
+\item[Author:]\end{Desc}
+\begin{Desc}
+\item[Date:]12 February 2008 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{timer_8h_0421d2d97d4405f3b47907289870d0b8}{
+\index{timer.h@{timer.h}!EX\_\-TRG\_\-EACH@{EX\_\-TRG\_\-EACH}}
+\index{EX\_\-TRG\_\-EACH@{EX\_\-TRG\_\-EACH}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EX\_\-TRG\_\-EACH~3}}
+\label{timer_8h_0421d2d97d4405f3b47907289870d0b8}
+
+
+\hypertarget{timer_8h_4c97e89abf51d24c72c7e9587a0de201}{
+\index{timer.h@{timer.h}!EX\_\-TRG\_\-FALLING@{EX\_\-TRG\_\-FALLING}}
+\index{EX\_\-TRG\_\-FALLING@{EX\_\-TRG\_\-FALLING}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EX\_\-TRG\_\-FALLING~2}}
+\label{timer_8h_4c97e89abf51d24c72c7e9587a0de201}
+
+
+\hypertarget{timer_8h_51fa478ad2268640e0d7505aa7df4c3d}{
+\index{timer.h@{timer.h}!EX\_\-TRG\_\-NONE@{EX\_\-TRG\_\-NONE}}
+\index{EX\_\-TRG\_\-NONE@{EX\_\-TRG\_\-NONE}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EX\_\-TRG\_\-NONE~0}}
+\label{timer_8h_51fa478ad2268640e0d7505aa7df4c3d}
+
+
+\hypertarget{timer_8h_c3b52e411d6e2d2c0c0b114511fa639f}{
+\index{timer.h@{timer.h}!EX\_\-TRG\_\-RISING@{EX\_\-TRG\_\-RISING}}
+\index{EX\_\-TRG\_\-RISING@{EX\_\-TRG\_\-RISING}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EX\_\-TRG\_\-RISING~1}}
+\label{timer_8h_c3b52e411d6e2d2c0c0b114511fa639f}
+
+
+\hypertarget{timer_8h_122d0fc8f3460f8a07082abd850ddc60}{
+\index{timer.h@{timer.h}!EX\_\-TRG\_\-TIOA@{EX\_\-TRG\_\-TIOA}}
+\index{EX\_\-TRG\_\-TIOA@{EX\_\-TRG\_\-TIOA}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EX\_\-TRG\_\-TIOA~1}}
+\label{timer_8h_122d0fc8f3460f8a07082abd850ddc60}
+
+
+\hypertarget{timer_8h_3bd03633075b646350ac7e1265725c0c}{
+\index{timer.h@{timer.h}!EX\_\-TRG\_\-TIOB@{EX\_\-TRG\_\-TIOB}}
+\index{EX\_\-TRG\_\-TIOB@{EX\_\-TRG\_\-TIOB}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EX\_\-TRG\_\-TIOB~0}}
+\label{timer_8h_3bd03633075b646350ac7e1265725c0c}
+
+
+\hypertarget{timer_8h_e81c1e550348e83b7877a39cd066b6dd}{
+\index{timer.h@{timer.h}!LDRA\_\-TIOA\_\-EACH@{LDRA\_\-TIOA\_\-EACH}}
+\index{LDRA\_\-TIOA\_\-EACH@{LDRA\_\-TIOA\_\-EACH}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRA\_\-TIOA\_\-EACH~3}}
+\label{timer_8h_e81c1e550348e83b7877a39cd066b6dd}
+
+
+\hypertarget{timer_8h_b1c0a6b30624e070e4bdfb016f96e526}{
+\index{timer.h@{timer.h}!LDRA\_\-TIOA\_\-FALLING@{LDRA\_\-TIOA\_\-FALLING}}
+\index{LDRA\_\-TIOA\_\-FALLING@{LDRA\_\-TIOA\_\-FALLING}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRA\_\-TIOA\_\-FALLING~2}}
+\label{timer_8h_b1c0a6b30624e070e4bdfb016f96e526}
+
+
+\hypertarget{timer_8h_81d8b1028db3eeb647c4b1301debe114}{
+\index{timer.h@{timer.h}!LDRA\_\-TIOA\_\-NONE@{LDRA\_\-TIOA\_\-NONE}}
+\index{LDRA\_\-TIOA\_\-NONE@{LDRA\_\-TIOA\_\-NONE}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRA\_\-TIOA\_\-NONE~0}}
+\label{timer_8h_81d8b1028db3eeb647c4b1301debe114}
+
+
+\hypertarget{timer_8h_74501daf86b8fee889b3f2722acae8ad}{
+\index{timer.h@{timer.h}!LDRA\_\-TIOA\_\-RISING@{LDRA\_\-TIOA\_\-RISING}}
+\index{LDRA\_\-TIOA\_\-RISING@{LDRA\_\-TIOA\_\-RISING}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRA\_\-TIOA\_\-RISING~1}}
+\label{timer_8h_74501daf86b8fee889b3f2722acae8ad}
+
+
+\hypertarget{timer_8h_f3b7d33d8ff0996d4f184b9578e65892}{
+\index{timer.h@{timer.h}!LDRB\_\-CLK\_\-DIS@{LDRB\_\-CLK\_\-DIS}}
+\index{LDRB\_\-CLK\_\-DIS@{LDRB\_\-CLK\_\-DIS}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-CLK\_\-DIS~2}}
+\label{timer_8h_f3b7d33d8ff0996d4f184b9578e65892}
+
+
+\hypertarget{timer_8h_8008dc8158a212c90beb0401d89aa8c9}{
+\index{timer.h@{timer.h}!LDRB\_\-CLK\_\-NONE@{LDRB\_\-CLK\_\-NONE}}
+\index{LDRB\_\-CLK\_\-NONE@{LDRB\_\-CLK\_\-NONE}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-CLK\_\-NONE~0}}
+\label{timer_8h_8008dc8158a212c90beb0401d89aa8c9}
+
+
+\hypertarget{timer_8h_f0396739c594b1fbfd0df6d7834e1b64}{
+\index{timer.h@{timer.h}!LDRB\_\-CLK\_\-STOP@{LDRB\_\-CLK\_\-STOP}}
+\index{LDRB\_\-CLK\_\-STOP@{LDRB\_\-CLK\_\-STOP}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-CLK\_\-STOP~1}}
+\label{timer_8h_f0396739c594b1fbfd0df6d7834e1b64}
+
+
+\hypertarget{timer_8h_294c7e15a9927bea2521931917de0570}{
+\index{timer.h@{timer.h}!LDRB\_\-CLK\_\-STOP\_\-DIS@{LDRB\_\-CLK\_\-STOP\_\-DIS}}
+\index{LDRB\_\-CLK\_\-STOP\_\-DIS@{LDRB\_\-CLK\_\-STOP\_\-DIS}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-CLK\_\-STOP\_\-DIS~3}}
+\label{timer_8h_294c7e15a9927bea2521931917de0570}
+
+
+\hypertarget{timer_8h_cc21c8cf6ed09ced17debb99e3228cd6}{
+\index{timer.h@{timer.h}!LDRB\_\-TIOA\_\-EACH@{LDRB\_\-TIOA\_\-EACH}}
+\index{LDRB\_\-TIOA\_\-EACH@{LDRB\_\-TIOA\_\-EACH}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-TIOA\_\-EACH~3}}
+\label{timer_8h_cc21c8cf6ed09ced17debb99e3228cd6}
+
+
+\hypertarget{timer_8h_577afc35933e1aba4b3bc4f3977ee0ee}{
+\index{timer.h@{timer.h}!LDRB\_\-TIOA\_\-FALLING@{LDRB\_\-TIOA\_\-FALLING}}
+\index{LDRB\_\-TIOA\_\-FALLING@{LDRB\_\-TIOA\_\-FALLING}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-TIOA\_\-FALLING~2}}
+\label{timer_8h_577afc35933e1aba4b3bc4f3977ee0ee}
+
+
+\hypertarget{timer_8h_f14a9fcda72feab8234f2793f894592f}{
+\index{timer.h@{timer.h}!LDRB\_\-TIOA\_\-NONE@{LDRB\_\-TIOA\_\-NONE}}
+\index{LDRB\_\-TIOA\_\-NONE@{LDRB\_\-TIOA\_\-NONE}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-TIOA\_\-NONE~0}}
+\label{timer_8h_f14a9fcda72feab8234f2793f894592f}
+
+
+\hypertarget{timer_8h_b90282b49e4bdb9d8c52f86d7586f564}{
+\index{timer.h@{timer.h}!LDRB\_\-TIOA\_\-RISING@{LDRB\_\-TIOA\_\-RISING}}
+\index{LDRB\_\-TIOA\_\-RISING@{LDRB\_\-TIOA\_\-RISING}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LDRB\_\-TIOA\_\-RISING~1}}
+\label{timer_8h_b90282b49e4bdb9d8c52f86d7586f564}
+
+
+\hypertarget{timer_8h_df3e06f6124ae542d72e04052d7074c0}{
+\index{timer.h@{timer.h}!RC\_\-COMP\_\-NONE@{RC\_\-COMP\_\-NONE}}
+\index{RC\_\-COMP\_\-NONE@{RC\_\-COMP\_\-NONE}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RC\_\-COMP\_\-NONE~0}}
+\label{timer_8h_df3e06f6124ae542d72e04052d7074c0}
+
+
+\hypertarget{timer_8h_9c8e8968d8bf891332030f0f48addac4}{
+\index{timer.h@{timer.h}!RC\_\-COMP\_\-TRG@{RC\_\-COMP\_\-TRG}}
+\index{RC\_\-COMP\_\-TRG@{RC\_\-COMP\_\-TRG}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RC\_\-COMP\_\-TRG~1}}
+\label{timer_8h_9c8e8968d8bf891332030f0f48addac4}
+
+
+\hypertarget{timer_8h_99eaa2cc37f90cb8650acc09c000fd14}{
+\index{timer.h@{timer.h}!TIMER\_\-CHANNEL\_\-0@{TIMER\_\-CHANNEL\_\-0}}
+\index{TIMER\_\-CHANNEL\_\-0@{TIMER\_\-CHANNEL\_\-0}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-CHANNEL\_\-0~0}}
+\label{timer_8h_99eaa2cc37f90cb8650acc09c000fd14}
+
+
+\hypertarget{timer_8h_88b3de863ccab79708a46ee7732703af}{
+\index{timer.h@{timer.h}!TIMER\_\-CHANNEL\_\-1@{TIMER\_\-CHANNEL\_\-1}}
+\index{TIMER\_\-CHANNEL\_\-1@{TIMER\_\-CHANNEL\_\-1}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-CHANNEL\_\-1~1}}
+\label{timer_8h_88b3de863ccab79708a46ee7732703af}
+
+
+\hypertarget{timer_8h_6c10aa44f759d7ea6f59e46e609bff95}{
+\index{timer.h@{timer.h}!TIMER\_\-CHANNEL\_\-2@{TIMER\_\-CHANNEL\_\-2}}
+\index{TIMER\_\-CHANNEL\_\-2@{TIMER\_\-CHANNEL\_\-2}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-CHANNEL\_\-2~2}}
+\label{timer_8h_6c10aa44f759d7ea6f59e46e609bff95}
+
+
+\hypertarget{timer_8h_c86bf9d3480e1eafd7307cf73ef09cd6}{
+\index{timer.h@{timer.h}!TIMER\_\-TC\_\-CV@{TIMER\_\-TC\_\-CV}}
+\index{TIMER\_\-TC\_\-CV@{TIMER\_\-TC\_\-CV}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-TC\_\-CV~0}}
+\label{timer_8h_c86bf9d3480e1eafd7307cf73ef09cd6}
+
+
+\hypertarget{timer_8h_8adc5c355962ff829aed35308c23e55c}{
+\index{timer.h@{timer.h}!TIMER\_\-TC\_\-RA@{TIMER\_\-TC\_\-RA}}
+\index{TIMER\_\-TC\_\-RA@{TIMER\_\-TC\_\-RA}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-TC\_\-RA~1}}
+\label{timer_8h_8adc5c355962ff829aed35308c23e55c}
+
+
+\hypertarget{timer_8h_4da210a6d291605605959f7fe5d5e31f}{
+\index{timer.h@{timer.h}!TIMER\_\-TC\_\-RB@{TIMER\_\-TC\_\-RB}}
+\index{TIMER\_\-TC\_\-RB@{TIMER\_\-TC\_\-RB}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-TC\_\-RB~2}}
+\label{timer_8h_4da210a6d291605605959f7fe5d5e31f}
+
+
+\hypertarget{timer_8h_934f907a23c7444000b3b6ad01356d26}{
+\index{timer.h@{timer.h}!TIMER\_\-TC\_\-RC@{TIMER\_\-TC\_\-RC}}
+\index{TIMER\_\-TC\_\-RC@{TIMER\_\-TC\_\-RC}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIMER\_\-TC\_\-RC~3}}
+\label{timer_8h_934f907a23c7444000b3b6ad01356d26}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{timer_8h_608d4f4601fa9b2a1cc955fcdd4e50cc}{
+\index{timer.h@{timer.h}!timer\_\-capture\_\-mode\_\-set@{timer\_\-capture\_\-mode\_\-set}}
+\index{timer\_\-capture\_\-mode\_\-set@{timer\_\-capture\_\-mode\_\-set}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-capture\_\-mode\_\-set (uint8\_\-t {\em channel})}}
+\label{timer_8h_608d4f4601fa9b2a1cc955fcdd4e50cc}
+
+
+
+
+References BITS\_\-INSERT, and timer\_\-base().\hypertarget{timer_8h_cdd9a028edc6cc37db22f29dd3d2a9a7}{
+\index{timer.h@{timer.h}!timer\_\-capture\_\-register\_\-load\_\-config@{timer\_\-capture\_\-register\_\-load\_\-config}}
+\index{timer\_\-capture\_\-register\_\-load\_\-config@{timer\_\-capture\_\-register\_\-load\_\-config}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-capture\_\-register\_\-load\_\-config (uint8\_\-t {\em channel}, \/  uint8\_\-t {\em ldra}, \/  uint8\_\-t {\em ldrb}, \/  uint8\_\-t {\em ldrb\_\-clk})}}
+\label{timer_8h_cdd9a028edc6cc37db22f29dd3d2a9a7}
+
+
+
+
+References BITS\_\-EXTRACT, BITS\_\-INSERT, and timer\_\-base().\hypertarget{timer_8h_388549f6c1fff0e67b10ff3db693a844}{
+\index{timer.h@{timer.h}!timer\_\-capture\_\-trigger\_\-config@{timer\_\-capture\_\-trigger\_\-config}}
+\index{timer\_\-capture\_\-trigger\_\-config@{timer\_\-capture\_\-trigger\_\-config}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-capture\_\-trigger\_\-config (uint8\_\-t {\em channel}, \/  uint8\_\-t {\em ex\_\-trg\_\-edge}, \/  uint8\_\-t {\em ex\_\-trg}, \/  uint8\_\-t {\em rc\_\-comp\_\-trg})}}
+\label{timer_8h_388549f6c1fff0e67b10ff3db693a844}
+
+
+
+
+References BITS\_\-EXTRACT, BITS\_\-INSERT, and timer\_\-base().\hypertarget{timer_8h_4acbe544fb85bed8e8fcf94b08cbdda1}{
+\index{timer.h@{timer.h}!timer\_\-clock\_\-enable@{timer\_\-clock\_\-enable}}
+\index{timer\_\-clock\_\-enable@{timer\_\-clock\_\-enable}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-clock\_\-enable (uint8\_\-t {\em channel})}}
+\label{timer_8h_4acbe544fb85bed8e8fcf94b08cbdda1}
+
+
+
+
+References AT91C\_\-TC\_\-CLKEN, and timer\_\-base().\hypertarget{timer_8h_e76162ad64bfc21983f753cbf79e0625}{
+\index{timer.h@{timer.h}!timer\_\-disable@{timer\_\-disable}}
+\index{timer\_\-disable@{timer\_\-disable}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-disable (uint8\_\-t {\em channel})}}
+\label{timer_8h_e76162ad64bfc21983f753cbf79e0625}
+
+
+
+
+References AT91C\_\-TC\_\-CLKDIS, and timer\_\-base().\hypertarget{timer_8h_87f7ff78ff13ad1c2bf113fe37fbc857}{
+\index{timer.h@{timer.h}!timer\_\-init@{timer\_\-init}}
+\index{timer\_\-init@{timer\_\-init}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-init (uint8\_\-t {\em channel})}}
+\label{timer_8h_87f7ff78ff13ad1c2bf113fe37fbc857}
+
+
+
+
+References AT91C\_\-BASE\_\-PMC, AT91C\_\-ID\_\-TC0, AT91C\_\-ID\_\-TC1, AT91C\_\-ID\_\-TC2, AT91C\_\-PA0\_\-TIOA0, AT91C\_\-PA15\_\-TIOA1, AT91C\_\-PA16\_\-TIOB1, AT91C\_\-PA1\_\-TIOB0, AT91C\_\-PA26\_\-TIOA2, AT91C\_\-PA27\_\-TIOB2, AT91C\_\-PIOA\_\-PDR, AT91C\_\-PIOA\_\-PPUDR, TIMER\_\-CHANNEL\_\-0, TIMER\_\-CHANNEL\_\-1, and TIMER\_\-CHANNEL\_\-2.\hypertarget{timer_8h_6b4299636b1bf913ab67d0214b8be914}{
+\index{timer.h@{timer.h}!timer\_\-prescaler\_\-set@{timer\_\-prescaler\_\-set}}
+\index{timer\_\-prescaler\_\-set@{timer\_\-prescaler\_\-set}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-prescaler\_\-set (uint8\_\-t {\em channel}, \/  unsigned int {\em period})}}
+\label{timer_8h_6b4299636b1bf913ab67d0214b8be914}
+
+
+
+
+References AT91C\_\-TC\_\-CLKS\_\-TIMER\_\-DIV1\_\-CLOCK, AT91C\_\-TC\_\-CLKS\_\-TIMER\_\-DIV2\_\-CLOCK, AT91C\_\-TC\_\-CLKS\_\-TIMER\_\-DIV3\_\-CLOCK, AT91C\_\-TC\_\-CLKS\_\-TIMER\_\-DIV4\_\-CLOCK, AT91C\_\-TC\_\-CLKS\_\-TIMER\_\-DIV5\_\-CLOCK, BITS\_\-INSERT, log\_\-prescales, and timer\_\-base().\hypertarget{timer_8h_d7a3f62d7b5bff60edbeeccd6317ef65}{
+\index{timer.h@{timer.h}!timer\_\-read@{timer\_\-read}}
+\index{timer\_\-read@{timer\_\-read}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t timer\_\-read (uint8\_\-t {\em channel}, \/  uint8\_\-t {\em timer\_\-reg})}}
+\label{timer_8h_d7a3f62d7b5bff60edbeeccd6317ef65}
+
+
+
+
+References BITS\_\-EXTRACT, timer\_\-base(), TIMER\_\-TC\_\-CV, TIMER\_\-TC\_\-RA, TIMER\_\-TC\_\-RB, and TIMER\_\-TC\_\-RC.\hypertarget{timer_8h_0ca7dabb07f24c7a9e6a226ebe31321d}{
+\index{timer.h@{timer.h}!timer\_\-reset@{timer\_\-reset}}
+\index{timer\_\-reset@{timer\_\-reset}!timer.h@{timer.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t timer\_\-reset (uint8\_\-t {\em channel})}}
+\label{timer_8h_0ca7dabb07f24c7a9e6a226ebe31321d}
+
+
+
+
+References AT91C\_\-TC\_\-SWTRG, and timer\_\-base().

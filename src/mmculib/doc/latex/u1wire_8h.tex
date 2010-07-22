@@ -1,0 +1,324 @@
+\hypertarget{u1wire_8h}{
+\section{u1wire.h File Reference}
+\label{u1wire_8h}\index{u1wire.h@{u1wire.h}}
+}
+One wire bus driver. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+union \hyperlink{unionu1wire__rom__code__t}{u1wire\_\-rom\_\-code\_\-t}
+\item 
+struct \hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef enum \hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b}{u1wire\_\-err} \hyperlink{u1wire_8h_2eb805181d23c7650686d400013f79a1}{u1wire\_\-err\_\-t}
+\item 
+typedef \hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$ \hyperlink{u1wire_8h_44b0c1139494ad063695237976a1fb48}{u1wire\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b}{u1wire\_\-err} \{ \par
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b7833149ccfa1db251b441b980491aed6}{U1WIRE\_\-ERR\_\-BUS\_\-LOW} =  1, 
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b7774bf884bc92f64cd3313b0130e65c1}{U1WIRE\_\-ERR\_\-BUS\_\-STUCK} =  2, 
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596bf4bfdb6bfa06316c4527d0873674f385}{U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT} =  3, 
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b28e647a59e059fc1994a7c583e3d07a5}{U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG} =  4, 
+\par
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b8891c8da03b12ac7922afbd14554162b}{U1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES} =  5, 
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b28153ca9b80292e7c0d06048d07cb899}{U1WIRE\_\-ERR\_\-BUS\_\-HIGH} =  6, 
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596beb8b71e79f8f657d3df81e7c00c21890}{U1WIRE\_\-ERR\_\-CRC} =  7, 
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b2345f3fd7a65d67fe1eeff700f4c26fe}{U1WIRE\_\-ERR\_\-WRONG\_\-DEVICE} =  8, 
+\par
+\hyperlink{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b1e09197781d2d6663062fbdf25e7989a}{U1WIRE\_\-ERR\_\-DISCONNECT} =  9
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{u1wire_8h_342ecd2bb7a5b36f1f47f6b8ec6e6d44}{u1wire\_\-ready\_\-p} (void)
+\item 
+int8\_\-t \hyperlink{u1wire_8h_fefc92288deb7e6638c7eccee340376b}{u1wire\_\-reset} (void)
+\item 
+void \hyperlink{u1wire_8h_396b2c2a03fe9d6d30b5a6104d968d91}{u1wire\_\-bit\_\-write} (uint8\_\-t value)
+\item 
+void \hyperlink{u1wire_8h_fe3fdd50fbc17820ba234683a50eee97}{u1wire\_\-byte\_\-write} (uint8\_\-t value)
+\item 
+uint8\_\-t \hyperlink{u1wire_8h_81248b7029b0bba2925ff395f4f28c84}{u1wire\_\-bit\_\-read} (void)
+\item 
+uint8\_\-t \hyperlink{u1wire_8h_b60c227540a8ab2f79ce49227e1bb48b}{u1wire\_\-byte\_\-read} (void)
+\item 
+int8\_\-t \hyperlink{u1wire_8h_c5962c09caed92394ad54c93621b9f1f}{u1wire\_\-command} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev, uint8\_\-t command)
+\item 
+int8\_\-t \hyperlink{u1wire_8h_576198d4478882d49d4c6d6f6b7091c1}{u1wire\_\-broadcast} (uint8\_\-t command)
+\item 
+int8\_\-t \hyperlink{u1wire_8h_d0e0bcaa6a848d5cf10546c3d9da727b}{u1wire\_\-read} (void $\ast$data, uint8\_\-t size)
+\item 
+int8\_\-t \hyperlink{u1wire_8h_392979195007fe1ff2b5604ca4fce126}{u1wire\_\-write} (void $\ast$data, uint8\_\-t size)
+\item 
+int8\_\-t \hyperlink{u1wire_8h_8c5e485ac768c59d13b907369a3fe444}{u1wire\_\-init} (\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$device)
+\item 
+void \hyperlink{u1wire_8h_092d12ba9e184b9397f07035023d756f}{u1wire\_\-debug} (\hyperlink{structu1wire__obj__t}{u1wire\_\-t} dev)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+One wire bus driver. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]08 June 2002 \end{Desc}
+\begin{Desc}
+\item[Note:]This interface only supports the one bus but with multiple devices on the bus. This was a deliberate choice that I may regret one day. It keeps the interface simpler, reduces the code size, and most systems will only ever have a single one wire bus. To support multiple one wire buses then run-time configuration will need to be passed as an additional argument to u1wire\_\-init. \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{u1wire_8h_2eb805181d23c7650686d400013f79a1}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-err\_\-t@{u1wire\_\-err\_\-t}}
+\index{u1wire\_\-err\_\-t@{u1wire\_\-err\_\-t}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf u1wire\_\-err}  {\bf u1wire\_\-err\_\-t}}}
+\label{u1wire_8h_2eb805181d23c7650686d400013f79a1}
+
+
+\hypertarget{u1wire_8h_44b0c1139494ad063695237976a1fb48}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-t@{u1wire\_\-t}}
+\index{u1wire\_\-t@{u1wire\_\-t}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf u1wire\_\-obj\_\-t}$\ast$ {\bf u1wire\_\-t}}}
+\label{u1wire_8h_44b0c1139494ad063695237976a1fb48}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-err@{u1wire\_\-err}}
+\index{u1wire\_\-err@{u1wire\_\-err}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf u1wire\_\-err}}}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b}
+
+
+One wire bus error codes. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{U1WIRE\_\-ERR\_\-BUS\_\-LOW@{U1WIRE\_\-ERR\_\-BUS\_\-LOW}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-BUS\_\-LOW@{U1WIRE\_\-ERR\_\-BUS\_\-LOW}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b7833149ccfa1db251b441b980491aed6}{
+U1WIRE\_\-ERR\_\-BUS\_\-LOW}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b7833149ccfa1db251b441b980491aed6}
+}]\index{U1WIRE\_\-ERR\_\-BUS\_\-STUCK@{U1WIRE\_\-ERR\_\-BUS\_\-STUCK}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-BUS\_\-STUCK@{U1WIRE\_\-ERR\_\-BUS\_\-STUCK}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b7774bf884bc92f64cd3313b0130e65c1}{
+U1WIRE\_\-ERR\_\-BUS\_\-STUCK}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b7774bf884bc92f64cd3313b0130e65c1}
+}]\index{U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT@{U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT@{U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596bf4bfdb6bfa06316c4527d0873674f385}{
+U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596bf4bfdb6bfa06316c4527d0873674f385}
+}]\index{U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG@{U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG@{U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b28e647a59e059fc1994a7c583e3d07a5}{
+U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b28e647a59e059fc1994a7c583e3d07a5}
+}]\index{U1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES@{U1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES@{U1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b8891c8da03b12ac7922afbd14554162b}{
+U1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b8891c8da03b12ac7922afbd14554162b}
+}]\index{U1WIRE\_\-ERR\_\-BUS\_\-HIGH@{U1WIRE\_\-ERR\_\-BUS\_\-HIGH}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-BUS\_\-HIGH@{U1WIRE\_\-ERR\_\-BUS\_\-HIGH}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b28153ca9b80292e7c0d06048d07cb899}{
+U1WIRE\_\-ERR\_\-BUS\_\-HIGH}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b28153ca9b80292e7c0d06048d07cb899}
+}]\index{U1WIRE\_\-ERR\_\-CRC@{U1WIRE\_\-ERR\_\-CRC}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-CRC@{U1WIRE\_\-ERR\_\-CRC}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596beb8b71e79f8f657d3df81e7c00c21890}{
+U1WIRE\_\-ERR\_\-CRC}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596beb8b71e79f8f657d3df81e7c00c21890}
+}]\index{U1WIRE\_\-ERR\_\-WRONG\_\-DEVICE@{U1WIRE\_\-ERR\_\-WRONG\_\-DEVICE}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-WRONG\_\-DEVICE@{U1WIRE\_\-ERR\_\-WRONG\_\-DEVICE}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b2345f3fd7a65d67fe1eeff700f4c26fe}{
+U1WIRE\_\-ERR\_\-WRONG\_\-DEVICE}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b2345f3fd7a65d67fe1eeff700f4c26fe}
+}]\index{U1WIRE\_\-ERR\_\-DISCONNECT@{U1WIRE\_\-ERR\_\-DISCONNECT}!u1wire.h@{u1wire.h}}\index{u1wire.h@{u1wire.h}!U1WIRE\_\-ERR\_\-DISCONNECT@{U1WIRE\_\-ERR\_\-DISCONNECT}}\item[{\em 
+\hypertarget{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b1e09197781d2d6663062fbdf25e7989a}{
+U1WIRE\_\-ERR\_\-DISCONNECT}
+\label{u1wire_8h_a53b84beaa9645f33d1cca351ed3596b1e09197781d2d6663062fbdf25e7989a}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{u1wire_8h_81248b7029b0bba2925ff395f4f28c84}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-bit\_\-read@{u1wire\_\-bit\_\-read}}
+\index{u1wire\_\-bit\_\-read@{u1wire\_\-bit\_\-read}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t u1wire\_\-bit\_\-read (void)}}
+\label{u1wire_8h_81248b7029b0bba2925ff395f4f28c84}
+
+
+Read a bit from the one wire bus. \begin{Desc}
+\item[Returns:]bit read \end{Desc}
+
+
+References U1WIRE\_\-DELAY\_\-OFFSET, U1WIRE\_\-DRIVE, U1WIRE\_\-RELEASE, and U1WIRE\_\-TEST.
+
+Referenced by u1wire\_\-byte\_\-read(), u1wire\_\-ready\_\-p(), and u1wire\_\-search().\hypertarget{u1wire_8h_396b2c2a03fe9d6d30b5a6104d968d91}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-bit\_\-write@{u1wire\_\-bit\_\-write}}
+\index{u1wire\_\-bit\_\-write@{u1wire\_\-bit\_\-write}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void u1wire\_\-bit\_\-write (uint8\_\-t {\em value})}}
+\label{u1wire_8h_396b2c2a03fe9d6d30b5a6104d968d91}
+
+
+Write a bit on the one wire bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em value}]bit to write \end{description}
+\end{Desc}
+
+
+References U1WIRE\_\-DELAY\_\-OFFSET, U1WIRE\_\-DRIVE, and U1WIRE\_\-RELEASE.
+
+Referenced by u1wire\_\-byte\_\-write(), and u1wire\_\-search().\hypertarget{u1wire_8h_576198d4478882d49d4c6d6f6b7091c1}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-broadcast@{u1wire\_\-broadcast}}
+\index{u1wire\_\-broadcast@{u1wire\_\-broadcast}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t u1wire\_\-broadcast (uint8\_\-t {\em command})}}
+\label{u1wire_8h_576198d4478882d49d4c6d6f6b7091c1}
+
+
+Broadcast command to all devices on one wire bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em command}]command to send \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if OK, 0 if no device responding, negative if error \end{Desc}
+
+
+References u1wire\_\-byte\_\-write(), u1wire\_\-reset(), and U1WIRE\_\-SKIP\_\-ROM.\hypertarget{u1wire_8h_b60c227540a8ab2f79ce49227e1bb48b}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-byte\_\-read@{u1wire\_\-byte\_\-read}}
+\index{u1wire\_\-byte\_\-read@{u1wire\_\-byte\_\-read}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t u1wire\_\-byte\_\-read (void)}}
+\label{u1wire_8h_b60c227540a8ab2f79ce49227e1bb48b}
+
+
+Read a byte from the one wire bus. \begin{Desc}
+\item[Returns:]byte read \end{Desc}
+
+
+References u1wire\_\-bit\_\-read().
+
+Referenced by u1wire\_\-read().\hypertarget{u1wire_8h_fe3fdd50fbc17820ba234683a50eee97}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-byte\_\-write@{u1wire\_\-byte\_\-write}}
+\index{u1wire\_\-byte\_\-write@{u1wire\_\-byte\_\-write}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void u1wire\_\-byte\_\-write (uint8\_\-t {\em value})}}
+\label{u1wire_8h_fe3fdd50fbc17820ba234683a50eee97}
+
+
+Write a byte on the one wire bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em value}]byte to write. \end{description}
+\end{Desc}
+
+
+References u1wire\_\-bit\_\-write().
+
+Referenced by ds2450\_\-memory\_\-write(), u1wire\_\-broadcast(), u1wire\_\-command(), u1wire\_\-rom\_\-code\_\-read(), u1wire\_\-search(), and u1wire\_\-write().\hypertarget{u1wire_8h_c5962c09caed92394ad54c93621b9f1f}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-command@{u1wire\_\-command}}
+\index{u1wire\_\-command@{u1wire\_\-command}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t u1wire\_\-command ({\bf u1wire\_\-t} {\em dev}, \/  uint8\_\-t {\em command})}}
+\label{u1wire_8h_c5962c09caed92394ad54c93621b9f1f}
+
+
+Send command to selected device on one wire bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dev}]pointer to one wire device structure \item[{\em command}]command to send \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if OK, 0 if no device responding, negative if error \end{Desc}
+
+
+References u1wire\_\-obj\_\-t::rom\_\-code, u1wire\_\-byte\_\-write(), U1WIRE\_\-MATCH\_\-ROM, u1wire\_\-reset(), and u1wire\_\-write().
+
+Referenced by ds18b20\_\-temp\_\-conversion\_\-start(), ds18b20\_\-temp\_\-read(), ds2450\_\-adc\_\-conversion\_\-start(), ds2450\_\-memory\_\-read(), and ds2450\_\-memory\_\-write().\hypertarget{u1wire_8h_092d12ba9e184b9397f07035023d756f}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-debug@{u1wire\_\-debug}}
+\index{u1wire\_\-debug@{u1wire\_\-debug}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void u1wire\_\-debug ({\bf u1wire\_\-t} {\em dev})}}
+\label{u1wire_8h_092d12ba9e184b9397f07035023d756f}
+
+
+
+
+References u1wire\_\-rom\_\-code\_\-t::crc, u1wire\_\-rom\_\-code\_\-t::family, u1wire\_\-rom\_\-code\_\-t::fields, u1wire\_\-obj\_\-t::rom\_\-code, and u1wire\_\-rom\_\-code\_\-t::serial.\hypertarget{u1wire_8h_8c5e485ac768c59d13b907369a3fe444}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-init@{u1wire\_\-init}}
+\index{u1wire\_\-init@{u1wire\_\-init}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t u1wire\_\-init ({\bf u1wire\_\-obj\_\-t} $\ast$ {\em device})}}
+\label{u1wire_8h_8c5e485ac768c59d13b907369a3fe444}
+
+
+Initialise one wire bus and discover if there is a single device on the bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em device}]pointer to one wire device structure \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]1 if OK, 0 if no device responding, negative if error \end{Desc}
+
+
+References U1WIRE\_\-RELEASE, and u1wire\_\-rom\_\-code\_\-read().\hypertarget{u1wire_8h_d0e0bcaa6a848d5cf10546c3d9da727b}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-read@{u1wire\_\-read}}
+\index{u1wire\_\-read@{u1wire\_\-read}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t u1wire\_\-read (void $\ast$ {\em data}, \/  uint8\_\-t {\em size})}}
+\label{u1wire_8h_d0e0bcaa6a848d5cf10546c3d9da727b}
+
+
+Read number of bytes of data from one wire bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]pointer to buffer to write to \item[{\em size}]number of bytes to write \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes read, 0 if no device responding, negative if error \end{Desc}
+
+
+References u1wire\_\-byte\_\-read().\hypertarget{u1wire_8h_342ecd2bb7a5b36f1f47f6b8ec6e6d44}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-ready\_\-p@{u1wire\_\-ready\_\-p}}
+\index{u1wire\_\-ready\_\-p@{u1wire\_\-ready\_\-p}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool u1wire\_\-ready\_\-p (void)}}
+\label{u1wire_8h_342ecd2bb7a5b36f1f47f6b8ec6e6d44}
+
+
+Determine if one wire bus operation has completed. \begin{Desc}
+\item[Returns:]1 if one wire bus operation has completed otherwise 0 \end{Desc}
+
+
+References u1wire\_\-bit\_\-read().
+
+Referenced by ds18b20\_\-temp\_\-ready\_\-p(), and ds2450\_\-adc\_\-ready\_\-p().\hypertarget{u1wire_8h_fefc92288deb7e6638c7eccee340376b}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-reset@{u1wire\_\-reset}}
+\index{u1wire\_\-reset@{u1wire\_\-reset}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t u1wire\_\-reset (void)}}
+\label{u1wire_8h_fefc92288deb7e6638c7eccee340376b}
+
+
+Reset one wire bus. \begin{Desc}
+\item[Returns:]1 if OK, 0 if no device responding, negative if error \end{Desc}
+
+
+References U1WIRE\_\-DRIVE, U1WIRE\_\-ERR\_\-BUS\_\-HIGH, U1WIRE\_\-ERR\_\-BUS\_\-LOW, U1WIRE\_\-ERR\_\-BUS\_\-STUCK, U1WIRE\_\-ERR\_\-PRESENCE\_\-LONG, U1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT, U1WIRE\_\-RELEASE, and U1WIRE\_\-TEST.
+
+Referenced by u1wire\_\-broadcast(), u1wire\_\-command(), u1wire\_\-rom\_\-code\_\-read(), and u1wire\_\-search().\hypertarget{u1wire_8h_392979195007fe1ff2b5604ca4fce126}{
+\index{u1wire.h@{u1wire.h}!u1wire\_\-write@{u1wire\_\-write}}
+\index{u1wire\_\-write@{u1wire\_\-write}!u1wire.h@{u1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t u1wire\_\-write (void $\ast$ {\em data}, \/  uint8\_\-t {\em size})}}
+\label{u1wire_8h_392979195007fe1ff2b5604ca4fce126}
+
+
+Write number of bytes of data from one wire bus. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]pointer to buffer to write to \item[{\em size}]number of bytes to write \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes written, 0 if no device responding, negative if error \end{Desc}
+
+
+References u1wire\_\-byte\_\-write().

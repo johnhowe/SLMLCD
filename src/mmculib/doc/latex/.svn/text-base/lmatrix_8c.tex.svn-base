@@ -1,0 +1,113 @@
+\hypertarget{lmatrix_8c}{
+\section{lmatrix.c File Reference}
+\label{lmatrix_8c}\index{lmatrix.c@{lmatrix.c}}
+}
+Drive a multiplexed LED matrix. 
+
+{\tt \#include \char`\"{}lmatrix.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{lmatrix_8c_2d0786f7cfd01c4ffc69d973db1b69a6}{ROWBIT}(N)~BIT(N)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{lmatrix_8c_c7eab97244e782fa4811e8f9a12b36eb}{lmatrix\_\-update} (\hyperlink{structlmatrix__private__t}{lmatrix\_\-t} lmatrix)
+\item 
+void \hyperlink{lmatrix_8c_cf0e6eaa246a6cb1c1f0718d0f5e4691}{lmatrix\_\-set} (\hyperlink{structlmatrix__private__t}{lmatrix\_\-t} lmatrix, uint8\_\-t row, uint8\_\-t col, bool val)
+\item 
+void \hyperlink{lmatrix_8c_0d5018d158959439a11aa8c95aaa7bbd}{lmatrix\_\-write} (\hyperlink{structlmatrix__private__t}{lmatrix\_\-t} lmatrix, uint8\_\-t $\ast$screen, uint8\_\-t $\ast$map)
+\item 
+\hyperlink{structlmatrix__private__t}{lmatrix\_\-t} \hyperlink{lmatrix_8c_b33576a64996805b319dd0e390a3ae10}{lmatrix\_\-init} (\hyperlink{structlmatrix__private__t}{lmatrix\_\-obj\_\-t} $\ast$lmatrix)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static \hyperlink{structlmatrix__port__t}{lmatrix\_\-port\_\-t} \hyperlink{lmatrix_8c_dd353e62adf722016f879b511373ea46}{col\_\-ports} \mbox{[}$\,$\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Drive a multiplexed LED matrix. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]28 March 2007 \end{Desc}
+\begin{Desc}
+\item[Note:]This only supports a single instance. \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{lmatrix_8c_2d0786f7cfd01c4ffc69d973db1b69a6}{
+\index{lmatrix.c@{lmatrix.c}!ROWBIT@{ROWBIT}}
+\index{ROWBIT@{ROWBIT}!lmatrix.c@{lmatrix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ROWBIT(N)~BIT(N)}}
+\label{lmatrix_8c_2d0786f7cfd01c4ffc69d973db1b69a6}
+
+
+
+
+Referenced by lmatrix\_\-set(), and lmatrix\_\-write().
+
+\subsection{Function Documentation}
+\hypertarget{lmatrix_8c_b33576a64996805b319dd0e390a3ae10}{
+\index{lmatrix.c@{lmatrix.c}!lmatrix\_\-init@{lmatrix\_\-init}}
+\index{lmatrix\_\-init@{lmatrix\_\-init}!lmatrix.c@{lmatrix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lmatrix\_\-t} lmatrix\_\-init ({\bf lmatrix\_\-obj\_\-t} $\ast$ {\em info})}}
+\label{lmatrix_8c_b33576a64996805b319dd0e390a3ae10}
+
+
+INFO is a pointer into RAM that stores the state of the LMATRIX. The returned handle is passed to the other lmatrix\_\-xxx routines to denote the LMATRIX to operate on. Currently only one lmatrix instance is supported with parameters specified by target.h. 
+
+References lmatrix\_\-private\_\-t::col, lmatrix\_\-private\_\-t::col\_\-port, and lmatrix\_\-private\_\-t::state.\hypertarget{lmatrix_8c_cf0e6eaa246a6cb1c1f0718d0f5e4691}{
+\index{lmatrix.c@{lmatrix.c}!lmatrix\_\-set@{lmatrix\_\-set}}
+\index{lmatrix\_\-set@{lmatrix\_\-set}!lmatrix.c@{lmatrix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lmatrix\_\-set ({\bf lmatrix\_\-t} {\em lmatrix}, \/  uint8\_\-t {\em row}, \/  uint8\_\-t {\em col}, \/  bool {\em val})}}
+\label{lmatrix_8c_cf0e6eaa246a6cb1c1f0718d0f5e4691}
+
+
+Set a pixel in the LED matrix to state VAL at ROW and COL. 
+
+References ROWBIT, and lmatrix\_\-private\_\-t::state.\hypertarget{lmatrix_8c_c7eab97244e782fa4811e8f9a12b36eb}{
+\index{lmatrix.c@{lmatrix.c}!lmatrix\_\-update@{lmatrix\_\-update}}
+\index{lmatrix\_\-update@{lmatrix\_\-update}!lmatrix.c@{lmatrix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lmatrix\_\-update ({\bf lmatrix\_\-t} {\em lmatrix})}}
+\label{lmatrix_8c_c7eab97244e782fa4811e8f9a12b36eb}
+
+
+Scan the LED matrix. This needs to be called at a rate of at least 20 Hz $\ast$ LMATRIX\_\-COLS to avoid noticeable flicker. 
+
+References lmatrix\_\-port\_\-t::bitmask, lmatrix\_\-private\_\-t::col, lmatrix\_\-private\_\-t::col\_\-port, lmatrix\_\-port\_\-t::port, and lmatrix\_\-private\_\-t::state.\hypertarget{lmatrix_8c_0d5018d158959439a11aa8c95aaa7bbd}{
+\index{lmatrix.c@{lmatrix.c}!lmatrix\_\-write@{lmatrix\_\-write}}
+\index{lmatrix\_\-write@{lmatrix\_\-write}!lmatrix.c@{lmatrix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lmatrix\_\-write ({\bf lmatrix\_\-t} {\em lmatrix}, \/  uint8\_\-t $\ast$ {\em screen}, \/  uint8\_\-t $\ast$ {\em map})}}
+\label{lmatrix_8c_0d5018d158959439a11aa8c95aaa7bbd}
+
+
+
+
+References ROWBIT, and lmatrix\_\-private\_\-t::state.
+
+\subsection{Variable Documentation}
+\hypertarget{lmatrix_8c_dd353e62adf722016f879b511373ea46}{
+\index{lmatrix.c@{lmatrix.c}!col\_\-ports@{col\_\-ports}}
+\index{col\_\-ports@{col\_\-ports}!lmatrix.c@{lmatrix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lmatrix\_\-port\_\-t} {\bf col\_\-ports}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{lmatrix_8c_dd353e62adf722016f879b511373ea46}
+
+
+\textbf{Initial value:}
+
+\begin{Code}\begin{verbatim} 
+{
+    {LMATRIX_COL1_PORT, BIT (LMATRIX_COL1_BIT)},
+    {LMATRIX_COL2_PORT, BIT (LMATRIX_COL2_BIT)},
+    {LMATRIX_COL3_PORT, BIT (LMATRIX_COL3_BIT)},
+    {LMATRIX_COL4_PORT, BIT (LMATRIX_COL4_BIT)},
+    {LMATRIX_COL5_PORT, BIT (LMATRIX_COL5_BIT)}
+}
+\end{verbatim}
+\end{Code}

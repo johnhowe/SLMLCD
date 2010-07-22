@@ -1,0 +1,75 @@
+\hypertarget{structflasher__pattern__t}{
+\section{flasher\_\-pattern\_\-t Struct Reference}
+\label{structflasher__pattern__t}\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}}
+}
+{\tt \#include $<$flasher.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+uint8\_\-t \hyperlink{structflasher__pattern__t_45660d21271b2ce1761dfe08cc78e78b}{mod\_\-period}
+\item 
+uint8\_\-t \hyperlink{structflasher__pattern__t_6aa22e2a891ad73a141d10805a77abb6}{mod\_\-duty}
+\item 
+uint8\_\-t \hyperlink{structflasher__pattern__t_0e28c95412494805892e17482e7bd8d7}{flasher\_\-period}
+\item 
+uint8\_\-t \hyperlink{structflasher__pattern__t_464532193fbbce36ce6ff9db50bb0811}{flasher\_\-duty}
+\item 
+uint8\_\-t \hyperlink{structflasher__pattern__t_8ea1393316a1b076056ce40cbfebb80a}{flashes}
+\item 
+uint8\_\-t \hyperlink{structflasher__pattern__t_9e6acd60a694d52fbe79495d8e37b1a0}{period}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structflasher__pattern__t_45660d21271b2ce1761dfe08cc78e78b}{
+\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}!mod\_\-period@{mod\_\-period}}
+\index{mod\_\-period@{mod\_\-period}!flasher_pattern_t@{flasher\_\-pattern\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf flasher\_\-pattern\_\-t::mod\_\-period}}}
+\label{structflasher__pattern__t_45660d21271b2ce1761dfe08cc78e78b}
+
+
+
+
+Referenced by flasher\_\-tweak\_\-mod\_\-duty(), and flasher\_\-tweak\_\-mod\_\-freq().\hypertarget{structflasher__pattern__t_6aa22e2a891ad73a141d10805a77abb6}{
+\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}!mod\_\-duty@{mod\_\-duty}}
+\index{mod\_\-duty@{mod\_\-duty}!flasher_pattern_t@{flasher\_\-pattern\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf flasher\_\-pattern\_\-t::mod\_\-duty}}}
+\label{structflasher__pattern__t_6aa22e2a891ad73a141d10805a77abb6}
+
+
+
+
+Referenced by flasher\_\-tweak\_\-mod\_\-duty(), and flasher\_\-tweak\_\-mod\_\-freq().\hypertarget{structflasher__pattern__t_0e28c95412494805892e17482e7bd8d7}{
+\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}!flasher\_\-period@{flasher\_\-period}}
+\index{flasher\_\-period@{flasher\_\-period}!flasher_pattern_t@{flasher\_\-pattern\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf flasher\_\-pattern\_\-t::flasher\_\-period}}}
+\label{structflasher__pattern__t_0e28c95412494805892e17482e7bd8d7}
+
+
+\hypertarget{structflasher__pattern__t_464532193fbbce36ce6ff9db50bb0811}{
+\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}!flasher\_\-duty@{flasher\_\-duty}}
+\index{flasher\_\-duty@{flasher\_\-duty}!flasher_pattern_t@{flasher\_\-pattern\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf flasher\_\-pattern\_\-t::flasher\_\-duty}}}
+\label{structflasher__pattern__t_464532193fbbce36ce6ff9db50bb0811}
+
+
+\hypertarget{structflasher__pattern__t_8ea1393316a1b076056ce40cbfebb80a}{
+\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}!flashes@{flashes}}
+\index{flashes@{flashes}!flasher_pattern_t@{flasher\_\-pattern\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf flasher\_\-pattern\_\-t::flashes}}}
+\label{structflasher__pattern__t_8ea1393316a1b076056ce40cbfebb80a}
+
+
+\hypertarget{structflasher__pattern__t_9e6acd60a694d52fbe79495d8e37b1a0}{
+\index{flasher\_\-pattern\_\-t@{flasher\_\-pattern\_\-t}!period@{period}}
+\index{period@{period}!flasher_pattern_t@{flasher\_\-pattern\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf flasher\_\-pattern\_\-t::period}}}
+\label{structflasher__pattern__t_9e6acd60a694d52fbe79495d8e37b1a0}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{flasher_8h}{flasher.h}\end{CompactItemize}

@@ -1,0 +1,30 @@
+\hypertarget{sflash_8c}{
+\section{sflash.c File Reference}
+\label{sflash_8c}\index{sflash.c@{sflash.c}}
+}
+{\tt \#include \char`\"{}sflash.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{sflash_8c_16aa89d1db74229596d0d0c1076a3e2c}{sflash\_\-update} (\hyperlink{structsflash__obj__t}{sflash\_\-t} sflash)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]2 July 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{sflash_8c_16aa89d1db74229596d0d0c1076a3e2c}{
+\index{sflash.c@{sflash.c}!sflash\_\-update@{sflash\_\-update}}
+\index{sflash\_\-update@{sflash\_\-update}!sflash.c@{sflash.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool sflash\_\-update ({\bf sflash\_\-t} {\em sflash})}}
+\label{sflash_8c_16aa89d1db74229596d0d0c1076a3e2c}
+
+
+
+
+References sflash\_\-obj\_\-t::current, and sflash\_\-obj\_\-t::pattern.

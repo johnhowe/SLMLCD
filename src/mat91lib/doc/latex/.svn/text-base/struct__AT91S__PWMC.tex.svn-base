@@ -1,0 +1,141 @@
+\hypertarget{struct__AT91S__PWMC}{
+\section{\_\-AT91S\_\-PWMC Struct Reference}
+\label{struct__AT91S__PWMC}\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}}
+}
+{\tt \#include $<$AT91SAM7S256.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_9c0660954130a87462b9034dcea9ab75}{PWMC\_\-MR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_0c9c6edf94968a23bfecf78872abe945}{PWMC\_\-ENA}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_88af22dd78f3a197f35ad398a80d7394}{PWMC\_\-DIS}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_517d41f2c73efb8ee4a9484992eaccfd}{PWMC\_\-SR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_5262f70781ba8846d3c0cdf88af91379}{PWMC\_\-IER}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_91998f2d7e11c486a62f413776f6ea47}{PWMC\_\-IDR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_b648ff32d47dac368972f709a2c47758}{PWMC\_\-IMR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_01fea47ca1fdeb2bf544efd5dc78f6cf}{PWMC\_\-ISR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_1baa67c9707aeee68147f9d39fa6fb4e}{Reserved0} \mbox{[}55\mbox{]}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_b2a01510bff53f8ebd4b6d20149f1063}{PWMC\_\-VR}
+\item 
+\hyperlink{AT91SAM7X256_8h_712ad5a1ac1bd02f3e95a7526c283ce1}{AT91\_\-REG} \hyperlink{struct__AT91S__PWMC_c122daa3cb4b2bf33d016fc54dab8fff}{Reserved1} \mbox{[}64\mbox{]}
+\item 
+\hyperlink{struct__AT91S__PWMC__CH}{AT91S\_\-PWMC\_\-CH} \hyperlink{struct__AT91S__PWMC_f9dea3e4136eb95ce33c311d9e60777a}{PWMC\_\-CH} \mbox{[}4\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{struct__AT91S__PWMC_9c0660954130a87462b9034dcea9ab75}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-MR@{PWMC\_\-MR}}
+\index{PWMC\_\-MR@{PWMC\_\-MR}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-MR}}}
+\label{struct__AT91S__PWMC_9c0660954130a87462b9034dcea9ab75}
+
+
+\hypertarget{struct__AT91S__PWMC_0c9c6edf94968a23bfecf78872abe945}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-ENA@{PWMC\_\-ENA}}
+\index{PWMC\_\-ENA@{PWMC\_\-ENA}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-ENA}}}
+\label{struct__AT91S__PWMC_0c9c6edf94968a23bfecf78872abe945}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-StartChannel().\hypertarget{struct__AT91S__PWMC_88af22dd78f3a197f35ad398a80d7394}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-DIS@{PWMC\_\-DIS}}
+\index{PWMC\_\-DIS@{PWMC\_\-DIS}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-DIS}}}
+\label{struct__AT91S__PWMC_88af22dd78f3a197f35ad398a80d7394}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-StopChannel().\hypertarget{struct__AT91S__PWMC_517d41f2c73efb8ee4a9484992eaccfd}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-SR@{PWMC\_\-SR}}
+\index{PWMC\_\-SR@{PWMC\_\-SR}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-SR}}}
+\label{struct__AT91S__PWMC_517d41f2c73efb8ee4a9484992eaccfd}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-GetStatus().\hypertarget{struct__AT91S__PWMC_5262f70781ba8846d3c0cdf88af91379}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-IER@{PWMC\_\-IER}}
+\index{PWMC\_\-IER@{PWMC\_\-IER}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-IER}}}
+\label{struct__AT91S__PWMC_5262f70781ba8846d3c0cdf88af91379}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-InterruptEnable().\hypertarget{struct__AT91S__PWMC_91998f2d7e11c486a62f413776f6ea47}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-IDR@{PWMC\_\-IDR}}
+\index{PWMC\_\-IDR@{PWMC\_\-IDR}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-IDR}}}
+\label{struct__AT91S__PWMC_91998f2d7e11c486a62f413776f6ea47}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-InterruptDisable().\hypertarget{struct__AT91S__PWMC_b648ff32d47dac368972f709a2c47758}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-IMR@{PWMC\_\-IMR}}
+\index{PWMC\_\-IMR@{PWMC\_\-IMR}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-IMR}}}
+\label{struct__AT91S__PWMC_b648ff32d47dac368972f709a2c47758}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-GetInterruptMaskStatus().\hypertarget{struct__AT91S__PWMC_01fea47ca1fdeb2bf544efd5dc78f6cf}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-ISR@{PWMC\_\-ISR}}
+\index{PWMC\_\-ISR@{PWMC\_\-ISR}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-ISR}}}
+\label{struct__AT91S__PWMC_01fea47ca1fdeb2bf544efd5dc78f6cf}
+
+
+\hypertarget{struct__AT91S__PWMC_1baa67c9707aeee68147f9d39fa6fb4e}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!Reserved0@{Reserved0}}
+\index{Reserved0@{Reserved0}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::Reserved0}}}
+\label{struct__AT91S__PWMC_1baa67c9707aeee68147f9d39fa6fb4e}
+
+
+\hypertarget{struct__AT91S__PWMC_b2a01510bff53f8ebd4b6d20149f1063}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-VR@{PWMC\_\-VR}}
+\index{PWMC\_\-VR@{PWMC\_\-VR}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-VR}}}
+\label{struct__AT91S__PWMC_b2a01510bff53f8ebd4b6d20149f1063}
+
+
+\hypertarget{struct__AT91S__PWMC_c122daa3cb4b2bf33d016fc54dab8fff}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!Reserved1@{Reserved1}}
+\index{Reserved1@{Reserved1}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91\_\-REG} {\bf \_\-AT91S\_\-PWMC::Reserved1}}}
+\label{struct__AT91S__PWMC_c122daa3cb4b2bf33d016fc54dab8fff}
+
+
+\hypertarget{struct__AT91S__PWMC_f9dea3e4136eb95ce33c311d9e60777a}{
+\index{\_\-AT91S\_\-PWMC@{\_\-AT91S\_\-PWMC}!PWMC\_\-CH@{PWMC\_\-CH}}
+\index{PWMC\_\-CH@{PWMC\_\-CH}!_AT91S_PWMC@{\_\-AT91S\_\-PWMC}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf AT91S\_\-PWMC\_\-CH} {\bf \_\-AT91S\_\-PWMC::PWMC\_\-CH}}}
+\label{struct__AT91S__PWMC_f9dea3e4136eb95ce33c311d9e60777a}
+
+
+
+
+Referenced by AT91F\_\-PWMC\_\-CfgChannel(), and AT91F\_\-PWMC\_\-UpdateChannel().
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{AT91SAM7S256_8h}{AT91SAM7S256.h}\item 
+\hyperlink{AT91SAM7S64_8h}{AT91SAM7S64.h}\item 
+\hyperlink{AT91SAM7X256_8h}{AT91SAM7X256.h}\end{CompactItemize}

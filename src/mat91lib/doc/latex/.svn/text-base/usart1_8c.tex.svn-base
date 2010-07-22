@@ -1,0 +1,107 @@
+\hypertarget{usart1_8c}{
+\section{usart1.c File Reference}
+\label{usart1_8c}\index{usart1.c@{usart1.c}}
+}
+{\tt \#include \char`\"{}usart1.h\char`\"{}}\par
+{\tt \#include \char`\"{}usart1\_\-defs.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{usart1_8c_a93a15a6c3bd78bd4149be5dcd8c3ed9}{usart1\_\-baud\_\-divisor\_\-set} (uint16\_\-t baud\_\-divisor)
+\item 
+uint8\_\-t \hyperlink{usart1_8c_0618402ad2bd5fcacdbbb345fc6c3a35}{usart1\_\-init} (uint16\_\-t baud\_\-divisor)
+\item 
+bool \hyperlink{usart1_8c_0009b590446ef51f15f0018537e151db}{usart1\_\-read\_\-ready\_\-p} (void)
+\item 
+bool \hyperlink{usart1_8c_33c0ddeed55485738725b820247448bb}{usart1\_\-write\_\-ready\_\-p} (void)
+\item 
+bool \hyperlink{usart1_8c_85b576cc82de458a60f3a59e3c63af9a}{usart1\_\-write\_\-finished\_\-p} (void)
+\item 
+int8\_\-t \hyperlink{usart1_8c_f00bad68c93e2f76a534acff7b3f4cd1}{usart1\_\-putc} (char ch)
+\item 
+int8\_\-t \hyperlink{usart1_8c_992bce5f38650a578eac650a3c298638}{usart1\_\-getc} (void)
+\item 
+void \hyperlink{usart1_8c_476902818adf7c1e89f9c3a9d477283b}{usart1\_\-puts} (const char $\ast$str)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{usart1_8c_a93a15a6c3bd78bd4149be5dcd8c3ed9}{
+\index{usart1.c@{usart1.c}!usart1\_\-baud\_\-divisor\_\-set@{usart1\_\-baud\_\-divisor\_\-set}}
+\index{usart1\_\-baud\_\-divisor\_\-set@{usart1\_\-baud\_\-divisor\_\-set}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void usart1\_\-baud\_\-divisor\_\-set (uint16\_\-t {\em baud\_\-divisor})}}
+\label{usart1_8c_a93a15a6c3bd78bd4149be5dcd8c3ed9}
+
+
+
+
+References USART1\_\-BAUD\_\-DIVISOR\_\-SET.
+
+Referenced by usart1\_\-init().\hypertarget{usart1_8c_992bce5f38650a578eac650a3c298638}{
+\index{usart1.c@{usart1.c}!usart1\_\-getc@{usart1\_\-getc}}
+\index{usart1\_\-getc@{usart1\_\-getc}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t usart1\_\-getc (void)}}
+\label{usart1_8c_992bce5f38650a578eac650a3c298638}
+
+
+
+
+References USART1\_\-READ, and USART1\_\-READ\_\-READY\_\-P.\hypertarget{usart1_8c_0618402ad2bd5fcacdbbb345fc6c3a35}{
+\index{usart1.c@{usart1.c}!usart1\_\-init@{usart1\_\-init}}
+\index{usart1\_\-init@{usart1\_\-init}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t usart1\_\-init (uint16\_\-t {\em baud\_\-divisor})}}
+\label{usart1_8c_0618402ad2bd5fcacdbbb345fc6c3a35}
+
+
+
+
+References AT91C\_\-BASE\_\-PMC, AT91C\_\-BASE\_\-US1, AT91C\_\-ID\_\-US1, AT91C\_\-PA21\_\-RXD1, AT91C\_\-PA22\_\-TXD1, AT91C\_\-PIOA\_\-PDR, AT91C\_\-PIOA\_\-PPUDR, AT91C\_\-US\_\-CHRL\_\-8\_\-BITS, AT91C\_\-US\_\-CLKS\_\-CLOCK, AT91C\_\-US\_\-NBSTOP\_\-1\_\-BIT, AT91C\_\-US\_\-PAR\_\-NONE, AT91C\_\-US\_\-RSTRX, AT91C\_\-US\_\-RSTTX, AT91C\_\-US\_\-RXDIS, AT91C\_\-US\_\-RXEN, AT91C\_\-US\_\-TXDIS, AT91C\_\-US\_\-TXEN, AT91C\_\-US\_\-USMODE\_\-NORMAL, \_\-AT91S\_\-USART::US\_\-CR, \_\-AT91S\_\-USART::US\_\-IDR, \_\-AT91S\_\-USART::US\_\-MR, and usart1\_\-baud\_\-divisor\_\-set().
+
+Referenced by busart1\_\-init().\hypertarget{usart1_8c_f00bad68c93e2f76a534acff7b3f4cd1}{
+\index{usart1.c@{usart1.c}!usart1\_\-putc@{usart1\_\-putc}}
+\index{usart1\_\-putc@{usart1\_\-putc}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t usart1\_\-putc (char {\em ch})}}
+\label{usart1_8c_f00bad68c93e2f76a534acff7b3f4cd1}
+
+
+
+
+References USART1\_\-PUTC, and usart1\_\-putc().
+
+Referenced by usart1\_\-putc(), and usart1\_\-puts().\hypertarget{usart1_8c_476902818adf7c1e89f9c3a9d477283b}{
+\index{usart1.c@{usart1.c}!usart1\_\-puts@{usart1\_\-puts}}
+\index{usart1\_\-puts@{usart1\_\-puts}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void usart1\_\-puts (const char $\ast$ {\em str})}}
+\label{usart1_8c_476902818adf7c1e89f9c3a9d477283b}
+
+
+
+
+References usart1\_\-putc().\hypertarget{usart1_8c_0009b590446ef51f15f0018537e151db}{
+\index{usart1.c@{usart1.c}!usart1\_\-read\_\-ready\_\-p@{usart1\_\-read\_\-ready\_\-p}}
+\index{usart1\_\-read\_\-ready\_\-p@{usart1\_\-read\_\-ready\_\-p}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool usart1\_\-read\_\-ready\_\-p (void)}}
+\label{usart1_8c_0009b590446ef51f15f0018537e151db}
+
+
+
+
+References USART1\_\-READ\_\-READY\_\-P.\hypertarget{usart1_8c_85b576cc82de458a60f3a59e3c63af9a}{
+\index{usart1.c@{usart1.c}!usart1\_\-write\_\-finished\_\-p@{usart1\_\-write\_\-finished\_\-p}}
+\index{usart1\_\-write\_\-finished\_\-p@{usart1\_\-write\_\-finished\_\-p}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool usart1\_\-write\_\-finished\_\-p (void)}}
+\label{usart1_8c_85b576cc82de458a60f3a59e3c63af9a}
+
+
+
+
+References USART1\_\-WRITE\_\-FINISHED\_\-P.\hypertarget{usart1_8c_33c0ddeed55485738725b820247448bb}{
+\index{usart1.c@{usart1.c}!usart1\_\-write\_\-ready\_\-p@{usart1\_\-write\_\-ready\_\-p}}
+\index{usart1\_\-write\_\-ready\_\-p@{usart1\_\-write\_\-ready\_\-p}!usart1.c@{usart1.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool usart1\_\-write\_\-ready\_\-p (void)}}
+\label{usart1_8c_33c0ddeed55485738725b820247448bb}
+
+
+
+
+References USART1\_\-WRITE\_\-READY\_\-P.

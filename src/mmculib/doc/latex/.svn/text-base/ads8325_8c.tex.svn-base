@@ -1,0 +1,56 @@
+\hypertarget{ads8325_8c}{
+\section{ads8325.c File Reference}
+\label{ads8325_8c}\index{ads8325.c@{ads8325.c}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+static void \hyperlink{ads8325_8c_a0a8a70e1fbcbfcb447f5490c7859b6b}{ads8325\_\-chip\_\-select} (void)
+\item 
+static void \hyperlink{ads8325_8c_18ecc0c11b94ee7b212bbf0ffa9f0cb9}{ads8325\_\-chip\_\-deselect} (void)
+\item 
+void \hyperlink{ads8325_8c_75cee2da0a396baac0722140c67b8aa7}{ads8325\_\-init} (void)
+\item 
+int16\_\-t \hyperlink{ads8325_8c_f2d3ef8342ac57fa898fe4b6f69b84d9}{ads8325\_\-read} (void)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ads8325_8c_18ecc0c11b94ee7b212bbf0ffa9f0cb9}{
+\index{ads8325.c@{ads8325.c}!ads8325\_\-chip\_\-deselect@{ads8325\_\-chip\_\-deselect}}
+\index{ads8325\_\-chip\_\-deselect@{ads8325\_\-chip\_\-deselect}!ads8325.c@{ads8325.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads8325\_\-chip\_\-deselect (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads8325_8c_18ecc0c11b94ee7b212bbf0ffa9f0cb9}
+
+
+
+
+Referenced by ads8325\_\-read().\hypertarget{ads8325_8c_a0a8a70e1fbcbfcb447f5490c7859b6b}{
+\index{ads8325.c@{ads8325.c}!ads8325\_\-chip\_\-select@{ads8325\_\-chip\_\-select}}
+\index{ads8325\_\-chip\_\-select@{ads8325\_\-chip\_\-select}!ads8325.c@{ads8325.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void ads8325\_\-chip\_\-select (void)\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{ads8325_8c_a0a8a70e1fbcbfcb447f5490c7859b6b}
+
+
+
+
+Referenced by ads8325\_\-read().\hypertarget{ads8325_8c_75cee2da0a396baac0722140c67b8aa7}{
+\index{ads8325.c@{ads8325.c}!ads8325\_\-init@{ads8325\_\-init}}
+\index{ads8325\_\-init@{ads8325\_\-init}!ads8325.c@{ads8325.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ads8325\_\-init (void)}}
+\label{ads8325_8c_75cee2da0a396baac0722140c67b8aa7}
+
+
+\hypertarget{ads8325_8c_f2d3ef8342ac57fa898fe4b6f69b84d9}{
+\index{ads8325.c@{ads8325.c}!ads8325\_\-read@{ads8325\_\-read}}
+\index{ads8325\_\-read@{ads8325\_\-read}!ads8325.c@{ads8325.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int16\_\-t ads8325\_\-read (void)}}
+\label{ads8325_8c_f2d3ef8342ac57fa898fe4b6f69b84d9}
+
+
+
+
+References ads8325\_\-chip\_\-deselect(), and ads8325\_\-chip\_\-select().

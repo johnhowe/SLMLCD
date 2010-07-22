@@ -1,0 +1,41 @@
+\hypertarget{flasher__tweak_8c}{
+\section{flasher\_\-tweak.c File Reference}
+\label{flasher__tweak_8c}\index{flasher\_\-tweak.c@{flasher\_\-tweak.c}}
+}
+{\tt \#include \char`\"{}flasher.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{flasher__tweak_8c_21f5a7ac2eb5ffd2b539c81dc3ec3ce1}{flasher\_\-tweak\_\-mod\_\-duty} (\hyperlink{structflasher__pattern__t}{flasher\_\-pattern\_\-t} $\ast$pattern, uint8\_\-t mod\_\-duty)
+\item 
+void \hyperlink{flasher__tweak_8c_4519344227a44386b166efb0c18863b9}{flasher\_\-tweak\_\-mod\_\-freq} (\hyperlink{structflasher__pattern__t}{flasher\_\-pattern\_\-t} $\ast$pattern, uint16\_\-t poll\_\-freq, uint8\_\-t mod\_\-freq)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{flasher__tweak_8c_21f5a7ac2eb5ffd2b539c81dc3ec3ce1}{
+\index{flasher\_\-tweak.c@{flasher\_\-tweak.c}!flasher\_\-tweak\_\-mod\_\-duty@{flasher\_\-tweak\_\-mod\_\-duty}}
+\index{flasher\_\-tweak\_\-mod\_\-duty@{flasher\_\-tweak\_\-mod\_\-duty}!flasher_tweak.c@{flasher\_\-tweak.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flasher\_\-tweak\_\-mod\_\-duty ({\bf flasher\_\-pattern\_\-t} $\ast$ {\em pattern}, \/  uint8\_\-t {\em mod\_\-duty})}}
+\label{flasher__tweak_8c_21f5a7ac2eb5ffd2b539c81dc3ec3ce1}
+
+
+
+
+References flasher\_\-pattern\_\-t::mod\_\-duty, and flasher\_\-pattern\_\-t::mod\_\-period.\hypertarget{flasher__tweak_8c_4519344227a44386b166efb0c18863b9}{
+\index{flasher\_\-tweak.c@{flasher\_\-tweak.c}!flasher\_\-tweak\_\-mod\_\-freq@{flasher\_\-tweak\_\-mod\_\-freq}}
+\index{flasher\_\-tweak\_\-mod\_\-freq@{flasher\_\-tweak\_\-mod\_\-freq}!flasher_tweak.c@{flasher\_\-tweak.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flasher\_\-tweak\_\-mod\_\-freq ({\bf flasher\_\-pattern\_\-t} $\ast$ {\em pattern}, \/  uint16\_\-t {\em poll\_\-freq}, \/  uint8\_\-t {\em mod\_\-freq})}}
+\label{flasher__tweak_8c_4519344227a44386b166efb0c18863b9}
+
+
+
+
+References flasher\_\-pattern\_\-t::mod\_\-duty, and flasher\_\-pattern\_\-t::mod\_\-period.

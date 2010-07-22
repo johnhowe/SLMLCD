@@ -1,0 +1,64 @@
+\hypertarget{mpwm_8c}{
+\section{mpwm.c File Reference}
+\label{mpwm_8c}\index{mpwm.c@{mpwm.c}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}mpwm.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{mpwm_8c_66079b4dab78bf731efc5dadf056d52e}{mpwm\_\-period\_\-set} (\hyperlink{mpwm_8h_7ae22cb8871d8d7dfcf14557b2f80857}{mpwm\_\-t} mpwm, uint16\_\-t period)
+\item 
+void \hyperlink{mpwm_8c_7953ea05b877002db0fdb494268f995e}{mpwm\_\-duty\_\-set} (\hyperlink{mpwm_8h_7ae22cb8871d8d7dfcf14557b2f80857}{mpwm\_\-t} mpwm, uint8\_\-t channel, uint16\_\-t duty)
+\item 
+bool \hyperlink{mpwm_8c_7f8afeb0d8b5ce9e800da19410bf3a2b}{mpwm\_\-update} (\hyperlink{mpwm_8h_7ae22cb8871d8d7dfcf14557b2f80857}{mpwm\_\-t} mpwm)
+\item 
+\hyperlink{mpwm_8h_7ae22cb8871d8d7dfcf14557b2f80857}{mpwm\_\-t} \hyperlink{mpwm_8c_54e2d2c934db26a719d5c80bfad2db44}{mpwm\_\-init} (\hyperlink{structmpwm__obj__t}{mpwm\_\-obj\_\-t} $\ast$dev, \hyperlink{structmpwm__channel__t}{mpwm\_\-channel\_\-t} $\ast$channels, uint8\_\-t num\_\-channels)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]1 April 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{mpwm_8c_7953ea05b877002db0fdb494268f995e}{
+\index{mpwm.c@{mpwm.c}!mpwm\_\-duty\_\-set@{mpwm\_\-duty\_\-set}}
+\index{mpwm\_\-duty\_\-set@{mpwm\_\-duty\_\-set}!mpwm.c@{mpwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mpwm\_\-duty\_\-set ({\bf mpwm\_\-t} {\em mpwm}, \/  uint8\_\-t {\em channel}, \/  uint16\_\-t {\em duty})}}
+\label{mpwm_8c_7953ea05b877002db0fdb494268f995e}
+
+
+
+
+References mpwm\_\-obj\_\-t::channels, and mpwm\_\-channel\_\-t::duty.\hypertarget{mpwm_8c_54e2d2c934db26a719d5c80bfad2db44}{
+\index{mpwm.c@{mpwm.c}!mpwm\_\-init@{mpwm\_\-init}}
+\index{mpwm\_\-init@{mpwm\_\-init}!mpwm.c@{mpwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mpwm\_\-t} mpwm\_\-init ({\bf mpwm\_\-obj\_\-t} $\ast$ {\em dev}, \/  {\bf mpwm\_\-channel\_\-t} $\ast$ {\em channels}, \/  uint8\_\-t {\em num\_\-channels})}}
+\label{mpwm_8c_54e2d2c934db26a719d5c80bfad2db44}
+
+
+
+
+References mpwm\_\-obj\_\-t::channels, mpwm\_\-obj\_\-t::num\_\-channels, and mpwm\_\-obj\_\-t::period.\hypertarget{mpwm_8c_66079b4dab78bf731efc5dadf056d52e}{
+\index{mpwm.c@{mpwm.c}!mpwm\_\-period\_\-set@{mpwm\_\-period\_\-set}}
+\index{mpwm\_\-period\_\-set@{mpwm\_\-period\_\-set}!mpwm.c@{mpwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mpwm\_\-period\_\-set ({\bf mpwm\_\-t} {\em mpwm}, \/  uint16\_\-t {\em period})}}
+\label{mpwm_8c_66079b4dab78bf731efc5dadf056d52e}
+
+
+
+
+References mpwm\_\-obj\_\-t::period.\hypertarget{mpwm_8c_7f8afeb0d8b5ce9e800da19410bf3a2b}{
+\index{mpwm.c@{mpwm.c}!mpwm\_\-update@{mpwm\_\-update}}
+\index{mpwm\_\-update@{mpwm\_\-update}!mpwm.c@{mpwm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mpwm\_\-update ({\bf mpwm\_\-t} {\em mpwm})}}
+\label{mpwm_8c_7f8afeb0d8b5ce9e800da19410bf3a2b}
+
+
+
+
+References mpwm\_\-obj\_\-t::count, and mpwm\_\-obj\_\-t::period.

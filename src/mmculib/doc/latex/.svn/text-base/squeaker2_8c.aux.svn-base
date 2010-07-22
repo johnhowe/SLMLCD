@@ -1,0 +1,63 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.91}squeaker2.c File Reference}{216}{section.5.91}}
+\newlabel{squeaker2_8c}{{5.91}{216}{squeaker2.c File Reference\relax }{section.5.91}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.91.1}Define Documentation}{216}{subsection.5.91.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.1.1}SQUEAKER\_\discretionary {-}{}{}HOLDOFF\_\discretionary {-}{}{}TIME}{216}{subsubsection.5.91.1.1}}
+\newlabel{squeaker2_8c_64e265bfb9832f1871c3fc85cf523eb2}{{5.91.1.1}{216}{SQUEAKER\_\-HOLDOFF\_\-TIME\relax }{subsubsection.5.91.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.1.2}SQUEAKER\_\discretionary {-}{}{}TRANSPARENT}{216}{subsubsection.5.91.1.2}}
+\newlabel{squeaker2_8c_843a1a590f3636349d8cb46ac24a57ca}{{5.91.1.2}{216}{SQUEAKER\_\-TRANSPARENT\relax }{subsubsection.5.91.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.91.2}Enumeration Type Documentation}{216}{subsection.5.91.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.2.1}"@0}{216}{subsubsection.5.91.2.1}}
+\newlabel{squeaker2_8c_06fc87d81c62e9abb8790b6e5713c55b}{{5.91.2.1}{216}{"@0\relax }{subsubsection.5.91.2.1}{}}
+\newlabel{squeaker2_8c_06fc87d81c62e9abb8790b6e5713c55b9e1af00ba855cddd70ae1a86ef2744b9}{{5.91.2.1}{216}{"@0\relax }{subsubsection.5.91.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.2.2}"@1}{216}{subsubsection.5.91.2.2}}
+\newlabel{squeaker2_8c_df764cbdea00d65edcd07bb9953ad2b7}{{5.91.2.2}{216}{"@1\relax }{subsubsection.5.91.2.2}{}}
+\newlabel{squeaker2_8c_df764cbdea00d65edcd07bb9953ad2b7d9f92ed9983e3f39157090defbd5d836}{{5.91.2.2}{216}{"@1\relax }{subsubsection.5.91.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.91.3}Function Documentation}{217}{subsection.5.91.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.1}squeaker\_\discretionary {-}{}{}char\_\discretionary {-}{}{}to\_\discretionary {-}{}{}note}{217}{subsubsection.5.91.3.1}}
+\newlabel{squeaker2_8c_423996c09a292a4e6bd94aab6f0bd9f2}{{5.91.3.1}{217}{squeaker\_\-char\_\-to\_\-note\relax }{subsubsection.5.91.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.2}squeaker\_\discretionary {-}{}{}init}{217}{subsubsection.5.91.3.2}}
+\newlabel{squeaker2_8c_0cf1bbc0d356b83d8fa3f4ce2ccced6e}{{5.91.3.2}{217}{squeaker\_\-init\relax }{subsubsection.5.91.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.3}squeaker\_\discretionary {-}{}{}note\_\discretionary {-}{}{}fraction\_\discretionary {-}{}{}set}{217}{subsubsection.5.91.3.3}}
+\newlabel{squeaker2_8c_c7e83eb38db4cc1828cb56c1fe3588a0}{{5.91.3.3}{217}{squeaker\_\-note\_\-fraction\_\-set\relax }{subsubsection.5.91.3.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.4}squeaker\_\discretionary {-}{}{}note\_\discretionary {-}{}{}play}{217}{subsubsection.5.91.3.4}}
+\newlabel{squeaker2_8c_e3c59b2b4b57c5415aec286d91363c34}{{5.91.3.4}{217}{squeaker\_\-note\_\-play\relax }{subsubsection.5.91.3.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.5}squeaker\_\discretionary {-}{}{}note\_\discretionary {-}{}{}set}{217}{subsubsection.5.91.3.5}}
+\newlabel{squeaker2_8c_41f38d77ffd42f9d51847173316c2fd1}{{5.91.3.5}{217}{squeaker\_\-note\_\-set\relax }{subsubsection.5.91.3.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.6}squeaker\_\discretionary {-}{}{}play}{217}{subsubsection.5.91.3.6}}
+\newlabel{squeaker2_8c_59295123ab99a6be33c39017375147f2}{{5.91.3.6}{217}{squeaker\_\-play\relax }{subsubsection.5.91.3.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.7}squeaker\_\discretionary {-}{}{}rest\_\discretionary {-}{}{}play}{217}{subsubsection.5.91.3.7}}
+\newlabel{squeaker2_8c_2f42eefd7ea560eda5e98a9acf0c57dd}{{5.91.3.7}{217}{squeaker\_\-rest\_\-play\relax }{subsubsection.5.91.3.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.8}squeaker\_\discretionary {-}{}{}scan}{217}{subsubsection.5.91.3.8}}
+\newlabel{squeaker2_8c_eea3070a84aa06a311d4d37b706272b8}{{5.91.3.8}{217}{squeaker\_\-scan\relax }{subsubsection.5.91.3.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.9}squeaker\_\discretionary {-}{}{}speed\_\discretionary {-}{}{}set}{217}{subsubsection.5.91.3.9}}
+\newlabel{squeaker2_8c_c1f57e45e28b5c0bf8d9e79e0587ccba}{{5.91.3.9}{217}{squeaker\_\-speed\_\-set\relax }{subsubsection.5.91.3.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.10}squeaker\_\discretionary {-}{}{}ticker\_\discretionary {-}{}{}set}{217}{subsubsection.5.91.3.10}}
+\newlabel{squeaker2_8c_2a1acb4ece2e9a7612d61848385ec751}{{5.91.3.10}{217}{squeaker\_\-ticker\_\-set\relax }{subsubsection.5.91.3.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.11}squeaker\_\discretionary {-}{}{}update}{217}{subsubsection.5.91.3.11}}
+\newlabel{squeaker2_8c_55f1dd357ba9b75b05bab0d7f757a170}{{5.91.3.11}{217}{squeaker\_\-update\relax }{subsubsection.5.91.3.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.91.3.12}squeaker\_\discretionary {-}{}{}volume\_\discretionary {-}{}{}set}{217}{subsubsection.5.91.3.12}}
+\newlabel{squeaker2_8c_a6ec07a2ad5625a4f762e09b309d295f}{{5.91.3.12}{217}{squeaker\_\-volume\_\-set\relax }{subsubsection.5.91.3.12}{}}
+\@setckpt{squeaker2_8c}{
+\setcounter{page}{218}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{91}
+\setcounter{subsection}{3}
+\setcounter{subsubsection}{12}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

@@ -1,0 +1,56 @@
+\hypertarget{buttons_8c}{
+\section{buttons.c File Reference}
+\label{buttons_8c}\index{buttons.c@{buttons.c}}
+}
+Multiple pushbutton driver. 
+
+{\tt \#include \char`\"{}buttons.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{buttons_8c_9b9727c788372159bf40b07d279ba5e0}{buttons\_\-init} (\hyperlink{structbuttons__private__t}{buttons\_\-obj\_\-t} $\ast$buttons, \hyperlink{structbutton__private__t}{button\_\-obj\_\-t} $\ast$button\_\-objs, const \hyperlink{structbutton__cfg__t}{button\_\-cfg\_\-t} $\ast$config, uint8\_\-t buttons\_\-num, uint8\_\-t poll\_\-count)
+\item 
+void \hyperlink{buttons_8c_22af164bdc87ddac79965d2b8255ba38}{buttons\_\-poll} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons)
+\item 
+bool \hyperlink{buttons_8c_95d519ecf27b1a0a6ec07e909c0cc6ea}{buttons\_\-any\_\-pushed\_\-p} (\hyperlink{structbuttons__private__t}{buttons\_\-t} buttons)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Multiple pushbutton driver. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{buttons_8c_95d519ecf27b1a0a6ec07e909c0cc6ea}{
+\index{buttons.c@{buttons.c}!buttons\_\-any\_\-pushed\_\-p@{buttons\_\-any\_\-pushed\_\-p}}
+\index{buttons\_\-any\_\-pushed\_\-p@{buttons\_\-any\_\-pushed\_\-p}!buttons.c@{buttons.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool buttons\_\-any\_\-pushed\_\-p ({\bf buttons\_\-t} {\em buttons})}}
+\label{buttons_8c_95d519ecf27b1a0a6ec07e909c0cc6ea}
+
+
+Return true if any buttons pushed. 
+
+References button\_\-pushed\_\-p(), buttons\_\-private\_\-t::buttons, and buttons\_\-private\_\-t::num.\hypertarget{buttons_8c_9b9727c788372159bf40b07d279ba5e0}{
+\index{buttons.c@{buttons.c}!buttons\_\-init@{buttons\_\-init}}
+\index{buttons\_\-init@{buttons\_\-init}!buttons.c@{buttons.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void buttons\_\-init ({\bf buttons\_\-obj\_\-t} $\ast$ {\em buttons}, \/  {\bf button\_\-obj\_\-t} $\ast$ {\em buttons\_\-info}, \/  const {\bf button\_\-cfg\_\-t} $\ast$ {\em config}, \/  uint8\_\-t {\em buttons\_\-num}, \/  uint8\_\-t {\em poll\_\-count})}}
+\label{buttons_8c_9b9727c788372159bf40b07d279ba5e0}
+
+
+Initialise multiple buttons. 
+
+References button\_\-init(), button\_\-poll\_\-count\_\-set(), buttons\_\-private\_\-t::buttons, and buttons\_\-private\_\-t::num.\hypertarget{buttons_8c_22af164bdc87ddac79965d2b8255ba38}{
+\index{buttons.c@{buttons.c}!buttons\_\-poll@{buttons\_\-poll}}
+\index{buttons\_\-poll@{buttons\_\-poll}!buttons.c@{buttons.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void buttons\_\-poll ({\bf buttons\_\-t} {\em buttons})}}
+\label{buttons_8c_22af164bdc87ddac79965d2b8255ba38}
+
+
+Poll multiple buttons. 
+
+References button\_\-poll(), buttons\_\-private\_\-t::buttons, and buttons\_\-private\_\-t::num.

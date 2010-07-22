@@ -1,0 +1,44 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.55}mtext.c File Reference}{150}{section.5.55}}
+\newlabel{mtext_8c}{{5.55}{150}{mtext.c File Reference\relax }{section.5.55}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{150}{subsection.5.55.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.55.2}Function Documentation}{150}{subsection.5.55.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.1}mtext\_\discretionary {-}{}{}display}{150}{subsubsection.5.55.2.1}}
+\newlabel{mtext_8c_b3ab21d15b5ea176e016741d925a7604}{{5.55.2.1}{150}{mtext\_\-display\relax }{subsubsection.5.55.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.2}mtext\_\discretionary {-}{}{}init}{150}{subsubsection.5.55.2.2}}
+\newlabel{mtext_8c_e13283a28bab03fd3c5813f7c4dbf731}{{5.55.2.2}{150}{mtext\_\-init\relax }{subsubsection.5.55.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.3}mtext\_\discretionary {-}{}{}pixel\_\discretionary {-}{}{}set}{150}{subsubsection.5.55.2.3}}
+\newlabel{mtext_8c_deb9e2fc0dc95ebc72e478cfc6d9e2e9}{{5.55.2.3}{150}{mtext\_\-pixel\_\-set\relax }{subsubsection.5.55.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.4}mtext\_\discretionary {-}{}{}scan}{150}{subsubsection.5.55.2.4}}
+\newlabel{mtext_8c_ff41cf87647d3b89545605eb81c53dde}{{5.55.2.4}{150}{mtext\_\-scan\relax }{subsubsection.5.55.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.5}mtext\_\discretionary {-}{}{}scroller\_\discretionary {-}{}{}dir\_\discretionary {-}{}{}get}{150}{subsubsection.5.55.2.5}}
+\newlabel{mtext_8c_9b28d74fc3f7e8fe18a9388c97bd62bd}{{5.55.2.5}{150}{mtext\_\-scroller\_\-dir\_\-get\relax }{subsubsection.5.55.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.6}mtext\_\discretionary {-}{}{}scroller\_\discretionary {-}{}{}dir\_\discretionary {-}{}{}set}{150}{subsubsection.5.55.2.6}}
+\newlabel{mtext_8c_a561c94fcd64ccca533b28d3367ab518}{{5.55.2.6}{150}{mtext\_\-scroller\_\-dir\_\-set\relax }{subsubsection.5.55.2.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.7}mtext\_\discretionary {-}{}{}speed\_\discretionary {-}{}{}set}{150}{subsubsection.5.55.2.7}}
+\newlabel{mtext_8c_c14048f75d9b9ebbd2ebec0922c0e7ae}{{5.55.2.7}{150}{mtext\_\-speed\_\-set\relax }{subsubsection.5.55.2.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.55.2.8}mtext\_\discretionary {-}{}{}update}{150}{subsubsection.5.55.2.8}}
+\newlabel{mtext_8c_e48e1eb97e84f392701516927631297d}{{5.55.2.8}{150}{mtext\_\-update\relax }{subsubsection.5.55.2.8}{}}
+\@setckpt{mtext_8c}{
+\setcounter{page}{151}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{55}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{8}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

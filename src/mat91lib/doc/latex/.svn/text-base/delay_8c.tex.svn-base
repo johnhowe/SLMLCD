@@ -1,0 +1,30 @@
+\hypertarget{delay_8c}{
+\section{delay.c File Reference}
+\label{delay_8c}\index{delay.c@{delay.c}}
+}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{delay_8c_84f652539f41e435c3b08e023d3ba0dd}{delay\_\-us} (unsigned int us)
+\item 
+void \hyperlink{delay_8c_f29c4657f62375d42c6ee104b6bf4491}{delay\_\-ms} (unsigned int ms)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{delay_8c_f29c4657f62375d42c6ee104b6bf4491}{
+\index{delay.c@{delay.c}!delay\_\-ms@{delay\_\-ms}}
+\index{delay\_\-ms@{delay\_\-ms}!delay.c@{delay.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void delay\_\-ms (unsigned int {\em ms})}}
+\label{delay_8c_f29c4657f62375d42c6ee104b6bf4491}
+
+
+
+
+References DELAY\_\-US.\hypertarget{delay_8c_84f652539f41e435c3b08e023d3ba0dd}{
+\index{delay.c@{delay.c}!delay\_\-us@{delay\_\-us}}
+\index{delay\_\-us@{delay\_\-us}!delay.c@{delay.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void delay\_\-us (unsigned int {\em us})}}
+\label{delay_8c_84f652539f41e435c3b08e023d3ba0dd}
+
+

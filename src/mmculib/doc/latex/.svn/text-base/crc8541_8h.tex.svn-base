@@ -1,0 +1,58 @@
+\hypertarget{crc8541_8h}{
+\section{crc8541.h File Reference}
+\label{crc8541_8h}\index{crc8541.h@{crc8541.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef uint8\_\-t \hyperlink{crc8541_8h_66ef761a6b127bd873491ca9fdf0b992}{crc8\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{dscrc8_8h_66ef761a6b127bd873491ca9fdf0b992}{crc8\_\-t} \hyperlink{crc8541_8h_d07e668fa79ac8a121aa663032771048}{crc8541\_\-byte} (\hyperlink{dscrc8_8h_66ef761a6b127bd873491ca9fdf0b992}{crc8\_\-t} crc, uint8\_\-t val)
+\item 
+\hyperlink{dscrc8_8h_66ef761a6b127bd873491ca9fdf0b992}{crc8\_\-t} \hyperlink{crc8541_8h_903817fcc9f2b465f30e0badddda8ede}{crc8541} (\hyperlink{dscrc8_8h_66ef761a6b127bd873491ca9fdf0b992}{crc8\_\-t} crc, uint8\_\-t $\ast$bytes, uint8\_\-t size)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{crc8541_8h_66ef761a6b127bd873491ca9fdf0b992}{
+\index{crc8541.h@{crc8541.h}!crc8\_\-t@{crc8\_\-t}}
+\index{crc8\_\-t@{crc8\_\-t}!crc8541.h@{crc8541.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf crc8\_\-t}}}
+\label{crc8541_8h_66ef761a6b127bd873491ca9fdf0b992}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{crc8541_8h_903817fcc9f2b465f30e0badddda8ede}{
+\index{crc8541.h@{crc8541.h}!crc8541@{crc8541}}
+\index{crc8541@{crc8541}!crc8541.h@{crc8541.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf crc8\_\-t} crc8541 ({\bf crc8\_\-t} {\em crc}, \/  uint8\_\-t $\ast$ {\em bytes}, \/  uint8\_\-t {\em size})}}
+\label{crc8541_8h_903817fcc9f2b465f30e0badddda8ede}
+
+
+
+
+References crc8541\_\-byte().\hypertarget{crc8541_8h_d07e668fa79ac8a121aa663032771048}{
+\index{crc8541.h@{crc8541.h}!crc8541\_\-byte@{crc8541\_\-byte}}
+\index{crc8541\_\-byte@{crc8541\_\-byte}!crc8541.h@{crc8541.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf crc8\_\-t} crc8541\_\-byte ({\bf crc8\_\-t} {\em crc}, \/  uint8\_\-t {\em val})}}
+\label{crc8541_8h_d07e668fa79ac8a121aa663032771048}
+
+
+
+
+References crc8541\_\-bit().
+
+Referenced by crc8541(), and main().

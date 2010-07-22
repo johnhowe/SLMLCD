@@ -1,0 +1,39 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {4.54}tweeter\_\discretionary {-}{}{}private\_\discretionary {-}{}{}t Struct Reference}{64}{section.4.54}}
+\newlabel{structtweeter__private__t}{{4.54}{64}{tweeter\_\-private\_\-t Struct Reference\relax }{section.4.54}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.54.1}Field Documentation}{64}{subsection.4.54.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.54.1.1}note\_\discretionary {-}{}{}clock}{64}{subsubsection.4.54.1.1}}
+\newlabel{structtweeter__private__t_fd51e6e2dfb1f2f17f22742856dd9a9e}{{4.54.1.1}{64}{note\_\-clock\relax }{subsubsection.4.54.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.54.1.2}note\_\discretionary {-}{}{}duty}{64}{subsubsection.4.54.1.2}}
+\newlabel{structtweeter__private__t_77716ab615ed0b7329eed4a34954909c}{{4.54.1.2}{64}{note\_\-duty\relax }{subsubsection.4.54.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.54.1.3}note\_\discretionary {-}{}{}holdoff}{64}{subsubsection.4.54.1.3}}
+\newlabel{structtweeter__private__t_ceca772041b6209a767e344be8199fee}{{4.54.1.3}{64}{note\_\-holdoff\relax }{subsubsection.4.54.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.54.1.4}note\_\discretionary {-}{}{}period}{64}{subsubsection.4.54.1.4}}
+\newlabel{structtweeter__private__t_357b8bbcf21350dc1d7f9db74343a70d}{{4.54.1.4}{64}{note\_\-period\relax }{subsubsection.4.54.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.54.1.5}poll\_\discretionary {-}{}{}rate}{64}{subsubsection.4.54.1.5}}
+\newlabel{structtweeter__private__t_75cdc2f5578d5afb3d344857141a0365}{{4.54.1.5}{64}{poll\_\-rate\relax }{subsubsection.4.54.1.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.54.1.6}scale\_\discretionary {-}{}{}table}{64}{subsubsection.4.54.1.6}}
+\newlabel{structtweeter__private__t_f64d174bb3290138155e8278d5d6ec1e}{{4.54.1.6}{64}{scale\_\-table\relax }{subsubsection.4.54.1.6}{}}
+\@setckpt{structtweeter__private__t}{
+\setcounter{page}{65}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{54}
+\setcounter{subsection}{1}
+\setcounter{subsubsection}{6}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

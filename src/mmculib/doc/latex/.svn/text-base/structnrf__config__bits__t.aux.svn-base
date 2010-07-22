@@ -1,0 +1,55 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {4.31}nrf\_\discretionary {-}{}{}config\_\discretionary {-}{}{}bits\_\discretionary {-}{}{}t Struct Reference}{39}{section.4.31}}
+\newlabel{structnrf__config__bits__t}{{4.31}{39}{nrf\_\-config\_\-bits\_\-t Struct Reference\relax }{section.4.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.31.1}Field Documentation}{40}{subsection.4.31.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.1}addr\_\discretionary {-}{}{}1}{40}{subsubsection.4.31.1.1}}
+\newlabel{structnrf__config__bits__t_efb88404d5e6316ebb8f20cd1c53e80b}{{4.31.1.1}{40}{addr\_\-1\relax }{subsubsection.4.31.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.2}addr\_\discretionary {-}{}{}2}{40}{subsubsection.4.31.1.2}}
+\newlabel{structnrf__config__bits__t_a408210294051c11a534934ed459b26a}{{4.31.1.2}{40}{addr\_\-2\relax }{subsubsection.4.31.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.3}addr\_\discretionary {-}{}{}w}{40}{subsubsection.4.31.1.3}}
+\newlabel{structnrf__config__bits__t_65b928c6f36d18ed26862c1618a98b33}{{4.31.1.3}{40}{addr\_\-w\relax }{subsubsection.4.31.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.4}cm}{40}{subsubsection.4.31.1.4}}
+\newlabel{structnrf__config__bits__t_a61339a724bf6151a252c95d9c6476d4}{{4.31.1.4}{40}{cm\relax }{subsubsection.4.31.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.5}crc\_\discretionary {-}{}{}en}{40}{subsubsection.4.31.1.5}}
+\newlabel{structnrf__config__bits__t_c2b64a3454b44abafede2526709824fa}{{4.31.1.5}{40}{crc\_\-en\relax }{subsubsection.4.31.1.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.6}crc\_\discretionary {-}{}{}l}{40}{subsubsection.4.31.1.6}}
+\newlabel{structnrf__config__bits__t_e8df20685fb577a0f7f01d44f9089840}{{4.31.1.6}{40}{crc\_\-l\relax }{subsubsection.4.31.1.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.7}data1\_\discretionary {-}{}{}w}{40}{subsubsection.4.31.1.7}}
+\newlabel{structnrf__config__bits__t_a0d3c8404b172ff4fe0c93576cbb24b6}{{4.31.1.7}{40}{data1\_\-w\relax }{subsubsection.4.31.1.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.8}data2\_\discretionary {-}{}{}w}{40}{subsubsection.4.31.1.8}}
+\newlabel{structnrf__config__bits__t_0c1bd7d7e3cac550eb25a2d5f3b76bcd}{{4.31.1.8}{40}{data2\_\-w\relax }{subsubsection.4.31.1.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.9}rf\_\discretionary {-}{}{}pwr}{40}{subsubsection.4.31.1.9}}
+\newlabel{structnrf__config__bits__t_b71b8a52f565bd242bc3f52b3f383ef7}{{4.31.1.9}{40}{rf\_\-pwr\relax }{subsubsection.4.31.1.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.10}rfdr\_\discretionary {-}{}{}sb}{40}{subsubsection.4.31.1.10}}
+\newlabel{structnrf__config__bits__t_136cc8ef014051b0e1790c6d08a871b8}{{4.31.1.10}{40}{rfdr\_\-sb\relax }{subsubsection.4.31.1.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.11}rx2\_\discretionary {-}{}{}en}{40}{subsubsection.4.31.1.11}}
+\newlabel{structnrf__config__bits__t_8313817a252c90b9366c044919e16520}{{4.31.1.11}{40}{rx2\_\-en\relax }{subsubsection.4.31.1.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.12}rx\_\discretionary {-}{}{}ch\_\discretionary {-}{}{}num}{40}{subsubsection.4.31.1.12}}
+\newlabel{structnrf__config__bits__t_163b7ecc2530f0ad005bf56f4736b8f2}{{4.31.1.12}{40}{rx\_\-ch\_\-num\relax }{subsubsection.4.31.1.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.13}rxen}{40}{subsubsection.4.31.1.13}}
+\newlabel{structnrf__config__bits__t_afeea898c340553fd4538555598dd4bb}{{4.31.1.13}{40}{rxen\relax }{subsubsection.4.31.1.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.31.1.14}xo\_\discretionary {-}{}{}f}{40}{subsubsection.4.31.1.14}}
+\newlabel{structnrf__config__bits__t_4afeba3dad3675a7b3d785ed82d9d452}{{4.31.1.14}{40}{xo\_\-f\relax }{subsubsection.4.31.1.14}{}}
+\@setckpt{structnrf__config__bits__t}{
+\setcounter{page}{41}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{31}
+\setcounter{subsection}{1}
+\setcounter{subsubsection}{14}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

@@ -1,0 +1,54 @@
+\hypertarget{u1wire__enumerate_8h}{
+\section{u1wire\_\-enumerate.h File Reference}
+\label{u1wire__enumerate_8h}\index{u1wire\_\-enumerate.h@{u1wire\_\-enumerate.h}}
+}
+This discovers devices on a Dallas universal one wire bus. 
+
+{\tt \#include \char`\"{}u1wire.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structu1wire__state__t}{u1wire\_\-state\_\-t}
+\item 
+struct \hyperlink{structu1wire__enumerate__t}{u1wire\_\-enumerate\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$ \hyperlink{u1wire__enumerate_8h_46120d0a1a5aafb311871f75a474a145}{u1wire\_\-enumerate} (\hyperlink{structu1wire__enumerate__t}{u1wire\_\-enumerate\_\-t} $\ast$info)
+\item 
+\hyperlink{structu1wire__obj__t}{u1wire\_\-obj\_\-t} $\ast$ \hyperlink{u1wire__enumerate_8h_e8119f763768a208d1cfae1b54a9abef}{u1wire\_\-enumerate\_\-next} (\hyperlink{structu1wire__enumerate__t}{u1wire\_\-enumerate\_\-t} $\ast$info)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This discovers devices on a Dallas universal one wire bus. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]24 February 2005 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{u1wire__enumerate_8h_46120d0a1a5aafb311871f75a474a145}{
+\index{u1wire\_\-enumerate.h@{u1wire\_\-enumerate.h}!u1wire\_\-enumerate@{u1wire\_\-enumerate}}
+\index{u1wire\_\-enumerate@{u1wire\_\-enumerate}!u1wire_enumerate.h@{u1wire\_\-enumerate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf u1wire\_\-obj\_\-t}$\ast$ u1wire\_\-enumerate ({\bf u1wire\_\-enumerate\_\-t} $\ast$ {\em info})}}
+\label{u1wire__enumerate_8h_46120d0a1a5aafb311871f75a474a145}
+
+
+
+
+References u1wire\_\-state\_\-t::last\_\-device, u1wire\_\-state\_\-t::last\_\-discrepancy, u1wire\_\-state\_\-t::last\_\-family\_\-discrepancy, u1wire\_\-enumerate\_\-t::state, and u1wire\_\-enumerate\_\-next().\hypertarget{u1wire__enumerate_8h_e8119f763768a208d1cfae1b54a9abef}{
+\index{u1wire\_\-enumerate.h@{u1wire\_\-enumerate.h}!u1wire\_\-enumerate\_\-next@{u1wire\_\-enumerate\_\-next}}
+\index{u1wire\_\-enumerate\_\-next@{u1wire\_\-enumerate\_\-next}!u1wire_enumerate.h@{u1wire\_\-enumerate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf u1wire\_\-obj\_\-t}$\ast$ u1wire\_\-enumerate\_\-next ({\bf u1wire\_\-enumerate\_\-t} $\ast$ {\em info})}}
+\label{u1wire__enumerate_8h_e8119f763768a208d1cfae1b54a9abef}
+
+
+
+
+References u1wire\_\-enumerate\_\-t::device, u1wire\_\-obj\_\-t::rom\_\-code, u1wire\_\-enumerate\_\-t::state, and u1wire\_\-search().
+
+Referenced by u1wire\_\-enumerate().

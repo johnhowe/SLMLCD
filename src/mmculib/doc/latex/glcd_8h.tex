@@ -1,0 +1,203 @@
+\hypertarget{glcd_8h}{
+\section{glcd.h File Reference}
+\label{glcd_8h}\index{glcd.h@{glcd.h}}
+}
+Simple GLCD driver. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structglcd__cfg__t}{glcd\_\-cfg\_\-t}
+\item 
+struct \hyperlink{structglcd__private__t}{glcd\_\-private\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{glcd_8h_d7268bcd848446ec4a7862a2401fcd24}{GLCD\_\-WIDTH}~128
+\item 
+\#define \hyperlink{glcd_8h_4b040443ecab2df794124ab60318cb0c}{GLCD\_\-HEIGHT}~64
+\item 
+\#define \hyperlink{glcd_8h_66f605be311d7b9b6fdc93347a0b4104}{GLCD\_\-PIXEL\_\-BITS}~1
+\item 
+\#define \hyperlink{glcd_8h_f5b394ce011113fdfc513f07a4c2aee6}{GLCD\_\-CFG}(PORT, PORTBIT)~\{(PORT), BIT (PORTBIT)\}
+\item 
+\#define \hyperlink{glcd_8h_b330825cd150444a77bba14f6c903a56}{GLCD\_\-PAGE\_\-PIXELS}~8
+\item 
+\#define \hyperlink{glcd_8h_ee0b313ea822cc6d4285560157982c3b}{GLCD\_\-PAGES}~(GLCD\_\-HEIGHT / GLCD\_\-PAGE\_\-PIXELS)
+\item 
+\#define \hyperlink{glcd_8h_35980e1b8ec33e5b6c88d90f4400bff4}{GLCD\_\-PIXEL\_\-BYTES}~(GLCD\_\-PAGES $\ast$ GLCD\_\-WIDTH $\ast$ GLCD\_\-PIXEL\_\-BITS)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef \hyperlink{structglcd__private__t}{glcd\_\-private\_\-t} \hyperlink{glcd_8h_849ffa9f50da5bd891527b219b71e70a}{glcd\_\-obj\_\-t}
+\item 
+typedef \hyperlink{structglcd__private__t}{glcd\_\-obj\_\-t} $\ast$ \hyperlink{glcd_8h_c9071e8f6ae45833c440d047a823763c}{glcd\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{glcd_8h_5924f308518f1b64ebd98be05568660e}{glcd\_\-pixel\_\-set} (\hyperlink{structglcd__private__t}{glcd\_\-t} glcd, uint16\_\-t x, uint16\_\-t y, uint8\_\-t val)
+\item 
+void \hyperlink{glcd_8h_b824bdd05dcfdfc034769f836c7f0df7}{glcd\_\-update} (\hyperlink{structglcd__private__t}{glcd\_\-t} glcd)
+\item 
+void \hyperlink{glcd_8h_c12d4dd09efcc4e6c8de696ee71b8791}{glcd\_\-clear} (\hyperlink{structglcd__private__t}{glcd\_\-t} glcd)
+\item 
+void \hyperlink{glcd_8h_d32ab51ea3de5b5b6d0f051c789c586f}{glcd\_\-contrast\_\-set} (\hyperlink{structglcd__private__t}{glcd\_\-t} glcd, uint8\_\-t contrast)
+\item 
+\hyperlink{structglcd__private__t}{glcd\_\-t} \hyperlink{glcd_8h_4d4903198de360301de9590ba1c01b88}{glcd\_\-init} (\hyperlink{structglcd__private__t}{glcd\_\-obj\_\-t} $\ast$obj, const \hyperlink{structglcd__cfg__t}{glcd\_\-cfg\_\-t} $\ast$cfg)
+\item 
+void \hyperlink{glcd_8h_52014110396799de085e30b5c6517b25}{glcd\_\-shutdown} (\hyperlink{structglcd__private__t}{glcd\_\-obj\_\-t} $\ast$obj)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Simple GLCD driver. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]28 January 2008 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{glcd_8h_f5b394ce011113fdfc513f07a4c2aee6}{
+\index{glcd.h@{glcd.h}!GLCD\_\-CFG@{GLCD\_\-CFG}}
+\index{GLCD\_\-CFG@{GLCD\_\-CFG}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-CFG(PORT, \/  PORTBIT)~\{(PORT), BIT (PORTBIT)\}}}
+\label{glcd_8h_f5b394ce011113fdfc513f07a4c2aee6}
+
+
+\hypertarget{glcd_8h_4b040443ecab2df794124ab60318cb0c}{
+\index{glcd.h@{glcd.h}!GLCD\_\-HEIGHT@{GLCD\_\-HEIGHT}}
+\index{GLCD\_\-HEIGHT@{GLCD\_\-HEIGHT}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-HEIGHT~64}}
+\label{glcd_8h_4b040443ecab2df794124ab60318cb0c}
+
+
+
+
+Referenced by glcd\_\-pixel\_\-set().\hypertarget{glcd_8h_b330825cd150444a77bba14f6c903a56}{
+\index{glcd.h@{glcd.h}!GLCD\_\-PAGE\_\-PIXELS@{GLCD\_\-PAGE\_\-PIXELS}}
+\index{GLCD\_\-PAGE\_\-PIXELS@{GLCD\_\-PAGE\_\-PIXELS}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-PAGE\_\-PIXELS~8}}
+\label{glcd_8h_b330825cd150444a77bba14f6c903a56}
+
+
+
+
+Referenced by glcd\_\-pixel\_\-set().\hypertarget{glcd_8h_ee0b313ea822cc6d4285560157982c3b}{
+\index{glcd.h@{glcd.h}!GLCD\_\-PAGES@{GLCD\_\-PAGES}}
+\index{GLCD\_\-PAGES@{GLCD\_\-PAGES}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-PAGES~(GLCD\_\-HEIGHT / GLCD\_\-PAGE\_\-PIXELS)}}
+\label{glcd_8h_ee0b313ea822cc6d4285560157982c3b}
+
+
+
+
+Referenced by glcd\_\-clear(), and glcd\_\-update().\hypertarget{glcd_8h_66f605be311d7b9b6fdc93347a0b4104}{
+\index{glcd.h@{glcd.h}!GLCD\_\-PIXEL\_\-BITS@{GLCD\_\-PIXEL\_\-BITS}}
+\index{GLCD\_\-PIXEL\_\-BITS@{GLCD\_\-PIXEL\_\-BITS}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-PIXEL\_\-BITS~1}}
+\label{glcd_8h_66f605be311d7b9b6fdc93347a0b4104}
+
+
+\hypertarget{glcd_8h_35980e1b8ec33e5b6c88d90f4400bff4}{
+\index{glcd.h@{glcd.h}!GLCD\_\-PIXEL\_\-BYTES@{GLCD\_\-PIXEL\_\-BYTES}}
+\index{GLCD\_\-PIXEL\_\-BYTES@{GLCD\_\-PIXEL\_\-BYTES}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-PIXEL\_\-BYTES~(GLCD\_\-PAGES $\ast$ GLCD\_\-WIDTH $\ast$ GLCD\_\-PIXEL\_\-BITS)}}
+\label{glcd_8h_35980e1b8ec33e5b6c88d90f4400bff4}
+
+
+\hypertarget{glcd_8h_d7268bcd848446ec4a7862a2401fcd24}{
+\index{glcd.h@{glcd.h}!GLCD\_\-WIDTH@{GLCD\_\-WIDTH}}
+\index{GLCD\_\-WIDTH@{GLCD\_\-WIDTH}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GLCD\_\-WIDTH~128}}
+\label{glcd_8h_d7268bcd848446ec4a7862a2401fcd24}
+
+
+
+
+Referenced by glcd\_\-clear(), glcd\_\-pixel\_\-set(), and glcd\_\-update\_\-page().
+
+\subsection{Typedef Documentation}
+\hypertarget{glcd_8h_849ffa9f50da5bd891527b219b71e70a}{
+\index{glcd.h@{glcd.h}!glcd\_\-obj\_\-t@{glcd\_\-obj\_\-t}}
+\index{glcd\_\-obj\_\-t@{glcd\_\-obj\_\-t}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf glcd\_\-private\_\-t} {\bf glcd\_\-obj\_\-t}}}
+\label{glcd_8h_849ffa9f50da5bd891527b219b71e70a}
+
+
+\hypertarget{glcd_8h_c9071e8f6ae45833c440d047a823763c}{
+\index{glcd.h@{glcd.h}!glcd\_\-t@{glcd\_\-t}}
+\index{glcd\_\-t@{glcd\_\-t}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf glcd\_\-obj\_\-t}$\ast$ {\bf glcd\_\-t}}}
+\label{glcd_8h_c9071e8f6ae45833c440d047a823763c}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{glcd_8h_c12d4dd09efcc4e6c8de696ee71b8791}{
+\index{glcd.h@{glcd.h}!glcd\_\-clear@{glcd\_\-clear}}
+\index{glcd\_\-clear@{glcd\_\-clear}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void glcd\_\-clear ({\bf glcd\_\-t} {\em glcd})}}
+\label{glcd_8h_c12d4dd09efcc4e6c8de696ee71b8791}
+
+
+
+
+References GLCD\_\-PAGES, glcd\_\-update(), GLCD\_\-WIDTH, glcd\_\-private\_\-t::modified, and glcd\_\-private\_\-t::screen.
+
+Referenced by glcd\_\-init().\hypertarget{glcd_8h_d32ab51ea3de5b5b6d0f051c789c586f}{
+\index{glcd.h@{glcd.h}!glcd\_\-contrast\_\-set@{glcd\_\-contrast\_\-set}}
+\index{glcd\_\-contrast\_\-set@{glcd\_\-contrast\_\-set}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void glcd\_\-contrast\_\-set ({\bf glcd\_\-t} {\em glcd}, \/  uint8\_\-t {\em contrast})}}
+\label{glcd_8h_d32ab51ea3de5b5b6d0f051c789c586f}
+
+
+
+
+References GLCD\_\-CMD\_\-REF\_\-VOLTAGE\_\-MODE, GLCD\_\-CMD\_\-REG\_\-RESISTOR, glcd\_\-command\_\-mode(), and glcd\_\-send().\hypertarget{glcd_8h_4d4903198de360301de9590ba1c01b88}{
+\index{glcd.h@{glcd.h}!glcd\_\-init@{glcd\_\-init}}
+\index{glcd\_\-init@{glcd\_\-init}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf glcd\_\-t} glcd\_\-init ({\bf glcd\_\-obj\_\-t} $\ast$ {\em obj}, \/  const {\bf glcd\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{glcd_8h_4d4903198de360301de9590ba1c01b88}
+
+
+
+
+References glcd\_\-private\_\-t::cfg, glcd\_\-clear(), glcd\_\-config(), GLCD\_\-SPI\_\-DIVISOR, glcd\_\-private\_\-t::modified, and glcd\_\-private\_\-t::spi.\hypertarget{glcd_8h_5924f308518f1b64ebd98be05568660e}{
+\index{glcd.h@{glcd.h}!glcd\_\-pixel\_\-set@{glcd\_\-pixel\_\-set}}
+\index{glcd\_\-pixel\_\-set@{glcd\_\-pixel\_\-set}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void glcd\_\-pixel\_\-set ({\bf glcd\_\-t} {\em glcd}, \/  uint16\_\-t {\em x}, \/  uint16\_\-t {\em y}, \/  uint8\_\-t {\em val})}}
+\label{glcd_8h_5924f308518f1b64ebd98be05568660e}
+
+
+
+
+References GLCD\_\-HEIGHT, GLCD\_\-PAGE\_\-PIXELS, GLCD\_\-WIDTH, glcd\_\-private\_\-t::modified, and glcd\_\-private\_\-t::screen.
+
+Referenced by display\_\-pixel(), and glcd\_\-draw\_\-line().\hypertarget{glcd_8h_52014110396799de085e30b5c6517b25}{
+\index{glcd.h@{glcd.h}!glcd\_\-shutdown@{glcd\_\-shutdown}}
+\index{glcd\_\-shutdown@{glcd\_\-shutdown}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void glcd\_\-shutdown ({\bf glcd\_\-obj\_\-t} $\ast$ {\em obj})}}
+\label{glcd_8h_52014110396799de085e30b5c6517b25}
+
+
+\hypertarget{glcd_8h_b824bdd05dcfdfc034769f836c7f0df7}{
+\index{glcd.h@{glcd.h}!glcd\_\-update@{glcd\_\-update}}
+\index{glcd\_\-update@{glcd\_\-update}!glcd.h@{glcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void glcd\_\-update ({\bf glcd\_\-t} {\em glcd})}}
+\label{glcd_8h_b824bdd05dcfdfc034769f836c7f0df7}
+
+
+
+
+References GLCD\_\-PAGES, glcd\_\-update\_\-page(), and glcd\_\-private\_\-t::modified.
+
+Referenced by glcd\_\-clear(), glcd\_\-text(), and textview\_\-putc().

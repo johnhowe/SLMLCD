@@ -1,0 +1,144 @@
+\hypertarget{spi__dma_8c}{
+\section{spi\_\-dma.c File Reference}
+\label{spi__dma_8c}\index{spi\_\-dma.c@{spi\_\-dma.c}}
+}
+Routines for interfacing to the SPI bus with DMA access. 
+
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+{\tt \#include \char`\"{}spi\_\-dma.h\char`\"{}}\par
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}bits.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{spi__dma_8c_d236639b1c8a590cd35958ea63e580b1}{spi\_\-dma\_\-write\_\-finished\_\-p} (void)
+\item 
+bool \hyperlink{spi__dma_8c_139b8100961745127c14acdb9c10a80e}{spi\_\-dma\_\-read\_\-finished\_\-p} (void)
+\item 
+bool \hyperlink{spi__dma_8c_25d2d1121782b65fc8db91d2848fe4b3}{spi\_\-dma\_\-write\_\-enable\_\-p} (void)
+\item 
+bool \hyperlink{spi__dma_8c_8392ffef3bc7536311631fcd943aeda5}{spi\_\-dma\_\-read\_\-enable\_\-p} (void)
+\item 
+void \hyperlink{spi__dma_8c_16a67c14dd0eaf0b4bd0dce33ef34781}{spi\_\-dma\_\-write\_\-enable} (void)
+\item 
+void \hyperlink{spi__dma_8c_de2ac0bde97f9d841aec38d6108af9cb}{spi\_\-dma\_\-write\_\-disable} (void)
+\item 
+void \hyperlink{spi__dma_8c_9a23187b7861fe3ce3e67d1f996e2d6e}{spi\_\-dma\_\-read\_\-enable} (void)
+\item 
+void \hyperlink{spi__dma_8c_3b9f312ac67f4eff75a3a21ae71bbdf1}{spi\_\-dma\_\-read\_\-disable} (void)
+\item 
+void \hyperlink{spi__dma_8c_cc7570ed8ed9526a07668c55c1f939ce}{spi\_\-dma\_\-write\_\-init} (void $\ast$address, uint16\_\-t size)
+\item 
+void \hyperlink{spi__dma_8c_c4d59964a1a52830fd53a3a58bcaa24a}{spi\_\-dma\_\-read\_\-init} (void $\ast$address, uint16\_\-t size)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Routines for interfacing to the SPI bus with DMA access. 
+
+\begin{Desc}
+\item[Author:]Michael Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]18 December 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{spi__dma_8c_3b9f312ac67f4eff75a3a21ae71bbdf1}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-read\_\-disable@{spi\_\-dma\_\-read\_\-disable}}
+\index{spi\_\-dma\_\-read\_\-disable@{spi\_\-dma\_\-read\_\-disable}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-dma\_\-read\_\-disable (void)}}
+\label{spi__dma_8c_3b9f312ac67f4eff75a3a21ae71bbdf1}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, AT91C\_\-PDC\_\-RXTDIS, and \_\-AT91S\_\-PDC::PDC\_\-PTCR.
+
+Referenced by spi\_\-dma\_\-read\_\-init().\hypertarget{spi__dma_8c_9a23187b7861fe3ce3e67d1f996e2d6e}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-read\_\-enable@{spi\_\-dma\_\-read\_\-enable}}
+\index{spi\_\-dma\_\-read\_\-enable@{spi\_\-dma\_\-read\_\-enable}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-dma\_\-read\_\-enable (void)}}
+\label{spi__dma_8c_9a23187b7861fe3ce3e67d1f996e2d6e}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, AT91C\_\-PDC\_\-RXTEN, and \_\-AT91S\_\-PDC::PDC\_\-PTCR.
+
+Referenced by spi\_\-dma\_\-read\_\-init().\hypertarget{spi__dma_8c_8392ffef3bc7536311631fcd943aeda5}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-read\_\-enable\_\-p@{spi\_\-dma\_\-read\_\-enable\_\-p}}
+\index{spi\_\-dma\_\-read\_\-enable\_\-p@{spi\_\-dma\_\-read\_\-enable\_\-p}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-dma\_\-read\_\-enable\_\-p (void)}}
+\label{spi__dma_8c_8392ffef3bc7536311631fcd943aeda5}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, AT91C\_\-PDC\_\-RXTEN, and \_\-AT91S\_\-PDC::PDC\_\-PTCR.\hypertarget{spi__dma_8c_139b8100961745127c14acdb9c10a80e}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-read\_\-finished\_\-p@{spi\_\-dma\_\-read\_\-finished\_\-p}}
+\index{spi\_\-dma\_\-read\_\-finished\_\-p@{spi\_\-dma\_\-read\_\-finished\_\-p}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-dma\_\-read\_\-finished\_\-p (void)}}
+\label{spi__dma_8c_139b8100961745127c14acdb9c10a80e}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, and AT91C\_\-SPI\_\-ENDRX.\hypertarget{spi__dma_8c_c4d59964a1a52830fd53a3a58bcaa24a}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-read\_\-init@{spi\_\-dma\_\-read\_\-init}}
+\index{spi\_\-dma\_\-read\_\-init@{spi\_\-dma\_\-read\_\-init}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-dma\_\-read\_\-init (void $\ast$ {\em address}, \/  uint16\_\-t {\em size})}}
+\label{spi__dma_8c_c4d59964a1a52830fd53a3a58bcaa24a}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, \_\-AT91S\_\-PDC::PDC\_\-RCR, \_\-AT91S\_\-PDC::PDC\_\-RNCR, \_\-AT91S\_\-PDC::PDC\_\-RNPR, \_\-AT91S\_\-PDC::PDC\_\-RPR, spi\_\-dma\_\-read\_\-disable(), and spi\_\-dma\_\-read\_\-enable().\hypertarget{spi__dma_8c_de2ac0bde97f9d841aec38d6108af9cb}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-write\_\-disable@{spi\_\-dma\_\-write\_\-disable}}
+\index{spi\_\-dma\_\-write\_\-disable@{spi\_\-dma\_\-write\_\-disable}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-dma\_\-write\_\-disable (void)}}
+\label{spi__dma_8c_de2ac0bde97f9d841aec38d6108af9cb}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, AT91C\_\-PDC\_\-TXTDIS, and \_\-AT91S\_\-PDC::PDC\_\-PTCR.
+
+Referenced by spi\_\-dma\_\-write\_\-init().\hypertarget{spi__dma_8c_16a67c14dd0eaf0b4bd0dce33ef34781}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-write\_\-enable@{spi\_\-dma\_\-write\_\-enable}}
+\index{spi\_\-dma\_\-write\_\-enable@{spi\_\-dma\_\-write\_\-enable}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-dma\_\-write\_\-enable (void)}}
+\label{spi__dma_8c_16a67c14dd0eaf0b4bd0dce33ef34781}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, AT91C\_\-PDC\_\-TXTEN, and \_\-AT91S\_\-PDC::PDC\_\-PTCR.
+
+Referenced by spi\_\-dma\_\-write\_\-init().\hypertarget{spi__dma_8c_25d2d1121782b65fc8db91d2848fe4b3}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-write\_\-enable\_\-p@{spi\_\-dma\_\-write\_\-enable\_\-p}}
+\index{spi\_\-dma\_\-write\_\-enable\_\-p@{spi\_\-dma\_\-write\_\-enable\_\-p}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-dma\_\-write\_\-enable\_\-p (void)}}
+\label{spi__dma_8c_25d2d1121782b65fc8db91d2848fe4b3}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, AT91C\_\-PDC\_\-TXTEN, and \_\-AT91S\_\-PDC::PDC\_\-PTCR.\hypertarget{spi__dma_8c_d236639b1c8a590cd35958ea63e580b1}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-write\_\-finished\_\-p@{spi\_\-dma\_\-write\_\-finished\_\-p}}
+\index{spi\_\-dma\_\-write\_\-finished\_\-p@{spi\_\-dma\_\-write\_\-finished\_\-p}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool spi\_\-dma\_\-write\_\-finished\_\-p (void)}}
+\label{spi__dma_8c_d236639b1c8a590cd35958ea63e580b1}
+
+
+
+
+References AT91C\_\-BASE\_\-SPI, and AT91C\_\-SPI\_\-ENDTX.\hypertarget{spi__dma_8c_cc7570ed8ed9526a07668c55c1f939ce}{
+\index{spi\_\-dma.c@{spi\_\-dma.c}!spi\_\-dma\_\-write\_\-init@{spi\_\-dma\_\-write\_\-init}}
+\index{spi\_\-dma\_\-write\_\-init@{spi\_\-dma\_\-write\_\-init}!spi_dma.c@{spi\_\-dma.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void spi\_\-dma\_\-write\_\-init (void $\ast$ {\em address}, \/  uint16\_\-t {\em size})}}
+\label{spi__dma_8c_cc7570ed8ed9526a07668c55c1f939ce}
+
+
+
+
+References AT91C\_\-BASE\_\-PDC\_\-SPI, \_\-AT91S\_\-PDC::PDC\_\-TCR, \_\-AT91S\_\-PDC::PDC\_\-TNCR, \_\-AT91S\_\-PDC::PDC\_\-TNPR, \_\-AT91S\_\-PDC::PDC\_\-TPR, spi\_\-dma\_\-write\_\-disable(), and spi\_\-dma\_\-write\_\-enable().

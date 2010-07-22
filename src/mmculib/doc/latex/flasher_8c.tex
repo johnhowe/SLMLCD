@@ -1,0 +1,85 @@
+\hypertarget{flasher_8c}{
+\section{flasher.c File Reference}
+\label{flasher_8c}\index{flasher.c@{flasher.c}}
+}
+{\tt \#include \char`\"{}flasher.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{flasher_8c_7ab53cc7fecf5dd97a6ecfda401113a8}{FLASHER\_\-TRANSPARENT}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int8\_\-t \hyperlink{flasher_8c_2ee38e9f9956e5dce687ac4a208704ff}{flasher\_\-pattern\_\-set} (\hyperlink{structflasher__obj__t}{flasher\_\-t} flasher, \hyperlink{structflasher__pattern__t}{flasher\_\-pattern\_\-t} $\ast$pattern)
+\item 
+\hyperlink{structflasher__pattern__t}{flasher\_\-pattern\_\-t} $\ast$ \hyperlink{flasher_8c_0b782c0c8742e5c324fd5da37b73caf3}{flasher\_\-pattern\_\-get} (\hyperlink{structflasher__obj__t}{flasher\_\-t} flasher)
+\item 
+int8\_\-t \hyperlink{flasher_8c_f56ddf24fcf72ea8677f55e4a373b442}{flasher\_\-phase\_\-set} (\hyperlink{structflasher__obj__t}{flasher\_\-t} flasher, uint8\_\-t phase)
+\item 
+bool \hyperlink{flasher_8c_2b2419ef109cf6f86e6f89c382f34f96}{flasher\_\-update} (\hyperlink{structflasher__obj__t}{flasher\_\-t} flasher)
+\item 
+\hyperlink{structflasher__obj__t}{flasher\_\-t} \hyperlink{flasher_8c_42c76123904c104ec0afbaddc8520a83}{flasher\_\-init} (\hyperlink{structflasher__obj__t}{flasher\_\-obj\_\-t} $\ast$flasher)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]13 March 2005 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{flasher_8c_7ab53cc7fecf5dd97a6ecfda401113a8}{
+\index{flasher.c@{flasher.c}!FLASHER\_\-TRANSPARENT@{FLASHER\_\-TRANSPARENT}}
+\index{FLASHER\_\-TRANSPARENT@{FLASHER\_\-TRANSPARENT}!flasher.c@{flasher.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FLASHER\_\-TRANSPARENT}}
+\label{flasher_8c_7ab53cc7fecf5dd97a6ecfda401113a8}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{flasher_8c_42c76123904c104ec0afbaddc8520a83}{
+\index{flasher.c@{flasher.c}!flasher\_\-init@{flasher\_\-init}}
+\index{flasher\_\-init@{flasher\_\-init}!flasher.c@{flasher.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf flasher\_\-t} flasher\_\-init ({\bf flasher\_\-obj\_\-t} $\ast$ {\em flasher})}}
+\label{flasher_8c_42c76123904c104ec0afbaddc8520a83}
+
+
+
+
+References flasher\_\-pattern\_\-set().\hypertarget{flasher_8c_0b782c0c8742e5c324fd5da37b73caf3}{
+\index{flasher.c@{flasher.c}!flasher\_\-pattern\_\-get@{flasher\_\-pattern\_\-get}}
+\index{flasher\_\-pattern\_\-get@{flasher\_\-pattern\_\-get}!flasher.c@{flasher.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf flasher\_\-pattern\_\-t}$\ast$ flasher\_\-pattern\_\-get ({\bf flasher\_\-t} {\em flasher})}}
+\label{flasher_8c_0b782c0c8742e5c324fd5da37b73caf3}
+
+
+\hypertarget{flasher_8c_2ee38e9f9956e5dce687ac4a208704ff}{
+\index{flasher.c@{flasher.c}!flasher\_\-pattern\_\-set@{flasher\_\-pattern\_\-set}}
+\index{flasher\_\-pattern\_\-set@{flasher\_\-pattern\_\-set}!flasher.c@{flasher.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t flasher\_\-pattern\_\-set ({\bf flasher\_\-t} {\em flasher}, \/  {\bf flasher\_\-pattern\_\-t} $\ast$ {\em pattern})}}
+\label{flasher_8c_2ee38e9f9956e5dce687ac4a208704ff}
+
+
+
+
+Referenced by chaser\_\-pixel\_\-set(), and flasher\_\-init().\hypertarget{flasher_8c_f56ddf24fcf72ea8677f55e4a373b442}{
+\index{flasher.c@{flasher.c}!flasher\_\-phase\_\-set@{flasher\_\-phase\_\-set}}
+\index{flasher\_\-phase\_\-set@{flasher\_\-phase\_\-set}!flasher.c@{flasher.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t flasher\_\-phase\_\-set ({\bf flasher\_\-t} {\em flasher}, \/  uint8\_\-t {\em phase})}}
+\label{flasher_8c_f56ddf24fcf72ea8677f55e4a373b442}
+
+
+\hypertarget{flasher_8c_2b2419ef109cf6f86e6f89c382f34f96}{
+\index{flasher.c@{flasher.c}!flasher\_\-update@{flasher\_\-update}}
+\index{flasher\_\-update@{flasher\_\-update}!flasher.c@{flasher.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool flasher\_\-update ({\bf flasher\_\-t} {\em flasher})}}
+\label{flasher_8c_2b2419ef109cf6f86e6f89c382f34f96}
+
+
+
+
+References FLASHER\_\-PRESCALE.

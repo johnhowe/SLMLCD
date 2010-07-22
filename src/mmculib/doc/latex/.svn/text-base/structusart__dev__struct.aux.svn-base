@@ -1,0 +1,37 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {4.59}usart\_\discretionary {-}{}{}dev\_\discretionary {-}{}{}struct Struct Reference}{69}{section.4.59}}
+\newlabel{structusart__dev__struct}{{4.59}{69}{usart\_\-dev\_\-struct Struct Reference\relax }{section.4.59}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.59.1}Field Documentation}{69}{subsection.4.59.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.59.1.1}getc}{69}{subsubsection.4.59.1.1}}
+\newlabel{structusart__dev__struct_d21cfddd41d5d6aea4d29fb9f61b7d6b}{{4.59.1.1}{69}{getc\relax }{subsubsection.4.59.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.59.1.2}putc}{69}{subsubsection.4.59.1.2}}
+\newlabel{structusart__dev__struct_fcef87accd0fdac96d661d11e86bd34a}{{4.59.1.2}{69}{putc\relax }{subsubsection.4.59.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.59.1.3}read\_\discretionary {-}{}{}ready\_\discretionary {-}{}{}p}{69}{subsubsection.4.59.1.3}}
+\newlabel{structusart__dev__struct_3ac6f7c3ae5b427fb0867d21ddd81547}{{4.59.1.3}{69}{read\_\-ready\_\-p\relax }{subsubsection.4.59.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.59.1.4}write\_\discretionary {-}{}{}finished\_\discretionary {-}{}{}p}{69}{subsubsection.4.59.1.4}}
+\newlabel{structusart__dev__struct_3995414aaa3c99058e1a66e0a7dc935a}{{4.59.1.4}{69}{write\_\-finished\_\-p\relax }{subsubsection.4.59.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.59.1.5}write\_\discretionary {-}{}{}ready\_\discretionary {-}{}{}p}{69}{subsubsection.4.59.1.5}}
+\newlabel{structusart__dev__struct_119c067ba3128fb8d20b3cd2b5b9945d}{{4.59.1.5}{69}{write\_\-ready\_\-p\relax }{subsubsection.4.59.1.5}{}}
+\@setckpt{structusart__dev__struct}{
+\setcounter{page}{70}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{59}
+\setcounter{subsection}{1}
+\setcounter{subsubsection}{5}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

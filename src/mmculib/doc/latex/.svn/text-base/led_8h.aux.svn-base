@@ -1,0 +1,42 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {5.42}led.h File Reference}{131}{section.5.42}}
+\newlabel{led_8h}{{5.42}{131}{led.h File Reference\relax }{section.5.42}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{131}{subsection.5.42.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.42.2}Define Documentation}{132}{subsection.5.42.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.42.2.1}LED\_\discretionary {-}{}{}CFG}{132}{subsubsection.5.42.2.1}}
+\newlabel{led_8h_c299fa77a5591f296bc3ad428c825935}{{5.42.2.1}{132}{LED\_\-CFG\relax }{subsubsection.5.42.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.42.3}Typedef Documentation}{132}{subsection.5.42.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.42.3.1}led\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}t}{132}{subsubsection.5.42.3.1}}
+\newlabel{led_8h_122358eb54ea3a2d5ba993983920c32f}{{5.42.3.1}{132}{led\_\-obj\_\-t\relax }{subsubsection.5.42.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.42.3.2}led\_\discretionary {-}{}{}t}{132}{subsubsection.5.42.3.2}}
+\newlabel{led_8h_f13e484d71e8b8202613e4c2a02a97ac}{{5.42.3.2}{132}{led\_\-t\relax }{subsubsection.5.42.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.42.4}Function Documentation}{132}{subsection.5.42.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.42.4.1}led\_\discretionary {-}{}{}init}{132}{subsubsection.5.42.4.1}}
+\newlabel{led_8h_665a4b69a0aa6aac168f7e12ddb6e2d0}{{5.42.4.1}{132}{led\_\-init\relax }{subsubsection.5.42.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.42.4.2}led\_\discretionary {-}{}{}set}{132}{subsubsection.5.42.4.2}}
+\newlabel{led_8h_f24a69c3fac731710ddaeabd279da2d5}{{5.42.4.2}{132}{led\_\-set\relax }{subsubsection.5.42.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.42.4.3}led\_\discretionary {-}{}{}toggle}{132}{subsubsection.5.42.4.3}}
+\newlabel{led_8h_9945a06896e9be6e299e7329df3ee6fd}{{5.42.4.3}{132}{led\_\-toggle\relax }{subsubsection.5.42.4.3}{}}
+\@setckpt{led_8h}{
+\setcounter{page}{133}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{42}
+\setcounter{subsection}{4}
+\setcounter{subsubsection}{3}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{4}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{section@level}{3}
+}

@@ -1,0 +1,297 @@
+\hypertarget{pga_8h}{
+\section{pga.h File Reference}
+\label{pga_8h}\index{pga.h@{pga.h}}
+}
+Interface routines for Microchip PGAs (MCP6S2X). 
+
+{\tt \#include \char`\"{}spi.h\char`\"{}}\par
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structpga__private__t}{pga\_\-private\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{pga_8h_559e5d172ab514eb5fe520aaf4e580ba}{PGA\_\-SPI\_\-DIVISOR}~8
+\item 
+\#define \hyperlink{pga_8h_8bec0bf3d4cb18c8e0d98e5394ca9654}{PGA\_\-GAINS}~\{1, 2, 4, 5, 8, 10, 16, 32\}
+\item 
+\#define \hyperlink{pga_8h_ef3b8f51888756247fbd15d2259a1e1d}{PGA\_\-CFG}~SPI\_\-CFG
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef spi\_\-cfg\_\-t \hyperlink{pga_8h_cd2d27fd53dd29d3d5ee77c4cb97bb22}{pga\_\-cfg\_\-t}
+\item 
+typedef \hyperlink{structpga__private__t}{pga\_\-private\_\-t} \hyperlink{pga_8h_2e2c3254c6e8ad2f706a4bbf876ad848}{pga\_\-obj\_\-t}
+\item 
+typedef \hyperlink{structpga__private__t}{pga\_\-obj\_\-t} $\ast$ \hyperlink{pga_8h_4593b6447f54812c7c05617fd5a0f5c8}{pga\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9}{pga\_\-channel\_\-t} \{ \par
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9898598c82da095af7ae3928f22c38497}{PGA\_\-CHANNEL\_\-0} =  0, 
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9a54a38b25184ff7db911a11f02d573c2}{PGA\_\-CHANNEL\_\-1} =  1, 
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a979a1631d5e8608d117070646bd1bafd0}{PGA\_\-CHANNEL\_\-2} =  2, 
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9c72f53a73285499aa791e470d6972133}{PGA\_\-CHANNEL\_\-3} =  3, 
+\par
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a91eff8739bc7f48bf7766ed45a8f7ca4d}{PGA\_\-CHANNEL\_\-4} =  4, 
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a916012b30842abe7e56533bdd90af9d44}{PGA\_\-CHANNEL\_\-5} =  5, 
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9ba472da9c446ad9fc87a21c6e78a2eaa}{PGA\_\-CHANNEL\_\-6} =  6, 
+\hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a97320453c0977b0094131cab515e31886}{PGA\_\-CHANNEL\_\-7} =  7
+ \}
+\item 
+enum \hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b}{pga\_\-gain\_\-t} \{ \par
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b11e83a211ab6b9e4459e1c95e79855af}{PGA\_\-GAIN\_\-1} =  0, 
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580bbfd3d40c901d15038c46808ef84a6fb1}{PGA\_\-GAIN\_\-2} =  1, 
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b26603720747c0c969c378c1b07c36f3a}{PGA\_\-GAIN\_\-4} =  2, 
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580bd98e801da7ce73aaf336239890e21dc7}{PGA\_\-GAIN\_\-5} =  3, 
+\par
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580bee79072ef1a849c129a99af75d1794e3}{PGA\_\-GAIN\_\-8} =  4, 
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580bd51c8cc6737d938285367f1ed666dc15}{PGA\_\-GAIN\_\-10} =  5, 
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b9c87473b5e2f3e84c29b48d7de9747cd}{PGA\_\-GAIN\_\-16} =  6, 
+\hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b5df0177d1bc8b51871a2bc69f044b2dd}{PGA\_\-GAIN\_\-32} =  7
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{pga_8h_e68ce945e5618989f91f0297c3e0bd28}{pga\_\-gain\_\-set} (\hyperlink{structpga__private__t}{pga\_\-t} pga, \hyperlink{pga_8h_aa7102173aed6c8d00d0c81a6642580b}{pga\_\-gain\_\-t} gain)
+\item 
+void \hyperlink{pga_8h_2dd78d4e1bc9e48cc463380dff7c0eb9}{pga\_\-channel\_\-set} (\hyperlink{structpga__private__t}{pga\_\-t} pga, \hyperlink{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9}{pga\_\-channel\_\-t} channel)
+\item 
+void \hyperlink{pga_8h_325ffc2116fa2992da9a7dbdfffece7a}{pga\_\-wakeup} (\hyperlink{structpga__private__t}{pga\_\-t} pga)
+\item 
+void \hyperlink{pga_8h_ab91758b144017097832f60fc4e17ad8}{pga\_\-shutdown} (\hyperlink{structpga__private__t}{pga\_\-t} pga)
+\item 
+void \hyperlink{pga_8h_e4ecbe7c6f6f6af7c786f83ab9dbffaa}{pga\_\-chip\_\-select} (\hyperlink{structpga__private__t}{pga\_\-t} pga)
+\item 
+void \hyperlink{pga_8h_272a11391210cc6001b0f38a4d1c20b0}{pga\_\-chip\_\-deselect} (\hyperlink{structpga__private__t}{pga\_\-t} pga)
+\item 
+\hyperlink{structpga__private__t}{pga\_\-t} \hyperlink{pga_8h_5ab8f6ad0a4eb0cb46d2896133585e77}{pga\_\-init} (\hyperlink{structpga__private__t}{pga\_\-obj\_\-t} $\ast$dev, const \hyperlink{pga_8h_cd2d27fd53dd29d3d5ee77c4cb97bb22}{pga\_\-cfg\_\-t} $\ast$cfg)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Interface routines for Microchip PGAs (MCP6S2X). 
+
+\begin{Desc}
+\item[Author:]Tony Culliford \end{Desc}
+\begin{Desc}
+\item[Date:]8 February 2005 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{pga_8h_ef3b8f51888756247fbd15d2259a1e1d}{
+\index{pga.h@{pga.h}!PGA\_\-CFG@{PGA\_\-CFG}}
+\index{PGA\_\-CFG@{PGA\_\-CFG}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-CFG~SPI\_\-CFG}}
+\label{pga_8h_ef3b8f51888756247fbd15d2259a1e1d}
+
+
+\hypertarget{pga_8h_8bec0bf3d4cb18c8e0d98e5394ca9654}{
+\index{pga.h@{pga.h}!PGA\_\-GAINS@{PGA\_\-GAINS}}
+\index{PGA\_\-GAINS@{PGA\_\-GAINS}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-GAINS~\{1, 2, 4, 5, 8, 10, 16, 32\}}}
+\label{pga_8h_8bec0bf3d4cb18c8e0d98e5394ca9654}
+
+
+\hypertarget{pga_8h_559e5d172ab514eb5fe520aaf4e580ba}{
+\index{pga.h@{pga.h}!PGA\_\-SPI\_\-DIVISOR@{PGA\_\-SPI\_\-DIVISOR}}
+\index{PGA\_\-SPI\_\-DIVISOR@{PGA\_\-SPI\_\-DIVISOR}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PGA\_\-SPI\_\-DIVISOR~8}}
+\label{pga_8h_559e5d172ab514eb5fe520aaf4e580ba}
+
+
+
+
+Referenced by pga\_\-init().
+
+\subsection{Typedef Documentation}
+\hypertarget{pga_8h_cd2d27fd53dd29d3d5ee77c4cb97bb22}{
+\index{pga.h@{pga.h}!pga\_\-cfg\_\-t@{pga\_\-cfg\_\-t}}
+\index{pga\_\-cfg\_\-t@{pga\_\-cfg\_\-t}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef spi\_\-cfg\_\-t {\bf pga\_\-cfg\_\-t}}}
+\label{pga_8h_cd2d27fd53dd29d3d5ee77c4cb97bb22}
+
+
+\hypertarget{pga_8h_2e2c3254c6e8ad2f706a4bbf876ad848}{
+\index{pga.h@{pga.h}!pga\_\-obj\_\-t@{pga\_\-obj\_\-t}}
+\index{pga\_\-obj\_\-t@{pga\_\-obj\_\-t}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf pga\_\-private\_\-t} {\bf pga\_\-obj\_\-t}}}
+\label{pga_8h_2e2c3254c6e8ad2f706a4bbf876ad848}
+
+
+\hypertarget{pga_8h_4593b6447f54812c7c05617fd5a0f5c8}{
+\index{pga.h@{pga.h}!pga\_\-t@{pga\_\-t}}
+\index{pga\_\-t@{pga\_\-t}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf pga\_\-obj\_\-t}$\ast$ {\bf pga\_\-t}}}
+\label{pga_8h_4593b6447f54812c7c05617fd5a0f5c8}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9}{
+\index{pga.h@{pga.h}!pga\_\-channel\_\-t@{pga\_\-channel\_\-t}}
+\index{pga\_\-channel\_\-t@{pga\_\-channel\_\-t}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pga\_\-channel\_\-t}}}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PGA\_\-CHANNEL\_\-0@{PGA\_\-CHANNEL\_\-0}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-0@{PGA\_\-CHANNEL\_\-0}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9898598c82da095af7ae3928f22c38497}{
+PGA\_\-CHANNEL\_\-0}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9898598c82da095af7ae3928f22c38497}
+}]\index{PGA\_\-CHANNEL\_\-1@{PGA\_\-CHANNEL\_\-1}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-1@{PGA\_\-CHANNEL\_\-1}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9a54a38b25184ff7db911a11f02d573c2}{
+PGA\_\-CHANNEL\_\-1}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9a54a38b25184ff7db911a11f02d573c2}
+}]\index{PGA\_\-CHANNEL\_\-2@{PGA\_\-CHANNEL\_\-2}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-2@{PGA\_\-CHANNEL\_\-2}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a979a1631d5e8608d117070646bd1bafd0}{
+PGA\_\-CHANNEL\_\-2}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a979a1631d5e8608d117070646bd1bafd0}
+}]\index{PGA\_\-CHANNEL\_\-3@{PGA\_\-CHANNEL\_\-3}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-3@{PGA\_\-CHANNEL\_\-3}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9c72f53a73285499aa791e470d6972133}{
+PGA\_\-CHANNEL\_\-3}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9c72f53a73285499aa791e470d6972133}
+}]\index{PGA\_\-CHANNEL\_\-4@{PGA\_\-CHANNEL\_\-4}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-4@{PGA\_\-CHANNEL\_\-4}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a91eff8739bc7f48bf7766ed45a8f7ca4d}{
+PGA\_\-CHANNEL\_\-4}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a91eff8739bc7f48bf7766ed45a8f7ca4d}
+}]\index{PGA\_\-CHANNEL\_\-5@{PGA\_\-CHANNEL\_\-5}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-5@{PGA\_\-CHANNEL\_\-5}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a916012b30842abe7e56533bdd90af9d44}{
+PGA\_\-CHANNEL\_\-5}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a916012b30842abe7e56533bdd90af9d44}
+}]\index{PGA\_\-CHANNEL\_\-6@{PGA\_\-CHANNEL\_\-6}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-6@{PGA\_\-CHANNEL\_\-6}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9ba472da9c446ad9fc87a21c6e78a2eaa}{
+PGA\_\-CHANNEL\_\-6}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a9ba472da9c446ad9fc87a21c6e78a2eaa}
+}]\index{PGA\_\-CHANNEL\_\-7@{PGA\_\-CHANNEL\_\-7}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-CHANNEL\_\-7@{PGA\_\-CHANNEL\_\-7}}\item[{\em 
+\hypertarget{pga_8h_6f4566a3c5b681fa47bacdbac0b679a97320453c0977b0094131cab515e31886}{
+PGA\_\-CHANNEL\_\-7}
+\label{pga_8h_6f4566a3c5b681fa47bacdbac0b679a97320453c0977b0094131cab515e31886}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580b}{
+\index{pga.h@{pga.h}!pga\_\-gain\_\-t@{pga\_\-gain\_\-t}}
+\index{pga\_\-gain\_\-t@{pga\_\-gain\_\-t}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pga\_\-gain\_\-t}}}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580b}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PGA\_\-GAIN\_\-1@{PGA\_\-GAIN\_\-1}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-1@{PGA\_\-GAIN\_\-1}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580b11e83a211ab6b9e4459e1c95e79855af}{
+PGA\_\-GAIN\_\-1}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580b11e83a211ab6b9e4459e1c95e79855af}
+}]\index{PGA\_\-GAIN\_\-2@{PGA\_\-GAIN\_\-2}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-2@{PGA\_\-GAIN\_\-2}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580bbfd3d40c901d15038c46808ef84a6fb1}{
+PGA\_\-GAIN\_\-2}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580bbfd3d40c901d15038c46808ef84a6fb1}
+}]\index{PGA\_\-GAIN\_\-4@{PGA\_\-GAIN\_\-4}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-4@{PGA\_\-GAIN\_\-4}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580b26603720747c0c969c378c1b07c36f3a}{
+PGA\_\-GAIN\_\-4}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580b26603720747c0c969c378c1b07c36f3a}
+}]\index{PGA\_\-GAIN\_\-5@{PGA\_\-GAIN\_\-5}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-5@{PGA\_\-GAIN\_\-5}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580bd98e801da7ce73aaf336239890e21dc7}{
+PGA\_\-GAIN\_\-5}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580bd98e801da7ce73aaf336239890e21dc7}
+}]\index{PGA\_\-GAIN\_\-8@{PGA\_\-GAIN\_\-8}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-8@{PGA\_\-GAIN\_\-8}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580bee79072ef1a849c129a99af75d1794e3}{
+PGA\_\-GAIN\_\-8}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580bee79072ef1a849c129a99af75d1794e3}
+}]\index{PGA\_\-GAIN\_\-10@{PGA\_\-GAIN\_\-10}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-10@{PGA\_\-GAIN\_\-10}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580bd51c8cc6737d938285367f1ed666dc15}{
+PGA\_\-GAIN\_\-10}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580bd51c8cc6737d938285367f1ed666dc15}
+}]\index{PGA\_\-GAIN\_\-16@{PGA\_\-GAIN\_\-16}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-16@{PGA\_\-GAIN\_\-16}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580b9c87473b5e2f3e84c29b48d7de9747cd}{
+PGA\_\-GAIN\_\-16}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580b9c87473b5e2f3e84c29b48d7de9747cd}
+}]\index{PGA\_\-GAIN\_\-32@{PGA\_\-GAIN\_\-32}!pga.h@{pga.h}}\index{pga.h@{pga.h}!PGA\_\-GAIN\_\-32@{PGA\_\-GAIN\_\-32}}\item[{\em 
+\hypertarget{pga_8h_aa7102173aed6c8d00d0c81a6642580b5df0177d1bc8b51871a2bc69f044b2dd}{
+PGA\_\-GAIN\_\-32}
+\label{pga_8h_aa7102173aed6c8d00d0c81a6642580b5df0177d1bc8b51871a2bc69f044b2dd}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pga_8h_2dd78d4e1bc9e48cc463380dff7c0eb9}{
+\index{pga.h@{pga.h}!pga\_\-channel\_\-set@{pga\_\-channel\_\-set}}
+\index{pga\_\-channel\_\-set@{pga\_\-channel\_\-set}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-channel\_\-set ({\bf pga\_\-t} {\em pga}, \/  {\bf pga\_\-channel\_\-t} {\em channel})}}
+\label{pga_8h_2dd78d4e1bc9e48cc463380dff7c0eb9}
+
+
+
+
+References PGA\_\-INSN\_\-CHANNEL\_\-REGISTER\_\-WRITE, and pga\_\-send\_\-command().
+
+Referenced by pga\_\-wakeup().\hypertarget{pga_8h_272a11391210cc6001b0f38a4d1c20b0}{
+\index{pga.h@{pga.h}!pga\_\-chip\_\-deselect@{pga\_\-chip\_\-deselect}}
+\index{pga\_\-chip\_\-deselect@{pga\_\-chip\_\-deselect}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-chip\_\-deselect ({\bf pga\_\-t} {\em pga})}}
+\label{pga_8h_272a11391210cc6001b0f38a4d1c20b0}
+
+
+\hypertarget{pga_8h_e4ecbe7c6f6f6af7c786f83ab9dbffaa}{
+\index{pga.h@{pga.h}!pga\_\-chip\_\-select@{pga\_\-chip\_\-select}}
+\index{pga\_\-chip\_\-select@{pga\_\-chip\_\-select}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-chip\_\-select ({\bf pga\_\-t} {\em pga})}}
+\label{pga_8h_e4ecbe7c6f6f6af7c786f83ab9dbffaa}
+
+
+\hypertarget{pga_8h_e68ce945e5618989f91f0297c3e0bd28}{
+\index{pga.h@{pga.h}!pga\_\-gain\_\-set@{pga\_\-gain\_\-set}}
+\index{pga\_\-gain\_\-set@{pga\_\-gain\_\-set}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-gain\_\-set ({\bf pga\_\-t} {\em pga}, \/  {\bf pga\_\-gain\_\-t} {\em gain})}}
+\label{pga_8h_e68ce945e5618989f91f0297c3e0bd28}
+
+
+
+
+References PGA\_\-INSN\_\-GAIN\_\-REGISTER\_\-WRITE, and pga\_\-send\_\-command().
+
+Referenced by pga\_\-wakeup().\hypertarget{pga_8h_5ab8f6ad0a4eb0cb46d2896133585e77}{
+\index{pga.h@{pga.h}!pga\_\-init@{pga\_\-init}}
+\index{pga\_\-init@{pga\_\-init}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf pga\_\-t} pga\_\-init ({\bf pga\_\-obj\_\-t} $\ast$ {\em dev}, \/  const {\bf pga\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{pga_8h_5ab8f6ad0a4eb0cb46d2896133585e77}
+
+
+
+
+References PGA\_\-SPI\_\-DIVISOR, pga\_\-wakeup(), and pga\_\-private\_\-t::spi.\hypertarget{pga_8h_ab91758b144017097832f60fc4e17ad8}{
+\index{pga.h@{pga.h}!pga\_\-shutdown@{pga\_\-shutdown}}
+\index{pga\_\-shutdown@{pga\_\-shutdown}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-shutdown ({\bf pga\_\-t} {\em pga})}}
+\label{pga_8h_ab91758b144017097832f60fc4e17ad8}
+
+
+
+
+References PGA\_\-INSN\_\-SHUTDOWN, and pga\_\-send\_\-command().\hypertarget{pga_8h_325ffc2116fa2992da9a7dbdfffece7a}{
+\index{pga.h@{pga.h}!pga\_\-wakeup@{pga\_\-wakeup}}
+\index{pga\_\-wakeup@{pga\_\-wakeup}!pga.h@{pga.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pga\_\-wakeup ({\bf pga\_\-t} {\em pga})}}
+\label{pga_8h_325ffc2116fa2992da9a7dbdfffece7a}
+
+
+
+
+References PGA\_\-CHANNEL\_\-0, pga\_\-channel\_\-set(), PGA\_\-GAIN\_\-1, and pga\_\-gain\_\-set().
+
+Referenced by pga\_\-init().

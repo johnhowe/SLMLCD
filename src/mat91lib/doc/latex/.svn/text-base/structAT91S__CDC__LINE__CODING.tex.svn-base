@@ -1,0 +1,51 @@
+\hypertarget{structAT91S__CDC__LINE__CODING}{
+\section{AT91S\_\-CDC\_\-LINE\_\-CODING Struct Reference}
+\label{structAT91S__CDC__LINE__CODING}\index{AT91S\_\-CDC\_\-LINE\_\-CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}}
+}
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+unsigned int \hyperlink{structAT91S__CDC__LINE__CODING_e360211193cdf61577ba18cea6aaaaaa}{dwDTERRate}
+\item 
+char \hyperlink{structAT91S__CDC__LINE__CODING_946bfb070afb39b560ffc0a48ee4a3ea}{bCharFormat}
+\item 
+char \hyperlink{structAT91S__CDC__LINE__CODING_df5fd4c4e7b9bdc0ab312c4699f658f5}{bParityType}
+\item 
+char \hyperlink{structAT91S__CDC__LINE__CODING_d8c12429f487367b1bd27fbfeb0b7d65}{bDataBits}
+\end{CompactItemize}
+
+
+\subsection{Field Documentation}
+\hypertarget{structAT91S__CDC__LINE__CODING_e360211193cdf61577ba18cea6aaaaaa}{
+\index{AT91S\_\-CDC\_\-LINE\_\-CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}!dwDTERRate@{dwDTERRate}}
+\index{dwDTERRate@{dwDTERRate}!AT91S_CDC_LINE_CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf AT91S\_\-CDC\_\-LINE\_\-CODING::dwDTERRate}}}
+\label{structAT91S__CDC__LINE__CODING_e360211193cdf61577ba18cea6aaaaaa}
+
+
+\hypertarget{structAT91S__CDC__LINE__CODING_946bfb070afb39b560ffc0a48ee4a3ea}{
+\index{AT91S\_\-CDC\_\-LINE\_\-CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}!bCharFormat@{bCharFormat}}
+\index{bCharFormat@{bCharFormat}!AT91S_CDC_LINE_CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf AT91S\_\-CDC\_\-LINE\_\-CODING::bCharFormat}}}
+\label{structAT91S__CDC__LINE__CODING_946bfb070afb39b560ffc0a48ee4a3ea}
+
+
+\hypertarget{structAT91S__CDC__LINE__CODING_df5fd4c4e7b9bdc0ab312c4699f658f5}{
+\index{AT91S\_\-CDC\_\-LINE\_\-CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}!bParityType@{bParityType}}
+\index{bParityType@{bParityType}!AT91S_CDC_LINE_CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf AT91S\_\-CDC\_\-LINE\_\-CODING::bParityType}}}
+\label{structAT91S__CDC__LINE__CODING_df5fd4c4e7b9bdc0ab312c4699f658f5}
+
+
+\hypertarget{structAT91S__CDC__LINE__CODING_d8c12429f487367b1bd27fbfeb0b7d65}{
+\index{AT91S\_\-CDC\_\-LINE\_\-CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}!bDataBits@{bDataBits}}
+\index{bDataBits@{bDataBits}!AT91S_CDC_LINE_CODING@{AT91S\_\-CDC\_\-LINE\_\-CODING}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf AT91S\_\-CDC\_\-LINE\_\-CODING::bDataBits}}}
+\label{structAT91S__CDC__LINE__CODING_d8c12429f487367b1bd27fbfeb0b7d65}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{usb_8c}{usb.c}\end{CompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{chaser_8c}{
+\section{chaser.c File Reference}
+\label{chaser_8c}\index{chaser.c@{chaser.c}}
+}
+{\tt \#include $<$limits.h$>$}\par
+{\tt \#include \char`\"{}chaser.h\char`\"{}}\par
+{\tt \#include \char`\"{}flasher.h\char`\"{}}\par
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{structchaser__private__t}{chaser\_\-t} \hyperlink{chaser_8c_4c741433f0a07e9543c17e8699ab1b72}{chaser\_\-init} (\hyperlink{structchaser__private__t}{chaser\_\-obj\_\-t} $\ast$dev, \hyperlink{structflasher__obj__t}{flasher\_\-t} $\ast$flashers, uint8\_\-t flasher\_\-num)
+\item 
+void \hyperlink{chaser_8c_9f232957021b56a20a1e315f74c27aa6}{chaser\_\-sequence\_\-set} (\hyperlink{structchaser__private__t}{chaser\_\-t} chaser, \hyperlink{chaser_8h_fd782731ab9fc453f87bc9fbecd131ed}{chaser\_\-sequence\_\-t} seq)
+\item 
+void \hyperlink{chaser_8c_8d5b24547d926b18158a4ef53dd03693}{chaser\_\-mode\_\-set} (\hyperlink{structchaser__private__t}{chaser\_\-t} chaser, \hyperlink{chaser_8h_0da0a295c20b22ee9342e92d2dc85ef3}{chaser\_\-mode\_\-t} mode)
+\item 
+static void \hyperlink{chaser_8c_b9d86724a6c21783261fe274dc9ff890}{chaser\_\-pixel\_\-set} (void $\ast$data, \hyperlink{structfont__t}{font\_\-t} $\ast$font, uint8\_\-t col, uint8\_\-t row, bool val)
+\item 
+int8\_\-t \hyperlink{chaser_8c_3b03321108cc5aa0358bdf7fd015a2d5}{chaser\_\-update} (\hyperlink{structchaser__private__t}{chaser\_\-t} chaser)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 May 2007 \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{chaser_8c_4c741433f0a07e9543c17e8699ab1b72}{
+\index{chaser.c@{chaser.c}!chaser\_\-init@{chaser\_\-init}}
+\index{chaser\_\-init@{chaser\_\-init}!chaser.c@{chaser.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf chaser\_\-t} chaser\_\-init ({\bf chaser\_\-obj\_\-t} $\ast$ {\em dev}, \/  {\bf flasher\_\-t} $\ast$ {\em flashers}, \/  uint8\_\-t {\em flasher\_\-num})}}
+\label{chaser_8c_4c741433f0a07e9543c17e8699ab1b72}
+
+
+
+
+References CHASER\_\-MODE\_\-NORMAL, chaser\_\-private\_\-t::dir, chaser\_\-private\_\-t::flasher\_\-num, chaser\_\-private\_\-t::flashers, chaser\_\-private\_\-t::mode, and chaser\_\-private\_\-t::step.\hypertarget{chaser_8c_8d5b24547d926b18158a4ef53dd03693}{
+\index{chaser.c@{chaser.c}!chaser\_\-mode\_\-set@{chaser\_\-mode\_\-set}}
+\index{chaser\_\-mode\_\-set@{chaser\_\-mode\_\-set}!chaser.c@{chaser.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void chaser\_\-mode\_\-set ({\bf chaser\_\-t} {\em chaser}, \/  {\bf chaser\_\-mode\_\-t} {\em mode})}}
+\label{chaser_8c_8d5b24547d926b18158a4ef53dd03693}
+
+
+
+
+References chaser\_\-private\_\-t::dir, chaser\_\-private\_\-t::mode, and chaser\_\-private\_\-t::step.\hypertarget{chaser_8c_b9d86724a6c21783261fe274dc9ff890}{
+\index{chaser.c@{chaser.c}!chaser\_\-pixel\_\-set@{chaser\_\-pixel\_\-set}}
+\index{chaser\_\-pixel\_\-set@{chaser\_\-pixel\_\-set}!chaser.c@{chaser.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void chaser\_\-pixel\_\-set (void $\ast$ {\em data}, \/  {\bf font\_\-t} $\ast$ {\em font}, \/  uint8\_\-t {\em col}, \/  uint8\_\-t {\em row}, \/  bool {\em val})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{chaser_8c_b9d86724a6c21783261fe274dc9ff890}
+
+
+
+
+References CHASER\_\-MODE\_\-CYCLE\_\-INVERT, CHASER\_\-MODE\_\-INVERT, flasher\_\-pattern\_\-set(), chaser\_\-private\_\-t::flashers, chaser\_\-private\_\-t::mode, chaser\_\-private\_\-t::off\_\-pattern, chaser\_\-private\_\-t::on\_\-pattern, and font\_\-t::width.
+
+Referenced by chaser\_\-update().\hypertarget{chaser_8c_9f232957021b56a20a1e315f74c27aa6}{
+\index{chaser.c@{chaser.c}!chaser\_\-sequence\_\-set@{chaser\_\-sequence\_\-set}}
+\index{chaser\_\-sequence\_\-set@{chaser\_\-sequence\_\-set}!chaser.c@{chaser.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void chaser\_\-sequence\_\-set ({\bf chaser\_\-t} {\em chaser}, \/  {\bf chaser\_\-sequence\_\-t} {\em seq})}}
+\label{chaser_8c_9f232957021b56a20a1e315f74c27aa6}
+
+
+
+
+References chaser\_\-private\_\-t::dir, chaser\_\-private\_\-t::seq, and chaser\_\-private\_\-t::step.\hypertarget{chaser_8c_3b03321108cc5aa0358bdf7fd015a2d5}{
+\index{chaser.c@{chaser.c}!chaser\_\-update@{chaser\_\-update}}
+\index{chaser\_\-update@{chaser\_\-update}!chaser.c@{chaser.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t chaser\_\-update ({\bf chaser\_\-t} {\em chaser})}}
+\label{chaser_8c_3b03321108cc5aa0358bdf7fd015a2d5}
+
+
+
+
+References CHASER\_\-MODE\_\-CYCLE, CHASER\_\-MODE\_\-CYCLE\_\-INVERT, chaser\_\-pixel\_\-set(), chaser\_\-private\_\-t::dir, chaser\_\-private\_\-t::font, font\_\-display(), chaser\_\-private\_\-t::mode, chaser\_\-private\_\-t::seq, and chaser\_\-private\_\-t::step.

@@ -1,0 +1,199 @@
+\hypertarget{mu1wire_8h}{
+\section{mu1wire.h File Reference}
+\label{mu1wire_8h}\index{mu1wire.h@{mu1wire.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+union \hyperlink{unionmu1wire__rom__code__t}{mu1wire\_\-rom\_\-code\_\-t}
+\item 
+struct \hyperlink{structmu1wire__obj__t}{mu1wire\_\-obj\_\-t}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef \hyperlink{structmu1wire__obj__t}{mu1wire\_\-obj\_\-t} $\ast$ \hyperlink{mu1wire_8h_5c31299a6052ec34862c32998a528dcf}{mu1wire\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \par
+\hyperlink{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310bd7c557cc5f18b84ffea10795eb16e65}{MU1WIRE\_\-ERR\_\-BUS\_\-LOW} =  1, 
+\hyperlink{mu1wire_8h_94798fdadfbf49a7c658ace669a1d31082a91a1e7f99ef22f89816c28ef1d6e4}{MU1WIRE\_\-ERR\_\-BUS\_\-STUCK} =  2, 
+\hyperlink{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310fefc4f96a75cce8e696bc19e05084a1b}{MU1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT} =  3, 
+\hyperlink{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310dd9b599870d0e12bd9a8d0a1260db7c2}{MU1WIRE\_\-ERR\_\-PRESENCE\_\-LONG} =  4, 
+\par
+\hyperlink{mu1wire_8h_94798fdadfbf49a7c658ace669a1d3106145d34cbab07fbac3d36decaf8f7205}{MU1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES} =  5, 
+\hyperlink{mu1wire_8h_94798fdadfbf49a7c658ace669a1d3109119c3aca613b8dd0115e28d0269fd01}{MU1WIRE\_\-ERR\_\-BUS\_\-HIGH} =  6
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+bool \hyperlink{mu1wire_8h_68a790fc3b125b7d77685c212a650513}{mu1wire\_\-ready\_\-p} (void)
+\item 
+int8\_\-t \hyperlink{mu1wire_8h_ae3a5c9ce1ecf76a46d4df84621fb3df}{mu1wire\_\-reset} (void)
+\item 
+void \hyperlink{mu1wire_8h_be8cb77a11e9d16062241109602ec37c}{mu1wire\_\-bit\_\-write} (uint8\_\-t value)
+\item 
+void \hyperlink{mu1wire_8h_a49128e7f51aec073436661dd037dcc1}{mu1wire\_\-byte\_\-write} (uint8\_\-t value)
+\item 
+uint8\_\-t \hyperlink{mu1wire_8h_650d5606d387ef99d666adab7e1812af}{mu1wire\_\-bit\_\-read} (void)
+\item 
+uint8\_\-t \hyperlink{mu1wire_8h_98ce62f27d7385ad885e6ab3851907c5}{mu1wire\_\-byte\_\-read} (void)
+\item 
+int8\_\-t \hyperlink{mu1wire_8h_c680b1201e1368eba2b9c4f4b01597ed}{mu1wire\_\-command} (\hyperlink{structmu1wire__obj__t}{mu1wire\_\-t} dev, uint8\_\-t command)
+\item 
+int8\_\-t \hyperlink{mu1wire_8h_a417e91b65043d8d3563638e82cd9093}{mu1wire\_\-broadcast} (uint8\_\-t command)
+\item 
+int8\_\-t \hyperlink{mu1wire_8h_ebd3c88254db9d70330030d350e85ac1}{mu1wire\_\-read} (\hyperlink{structmu1wire__obj__t}{mu1wire\_\-t} dev, void $\ast$data, uint8\_\-t size)
+\item 
+int8\_\-t \hyperlink{mu1wire_8h_b9a76bb0ebbf4651d2e8b3372fce8497}{mu1wire\_\-write} (\hyperlink{structmu1wire__obj__t}{mu1wire\_\-t} dev, void $\ast$data, uint8\_\-t size)
+\item 
+int8\_\-t \hyperlink{mu1wire_8h_786b17061e52ab003db0c94dc0d0d37d}{mu1wire\_\-init} (\hyperlink{structmu1wire__obj__t}{mu1wire\_\-obj\_\-t} $\ast$devices, uint8\_\-t devices\_\-max)
+\item 
+void \hyperlink{mu1wire_8h_7277445f2b81d2425cc156e6bb8a64ce}{mu1wire\_\-debug} (\hyperlink{structmu1wire__obj__t}{mu1wire\_\-t} dev)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]08 June 2002 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{mu1wire_8h_5c31299a6052ec34862c32998a528dcf}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-t@{mu1wire\_\-t}}
+\index{mu1wire\_\-t@{mu1wire\_\-t}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf mu1wire\_\-obj\_\-t}$\ast$ {\bf mu1wire\_\-t}}}
+\label{mu1wire_8h_5c31299a6052ec34862c32998a528dcf}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{MU1WIRE\_\-ERR\_\-BUS\_\-LOW@{MU1WIRE\_\-ERR\_\-BUS\_\-LOW}!mu1wire.h@{mu1wire.h}}\index{mu1wire.h@{mu1wire.h}!MU1WIRE\_\-ERR\_\-BUS\_\-LOW@{MU1WIRE\_\-ERR\_\-BUS\_\-LOW}}\item[{\em 
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310bd7c557cc5f18b84ffea10795eb16e65}{
+MU1WIRE\_\-ERR\_\-BUS\_\-LOW}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310bd7c557cc5f18b84ffea10795eb16e65}
+}]\index{MU1WIRE\_\-ERR\_\-BUS\_\-STUCK@{MU1WIRE\_\-ERR\_\-BUS\_\-STUCK}!mu1wire.h@{mu1wire.h}}\index{mu1wire.h@{mu1wire.h}!MU1WIRE\_\-ERR\_\-BUS\_\-STUCK@{MU1WIRE\_\-ERR\_\-BUS\_\-STUCK}}\item[{\em 
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d31082a91a1e7f99ef22f89816c28ef1d6e4}{
+MU1WIRE\_\-ERR\_\-BUS\_\-STUCK}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d31082a91a1e7f99ef22f89816c28ef1d6e4}
+}]\index{MU1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT@{MU1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT}!mu1wire.h@{mu1wire.h}}\index{mu1wire.h@{mu1wire.h}!MU1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT@{MU1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT}}\item[{\em 
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310fefc4f96a75cce8e696bc19e05084a1b}{
+MU1WIRE\_\-ERR\_\-PRESENCE\_\-SHORT}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310fefc4f96a75cce8e696bc19e05084a1b}
+}]\index{MU1WIRE\_\-ERR\_\-PRESENCE\_\-LONG@{MU1WIRE\_\-ERR\_\-PRESENCE\_\-LONG}!mu1wire.h@{mu1wire.h}}\index{mu1wire.h@{mu1wire.h}!MU1WIRE\_\-ERR\_\-PRESENCE\_\-LONG@{MU1WIRE\_\-ERR\_\-PRESENCE\_\-LONG}}\item[{\em 
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310dd9b599870d0e12bd9a8d0a1260db7c2}{
+MU1WIRE\_\-ERR\_\-PRESENCE\_\-LONG}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d310dd9b599870d0e12bd9a8d0a1260db7c2}
+}]\index{MU1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES@{MU1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES}!mu1wire.h@{mu1wire.h}}\index{mu1wire.h@{mu1wire.h}!MU1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES@{MU1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES}}\item[{\em 
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d3106145d34cbab07fbac3d36decaf8f7205}{
+MU1WIRE\_\-ERR\_\-MULTIPLE\_\-DEVICES}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d3106145d34cbab07fbac3d36decaf8f7205}
+}]\index{MU1WIRE\_\-ERR\_\-BUS\_\-HIGH@{MU1WIRE\_\-ERR\_\-BUS\_\-HIGH}!mu1wire.h@{mu1wire.h}}\index{mu1wire.h@{mu1wire.h}!MU1WIRE\_\-ERR\_\-BUS\_\-HIGH@{MU1WIRE\_\-ERR\_\-BUS\_\-HIGH}}\item[{\em 
+\hypertarget{mu1wire_8h_94798fdadfbf49a7c658ace669a1d3109119c3aca613b8dd0115e28d0269fd01}{
+MU1WIRE\_\-ERR\_\-BUS\_\-HIGH}
+\label{mu1wire_8h_94798fdadfbf49a7c658ace669a1d3109119c3aca613b8dd0115e28d0269fd01}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{mu1wire_8h_650d5606d387ef99d666adab7e1812af}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-bit\_\-read@{mu1wire\_\-bit\_\-read}}
+\index{mu1wire\_\-bit\_\-read@{mu1wire\_\-bit\_\-read}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t mu1wire\_\-bit\_\-read (void)}}
+\label{mu1wire_8h_650d5606d387ef99d666adab7e1812af}
+
+
+\hypertarget{mu1wire_8h_be8cb77a11e9d16062241109602ec37c}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-bit\_\-write@{mu1wire\_\-bit\_\-write}}
+\index{mu1wire\_\-bit\_\-write@{mu1wire\_\-bit\_\-write}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mu1wire\_\-bit\_\-write (uint8\_\-t {\em value})}}
+\label{mu1wire_8h_be8cb77a11e9d16062241109602ec37c}
+
+
+\hypertarget{mu1wire_8h_a417e91b65043d8d3563638e82cd9093}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-broadcast@{mu1wire\_\-broadcast}}
+\index{mu1wire\_\-broadcast@{mu1wire\_\-broadcast}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mu1wire\_\-broadcast (uint8\_\-t {\em command})}}
+\label{mu1wire_8h_a417e91b65043d8d3563638e82cd9093}
+
+
+\hypertarget{mu1wire_8h_98ce62f27d7385ad885e6ab3851907c5}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-byte\_\-read@{mu1wire\_\-byte\_\-read}}
+\index{mu1wire\_\-byte\_\-read@{mu1wire\_\-byte\_\-read}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t mu1wire\_\-byte\_\-read (void)}}
+\label{mu1wire_8h_98ce62f27d7385ad885e6ab3851907c5}
+
+
+\hypertarget{mu1wire_8h_a49128e7f51aec073436661dd037dcc1}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-byte\_\-write@{mu1wire\_\-byte\_\-write}}
+\index{mu1wire\_\-byte\_\-write@{mu1wire\_\-byte\_\-write}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mu1wire\_\-byte\_\-write (uint8\_\-t {\em value})}}
+\label{mu1wire_8h_a49128e7f51aec073436661dd037dcc1}
+
+
+\hypertarget{mu1wire_8h_c680b1201e1368eba2b9c4f4b01597ed}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-command@{mu1wire\_\-command}}
+\index{mu1wire\_\-command@{mu1wire\_\-command}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mu1wire\_\-command ({\bf mu1wire\_\-t} {\em dev}, \/  uint8\_\-t {\em command})}}
+\label{mu1wire_8h_c680b1201e1368eba2b9c4f4b01597ed}
+
+
+\hypertarget{mu1wire_8h_7277445f2b81d2425cc156e6bb8a64ce}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-debug@{mu1wire\_\-debug}}
+\index{mu1wire\_\-debug@{mu1wire\_\-debug}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mu1wire\_\-debug ({\bf mu1wire\_\-t} {\em dev})}}
+\label{mu1wire_8h_7277445f2b81d2425cc156e6bb8a64ce}
+
+
+\hypertarget{mu1wire_8h_786b17061e52ab003db0c94dc0d0d37d}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-init@{mu1wire\_\-init}}
+\index{mu1wire\_\-init@{mu1wire\_\-init}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mu1wire\_\-init ({\bf mu1wire\_\-obj\_\-t} $\ast$ {\em devices}, \/  uint8\_\-t {\em devices\_\-max})}}
+\label{mu1wire_8h_786b17061e52ab003db0c94dc0d0d37d}
+
+
+\hypertarget{mu1wire_8h_ebd3c88254db9d70330030d350e85ac1}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-read@{mu1wire\_\-read}}
+\index{mu1wire\_\-read@{mu1wire\_\-read}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mu1wire\_\-read ({\bf mu1wire\_\-t} {\em dev}, \/  void $\ast$ {\em data}, \/  uint8\_\-t {\em size})}}
+\label{mu1wire_8h_ebd3c88254db9d70330030d350e85ac1}
+
+
+\hypertarget{mu1wire_8h_68a790fc3b125b7d77685c212a650513}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-ready\_\-p@{mu1wire\_\-ready\_\-p}}
+\index{mu1wire\_\-ready\_\-p@{mu1wire\_\-ready\_\-p}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mu1wire\_\-ready\_\-p (void)}}
+\label{mu1wire_8h_68a790fc3b125b7d77685c212a650513}
+
+
+\hypertarget{mu1wire_8h_ae3a5c9ce1ecf76a46d4df84621fb3df}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-reset@{mu1wire\_\-reset}}
+\index{mu1wire\_\-reset@{mu1wire\_\-reset}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mu1wire\_\-reset (void)}}
+\label{mu1wire_8h_ae3a5c9ce1ecf76a46d4df84621fb3df}
+
+
+\hypertarget{mu1wire_8h_b9a76bb0ebbf4651d2e8b3372fce8497}{
+\index{mu1wire.h@{mu1wire.h}!mu1wire\_\-write@{mu1wire\_\-write}}
+\index{mu1wire\_\-write@{mu1wire\_\-write}!mu1wire.h@{mu1wire.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t mu1wire\_\-write ({\bf mu1wire\_\-t} {\em dev}, \/  void $\ast$ {\em data}, \/  uint8\_\-t {\em size})}}
+\label{mu1wire_8h_b9a76bb0ebbf4651d2e8b3372fce8497}
+
+

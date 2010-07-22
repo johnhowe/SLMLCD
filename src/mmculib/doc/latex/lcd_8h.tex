@@ -1,0 +1,99 @@
+\hypertarget{lcd_8h}{
+\section{lcd.h File Reference}
+\label{lcd_8h}\index{lcd.h@{lcd.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}port.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structlcd__cfg__t}{lcd\_\-cfg\_\-t}
+\item 
+struct \hyperlink{structlcd__obj__t}{lcd\_\-obj\_\-t}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef \hyperlink{structlcd__obj__t}{lcd\_\-obj\_\-t} $\ast$ \hyperlink{lcd_8h_5d29df1d64aaa26e69d8dc58c66e8633}{lcd\_\-t}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{lcd_8h_e0a4128d237fdd039d85ffd0807be78f}{lcd\_\-putc} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev, char)
+\item 
+void \hyperlink{lcd_8h_72652d6945308d0006e054a3f7e5d996}{lcd\_\-puts} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev, const char $\ast$)
+\item 
+void \hyperlink{lcd_8h_0e2abd1c8509ae9d8fdc20bb978795a2}{lcd\_\-clear} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev)
+\item 
+void \hyperlink{lcd_8h_5545e5d423acae6a3ed4a4e544b971e9}{lcd\_\-goto} (\hyperlink{structlcd__obj__t}{lcd\_\-t} dev, uint8\_\-t row, uint8\_\-t col)
+\item 
+\hyperlink{structlcd__obj__t}{lcd\_\-t} \hyperlink{lcd_8h_1bef4951d22118149317aef7cd92f844}{lcd\_\-init} (\hyperlink{structlcd__obj__t}{lcd\_\-obj\_\-t} $\ast$info, const \hyperlink{structlcd__cfg__t}{lcd\_\-cfg\_\-t} $\ast$cfg)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]15 Feb 2003 \end{Desc}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{lcd_8h_5d29df1d64aaa26e69d8dc58c66e8633}{
+\index{lcd.h@{lcd.h}!lcd\_\-t@{lcd\_\-t}}
+\index{lcd\_\-t@{lcd\_\-t}!lcd.h@{lcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf lcd\_\-obj\_\-t}$\ast$ {\bf lcd\_\-t}}}
+\label{lcd_8h_5d29df1d64aaa26e69d8dc58c66e8633}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{lcd_8h_0e2abd1c8509ae9d8fdc20bb978795a2}{
+\index{lcd.h@{lcd.h}!lcd\_\-clear@{lcd\_\-clear}}
+\index{lcd\_\-clear@{lcd\_\-clear}!lcd.h@{lcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-clear ({\bf lcd\_\-t} {\em dev})}}
+\label{lcd_8h_0e2abd1c8509ae9d8fdc20bb978795a2}
+
+
+
+
+References LCD\_\-CLEAR, lcd\_\-data\_\-set, lcd\_\-mode\_\-control, and lcd\_\-write.\hypertarget{lcd_8h_5545e5d423acae6a3ed4a4e544b971e9}{
+\index{lcd.h@{lcd.h}!lcd\_\-goto@{lcd\_\-goto}}
+\index{lcd\_\-goto@{lcd\_\-goto}!lcd.h@{lcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-goto ({\bf lcd\_\-t} {\em dev}, \/  uint8\_\-t {\em row}, \/  uint8\_\-t {\em col})}}
+\label{lcd_8h_5545e5d423acae6a3ed4a4e544b971e9}
+
+
+
+
+References LCD\_\-DD\_\-RAM\_\-ADDRESS, lcd\_\-mode\_\-control, and lcd\_\-write.\hypertarget{lcd_8h_1bef4951d22118149317aef7cd92f844}{
+\index{lcd.h@{lcd.h}!lcd\_\-init@{lcd\_\-init}}
+\index{lcd\_\-init@{lcd\_\-init}!lcd.h@{lcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lcd\_\-t} lcd\_\-init ({\bf lcd\_\-obj\_\-t} $\ast$ {\em info}, \/  const {\bf lcd\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{lcd_8h_1bef4951d22118149317aef7cd92f844}
+
+
+
+
+References lcd\_\-obj\_\-t::cfg, lcd\_\-cfg\_\-t::d\_\-bit, lcd\_\-cfg\_\-t::data\_\-port, lcd\_\-cfg\_\-t::e\_\-bit, lcd\_\-obj\_\-t::e\_\-mask, lcd\_\-cfg\_\-t::e\_\-port, lcd\_\-data\_\-set, lcd\_\-init\_\-data, lcd\_\-mode\_\-control, lcd\_\-strobe, lcd\_\-write, lcd\_\-cfg\_\-t::rs\_\-bit, lcd\_\-obj\_\-t::rs\_\-mask, and lcd\_\-cfg\_\-t::rs\_\-port.\hypertarget{lcd_8h_e0a4128d237fdd039d85ffd0807be78f}{
+\index{lcd.h@{lcd.h}!lcd\_\-putc@{lcd\_\-putc}}
+\index{lcd\_\-putc@{lcd\_\-putc}!lcd.h@{lcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-putc ({\bf lcd\_\-t} {\em dev}, \/  char)}}
+\label{lcd_8h_e0a4128d237fdd039d85ffd0807be78f}
+
+
+
+
+References LCD\_\-DD\_\-RAM\_\-ADDRESS, lcd\_\-mode\_\-control, lcd\_\-mode\_\-data, and lcd\_\-write.
+
+Referenced by lcd\_\-puts().\hypertarget{lcd_8h_72652d6945308d0006e054a3f7e5d996}{
+\index{lcd.h@{lcd.h}!lcd\_\-puts@{lcd\_\-puts}}
+\index{lcd\_\-puts@{lcd\_\-puts}!lcd.h@{lcd.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-puts ({\bf lcd\_\-t} {\em dev}, \/  const char $\ast$)}}
+\label{lcd_8h_72652d6945308d0006e054a3f7e5d996}
+
+
+
+
+References lcd\_\-putc().

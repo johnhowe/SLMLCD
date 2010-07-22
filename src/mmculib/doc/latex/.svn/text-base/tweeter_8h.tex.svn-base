@@ -1,0 +1,196 @@
+\hypertarget{tweeter_8h}{
+\section{tweeter.h File Reference}
+\label{tweeter_8h}\index{tweeter.h@{tweeter.h}}
+}
+Generate PWM for a piezo tweeter. 
+
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+{\tt \#include \char`\"{}font.h\char`\"{}}\par
+{\tt \#include \char`\"{}ticker.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structtweeter__private__t}{tweeter\_\-private\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{tweeter_8h_3d36370e82a97610ab4019f4dc4dcbb3}{TWEETER\_\-DIVISOR}(POLL\_\-RATE, FREQ)~(POLL\_\-RATE / FREQ + 0.5)
+\item 
+\#define \hyperlink{tweeter_8h_e3768f88443133802ebb96e2e6e1a731}{TWEETER\_\-SCALE\_\-TABLE}(POLL\_\-RATE)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef uint8\_\-t \hyperlink{tweeter_8h_78ec09d7c9aac8f3690f7c9cecc1c34f}{tweeter\_\-note\_\-t}
+\item 
+typedef uint8\_\-t \hyperlink{tweeter_8h_50efa00dfbc0efe23fab7feae87290fe}{tweeter\_\-duration\_\-t}
+\item 
+typedef uint8\_\-t \hyperlink{tweeter_8h_ae8e82c982533b02f89b3bb251ea6faa}{tweeter\_\-period\_\-t}
+\item 
+typedef uint8\_\-t \hyperlink{tweeter_8h_733125effdd0109b4b2ef3a3c69d25b9}{tweeter\_\-velocity\_\-t}
+\item 
+typedef uint8\_\-t \hyperlink{tweeter_8h_da6af92a2e18e4a3164626709a43a5f6}{tweeter\_\-scale\_\-t}
+\item 
+typedef \hyperlink{structtweeter__private__t}{tweeter\_\-private\_\-t} \hyperlink{tweeter_8h_cde2a1416cc930e879781cbd707857c4}{tweeter\_\-obj\_\-t}
+\item 
+typedef \hyperlink{structtweeter__private__t}{tweeter\_\-obj\_\-t} $\ast$ \hyperlink{tweeter_8h_1409ac66e617a2cc78d15a43c8196a38}{tweeter\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{tweeter_8h_109bfaad92bd6d348dab484aec11edbb39ee77e60b272651bbad9f6e5d707627}{TWEETER\_\-NOTE\_\-MIN} =  40
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int8\_\-t \hyperlink{tweeter_8h_cebbc8b939268f6290578f6642a8d21f}{tweeter\_\-update} (\hyperlink{structtweeter__private__t}{tweeter\_\-t} tweeter)
+\item 
+void \hyperlink{tweeter_8h_c316121415f5a39d392f45789630c6fb}{tweeter\_\-note\_\-play} (\hyperlink{structtweeter__private__t}{tweeter\_\-t} tweeter, \hyperlink{tweeter_8h_78ec09d7c9aac8f3690f7c9cecc1c34f}{tweeter\_\-note\_\-t} note, uint8\_\-t velocity)
+\item 
+\hyperlink{structtweeter__private__t}{tweeter\_\-t} \hyperlink{tweeter_8h_ade4ebb00cb6db54f9a49380601aeb7b}{tweeter\_\-init} (\hyperlink{structtweeter__private__t}{tweeter\_\-obj\_\-t} $\ast$dev, uint16\_\-t poll\_\-rate, \hyperlink{tweeter_8h_da6af92a2e18e4a3164626709a43a5f6}{tweeter\_\-scale\_\-t} $\ast$scale\_\-table)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Generate PWM for a piezo tweeter. 
+
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]20 April 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{tweeter_8h_3d36370e82a97610ab4019f4dc4dcbb3}{
+\index{tweeter.h@{tweeter.h}!TWEETER\_\-DIVISOR@{TWEETER\_\-DIVISOR}}
+\index{TWEETER\_\-DIVISOR@{TWEETER\_\-DIVISOR}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TWEETER\_\-DIVISOR(POLL\_\-RATE, \/  FREQ)~(POLL\_\-RATE / FREQ + 0.5)}}
+\label{tweeter_8h_3d36370e82a97610ab4019f4dc4dcbb3}
+
+
+\hypertarget{tweeter_8h_e3768f88443133802ebb96e2e6e1a731}{
+\index{tweeter.h@{tweeter.h}!TWEETER\_\-SCALE\_\-TABLE@{TWEETER\_\-SCALE\_\-TABLE}}
+\index{TWEETER\_\-SCALE\_\-TABLE@{TWEETER\_\-SCALE\_\-TABLE}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TWEETER\_\-SCALE\_\-TABLE(POLL\_\-RATE)}}
+\label{tweeter_8h_e3768f88443133802ebb96e2e6e1a731}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}{TWEETER_DIVISOR (POLL_RATE, 82.41), \
+    TWEETER_DIVISOR (POLL_RATE, 87.31), \
+    TWEETER_DIVISOR (POLL_RATE, 92.50), \
+    TWEETER_DIVISOR (POLL_RATE, 98.00), \
+    TWEETER_DIVISOR (POLL_RATE, 103.83), \
+    TWEETER_DIVISOR (POLL_RATE, 110.0), \
+    TWEETER_DIVISOR (POLL_RATE, 116.54), \
+    TWEETER_DIVISOR (POLL_RATE, 123.47), \
+    TWEETER_DIVISOR (POLL_RATE, 130.81), \
+    TWEETER_DIVISOR (POLL_RATE, 138.59), \
+    TWEETER_DIVISOR (POLL_RATE, 146.83), \
+    TWEETER_DIVISOR (POLL_RATE, 155.56)}
+\end{verbatim}
+\end{Code}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{tweeter_8h_50efa00dfbc0efe23fab7feae87290fe}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-duration\_\-t@{tweeter\_\-duration\_\-t}}
+\index{tweeter\_\-duration\_\-t@{tweeter\_\-duration\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf tweeter\_\-duration\_\-t}}}
+\label{tweeter_8h_50efa00dfbc0efe23fab7feae87290fe}
+
+
+\hypertarget{tweeter_8h_78ec09d7c9aac8f3690f7c9cecc1c34f}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-note\_\-t@{tweeter\_\-note\_\-t}}
+\index{tweeter\_\-note\_\-t@{tweeter\_\-note\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf tweeter\_\-note\_\-t}}}
+\label{tweeter_8h_78ec09d7c9aac8f3690f7c9cecc1c34f}
+
+
+\hypertarget{tweeter_8h_cde2a1416cc930e879781cbd707857c4}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-obj\_\-t@{tweeter\_\-obj\_\-t}}
+\index{tweeter\_\-obj\_\-t@{tweeter\_\-obj\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf tweeter\_\-private\_\-t} {\bf tweeter\_\-obj\_\-t}}}
+\label{tweeter_8h_cde2a1416cc930e879781cbd707857c4}
+
+
+\hypertarget{tweeter_8h_ae8e82c982533b02f89b3bb251ea6faa}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-period\_\-t@{tweeter\_\-period\_\-t}}
+\index{tweeter\_\-period\_\-t@{tweeter\_\-period\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf tweeter\_\-period\_\-t}}}
+\label{tweeter_8h_ae8e82c982533b02f89b3bb251ea6faa}
+
+
+\hypertarget{tweeter_8h_da6af92a2e18e4a3164626709a43a5f6}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-scale\_\-t@{tweeter\_\-scale\_\-t}}
+\index{tweeter\_\-scale\_\-t@{tweeter\_\-scale\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf tweeter\_\-scale\_\-t}}}
+\label{tweeter_8h_da6af92a2e18e4a3164626709a43a5f6}
+
+
+\hypertarget{tweeter_8h_1409ac66e617a2cc78d15a43c8196a38}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-t@{tweeter\_\-t}}
+\index{tweeter\_\-t@{tweeter\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf tweeter\_\-obj\_\-t}$\ast$ {\bf tweeter\_\-t}}}
+\label{tweeter_8h_1409ac66e617a2cc78d15a43c8196a38}
+
+
+\hypertarget{tweeter_8h_733125effdd0109b4b2ef3a3c69d25b9}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-velocity\_\-t@{tweeter\_\-velocity\_\-t}}
+\index{tweeter\_\-velocity\_\-t@{tweeter\_\-velocity\_\-t}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf tweeter\_\-velocity\_\-t}}}
+\label{tweeter_8h_733125effdd0109b4b2ef3a3c69d25b9}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{tweeter_8h_109bfaad92bd6d348dab484aec11edbb}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{tweeter_8h_109bfaad92bd6d348dab484aec11edbb}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TWEETER\_\-NOTE\_\-MIN@{TWEETER\_\-NOTE\_\-MIN}!tweeter.h@{tweeter.h}}\index{tweeter.h@{tweeter.h}!TWEETER\_\-NOTE\_\-MIN@{TWEETER\_\-NOTE\_\-MIN}}\item[{\em 
+\hypertarget{tweeter_8h_109bfaad92bd6d348dab484aec11edbb39ee77e60b272651bbad9f6e5d707627}{
+TWEETER\_\-NOTE\_\-MIN}
+\label{tweeter_8h_109bfaad92bd6d348dab484aec11edbb39ee77e60b272651bbad9f6e5d707627}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{tweeter_8h_ade4ebb00cb6db54f9a49380601aeb7b}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-init@{tweeter\_\-init}}
+\index{tweeter\_\-init@{tweeter\_\-init}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf tweeter\_\-t} tweeter\_\-init ({\bf tweeter\_\-obj\_\-t} $\ast$ {\em dev}, \/  uint16\_\-t {\em poll\_\-rate}, \/  {\bf tweeter\_\-scale\_\-t} $\ast$ {\em scale\_\-table})}}
+\label{tweeter_8h_ade4ebb00cb6db54f9a49380601aeb7b}
+
+
+
+
+References tweeter\_\-private\_\-t::note\_\-duty, tweeter\_\-private\_\-t::note\_\-period, tweeter\_\-private\_\-t::poll\_\-rate, and tweeter\_\-private\_\-t::scale\_\-table.\hypertarget{tweeter_8h_c316121415f5a39d392f45789630c6fb}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-note\_\-play@{tweeter\_\-note\_\-play}}
+\index{tweeter\_\-note\_\-play@{tweeter\_\-note\_\-play}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tweeter\_\-note\_\-play ({\bf tweeter\_\-t} {\em tweeter}, \/  {\bf tweeter\_\-note\_\-t} {\em note}, \/  uint8\_\-t {\em velocity})}}
+\label{tweeter_8h_c316121415f5a39d392f45789630c6fb}
+
+
+
+
+References tweeter\_\-private\_\-t::scale\_\-table, TWEETER\_\-NOTE\_\-MIN, tweeter\_\-note\_\-set(), and TWEETER\_\-SCALE\_\-SIZE.\hypertarget{tweeter_8h_cebbc8b939268f6290578f6642a8d21f}{
+\index{tweeter.h@{tweeter.h}!tweeter\_\-update@{tweeter\_\-update}}
+\index{tweeter\_\-update@{tweeter\_\-update}!tweeter.h@{tweeter.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t tweeter\_\-update ({\bf tweeter\_\-t} {\em tweeter})}}
+\label{tweeter_8h_cebbc8b939268f6290578f6642a8d21f}
+
+
+
+
+References tweeter\_\-private\_\-t::note\_\-clock, tweeter\_\-private\_\-t::note\_\-duty, tweeter\_\-private\_\-t::note\_\-holdoff, and tweeter\_\-private\_\-t::note\_\-period.

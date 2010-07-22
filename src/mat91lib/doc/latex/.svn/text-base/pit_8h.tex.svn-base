@@ -1,0 +1,137 @@
+\hypertarget{pit_8h}{
+\section{pit.h File Reference}
+\label{pit_8h}\index{pit.h@{pit.h}}
+}
+{\tt \#include \char`\"{}config.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{pit_8h_96ba9304d926b6a3bf0e2bdfb4c02110}{PIT\_\-DIVISOR}(FREQ)~(((((uint32\_\-t) (F\_\-CPU / (FREQ))) + 8) $>$$>$ 4) - 1)
+\item 
+\#define \hyperlink{pit_8h_ac2ea197826975cf118f11ab27c4ebc6}{PIT\_\-RESET}()~AT91C\_\-BASE\_\-PITC $\rightarrow$ PITC\_\-PIVR
+\item 
+\#define \hyperlink{pit_8h_886cb77e567dc249615929848ac60e02}{PIT\_\-COMPARE\_\-P}()
+\item 
+\#define \hyperlink{pit_8h_846d438fd85aca1b8e203b21ec686231}{PIT\_\-INT\_\-ENABLE}()~AT91C\_\-BASE\_\-PITC $\rightarrow$ PITC\_\-PIMR $|$= AT91C\_\-PITC\_\-PITIEN
+\item 
+\#define \hyperlink{pit_8h_d6da22d1fbe10f0ef8851b5c5318e048}{PIT\_\-INT\_\-DISABLE}()~AT91C\_\-BASE\_\-PITC $\rightarrow$ PITC\_\-PIMR \&= $\sim$AT91C\_\-PITC\_\-PITIEN
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{pit_8h_2c0b8c06679a7675a628d5bdab99bac1}{pit\_\-start} (void)
+\item 
+void \hyperlink{pit_8h_a136b2f8c93f4927138dc905c76477b9}{pit\_\-stop} (void)
+\item 
+bool \hyperlink{pit_8h_193082b27dfd621cbd374058d9741718}{pit\_\-compare\_\-p} (void)
+\item 
+uint32\_\-t \hyperlink{pit_8h_ce3e5a237e91eb7de95121d755c84573}{pit\_\-period\_\-set} (uint32\_\-t period)
+\item 
+int8\_\-t \hyperlink{pit_8h_07b6b51512163d31254040e3f7b5dd61}{pit\_\-init} (void)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]M. P. Hayes, UCECE \end{Desc}
+\begin{Desc}
+\item[Date:]3 June 2007 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{pit_8h_886cb77e567dc249615929848ac60e02}{
+\index{pit.h@{pit.h}!PIT\_\-COMPARE\_\-P@{PIT\_\-COMPARE\_\-P}}
+\index{PIT\_\-COMPARE\_\-P@{PIT\_\-COMPARE\_\-P}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PIT\_\-COMPARE\_\-P()}}
+\label{pit_8h_886cb77e567dc249615929848ac60e02}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}(AT91C_BASE_PITC->PITC_PISR & AT91C_PITC_PITS \
+     ? PIT_RESET (), 1 : 0)
+\end{verbatim}
+\end{Code}
+
+
+Referenced by pit\_\-compare\_\-p().\hypertarget{pit_8h_96ba9304d926b6a3bf0e2bdfb4c02110}{
+\index{pit.h@{pit.h}!PIT\_\-DIVISOR@{PIT\_\-DIVISOR}}
+\index{PIT\_\-DIVISOR@{PIT\_\-DIVISOR}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PIT\_\-DIVISOR(FREQ)~(((((uint32\_\-t) (F\_\-CPU / (FREQ))) + 8) $>$$>$ 4) - 1)}}
+\label{pit_8h_96ba9304d926b6a3bf0e2bdfb4c02110}
+
+
+\hypertarget{pit_8h_d6da22d1fbe10f0ef8851b5c5318e048}{
+\index{pit.h@{pit.h}!PIT\_\-INT\_\-DISABLE@{PIT\_\-INT\_\-DISABLE}}
+\index{PIT\_\-INT\_\-DISABLE@{PIT\_\-INT\_\-DISABLE}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PIT\_\-INT\_\-DISABLE()~AT91C\_\-BASE\_\-PITC $\rightarrow$ PITC\_\-PIMR \&= $\sim$AT91C\_\-PITC\_\-PITIEN}}
+\label{pit_8h_d6da22d1fbe10f0ef8851b5c5318e048}
+
+
+\hypertarget{pit_8h_846d438fd85aca1b8e203b21ec686231}{
+\index{pit.h@{pit.h}!PIT\_\-INT\_\-ENABLE@{PIT\_\-INT\_\-ENABLE}}
+\index{PIT\_\-INT\_\-ENABLE@{PIT\_\-INT\_\-ENABLE}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PIT\_\-INT\_\-ENABLE()~AT91C\_\-BASE\_\-PITC $\rightarrow$ PITC\_\-PIMR $|$= AT91C\_\-PITC\_\-PITIEN}}
+\label{pit_8h_846d438fd85aca1b8e203b21ec686231}
+
+
+\hypertarget{pit_8h_ac2ea197826975cf118f11ab27c4ebc6}{
+\index{pit.h@{pit.h}!PIT\_\-RESET@{PIT\_\-RESET}}
+\index{PIT\_\-RESET@{PIT\_\-RESET}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PIT\_\-RESET()~AT91C\_\-BASE\_\-PITC $\rightarrow$ PITC\_\-PIVR}}
+\label{pit_8h_ac2ea197826975cf118f11ab27c4ebc6}
+
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pit_8h_193082b27dfd621cbd374058d9741718}{
+\index{pit.h@{pit.h}!pit\_\-compare\_\-p@{pit\_\-compare\_\-p}}
+\index{pit\_\-compare\_\-p@{pit\_\-compare\_\-p}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool pit\_\-compare\_\-p (void)}}
+\label{pit_8h_193082b27dfd621cbd374058d9741718}
+
+
+
+
+References PIT\_\-COMPARE\_\-P.\hypertarget{pit_8h_07b6b51512163d31254040e3f7b5dd61}{
+\index{pit.h@{pit.h}!pit\_\-init@{pit\_\-init}}
+\index{pit\_\-init@{pit\_\-init}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t pit\_\-init (void)}}
+\label{pit_8h_07b6b51512163d31254040e3f7b5dd61}
+
+
+
+
+Referenced by tick\_\-init().\hypertarget{pit_8h_ce3e5a237e91eb7de95121d755c84573}{
+\index{pit.h@{pit.h}!pit\_\-period\_\-set@{pit\_\-period\_\-set}}
+\index{pit\_\-period\_\-set@{pit\_\-period\_\-set}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t pit\_\-period\_\-set (uint32\_\-t {\em period})}}
+\label{pit_8h_ce3e5a237e91eb7de95121d755c84573}
+
+
+
+
+References BITS\_\-INSERT, and \_\-AT91S\_\-PITC::PITC\_\-PIMR.
+
+Referenced by tick\_\-init().\hypertarget{pit_8h_2c0b8c06679a7675a628d5bdab99bac1}{
+\index{pit.h@{pit.h}!pit\_\-start@{pit\_\-start}}
+\index{pit\_\-start@{pit\_\-start}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pit\_\-start (void)}}
+\label{pit_8h_2c0b8c06679a7675a628d5bdab99bac1}
+
+
+
+
+References AT91C\_\-PITC\_\-PITEN, and \_\-AT91S\_\-PITC::PITC\_\-PIMR.
+
+Referenced by tick\_\-init().\hypertarget{pit_8h_a136b2f8c93f4927138dc905c76477b9}{
+\index{pit.h@{pit.h}!pit\_\-stop@{pit\_\-stop}}
+\index{pit\_\-stop@{pit\_\-stop}!pit.h@{pit.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pit\_\-stop (void)}}
+\label{pit_8h_a136b2f8c93f4927138dc905c76477b9}
+
+
+
+
+References AT91C\_\-PITC\_\-PITEN, and \_\-AT91S\_\-PITC::PITC\_\-PIMR.

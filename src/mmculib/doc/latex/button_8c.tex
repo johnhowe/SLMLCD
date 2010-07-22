@@ -1,0 +1,120 @@
+\hypertarget{button_8c}{
+\section{button.c File Reference}
+\label{button_8c}\index{button.c@{button.c}}
+}
+Button polling and debouncing. 
+
+{\tt \#include \char`\"{}button.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{button_8c_e7cf5edcd0c1e1c45d2518bc8078fdf1}{button\_\-poll\_\-count\_\-set} (uint8\_\-t poll\_\-count)
+\item 
+\hyperlink{structbutton__private__t}{button\_\-t} \hyperlink{button_8c_674dcde6dc90df6df7c3073499cfcae1}{button\_\-init} (\hyperlink{structbutton__private__t}{button\_\-obj\_\-t} $\ast$obj, const \hyperlink{structbutton__cfg__t}{button\_\-cfg\_\-t} $\ast$cfg)
+\item 
+static \hyperlink{button_8h_7bb8494816c8065ae6ff0eeb548a5896}{button\_\-state\_\-t} \hyperlink{button_8c_faef63002cb6cb3fbc517e6b4aaf9f01}{button\_\-debounce} (\hyperlink{structbutton__private__t}{button\_\-t} button, bool pressed)
+\item 
+\hyperlink{button_8h_7bb8494816c8065ae6ff0eeb548a5896}{button\_\-state\_\-t} \hyperlink{button_8c_7baba9d1cbe31770b357179fd128b3a1}{button\_\-poll} (\hyperlink{structbutton__private__t}{button\_\-t} button)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+static uint8\_\-t \hyperlink{button_8c_02be292a338be249963cb9538544cd70}{button\_\-poll\_\-count}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Button polling and debouncing. 
+
+\begin{Desc}
+\item[Author:]M.P. Hayes \end{Desc}
+\begin{Desc}
+\item[Date:]16 Feb 2003 \end{Desc}
+\begin{Desc}
+\item[Note:]This debounces pushbuttons and switches using a polled wait-and-see method implemented with a state machine. It assumes that a pushed button gives a logic low on the input port. \end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{button_8c_faef63002cb6cb3fbc517e6b4aaf9f01}{
+\index{button.c@{button.c}!button\_\-debounce@{button\_\-debounce}}
+\index{button\_\-debounce@{button\_\-debounce}!button.c@{button.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static {\bf button\_\-state\_\-t} button\_\-debounce ({\bf button\_\-t} {\em button}, \/  bool {\em pressed})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{button_8c_faef63002cb6cb3fbc517e6b4aaf9f01}
+
+
+Debounce specified button and return its debounced state. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em button}]pointer to button object \item[{\em pressed}]true if button current pressed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]button state \end{Desc}
+
+
+References button\_\-poll\_\-count, BUTTON\_\-STATE\_\-DOWN, BUTTON\_\-STATE\_\-PUSHED, BUTTON\_\-STATE\_\-RELEASED, BUTTON\_\-STATE\_\-UP, button\_\-private\_\-t::count, button\_\-private\_\-t::hold\_\-count, and button\_\-private\_\-t::state.
+
+Referenced by button\_\-poll().\hypertarget{button_8c_674dcde6dc90df6df7c3073499cfcae1}{
+\index{button.c@{button.c}!button\_\-init@{button\_\-init}}
+\index{button\_\-init@{button\_\-init}!button.c@{button.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf button\_\-t} button\_\-init ({\bf button\_\-obj\_\-t} $\ast$ {\em obj}, \/  const {\bf button\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{button_8c_674dcde6dc90df6df7c3073499cfcae1}
+
+
+Create a new button object. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em obj}]pointer to button structure \item[{\em cfg}]pointer to button configuration \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]pointer to button object \end{Desc}
+
+
+References button\_\-cfg\_\-t::bitmask, BUTTON\_\-STATE\_\-UP, button\_\-private\_\-t::cfg, button\_\-private\_\-t::count, button\_\-private\_\-t::hold\_\-count, button\_\-cfg\_\-t::port, and button\_\-private\_\-t::state.
+
+Referenced by buttons\_\-init(), and mbuttons\_\-init().\hypertarget{button_8c_7baba9d1cbe31770b357179fd128b3a1}{
+\index{button.c@{button.c}!button\_\-poll@{button\_\-poll}}
+\index{button\_\-poll@{button\_\-poll}!button.c@{button.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf button\_\-state\_\-t} button\_\-poll ({\bf button\_\-t} {\em button})}}
+\label{button_8c_7baba9d1cbe31770b357179fd128b3a1}
+
+
+Poll the specified button and return its debounced state. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em button}]pointer to button object \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]button state \end{Desc}
+
+
+References button\_\-debounce(), and button\_\-pressed\_\-p().
+
+Referenced by buttons\_\-poll(), and mbuttons\_\-poll().\hypertarget{button_8c_e7cf5edcd0c1e1c45d2518bc8078fdf1}{
+\index{button.c@{button.c}!button\_\-poll\_\-count\_\-set@{button\_\-poll\_\-count\_\-set}}
+\index{button\_\-poll\_\-count\_\-set@{button\_\-poll\_\-count\_\-set}!button.c@{button.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void button\_\-poll\_\-count\_\-set (uint8\_\-t {\em poll\_\-count})}}
+\label{button_8c_e7cf5edcd0c1e1c45d2518bc8078fdf1}
+
+
+Set the number of polls required for the debounce period. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em poll\_\-count}]number of update periods \end{description}
+\end{Desc}
+
+
+References button\_\-poll\_\-count.
+
+Referenced by buttons\_\-init(), and mbuttons\_\-init().
+
+\subsection{Variable Documentation}
+\hypertarget{button_8c_02be292a338be249963cb9538544cd70}{
+\index{button.c@{button.c}!button\_\-poll\_\-count@{button\_\-poll\_\-count}}
+\index{button\_\-poll\_\-count@{button\_\-poll\_\-count}!button.c@{button.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t {\bf button\_\-poll\_\-count}\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{button_8c_02be292a338be249963cb9538544cd70}
+
+
+
+
+Referenced by button\_\-debounce(), and button\_\-poll\_\-count\_\-set().

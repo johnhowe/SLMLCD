@@ -1,0 +1,474 @@
+\hypertarget{nrf2401_8c}{
+\section{nrf2401.c File Reference}
+\label{nrf2401_8c}\index{nrf2401.c@{nrf2401.c}}
+}
+Interface routines for the Nordic nRF2401 tranceiver chip. 
+
+{\tt \#include \char`\"{}nrf2401.h\char`\"{}}\par
+{\tt \#include \char`\"{}delay.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{nrf2401_8c_308d9dd2c0028ddb184b455bbd7865de}{CHAR\_\-BIT}~8
+\item 
+\#define \hyperlink{nrf2401_8c_1149d9e441f5f9316ebb449cb270469b}{NRF\_\-DATA\_\-READY\_\-P}(DEV)~(port\_\-pins\_\-read ((DEV) $\rightarrow$ cfg $\rightarrow$ dr.port, (DEV) $\rightarrow$ cfg $\rightarrow$ dr.bitmask))
+\item 
+\#define \hyperlink{nrf2401_8c_1f2ae8f70a7e11942be086152a7065a6}{NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE}~15
+\item 
+\#define \hyperlink{nrf2401_8c_60c18d8fca50b50e4d4b53612e07f718}{NRF\_\-CE\_\-HIGH\_\-SET}(DEV)~(port\_\-pins\_\-set\_\-high ((DEV) $\rightarrow$ cfg $\rightarrow$ ce.port, (DEV) $\rightarrow$ cfg $\rightarrow$ ce.bitmask))
+\item 
+\#define \hyperlink{nrf2401_8c_7180a0d460e841ee04e663c05395f9fe}{NRF\_\-CE\_\-LOW\_\-SET}(DEV)~(port\_\-pins\_\-set\_\-low ((DEV) $\rightarrow$ cfg $\rightarrow$ ce.port, (DEV) $\rightarrow$ cfg $\rightarrow$ ce.bitmask))
+\item 
+\#define \hyperlink{nrf2401_8c_cb0939f0e439edcd2c0d1993ce13650f}{NRF\_\-CS\_\-HIGH\_\-SET}(DEV)~(port\_\-pins\_\-set\_\-high ((DEV) $\rightarrow$ cfg $\rightarrow$ cs.port, (DEV) $\rightarrow$ cfg $\rightarrow$ cs.bitmask))
+\item 
+\#define \hyperlink{nrf2401_8c_39d7de77c5b38862b7b3418bd39328e3}{NRF\_\-CS\_\-LOW\_\-SET}(DEV)~(port\_\-pins\_\-set\_\-low ((DEV) $\rightarrow$ cfg $\rightarrow$ cs.port, (DEV) $\rightarrow$ cfg $\rightarrow$ cs.bitmask))
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ \hyperlink{nrf2401_8c_0944a4353780132eeab7b06e3e42291d26441f0eaf6365c3f59e1b74378906f9}{NRF\_\-CHANNEL\_\-NUMBER\_\-MAX} =  83
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8c_4790f45dcc812c1b00184a2edccdddf59b3ab13173076abe842e971d5602f55e}{NRF\_\-CONFIG\_\-DELAY\_\-US} =  20
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8c_4caf8d8f829279fba122163d961608a48e9567a421d0706f51859f6216d95a7b}{NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US} =  10
+ \}
+\item 
+enum \{ \hyperlink{nrf2401_8c_96a58e29e8dbf2b5bdeb775cba46556ecfd796ccc988442bc32bedca4795cb18}{NRF\_\-T\_\-SB\_\-ACTIVE} =  202
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{nrf2401_8c_2572c0965322d469410e7f0417c57a49}{nrf\_\-standby} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf)
+\item 
+void \hyperlink{nrf2401_8c_d9adb5b15824e7fbb0dbdb361ab9c206}{nrf\_\-enable} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf)
+\item 
+\hyperlink{structnrf__obj__t}{nrf\_\-t} \hyperlink{nrf2401_8c_22e5c40347994667a233802f4cddb365}{nrf\_\-init} (\hyperlink{structnrf__obj__t}{nrf\_\-obj\_\-t} $\ast$dev, const \hyperlink{structnrf__cfg__t}{nrf\_\-cfg\_\-t} $\ast$cfg)
+\item 
+static void \hyperlink{nrf2401_8c_2a09a427648c565eef615e8d4d92ef47}{nrf\_\-configure} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t size)
+\item 
+static void \hyperlink{nrf2401_8c_bc5c8299a090ead4800d5b0faa389712}{nrf\_\-dir\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t mode)
+\item 
+static void \hyperlink{nrf2401_8c_e368dc288cfdea4cdd91e63bc740524e}{nrf\_\-channel\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t channel)
+\item 
+static void \hyperlink{nrf2401_8c_fc0a1591f2772883ab6b92f65bc099f3}{nrf\_\-power\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t rf\_\-power)
+\item 
+static void \hyperlink{nrf2401_8c_9a33a3c62321075f2e0a2d0271144fab}{nrf\_\-xtal\_\-freq\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t freq)
+\item 
+static void \hyperlink{nrf2401_8c_2c04af60cfeb02a6c81c3a75ef25c78f}{nrf\_\-data\_\-rate\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t data\_\-rate)
+\item 
+static void \hyperlink{nrf2401_8c_2ebbbc1ea8a8df4676bb17a435bf7338}{nrf\_\-comms\_\-mode\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t mode)
+\item 
+static void \hyperlink{nrf2401_8c_ca3452a54a4134e6cfb284ca05ae746a}{nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t mode)
+\item 
+static void \hyperlink{nrf2401_8c_b4da3fe36f65ca1cfa7d2e1e453e92ad}{nrf\_\-crc\_\-status\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t status)
+\item 
+static void \hyperlink{nrf2401_8c_b4a29e76160c7a652ac70212508d8c76}{nrf\_\-crc\_\-length\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t length)
+\item 
+static void \hyperlink{nrf2401_8c_99c4c4c646db3b0cdccf952685fc1888}{nrf\_\-address\_\-length\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t length)
+\item 
+static void \hyperlink{nrf2401_8c_4cbca9481992c1637fabc0cc1b391666}{nrf\_\-address1\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, \hyperlink{structnrf__address__t}{nrf\_\-address\_\-t} $\ast$address)
+\item 
+static void \hyperlink{nrf2401_8c_320f7196436860c0f4e0a2bc6eea2fa3}{nrf\_\-address2\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, \hyperlink{structnrf__address__t}{nrf\_\-address\_\-t} $\ast$address)
+\item 
+static void \hyperlink{nrf2401_8c_baebb4509eae608336bb2c41b8b9f40f}{nrf\_\-payload\_\-length1\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t length)
+\item 
+static void \hyperlink{nrf2401_8c_c84a477911a2e19f2c4c51485d4e7b64}{nrf\_\-payload\_\-length2\_\-set} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t length)
+\item 
+static uint8\_\-t \hyperlink{nrf2401_8c_4f5b704f7f483302793fbfb2a300755e}{nrf\_\-payload\_\-length1\_\-get} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf)
+\item 
+uint8\_\-t \hyperlink{nrf2401_8c_b33a22c7e34f46aa9dca322114c99fe5}{nrf\_\-receive} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, \hyperlink{structnrf__node__t}{nrf\_\-node\_\-t} $\ast$node, void $\ast$buffer, uint8\_\-t len, uint8\_\-t ms\_\-to\_\-wait)
+\item 
+uint8\_\-t \hyperlink{nrf2401_8c_4673ad828e6293328bd436902110b6a3}{nrf\_\-transmit} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, \hyperlink{structnrf__node__t}{nrf\_\-node\_\-t} $\ast$node, void $\ast$buffer, uint8\_\-t len)
+\item 
+bool \hyperlink{nrf2401_8c_6a185b90791bc672c8820baa2f17ba84}{nrf\_\-data\_\-ready\_\-p} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf)
+\item 
+bool \hyperlink{nrf2401_8c_503158aef839b07fda9fd1a76f134126}{nrf\_\-setup} (\hyperlink{structnrf__obj__t}{nrf\_\-t} nrf, uint8\_\-t payload\_\-size)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Interface routines for the Nordic nRF2401 tranceiver chip. 
+
+\begin{Desc}
+\item[Author:]Michael Hayes / Tony Culliford \end{Desc}
+\begin{Desc}
+\item[Date:]7 December 2004 \end{Desc}
+
+
+\subsection{Define Documentation}
+\hypertarget{nrf2401_8c_308d9dd2c0028ddb184b455bbd7865de}{
+\index{nrf2401.c@{nrf2401.c}!CHAR\_\-BIT@{CHAR\_\-BIT}}
+\index{CHAR\_\-BIT@{CHAR\_\-BIT}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CHAR\_\-BIT~8}}
+\label{nrf2401_8c_308d9dd2c0028ddb184b455bbd7865de}
+
+
+
+
+Referenced by isqrt(), isqrt32(), nrf\_\-payload\_\-length1\_\-get(), nrf\_\-setup(), and nrf\_\-transmit().\hypertarget{nrf2401_8c_60c18d8fca50b50e4d4b53612e07f718}{
+\index{nrf2401.c@{nrf2401.c}!NRF\_\-CE\_\-HIGH\_\-SET@{NRF\_\-CE\_\-HIGH\_\-SET}}
+\index{NRF\_\-CE\_\-HIGH\_\-SET@{NRF\_\-CE\_\-HIGH\_\-SET}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-CE\_\-HIGH\_\-SET(DEV)~(port\_\-pins\_\-set\_\-high ((DEV) $\rightarrow$ cfg $\rightarrow$ ce.port, (DEV) $\rightarrow$ cfg $\rightarrow$ ce.bitmask))}}
+\label{nrf2401_8c_60c18d8fca50b50e4d4b53612e07f718}
+
+
+
+
+Referenced by nrf\_\-enable(), and nrf\_\-transmit().\hypertarget{nrf2401_8c_7180a0d460e841ee04e663c05395f9fe}{
+\index{nrf2401.c@{nrf2401.c}!NRF\_\-CE\_\-LOW\_\-SET@{NRF\_\-CE\_\-LOW\_\-SET}}
+\index{NRF\_\-CE\_\-LOW\_\-SET@{NRF\_\-CE\_\-LOW\_\-SET}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-CE\_\-LOW\_\-SET(DEV)~(port\_\-pins\_\-set\_\-low ((DEV) $\rightarrow$ cfg $\rightarrow$ ce.port, (DEV) $\rightarrow$ cfg $\rightarrow$ ce.bitmask))}}
+\label{nrf2401_8c_7180a0d460e841ee04e663c05395f9fe}
+
+
+
+
+Referenced by nrf\_\-configure(), nrf\_\-standby(), and nrf\_\-transmit().\hypertarget{nrf2401_8c_1f2ae8f70a7e11942be086152a7065a6}{
+\index{nrf2401.c@{nrf2401.c}!NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE@{NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE}}
+\index{NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE@{NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE~15}}
+\label{nrf2401_8c_1f2ae8f70a7e11942be086152a7065a6}
+
+
+
+
+Referenced by nrf\_\-receive(), and nrf\_\-setup().\hypertarget{nrf2401_8c_cb0939f0e439edcd2c0d1993ce13650f}{
+\index{nrf2401.c@{nrf2401.c}!NRF\_\-CS\_\-HIGH\_\-SET@{NRF\_\-CS\_\-HIGH\_\-SET}}
+\index{NRF\_\-CS\_\-HIGH\_\-SET@{NRF\_\-CS\_\-HIGH\_\-SET}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-CS\_\-HIGH\_\-SET(DEV)~(port\_\-pins\_\-set\_\-high ((DEV) $\rightarrow$ cfg $\rightarrow$ cs.port, (DEV) $\rightarrow$ cfg $\rightarrow$ cs.bitmask))}}
+\label{nrf2401_8c_cb0939f0e439edcd2c0d1993ce13650f}
+
+
+
+
+Referenced by nrf\_\-configure().\hypertarget{nrf2401_8c_39d7de77c5b38862b7b3418bd39328e3}{
+\index{nrf2401.c@{nrf2401.c}!NRF\_\-CS\_\-LOW\_\-SET@{NRF\_\-CS\_\-LOW\_\-SET}}
+\index{NRF\_\-CS\_\-LOW\_\-SET@{NRF\_\-CS\_\-LOW\_\-SET}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-CS\_\-LOW\_\-SET(DEV)~(port\_\-pins\_\-set\_\-low ((DEV) $\rightarrow$ cfg $\rightarrow$ cs.port, (DEV) $\rightarrow$ cfg $\rightarrow$ cs.bitmask))}}
+\label{nrf2401_8c_39d7de77c5b38862b7b3418bd39328e3}
+
+
+
+
+Referenced by nrf\_\-configure(), nrf\_\-enable(), and nrf\_\-standby().\hypertarget{nrf2401_8c_1149d9e441f5f9316ebb449cb270469b}{
+\index{nrf2401.c@{nrf2401.c}!NRF\_\-DATA\_\-READY\_\-P@{NRF\_\-DATA\_\-READY\_\-P}}
+\index{NRF\_\-DATA\_\-READY\_\-P@{NRF\_\-DATA\_\-READY\_\-P}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NRF\_\-DATA\_\-READY\_\-P(DEV)~(port\_\-pins\_\-read ((DEV) $\rightarrow$ cfg $\rightarrow$ dr.port, (DEV) $\rightarrow$ cfg $\rightarrow$ dr.bitmask))}}
+\label{nrf2401_8c_1149d9e441f5f9316ebb449cb270469b}
+
+
+
+
+Referenced by nrf\_\-data\_\-ready\_\-p(), and nrf\_\-receive().
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{nrf2401_8c_0944a4353780132eeab7b06e3e42291d}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8c_0944a4353780132eeab7b06e3e42291d}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-CHANNEL\_\-NUMBER\_\-MAX@{NRF\_\-CHANNEL\_\-NUMBER\_\-MAX}!nrf2401.c@{nrf2401.c}}\index{nrf2401.c@{nrf2401.c}!NRF\_\-CHANNEL\_\-NUMBER\_\-MAX@{NRF\_\-CHANNEL\_\-NUMBER\_\-MAX}}\item[{\em 
+\hypertarget{nrf2401_8c_0944a4353780132eeab7b06e3e42291d26441f0eaf6365c3f59e1b74378906f9}{
+NRF\_\-CHANNEL\_\-NUMBER\_\-MAX}
+\label{nrf2401_8c_0944a4353780132eeab7b06e3e42291d26441f0eaf6365c3f59e1b74378906f9}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8c_4790f45dcc812c1b00184a2edccdddf5}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8c_4790f45dcc812c1b00184a2edccdddf5}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-CONFIG\_\-DELAY\_\-US@{NRF\_\-CONFIG\_\-DELAY\_\-US}!nrf2401.c@{nrf2401.c}}\index{nrf2401.c@{nrf2401.c}!NRF\_\-CONFIG\_\-DELAY\_\-US@{NRF\_\-CONFIG\_\-DELAY\_\-US}}\item[{\em 
+\hypertarget{nrf2401_8c_4790f45dcc812c1b00184a2edccdddf59b3ab13173076abe842e971d5602f55e}{
+NRF\_\-CONFIG\_\-DELAY\_\-US}
+\label{nrf2401_8c_4790f45dcc812c1b00184a2edccdddf59b3ab13173076abe842e971d5602f55e}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8c_4caf8d8f829279fba122163d961608a4}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8c_4caf8d8f829279fba122163d961608a4}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US@{NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US}!nrf2401.c@{nrf2401.c}}\index{nrf2401.c@{nrf2401.c}!NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US@{NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US}}\item[{\em 
+\hypertarget{nrf2401_8c_4caf8d8f829279fba122163d961608a48e9567a421d0706f51859f6216d95a7b}{
+NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US}
+\label{nrf2401_8c_4caf8d8f829279fba122163d961608a48e9567a421d0706f51859f6216d95a7b}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{nrf2401_8c_96a58e29e8dbf2b5bdeb775cba46556e}{
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{nrf2401_8c_96a58e29e8dbf2b5bdeb775cba46556e}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NRF\_\-T\_\-SB\_\-ACTIVE@{NRF\_\-T\_\-SB\_\-ACTIVE}!nrf2401.c@{nrf2401.c}}\index{nrf2401.c@{nrf2401.c}!NRF\_\-T\_\-SB\_\-ACTIVE@{NRF\_\-T\_\-SB\_\-ACTIVE}}\item[{\em 
+\hypertarget{nrf2401_8c_96a58e29e8dbf2b5bdeb775cba46556ecfd796ccc988442bc32bedca4795cb18}{
+NRF\_\-T\_\-SB\_\-ACTIVE}
+\label{nrf2401_8c_96a58e29e8dbf2b5bdeb775cba46556ecfd796ccc988442bc32bedca4795cb18}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{nrf2401_8c_4cbca9481992c1637fabc0cc1b391666}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-address1\_\-set@{nrf\_\-address1\_\-set}}
+\index{nrf\_\-address1\_\-set@{nrf\_\-address1\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-address1\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  {\bf nrf\_\-address\_\-t} $\ast$ {\em address})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_4cbca9481992c1637fabc0cc1b391666}
+
+
+
+
+References nrf\_\-config\_\-bits\_\-t::addr\_\-1, nrf\_\-config\_\-t::bits, and nrf\_\-obj\_\-t::config.
+
+Referenced by nrf\_\-receive().\hypertarget{nrf2401_8c_320f7196436860c0f4e0a2bc6eea2fa3}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-address2\_\-set@{nrf\_\-address2\_\-set}}
+\index{nrf\_\-address2\_\-set@{nrf\_\-address2\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-address2\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  {\bf nrf\_\-address\_\-t} $\ast$ {\em address})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_320f7196436860c0f4e0a2bc6eea2fa3}
+
+
+
+
+References nrf\_\-config\_\-bits\_\-t::addr\_\-2, nrf\_\-config\_\-t::bits, and nrf\_\-obj\_\-t::config.\hypertarget{nrf2401_8c_99c4c4c646db3b0cdccf952685fc1888}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-address\_\-length\_\-set@{nrf\_\-address\_\-length\_\-set}}
+\index{nrf\_\-address\_\-length\_\-set@{nrf\_\-address\_\-length\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-address\_\-length\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em length})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_99c4c4c646db3b0cdccf952685fc1888}
+
+
+
+
+References nrf\_\-config\_\-bits\_\-t::addr\_\-w, nrf\_\-config\_\-t::bits, and nrf\_\-obj\_\-t::config.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_e368dc288cfdea4cdd91e63bc740524e}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-channel\_\-set@{nrf\_\-channel\_\-set}}
+\index{nrf\_\-channel\_\-set@{nrf\_\-channel\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-channel\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em channel})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_e368dc288cfdea4cdd91e63bc740524e}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, NRF\_\-CHANNEL\_\-NUMBER\_\-MAX, nrf\_\-configure(), and nrf\_\-config\_\-bits\_\-t::rx\_\-ch\_\-num.
+
+Referenced by nrf\_\-receive(), nrf\_\-setup(), and nrf\_\-transmit().\hypertarget{nrf2401_8c_2ebbbc1ea8a8df4676bb17a435bf7338}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-comms\_\-mode\_\-set@{nrf\_\-comms\_\-mode\_\-set}}
+\index{nrf\_\-comms\_\-mode\_\-set@{nrf\_\-comms\_\-mode\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-comms\_\-mode\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em mode})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_2ebbbc1ea8a8df4676bb17a435bf7338}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-config\_\-bits\_\-t::cm, and nrf\_\-obj\_\-t::config.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_2a09a427648c565eef615e8d4d92ef47}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-configure@{nrf\_\-configure}}
+\index{nrf\_\-configure@{nrf\_\-configure}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-configure ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em size})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_2a09a427648c565eef615e8d4d92ef47}
+
+
+
+
+References nrf\_\-config\_\-t::bytes, nrf\_\-obj\_\-t::config, NRF\_\-CE\_\-LOW\_\-SET, NRF\_\-CONFIG\_\-DELAY\_\-US, NRF\_\-CS\_\-HIGH\_\-SET, NRF\_\-CS\_\-LOW\_\-SET, NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US, and nrf\_\-obj\_\-t::spi.
+
+Referenced by nrf\_\-channel\_\-set(), nrf\_\-dir\_\-set(), nrf\_\-receive(), nrf\_\-setup(), and nrf\_\-transmit().\hypertarget{nrf2401_8c_b4a29e76160c7a652ac70212508d8c76}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-crc\_\-length\_\-set@{nrf\_\-crc\_\-length\_\-set}}
+\index{nrf\_\-crc\_\-length\_\-set@{nrf\_\-crc\_\-length\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-crc\_\-length\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em length})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_b4a29e76160c7a652ac70212508d8c76}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::crc\_\-l.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_b4da3fe36f65ca1cfa7d2e1e453e92ad}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-crc\_\-status\_\-set@{nrf\_\-crc\_\-status\_\-set}}
+\index{nrf\_\-crc\_\-status\_\-set@{nrf\_\-crc\_\-status\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-crc\_\-status\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em status})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_b4da3fe36f65ca1cfa7d2e1e453e92ad}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::crc\_\-en.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_2c04af60cfeb02a6c81c3a75ef25c78f}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-data\_\-rate\_\-set@{nrf\_\-data\_\-rate\_\-set}}
+\index{nrf\_\-data\_\-rate\_\-set@{nrf\_\-data\_\-rate\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-data\_\-rate\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em data\_\-rate})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_2c04af60cfeb02a6c81c3a75ef25c78f}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::rfdr\_\-sb.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_6a185b90791bc672c8820baa2f17ba84}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-data\_\-ready\_\-p@{nrf\_\-data\_\-ready\_\-p}}
+\index{nrf\_\-data\_\-ready\_\-p@{nrf\_\-data\_\-ready\_\-p}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool nrf\_\-data\_\-ready\_\-p ({\bf nrf\_\-t} {\em nrf})}}
+\label{nrf2401_8c_6a185b90791bc672c8820baa2f17ba84}
+
+
+
+
+References NRF\_\-DATA\_\-READY\_\-P.\hypertarget{nrf2401_8c_bc5c8299a090ead4800d5b0faa389712}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-dir\_\-set@{nrf\_\-dir\_\-set}}
+\index{nrf\_\-dir\_\-set@{nrf\_\-dir\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-dir\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em mode})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_bc5c8299a090ead4800d5b0faa389712}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, nrf\_\-configure(), and nrf\_\-config\_\-bits\_\-t::rxen.
+
+Referenced by nrf\_\-receive(), nrf\_\-setup(), and nrf\_\-transmit().\hypertarget{nrf2401_8c_d9adb5b15824e7fbb0dbdb361ab9c206}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-enable@{nrf\_\-enable}}
+\index{nrf\_\-enable@{nrf\_\-enable}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nrf\_\-enable ({\bf nrf\_\-t} {\em nrf})}}
+\label{nrf2401_8c_d9adb5b15824e7fbb0dbdb361ab9c206}
+
+
+
+
+References NRF\_\-CE\_\-HIGH\_\-SET, and NRF\_\-CS\_\-LOW\_\-SET.
+
+Referenced by nrf\_\-receive().\hypertarget{nrf2401_8c_22e5c40347994667a233802f4cddb365}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-init@{nrf\_\-init}}
+\index{nrf\_\-init@{nrf\_\-init}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf nrf\_\-t} nrf\_\-init ({\bf nrf\_\-obj\_\-t} $\ast$ {\em dev}, \/  const {\bf nrf\_\-cfg\_\-t} $\ast$ {\em cfg})}}
+\label{nrf2401_8c_22e5c40347994667a233802f4cddb365}
+
+
+
+
+References nrf\_\-cfg\_\-t::ce, nrf\_\-obj\_\-t::cfg, nrf\_\-cfg\_\-t::cs, nrf\_\-cfg\_\-t::dr, nrf\_\-cfg\_\-t::spi, and nrf\_\-obj\_\-t::spi.\hypertarget{nrf2401_8c_4f5b704f7f483302793fbfb2a300755e}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-payload\_\-length1\_\-get@{nrf\_\-payload\_\-length1\_\-get}}
+\index{nrf\_\-payload\_\-length1\_\-get@{nrf\_\-payload\_\-length1\_\-get}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static uint8\_\-t nrf\_\-payload\_\-length1\_\-get ({\bf nrf\_\-t} {\em nrf})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_4f5b704f7f483302793fbfb2a300755e}
+
+
+
+
+References nrf\_\-config\_\-t::bits, CHAR\_\-BIT, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::data1\_\-w.
+
+Referenced by nrf\_\-receive().\hypertarget{nrf2401_8c_baebb4509eae608336bb2c41b8b9f40f}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-payload\_\-length1\_\-set@{nrf\_\-payload\_\-length1\_\-set}}
+\index{nrf\_\-payload\_\-length1\_\-set@{nrf\_\-payload\_\-length1\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-payload\_\-length1\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em length})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_baebb4509eae608336bb2c41b8b9f40f}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::data1\_\-w.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_c84a477911a2e19f2c4c51485d4e7b64}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-payload\_\-length2\_\-set@{nrf\_\-payload\_\-length2\_\-set}}
+\index{nrf\_\-payload\_\-length2\_\-set@{nrf\_\-payload\_\-length2\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-payload\_\-length2\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em length})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_c84a477911a2e19f2c4c51485d4e7b64}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::data2\_\-w.\hypertarget{nrf2401_8c_fc0a1591f2772883ab6b92f65bc099f3}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-power\_\-set@{nrf\_\-power\_\-set}}
+\index{nrf\_\-power\_\-set@{nrf\_\-power\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-power\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em rf\_\-power})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_fc0a1591f2772883ab6b92f65bc099f3}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::rf\_\-pwr.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_b33a22c7e34f46aa9dca322114c99fe5}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-receive@{nrf\_\-receive}}
+\index{nrf\_\-receive@{nrf\_\-receive}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t nrf\_\-receive ({\bf nrf\_\-t} {\em nrf}, \/  {\bf nrf\_\-node\_\-t} $\ast$ {\em node}, \/  void $\ast$ {\em buffer}, \/  uint8\_\-t {\em len}, \/  uint8\_\-t {\em ms\_\-to\_\-wait})}}
+\label{nrf2401_8c_b33a22c7e34f46aa9dca322114c99fe5}
+
+
+
+
+References nrf\_\-link\_\-t::address, nrf\_\-link\_\-t::channel, nrf\_\-address1\_\-set(), nrf\_\-channel\_\-set(), NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE, nrf\_\-configure(), NRF\_\-DATA\_\-READY\_\-P, nrf\_\-dir\_\-set(), nrf\_\-enable(), nrf\_\-payload\_\-length1\_\-get(), NRF\_\-RX\_\-MODE, nrf\_\-standby(), nrf\_\-node\_\-t::rx, and nrf\_\-obj\_\-t::spi.
+
+Referenced by nrf\_\-acknowledge\_\-wait(), nrf\_\-announce(), and nrf\_\-read().\hypertarget{nrf2401_8c_503158aef839b07fda9fd1a76f134126}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-setup@{nrf\_\-setup}}
+\index{nrf\_\-setup@{nrf\_\-setup}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool nrf\_\-setup ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em payload\_\-size})}}
+\label{nrf2401_8c_503158aef839b07fda9fd1a76f134126}
+
+
+
+
+References CHAR\_\-BIT, nrf\_\-address\_\-length\_\-set(), nrf\_\-channel\_\-set(), nrf\_\-comms\_\-mode\_\-set(), NRF\_\-CONFIGURATION\_\-REGISTER\_\-SIZE, nrf\_\-configure(), NRF\_\-CRC\_\-16, NRF\_\-CRC\_\-ENABLED, nrf\_\-crc\_\-length\_\-set(), nrf\_\-crc\_\-status\_\-set(), NRF\_\-DATA\_\-1M, nrf\_\-data\_\-rate\_\-set(), nrf\_\-dir\_\-set(), nrf\_\-payload\_\-length1\_\-set(), NRF\_\-POWER\_\-0, nrf\_\-power\_\-set(), NRF\_\-RX\_\-MODE, NRF\_\-SHOCKBURST, NRF\_\-SINGLE\_\-CHANNEL, nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set(), NRF\_\-XTAL\_\-FREQ\_\-16M, and nrf\_\-xtal\_\-freq\_\-set().\hypertarget{nrf2401_8c_ca3452a54a4134e6cfb284ca05ae746a}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set@{nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set}}
+\index{nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set@{nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-single\_\-or\_\-dual\_\-channel\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em mode})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_ca3452a54a4134e6cfb284ca05ae746a}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::rx2\_\-en.
+
+Referenced by nrf\_\-setup().\hypertarget{nrf2401_8c_2572c0965322d469410e7f0417c57a49}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-standby@{nrf\_\-standby}}
+\index{nrf\_\-standby@{nrf\_\-standby}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nrf\_\-standby ({\bf nrf\_\-t} {\em nrf})}}
+\label{nrf2401_8c_2572c0965322d469410e7f0417c57a49}
+
+
+
+
+References NRF\_\-CE\_\-LOW\_\-SET, and NRF\_\-CS\_\-LOW\_\-SET.
+
+Referenced by nrf\_\-receive().\hypertarget{nrf2401_8c_4673ad828e6293328bd436902110b6a3}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-transmit@{nrf\_\-transmit}}
+\index{nrf\_\-transmit@{nrf\_\-transmit}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t nrf\_\-transmit ({\bf nrf\_\-t} {\em nrf}, \/  {\bf nrf\_\-node\_\-t} $\ast$ {\em node}, \/  void $\ast$ {\em buffer}, \/  uint8\_\-t {\em len})}}
+\label{nrf2401_8c_4673ad828e6293328bd436902110b6a3}
+
+
+
+
+References nrf\_\-config\_\-bits\_\-t::addr\_\-w, nrf\_\-link\_\-t::address, nrf\_\-config\_\-t::bits, nrf\_\-address\_\-t::bytes, nrf\_\-link\_\-t::channel, CHAR\_\-BIT, nrf\_\-obj\_\-t::config, nrf\_\-config\_\-bits\_\-t::crc\_\-en, nrf\_\-config\_\-bits\_\-t::crc\_\-l, nrf\_\-config\_\-bits\_\-t::data1\_\-w, NRF\_\-CE\_\-HIGH\_\-SET, NRF\_\-CE\_\-LOW\_\-SET, nrf\_\-channel\_\-set(), nrf\_\-configure(), NRF\_\-CRC\_\-8, NRF\_\-CRC\_\-ENABLED, NRF\_\-DATA\_\-1M, nrf\_\-dir\_\-set(), NRF\_\-LINE\_\-TIME\_\-ENABLE\_\-US, NRF\_\-T\_\-SB\_\-ACTIVE, NRF\_\-TX\_\-MODE, nrf\_\-config\_\-bits\_\-t::rfdr\_\-sb, nrf\_\-obj\_\-t::spi, and nrf\_\-node\_\-t::tx.
+
+Referenced by nrf\_\-acknowledge(), nrf\_\-announce(), and nrf\_\-write().\hypertarget{nrf2401_8c_9a33a3c62321075f2e0a2d0271144fab}{
+\index{nrf2401.c@{nrf2401.c}!nrf\_\-xtal\_\-freq\_\-set@{nrf\_\-xtal\_\-freq\_\-set}}
+\index{nrf\_\-xtal\_\-freq\_\-set@{nrf\_\-xtal\_\-freq\_\-set}!nrf2401.c@{nrf2401.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}static void nrf\_\-xtal\_\-freq\_\-set ({\bf nrf\_\-t} {\em nrf}, \/  uint8\_\-t {\em freq})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{nrf2401_8c_9a33a3c62321075f2e0a2d0271144fab}
+
+
+
+
+References nrf\_\-config\_\-t::bits, nrf\_\-obj\_\-t::config, and nrf\_\-config\_\-bits\_\-t::xo\_\-f.
+
+Referenced by nrf\_\-setup().
