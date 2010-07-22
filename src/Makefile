@@ -16,25 +16,30 @@ VPATH = ./mmculib ./mat91lib
 
 
 CC = arm-elf-gcc
+LD = arm-elf-ld
 OBJCOPY = arm-elf-objcopy
 SIZE = arm-elf-size
-DEL = rm
+DEL = rm -f
 
 
-CFLAGS = -mcpu=arm7tdmi -Wall -Wstrict-prototypes -W -gdwarf-2 -std=c99 -D$(RUN_MODE) -I./mat91lib -I./mmculib -I./mdsplib -I/usr/include -I. -O2 -mthumb-interwork
+CFLAGS = -mcpu=arm7tdmi -Wall -W -Wstrict-prototypes -W -gdwarf-2 -std=c99 -D$(RUN_MODE) -I./mat91lib -I./mmculib -I./mdsplib -I/usr/include -I. -O2 -mthumb-interwork
 
-LDFLAGS = -mthumb-interwork -nostartfiles -lm -lc
+#LDFLAGS = -mthumb-interwork -nostartfiles -lm -lc
+LDFLAGS = -Map main.map -nostartfiles
 
 ifeq ($(RUN_MODE),RAM_RUN)
-LDFLAGS +=-T../mat91lib/ldscripts/AT91SAM7S256-RAM.ld
+LDFLAGS +=-T./mat91lib/ldscripts/AT91SAM7S256-RAM.ld
 else 
-LDFLAGS +=-T../mat91lib/ldscripts/AT91SAM7S256-ROM.ld
+LDFLAGS +=-T./mat91lib/ldscripts/AT91SAM7S256-ROM.ld
 endif
-
 
 # Default target.
 all: busart0_loop1.bin
 
+# Remove non-source files.
+.PHONY: clean
+clean: 
+	$(DEL) *.o *.out *.hex *.bin *.elf *.d
 
 OBJ = $(SRC:.c=.o)
 
@@ -63,7 +68,9 @@ crt0.o: crt0.c config.h target.h
 
 # Link object files to form output file.
 busart0_loop1.out: $(OBJ) crt0.o
-	$(CC) $^ $(LDFLAGS) -o $@ -lm
+
+	#$(CC) $^ $(LDFLAGS) -o $@ -lm
+	$(LD)  -o $@ $(OBJ)
 	$(SIZE) $@
 
 
@@ -72,8 +79,4 @@ busart0_loop1.out: $(OBJ) crt0.o
 	$(OBJCOPY) --output-target=binary $^ $@
 
 
-# Remove non-source files.
-.PHONY: clean
-clean: 
-	$(DEL) *.o *.out *.hex *.bin *.elf *.d
 
