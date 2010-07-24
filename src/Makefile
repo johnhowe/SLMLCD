@@ -1,82 +1,144 @@
-# File:   Makefile
-# Author: M. P. Hayes, ICES
-# Date:   31 December 2007
-# Descr:  Makefile for busart0_loop
+##############################################################################################
+#
+#       !!!! Do NOT edit this makefile with an editor which replace tabs by spaces !!!!    
+#
+##############################################################################################
+# 
+# On command line:
+#
+# make all = Create PROJECT
+#
+# make clean = Clean PROJECT files.
+#
+# To rebuild PROJECT do "make clean" and "make all".
+#
+
+##############################################################################################
+# Start of default section
+#
+
+TRGT = arm-elf-
+CC   = $(TRGT)gcc
+LD   = $(TRGT)ld -v
+CP   = $(TRGT)objcopy --output-target=binary
+DMP  = $(TRGT)objdump -x -S -t
+AS   = $(TRGT)gcc -x assembler-with-cpp
+BIN  = $(CP) -O ihex 
+
+MCU  = arm7tdmi
+
+# List all default C defines here, like -D_DEBUG=1
+DDEFS = 
+
+# List all default ASM defines here, like -D_DEBUG=1
+DADEFS = 
+
+# List all default directories to look for include files here
+DINCDIR = 
+
+# List the default directory to look for the libraries here
+DLIBDIR =
+
+# List all default libraries here
+DLIBS = 
+
+#
+# End of default section
+##############################################################################################
+
+##############################################################################################
+# Start of user section
+#
+
+# Define PROJECT name here (the main C file without extension)
+PROJECT = main
+
+# Define linker script file here
+LDSCRIPT= AT91SAM7S256-ROM.ld
+
+# List all user C define here, like -D_DEBUG=1
+UDEFS = 
+
+# Define ASM defines here
+UADEFS = 
+
+# List additional C source files here
+SRC  = $(PROJECT).c Cstartup_SAM7.c init.c lcd.c
+
+# List ASM source files here
+ASRC = Cstartup.s
+
+# List all user directories here
+#UINCDIR = .
+
+# List the user directory to look for the libraries here
+ULIBDIR =
+
+# List all user libraries here
+ULIBS = 
+
+# Define optimisation level here [0, 1, 2, 3, s]. 
+# 0 = turn off optimization. s = optimize for size.
+OPT = -O0
+
+#
+# End of user defines
+##############################################################################################
 
 
-## Create ROM-Image (final)
-RUN_MODE=ROM_RUN
-## Create RAM-Image (debugging) 
-#RUN_MODE=RAM_RUN
+INCDIR  = $(patsubst %,-I%,$(DINCDIR) $(UINCDIR))
+LIBDIR  = $(patsubst %,-L%,$(DLIBDIR) $(ULIBDIR))
+DEFS    = $(DDEFS) $(UDEFS)
+ADEFS   = $(DADEFS) $(UADEFS)
+OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
+LIBS    = $(DLIBS) $(ULIBS)
+MCFLAGS = -mcpu=$(MCU)
 
+ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS)
+CPFLAGS = $(MCFLAGS) $(OPT) -gdwarf-2 -fomit-frame-pointer -std=c99 -Wall -Wstrict-prototypes -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(DEFS)
+#LDFLAGS = $(MCFLAGS) -nostartfiles -T$(LDSCRIPT) -Wl,-Map=$(PROJECT).map,--cref,--no-warn-mismatch $(LIBDIR)
+LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT)
 
-SRC = busart0_loop1.c busart.c ring.c usart0.c usart1.c
+# Generate dependency information
+CPFLAGS += -MD -MP -MF .dep/$(@F).d
 
-VPATH = ./mmculib ./mat91lib
+#
+# makefile rules
+#
 
+all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin 
 
-CC = arm-elf-gcc
-LD = arm-elf-ld
-OBJCOPY = arm-elf-objcopy
-SIZE = arm-elf-size
-DEL = rm -f
+%o : %c
+	$(CC) -c $(CPFLAGS) -I . $(INCDIR) $< -o $@
 
+%o : %s
+	$(AS) -c $(ASFLAGS) $< -o $@
 
-CFLAGS = -mcpu=arm7tdmi -Wall -W -Wstrict-prototypes -W -gdwarf-2 -std=c99 -D$(RUN_MODE) -I./mat91lib -I./mmculib -I./mdsplib -I/usr/include -I. -O2 -mthumb-interwork
+%elf: $(OBJS)
+	$(LD) $(LDFLAGS) -o $(PROJECT).elf $(OBJS)
 
-#LDFLAGS = -mthumb-interwork -nostartfiles -lm -lc
-LDFLAGS = -Map main.map -nostartfiles
+%hex: %elf
+	$(BIN) $< $@
 
-ifeq ($(RUN_MODE),RAM_RUN)
-LDFLAGS +=-T./mat91lib/ldscripts/AT91SAM7S256-RAM.ld
-else 
-LDFLAGS +=-T./mat91lib/ldscripts/AT91SAM7S256-ROM.ld
-endif
+%bin: %elf
+	$(CP) --output-target=binary $< $@
+	$(DMP) $< > $(PROJECT).dmp
+	
 
-# Default target.
-all: busart0_loop1.bin
+clean:
+	-rm -f $(SRC:.c=.s)
+	-rm -f $(SRC:.c=.o)
+	-rm -f $(SRC:.c=.lst)
+	-rm -f $(ASRC:.S=.lst)
+	-rm -f $(ASRC:.S=.o)
+	-rm -f $(PROJECT).elf
+	-rm -f $(PROJECT).map
+	-rm -f $(PROJECT).hex
+	-rm -fR .dep
 
-# Remove non-source files.
-.PHONY: clean
-clean: 
-	$(DEL) *.o *.out *.hex *.bin *.elf *.d
+# 
+# Include the dependency files, should be the last of the makefile
+#
+-include $(shell mkdir .dep 2>/dev/null) $(wildcard .dep/*)
 
-OBJ = $(SRC:.c=.o)
-
-
-#busart0_loop1.lst: busart0_loop1.c config.h target.h
-#	$(CC) -c  $(CFLAGS) -mthumb $< -o /dev/null  -Wa,-adhlns=$@
-
-
-%.o: %.c Makefile
-	$(CC) -c $(CFLAGS) $< -o $@
-
-# Automatically generate C source code dependencies.
-%.d: %.c
-	set -e; $(CC) -MM $(CFLAGS) $< \
-	| sed 's,\(.*\)\.o[ :]*,\1.o \1.d : ,g' > $@; \
-	[ -s $@ ] || rm -f $@
-
-# Include the dependency files.
--include $(SRC:.c=.d)
-
-
-# This cannot be compiled in thumb mode.
-crt0.o: crt0.c config.h target.h
-	$(CC) -c $(CFLAGS) -O2 $< -o $@
-
-
-# Link object files to form output file.
-busart0_loop1.out: $(OBJ) crt0.o
-
-	#$(CC) $^ $(LDFLAGS) -o $@ -lm
-	$(LD)  -o $@ $(OBJ)
-	$(SIZE) $@
-
-
-# Convert output file to binary image file.
-%.bin: %.out
-	$(OBJCOPY) --output-target=binary $^ $@
-
-
-
+# *** EOF ***

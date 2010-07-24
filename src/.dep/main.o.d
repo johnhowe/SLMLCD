@@ -1,5 +1,11 @@
-main.o: main.c ../include/Board.h ../include/AT91SAM7S256.h
+main.o: main.c config.h AT91SAM7S256.h init.h lcd.h HG24016001G.h
 
-../include/Board.h:
+config.h:
 
-../include/AT91SAM7S256.h:
+AT91SAM7S256.h:
+
+init.h:
+
+lcd.h:
+
+HG24016001G.h:

@@ -3,134 +3,88 @@ Memory Configuration
 
 Name             Origin             Length             Attributes
 FLASH            0x00100000         0x00040000         xr
-SRAM             0x00200000         0x00010000         xrw
+DATA             0x00200000         0x00010000         rw
+STACK            0x00210000         0x00000000         rw
 *default*        0x00000000         0xffffffff
 
 Linker script and memory map
 
                 0x00000000                . = 0x0
 
-.vectors        0x00100000      0x264
- *(.vectors)
- .vectors       0x00100000      0x264 crt0.o
-                0x00100000                start
-                0x00100044                _reset_handler
-                0x00100204                _irq_handler
-
-.text           0x00100264      0xa18
+.text           0x00100000      0x854
+ *Cstartup.o(.text)
+ .text          0x00100000      0x13c Cstartup.o
+                0x00100000                _startup
+                0x001000b8                exit
+                0x001000bc                IRQ_Handler_Entry
+                0x0010010c                AT91F_Default_FIQ_handler
+                0x00100110                AT91F_Default_IRQ_handler
+                0x00100114                AT91F_Spurious_handler
  *(.text)
- .text          0x00100264       0x68 busart0_loop1.o
-                0x00100264                main
- .text          0x001002cc      0x4e4 busart.o
-                0x00100354                busart_write_finished_p
-                0x0010038c                busart_write_num
-                0x001003a0                busart_write_ready_p
-                0x001003b4                busart_read_num
-                0x001003c8                busart_read_ready_p
-                0x001003dc                busart_read
-                0x001003f8                busart_read_block
-                0x00100444                busart_getc
-                0x00100468                busart_write
-                0x0010049c                busart_write_block
-                0x001004e8                busart_putc
-                0x00100530                busart_puts
-                0x00100668                busart_init
- .text          0x001007b0      0x240 ring.o
-                0x001007b0                ring_empty_p
-                0x001007c4                ring_read_num
-                0x001007f4                ring_write_num
-                0x0010083c                ring_init
-                0x0010086c                ring_write
-                0x00100930                ring_read
- .text          0x001009f0      0x140 usart0.o
-                0x001009f0                usart0_baud_divisor_set
-                0x00100a04                usart0_init
-                0x00100a54                usart0_read_ready_p
-                0x00100a64                usart0_write_ready_p
-                0x00100a78                usart0_write_finished_p
-                0x00100a8c                usart0_putc
-                0x00100ad8                usart0_getc
-                0x00100b04                usart0_puts
- .text          0x00100b30      0x140 usart1.o
-                0x00100b30                usart1_baud_divisor_set
-                0x00100b44                usart1_init
-                0x00100b94                usart1_read_ready_p
-                0x00100ba4                usart1_write_ready_p
-                0x00100bb8                usart1_write_finished_p
-                0x00100bcc                usart1_putc
-                0x00100c18                usart1_getc
-                0x00100c44                usart1_puts
- .text          0x00100c70        0xc crt0.o
-                0x00100c70                exit
-                0x00100c74                _irq_unexpected_handler
-                0x00100c78                _irq_spurious_handler
+ .text          0x0010013c       0xb0 main.o
+                0x0010013c                main
+ .text          0x001001ec      0x15c Cstartup_SAM7.o
+                0x001001ec                AT91F_LowLevelInit
+ .text          0x00100348      0x25c init.o
+                0x00100348                DefaultInterruptHandler
+                0x0010034c                SpuriousInterruptHandler
+                0x00100350                PanicBlinker
+                0x0010045c                InitController
+ .text          0x001005a4      0x2b0 lcd.o
+                0x001005a4                initLCD
+                0x001006d0                writeInstruction
+                0x00100840                writeData
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00100c7c        0x0
+.vfp11_veneer   0x00100854        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00100c7c        0x0
+.v4_bx          0x00100854        0x0
  .v4_bx         0x00000000        0x0 linker stubs
-                0x00100c7c                . = ALIGN (0x4)
+                0x00100854                . = ALIGN (0x4)
 
-.rodata         0x00100c7c       0x10
- *(.rodata .rodata.*)
- .rodata.str1.4
-                0x00100c7c       0x10 busart0_loop1.o
+.rodata
+ *(.rodata)
+                0x00100854                . = ALIGN (0x4)
+                0x00100854                _etext = .
+                0x00100854                PROVIDE (etext, .)
 
-.eh_frame       0x00100c8c      0x4b8
- .eh_frame      0x00100c8c       0x34 busart0_loop1.o
- .eh_frame      0x00100cc0      0x214 busart.o
-                                0x228 (size before relaxing)
- .eh_frame      0x00100ed4       0x98 ring.o
-                                 0xac (size before relaxing)
- .eh_frame      0x00100f6c       0xb0 usart0.o
-                                 0xc4 (size before relaxing)
- .eh_frame      0x0010101c       0xb0 usart1.o
-                                 0xc4 (size before relaxing)
- .eh_frame      0x001010cc       0x78 crt0.o
-                                 0x8c (size before relaxing)
-                0x00101144                . = ALIGN (0x4)
-                0x00101144                __text_end__ = .
-
-.data           0x00200000        0x0 load address 0x00101144
-                0x00200000                __data_start__ = .
+.data           0x00200000        0x0 load address 0x00100854
+                0x00200000                _data = .
  *(.data)
- .data          0x00200000        0x0 busart0_loop1.o
- .data          0x00200000        0x0 busart.o
- .data          0x00200000        0x0 ring.o
- .data          0x00200000        0x0 usart0.o
- .data          0x00200000        0x0 usart1.o
- .data          0x00200000        0x0 crt0.o
+ .data          0x00200000        0x0 Cstartup.o
+ .data          0x00200000        0x0 main.o
+ .data          0x00200000        0x0 Cstartup_SAM7.o
+ .data          0x00200000        0x0 init.o
+ .data          0x00200000        0x0 lcd.o
                 0x00200000                . = ALIGN (0x4)
-                0x00200000                __data_end__ = .
-                0x00101144                __data_load__ = LOADADDR (.data)
+                0x00200000                _edata = .
+                0x00200000                PROVIDE (edata, .)
 
-.ramtext        0x00200000        0x0 load address 0x00101144
-                0x00200000                __ramtext_start__ = .
- *(.ramtext)
-                0x00200000                . = ALIGN (0x4)
-                0x00200000                __ramtext_end__ = .
-                0x00101144                __ramtext_load__ = LOADADDR (.ramtext)
-
-.bss            0x00200000       0x58 load address 0x00101144
+.bss            0x00200000        0x0 load address 0x00100854
+                0x00200000                __bss_start = .
                 0x00200000                __bss_start__ = .
  *(.bss)
- .bss           0x00200000        0x0 busart0_loop1.o
- .bss           0x00200000       0x58 busart.o
- .bss           0x00200058        0x0 ring.o
- .bss           0x00200058        0x0 usart0.o
- .bss           0x00200058        0x0 usart1.o
- .bss           0x00200058        0x0 crt0.o
+ .bss           0x00200000        0x0 Cstartup.o
+ .bss           0x00200000        0x0 main.o
+ .bss           0x00200000        0x0 Cstartup_SAM7.o
+ .bss           0x00200000        0x0 init.o
+ .bss           0x00200000        0x0 lcd.o
  *(COMMON)
-                0x00200058                . = ALIGN (0x4)
-                0x00200058                __bss_end__ = .
-                0x00200058                _end = .
-                0x00200058                end = .
-                0x00210000                __stack_start__ = 0x210000
+                0x00200000                . = ALIGN (0x4)
+                0x00200000                __bss_end__ = .
+                0x00200000                __bss_end__ = .
+                0x00200000                _end = .
+                0x00200000                PROVIDE (end, .)
+                0x00200000                . = ALIGN (0x4)
+
+.int_data       0x00210000        0x0
+ *(.internal_ram_top)
+ .internal_ram_top
+                0x00210000        0x0 Cstartup.o
 
 .stab
  *(.stab)
@@ -150,30 +104,29 @@ Linker script and memory map
 .stab.indexstr
  *(.stab.indexstr)
 
+.reset          0x00000000        0x0
+ .reset         0x00000000        0x0 Cstartup.o
+
 .ARM.attributes
                 0x00000000       0x10
  .ARM.attributes
-                0x00000000       0x10 busart0_loop1.o
+                0x00000000       0x10 Cstartup.o
  .ARM.attributes
-                0x00000010       0x10 busart.o
+                0x00000010       0x10 main.o
  .ARM.attributes
-                0x00000020       0x10 ring.o
+                0x00000020       0x10 Cstartup_SAM7.o
  .ARM.attributes
-                0x00000030       0x10 usart0.o
+                0x00000030       0x10 init.o
  .ARM.attributes
-                0x00000040       0x10 usart1.o
- .ARM.attributes
-                0x00000050       0x10 crt0.o
+                0x00000040       0x10 lcd.o
 
 .comment        0x00000000       0x11
  *(.comment)
- .comment       0x00000000       0x11 busart0_loop1.o
+ .comment       0x00000000       0x11 main.o
                                  0x12 (size before relaxing)
- .comment       0x00000000       0x12 busart.o
- .comment       0x00000000       0x12 ring.o
- .comment       0x00000000       0x12 usart0.o
- .comment       0x00000000       0x12 usart1.o
- .comment       0x00000000       0x12 crt0.o
+ .comment       0x00000000       0x12 Cstartup_SAM7.o
+ .comment       0x00000000       0x12 init.o
+ .comment       0x00000000       0x12 lcd.o
 
 .debug
  *(.debug)
@@ -187,90 +140,79 @@ Linker script and memory map
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xd8
+.debug_aranges  0x00000000       0xa0
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x20 busart0_loop1.o
+                0x00000000       0x20 Cstartup.o
  .debug_aranges
-                0x00000020       0x20 busart.o
+                0x00000020       0x20 main.o
  .debug_aranges
-                0x00000040       0x20 ring.o
+                0x00000040       0x20 Cstartup_SAM7.o
  .debug_aranges
-                0x00000060       0x20 usart0.o
+                0x00000060       0x20 init.o
  .debug_aranges
-                0x00000080       0x20 usart1.o
- .debug_aranges
-                0x000000a0       0x38 crt0.o
+                0x00000080       0x20 lcd.o
 
 .debug_pubnames
-                0x00000000      0x399
+                0x00000000       0xf4
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000       0x1b busart0_loop1.o
+                0x00000000       0x1b main.o
  .debug_pubnames
-                0x0000001b      0x116 busart.o
+                0x0000001b       0x29 Cstartup_SAM7.o
  .debug_pubnames
-                0x00000131       0x73 ring.o
+                0x00000044       0x6f init.o
  .debug_pubnames
-                0x000001a4       0xbb usart0.o
- .debug_pubnames
-                0x0000025f       0xbb usart1.o
- .debug_pubnames
-                0x0000031a       0x7f crt0.o
+                0x000000b3       0x41 lcd.o
 
-.debug_info     0x00000000     0x2355
+.debug_info     0x00000000     0x134d
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x102 busart0_loop1.o
- .debug_info    0x00000102      0xd68 busart.o
- .debug_info    0x00000e6a      0x307 ring.o
- .debug_info    0x00001171      0x53e usart0.o
- .debug_info    0x000016af      0x53e usart1.o
- .debug_info    0x00001bed      0x768 crt0.o
+ .debug_info    0x00000000       0x5a Cstartup.o
+ .debug_info    0x0000005a      0x335 main.o
+ .debug_info    0x0000038f      0x473 Cstartup_SAM7.o
+ .debug_info    0x00000802      0x7e6 init.o
+ .debug_info    0x00000fe8      0x365 lcd.o
 
-.debug_abbrev   0x00000000      0x90a
+.debug_abbrev   0x00000000      0x3ad
  *(.debug_abbrev)
- .debug_abbrev  0x00000000       0xa0 busart0_loop1.o
- .debug_abbrev  0x000000a0      0x254 busart.o
- .debug_abbrev  0x000002f4      0x131 ring.o
- .debug_abbrev  0x00000425      0x17c usart0.o
- .debug_abbrev  0x000005a1      0x17c usart1.o
- .debug_abbrev  0x0000071d      0x1ed crt0.o
+ .debug_abbrev  0x00000000       0x14 Cstartup.o
+ .debug_abbrev  0x00000014       0xcb main.o
+ .debug_abbrev  0x000000df       0xe0 Cstartup_SAM7.o
+ .debug_abbrev  0x000001bf      0x10d init.o
+ .debug_abbrev  0x000002cc       0xe1 lcd.o
 
-.debug_line     0x00000000      0x579
+.debug_line     0x00000000      0x311
  *(.debug_line)
- .debug_line    0x00000000       0x5c busart0_loop1.o
- .debug_line    0x0000005c      0x1c5 busart.o
- .debug_line    0x00000221       0xdb ring.o
- .debug_line    0x000002fc       0xb4 usart0.o
- .debug_line    0x000003b0       0xb4 usart1.o
- .debug_line    0x00000464      0x115 crt0.o
+ .debug_line    0x00000000       0x8a Cstartup.o
+ .debug_line    0x0000008a       0x69 main.o
+ .debug_line    0x000000f3       0x97 Cstartup_SAM7.o
+ .debug_line    0x0000018a       0xc8 init.o
+ .debug_line    0x00000252       0xbf lcd.o
 
-.debug_frame
+.debug_frame    0x00000000       0xf8
  *(.debug_frame)
+ .debug_frame   0x00000000       0x2c main.o
+ .debug_frame   0x0000002c       0x24 Cstartup_SAM7.o
+ .debug_frame   0x00000050       0x58 init.o
+ .debug_frame   0x000000a8       0x50 lcd.o
 
-.debug_str      0x00000000      0x9a4
+.debug_str      0x00000000      0x492
  *(.debug_str)
- .debug_str     0x00000000       0xd9 busart0_loop1.o
-                                 0xfe (size before relaxing)
- .debug_str     0x000000d9      0x44d busart.o
-                                0x580 (size before relaxing)
- .debug_str     0x00000526       0x69 ring.o
-                                0x16b (size before relaxing)
- .debug_str     0x0000058f      0x138 usart0.o
-                                0x2f5 (size before relaxing)
- .debug_str     0x000006c7       0x91 usart1.o
-                                0x2f5 (size before relaxing)
- .debug_str     0x00000758      0x24c crt0.o
-                                0x459 (size before relaxing)
+ .debug_str     0x00000000      0x1d8 main.o
+                                0x1f1 (size before relaxing)
+ .debug_str     0x000001d8      0x1e4 Cstartup_SAM7.o
+                                0x256 (size before relaxing)
+ .debug_str     0x000003bc       0x92 init.o
+                                0x438 (size before relaxing)
+ .debug_str     0x0000044e       0x44 lcd.o
+                                0x22f (size before relaxing)
 
-.debug_loc      0x00000000      0x9d8
+.debug_loc      0x00000000       0xec
  *(.debug_loc)
- .debug_loc     0x00000000       0x2c busart0_loop1.o
- .debug_loc     0x0000002c      0x5ce busart.o
- .debug_loc     0x000005fa      0x210 ring.o
- .debug_loc     0x0000080a       0xc1 usart0.o
- .debug_loc     0x000008cb       0xc1 usart1.o
- .debug_loc     0x0000098c       0x4c crt0.o
+ .debug_loc     0x00000000       0x2c main.o
+ .debug_loc     0x0000002c       0x20 Cstartup_SAM7.o
+ .debug_loc     0x0000004c       0x40 init.o
+ .debug_loc     0x0000008c       0x60 lcd.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -286,14 +228,20 @@ Linker script and memory map
 
 .debug_varnames
  *(.debug_varnames)
-LOAD busart0_loop1.o
-LOAD busart.o
-LOAD ring.o
-LOAD usart0.o
-LOAD usart1.o
-LOAD crt0.o
-OUTPUT(busart0_loop1.out elf32-littlearm)
+LOAD Cstartup.o
+LOAD main.o
+LOAD Cstartup_SAM7.o
+LOAD init.o
+LOAD lcd.o
+OUTPUT(main.elf elf32-littlearm)
 
-.debug_ranges   0x00000000      0x128
- .debug_ranges  0x00000000       0xb0 busart.o
- .debug_ranges  0x000000b0       0x78 crt0.o
+.debug_pubtypes
+                0x00000000      0x1d1
+ .debug_pubtypes
+                0x00000000       0x30 main.o
+ .debug_pubtypes
+                0x00000030       0x8a Cstartup_SAM7.o
+ .debug_pubtypes
+                0x000000ba       0xd2 init.o
+ .debug_pubtypes
+                0x0000018c       0x45 lcd.o

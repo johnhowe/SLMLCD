@@ -1,6 +1,5 @@
-../build/Cstartup_SAM7.o: ../build/Cstartup_SAM7.c ../include/Board.h \
- ../include/AT91SAM7S256.h
+Cstartup_SAM7.o: Cstartup_SAM7.c Board.h AT91SAM7S256.h
 
-../include/Board.h:
+Board.h:
 
-../include/AT91SAM7S256.h:
+AT91SAM7S256.h:
