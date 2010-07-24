@@ -13,9 +13,5 @@
 // Endless loop of LED_A (PA0) blinks for error diagnosis.
 // Will blink code-many times and then make a longer delay.
 void PanicBlinker(uint8 code);
-
 // Hardware initialisation function.
-void initController(void);
-
-/* setup IO pins */
-void initPIO(void);
+void InitController(void);

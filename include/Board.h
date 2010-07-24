@@ -8,7 +8,7 @@
 // intellectual property rights of others.
 //----------------------------------------------------------------------------------------------------
 // File Name: 	Board.h
-// Object: 		AT91SAM7S Evaluation Board Features Definition File.
+// Object: 	AT91SAM7S Evaluation Board Features Definition File.
 //
 // Creation:	JPP   16/June/2004
 //----------------------------------------------------------------------------------------------------   
@@ -26,10 +26,10 @@
 //-----------------------------------------------  
 // The AT91SAM7S2564 embeds a 64-Kbyte SRAM bank, and 256 K-Byte Flash
 
-#define  INT_SRAM			0x00200000
+#define  INT_SRAM		0x00200000
 #define  INT_SRAM_REMAP		0x00000000
 
-#define  INT_FLASH			0x00000000
+#define  INT_FLASH		0x00000000
 #define  INT_FLASH_REMAP	0x01000000
 
 #define  FLASH_PAGE_NB		512
@@ -55,7 +55,7 @@
 #define SW4_MASK	(1<<14)							// PA14   
 #define SW_MASK		(SW1_MASK|SW2_MASK|SW3_MASK|SW4_MASK)
 
-#define SW1			(1<<19)	   						// PA19
+#define SW1			(1<<19)	   					// PA19
 #define SW2			(1<<20)	    					// PA20
 #define SW3			(1<<15)	    					// PA15
 #define SW4			(1<<14)	    					// PA14
@@ -75,8 +75,8 @@
 //--------------  
 // Master Clock   
 //--------------  
-#define EXT_OC		18432000						// Exetrnal ocilator MAINCK
-#define MCK			47923200						// MCK (PLLRC div by 2)
+#define EXT_OC		18432000					// Exetrnal ocilator MAINCK
+#define MCK		47923200					// MCK (PLLRC div by 2)
 #define MCKKHz		(MCK/1000)     					//
 
 #endif   // Board_h     

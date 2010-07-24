@@ -1,0 +1,346 @@
+ARM GAS  /tmp/cc0THclv.s 			page 1
+
+
+   1              	# 1 "Cstartup.s"
+   1              	;------------------------------------------------------------------------------
+   1              	...
+   0              	
+   0              	
+   2              	;-         ATMEL Microcontroller Software Support  -  ROUSSET  -
+   3              	;------------------------------------------------------------------------------
+   4              	; The software is delivered "AS IS" without warranty or condition of any
+   5              	; kind, either express, implied or statutory. This includes without
+   6              	; limitation any warranty or condition with respect to merchantability or
+   7              	; fitness for any particular purpose, or against the infringements of
+   8              	; intellectual property rights of others.
+   9              	;-----------------------------------------------------------------------------
+  10              	;- File source          : Cstartup.s79
+  11              	;- Object               : Generic CStartup for IAR No Use REMAP
+  12              	;- Compilation flag     : None
+  13              	;-
+  14              	;- 1.0 15/Jun/04 JPP    : Creation
+  15              	;------------------------------------------------------------------------------
+  16              	
+  17              	#include "AT91SAM7X256_inc.h"
+   1              	//  ----------------------------------------------------------------------------
+  18              	
+  19              	;------------------------------------------------------------------------------
+  20              	;- Area Definition
+  21              	;------------------------------------------------------------------------------
+  22              	
+  23              	;---------------------------------------------------------------
+  24              	; ?RESET
+  25              	; Reset Vector.
+  26              	; Normally, segment INTVEC is linked at address 0.
+  27              	; For debugging purposes, INTVEC may be placed at other
+  28              	; addresses.
+  29              	; A debugger that honors the entry point will start the
+  30              	; program in a normal way even if INTVEC is not at address 0.
+  31              	;-------------------------------------------------------------
+  32              	
+  33              			PROGRAM	?RESET
+  34              			RSEG	INTRAMSTART_REMAP
+  35              			RSEG	INTRAMEND_REMAP
+  36              	
+  37              			EXTERN	vPortYieldProcessor
+  38              	
+  39              			RSEG	ICODE:CODE:ROOT(2)
+  40              			CODE32	; Always ARM mode after reset	
+  41              			org	0	
+  42              	reset		
+  43              	;------------------------------------------------------------------------------
+  44              	;- Exception vectors
+  45              	;--------------------
+  46              	;- These vectors can be read at address 0 or at RAM address
+  47              	;- They ABSOLUTELY requires to be in relative addresssing mode in order to
+  48              	;- guarantee a valid jump. For the moment, all are just looping.
+  49              	;- If an exception occurs before remap, this would result in an infinite loop.
+  50              	;- To ensure if a exeption occurs before start application to infinite loop.
+  51              	;------------------------------------------------------------------------------
+  52              	
+ARM GAS  /tmp/cc0THclv.s 			page 2
+
+
+  53 ???? 000000EA 	                B           InitReset           ; 0x00 Reset handler
+****  Error:junk at end of line, first unrecognized character is `0'
+  54              	undefvec:
+  55 ???? 000000EA 	                B           undefvec            ; 0x04 Undefined Instruction
+****  Error:junk at end of line, first unrecognized character is `0'
+  56              	swivec:
+  57 ???? 000000EA 	                B           vPortYieldProcessor ; 0x08 Software Interrupt
+****  Error:junk at end of line, first unrecognized character is `0'
+  58              	pabtvec:
+  59 ???? 000000EA 	                B           pabtvec             ; 0x0C Prefetch Abort
+****  Error:junk at end of line, first unrecognized character is `0'
+  60              	dabtvec:
+  61 ???? 000000EA 	                B           dabtvec             ; 0x10 Data Abort
+****  Error:junk at end of line, first unrecognized character is `0'
+  62              	rsvdvec:
+  63 ???? 000000EA 	                B           rsvdvec             ; 0x14 reserved
+****  Error:junk at end of line, first unrecognized character is `0'
+  64              	irqvec:
+  65 ???? 00F01FE5 					LDR			PC, [PC, #-0xF20]	; Jump directly to the address given by the AIC
+****  Error:bad instruction `jump directly to the address given by the AIC'
+  66              	
+  67              	fiqvec:               							; 0x1c FIQ
+  68              	
+  69              	;------------------------------------------------------------------------------
+  70              	;- Function             : FIQ_Handler_Entry
+  71              	;- Treatments           : FIQ Controller Interrupt Handler.
+  72              	;- Called Functions     : AIC_FVR[interrupt]
+  73              	;------------------------------------------------------------------------------
+  74              	
+  75              	FIQ_Handler_Entry:
+  76              	
+  77              	;- Switch in SVC/User Mode to allow User Stack access for C code
+  78              	; because the FIQ is not yet acknowledged
+  79              	
+  80              	;- Save and r0 in FIQ_Register
+  81 ???? 0090A0E1 	            mov         r9,r0
+  82 ???? 000018E5 			    ldr         r0 , [r8, #AIC_FVR]
+  83 ???? 00F021E3 	            msr         CPSR_c,#I_BIT | F_BIT | ARM_MODE_SVC
+  84              	
+  85              	;- Save scratch/used registers and LR in User Stack
+  86 ???? 0E502DE9 	            stmfd       sp!, { r1-r3, r12, lr}
+  87              	
+  88              	;- Branch to the routine pointed by the AIC_FVR
+  89 ???? 0FE0A0E1 	            mov         r14, pc
+  90 ???? 10FF2FE1 	            bx          r0
+  91              	
+  92              	;- Restore scratch/used registers and LR from User Stack
+  93 ???? 0E50BDE8 	            ldmia       sp!, { r1-r3, r12, lr}
+  94              	
+  95              	;- Leave Interrupts disabled and switch back in FIQ mode
+  96 ???? 00F021E3 	            msr         CPSR_c, #I_BIT | F_BIT | ARM_MODE_FIQ
+  97              	
+  98              	;- Restore the R0 ARM_MODE_SVC register
+  99 ???? 0900A0E1 	            mov         r0,r9
+ 100              	
+ 101              	;- Restore the Program Counter using the LR_fiq directly in the PC
+ 102 ???? 00F05EE2 	            subs        pc,lr,#4
+ARM GAS  /tmp/cc0THclv.s 			page 3
+
+
+ 103              	
+ 104              	InitReset:
+ 105              	;------------------------------------------------------------------------------
+ 106              	;- Low level Init (PMC, AIC, ? ....) by C function AT91F_LowLevelInit
+ 107              	;------------------------------------------------------------------------------
+ 108              	            	EXTERN   AT91F_LowLevelInit
+ 109              	
+ 110              	#define  __iramend 	SFB(INTRAMEND_REMAP)
+ 111              	
+ 112              	;- minumum C initialization
+ 113              	;- call  AT91F_LowLevelInit( void)
+ 114              	
+ 115              	            ldr     r13,=__iramend            ; temporary stack in internal RAM
+ 116              	;--Call Low level init function in ABSOLUTE through the Interworking
+ 117 ???? 00001FE5 			    ldr	    r0,=AT91F_LowLevelInit
+ 118 ???? 0FE0A0E1 	       	    mov     lr, pc
+ 119 ???? 10FF2FE1 			    bx	    r0
+ 120              	;------------------------------------------------------------------------------
+ 121              	;- Stack Sizes Definition
+ 122              	;------------------------
+ 123              	;- Interrupt Stack requires 2 words x 8 priority level x 4 bytes when using
+ 124              	;- the vectoring. This assume that the IRQ management.
+ 125              	;- The Interrupt Stack must be adjusted depending on the interrupt handlers.
+ 126              	;- Fast Interrupt not requires stack If in your application it required you must
+ 127              	;- be definehere.
+ 128              	;- The System stack size is not defined and is limited by the free internal
+ 129              	;- SRAM.
+ 130              	;------------------------------------------------------------------------------
+ 131              	
+ 132              	;------------------------------------------------------------------------------
+ 133              	;- Top of Stack Definition
+ 134              	;-------------------------
+ 135              	;- Interrupt and Supervisor Stack are located at the top of internal memory in
+ 136              	;- order to speed the exception handling context saving and restoring.
+ 137              	;- ARM_MODE_SVC (Application, C) Stack is located at the top of the external memory.
+ 138              	;------------------------------------------------------------------------------
+ 139              	
+ 140              	IRQ_STACK_SIZE          EQU     300
+ 141              	
+ 142              	ARM_MODE_FIQ            EQU     0x11
+ 143              	ARM_MODE_IRQ            EQU     0x12
+ 144              	ARM_MODE_SVC            EQU     0x13
+ 145              	
+ 146              	I_BIT                   EQU     0x80
+ 147              	F_BIT                   EQU     0x40
+ 148              	
+ 149              	;------------------------------------------------------------------------------
+ 150              	;- Setup the stack for each mode
+ 151              	;-------------------------------
+ 152              	                ldr     r0, =__iramend
+ 153              	
+ 154              	;- Set up Fast Interrupt Mode and set FIQ Mode Stack
+ 155 ???? 00F021E3 	                msr     CPSR_c, #ARM_MODE_FIQ | I_BIT | F_BIT
+ 156              	;- Init the FIQ register
+ 157 ???? 00801FE5 	            	ldr     r8, =AT91C_BASE_AIC
+ 158              	
+ 159              	;- Set up Interrupt Mode and set IRQ Mode Stack
+ARM GAS  /tmp/cc0THclv.s 			page 4
+
+
+ 160 ???? 00F021E3 	                msr     CPSR_c, #ARM_MODE_IRQ | I_BIT | F_BIT
+ 161 ???? 00D0A0E1 	                mov     r13, r0                     ; Init stack IRQ
+****  Error:bad instruction `init stack IRQ'
+ 162 ???? 000040E2 	                sub     r0, r0, #IRQ_STACK_SIZE
+ 163              	
+ 164              	;- Enable interrupt & Set up Supervisor Mode and set Supervisor Mode Stack
+ 165 ???? 00F021E3 	                msr     CPSR_c, #ARM_MODE_SVC
+ 166 ???? 00D0A0E1 	                mov     r13, r0
+ 167              	
+ 168              	
+ 169              	;---------------------------------------------------------------
+ 170              	; ?CSTARTUP
+ 171              	;---------------------------------------------------------------
+ 172              			EXTERN	__segment_init
+ 173              			EXTERN	main
+ 174              	; Initialize segments.
+ 175              	; __segment_init is assumed to use
+ 176              	; instruction set and to be reachable by BL from the ICODE segment
+ 177              	; (it is safest to link them in segment ICODE).
+ 178 ???? 00001FE5 			ldr	r0,=__segment_init
+ 179 ???? 0FE0A0E1 	                mov     lr, pc
+ 180 ???? 10FF2FE1 			bx	r0
+ 181              	
+ 182              			PUBLIC	__main
+ 183              	?jump_to_main:
+ 184              			ldr	lr,=?call_exit
+ 185 ???? 00001FE5 			ldr	r0,=main
+ 186              	__main:
+ 187 ???? 10FF2FE1 			bx	r0
+ 188              	
+ 189              	;------------------------------------------------------------------------------
+ 190              	;- Loop for ever
+ 191              	;---------------
+ 192              	;- End of application. Normally, never occur.
+ 193              	;- Could jump on Software Reset ( B 0x0 ).
+ 194              	;------------------------------------------------------------------------------
+ 195              	?call_exit:
+ 196              	End
+ 197 ???? 000000EA 	            b       End
+ 198              	
+ 199              	
+ 200              	
+ 201              	;---------------------------------------------------------------
+ 202              	; ?EXEPTION_VECTOR
+ 203              	; This module is only linked if needed for closing files.
+ 204              	;---------------------------------------------------------------
+ 205              			PUBLIC	AT91F_Default_FIQ_handler
+ 206              			PUBLIC	AT91F_Default_IRQ_handler
+ 207              			PUBLIC	AT91F_Spurious_handler
+ 208              	
+ 209              			CODE32	; Always ARM mode after exeption	
+ 210              	
+ 211              	AT91F_Default_FIQ_handler
+ 212 ???? 000000EA 	            b     AT91F_Default_FIQ_handler
+ 213              	
+ 214              	AT91F_Default_IRQ_handler
+ 215 ???? 000000EA 	            b     AT91F_Default_IRQ_handler
+ARM GAS  /tmp/cc0THclv.s 			page 5
+
+
+ 216              	
+ 217              	AT91F_Spurious_handler
+ 218 ???? 000000EA 	            b     AT91F_Spurious_handler
+ 219              	
+ 220              		ENDMOD
+ 221              	
+ 222 ???? 00000000 		END
+****  Error:bad instruction `end'
+ 222      00F0FFFF 
+ 222      00000000 
+ 222      00000000 
+ARM GAS  /tmp/cc0THclv.s 			page 6
+
+
+DEFINED SYMBOLS
+          Cstartup.s:104    .text:00000000 InitReset
+                            .text:00000000 $d
+          Cstartup.s:53     .text:00000000 $a
+          Cstartup.s:53     .text:00000000 L0
+          Cstartup.s:54     .text:00000000 undefvec
+          Cstartup.s:55     .text:00000000 L0
+          Cstartup.s:56     .text:00000000 swivec
+          Cstartup.s:57     .text:00000000 L0
+          Cstartup.s:58     .text:00000000 pabtvec
+          Cstartup.s:59     .text:00000000 L0
+          Cstartup.s:60     .text:00000000 dabtvec
+          Cstartup.s:61     .text:00000000 L0
+          Cstartup.s:62     .text:00000000 rsvdvec
+          Cstartup.s:63     .text:00000000 L0
+          Cstartup.s:64     .text:00000000 irqvec
+          Cstartup.s:65     .text:00000000 L0
+          Cstartup.s:67     .text:00000000 fiqvec
+          Cstartup.s:75     .text:00000000 FIQ_Handler_Entry
+          Cstartup.s:81     .text:00000000 L0
+          Cstartup.s:82     .text:00000000 L0
+          Cstartup.s:83     .text:00000000 L0
+          Cstartup.s:86     .text:00000000 L0
+          Cstartup.s:89     .text:00000000 L0
+          Cstartup.s:90     .text:00000000 L0
+          Cstartup.s:93     .text:00000000 L0
+          Cstartup.s:96     .text:00000000 L0
+          Cstartup.s:99     .text:00000000 L0
+          Cstartup.s:102    .text:00000000 L0
+          Cstartup.s:117    .text:00000000 L0
+          Cstartup.s:118    .text:00000000 L0
+          Cstartup.s:119    .text:00000000 L0
+          Cstartup.s:155    .text:00000000 L0
+          Cstartup.s:157    .text:00000000 L0
+          Cstartup.s:160    .text:00000000 L0
+          Cstartup.s:161    .text:00000000 L0
+          Cstartup.s:162    .text:00000000 L0
+          Cstartup.s:165    .text:00000000 L0
+          Cstartup.s:166    .text:00000000 L0
+          Cstartup.s:178    .text:00000000 L0
+          Cstartup.s:179    .text:00000000 L0
+          Cstartup.s:180    .text:00000000 L0
+          Cstartup.s:185    .text:00000000 L0
+          Cstartup.s:186    .text:00000000 __main
+          Cstartup.s:187    .text:00000000 L0
+          Cstartup.s:197    .text:00000000 L0
+          Cstartup.s:212    .text:00000000 L0
+          Cstartup.s:215    .text:00000000 L0
+          Cstartup.s:218    .text:00000000 L0
+          Cstartup.s:222    .text:00000000 $d
+          Cstartup.s:222    .text:00000000 $$lit_1
+                      .debug_line:00000000 L0
+          Cstartup.s:222    .debug_line:00000000 L0
+                      .debug_line:0000002b L0
+          Cstartup.s:222    .text:00000010 L0
+                   .debug_aranges:00000000 L0
+          Cstartup.s:222    .debug_aranges:00000010 L0
+ARM GAS  /tmp/cc0THclv.s 			page 7
+
+
+                   .debug_aranges:0000000c $d
+                            .text:00000000 L0
+          Cstartup.s:222    .text:00000010 L0
+                      .debug_info:00000000 L0
+                      .debug_info:0000005a L0
+          Cstartup.s:222    .text:00000010 $a
+                            .data:00000000 $d
+                             .bss:00000000 $d
+                  .ARM.attributes:00000010 $d
+          Cstartup.s:222    .debug_line:00000000 $d
+                      .debug_info:0000005a $d
+                    .debug_abbrev:00000014 $d
+
+UNDEFINED SYMBOLS
+vPortYieldProcessor
+I_BIT
+F_BIT
+ARM_MODE_SVC
+ARM_MODE_FIQ
+SFB
+AT91F_LowLevelInit
+ARM_MODE_IRQ
+IRQ_STACK_SIZE
+__segment_init
+main
+End
+AT91F_Default_FIQ_handler
+AT91F_Default_IRQ_handler
+AT91F_Spurious_handler

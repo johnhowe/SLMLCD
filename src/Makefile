@@ -27,17 +27,11 @@ BIN  = $(CP) -O ihex
 
 MCU  = arm7tdmi
 
-# List all default C defines here, like -D_DEBUG=1
-DDEFS = 
-
 # List all default ASM defines here, like -D_DEBUG=1
 DADEFS = 
 
-# List all default directories to look for include files here
-DINCDIR = 
-
 # List the default directory to look for the libraries here
-DLIBDIR =
+DLIBDIR = ../libs
 
 # List all default libraries here
 DLIBS = 
@@ -54,7 +48,8 @@ DLIBS =
 PROJECT = main
 
 # Define linker script file here
-LDSCRIPT= AT91SAM7S256-ROM.ld
+#LDSCRIPT= AT91SAM7S256-ROM.ld
+LDSCRIPT = ../runtime/ld_flash.cmd
 
 # List all user C define here, like -D_DEBUG=1
 UDEFS = 
@@ -63,39 +58,34 @@ UDEFS =
 UADEFS = 
 
 # List additional C source files here
-SRC  = $(PROJECT).c Cstartup_SAM7.c init.c lcd.c
+SRC  = $(PROJECT).c init.c lcd.c
 
 # List ASM source files here
-ASRC = Cstartup.s
+ASRC = ../runtime/crt.s
 
 # List all user directories here
-#UINCDIR = .
+UINCDIR = ../include
 
 # List the user directory to look for the libraries here
 ULIBDIR =
 
-# List all user libraries here
-ULIBS = 
-
 # Define optimisation level here [0, 1, 2, 3, s]. 
 # 0 = turn off optimization. s = optimize for size.
-OPT = -O0
+OPT = -O3
 
 #
 # End of user defines
 ##############################################################################################
 
 
-INCDIR  = $(patsubst %,-I%,$(DINCDIR) $(UINCDIR))
-LIBDIR  = $(patsubst %,-L%,$(DLIBDIR) $(ULIBDIR))
-DEFS    = $(DDEFS) $(UDEFS)
+INCDIR  = $(patsubst %,-I%,$(UINCDIR))
+LIBDIR  = $(patsubst %,-L%,$(ULIBDIR))
 ADEFS   = $(DADEFS) $(UADEFS)
 OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
-LIBS    = $(DLIBS) $(ULIBS)
 MCFLAGS = -mcpu=$(MCU)
 
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS)
-CPFLAGS = $(MCFLAGS) $(OPT) -gdwarf-2 -fomit-frame-pointer -std=c99 -Wall -Wstrict-prototypes -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(DEFS)
+CPFLAGS = -fno-common -g -std=gnu99
 #LDFLAGS = $(MCFLAGS) -nostartfiles -T$(LDSCRIPT) -Wl,-Map=$(PROJECT).map,--cref,--no-warn-mismatch $(LIBDIR)
 LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT)
 
@@ -126,14 +116,16 @@ all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin
 	
 
 clean:
-	-rm -f $(SRC:.c=.s)
+	#-rm -f $(SRC:.c=.s)
 	-rm -f $(SRC:.c=.o)
 	-rm -f $(SRC:.c=.lst)
-	-rm -f $(ASRC:.S=.lst)
-	-rm -f $(ASRC:.S=.o)
+	-rm -f $(ASRC:.s=.lst)
+	-rm -f $(ASRC:.s=.o)
 	-rm -f $(PROJECT).elf
 	-rm -f $(PROJECT).map
 	-rm -f $(PROJECT).hex
+	-rm -f $(PROJECT).dmp
+	-rm -f $(PROJECT).bin
 	-rm -fR .dep
 
 # 
