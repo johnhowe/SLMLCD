@@ -1,17 +1,19 @@
 #!/bin/bash
-killall openocd
+if [ `pidof openocd` ] ; then killall openocd ; fi
+
 openocd -f ../tools/openocd/openocd.cfg & 
-sleep 1
+
+sleep 0.5
 ( 
 echo halt
-sleep 1
+sleep 0.5
 echo flash write_bank 0 main.bin 0x0
-sleep 1
+sleep 0.5
 echo reset
-sleep 1
+sleep 0.5
 echo shutdown
 ) | telnet localhost 4444
 
-#sleep 5
-#killall openocd
+sleep 1
+if [ `pidof openocd` ] ; then killall openocd ; fi
 

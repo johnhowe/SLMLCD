@@ -128,6 +128,9 @@ clean:
 	-rm -f $(PROJECT).bin
 	-rm -fR .dep
 
+install:
+	./flash.sh
+
 # 
 # Include the dependency files, should be the last of the makefile
 #
