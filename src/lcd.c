@@ -16,8 +16,10 @@ void initLCD(void) {
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
     // Enable PIO in output mode
-    AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
-            | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
+    //AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
+            //| PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
+    pPIO->PIO_PER = PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7;
+    pPIO->PIO_OER = PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7;
 
     // Set all pins LOW
     AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0

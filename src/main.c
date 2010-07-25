@@ -13,23 +13,19 @@
 
 int main(void)
 {
-	InitController();
+    InitController();
 
-	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
+    volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
-	initLCD ();
-	write(COMMAND,DISOFF);
+    initLCD ();
+    //write(COMMAND,DISOFF);
 
-	for(;;)
-	{
-		pPIO->PIO_CODR |= LED_A;
-		for(int j=0; j<10000; j++) { nop(); }
-		pPIO->PIO_SODR |= LED_A;
-		for(int j=0; j<5000; j++) { nop(); }
-        write(COMMAND,EXTIN);
-		for(int j=0; j<5000; j++) { nop(); }
-        write(COMMAND,EXTOUT);
-		for(int j=0; j<5000; j++) { nop(); }
-	}
-	return(0);
+    for(;;)
+    {
+        pPIO->PIO_CODR |= LED_A;
+        for(int j=0; j<1000000; j++) { nop(); }
+        pPIO->PIO_SODR |= LED_A;
+        for(int j=0; j<1000000; j++) { nop(); }
+    }
+    return(0);
 }

@@ -49,7 +49,7 @@ LDSCRIPT = ../runtime/ld_flash.cmd
 UADEFS = 
 
 # List additional C source files here
-SRC  = $(PROJECT).c init.c lcd.c
+SRC  = $(PROJECT).c init.c lcd.c timers.c
 
 # List ASM source files here
 ASRC = ../runtime/crt.s
@@ -59,7 +59,7 @@ UINCDIR = ../include
 
 # Define optimisation level here [0, 1, 2, 3, s]. 
 # 0 = turn off optimization. s = optimize for size.
-OPT = -O3
+OPT = -O2
 
 #
 # End of user defines
@@ -72,7 +72,7 @@ OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
 MCFLAGS = -mcpu=$(MCU)
 
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS)
-CPFLAGS = -fno-common -g -std=gnu99
+CPFLAGS = -fno-common -g -std=gnu99 -Wall 
 LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
 
 # Generate dependency information
@@ -85,7 +85,7 @@ CPFLAGS += -MD -MP -MF .dep/$(@F).d
 all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin 
 
 %o : %c
-	$(CC) -c $(CPFLAGS) -I . $(INCDIR) $< -o $@
+	$(CC) -c $(CPFLAGS) $(OPT) -I . $(INCDIR) $< -o $@
 
 %o : %s
 	$(AS) -c $(ASFLAGS) $< -o $@
