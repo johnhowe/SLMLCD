@@ -5,6 +5,7 @@
  *      John Howe	2010
  */
 
+
 #include "config.h"
 #include "init.h"
 #include "lcd.h"
@@ -17,7 +18,7 @@ int main(void)
 	volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
 	initLCD ();
-	writeInstruction (DISOFF);
+	write(COMMAND,DISOFF);
 
 	for(;;)
 	{
@@ -25,9 +26,9 @@ int main(void)
 		for(int j=0; j<10000; j++) { nop(); }
 		pPIO->PIO_SODR |= LED_A;
 		for(int j=0; j<5000; j++) { nop(); }
-                writeInstruction (EXTIN);
+        write(COMMAND,EXTIN);
 		for(int j=0; j<5000; j++) { nop(); }
-                writeInstruction (EXTOUT);
+        write(COMMAND,EXTOUT);
 		for(int j=0; j<5000; j++) { nop(); }
 	}
 	return(0);

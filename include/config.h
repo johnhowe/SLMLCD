@@ -5,8 +5,8 @@
  *      John Howe	2010
  */
 
-#ifndef CONFIG_H_
-#define CONFIG_H_
+#ifndef CONFIG_H
+#define CONFIG_H
 
 #include "AT91SAM7S256.h"
 

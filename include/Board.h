@@ -12,8 +12,8 @@
 //
 // Creation:	JPP   16/June/2004
 //----------------------------------------------------------------------------------------------------   
-#ifndef Board_h
-#define Board_h
+#ifndef BOARD_H
+#define BOARD_H
 
 #include "AT91SAM7S256.h"
 #define __inline inline
@@ -79,4 +79,4 @@
 #define MCK		47923200					// MCK (PLLRC div by 2)
 #define MCKKHz		(MCK/1000)     					//
 
-#endif   // Board_h     
+#endif 

@@ -8,8 +8,12 @@
 
 #include "lcd.h"
 
+
+
 /* Init function taken from datasheet */
 void initLCD(void) {
+
+    volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
     // Enable PIO in output mode
     AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
@@ -104,7 +108,7 @@ void write(uint8 type, uint8 instruction) {
     if (bitRead (instruction, CD7))
         PIOmask |= PD7;
     // Write data
-    AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PIOmask);
+    AT91F_PIO_SetOutput (AT91C_BASE_PIOA, PIOmask);
 
     // Raise W/R
     AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PWR);
@@ -163,7 +167,7 @@ void testDisplay(void) {
     uint8 i, j;
     for (j=0; j<160; j++) {
         for (i=0; i<79; i++) {
-            write (DATA, GRAY10);
+            write (DATA, COLOUR10);
         }
     }
 }

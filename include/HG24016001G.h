@@ -6,8 +6,8 @@
  */
 
 
-#ifndef HG24016001G_H_
-#define HG24016001G_H_
+#ifndef HG24016001G_H
+#define HG24016001G_H
 
 // Control instructions
 
@@ -55,5 +55,25 @@
 #define EPCOUT  0xCC    // Cancel EEPROM control
 #define EPMWR   0xFC    // Write into EEPROM
 #define EPMRD   0xFD    // Read from EEPROM
+
+
+// Colour definitions for LCD
+#define BLACK 		0
+#define COLOUR1 	(2<<3)
+#define COLOUR2 	(4<<3)
+#define COLOUR3 	(6<<3)
+#define COLOUR4 	(8<<3)
+#define COLOUR5 	(10<<3)
+#define COLOUR6 	(12<<3)
+#define COLOUR7 	(14<<3)
+#define COLOUR8 	(16<<3)
+#define COLOUR9 	(18<<3)
+#define COLOUR10	(20<<3)
+#define COLOUR11	(22<<3)
+#define COLOUR12	(24<<3)
+#define COLOUR13	(26<<3)
+#define COLOUR14 	(28<<3)
+#define COLOUR15 	(30<<3)
+#define WHITE 		(31<<3) 
 
 #endif

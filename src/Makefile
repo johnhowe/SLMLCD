@@ -30,12 +30,6 @@ MCU  = arm7tdmi
 # List all default ASM defines here, like -D_DEBUG=1
 DADEFS = 
 
-# List the default directory to look for the libraries here
-DLIBDIR = ../libs
-
-# List all default libraries here
-DLIBS = 
-
 #
 # End of default section
 ##############################################################################################
@@ -51,9 +45,6 @@ PROJECT = main
 #LDSCRIPT= AT91SAM7S256-ROM.ld
 LDSCRIPT = ../runtime/ld_flash.cmd
 
-# List all user C define here, like -D_DEBUG=1
-UDEFS = 
-
 # Define ASM defines here
 UADEFS = 
 
@@ -64,10 +55,7 @@ SRC  = $(PROJECT).c init.c lcd.c
 ASRC = ../runtime/crt.s
 
 # List all user directories here
-UINCDIR = ../include
-
-# List the user directory to look for the libraries here
-ULIBDIR =
+UINCDIR = ../include 
 
 # Define optimisation level here [0, 1, 2, 3, s]. 
 # 0 = turn off optimization. s = optimize for size.
@@ -79,15 +67,13 @@ OPT = -O3
 
 
 INCDIR  = $(patsubst %,-I%,$(UINCDIR))
-LIBDIR  = $(patsubst %,-L%,$(ULIBDIR))
 ADEFS   = $(DADEFS) $(UADEFS)
 OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
 MCFLAGS = -mcpu=$(MCU)
 
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS)
 CPFLAGS = -fno-common -g -std=gnu99
-#LDFLAGS = $(MCFLAGS) -nostartfiles -T$(LDSCRIPT) -Wl,-Map=$(PROJECT).map,--cref,--no-warn-mismatch $(LIBDIR)
-LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT)
+LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
 
 # Generate dependency information
 CPFLAGS += -MD -MP -MF .dep/$(@F).d
@@ -105,7 +91,7 @@ all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin
 	$(AS) -c $(ASFLAGS) $< -o $@
 
 %elf: $(OBJS)
-	$(LD) $(LDFLAGS) -o $(PROJECT).elf $(OBJS)
+	$(LD) $(LDFLAGS) -L $(UINCDIR) -o $(PROJECT).elf $(OBJS)
 
 %hex: %elf
 	$(BIN) $< $@

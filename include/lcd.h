@@ -6,9 +6,11 @@
  * John Howe 2010
  */
 
-#ifndef LCD_H_
-#define LCD_H_
+#ifndef LCD_H
+#define LCD_H
 
+#include "AT91SAM7S256.h"
+#include "slimLib.h"
 #include "config.h"
 #include "timers.h"
 #include "HG24016001G.h"
@@ -41,4 +43,4 @@ void write(uint8 type, uint8 instruction);
 /* Write unstructured data to LCD */
 void testDisplay(void);
 
-#endif /* LCD_H_ */
+#endif

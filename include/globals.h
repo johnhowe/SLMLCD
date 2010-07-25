@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef _GLOBALS_H_
-#define _GLOBALS_H_
+#ifndef _GLOBALS_H
+#define _GLOBALS_H
 
 #define nop()  __asm__ __volatile__("nop")
 
