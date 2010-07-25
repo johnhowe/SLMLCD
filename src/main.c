@@ -22,9 +22,13 @@ int main(void)
 	for(;;)
 	{
 		pPIO->PIO_CODR |= LED_A;
-		for(int j=0; j<100000; j++) { nop(); }
+		for(int j=0; j<10000; j++) { nop(); }
 		pPIO->PIO_SODR |= LED_A;
-		for(int j=0; j<1000000; j++) { nop(); }
+		for(int j=0; j<5000; j++) { nop(); }
+                writeInstruction (EXTIN);
+		for(int j=0; j<5000; j++) { nop(); }
+                writeInstruction (EXTOUT);
+		for(int j=0; j<5000; j++) { nop(); }
 	}
 	return(0);
 }
