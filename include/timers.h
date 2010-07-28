@@ -14,6 +14,6 @@ void initTimers(void);
 
 
 /* Delay for a period of time in microseconds */
-void busyWait(uint16 delay);
+void busyWait(uint32 delay);
 
 #endif

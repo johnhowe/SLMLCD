@@ -42,7 +42,9 @@ typedef unsigned long uint32;
 #define PD5		AT91C_PIO_PA22
 #define PD6		AT91C_PIO_PA12
 #define PD7		AT91C_PIO_PA20
-#define PXCS	AT91C_PIO_PA14
-#define PRST	AT91C_PIO_PA21
+#define PXCS	        AT91C_PIO_PA14
+#define PRST	        AT91C_PIO_PA21
+
+#define PD  PD0|PD1|PD2|PD3|PD4|PD5|PD6|PD7
 
 #endif
