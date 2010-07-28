@@ -8,22 +8,17 @@
 
 #include "lcd.h"
 
-
-
 /* Init function taken from datasheet */
 void initLCD(void) {
 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
     // Enable PIO in output mode
-    //AT91F_PIO_CfgOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
-            //| PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
-    pPIO->PIO_PER = PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7;
-    pPIO->PIO_OER = PA0 | PWR | PRD | PXCS | PRST | PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7;
+    pPIO->PIO_PER = PA0 | PWR | PRD | PXCS | PRST | PD;
+    pPIO->PIO_OER = PA0 | PWR | PRD | PXCS | PRST | PD;
 
     // Set all pins LOW
-    AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PA0 | PWR | PRD | PXCS | PRST | PD0
-            | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7);
+    pPIO->PIO_CODR = PA0 | PWR | PRD | PXCS | PRST | PD;
 
     busyWait(10000); // 10ms
     write(COMMAND, EXTIN);
@@ -70,28 +65,19 @@ void initLCD(void) {
 
 /*
    WriteData() {
-   Set Data / Command pin to Data mode PA0
-   Drop chip select PXCS
-   Drop WR PWR
-   Set data to GPIO PD0-PD7
-   Raise WR PWR
-   Raise chip select. PXCS
+    Set Data / Command pin to Data mode     PA0
+    Drop chip select                        PXCS
+    Drop WR                                 PWR
+    Set data to GPIO                        PD0-PD7
+    Raise WR                                PWR
+    Raise chip select.                      PXCS
    }
    */
 void write(uint8 type, uint8 instruction) {
-    if (type) { // type == COMMAND
-        AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PA0);
-    } else { // type == DATA
-        AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PA0);
-    }
-    // Drop chip select
-    AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PXCS);
 
-    // Drop W/R
-    AT91F_PIO_ClearOutput(AT91C_BASE_PIOA, PWR);
+    volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
-    // Moves bits to correct locations for IO port. Probably need to modify
-    // PCB to make this more efficient.
+    // Move instruction byte to appropreate I/O port locations
     uint32 PIOmask = 0;
     if (bitRead (instruction, CD0))
         PIOmask |= PD0;
@@ -109,68 +95,47 @@ void write(uint8 type, uint8 instruction) {
         PIOmask |= PD6;
     if (bitRead (instruction, CD7))
         PIOmask |= PD7;
-    // Write data
-    AT91F_PIO_SetOutput (AT91C_BASE_PIOA, PIOmask);
 
-    // Raise W/R
-    AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PWR);
+    // Clear instruction pins on D0-D7
+    pPIO->PIO_CODR = PD;
 
-    // Raise chip select
-    AT91F_PIO_SetOutput(AT91C_BASE_PIOA, PXCS);
+    // Set Data/Command pin
+    if (type) { // type == COMMAND
+        pPIO->PIO_SODR = PA0;
+    } else { // type == DATA
+        pPIO->PIO_CODR = PA0;
+    }
+
+    // Drop chip select to enable data/instruction I/O
+    pPIO->PIO_CODR = PXCS;
+
+    // Drop WR and raise RD to prepare the lcd to read on D0-D7 pins
+    pPIO->PIO_CODR = PWR;
+    pPIO->PIO_SODR = PRD;
+
+    // Write instruction to IO
+    pPIO->PIO_SODR = PIOmask;
+
+    // Raise WR to have LCD read data on D0-D7 pins
+    pPIO->PIO_SODR = PWR;
+
+    // Raise chip select 
+    pPIO->PIO_SODR = PXCS;
 }
-/*
-   void write(uint8 type, uint8 instruction) {
-   uint32 PIOmask = 0;
-
-// Set first 3 bits according to data or command type
-if (type == COMMAND) {
-PIOmask |= PRD;
-} else if (type == DATA) {
-PIOmask |= PA0;
-PIOmask |= PRD;
-} else {
-//todo: write() type error
-}
-
-// Moves bits to correct locations for IO port. Probably need to modify
-// PCB to make this more efficient.
-if (bitRead (instruction, CD0))
-PIOmask |= PD0;
-if (bitRead (instruction, CD1))
-PIOmask |= PD1;
-if (bitRead (instruction, CD2))
-PIOmask |= PD2;
-if (bitRead (instruction, CD3))
-PIOmask |= PD3;
-if (bitRead (instruction, CD4))
-PIOmask |= PD4;
-if (bitRead (instruction, CD5))
-PIOmask |= PD5;
-if (bitRead (instruction, CD6))
-PIOmask |= PD6;
-if (bitRead (instruction, CD7))
-PIOmask |= PD7;
-
-// Overwrites _all_ pins on port A according to PIOmask
-pPIO->PIO_SODR = PIOmask;
-}
-*/
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {
     write (COMMAND, EXTIN); // ext = 0
     write (COMMAND, CASET); // column address set
-    write (DATA, 0x00); // from col 0
-    write (DATA, 0x4F); // to col 240 (240/3)-1
+    write (DATA, 10); // from col 0
+    write (DATA, 20); // to col 240 (240/3)-1
     write (COMMAND, LASET); // line address set
-    write (DATA, 0x00); // from line 0
-    write (DATA, 0x9F); // to line 159
+    write (DATA, 10); // from line 0
+    write (DATA, 20); // to line 159
     write (COMMAND, RAMWR); // enter memory write mode
-    uint8 i, j;
-    for (j=0; j<160; j++) {
-        for (i=0; i<79; i++) {
-            write (DATA, COLOUR10);
-        }
+    uint8 j;
+    for (j=0; j<100; j++) {
+            write (DATA, COLOUR7);
     }
 }
 
