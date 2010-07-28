@@ -71,7 +71,7 @@ ADEFS   = $(DADEFS) $(UADEFS)
 OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
 MCFLAGS = -mcpu=$(MCU)
 
-ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS)
+ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS) -Wall
 CPFLAGS = -fno-common -g -std=gnu99 -Wall 
 LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
 
@@ -114,7 +114,7 @@ clean:
 	-rm -f $(PROJECT).bin
 	-rm -fR .dep
 
-install:
+install: all
 	./flash.sh
 
 # 
