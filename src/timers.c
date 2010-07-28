@@ -15,13 +15,13 @@ void initTimers(void) {
 }
 
 /* Delay for a period time */
-void busyWait(uint16 delay) {
+void busyWait(uint32 delay) {
     // todo: something isn't right here
-    while (*AT91C_TC0_CV <= delay)
-        continue;
-    *AT91C_TC0_CCR = AT91C_TC_SWTRG;
-    // uint16 j;
-    // for (j = 0; j < delay; j++) {
-    // nop();
-    // }
+    //while (*AT91C_TC0_CV <= delay)
+        //continue;
+    //*AT91C_TC0_CCR = AT91C_TC_SWTRG;
+    uint32 j;
+    for (j = 0; j < delay; j++) {
+        nop();
+    }
 }
