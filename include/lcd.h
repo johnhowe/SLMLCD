@@ -42,5 +42,6 @@ void write(uint8 type, uint8 instruction);
 
 /* Write unstructured data to LCD */
 void testDisplay(void);
+void testWrite(void);
 
 #endif

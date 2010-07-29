@@ -21,8 +21,8 @@ typedef unsigned long uint32;
 #define FALSE 0
 
 #define nop()  __asm__ __volatile__("nop")
-#define LED_A	(1U<<8)			// Status LED
-#define PANIC_RATE	300000		// Delay time used in panic function
+#define LED_A	(1U<<8)			// Status LED -  THIS IS ON PA6, SAME AS PD2!  - OOPS
+#define PANIC_RATE	10000000		// Delay time used in panic function
 
 #define bitRead(value, bit) (((value) >> (bit)) & 0x01)
 #define bitSet(value, bit) ((value) |= (1UL << (bit)))

@@ -19,20 +19,21 @@ int main(void)
 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
 
-    initLCD ();  // causes uC to freeze
-    write(COMMAND,DISOFF);
+    initLCD ();
 
+
+    testDisplay ();
     for(;;)
     {
-        pPIO->PIO_CODR |= LED_A;
-        busyWait(10000000);
-        //busyWait(1000);
+        //        busyWait(10000000);
+        busyWait(100);
+        //pPIO->PIO_CODR |= LED_A; // LED_A on D2 pin
+        testWrite ();
 
-        testDisplay ();
+        //pPIO->PIO_SODR |= LED_A;
 
-        pPIO->PIO_SODR |= LED_A;
-        busyWait(10000000);
-        //busyWait(1000);
+        //busyWait(10000000);
+        busyWait(100);
 
     }
     return(0);
