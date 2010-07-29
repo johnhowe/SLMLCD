@@ -101,9 +101,9 @@ void write(uint8 type, uint8 instruction) {
 
     // Set Data/Command pin
     if (type) { // type == COMMAND
-        pPIO->PIO_SODR = PA0;
-    } else { // type == DATA
         pPIO->PIO_CODR = PA0;
+    } else { // type == DATA
+        pPIO->PIO_SODR = PA0;
     }
 
     // Drop chip select to enable data/instruction I/O
@@ -125,18 +125,22 @@ void write(uint8 type, uint8 instruction) {
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {
-    write (COMMAND, EXTIN); // ext = 0
-    write (COMMAND, CASET); // column address set
-    write (DATA, 10); // from col 0
-    write (DATA, 20); // to col 240 (240/3)-1
-    write (COMMAND, LASET); // line address set
-    write (DATA, 10); // from line 0
-    write (DATA, 20); // to line 159
-    write (COMMAND, RAMWR); // enter memory write mode
-    uint8 j;
-    for (j=0; j<100; j++) {
-            write (DATA, COLOUR7);
-    }
+    write (COMMAND, EXTOUT); // ext = 0
+    //write (DATA, LASET);
+
+
+    //    write (COMMAND, EXTIN); // ext = 0
+//    write (COMMAND, CASET); // column address set
+//    write (DATA, 10); // from col 0
+//    write (DATA, 20); // to col 240 (240/3)-1
+//    write (COMMAND, LASET); // line address set
+//    write (DATA, 10); // from line 0
+//    write (DATA, 20); // to line 159
+//    write (COMMAND, RAMWR); // enter memory write mode
+//    uint8 j;
+//    for (j=0; j<100; j++) {
+//            write (DATA, COLOUR7);
+//    }
 }
 
 
