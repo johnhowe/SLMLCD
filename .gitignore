@@ -1,0 +1,16 @@
+*.elf
+*.bin
+*.map
+*.o
+*.dmp
+*.lst
+openocd_doflash
+openocd_commands.txt
+.cproject
+.project
+.settings/
+Graphics.h
+st7529.*
+main.hex
+tags
+*.swp
