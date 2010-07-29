@@ -26,13 +26,15 @@ int main(void)
     for(;;)
     {
         //        busyWait(10000000);
-        busyWait(100);
+        //busyWait(100);
         //pPIO->PIO_CODR |= LED_A; // LED_A on D2 pin
-        testWrite ();
+        //testWrite ();
+        //volUp ();
+        //testDisplay();
 
         //pPIO->PIO_SODR |= LED_A;
 
-        //busyWait(10000000);
+        busyWait(100000);
         busyWait(100);
 
     }

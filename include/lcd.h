@@ -15,19 +15,6 @@
 #include "timers.h"
 #include "HG24016001G.h"
 
-// Command locations
-#define CD0 0
-#define CD1 1
-#define CD2 2
-#define CD3 3
-#define CD4 4
-#define CD5 5
-#define CD6 6
-#define CD7 7
-#define CWR 8
-#define CRD 9
-#define CA0 10
-
 enum {
     DATA = 0, COMMAND = 1
 };
@@ -43,5 +30,7 @@ void write(uint8 type, uint8 instruction);
 /* Write unstructured data to LCD */
 void testDisplay(void);
 void testWrite(void);
+void volUp(void);
+void volDown(void);
 
 #endif

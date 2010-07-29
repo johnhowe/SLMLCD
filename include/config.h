@@ -47,4 +47,14 @@ typedef unsigned long uint32;
 
 #define PD  PD0|PD1|PD2|PD3|PD4|PD5|PD6|PD7
 
+// Command locations
+#define CD0 0
+#define CD1 1
+#define CD2 2
+#define CD3 3
+#define CD4 4
+#define CD5 5
+#define CD6 6
+#define CD7 7
+
 #endif

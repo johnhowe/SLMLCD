@@ -125,10 +125,20 @@ void InitController(void)
     // TODO: Take this section elsewhere
     // Set up the IOs.
     volatile AT91PS_PIO	pPIO = AT91C_BASE_PIOA;
-    // Allow PIO to control LEDs.
-    pPIO->PIO_PER = LED_A;
-    // Enable outputs for LED pins.
-    pPIO->PIO_OER = LED_A;
-    // Set outputs HIGH to turn LEDs off.
-    pPIO->PIO_SODR = LED_A;
+    /* LED_A == PD6 - NEED TO MODIFY PCB TO USE LED_A */
+//    // Allow PIO to control LEDs.
+//    pPIO->PIO_PER = LED_A;
+//    // Enable outputs for LED pins.
+//    pPIO->PIO_OER = LED_A;
+//    // Set outputs HIGH to turn LEDs off.
+//    pPIO->PIO_SODR = LED_A;
+
+    // Enable PIO in output mode
+    pPIO->PIO_PER = PA0 | PWR | PRD | PXCS | PRST | PD;
+    pPIO->PIO_OER = PA0 | PWR | PRD | PXCS | PRST | PD;
+
+    // Set all pins LOW
+    pPIO->PIO_CODR = PA0 | PWR | PRD | PXCS | PRST | PD;
+
+    busyWait (50000); // Waiting for power to stabalise
 }

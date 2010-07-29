@@ -22,6 +22,6 @@ void busyWait(uint32 delay) {
     //*AT91C_TC0_CCR = AT91C_TC_SWTRG;
     uint32 j;
     for (j = 0; j < delay; j++) {
-        nop();
+        nop(); // nop~=0.125uS
     }
 }
