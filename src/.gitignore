@@ -11,3 +11,7 @@ openocd_commands.txt
 .settings/
 Graphics.h
 st7529.*
+main.hex
+tags
+*.swp
+.dep
