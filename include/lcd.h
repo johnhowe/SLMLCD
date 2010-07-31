@@ -23,6 +23,8 @@ enum {
 #define DELAYCONST 3 // todo: calibrate nop time
 /* Init function taken from datasheet */
 void initLCD(void);
+/* Lookup to speed write() time */
+int* generateLookupTable (void);
 
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);

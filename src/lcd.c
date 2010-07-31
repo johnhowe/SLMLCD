@@ -56,8 +56,50 @@ void initLCD(void) {
     busyWait(10000); // 10ms
 }
 
-//#pragma GCC push_options
-//#pragma GCC optimize ("O3")
+/*
+ * Problem is that the data coming in is an 8bit integer and not in the same
+ * order as the PIO, so the bits need reordering and placing in their correct
+ * locations in a 32 bit integer corresponding to their PIO locations. This is
+ * an expensive operation and needs to be executed every time an instruction is
+ * sent to the LCD.
+ * Instead, this pre-generates a 256 element array corresponding to each possible
+ * instruction and its relevant mask on the PIO.
+ */
+int* generateLookupTable () {
+    uint32* table;
+    table = malloc(256 * sizeof(uint32));
+    if (int == NULL) {
+        // Malloc failed
+        // TODO: flash error code - do not continue.
+    }
+
+    // do-while loop used here as for (i=0;i < 256;i++) would never exit
+    uint8 inst = 0;
+    do {
+        // calculate possible PIO combinations for any data input
+        uint32 instIO = 0;
+
+        // Rearrange bit order for pPIO
+        if (bitRead (inst, CD0)) { instIO |= PD0; }
+        if (bitRead (inst, CD1)) { instIO |= PD1; }
+        if (bitRead (inst, CD2)) { instIO |= PD2; }
+        if (bitRead (inst, CD3)) { instIO |= PD3; }
+        if (bitRead (inst, CD4)) { instIO |= PD4; }
+        if (bitRead (inst, CD5)) { instIO |= PD5; }
+        if (bitRead (inst, CD6)) { instIO |= PD6; }
+        if (bitRead (inst, CD7)) { instIO |= PD7; }
+
+        // store result
+        table[i] = instIO;
+        i++;
+    }
+    while (inst != 255);
+
+    return table;
+}
+
+
+
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
@@ -99,7 +141,6 @@ void write(uint8 type, uint8 instruction) {
     // Raise chip select 
     pPIO->PIO_SODR = PXCS;
 }
-//#pragma GCC pop_options
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {
