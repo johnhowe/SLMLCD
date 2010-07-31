@@ -56,10 +56,13 @@ void initLCD(void) {
     busyWait(10000); // 10ms
 }
 
+//#pragma GCC push_options
+//#pragma GCC optimize ("O3")
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
+    uint32 instIO = 0;
 
     // Set Data/Command pin
     if (type == COMMAND) { // (control data)
@@ -75,23 +78,19 @@ void write(uint8 type, uint8 instruction) {
     pPIO->PIO_CODR = PWR;
     pPIO->PIO_SODR = PRD;
 
-    //TODO: Improve speed of this section
-    if (bitRead(instruction,CD0)) { pPIO->PIO_SODR=PD0; } 
-    else { pPIO->PIO_CODR=PD0; }
-    if (bitRead(instruction,CD1)) { pPIO->PIO_SODR=PD1; } 
-    else { pPIO->PIO_CODR=PD1; }
-    if (bitRead(instruction,CD2)) { pPIO->PIO_SODR=PD2; } 
-    else { pPIO->PIO_CODR=PD2; }
-    if (bitRead(instruction,CD3)) { pPIO->PIO_SODR=PD3; } 
-    else { pPIO->PIO_CODR=PD3; }
-    if (bitRead(instruction,CD4)) { pPIO->PIO_SODR=PD4; } 
-    else { pPIO->PIO_CODR=PD4; }
-    if (bitRead(instruction,CD5)) { pPIO->PIO_SODR=PD5; } 
-    else { pPIO->PIO_CODR=PD5; }
-    if (bitRead(instruction,CD6)) { pPIO->PIO_SODR=PD6; } 
-    else { pPIO->PIO_CODR=PD6; }
-    if (bitRead(instruction,CD7)) { pPIO->PIO_SODR=PD7; } 
-    else { pPIO->PIO_CODR=PD7; }
+    // Rearrange bit order for pPIO
+    if (bitRead (instruction, CD0)) { instIO |= PD0; }
+    if (bitRead (instruction, CD1)) { instIO |= PD1; }
+    if (bitRead (instruction, CD2)) { instIO |= PD2; }
+    if (bitRead (instruction, CD3)) { instIO |= PD3; }
+    if (bitRead (instruction, CD4)) { instIO |= PD4; }
+    if (bitRead (instruction, CD5)) { instIO |= PD5; }
+    if (bitRead (instruction, CD6)) { instIO |= PD6; }
+    if (bitRead (instruction, CD7)) { instIO |= PD7; }
+
+    // Write data bits to I/O
+    pPIO->PIO_CODR = PD;
+    pPIO->PIO_SODR = instIO;
 
     // Raise WR to have LCD latch data on D0-D7 pins
     pPIO->PIO_SODR = PWR;
@@ -100,6 +99,7 @@ void write(uint8 type, uint8 instruction) {
     // Raise chip select 
     pPIO->PIO_SODR = PXCS;
 }
+//#pragma GCC pop_options
 
 /* Write unstructured data to LCD */
 void testDisplay(void) {

@@ -17,10 +17,7 @@ int main(void)
 {
     InitController();
 
-    volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-
     initLCD ();
-
 
     testDisplay ();
     for(;;)

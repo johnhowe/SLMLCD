@@ -59,7 +59,7 @@ UINCDIR = ../include
 
 # Define optimisation level here [0, 1, 2, 3, s]. 
 # 0 = turn off optimization. s = optimize for size.
-OPT = -O2
+OPT = -O3
 
 #
 # End of user defines
