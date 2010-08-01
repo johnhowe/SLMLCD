@@ -62,13 +62,13 @@ void initLCD(void) {
  * locations in a 32 bit integer corresponding to their PIO locations. This is
  * an expensive operation and needs to be executed every time an instruction is
  * sent to the LCD.
- * Instead, this pre-generates a 256 element array corresponding to each possible
- * instruction and its relevant mask on the PIO.
+ * Instead, this pre-generates a 256 element array corresponding to each
+ * possible instruction and its relevant mask on the PIO.
  */
-int* generateLookupTable () {
+int32* generateLookupTable () {
     uint32* table;
     table = malloc(256 * sizeof(uint32));
-    if (int == NULL) {
+    if (table == NULL) {
         // Malloc failed
         // TODO: flash error code - do not continue.
     }
@@ -90,21 +90,32 @@ int* generateLookupTable () {
         if (bitRead (inst, CD7)) { instIO |= PD7; }
 
         // store result
-        table[i] = instIO;
-        i++;
+        table[inst] = instIO;
+        inst++;
     }
     while (inst != 255);
 
-    return table;
+    return *table;
 }
 
+/* Butler looks after the lookup table. Generating it the first time it is
+ * requred, then returning a pointer to it. */
+
+uint32* tableButler (void) {
+    static uint8 firstRun = TRUE;
+    static uint32* table;
+    if (firstRun) {
+        table = generateLookupTable();
+    }
+    return table;
+}
 
 
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-    uint32 instIO = 0;
+    uint32* table = tableButler();
 
     // Set Data/Command pin
     if (type == COMMAND) { // (control data)
@@ -120,19 +131,9 @@ void write(uint8 type, uint8 instruction) {
     pPIO->PIO_CODR = PWR;
     pPIO->PIO_SODR = PRD;
 
-    // Rearrange bit order for pPIO
-    if (bitRead (instruction, CD0)) { instIO |= PD0; }
-    if (bitRead (instruction, CD1)) { instIO |= PD1; }
-    if (bitRead (instruction, CD2)) { instIO |= PD2; }
-    if (bitRead (instruction, CD3)) { instIO |= PD3; }
-    if (bitRead (instruction, CD4)) { instIO |= PD4; }
-    if (bitRead (instruction, CD5)) { instIO |= PD5; }
-    if (bitRead (instruction, CD6)) { instIO |= PD6; }
-    if (bitRead (instruction, CD7)) { instIO |= PD7; }
-
     // Write data bits to I/O
     pPIO->PIO_CODR = PD;
-    pPIO->PIO_SODR = instIO;
+    pPIO->PIO_SODR = table[instruction];
 
     // Raise WR to have LCD latch data on D0-D7 pins
     pPIO->PIO_SODR = PWR;

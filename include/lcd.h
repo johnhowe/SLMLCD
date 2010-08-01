@@ -9,6 +9,7 @@
 #ifndef LCD_H
 #define LCD_H
 
+#include <stdlib.h>
 #include "AT91SAM7S256.h"
 #include "slimLib.h"
 #include "config.h"
@@ -21,10 +22,16 @@ enum {
 
 /* DELAYCONST x nop() = 1uS */
 #define DELAYCONST 3 // todo: calibrate nop time
+
+
 /* Init function taken from datasheet */
 void initLCD(void);
+
 /* Lookup to speed write() time */
-int* generateLookupTable (void);
+int32* generateLookupTable (void);
+/* Manages table, creating it when it is first needed otherwise storing its
+ * location */
+int32* tableButler (void);
 
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);
