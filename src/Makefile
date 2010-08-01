@@ -59,7 +59,7 @@ UINCDIR = ../include
 
 # Define optimisation level here [0, 1, 2, 3, s]. 
 # 0 = turn off optimization. s = optimize for size.
-OPT = -O3
+OPT = -O2
 
 #
 # End of user defines
@@ -72,8 +72,9 @@ OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
 MCFLAGS = -mcpu=$(MCU)
 
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS) -Wall
-CPFLAGS = -fno-common -g -std=gnu99 -Wall 
-LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
+CPFLAGS = $(MCFLAGS) -fno-common -g -std=gnu99 -Wall 
+#LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
+LCFLAGS = $(MCFLAGS) -nostartfiles -T $(LDSCRIPT) -Wl,-Map=main.map,--cref,--no-warn-mismatch 
 
 # Generate dependency information
 CPFLAGS += -MD -MP -MF .dep/$(@F).d
@@ -91,7 +92,9 @@ all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin
 	$(AS) -c $(ASFLAGS) $< -o $@
 
 %elf: $(OBJS)
-	$(LD) $(LDFLAGS) -L $(UINCDIR) -o $(PROJECT).elf $(OBJS)
+	#$(LD) $(LDFLAGS) -L $(UINCDIR) -o $(PROJECT).elf $(OBJS)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(PROJECT).elf 
+	#$(CC) $(INCDIR) $(OBJS) -o $(PROJECT).elf
 
 %hex: %elf
 	$(BIN) $< $@
