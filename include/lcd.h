@@ -28,10 +28,10 @@ enum {
 void initLCD(void);
 
 /* Lookup to speed write() time */
-int32* generateLookupTable (void);
+uint32* generateLookupTable (void);
 /* Manages table, creating it when it is first needed otherwise storing its
  * location */
-int32* tableButler (void);
+uint32* tableButler (void);
 
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);
