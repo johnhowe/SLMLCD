@@ -8,6 +8,8 @@
 
 #include "lcd.h"
 
+uint32 table[256];
+
 /* Init function taken from datasheet */
 void initLCD(void) {
 
@@ -66,12 +68,12 @@ void initLCD(void) {
  * possible instruction and its relevant mask on the PIO.
  */
 uint32* generateLookupTable () {
-    uint32* table;
-    table = malloc(256 * sizeof(uint32));
-    if (table == NULL) {
+    //uint32* table;
+    //table = malloc(256 * sizeof(uint32));
+    //if (table == NULL) {
         // Malloc failed
         // TODO: flash error code - do not continue.
-    }
+    //}
 
     // do-while loop used here as for (i=0;i < 256;i++) would never exit
     uint8 inst = 0;
@@ -103,9 +105,10 @@ uint32* generateLookupTable () {
 
 uint32* tableButler (void) {
     static uint8 firstRun = TRUE;
-    static uint32* table;
+    //static uint32* table;
     if (firstRun) {
-        table = generateLookupTable();
+        //table = generateLookupTable();
+        generateLookupTable();
     }
     return table;
 }
@@ -115,7 +118,7 @@ uint32* tableButler (void) {
 void write(uint8 type, uint8 instruction) {
 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-    uint32* table = tableButler();
+    //uint32* table = tableButler();
 
     // Set Data/Command pin
     if (type == COMMAND) { // (control data)
