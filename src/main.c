@@ -20,21 +20,10 @@ int main(void)
     initLCD ();
 
     testDisplay ();
-    busyWait(1000000);
-    drawVertGradient (0);
+    //drawVertGradient (0);
     for(;;)
     {
-        //        busyWait(10000000);
-        //busyWait(100);
-        //pPIO->PIO_CODR |= LED_A; // LED_A on D2 pin
-        //testWrite ();
-        //volUp ();
-        //testDisplay();
-
-        //pPIO->PIO_SODR |= LED_A;
-
-        busyWait(100);
-
+        busyWait(1000000);
     }
     return(0);
 }
