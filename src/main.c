@@ -27,12 +27,12 @@ int main(void)
         //pPIO->PIO_CODR |= LED_A; // LED_A on D2 pin
         //testWrite ();
         //volUp ();
-        //testDisplay();
+        testDisplay();
 
         //pPIO->PIO_SODR |= LED_A;
 
-        busyWait(100000);
-        busyWait(100);
+        //busyWait(100000);
+        //busyWait(100);
 
     }
     return(0);

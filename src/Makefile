@@ -17,7 +17,8 @@
 # Start of default section
 #
 
-TRGT = arm-elf-
+TRGT = arm-none-eabi-
+#TRGT = ../tools/arm-none-eabi-
 CC   = $(TRGT)gcc
 LD   = $(TRGT)ld -v
 CP   = $(TRGT)objcopy --output-target=binary
@@ -74,7 +75,7 @@ MCFLAGS = -mcpu=$(MCU)
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS) -Wall
 CPFLAGS = $(MCFLAGS) -fno-common -g -std=gnu99 -Wall 
 #LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
-LCFLAGS = $(MCFLAGS) -nostartfiles -T $(LDSCRIPT) -Wl,-Map=main.map,--cref,--no-warn-mismatch 
+LDFLAGS = $(MCFLAGS) -nostartfiles -lc -lm -lgcc -T $(LDSCRIPT) -Wl,-Map=main.map,--cref,--no-warn-mismatch 
 
 # Generate dependency information
 CPFLAGS += -MD -MP -MF .dep/$(@F).d

@@ -65,7 +65,7 @@ void initLCD(void) {
  * Instead, this pre-generates a 256 element array corresponding to each
  * possible instruction and its relevant mask on the PIO.
  */
-int32* generateLookupTable () {
+uint32* generateLookupTable () {
     uint32* table;
     table = malloc(256 * sizeof(uint32));
     if (table == NULL) {
@@ -95,7 +95,7 @@ int32* generateLookupTable () {
     }
     while (inst != 255);
 
-    return *table;
+    return table;
 }
 
 /* Butler looks after the lookup table. Generating it the first time it is
