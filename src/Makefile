@@ -17,7 +17,7 @@
 # Start of default section
 #
 
-TRGT = arm-elf-
+TRGT = arm-none-eabi-
 CC   = $(TRGT)gcc
 LD   = $(TRGT)ld -v
 CP   = $(TRGT)objcopy --output-target=binary

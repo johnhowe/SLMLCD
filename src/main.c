@@ -20,6 +20,8 @@ int main(void)
     initLCD ();
 
     testDisplay ();
+    busyWait(1000000);
+    drawVertGradient (0);
     for(;;)
     {
         //        busyWait(10000000);
@@ -31,7 +33,6 @@ int main(void)
 
         //pPIO->PIO_SODR |= LED_A;
 
-        busyWait(100000);
         busyWait(100);
 
     }

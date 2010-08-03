@@ -33,4 +33,6 @@ void testWrite(void);
 void volUp(void);
 void volDown(void);
 
+void drawVertGradient (uint8 origin);
+
 #endif

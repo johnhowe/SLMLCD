@@ -76,4 +76,7 @@
 #define COLOUR15 	(30<<3)
 #define WHITE 		(31<<3) 
 
+#define LCD_WIDTH       240
+#define LCD_HEIGHT      160
+
 #endif

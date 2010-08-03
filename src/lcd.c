@@ -137,3 +137,34 @@ void volDown(void)
     write (COMMAND, EXTIN);
     write (COMMAND, VOLDOWN);
 }
+
+
+/*  Draws a gradient pattern across the LCD with vertical columns increasing
+ *  and decreasing in contrast. Accepts a column number as a origin for a black
+ *  bar.*/
+void drawVertGradient (uint8 origin)
+{
+    write (COMMAND, EXTIN); // ext = 0
+    write (COMMAND, CASET); // column address set
+    write (DATA, 0x00); // from col 0xn
+    write (DATA, 0x50); // to col (0xn/3)-1
+    write (COMMAND, LASET); // line address set
+    write (DATA, 0x00); // from line 0
+    write (DATA, 0x9f); // to line 159
+    write (COMMAND, RAMWR); // enter memory write mode
+    uint8 col = 0, row = 0;
+    for (col = 0; col < LCD_WIDTH; col++)
+    {
+        // get the current col colour - TODO change this to fade back from
+        // black to white
+        uint8 contrast = ((origin + col) % (WHITE>>3)) << 3;
+        for (row = 0; row < LCD_HEIGHT; row+=3)
+        {
+            // write 3 times for 3B3P mode
+            write (DATA, contrast);   
+            write (DATA, contrast);   
+            write (DATA, contrast);   
+        }
+    }
+}
+
