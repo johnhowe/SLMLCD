@@ -132,16 +132,11 @@ void eraseDisplay (void)
 }
 
 /* Write unstructured data to LCD */
-void testDisplay(void) {
+void stripe(uint8 baseColour) {
     uint16 pix = prepDisplay(1, 1, 240, 160);
-    uint8 colour = BLACK;
-    while (pix--)
-    {
-        write (DATA, BLACK);
-        write (DATA, BLACK);
-        write (DATA, BLACK);
-        //busyWait(20000);
-    }
+    uint8 colour = baseColour;
+    uint8 fadeOut = TRUE;
+    uint8 stripeWidth = 50;
 
     pix = prepDisplay(0, 0, 240, 160);
     while (pix--)
@@ -149,123 +144,18 @@ void testDisplay(void) {
         write (DATA, colour);
         write (DATA, colour);
         write (DATA, colour);
-        if (!(pix%80))
+        if (!(pix%stripeWidth) && fadeOut)
+        {
             colour-=1<<3;
-        busyWait(10000);
-    }
-    //
-    //    pix = prepDisplay(1, 30, 240, 39);
-//    while (pix--)
-//    {
-//        write (DATA, L_GRAY);
-//        write (DATA, L_GRAY);
-//        write (DATA, L_GRAY);
-//        //busyWait(20000);
-//    }
-//
-//    pix = prepDisplay(1, 40, 240, 49);
-//    while (pix--)
-//    {
-//        write (DATA, WHITE);
-//        write (DATA, WHITE);
-//        write (DATA, WHITE);
-//        //busyWait(20000);
-//    }
-//
-//    pix = prepDisplay(1, 50, 240, 59);
-//    while (pix--)
-//    {
-//        write (DATA, L_GRAY);
-//        write (DATA, L_GRAY);
-//        write (DATA, L_GRAY);
-//        //busyWait(20000);
-//    }
-//
-//    pix = prepDisplay(1, 60, 240, 69);
-//    while (pix--)
-//    {
-//        write (DATA, D_GRAY);
-//        write (DATA, D_GRAY);
-//        write (DATA, D_GRAY);
-//        //busyWait(20000);
-//    }
-//
-//    pix = prepDisplay(1, 70, 240, 79);
-//    while (pix--)
-//    {
-//        write (DATA, BLACK);
-//        write (DATA, BLACK);
-//        write (DATA, BLACK);
-//        //busyWait(20000);
-//    }
-}
-
-void testWrite(void) {
-    //write (COMMAND, 0x00); // ext = 0
-    write (DATA, WHITE);
-}
-
-void volUp(void)
-{
-    write (COMMAND, EXTIN);
-    write (COMMAND, VOLUP);
-}
-
-void volDown(void)
-{
-    write (COMMAND, EXTIN);
-    write (COMMAND, VOLDOWN);
-}
-
-void drawLine (uint8 line, uint8 colour)
-{
-    
-    for (uint8 i = 0; i < LCD_WIDTH; i++)
-    {
-        write (DATA, colour);
+            if (colour == WHITE)
+                fadeOut = FALSE;
+        }
+        else if (!(pix%stripeWidth) && !fadeOut)
+        {
+            colour+=1<<3;
+            if (colour == BLACK)
+                fadeOut = TRUE;
+        }
+        //busyWait(10000);
     }
 }
-
-/*  Draws a gradient pattern across the LCD with vertical columns increasing
- *  and decreasing in contrast. Accepts a column number as a origin for a black
- *  bar.*/
-//void drawVertGradient (uint8 origin)
-//{
-//    prepDisplay();
-//
-//    for (row = 0; row < rows; row++)
-//    {
-//        for (col = 0; col < cols; col++)
-//        {
-//            write (DATA, BLACK);
-//            write (DATA, BLACK);
-//            write (DATA, BLACK);
-//            busyWait(30000);
-//        }
-//    }
-//
-//    for (row = 0; row < rows; row++)
-//    {
-//        for (col = 0; col < cols; col++)
-//        {
-//            write (DATA, WHITE);
-//            write (DATA, WHITE);
-//            write (DATA, WHITE);
-//            busyWait(500000);
-//        }
-//    }
-//
-//    for (row = 0; row < rows; row++)
-//    {
-//        for (col = 0; col < cols; col++)
-//        {
-//            write (DATA, BLACK);
-//            write (DATA, BLACK);
-//            write (DATA, BLACK);
-//        }
-//        busyWait(500000);
-//    }
-//
-//}
-
-

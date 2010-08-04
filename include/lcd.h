@@ -25,15 +25,9 @@ void initLCD(void);
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);
 
-/* Write unstructured data to LCD */
-void testDisplay(void);
-void testWrite(void);
-void volUp(void);
-void volDown(void);
 
 uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
-void drawVertGradient (uint8 origin);
-void drawLine (uint8 line, uint8 colour);
 void eraseDisplay (void);
+void stripe(uint8 baseColour);
 
 #endif

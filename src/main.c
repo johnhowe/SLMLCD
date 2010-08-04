@@ -16,23 +16,26 @@
 int main(void)
 {
     InitController();
-
     initLCD ();
-
     eraseDisplay();
-    testDisplay ();
-    //drawVertGradient (0);
-    //for (int i = 0; i < 100; i++)
-    //int i = 10;   
-    //{
-        //static uint8 colour = WHITE;
-        //drawLine (i, BLACK);
-        //colour += 1<<3;
-        //if (colour > BLACK) colour = WHITE;
-    //}
+
+    uint8 baseColour = WHITE;
+    uint8 fadeOut = TRUE;
     for(;;)
     {
-        busyWait(1000000);
+        stripe (baseColour);
+        if (fadeOut)
+        {
+            baseColour -= 1<<3;
+            if (baseColour == WHITE)
+                fadeOut = FALSE;
+        }
+        else
+        {
+            baseColour += 1<<3;
+            if (baseColour == BLACK)
+                fadeOut = TRUE;
+        }
     }
     return(0);
 }
