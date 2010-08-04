@@ -15,9 +15,7 @@
 #include "timers.h"
 #include "HG24016001G.h"
 
-enum {
-    DATA = 0, COMMAND = 1
-};
+enum { DATA, COMMAND };
 
 /* DELAYCONST x nop() = 1uS */
 #define DELAYCONST 3 // todo: calibrate nop time
@@ -33,6 +31,9 @@ void testWrite(void);
 void volUp(void);
 void volDown(void);
 
+uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
 void drawVertGradient (uint8 origin);
+void drawLine (uint8 line, uint8 colour);
+void eraseDisplay (void);
 
 #endif

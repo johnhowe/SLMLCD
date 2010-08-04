@@ -19,8 +19,17 @@ int main(void)
 
     initLCD ();
 
+    eraseDisplay();
     testDisplay ();
     //drawVertGradient (0);
+    //for (int i = 0; i < 100; i++)
+    //int i = 10;   
+    //{
+        //static uint8 colour = WHITE;
+        //drawLine (i, BLACK);
+        //colour += 1<<3;
+        //if (colour > BLACK) colour = WHITE;
+    //}
     for(;;)
     {
         busyWait(1000000);
