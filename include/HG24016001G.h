@@ -58,9 +58,10 @@
 
 
 // Colour definitions for LCD
-#define WHITE           (1<<3)
-#define L_GRAY          (7<<3)
-#define D_GRAY          (15<<3)
+#define WHITE           (0<<3) 
+#define L_GRAY          (8<<3)
+#define M_GRAY          (16<<3)
+#define D_GRAY          (24<<3)
 #define BLACK 		(31<<3)
 
 #define LCD_WIDTH       240

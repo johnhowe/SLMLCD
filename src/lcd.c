@@ -8,6 +8,13 @@
 
 #include "lcd.h"
 
+typedef struct {
+    uint8 shade : 5;
+    uint8 direction : 1;
+} colour_t;
+
+void shiftFront (colour_t *colour);
+
 /* Init function taken from datasheet */
 void initLCD(void) {
 
@@ -132,30 +139,44 @@ void eraseDisplay (void)
 }
 
 /* Write unstructured data to LCD */
-void stripe(uint8 baseColour) {
-    uint16 pix = prepDisplay(1, 1, 240, 160);
-    uint8 colour = baseColour;
-    uint8 fadeOut = TRUE;
-    uint8 stripeWidth = 50;
+void drawWaves (uint8 wavelength, uint8 wavefront)
+{
+    colour_t colour;
+    colour.shade = WHITE>>3; // be careful with colours being <<3'd
+    colour.direction = rising;
 
-    pix = prepDisplay(0, 0, 240, 160);
+    for (int i = 0; i < wavefront; i++)
+        shiftFront (&colour);
+
+    uint16 pix = prepDisplay(0, 0, 240, 160);
     while (pix--)
     {
-        write (DATA, colour);
-        write (DATA, colour);
-        write (DATA, colour);
-        if (!(pix%stripeWidth) && fadeOut)
+        write (DATA, colour.shade<<3);
+        write (DATA, colour.shade<<3);
+        write (DATA, colour.shade<<3);
+
+        if (!(pix % LCD_WIDTH/3)) // shifts colour at each row
         {
-            colour-=1<<3;
-            if (colour == WHITE)
-                fadeOut = FALSE;
-        }
-        else if (!(pix%stripeWidth) && !fadeOut)
-        {
-            colour+=1<<3;
-            if (colour == BLACK)
-                fadeOut = TRUE;
+            //linenumber++;
+            shiftFront (&colour);
         }
         //busyWait(10000);
     }
 }
+
+void shiftFront (colour_t *colour)
+{
+    if (colour->direction == rising) // white -> black
+    {
+        colour->shade++;
+        if (colour->shade == (BLACK >> 3))
+            colour->direction = falling;
+    }
+    else // black -> white
+    {
+        colour->shade--;
+        if (colour->shade == (WHITE >> 3))
+            colour->direction = rising;
+    }
+}
+

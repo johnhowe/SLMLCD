@@ -117,7 +117,7 @@ clean:
 install: all
 	./flash.sh
 
-tags: all
+tags: 
 	ctags -RV ../*
 
 # 

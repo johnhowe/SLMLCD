@@ -12,6 +12,8 @@
 #include "HG24016001G.h"
 #include "timers.h"
 
+#define WAVELENGTH 50
+
 
 int main(void)
 {
@@ -19,23 +21,11 @@ int main(void)
     initLCD ();
     eraseDisplay();
 
-    uint8 baseColour = WHITE;
-    uint8 fadeOut = TRUE;
+    uint16 front = 0;
     for(;;)
     {
-        stripe (baseColour);
-        if (fadeOut)
-        {
-            baseColour -= 1<<3;
-            if (baseColour == WHITE)
-                fadeOut = FALSE;
-        }
-        else
-        {
-            baseColour += 1<<3;
-            if (baseColour == BLACK)
-                fadeOut = TRUE;
-        }
+        drawWaves (WAVELENGTH, front);
+        front++;
     }
     return(0);
 }

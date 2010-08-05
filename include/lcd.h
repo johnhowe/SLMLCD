@@ -17,6 +17,11 @@
 
 enum { DATA, COMMAND };
 
+
+
+enum { rising, falling };
+
+
 /* DELAYCONST x nop() = 1uS */
 #define DELAYCONST 3 // todo: calibrate nop time
 /* Init function taken from datasheet */
@@ -28,6 +33,9 @@ void write(uint8 type, uint8 instruction);
 
 uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
 void eraseDisplay (void);
-void stripe(uint8 baseColour);
+
+void drawWaves (uint8 wavelength, uint8 wavefront);
+
+
 
 #endif
