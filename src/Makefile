@@ -18,7 +18,10 @@
 #
 
 TRGT = arm-none-eabi-
+<<<<<<< HEAD
 #TRGT = ../tools/arm-none-eabi-
+=======
+>>>>>>> master
 CC   = $(TRGT)gcc
 LD   = $(TRGT)ld -v
 CP   = $(TRGT)objcopy --output-target=binary
@@ -84,7 +87,7 @@ CPFLAGS += -MD -MP -MF .dep/$(@F).d
 # makefile rules
 #
 
-all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin 
+all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin
 
 %o : %c
 	$(CC) -c $(CPFLAGS) $(OPT) -I . $(INCDIR) $< -o $@
@@ -120,6 +123,9 @@ clean:
 
 install: all
 	./flash.sh
+
+tags: 
+	ctags -RV ../*
 
 # 
 # Include the dependency files, should be the last of the makefile
