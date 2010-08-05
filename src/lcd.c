@@ -8,6 +8,13 @@
 
 #include "lcd.h"
 
+typedef struct {
+    uint8 shade : 5;
+    uint8 direction : 1;
+} colour_t;
+
+void shiftFront (colour_t *colour);
+
 /* Init function taken from datasheet */
 void initLCD(void) {
 
@@ -32,27 +39,28 @@ void initLCD(void) {
     write(DATA, 0x00); // FR
     write(COMMAND, DISINV);
     write(COMMAND, COMSCN);
-    write(DATA, 0x00); // 0->79 80->159
+    write(DATA, 0x01); // 0->79 80->159
     write(COMMAND, DATSDR);
     write(DATA, 0x00); // normal
     write(DATA, 0x00); // RGB arrangement
     write(DATA, 0x02); // 32 gray-scale 3byte 3pixel mode
     write(COMMAND, LASET);
     write(DATA, 0x00); // start line = 0
-    write(DATA, 0x9f); // end line = 159
+    write(DATA, 0x9F); // end line = 159
     write(COMMAND, CASET);
     write(DATA, 0x00); // start column = 0
-    write(DATA, 0xf4); // end column = 79 -> (79+1)*3=240
+    write(DATA, 0x4F); // end column = 79 -> (79+1)*3=240
 
     write(COMMAND, EXTOUT); // use the ext=1 command table
     write(COMMAND, ANASET); // analog circuit set
-    write(DATA, 0x07); // oscillator frequency = 12.7KHz
-    write(DATA, 0x02); // Booter frequency = 6KHz
-    write(DATA, 0x03); // bias = 1/11
+    write(DATA, 0x00); // oscillator frequency = 12.7KHz
+    write(DATA, 0x01); // Booter frequency = 6KHz
+    write(DATA, 0x05); // bias = 1/11
     write(COMMAND, SWINT); // software initial
 
     write(COMMAND, EXTIN); // use the ext=0 command table
     write(COMMAND, DISON); // turn display on
+    write(COMMAND, PTLOUT); // exit partial display mode
     busyWait(10000); // 10ms
 }
 
@@ -61,6 +69,7 @@ void initLCD(void) {
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
+    //busyWait(10000); 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
     uint32 instIO = 0;
 
@@ -101,39 +110,74 @@ void write(uint8 type, uint8 instruction) {
 }
 //#pragma GCC pop_options
 
-/* Write unstructured data to LCD */
-void testDisplay(void) {
-
-
+/* Prepare the display to accept an image. Pixels start from 1 and startC and
+ * endC must divide by 3. 
+ * Returns number of (groups of 3) pixels */
+uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR)
+{
     write (COMMAND, EXTIN); // ext = 0
     write (COMMAND, CASET); // column address set
-    write (DATA, 0x00); // from col 0xn
-    write (DATA, 0x50); // to col (0xn/3)-1
+    write (DATA, (startC/3)-1); // from col 0xn
+    write (DATA, (endC/3)-1); // to col (0xn/3)-1
     write (COMMAND, LASET); // line address set
-    write (DATA, 0x00); // from line 0
-    write (DATA, 0x9f); // to line 159
+    write (DATA, startR-1); // from line 0
+    write (DATA, endR-1); // to line 159
     write (COMMAND, RAMWR); // enter memory write mode
-    uint8 j;
-    for (j=0; j<(0x50*0x9f); j++) {
-            write (DATA, BLACK);
-            write (DATA, COLOUR7);
-            write (DATA, WHITE);
+
+    uint16 pixels = ((endC-startC)/3)*(endR-startR);
+    return pixels;
+}
+
+void eraseDisplay (void)
+{
+    uint16 pix = prepDisplay(0, 0, 240, 160);
+    while (pix--)
+    {
+        write (DATA, WHITE);
+        write (DATA, WHITE);
+        write (DATA, WHITE);
     }
 }
 
-void testWrite(void) {
-    //write (COMMAND, 0x00); // ext = 0
-    write (DATA, WHITE);
+/* Write unstructured data to LCD */
+void drawWaves (uint8 wavelength, uint8 wavefront)
+{
+    colour_t colour;
+    colour.shade = WHITE>>3; // be careful with colours being <<3'd
+    colour.direction = rising;
+
+    for (int i = 0; i < wavefront; i++)
+        shiftFront (&colour);
+
+    uint16 pix = prepDisplay(0, 0, 240, 160);
+    while (pix--)
+    {
+        write (DATA, colour.shade<<3);
+        write (DATA, colour.shade<<3);
+        write (DATA, colour.shade<<3);
+
+        if (!(pix % 62)) // shifts colour at each row
+        {
+            shiftFront (&colour);
+            shiftFront (&colour);
+        }
+        //busyWait(10000);
+    }
 }
 
-void volUp(void)
+void shiftFront (colour_t *colour)
 {
-    write (COMMAND, EXTIN);
-    write (COMMAND, VOLUP);
+    if (colour->direction == rising) // white -> black
+    {
+        colour->shade++;
+        if (colour->shade == (BLACK >> 3))
+            colour->direction = falling;
+    }
+    else // black -> white
+    {
+        colour->shade--;
+        if (colour->shade == (WHITE >> 3))
+            colour->direction = rising;
+    }
 }
 
-void volDown(void)
-{
-    write (COMMAND, EXTIN);
-    write (COMMAND, VOLDOWN);
-}
