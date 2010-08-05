@@ -69,6 +69,7 @@ void initLCD(void) {
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
+    //busyWait(10000); 
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
     uint32 instIO = 0;
 
@@ -129,7 +130,7 @@ uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR)
 
 void eraseDisplay (void)
 {
-    uint16 pix = prepDisplay(1, 1, 240, 80);
+    uint16 pix = prepDisplay(0, 0, 240, 160);
     while (pix--)
     {
         write (DATA, WHITE);
@@ -155,9 +156,9 @@ void drawWaves (uint8 wavelength, uint8 wavefront)
         write (DATA, colour.shade<<3);
         write (DATA, colour.shade<<3);
 
-        if (!(pix % LCD_WIDTH/3)) // shifts colour at each row
+        if (!(pix % 62)) // shifts colour at each row
         {
-            //linenumber++;
+            shiftFront (&colour);
             shiftFront (&colour);
         }
         //busyWait(10000);

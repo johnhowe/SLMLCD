@@ -12,20 +12,23 @@
 #include "HG24016001G.h"
 #include "timers.h"
 
-#define WAVELENGTH 50
-
+#define WAVELENGTH 62
 
 int main(void)
 {
     InitController();
     initLCD ();
-    eraseDisplay();
+    //eraseDisplay();
 
     uint16 front = 0;
     for(;;)
     {
         drawWaves (WAVELENGTH, front);
         front++;
+        if (front == WAVELENGTH)
+        {
+            front = 0;
+        }
     }
     return(0);
 }
