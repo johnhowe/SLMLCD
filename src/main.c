@@ -12,7 +12,7 @@
 #include "HG24016001G.h"
 #include "timers.h"
 
-#define WAVELENGTH 31
+#define WAVELENGTH 62
 
 int main(void)
 {
