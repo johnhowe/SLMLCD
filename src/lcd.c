@@ -20,6 +20,8 @@ void shiftFront (colour_t *colour);
 /* Init function taken from datasheet */
 void initLCD(void) {
 
+    generateLookupTable ();
+
     volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
     pPIO->PIO_SODR = PRST; // Reset pin High
 
@@ -75,13 +77,13 @@ void initLCD(void) {
  * Instead, this pre-generates a 256 element array corresponding to each
  * possible instruction and its relevant mask on the PIO.
  */
-uint32* generateLookupTable () {
-    //uint32* table;
-    //table = malloc(256 * sizeof(uint32));
+uint32* generateLookupTable (void) {
+    //uint32* table = malloc(256 * sizeof(uint32));
     //if (table == NULL) {
         // Malloc failed
         // TODO: flash error code - do not continue.
     //}
+    //static uint32 table[256];
 
     // do-while loop used here as for (i=0;i < 256;i++) would never exit
     uint8 inst = 0;
@@ -101,9 +103,8 @@ uint32* generateLookupTable () {
 
         // store result
         table[inst] = instIO;
-        inst++;
     }
-    while (inst != 255);
+    while (inst++ != 255);
 
     return table;
 }
@@ -111,15 +112,17 @@ uint32* generateLookupTable () {
 /* Butler looks after the lookup table. Generating it the first time it is
  * requred, then returning a pointer to it. */
 
-uint32* tableButler (void) {
-    static uint8 firstRun = TRUE;
-    //static uint32* table;
-    if (firstRun) {
-        //table = generateLookupTable();
-        generateLookupTable();
-    }
-    return table;
-}
+/* REMOVED AS MALLOC DOESN'T WORK */
+
+//uint32* tableButler (void) {
+//    static uint8 firstRun = TRUE;
+//    //static uint32* table;
+//    if (firstRun) {
+//        generateLookupTable();
+//        firstRun = FALSE;
+//    }
+//    return table;
+//}
 
 
 /* Writes instruction or data to I/O ports connected to LCD. */
