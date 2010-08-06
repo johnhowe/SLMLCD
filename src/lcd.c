@@ -76,6 +76,8 @@ void initLCD(void) {
  * sent to the LCD.
  * Instead, this pre-generates a 256 element array corresponding to each
  * possible instruction and its relevant mask on the PIO.
+ * 
+ * This only increased speed by roughly 40%
  */
 uint32* generateLookupTable (void) {
     //uint32* table = malloc(256 * sizeof(uint32));
