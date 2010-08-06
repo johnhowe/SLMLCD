@@ -18,10 +18,6 @@
 #
 
 TRGT = arm-none-eabi-
-<<<<<<< HEAD
-#TRGT = ../tools/arm-none-eabi-
-=======
->>>>>>> master
 CC   = $(TRGT)gcc
 LD   = $(TRGT)ld -v
 CP   = $(TRGT)objcopy --output-target=binary
