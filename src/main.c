@@ -12,31 +12,23 @@
 #include "HG24016001G.h"
 #include "timers.h"
 
+#define WAVELENGTH 62
 
 int main(void)
 {
     InitController();
-
-    volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-
     initLCD ();
+    //eraseDisplay();
 
-
-    testDisplay ();
+    uint16 front = 0;
     for(;;)
     {
-        //        busyWait(10000000);
-        //busyWait(100);
-        //pPIO->PIO_CODR |= LED_A; // LED_A on D2 pin
-        //testWrite ();
-        //volUp ();
-        //testDisplay();
-
-        //pPIO->PIO_SODR |= LED_A;
-
-        busyWait(100000);
-        busyWait(100);
-
+        drawWaves (WAVELENGTH, front);
+        front++;
+        if (front == WAVELENGTH)
+        {
+            front = 0;
+        }
     }
     return(0);
 }

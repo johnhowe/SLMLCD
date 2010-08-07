@@ -12,6 +12,7 @@
 #define INIT_H
 
 #include "config.h"
+#include "timers.h"
 
 // Endless loop of LED_A (PA0) blinks for error diagnosis.
 // Will blink code-many times and then make a longer delay.

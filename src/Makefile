@@ -17,7 +17,7 @@
 # Start of default section
 #
 
-TRGT = arm-elf-
+TRGT = arm-none-eabi-
 CC   = $(TRGT)gcc
 LD   = $(TRGT)ld -v
 CP   = $(TRGT)objcopy --output-target=binary
@@ -72,8 +72,9 @@ OBJS    = $(ASRC:.s=.o) $(SRC:.c=.o)
 MCFLAGS = -mcpu=$(MCU)
 
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -Wa,-amhls=$(<:.s=.lst) $(ADEFS) -Wall
-CPFLAGS = -fno-common -g -std=gnu99 -Wall 
-LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
+CPFLAGS = $(MCFLAGS) -fno-common -g -std=gnu99 -Wall 
+#LDFLAGS = -Map main.map -nostartfiles -T $(LDSCRIPT) 
+LDFLAGS = $(MCFLAGS) -nostartfiles -lc -lm -lgcc -T $(LDSCRIPT) -Wl,-Map=main.map,--cref,--no-warn-mismatch 
 
 # Generate dependency information
 CPFLAGS += -MD -MP -MF .dep/$(@F).d
@@ -82,7 +83,7 @@ CPFLAGS += -MD -MP -MF .dep/$(@F).d
 # makefile rules
 #
 
-all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin 
+all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin
 
 %o : %c
 	$(CC) -c $(CPFLAGS) $(OPT) -I . $(INCDIR) $< -o $@
@@ -91,7 +92,9 @@ all: $(OBJS) $(PROJECT).elf $(PROJECT).hex $(PROJECT).bin
 	$(AS) -c $(ASFLAGS) $< -o $@
 
 %elf: $(OBJS)
-	$(LD) $(LDFLAGS) -L $(UINCDIR) -o $(PROJECT).elf $(OBJS)
+	#$(LD) $(LDFLAGS) -L $(UINCDIR) -o $(PROJECT).elf $(OBJS)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(PROJECT).elf 
+	#$(CC) $(INCDIR) $(OBJS) -o $(PROJECT).elf
 
 %hex: %elf
 	$(BIN) $< $@
@@ -116,6 +119,9 @@ clean:
 
 install: all
 	./flash.sh
+
+tags: all
+	ctags -RV ../*
 
 # 
 # Include the dependency files, should be the last of the makefile
