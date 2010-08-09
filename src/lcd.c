@@ -111,11 +111,9 @@ uint32* generateLookupTable (void) {
     return table;
 }
 
+/* ---REMOVED AS MALLOC DOESN'T WORK--- */
 /* Butler looks after the lookup table. Generating it the first time it is
  * requred, then returning a pointer to it. */
-
-/* REMOVED AS MALLOC DOESN'T WORK */
-
 //uint32* tableButler (void) {
 //    static uint8 firstRun = TRUE;
 //    //static uint32* table;
