@@ -14,28 +14,34 @@
 #include "config.h"
 #include "timers.h"
 #include "HG24016001G.h"
+#include "waves.h"
 
 enum { DATA, COMMAND };
+enum { RISING, FALLING };
+
+/* Contains start and end coordinates to be used whith
+ * prepDisplay */
+typedef enum { 
+    startCol,
+    endCol,
+    startRow,
+    endRow
+} window_t;
 
 
 
-enum { rising, falling };
-
-
-/* DELAYCONST x nop() = 1uS */
-#define DELAYCONST 3 // todo: calibrate nop time
 /* Init function taken from datasheet */
 void initLCD(void);
 
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);
 
+/* Prepares the LCD module to accept a stream of data to be
+ * displayed. Accepts coordinates for the window and returns the
+ * number of pixels to be written to. */
+uint16 prepDisplay (window_t window);
 
-uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
+/* Sets all pixels -> 0 */
 void eraseDisplay (void);
-
-void drawWaves (uint8 wavelength, uint8 wavefront);
-
-
 
 #endif
