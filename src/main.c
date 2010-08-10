@@ -11,6 +11,7 @@
 #include "lcd.h"
 #include "HG24016001G.h"
 #include "timers.h"
+#include "pio.h"
 
 #define WAVELENGTH 62
 
@@ -18,17 +19,15 @@ int main(void)
 {
     InitController();
     initLCD ();
-    //eraseDisplay();
-
-    uint16 front = 0;
-    for(;;)
+    if (readSwitch() == WAVES)
     {
-        drawWaves (WAVELENGTH, front);
-        front++;
-        if (front == WAVELENGTH)
-        {
-            front = 0;
-        }
+        animateWaves();
     }
+    else // NOISE
+    {
+        continue;
+    }
+
     return(0);
 }
+
