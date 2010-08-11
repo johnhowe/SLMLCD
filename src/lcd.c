@@ -197,7 +197,11 @@ void drawWaves (uint8 wavelength, uint8 wavefront)
     for (int i = 0; i < wavefront; i++)
         shiftFront (&colour);
 
-    uint16 pix = prepDisplay(0, 0, 240, 160);
+    uint16 pix = prepDisplay(1, 1, LCD_WIDTH, LCD_HEIGHT);
+
+    // For determining where to change colour
+    uint16 shiftWidth = LCD_WIDTH/3;
+    uint16 shiftPx = pix - shiftWidth;
     while (pix--)
     {
         write (DATA, colour.shade<<3);
@@ -207,6 +211,7 @@ void drawWaves (uint8 wavelength, uint8 wavefront)
         if (!(pix % 62)) // shifts colour at each row
         {
             shiftFront (&colour);
+            shiftPx -= shiftWidth;
         }
         //busyWait(10000);
     }
