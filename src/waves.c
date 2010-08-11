@@ -5,6 +5,10 @@
  *      John Howe	2010
  */
 
+void drawWaves (uint8 wavelength, uint8 wavefront);
+void shiftFront (colour_t *colour);
+
+/* Draw a series of frames of waves to create an animation */
 void animateWaves (void)
 {
     uint16 front = 0;
@@ -19,7 +23,9 @@ void animateWaves (void)
     }
 }
 
-/* Write unstructured data to LCD */
+/* Draw a single frame of waves on the LCD */
+// wavelength is the separation between peaks FIXME: needs to be a multiple of 32 
+// front is an offset for the first wave 
 void drawWaves (uint8 wavelength, uint8 wavefront)
 {
     colour_t colour;
