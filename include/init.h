@@ -15,9 +15,10 @@
 #include "timers.h"
 
 // Endless loop of LED_A (PA0) blinks for error diagnosis.
-// Will blink code-many times and then make a longer delay.
+// Will flash error code.
 void PanicBlinker(uint8 code);
+
 // Hardware initialisation function.
-void InitController(void);
+void initController(void);
 
 #endif

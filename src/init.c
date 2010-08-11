@@ -46,9 +46,8 @@ void PanicBlinker(uint8 code)
     }
 }
 
-
 // Hardware initialisation function.
-void InitController(void)
+void initController(void)
 {
     // Set Flash Wait sate
     // Single Cycle Access at Up to 30 MHz, above (up to 55MHz):
@@ -133,13 +132,18 @@ void InitController(void)
 //    // Set outputs HIGH to turn LEDs off.
 //    pPIO->PIO_SODR = LED_A;
 
+
+    busyWait (50000); // Waiting for power to stabalise
+}
+
+/* Init I/O pins */
+void initIO (void)
+{
     // Enable PIO in output mode
     pPIO->PIO_PER = PA0 | PWR | PRD | PXCS | PRST | PD;
     pPIO->PIO_OER = PA0 | PWR | PRD | PXCS | PRST | PD;
 
     // Set all pins LOW
     pPIO->PIO_CODR = PA0 | PWR | PRD | PXCS | PRST | PD;
-
-    busyWait (50000); // Waiting for power to stabalise
 }
 

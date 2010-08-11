@@ -80,14 +80,6 @@ void initLCD(void) {
  * This only increased speed by roughly 40%
  */
 uint32* generateLookupTable (void) {
-    //uint32* table = malloc(256 * sizeof(uint32));
-    //if (table == NULL) {
-        // Malloc failed
-        // TODO: flash error code - do not continue.
-    //}
-    //static uint32 table[256];
-
-    // do-while loop used here as for (i=0;i < 256;i++) would never exit
     uint8 inst = 0;
     do {
         // calculate possible PIO combinations for any data input
@@ -111,53 +103,36 @@ uint32* generateLookupTable (void) {
     return table;
 }
 
-/* Butler looks after the lookup table. Generating it the first time it is
- * requred, then returning a pointer to it. */
-
-/* REMOVED AS MALLOC DOESN'T WORK */
-
-//uint32* tableButler (void) {
-//    static uint8 firstRun = TRUE;
-//    //static uint32* table;
-//    if (firstRun) {
-//        generateLookupTable();
-//        firstRun = FALSE;
-//    }
-//    return table;
-//}
-
-
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
-    //busyWait(10000); 
-    volatile AT91PS_PIO pPIO = AT91C_BASE_PIOA;
-    //uint32* table = tableButler();
+    static pio_t pInst;
+    pio_t
 
     // Set Data/Command pin
     if (type == COMMAND) { // (control data)
-        pPIO->PIO_CODR = PA0; // A0 = 0
+        pio_output_low (pA0);
     } else { // type == DATA (display data)
-        pPIO->PIO_SODR = PA0; // A0 = 1
+        pio_output_high (pA0);
     }
 
     // Drop chip select to enable data/instruction I/O
-    pPIO->PIO_CODR = PXCS;
+    pio_output_low (pXCS);
 
     // Drop WR and raise RD to prepare the lcd to read on D0-D7 pins
-    pPIO->PIO_CODR = PWR;
-    pPIO->PIO_SODR = PRD;
+    pio_output_low (pWR);
+    pio_output_high (pRD);
 
     // Write data bits to I/O
-    pPIO->PIO_CODR = PD;
-    pPIO->PIO_SODR = table[instruction];
+    pio_output_low (pPD);
+    pio_output_high (pInst);
 
     // Raise WR to have LCD latch data on D0-D7 pins
-    pPIO->PIO_SODR = PWR;
-    pPIO->PIO_CODR = PRD;
+    pio_output_high (pWR);
+    pio_output_low (pRD);
 
     // Raise chip select 
-    pPIO->PIO_SODR = PXCS;
+    pio_output_high (pXCS);
 }
 
 /* Prepare the display to accept an image. Pixels start from 1 and startC and

@@ -17,15 +17,10 @@
 #include "HG24016001G.h"
 
 enum { DATA, COMMAND };
-
-
-
 enum { rising, falling };
-
 
 /* DELAYCONST x nop() = 1uS */
 #define DELAYCONST 3 // todo: calibrate nop time
-
 
 /* Init function taken from datasheet */
 void initLCD(void);
@@ -39,12 +34,9 @@ uint32* tableButler (void);
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction);
 
-
 uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
 void eraseDisplay (void);
 
 void drawWaves (uint8 wavelength, uint8 wavefront);
-
-
 
 #endif

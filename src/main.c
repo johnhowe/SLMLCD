@@ -16,9 +16,9 @@
 
 int main(void)
 {
-    InitController();
+    initController();
     initLCD ();
-    //eraseDisplay();
+    eraseDisplay();
 
     uint16 front = 0;
     for(;;)
