@@ -14,12 +14,8 @@
 
 #define WAVELENGTH 62
 
-int main(void)
+void wavesLoop (void)
 {
-    InitController();
-    initLCD ();
-    //eraseDisplay();
-
     uint16 front = 0;
     for(;;)
     {
@@ -30,5 +26,16 @@ int main(void)
             front = 0;
         }
     }
+}
+
+
+int main(void)
+{
+    InitController();
+    initLCD ();
+    eraseDisplay();
+
+    wavesLoop();
+
     return(0);
 }
