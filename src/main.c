@@ -19,7 +19,7 @@ void wavesLoop (void)
     uint16 front = 0;
     for(;;)
     {
-        drawWaves (WAVELENGTH, front);
+        drawWaves (WAVELENGTH, front, rising);
         front++;
         if (front == WAVELENGTH)
         {
@@ -32,9 +32,9 @@ void seesawLoop(void)
 {
     for (;;)
     {
-        drawWaves (WAVELENGTH, 0);
+        drawWaves (WAVELENGTH, 0, rising);
         busyWait (10000000);
-        drawWaves (WAVELENGTH, 32);
+        drawWaves (WAVELENGTH, 0, falling);
         busyWait (10000000);
     }
 }

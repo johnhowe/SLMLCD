@@ -188,11 +188,11 @@ void eraseDisplay (void)
 }
 
 /* Write unstructured data to LCD */
-void drawWaves (uint8 wavelength, uint8 wavefront)
+void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
 {
     colour_t colour;
     colour.shade = WHITE>>3; // be careful with colours being <<3'd
-    colour.direction = rising;
+    colour.direction = direction;
 
     for (int i = 0; i < wavefront; i++)
         shiftFront (&colour);
@@ -208,7 +208,7 @@ void drawWaves (uint8 wavelength, uint8 wavefront)
         write (DATA, colour.shade<<3);
         write (DATA, colour.shade<<3);
 
-        if (!(pix % 62)) // shifts colour at each row
+        if (pix == shiftPx) // shifts colour at each row
         {
             shiftFront (&colour);
             shiftPx -= shiftWidth;
@@ -219,17 +219,9 @@ void drawWaves (uint8 wavelength, uint8 wavefront)
 
 void shiftFront (colour_t *colour)
 {
-    if (colour->direction == rising) // white -> black
-    {
+    if (colour->direction)
         colour->shade++;
-        if (colour->shade == (BLACK >> 3))
-            colour->direction = falling;
-    }
-    else // black -> white
-    {
+    else
         colour->shade--;
-        if (colour->shade == (WHITE >> 3))
-            colour->direction = rising;
-    }
 }
 
