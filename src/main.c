@@ -34,7 +34,7 @@ void seesawLoop(void)
     {
         drawWaves (WAVELENGTH, 0);
         busyWait (10000000);
-        drawWaves (WAVELENGTH, 32);
+        drawWaves (WAVELENGTH, 31);
         busyWait (10000000);
     }
 }
