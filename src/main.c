@@ -28,6 +28,15 @@ void wavesLoop (void)
     }
 }
 
+void seesawLoop(void)
+{
+    for (;;)
+    {
+
+
+    }
+}
+
 
 int main(void)
 {
@@ -35,7 +44,8 @@ int main(void)
     initLCD ();
     eraseDisplay();
 
-    wavesLoop();
+    //wavesLoop();
+    seesawLoop();
 
     return(0);
 }
