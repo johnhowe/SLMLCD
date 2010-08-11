@@ -49,7 +49,7 @@ LDSCRIPT = ../runtime/ld_flash.cmd
 UADEFS = 
 
 # List additional C source files here
-SRC  = $(PROJECT).c init.c lcd.c timers.c
+SRC  = $(PROJECT).c init.c lcd.c timers.c waves.c 
 
 # List ASM source files here
 ASRC = ../runtime/crt.s

@@ -5,18 +5,20 @@
  *      John Howe	2010
  */
 
-void drawWaves (uint8 wavelength, uint8 wavefront);
+#include "waves.h"
+
+void drawWaves (uint8 wavelength, uint8 wavefront, window_t *window);
 void shiftFront (colour_t *colour);
 
 /* Draw a series of frames of waves to create an animation */
-void animateWaves (void)
+void animateWaves (uint8 wavelength, window_t *window)
 {
     uint16 front = 0;
     for(;;)
     {
-        drawWaves (WAVELENGTH, front);
+        drawWaves (wavelength, front, window);
         front++;
-        if (front == WAVELENGTH)
+        if (front == wavelength)
         {
             front = 0;
         }
@@ -26,26 +28,32 @@ void animateWaves (void)
 /* Draw a single frame of waves on the LCD */
 // wavelength is the separation between peaks FIXME: needs to be a multiple of 32 
 // front is an offset for the first wave 
-void drawWaves (uint8 wavelength, uint8 wavefront)
+void drawWaves (uint8 wavelength, uint8 wavefront, window_t *window)
 {
     colour_t colour;
     colour.shade = WHITE>>3; // care as colours <<3'd
     colour.direction = RISING;
 
-    for (int i = 0; i < wavefront; i++)
+    for (int i = 0; i < wavefront; i++) 
+    {
         shiftFront (&colour);
+    }
 
-    uint16 pix = prepDisplay(0, 0, 240, 160);
+    uint16 pix = prepDisplay(window);
+
+    // For determining where to change colour
+    uint16 shiftWidth = (wavelength * (window->endCol - window->startCol)/3) / 64;
+    uint16 shiftPx = pix - shiftWidth;
     while (pix--)
     {
         write (DATA, colour.shade<<3);
         write (DATA, colour.shade<<3);
         write (DATA, colour.shade<<3);
 
-        if (!(pix % 62)) // shifts colour at each row
+        if (pix == shiftPx) 
         {
             shiftFront (&colour);
-            shiftFront (&colour);
+            shiftPx -= shiftWidth;
         }
     }
 }
@@ -66,3 +74,4 @@ void shiftFront (colour_t *colour)
             colour->direction = RISING;
     }
 }
+

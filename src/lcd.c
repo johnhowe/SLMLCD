@@ -8,10 +8,7 @@
 
 #include "lcd.h"
 
-typedef struct {
-    uint8 shade : 5;
-    uint8 direction : 1;
-} colour_t;
+
 
 void shiftFront (colour_t *colour);
 
@@ -64,8 +61,6 @@ void initLCD(void) {
     busyWait(10000); // 10ms
 }
 
-//#pragma GCC push_options
-//#pragma GCC optimize ("O3")
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
@@ -108,29 +103,38 @@ void write(uint8 type, uint8 instruction) {
     // Raise chip select 
     pPIO->PIO_SODR = PXCS;
 }
-//#pragma GCC pop_options
 
-/* Prepare the display to accept an image. Pixels start from 1 and startC and
- * endC must divide by 3. 
+/* Prepare the display to accept an image. FIXME  CHECK:_Pixel numbering starts from 1_??, and
+ * startCol and endCol must divide by 3. 
  * Returns number of (groups of 3) pixels */
-uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR)
+uint16 prepDisplay (window_t *window)
 {
     write (COMMAND, EXTIN); // ext = 0
     write (COMMAND, CASET); // column address set
-    write (DATA, (startC/3)-1); // from col 0xn
-    write (DATA, (endC/3)-1); // to col (0xn/3)-1
+    write (DATA, (window->startCol/3)); // from col 0xn FIXME I don't think this is right.
+    write (DATA, (window->endCol/3)-1); // to col (0xn/3)-1
     write (COMMAND, LASET); // line address set
-    write (DATA, startR-1); // from line 0
-    write (DATA, endR-1); // to line 159
+    write (DATA, window->startRow-1); // from line 0
+    write (DATA, window->endRow-1); // to line 159
     write (COMMAND, RAMWR); // enter memory write mode
 
-    uint16 pixels = ((endC-startC)/3)*(endR-startR);
+    uint16 pixels = ((window->endCol-window->startCol)/3)*
+        (window->endRow-window->startRow);
     return pixels;
 }
 
 void eraseDisplay (void)
 {
-    uint16 pix = prepDisplay(0, 0, 240, 160);
+    // Prepare a window covering entire display
+    window_t window;
+    window.startCol = 0;
+    window.endCol = 240;
+    window.startRow = 0;
+    window.endRow = 160;
+    uint16 pix = prepDisplay(&window);
+
+    // Replace each pixel with WHITE.
+    // nb: 3 pixels per column
     while (pix--)
     {
         write (DATA, WHITE);

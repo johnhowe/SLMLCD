@@ -21,13 +21,17 @@ enum { RISING, FALLING };
 
 /* Contains start and end coordinates to be used whith
  * prepDisplay */
-typedef enum { 
-    startCol,
-    endCol,
-    startRow,
-    endRow
+typedef struct { 
+    uint8 startCol;
+    uint8 endCol;
+    uint8 startRow;
+    uint8 endRow;
 } window_t;
 
+typedef struct {
+    uint8 shade : 5;
+    uint8 direction : 1;
+} colour_t;
 
 
 /* Init function taken from datasheet */
@@ -39,7 +43,7 @@ void write(uint8 type, uint8 instruction);
 /* Prepares the LCD module to accept a stream of data to be
  * displayed. Accepts coordinates for the window and returns the
  * number of pixels to be written to. */
-uint16 prepDisplay (window_t window);
+uint16 prepDisplay (window_t *window);
 
 /* Sets all pixels -> 0 */
 void eraseDisplay (void);

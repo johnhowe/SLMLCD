@@ -5,5 +5,11 @@
  *      John Howe	2010
  */
 
-void animateWaves (void);
+#ifndef WAVES_H
+#define WAVES_H
 
+#include "lcd.h"
+
+void animateWaves (uint8 wavelength, window_t *window);
+
+#endif
