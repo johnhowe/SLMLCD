@@ -32,8 +32,10 @@ void seesawLoop(void)
 {
     for (;;)
     {
+        eraseDisplay ();
         drawWaves (WAVELENGTH, 0, rising);
         busyWait (10000000);
+        eraseDisplay ();
         drawWaves (WAVELENGTH, 0, falling);
         busyWait (10000000);
     }

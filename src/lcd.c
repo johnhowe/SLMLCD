@@ -211,6 +211,7 @@ void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
         if (pix == shiftPx) // shifts colour at each row
         {
             shiftFront (&colour);
+            shiftFront (&colour);
             shiftPx -= shiftWidth;
         }
         //busyWait(10000);
