@@ -71,9 +71,17 @@ void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
 
 void shiftFront (colour_t *colour)
 {
-    if (colour->direction)
+    if (colour->direction == rising) // white -> black
+    {
         colour->shade++;
-    else
+        if (colour->shade == (BLACK >> 3))
+            colour->direction = falling;
+    }
+    else // black -> white
+    {
         colour->shade--;
+        if (colour->shade == (WHITE >> 3))
+            colour->direction = rising;
+    }
 }
 

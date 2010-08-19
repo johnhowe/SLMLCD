@@ -20,8 +20,8 @@ int main(void)
     InitController();
     initLCD ();
 
-    //wavesLoop();
-    seeseeLoop();
+    wavesLoop();
+    //seeseeLoop();
 
     return(0);
 }
