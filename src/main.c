@@ -12,19 +12,21 @@
 #include "HG24016001G.h"
 #include "timers.h"
 
-#define WAVELENGTH 62
+#define APPATURE 32 // multiple of 32
+#define MAX_STEPS 32 // number of shades of grey
 
-void wavesLoop (void)
+void slideLoop (void)
 {
-    uint16 front = 0;
-    for(;;)
+    uint8 steps = 0; 
+    while (TRUE)
     {
-        drawWaves (WAVELENGTH, front);
-        front++;
-        if (front == WAVELENGTH)
+        for (uint16 t = 0; t < DURATION; t++)
         {
-            front = 0;
+            // Draw slide at `steps' gradient for `duration' frames 
+            // TODO animate
         }
+        steps ++;
+        steps %= MAX_STEPS;
     }
 }
 
@@ -35,7 +37,7 @@ int main(void)
     initLCD ();
     eraseDisplay();
 
-    wavesLoop();
+    slideLoop();
 
     return(0);
 }
