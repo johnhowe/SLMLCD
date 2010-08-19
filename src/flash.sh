@@ -9,11 +9,11 @@ sleep 3
 echo "Opening telnet connection to OpenOCD"
 ( 
     echo halt
-    sleep 2
+    sleep 0.5
     echo flash write_bank 0 main.bin 0x0
-    sleep 2
+    sleep 0.5
     echo reset
-    sleep 2
+    sleep 0.5
     echo shutdown
 ) | telnet localhost 4444
 

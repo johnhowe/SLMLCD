@@ -17,4 +17,4 @@
 // Waves moving down the display
 void wavesLoop (void);
 
-void seeseeLoop (void);
+void seesawLoop (void);

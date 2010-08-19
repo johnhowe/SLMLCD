@@ -25,7 +25,7 @@ void wavesLoop (void)
     }
 }
 
-void seeseeLoop(void)
+void seesawLoop(void)
 {
     for (;;)
     {
