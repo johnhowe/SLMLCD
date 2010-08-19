@@ -17,6 +17,11 @@ typedef unsigned short uint16;
 typedef signed long int32;
 typedef unsigned long uint32;
 
+typedef struct {
+    uint8 shade : 5;
+    uint8 direction : 1;
+} colour_t;
+
 #define TRUE 1
 #define FALSE 0
 

@@ -43,7 +43,6 @@ void write(uint8 type, uint8 instruction);
 uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
 void eraseDisplay (void);
 
-void drawWaves (uint8 wavelength, uint8 wavefront);
 
 
 

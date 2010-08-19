@@ -10,10 +10,6 @@
 
 uint32 table[256];
 
-typedef struct {
-    uint8 shade : 5;
-    uint8 direction : 1;
-} colour_t;
 
 void shiftFront (colour_t *colour);
 
@@ -184,52 +180,6 @@ void eraseDisplay (void)
         write (DATA, WHITE);
         write (DATA, WHITE);
         write (DATA, WHITE);
-    }
-}
-
-/* Write unstructured data to LCD */
-void drawWaves (uint8 wavelength, uint8 wavefront)
-{
-    colour_t colour;
-    colour.shade = WHITE>>3; // be careful with colours being <<3'd
-    colour.direction = rising;
-
-    for (int i = 0; i < wavefront; i++)
-        shiftFront (&colour);
-
-    uint16 pix = prepDisplay(1, 1, LCD_WIDTH, LCD_HEIGHT);
-
-    // For determining where to change colour
-    uint16 shiftWidth = LCD_WIDTH/3;
-    uint16 shiftPx = pix - shiftWidth;
-    while (pix--)
-    {
-        write (DATA, colour.shade<<3);
-        write (DATA, colour.shade<<3);
-        write (DATA, colour.shade<<3);
-
-        if (!(pix % 62)) // shifts colour at each row
-        {
-            shiftFront (&colour);
-            shiftPx -= shiftWidth;
-        }
-        //busyWait(10000);
-    }
-}
-
-void shiftFront (colour_t *colour)
-{
-    if (colour->direction == rising) // white -> black
-    {
-        colour->shade++;
-        if (colour->shade == (BLACK >> 3))
-            colour->direction = falling;
-    }
-    else // black -> white
-    {
-        colour->shade--;
-        if (colour->shade == (WHITE >> 3))
-            colour->direction = rising;
     }
 }
 
