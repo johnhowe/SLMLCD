@@ -10,10 +10,6 @@
 
 uint32 table[256];
 
-typedef struct {
-    uint8 shade : 5;
-    uint8 direction : 1;
-} colour_t;
 
 void shiftFront (colour_t *colour);
 
@@ -103,6 +99,20 @@ uint32* generateLookupTable (void) {
     return table;
 }
 
+/* ---REMOVED AS MALLOC DOESN'T WORK--- */
+/* Butler looks after the lookup table. Generating it the first time it is
+ * requred, then returning a pointer to it. */
+//uint32* tableButler (void) {
+//    static uint8 firstRun = TRUE;
+//    //static uint32* table;
+//    if (firstRun) {
+//        generateLookupTable();
+//        firstRun = FALSE;
+//    }
+//    return table;
+//}
+
+
 /* Writes instruction or data to I/O ports connected to LCD. */
 void write(uint8 type, uint8 instruction) {
 
@@ -161,48 +171,6 @@ void eraseDisplay (void)
         write (DATA, WHITE);
         write (DATA, WHITE);
         write (DATA, WHITE);
-    }
-}
-
-/* Write unstructured data to LCD */
-void drawWaves (uint8 wavelength, uint8 wavefront)
-{
-    colour_t colour;
-    colour.shade = WHITE>>3; // be careful with colours being <<3'd
-    colour.direction = rising;
-
-    for (int i = 0; i < wavefront; i++)
-        shiftFront (&colour);
-
-    uint16 pix = prepDisplay(0, 0, 240, 160);
-    while (pix--)
-    {
-        write (DATA, colour.shade<<3);
-        write (DATA, colour.shade<<3);
-        write (DATA, colour.shade<<3);
-
-        if (!(pix % 62)) // shifts colour at each row
-        {
-            shiftFront (&colour);
-            shiftFront (&colour);
-        }
-        //busyWait(10000);
-    }
-}
-
-void shiftFront (colour_t *colour)
-{
-    if (colour->direction == rising) // white -> black
-    {
-        colour->shade++;
-        if (colour->shade == (BLACK >> 3))
-            colour->direction = falling;
-    }
-    else // black -> white
-    {
-        colour->shade--;
-        if (colour->shade == (WHITE >> 3))
-            colour->direction = rising;
     }
 }
 

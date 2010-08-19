@@ -49,7 +49,7 @@ LDSCRIPT = ../runtime/ld_flash.cmd
 UADEFS = 
 
 # List additional C source files here
-SRC  = $(PROJECT).c init.c lcd.c timers.c
+SRC  = $(PROJECT).c init.c lcd.c timers.c animate.c
 
 # List ASM source files here
 ASRC = ../runtime/crt.s
@@ -116,6 +116,8 @@ clean:
 	-rm -f $(PROJECT).dmp
 	-rm -f $(PROJECT).bin
 	-rm -fR .dep
+
+flash: install
 
 install: all
 	./flash.sh
