@@ -12,13 +12,14 @@
 #include "HG24016001G.h"
 #include "timers.h"
 
-#define WAVELENGTH 62
-
-#define APPATURE 32 // multiple of 32
-#define MAX_STEPS 32 // number of shades of grey
-#define DURATION 20 // number of frames to show before switchin gradient
+#define APERTURE 32
+#define MAX_STEPS 64 // number of shades of grey
+#define DISPLAY_TIME 10000000
 
 // Waves moving down the display
 void wavesLoop (void);
 
 void seesawLoop (void);
+
+void slideLoop (void);
+

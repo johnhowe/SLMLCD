@@ -9,6 +9,7 @@
 #include "animate.h"
 
 
+void slide (uint8 aperture, uint8 steps, uint8 front, uint8 direction);
 void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction);
 void shiftFront (colour_t *colour);
 
@@ -17,9 +18,9 @@ void wavesLoop (void)
     uint16 front = 0;
     for(;;)
     {
-        drawWaves (WAVELENGTH, front, rising);
+        drawWaves (APERTURE, front, rising);
         front++;
-        if (front == WAVELENGTH)
+        if (front == APERTURE)
         {
             front = 0;
         }
@@ -31,10 +32,10 @@ void seesawLoop(void)
     for (;;)
     {
         eraseDisplay ();
-        drawWaves (WAVELENGTH, 0, rising);
+        drawWaves (APERTURE, 0, rising);
         busyWait (10000000);
         eraseDisplay ();
-        drawWaves (WAVELENGTH, 0, falling);
+        drawWaves (APERTURE, 0, falling);
         busyWait (10000000);
     }
 }
@@ -44,13 +45,16 @@ void slideLoop (void)
     uint8 steps = 0; 
     while (TRUE)
     {
-        for (uint16 t = 0; t < DURATION; t++)
-        {
-            // Draw slide at `steps' gradient for `duration' frames 
-            // TODO animate
-        }
         steps ++;
-        steps %= MAX_STEPS;
+        slide (APERTURE, steps, 0, 0);
+        busyWait (DISPLAY_TIME);
+      //  eraseDisplay ();
+        if (steps == MAX_STEPS)
+        {
+            steps = 0;
+            eraseDisplay ();
+            busyWait (2*DISPLAY_TIME);
+        }
     }
 }
 
@@ -59,20 +63,27 @@ void slideLoop (void)
  * Private functions *
  *********************/
 
-void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
+/* Draws a single frame on the display at a given gradient */
+// aperture - number of lines for one wavelength to cover
+// steps - number of colour levels per aperture
+// front - line number to start on
+// direction - increasing or decreasing gradient
+void slide (uint8 aperture, uint8 steps, uint8 front, uint8 direction)
 {
     colour_t colour;
     colour.shade = WHITE>>3; // be careful with colours being <<3'd
     colour.direction = direction;
 
-    for (int i = 0; i < wavefront; i++)
-        shiftFront (&colour);
-
     uint16 pix = prepDisplay(1, 1, LCD_WIDTH, LCD_HEIGHT);
 
     // For determining where to change colour
-    uint16 shiftWidth = LCD_WIDTH/3; // TODO wavelength should be in here.
-    uint16 shiftPx = pix - shiftWidth;
+    uint16 colourLength = aperture * (LCD_WIDTH/3) / steps;
+    uint16 shiftPx = pix - colourLength;
+
+    //TODO this needs to shift lines, not colours
+    for (int i = 0; i < front; i++)
+        shiftFront (&colour);
+
     while (pix--)
     {
         write (DATA, colour.shade<<3);
@@ -82,11 +93,15 @@ void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
         if (pix == shiftPx) // shifts colour at each row
         {
             shiftFront (&colour);
-            shiftFront (&colour);
-            shiftPx -= shiftWidth;
+            shiftPx -= colourLength;
         }
-        //busyWait(10000);
     }
+}
+
+void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
+{
+    // Legacy support ;)
+    slide (wavelength, 32, wavefront, direction);
 }
 
 void shiftFront (colour_t *colour)
