@@ -16,11 +16,12 @@ void shiftFront (colour_t *colour);
 void wavesLoop (void)
 {
     uint16 front = 0;
+    uint16 wavelength = 64;
     for(;;)
     {
-        drawWaves (APERTURE, front, rising);
+        drawWaves (wavelength, front, rising);
         front++;
-        if (front == APERTURE)
+        if (front == wavelength)
         {
             front = 0;
         }
