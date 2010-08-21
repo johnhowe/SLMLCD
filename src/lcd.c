@@ -31,7 +31,8 @@ void initLCD(void) {
     write(COMMAND, PWRCTR); // turn on or off booster circuit, voltage reg and ref. voltage
     write(DATA, 0x0b); // booster, regulator, follower on (VB=VF=VR=1)
     write(COMMAND, VOLCTR); // program optimum lcd supply voltage
-    write(DATA, 0x32); // DL38
+    //write(DATA, 0x32); // DL38
+    write(DATA, 0x04); // DL38
     write(DATA, 0x04); // DH,Vop = 15.5v, normal display
     write(COMMAND, DISCTL);
     write(DATA, 0x04); // CLD = 0, not divide
