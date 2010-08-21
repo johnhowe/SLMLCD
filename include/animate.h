@@ -13,7 +13,7 @@
 #include "timers.h"
 
 #define APERTURE 32
-#define MAX_STEPS 64 // number of shades of grey
+#define MAX_STEPS 31 // number of shades of grey
 #define DISPLAY_TIME 10000000
 
 // Waves moving down the display

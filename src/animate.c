@@ -11,7 +11,7 @@
 
 void slide (uint8 aperture, uint8 steps, uint8 front, uint8 direction);
 void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction);
-void shiftFront (colour_t *colour);
+void shiftFront (colour_t *colour, uint8 steps);
 
 void wavesLoop (void)
 {
@@ -83,7 +83,7 @@ void slide (uint8 aperture, uint8 steps, uint8 front, uint8 direction)
 
     //TODO this needs to shift lines, not colours
     for (int i = 0; i < front; i++)
-        shiftFront (&colour);
+        shiftFront (&colour, steps);
 
     while (pix--)
     {
@@ -93,7 +93,7 @@ void slide (uint8 aperture, uint8 steps, uint8 front, uint8 direction)
 
         if (pix == shiftPx) // shifts colour at each row
         {
-            shiftFront (&colour);
+            shiftFront (&colour, steps);
             shiftPx -= colourLength;
         }
     }
@@ -105,12 +105,12 @@ void drawWaves (uint8 wavelength, uint8 wavefront, uint8 direction)
     slide (wavelength, 32, wavefront, direction);
 }
 
-void shiftFront (colour_t *colour)
+void shiftFront (colour_t *colour, uint8 steps)
 {
     if (colour->direction == rising) // white -> black
     {
         colour->shade++;
-        if (colour->shade == (BLACK >> 3))
+        if (colour->shade == steps)
             colour->direction = falling;
     }
     else // black -> white
