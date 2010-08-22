@@ -56,7 +56,7 @@ void slideLoop (void)
         {
             steps = 0;
             displayOff();
-            busyWait (2*DISPLAY_TIME);
+            busyWait (5*DISPLAY_TIME);
             displayOn();
         }
     }

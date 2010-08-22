@@ -14,8 +14,8 @@
 
 #define APERTURE 32
 #define MAX_STEPS 32 // number of shades of grey
-#define DISPLAY_TIME 50000000
-#define TRANSITION_TIME 5000000
+#define DISPLAY_TIME 20000000
+#define TRANSITION_TIME 10000000
 
 
 // Waves moving down the display
