@@ -184,3 +184,12 @@ void eraseDisplay (void)
     }
 }
 
+void displayOff (void)
+{
+    write (COMMAND, DISOFF);
+}
+
+void displayOn (void)
+{
+    write (COMMAND, DISON);
+}

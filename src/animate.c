@@ -49,12 +49,15 @@ void slideLoop (void)
         steps ++;
         slide (APERTURE, steps, 0, 0);
         busyWait (DISPLAY_TIME);
-      //  eraseDisplay ();
+        displayOff();
+        busyWait (TRANSITION_TIME);
+        displayOn();
         if (steps == MAX_STEPS)
         {
             steps = 0;
-            eraseDisplay ();
+            displayOff();
             busyWait (2*DISPLAY_TIME);
+            displayOn();
         }
     }
 }
@@ -81,7 +84,7 @@ void slide (uint8 aperture, uint8 steps, uint8 front, uint8 direction)
     uint16 colourLength = aperture * (LCD_WIDTH/3) / steps;
     uint16 shiftPx = pix - colourLength;
 
-    //TODO this needs to shift lines, not colours
+    //TODO this should shift lines, not colours
     for (int i = 0; i < front; i++)
         shiftFront (&colour, steps);
 

@@ -13,8 +13,10 @@
 #include "timers.h"
 
 #define APERTURE 32
-#define MAX_STEPS 31 // number of shades of grey
-#define DISPLAY_TIME 10000000
+#define MAX_STEPS 32 // number of shades of grey
+#define DISPLAY_TIME 50000000
+#define TRANSITION_TIME 5000000
+
 
 // Waves moving down the display
 void wavesLoop (void);

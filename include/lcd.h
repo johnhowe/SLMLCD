@@ -44,6 +44,8 @@ uint16 prepDisplay (uint8 startC, uint8 startR, uint8 endC, uint8 endR);
 void eraseDisplay (void);
 
 
+void displayOff (void);
+void displayOn (void);
 
 
 #endif
