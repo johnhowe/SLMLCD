@@ -21,7 +21,9 @@
 // Waves moving down the display
 void wavesLoop (void);
 
+// Switching between gradient one direction to the other
 void seesawLoop (void);
 
+// Gradually increasing gradient
 void slideLoop (void);
 
